@@ -229,7 +229,6 @@
             html += th('vol_chart', 'Vol Chart');
             html += th('atr_pct', 'ATR%');
             html += th('dist_sma50_atr', 'ATRx');
-            html += th('dist_sma50_atr', 'ATRx');
             html += th('rs', '1M-VARS');
             html += th('rs', 'VARS');
             html += th('letf', 'LETF');
@@ -269,6 +268,7 @@
                 var volCl = volRatio != null && volRatio >= 2 ? 'price-down' : '';
                 html += '<td class="' + volCl + '">' + (volRatio != null ? volRatio.toFixed(2) + 'x' : 'N/A') + '</td>';
                 html += '<td>' + (r.vol_chart ? '<img src="' + r.vol_chart + '" class="rs-chart" alt="Vol">' : 'N/A') + '</td>';
+                html += '<td>' + (r.atr_pct != null ? r.atr_pct.toFixed(1) + '%' : 'N/A') + '</td>';
                 html += '<td>' + (r.dist_sma50_atr != null ? r.dist_sma50_atr.toFixed(2) : 'N/A') + '</td>';
                 html += '<td>' + (r.rs != null ? Math.round(r.rs) + '%' : 'N/A') + '</td>';
                 html += '<td>' + (r.rs_chart ? '<img src="' + r.rs_chart + '" class="rs-chart" alt="RS">' : 'N/A') + '</td>';
