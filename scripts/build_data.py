@@ -370,7 +370,7 @@ def get_stock_data(ticker_symbol, charts_dir):
                 vol_ratio = round(today_vol / avg_vol_20, 2)
             # Last 10 days of volume as ratio vs 20D avg
             vol_history = []
-            for j in range(10, 0, -1):
+            for j in range(20, 0, -1):
                 v = daily['Volume'].iloc[-j]
                 ratio = round(v / avg_vol_20, 2) if avg_vol_20 and avg_vol_20 > 0 else 0
                 vol_history.append(ratio)
