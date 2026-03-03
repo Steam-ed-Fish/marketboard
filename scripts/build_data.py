@@ -258,7 +258,31 @@ def calculate_abc_rating(hist_data):
     except Exception:
         pass
     return None
-
+    
+def create_vol_chart_png(vol_history, ticker, charts_dir):
+    try:
+        if not vol_history or len(vol_history) == 0:
+            return None
+        plt.style.use('dark_background')
+        fig, ax = plt.subplots(figsize=(8, 2))
+        fig.patch.set_facecolor('#1a1a1a')
+        ax.set_facecolor('#1a1a1a')
+        bar_colors = ['#ef4444' if v >= 2.0 else '#b0b0b0' for v in vol_history]
+        ax.bar(range(len(vol_history)), vol_history, color=bar_colors, width=0.8, edgecolor='none')
+        ax.axhline(y=1.0, color='#808080', linestyle='--', linewidth=1)
+        ax.set_xticks([])
+        ax.set_yticks([])
+        for s in ax.spines.values():
+            s.set_visible(False)
+        fig.tight_layout(pad=0)
+        safe = re.sub(r'[^a-zA-Z0-9]', '_', ticker)
+        path = os.path.join(charts_dir, f"vol_{safe}.png")
+        fig.savefig(path, format='png', dpi=80, bbox_inches='tight', facecolor='#1a1a1a')
+        plt.close(fig)
+        return f"data/charts/vol_{safe}.png"
+    except Exception as e:
+        print("Vol chart error", ticker, e)
+        return None
 
 def create_rs_chart_png(rrs_data, ticker, charts_dir):
     try:
@@ -336,6 +360,22 @@ def get_stock_data(ticker_symbol, charts_dir):
         atr_pct = (atr / current_close) * 100 if atr and current_close else None
         dist_sma50_atr = (100 * (current_close / sma50 - 1) / atr_pct) if (sma50 and atr_pct and atr_pct != 0) else None
         abc_rating = calculate_abc_rating(daily)
+        # Volume calculations
+        vol_ratio = None
+        vol_history = None
+        try:
+            avg_vol_20 = daily['Volume'].iloc[-21:-1].mean()
+            today_vol = daily['Volume'].iloc[-1]
+            if avg_vol_20 and avg_vol_20 > 0:
+                vol_ratio = round(today_vol / avg_vol_20, 2)
+            # Last 10 days of volume as ratio vs 20D avg
+            vol_history = []
+            for j in range(10, 0, -1):
+                v = daily['Volume'].iloc[-j]
+                ratio = round(v / avg_vol_20, 2) if avg_vol_20 and avg_vol_20 > 0 else 0
+                vol_history.append(ratio)
+        except Exception:
+            pass
 
         rs_sts = None
         rrs_data = None
@@ -354,6 +394,7 @@ def get_stock_data(ticker_symbol, charts_dir):
             print("RRS error", ticker_symbol, e)
 
         rs_chart_path = create_rs_chart_png(rrs_data, ticker_symbol, charts_dir) if rrs_data is not None and len(rrs_data) > 0 else None
+        vol_chart_path = create_vol_chart_png(vol_history, ticker_symbol, charts_dir) if vol_history else None
         long_etfs, short_etfs = get_leveraged_etfs(ticker_symbol)
 
         return {
@@ -364,6 +405,8 @@ def get_stock_data(ticker_symbol, charts_dir):
             "20d": round(twenty_day_change, 2) if twenty_day_change is not None else None,
             "wtd": round(wtd_change, 2) if wtd_change is not None else None,
             "ytd": round(ytd_change, 2) if ytd_change is not None else None,
+            "vol_ratio": vol_ratio,
+            "vol_chart": vol_chart_path,
             "atr_pct": round(atr_pct, 1) if atr_pct is not None else None,
             "dist_sma50_atr": round(dist_sma50_atr, 2) if dist_sma50_atr is not None else None,
             "rs": round(rs_sts, 0) if rs_sts is not None else None,
