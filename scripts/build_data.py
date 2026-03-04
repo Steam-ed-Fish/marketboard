@@ -337,14 +337,12 @@ def get_stock_data(ticker_symbol, charts_dir):
         today = daily.index[-1].date()
         days_since_monday = today.weekday()
         wtd_change = None
-        if days_since_monday == 0:
-            wtd_change = daily_change
-        else:
-            for i in range(2, len(daily)+1):
-                day = daily.index[-i].date()
-                if day.weekday() < days_since_monday:
-                    wtd_change = (daily['Close'].iloc[-1] / daily['Close'].iloc[-i] - 1) * 100
-                    break
+        # WTD: always from last Friday's close
+        for i in range(1, len(daily)+1):
+            day = daily.index[-i].date()
+            if day.weekday() == 4:  # 4 = Friday
+                wtd_change = (daily['Close'].iloc[-1] / daily['Close'].iloc[-i] - 1) * 100
+                break
 
         ytd_change = None
         current_year = today.year
