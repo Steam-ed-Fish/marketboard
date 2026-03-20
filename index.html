@@ -164,6 +164,18 @@
         .holdings-neutral { color: #9ca3af; }
         .holdings-loading, .holdings-error { padding: 20px; text-align: center; }
         .holdings-error { color: #ef4444; }
+        .rel-perf-table { width: 100%; border-collapse: collapse; font-size: 0.82em; }
+        .rel-perf-table thead th { padding: 5px 8px; color: #9ca3af; font-weight: 600; text-align: right; border-bottom: 1px solid #374151; }
+        .rel-perf-table thead th:first-child { text-align: left; }
+        .rel-perf-row td { padding: 5px 8px; border-bottom: 1px solid #2d3748; }
+        .rel-perf-row:last-child td { border-bottom: none; }
+        .rel-perf-row:hover { background: #2a2a2a; }
+        .rel-perf-name { color: #e0e0e0; white-space: nowrap; }
+        .rel-perf-val { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; min-width: 60px; }
+        .rel-ticker-a { color: #60a5fa; font-weight: 700; font-size: 0.9em; }
+        .rel-ticker-b { color: #9ca3af; font-weight: 700; font-size: 0.9em; }
+        .rel-highlight-pos { background: #10b98133; border-radius: 3px; padding: 1px 4px; }
+        .rel-highlight-neg { background: #ef444433; border-radius: 3px; padding: 1px 4px; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1a1a1a; }
         ::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 4px; }
@@ -294,12 +306,55 @@
         return 'ticker-label-' + safe;
     }
 
+    function renderRelativePerf() {
+        var pairs = [
+            ["Tangibles vs. Intangibles",   "DBC",  "IGV"],
+            ["AI 100 vs. Equal Weight",      "QQQ",  "RSP"],
+            ["Cyclicals vs. Defensives",     "XLY",  "XLP"],
+            ["US vs. International",         "SPY",  "EFA"],
+            ["Pure Value vs. Growth",        "IVE",  "IVW"],
+            ["Early Cycle vs. Late Cycle",   "XLB",  "XLU"],
+            ["Large Cap vs. Small Cap",      "SPY",  "IWM"],
+            ["Software vs. Semis",           "IGV",  "SMH"]
+        ];
+        var lookup = {};
+        if (snapshot && snapshot.groups) {
+            Object.values(snapshot.groups).forEach(function(tickers) {
+                tickers.forEach(function(t) { lookup[t.ticker] = t; });
+            });
+        }
+        function relFmt(a, b, field) {
+            if (!a || !b || a[field] == null || b[field] == null) return '<span style="color:#4b5563">-</span>';
+            var val = a[field] - b[field];
+            var str = (val > 0 ? '+' : '') + val.toFixed(2) + '%';
+            var cls = val > 0 ? 'price-up' : (val < 0 ? 'price-down' : '');
+            var hlCls = Math.abs(val) >= 3 ? (val > 0 ? ' rel-highlight-pos' : ' rel-highlight-neg') : '';
+            return '<span class="' + cls + hlCls + '">' + str + '</span>';
+        }
+        var html = '<div class="group-container" id="group-rel-perf">';
+        html += '<div class="group-header"><span class="group-header-title">Relative Performance</span></div>';
+        html += '<table class="rel-perf-table"><thead><tr>';
+        html += '<th>Pair</th><th>Daily</th><th>5D</th><th>YTD</th></tr></thead><tbody>';
+        pairs.forEach(function(p) {
+            var name = p[0], tA = p[1], tB = p[2];
+            var a = lookup[tA], b = lookup[tB];
+            html += '<tr class="rel-perf-row">';
+            html += '<td class="rel-perf-name"><span class="rel-ticker-a">' + tA + '</span> <span style="color:#4b5563">vs.</span> <span class="rel-ticker-b">' + tB + '</span> &nbsp;<span style="color:#6b7280;font-size:0.85em">' + name + '</span></td>';
+            html += '<td class="rel-perf-val">' + relFmt(a, b, 'daily') + '</td>';
+            html += '<td class="rel-perf-val">' + relFmt(a, b, '5d') + '</td>';
+            html += '<td class="rel-perf-val">' + relFmt(a, b, 'ytd') + '</td>';
+            html += '</tr>';
+        });
+        html += '</tbody></table></div>';
+        return html;
+    }
+
     function renderGroups() {
         if (!snapshot || !snapshot.groups) {
             document.getElementById('groups-container').innerHTML = '<div class="loading-msg">LOADING DATA...</div>';
             return;
         }
-        var html = '';
+        var html = renderRelativePerf();
         var groupOrder = Object.keys(snapshot.groups);
         for (var g = 0; g < groupOrder.length; g++) {
             var groupName = groupOrder[g];
@@ -545,7 +600,7 @@
             if (data && data.holdings && data.holdings.length) {
                 holdingsList = data.holdings;
                 content.innerHTML = data.holdings.map(function(h, i) {
-                    var daily = dailyLookup[h.symbol];
+                    var daily = h.daily != null ? h.daily : dailyLookup[h.symbol];
                     var dailyStr = daily != null ? (daily > 0 ? '+' : '') + Number(daily).toFixed(2) + '%' : '-';
                     var dailyClass = daily != null ? (daily >= 0 ? 'holdings-gain' : 'holdings-loss') : 'holdings-neutral';
                     return '<div class="holdings-item" data-index="' + i + '" onclick="selectHoldingSymbol(\'' + String(h.symbol).replace(/'/g, "\\'") + '\',' + i + ')"><span class="holdings-rank">' + (i + 1) + '</span><span class="holdings-symbol">' + escapeHtml(h.symbol) + '</span><span class="' + dailyClass + '">' + dailyStr + '</span></div>';

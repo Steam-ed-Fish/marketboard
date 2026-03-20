@@ -559,6 +559,38 @@ def get_all_etfs_for_holdings():
     return sorted(etfs)
 
 
+def enrich_holdings_daily(holdings):
+    """Fetch previous-day return for each holding symbol and add 'daily' field."""
+    if not holdings:
+        return
+    symbols = [h["symbol"] for h in holdings if h.get("symbol")]
+    if not symbols:
+        return
+    try:
+        hist = yf.download(symbols, period="5d", interval="1d", auto_adjust=True, progress=False)
+        if hist.empty:
+            return
+        if len(symbols) == 1:
+            close = hist["Close"].dropna()
+            if len(close) >= 2:
+                prev, curr = float(close.iloc[-2]), float(close.iloc[-1])
+                daily = round((curr - prev) / prev * 100, 2) if prev != 0 else None
+                for h in holdings:
+                    if h.get("symbol") == symbols[0]:
+                        h["daily"] = daily
+        else:
+            close = hist["Close"] if "Close" in hist.columns.get_level_values(0) else hist
+            for h in holdings:
+                sym = h.get("symbol", "")
+                if sym in close.columns:
+                    col = close[sym].dropna()
+                    if len(col) >= 2:
+                        prev, curr = float(col.iloc[-2]), float(col.iloc[-1])
+                        h["daily"] = round((curr - prev) / prev * 100, 2) if prev != 0 else None
+    except Exception:
+        pass
+
+
 def fetch_etf_holdings(etf_list, out_dir):
     """Top 10 holdings per symbol via yfinance; writes data/holdings/{SYM}.json when fund data exists."""
     holdings_dir = os.path.join(out_dir, "holdings")
@@ -594,6 +626,7 @@ def fetch_etf_holdings(etf_list, out_dir):
                     if holding_symbol:
                         holdings.append({"symbol": holding_symbol, "weight": weight})
                 if holdings:
+                    enrich_holdings_daily(holdings)
                     path = os.path.join(holdings_dir, "{}.json".format(etf_symbol))
                     with open(path, "w", encoding="utf-8") as f:
                         json.dump({"symbol": etf_symbol, "holdings": holdings}, f, ensure_ascii=False, indent=2)
@@ -619,6 +652,7 @@ def fetch_etf_holdings(etf_list, out_dir):
                         if sym:
                             holdings.append({"symbol": sym, "weight": w})
                     if holdings:
+                        enrich_holdings_daily(holdings)
                         path = os.path.join(holdings_dir, "{}.json".format(etf_symbol))
                         with open(path, "w", encoding="utf-8") as f:
                             json.dump({"symbol": etf_symbol, "holdings": holdings}, f, ensure_ascii=False, indent=2)
