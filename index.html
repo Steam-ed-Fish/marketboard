@@ -182,6 +182,9 @@
         .holdings-neutral { color: #9ca3af; }
         .holdings-loading, .holdings-error { padding: 20px; text-align: center; }
         .holdings-error { color: #ef4444; }
+        .gap-up { color: #10b981; font-weight: 700; white-space: nowrap; }
+        .gap-down { color: #ef4444; font-weight: 700; white-space: nowrap; }
+        .gap-days { font-size: 0.7em; vertical-align: super; margin-left: 1px; }
         .rel-perf-table { width: 100%; border-collapse: collapse; font-size: 0.82em; }
         .rel-perf-table thead th { padding: 5px 8px; color: #9ca3af; font-weight: 600; text-align: right; border-bottom: 1px solid #374151; }
         .rel-perf-table thead th:first-child { text-align: left; }
@@ -413,6 +416,7 @@
             html += th('rs', '1M-VARS');
             html += th('rs', 'VARS');
             html += th('letf', 'LETF');
+            html += '<th title="Gap up/down in last 5 days">Gap</th>';
             html += '</tr></thead><tbody id="' + safeId + '-body">';
             for (var i = 0; i < rows.length; i++) {
                 var r = rows[i];
@@ -461,7 +465,15 @@
                 if (r.long && r.long.length) html += r.long.map(function(etf){ return '<span class="long-etf" onclick="event.stopPropagation();updateChart(\'' + etf + '\')">' + etf + '</span>'; }).join(', ');
                 if (r.short && r.short.length) { if (r.long && r.long.length) html += '<br>'; html += r.short.map(function(etf){ return '<span class="short-etf" onclick="event.stopPropagation();updateChart(\'' + etf + '\')">' + etf + '</span>'; }).join(', '); }
                 if (!(r.long && r.long.length) && !(r.short && r.short.length)) html += '-';
-                html += '</td></tr>';
+                html += '</td>';
+                if (r.gap_dir === 'up') {
+                    html += '<td class="gap-up">&#8679;<span class="gap-days">' + r.gap_days + '</span></td>';
+                } else if (r.gap_dir === 'down') {
+                    html += '<td class="gap-down">&#8681;<span class="gap-days">' + r.gap_days + '</span></td>';
+                } else {
+                    html += '<td style="color:#374151">-</td>';
+                }
+                html += '</tr>';
             }
             html += '</tbody></table></div>';
         }
