@@ -3,31 +3,38 @@
   "holdings": [
     {
       "symbol": "7203.T",
-      "weight": 0.0286045
+      "weight": 0.0286045,
+      "daily": -2.32
     },
     {
       "symbol": "NVDA",
-      "weight": 0.0283496
+      "weight": 0.0283496,
+      "daily": -1.02
     },
     {
       "symbol": "GOOGL",
-      "weight": 0.0275943
+      "weight": 0.0275943,
+      "daily": -0.18
     },
     {
       "symbol": "TSLA",
-      "weight": 0.0267586
+      "weight": 0.0267586,
+      "daily": -3.18
     },
     {
       "symbol": "INTC",
-      "weight": 0.0252675
+      "weight": 0.0252675,
+      "daily": 2.55
     },
     {
       "symbol": "MSFT",
-      "weight": 0.024803901
+      "weight": 0.024803901,
+      "daily": -0.71
     },
     {
       "symbol": "HON",
-      "weight": 0.0243066
+      "weight": 0.0243066,
+      "daily": -0.39
     },
     {
       "symbol": "QCOM",
@@ -35,11 +42,13 @@
     },
     {
       "symbol": "RIO.L",
-      "weight": 0.0203388
+      "weight": 0.0203388,
+      "daily": -0.14
     },
     {
       "symbol": "6285.TW",
-      "weight": 0.0186191
+      "weight": 0.0186191,
+      "daily": 0.29
     }
   ]
 }

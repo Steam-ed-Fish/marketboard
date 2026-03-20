@@ -3,11 +3,13 @@
   "holdings": [
     {
       "symbol": "LYV",
-      "weight": 0.059749298
+      "weight": 0.059749298,
+      "daily": -1.46
     },
     {
       "symbol": "WBD",
-      "weight": 0.0570403
+      "weight": 0.0570403,
+      "daily": 1.02
     },
     {
       "symbol": "SYY",
@@ -15,31 +17,38 @@
     },
     {
       "symbol": "HLT",
-      "weight": 0.052600697
+      "weight": 0.052600697,
+      "daily": 1.11
     },
     {
       "symbol": "UAL",
-      "weight": 0.0514563
+      "weight": 0.0514563,
+      "daily": 1.77
     },
     {
       "symbol": "DASH",
-      "weight": 0.0434298
+      "weight": 0.0434298,
+      "daily": -3.47
     },
     {
       "symbol": "UBER",
-      "weight": 0.0417165
+      "weight": 0.0417165,
+      "daily": -1.72
     },
     {
       "symbol": "LVS",
-      "weight": 0.0399737
+      "weight": 0.0399737,
+      "daily": 0.22
     },
     {
       "symbol": "SPHR",
-      "weight": 0.0385416
+      "weight": 0.0385416,
+      "daily": 2.33
     },
     {
       "symbol": "BH",
-      "weight": 0.0341027
+      "weight": 0.0341027,
+      "daily": 4.03
     }
   ]
 }

@@ -3,11 +3,13 @@
   "holdings": [
     {
       "symbol": "BE",
-      "weight": 0.1067228
+      "weight": 0.1067228,
+      "daily": 6.46
     },
     {
       "symbol": "NXT",
-      "weight": 0.0876225
+      "weight": 0.0876225,
+      "daily": 2.91
     },
     {
       "symbol": "FSLR",
@@ -15,31 +17,38 @@
     },
     {
       "symbol": "IBE.MC",
-      "weight": 0.0592137
+      "weight": 0.0592137,
+      "daily": 0.31
     },
     {
       "symbol": "600900.SS",
-      "weight": 0.0450737
+      "weight": 0.0450737,
+      "daily": -0.29
     },
     {
       "symbol": "ENPH",
-      "weight": 0.033559002
+      "weight": 0.033559002,
+      "daily": 3.14
     },
     {
       "symbol": "EQTL3.SA",
-      "weight": 0.030203098
+      "weight": 0.030203098,
+      "daily": 2.92
     },
     {
       "symbol": "ORA",
-      "weight": 0.0292539
+      "weight": 0.0292539,
+      "daily": 2.81
     },
     {
       "symbol": "VWS.CO",
-      "weight": 0.0232585
+      "weight": 0.0232585,
+      "daily": 1.07
     },
     {
       "symbol": "EDP.LS",
-      "weight": 0.022622
+      "weight": 0.022622,
+      "daily": 0.35
     }
   ]
 }

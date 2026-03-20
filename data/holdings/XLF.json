@@ -3,19 +3,23 @@
   "holdings": [
     {
       "symbol": "BRK-B",
-      "weight": 0.1255126
+      "weight": 0.1255126,
+      "daily": -0.62
     },
     {
       "symbol": "JPM",
-      "weight": 0.1108129
+      "weight": 0.1108129,
+      "daily": 0.08
     },
     {
       "symbol": "V",
-      "weight": 0.0732371
+      "weight": 0.0732371,
+      "daily": 0.23
     },
     {
       "symbol": "MA",
-      "weight": 0.0574828
+      "weight": 0.0574828,
+      "daily": 0.55
     },
     {
       "symbol": "BAC",
@@ -23,23 +27,28 @@
     },
     {
       "symbol": "GS",
-      "weight": 0.0349437
+      "weight": 0.0349437,
+      "daily": 0.5
     },
     {
       "symbol": "WFC",
-      "weight": 0.034656998
+      "weight": 0.034656998,
+      "daily": 0.26
     },
     {
       "symbol": "MS",
-      "weight": 0.027261501
+      "weight": 0.027261501,
+      "daily": -0.24
     },
     {
       "symbol": "C",
-      "weight": 0.0267249
+      "weight": 0.0267249,
+      "daily": 1.09
     },
     {
       "symbol": "AXP",
-      "weight": 0.022497302
+      "weight": 0.022497302,
+      "daily": 0.18
     }
   ]
 }

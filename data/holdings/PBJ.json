@@ -3,7 +3,8 @@
   "holdings": [
     {
       "symbol": "HSY",
-      "weight": 0.055524804
+      "weight": 0.055524804,
+      "daily": -1.01
     },
     {
       "symbol": "SYY",
@@ -11,35 +12,43 @@
     },
     {
       "symbol": "CTVA",
-      "weight": 0.053273503
+      "weight": 0.053273503,
+      "daily": -1.6
     },
     {
       "symbol": "PEP",
-      "weight": 0.0509337
+      "weight": 0.0509337,
+      "daily": -0.52
     },
     {
       "symbol": "MNST",
-      "weight": 0.0508476
+      "weight": 0.0508476,
+      "daily": -0.47
     },
     {
       "symbol": "KO",
-      "weight": 0.0490545
+      "weight": 0.0490545,
+      "daily": -0.55
     },
     {
       "symbol": "KR",
-      "weight": 0.046340898
+      "weight": 0.046340898,
+      "daily": 0.66
     },
     {
       "symbol": "KHC",
-      "weight": 0.042584702
+      "weight": 0.042584702,
+      "daily": -1.45
     },
     {
       "symbol": "CELH",
-      "weight": 0.0336659
+      "weight": 0.0336659,
+      "daily": 3.52
     },
     {
       "symbol": "ANDE",
-      "weight": 0.0309971
+      "weight": 0.0309971,
+      "daily": -1.31
     }
   ]
 }

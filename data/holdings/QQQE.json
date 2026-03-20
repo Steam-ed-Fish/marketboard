@@ -3,11 +3,13 @@
   "holdings": [
     {
       "symbol": "MU",
-      "weight": 0.0154942
+      "weight": 0.0154942,
+      "daily": -3.78
     },
     {
       "symbol": "WDC",
-      "weight": 0.015454
+      "weight": 0.015454,
+      "daily": 3.95
     },
     {
       "symbol": "AMAT",
@@ -15,11 +17,13 @@
     },
     {
       "symbol": "BKR",
-      "weight": 0.0143919
+      "weight": 0.0143919,
+      "daily": 5.62
     },
     {
       "symbol": "LRCX",
-      "weight": 0.0137598
+      "weight": 0.0137598,
+      "daily": 4.13
     },
     {
       "symbol": "ASML",
@@ -27,19 +31,23 @@
     },
     {
       "symbol": "STX",
-      "weight": 0.0137059
+      "weight": 0.0137059,
+      "daily": 6.84
     },
     {
       "symbol": "ADI",
-      "weight": 0.0128019
+      "weight": 0.0128019,
+      "daily": 0.6
     },
     {
       "symbol": "ODFL",
-      "weight": 0.0124961
+      "weight": 0.0124961,
+      "daily": -0.12
     },
     {
       "symbol": "MPWR",
-      "weight": 0.0124871
+      "weight": 0.0124871,
+      "daily": 1.62
     }
   ]
 }

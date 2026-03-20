@@ -3,15 +3,18 @@
   "holdings": [
     {
       "symbol": "SU.PA",
-      "weight": 0.0773347
+      "weight": 0.0773347,
+      "daily": 0.33
     },
     {
       "symbol": "MC.PA",
-      "weight": 0.069021404
+      "weight": 0.069021404,
+      "daily": 0.02
     },
     {
       "symbol": "TTE.PA",
-      "weight": 0.0681123
+      "weight": 0.0681123,
+      "daily": -1.22
     },
     {
       "symbol": "SAF.PA",
@@ -19,27 +22,33 @@
     },
     {
       "symbol": "AIR.PA",
-      "weight": 0.0558085
+      "weight": 0.0558085,
+      "daily": 0.13
     },
     {
       "symbol": "AI.PA",
-      "weight": 0.0526439
+      "weight": 0.0526439,
+      "daily": 0.45
     },
     {
       "symbol": "BNP.PA",
-      "weight": 0.0489317
+      "weight": 0.0489317,
+      "daily": 0.17
     },
     {
       "symbol": "OR.PA",
-      "weight": 0.048661098
+      "weight": 0.048661098,
+      "daily": 1.19
     },
     {
       "symbol": "SAN.PA",
-      "weight": 0.0459911
+      "weight": 0.0459911,
+      "daily": 0.51
     },
     {
       "symbol": "DG.PA",
-      "weight": 0.0355322
+      "weight": 0.0355322,
+      "daily": 0.44
     }
   ]
 }

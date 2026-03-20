@@ -3,23 +3,28 @@
   "holdings": [
     {
       "symbol": "CSCO",
-      "weight": 0.0929368
+      "weight": 0.0929368,
+      "daily": 1.17
     },
     {
       "symbol": "INFY",
-      "weight": 0.0769953
+      "weight": 0.0769953,
+      "daily": 1.01
     },
     {
       "symbol": "AVGO",
-      "weight": 0.0730936
+      "weight": 0.0730936,
+      "daily": 1.24
     },
     {
       "symbol": "PANW",
-      "weight": 0.071943104
+      "weight": 0.071943104,
+      "daily": 0.49
     },
     {
       "symbol": "CRWD",
-      "weight": 0.0685285
+      "weight": 0.0685285,
+      "daily": -1.75
     },
     {
       "symbol": "HO.PA",
@@ -27,19 +32,23 @@
     },
     {
       "symbol": "AKAM",
-      "weight": 0.0470744
+      "weight": 0.0470744,
+      "daily": 1.05
     },
     {
       "symbol": "FFIV",
-      "weight": 0.046935502
+      "weight": 0.046935502,
+      "daily": 2.87
     },
     {
       "symbol": "FTNT",
-      "weight": 0.044689104
+      "weight": 0.044689104,
+      "daily": -0.32
     },
     {
       "symbol": "LDOS",
-      "weight": 0.0421274
+      "weight": 0.0421274,
+      "daily": -0.48
     }
   ]
 }

@@ -146,18 +146,36 @@
             position: fixed; inset: 0; background: transparent; display: none; z-index: 9999;
         }
         .holdings-modal {
-            position: fixed; left: 20px; top: 50%; transform: translateY(-50%);
-            background: #111827; border-radius: 8px; border: 1px solid #4a5568; padding: 8px 12px;
-            width: 400px; max-width: 90vw; max-height: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            position: fixed; left: 16px; top: 50%; transform: translateY(-50%);
+            background: #0f172a; border-radius: 10px; border: 1px solid #1e3a5f;
+            padding: 0; width: 280px; max-width: 90vw;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.8), 0 0 0 1px rgba(96,165,250,0.08);
+            overflow: hidden;
         }
-        .holdings-modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; font-weight: 600; color: #e0e0e0; }
-        .holdings-modal-close { background: transparent; border: none; color: #9ca3af; cursor: pointer; font-size: 1.2rem; }
-        .holdings-list { max-height: 400px; overflow-y: auto; font-size: 0.85em; }
-        .holdings-item { display: flex; justify-content: space-between; padding: 6px 8px; border-bottom: 1px solid #374151; cursor: pointer; color: #e0e0e0; }
-        .holdings-item:hover { background: #1f2933; }
-        .holdings-item.active { background: #374151; }
-        .holdings-rank { color: #9ca3af; width: 24px; }
-        .holdings-symbol { font-weight: 600; color: #60a5fa; }
+        .holdings-modal-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 8px 12px; background: #1e293b;
+            border-bottom: 1px solid #1e3a5f; font-weight: 700; font-size: 0.82em;
+            color: #93c5fd; letter-spacing: 0.03em; text-transform: uppercase;
+        }
+        .holdings-modal-close {
+            background: transparent; border: none; color: #4b5563; cursor: pointer;
+            font-size: 1rem; line-height: 1; padding: 0 2px;
+            transition: color 0.15s;
+        }
+        .holdings-modal-close:hover { color: #e0e0e0; }
+        .holdings-list { overflow-y: auto; font-size: 0.8em; max-height: 320px; }
+        .holdings-item {
+            display: grid; grid-template-columns: 20px 1fr auto;
+            align-items: center; gap: 8px;
+            padding: 5px 12px; border-bottom: 1px solid #1e293b;
+            cursor: pointer; transition: background 0.1s;
+        }
+        .holdings-item:last-child { border-bottom: none; }
+        .holdings-item:hover { background: #1e293b; }
+        .holdings-item.active { background: #1e3a5f; }
+        .holdings-rank { color: #374151; font-size: 0.75em; text-align: right; font-variant-numeric: tabular-nums; }
+        .holdings-symbol { font-weight: 700; color: #60a5fa; font-size: 0.95em; letter-spacing: 0.02em; }
         .holdings-weight { color: #10b981; }
         .holdings-gain { color: #10b981; }
         .holdings-loss { color: #ef4444; }

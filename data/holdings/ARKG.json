@@ -3,43 +3,53 @@
   "holdings": [
     {
       "symbol": "CRSP",
-      "weight": 0.0995638
+      "weight": 0.0995638,
+      "daily": -1.55
     },
     {
       "symbol": "TEM",
-      "weight": 0.0825702
+      "weight": 0.0825702,
+      "daily": 0.1
     },
     {
       "symbol": "TWST",
-      "weight": 0.0787776
+      "weight": 0.0787776,
+      "daily": 0.76
     },
     {
       "symbol": "TXG",
-      "weight": 0.0606098
+      "weight": 0.0606098,
+      "daily": 5.94
     },
     {
       "symbol": "PSNL",
-      "weight": 0.0603417
+      "weight": 0.0603417,
+      "daily": 3.3
     },
     {
       "symbol": "BEAM",
-      "weight": 0.0511502
+      "weight": 0.0511502,
+      "daily": -0.59
     },
     {
       "symbol": "ILMN",
-      "weight": 0.0427357
+      "weight": 0.0427357,
+      "daily": 2.96
     },
     {
       "symbol": "GH",
-      "weight": 0.0415577
+      "weight": 0.0415577,
+      "daily": 2.07
     },
     {
       "symbol": "NTRA",
-      "weight": 0.0393413
+      "weight": 0.0393413,
+      "daily": 2.5
     },
     {
       "symbol": "RXRX",
-      "weight": 0.0372733
+      "weight": 0.0372733,
+      "daily": 1.51
     }
   ]
 }

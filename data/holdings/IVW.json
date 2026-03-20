@@ -3,43 +3,53 @@
   "holdings": [
     {
       "symbol": "NVDA",
-      "weight": 0.1415603
+      "weight": 0.1415603,
+      "daily": -1.02
     },
     {
       "symbol": "MSFT",
-      "weight": 0.09596851
+      "weight": 0.09596851,
+      "daily": -0.71
     },
     {
       "symbol": "AAPL",
-      "weight": 0.0641702
+      "weight": 0.0641702,
+      "daily": -0.39
     },
     {
       "symbol": "GOOGL",
-      "weight": 0.059631
+      "weight": 0.059631,
+      "daily": -0.18
     },
     {
       "symbol": "AVGO",
-      "weight": 0.049612798
+      "weight": 0.049612798,
+      "daily": 1.24
     },
     {
       "symbol": "GOOG",
-      "weight": 0.047609
+      "weight": 0.047609,
+      "daily": -0.19
     },
     {
       "symbol": "META",
-      "weight": 0.0464091
+      "weight": 0.0464091,
+      "daily": -1.46
     },
     {
       "symbol": "AMZN",
-      "weight": 0.0355975
+      "weight": 0.0355975,
+      "daily": -0.53
     },
     {
       "symbol": "BRK-B",
-      "weight": 0.030439898
+      "weight": 0.030439898,
+      "daily": -0.62
     },
     {
       "symbol": "LLY",
-      "weight": 0.027466
+      "weight": 0.027466,
+      "daily": -0.06
     }
   ]
 }

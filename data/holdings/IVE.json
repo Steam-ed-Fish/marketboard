@@ -3,27 +3,33 @@
   "holdings": [
     {
       "symbol": "AAPL",
-      "weight": 0.068586
+      "weight": 0.068586,
+      "daily": -0.39
     },
     {
       "symbol": "AMZN",
-      "weight": 0.0337398
+      "weight": 0.0337398,
+      "daily": -0.53
     },
     {
       "symbol": "XOM",
-      "weight": 0.022599
+      "weight": 0.022599,
+      "daily": 0.36
     },
     {
       "symbol": "WMT",
-      "weight": 0.0197158
+      "weight": 0.0197158,
+      "daily": -0.73
     },
     {
       "symbol": "COST",
-      "weight": 0.015741201
+      "weight": 0.015741201,
+      "daily": -0.52
     },
     {
       "symbol": "TSLA",
-      "weight": 0.0151028
+      "weight": 0.0151028,
+      "daily": -3.18
     },
     {
       "symbol": "PG",
@@ -31,11 +37,13 @@
     },
     {
       "symbol": "HD",
-      "weight": 0.0133167
+      "weight": 0.0133167,
+      "daily": -0.82
     },
     {
       "symbol": "CVX",
-      "weight": 0.012421301
+      "weight": 0.012421301,
+      "daily": 1.42
     },
     {
       "symbol": "BAC",

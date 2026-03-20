@@ -3,43 +3,53 @@
   "holdings": [
     {
       "symbol": "V",
-      "weight": 0.0642167
+      "weight": 0.0642167,
+      "daily": 0.23
     },
     {
       "symbol": "MA",
-      "weight": 0.0629762
+      "weight": 0.0629762,
+      "daily": 0.55
     },
     {
       "symbol": "AXP",
-      "weight": 0.057588503
+      "weight": 0.057588503,
+      "daily": 0.18
     },
     {
       "symbol": "CPAY",
-      "weight": 0.055536497
+      "weight": 0.055536497,
+      "daily": -0.54
     },
     {
       "symbol": "ADYEN.AS",
-      "weight": 0.0516588
+      "weight": 0.0516588,
+      "daily": -0.65
     },
     {
       "symbol": "GPN",
-      "weight": 0.0513259
+      "weight": 0.0513259,
+      "daily": -2.1
     },
     {
       "symbol": "XYZ",
-      "weight": 0.0507274
+      "weight": 0.0507274,
+      "daily": 1.99
     },
     {
       "symbol": "FISV",
-      "weight": 0.0505101
+      "weight": 0.0505101,
+      "daily": -0.07
     },
     {
       "symbol": "PYPL",
-      "weight": 0.0501828
+      "weight": 0.0501828,
+      "daily": -0.9
     },
     {
       "symbol": "WISE.L",
-      "weight": 0.049900196
+      "weight": 0.049900196,
+      "daily": 0.29
     }
   ]
 }

@@ -3,15 +3,18 @@
   "holdings": [
     {
       "symbol": "MRNA",
-      "weight": 0.0292953
+      "weight": 0.0292953,
+      "daily": -0.06
     },
     {
       "symbol": "DVA",
-      "weight": 0.0208986
+      "weight": 0.0208986,
+      "daily": 0.62
     },
     {
       "symbol": "VTRS",
-      "weight": 0.020437501
+      "weight": 0.020437501,
+      "daily": -1.75
     },
     {
       "symbol": "MRK",
@@ -19,27 +22,33 @@
     },
     {
       "symbol": "AMGN",
-      "weight": 0.0195396
+      "weight": 0.0195396,
+      "daily": -0.44
     },
     {
       "symbol": "GILD",
-      "weight": 0.0194899
+      "weight": 0.0194899,
+      "daily": -0.13
     },
     {
       "symbol": "BMY",
-      "weight": 0.0193392
+      "weight": 0.0193392,
+      "daily": -2.12
     },
     {
       "symbol": "MCK",
-      "weight": 0.019281201
+      "weight": 0.019281201,
+      "daily": -2.33
     },
     {
       "symbol": "JNJ",
-      "weight": 0.0190958
+      "weight": 0.0190958,
+      "daily": 0.13
     },
     {
       "symbol": "DGX",
-      "weight": 0.018733
+      "weight": 0.018733,
+      "daily": -0.55
     }
   ]
 }

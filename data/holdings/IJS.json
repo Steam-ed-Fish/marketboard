@@ -3,7 +3,8 @@
   "holdings": [
     {
       "symbol": "EMN",
-      "weight": 0.0110561
+      "weight": 0.0110561,
+      "daily": -0.22
     },
     {
       "symbol": "XTSLA",
@@ -11,23 +12,28 @@
     },
     {
       "symbol": "LKQ",
-      "weight": 0.0108787
+      "weight": 0.0108787,
+      "daily": -0.24
     },
     {
       "symbol": "JXN",
-      "weight": 0.0095357
+      "weight": 0.0095357,
+      "daily": -0.59
     },
     {
       "symbol": "MHK",
-      "weight": 0.008350399
+      "weight": 0.008350399,
+      "daily": -3.38
     },
     {
       "symbol": "KMX",
-      "weight": 0.0081374
+      "weight": 0.0081374,
+      "daily": 1.39
     },
     {
       "symbol": "SOLS",
-      "weight": 0.0075179
+      "weight": 0.0075179,
+      "daily": -1.79
     },
     {
       "symbol": "LNC",
@@ -35,11 +41,13 @@
     },
     {
       "symbol": "ENPH",
-      "weight": 0.0071002003
+      "weight": 0.0071002003,
+      "daily": 3.14
     },
     {
       "symbol": "CE",
-      "weight": 0.0070203003
+      "weight": 0.0070203003,
+      "daily": 0.73
     }
   ]
 }
