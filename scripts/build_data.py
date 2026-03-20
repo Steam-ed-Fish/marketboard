@@ -38,7 +38,7 @@ KEY_EVENTS = [
 ]
 
 STOCK_GROUPS = {
-    "Indices": ["QQQ", "DIA", "SPY", "RSP", "IWM", "IJH", "IJR"],
+    "Indices": ["QQQ", "DIA", "SPY", "RSP", "IWM", "IJH", "IJR", "GLD", "SLV"],
     "S&P Style ETFs": ["IJS", "IJR", "IJT", "IJJ", "IJH", "IJK", "IVE", "IVV", "IVW"],
     "Sel Sectors": ["XLK", "XLI", "XLC", "XLF", "XLU", "XLY", "XLRE", "XLP", "XLB", "XLE", "XLV"],
     "EW Sectors": ["RSPT", "RSPC", "RSPN", "RSPF", "RSP", "RSPD", "RSPU", "RSPR", "RSPH", "RSPM", "RSPS", "RSPG"],
