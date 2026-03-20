@@ -38,20 +38,10 @@ KEY_EVENTS = [
 ]
 
 STOCK_GROUPS = {
-    "Indices": ["QQQE", "MGK", "QQQ", "IBIT", "RSP", "MDY", "IWM", "TLT", "SPY", "ETHA", "DIA"],
+    "Indices": ["QQQ", "DIA", "SPY", "RSP", "IWM", "IJH", "IJR"],
     "S&P Style ETFs": ["IJS", "IJR", "IJT", "IJJ", "IJH", "IJK", "IVE", "IVV", "IVW"],
     "Sel Sectors": ["XLK", "XLI", "XLC", "XLF", "XLU", "XLY", "XLRE", "XLP", "XLB", "XLE", "XLV"],
     "EW Sectors": ["RSPT", "RSPC", "RSPN", "RSPF", "RSP", "RSPD", "RSPU", "RSPR", "RSPH", "RSPM", "RSPS", "RSPG"],
-    "Industries": [
-        "TAN", "KCE", "IBUY", "QQQE", "JETS", "IBB", "SMH", "CIBR", "UTES", "ROBO", "IGV", "WCLD", "ITA", "PAVE", "BLOK", "AIQ", "IYZ", "PEJ", "FDN", "KBE",
-        "UNG", "BOAT", "KWEB", "KRE", "IBIT", "XRT", "IHI", "DRIV", "MSOS", "SOCL", "XLU", "ARKF", "SLX", "ARKK", "XTN", "XME", "KIE", "GLD", "GXC", "SCHH",
-        "GDX", "IPAY", "IWM", "XOP", "VNQ", "EATZ", "FXI", "DBA", "ICLN", "SILJ", "REZ", "LIT", "SLV", "XHB", "XHE", "PBJ", "USO", "DBC", "FCG", "XBI",
-        "ARKG", "CPER", "XES", "OIH", "PPH", "FNGS", "URA", "WGMI", "REMX"
-    ],
-    "Countries": [
-        "EZA", "ARGT", "EWA", "THD", "EIDO", "EWC", "GREK", "EWP", "EWG", "EWL", "EUFN", "EWY", "IEUR", "EFA", "ACWI",
-        "IEV", "EWQ", "EWI", "EWJ", "EWW", "ECH", "EWD", "ASHR", "EWS", "KSA", "INDA", "EEM", "EWZ", "TUR", "EWH", "EWT", "MCHI"
-    ],
     "The Cloud 7": ["MSFT", "AMZN", "GOOGL", "ORCL", "IBM", "META", "NET"],
     "The Software 7": ["ADBE", "PANW", "PLTR", "INTU", "CRM", "NOW", "WDAY"],
     "The New Staples 7": ["AAPL", "AMZN", "META", "NFLX", "GOOGL", "SPOT", "UBER"],
@@ -72,6 +62,16 @@ STOCK_GROUPS = {
     "The Freight 7": ["UNP", "CSX", "FDX", "UPS", "ODFL", "JBHT", "NSC"],
     "The Insurance 7": ["PGR", "CB", "MMC", "AON", "AIG", "MET", "AFL"],
     "The Power 7": ["NEE", "SO", "DUK", "CEG", "VST", "AEP", "SRE"],
+    "Industries": [
+        "TAN", "KCE", "IBUY", "QQQE", "JETS", "IBB", "SMH", "CIBR", "UTES", "ROBO", "IGV", "WCLD", "ITA", "PAVE", "BLOK", "AIQ", "IYZ", "PEJ", "FDN", "KBE",
+        "UNG", "BOAT", "KWEB", "KRE", "IBIT", "XRT", "IHI", "DRIV", "MSOS", "SOCL", "XLU", "ARKF", "SLX", "ARKK", "XTN", "XME", "KIE", "GLD", "GXC", "SCHH",
+        "GDX", "IPAY", "IWM", "XOP", "VNQ", "EATZ", "FXI", "DBA", "ICLN", "SILJ", "REZ", "LIT", "SLV", "XHB", "XHE", "PBJ", "USO", "DBC", "FCG", "XBI",
+        "ARKG", "CPER", "XES", "OIH", "PPH", "FNGS", "URA", "WGMI", "REMX"
+    ],
+    "Countries": [
+        "EZA", "ARGT", "EWA", "THD", "EIDO", "EWC", "GREK", "EWP", "EWG", "EWL", "EUFN", "EWY", "IEUR", "EFA", "ACWI",
+        "IEV", "EWQ", "EWI", "EWJ", "EWW", "ECH", "EWD", "ASHR", "EWS", "KSA", "INDA", "EEM", "EWZ", "TUR", "EWH", "EWT", "MCHI"
+    ],
 }
 
 LEVERAGED_ETFS = {
@@ -319,6 +319,124 @@ def create_rs_chart_png(rrs_data, ticker, charts_dir):
         return None
 
 
+# Distinct colors for RRG groups (visible on dark background); trails use same color per group
+RRG_COLORS = [
+    "#06b6d4", "#22c55e", "#eab308", "#f97316", "#ef4444", "#a855f7", "#ec4899",
+    "#14b8a6", "#84cc16", "#f59e0b", "#f43f5e", "#8b5cf6", "#d946ef", "#0ea5e9", "#2dd4bf",
+    "#a3e635", "#fb923c", "#f87171", "#c084fc", "#f472b6",
+]
+
+def create_rrg_chart_png(rrg_points, charts_dir, trails=None):
+    """Create a Relative Rotation Graph scatter plot (RS-Ratio vs RS-Momentum) for the 7s groups.
+    rrg_points: list of dicts with keys name, rs_ratio_norm, rs_momentum_norm (0-100 scale).
+    trails: optional list of (name, [(x1,y1), (x2,y2), ...]) for each group, oldest to newest; draws lines showing path."""
+    try:
+        if not rrg_points or len(rrg_points) == 0:
+            return None
+        plt.style.use('dark_background')
+        fig, ax = plt.subplots(figsize=(10, 8))
+        fig.patch.set_facecolor('#1a1a1a')
+        ax.set_facecolor('#1a1a1a')
+
+        # Subtle quadrant shading (RRG convention)
+        # Top-right: Leading, Top-left: Weakening, Bottom-left: Lagging, Bottom-right: Improving
+        ax.axvspan(50, 100, ymin=0.5, ymax=1.0, facecolor="#22c55e", alpha=0.06, zorder=0)  # Leading
+        ax.axvspan(0, 50, ymin=0.5, ymax=1.0, facecolor="#eab308", alpha=0.06, zorder=0)   # Weakening
+        ax.axvspan(0, 50, ymin=0.0, ymax=0.5, facecolor="#ef4444", alpha=0.05, zorder=0)   # Lagging
+        ax.axvspan(50, 100, ymin=0.0, ymax=0.5, facecolor="#06b6d4", alpha=0.05, zorder=0) # Improving
+
+        # Data-driven axis limits so points spread out instead of cramming into 0-100
+        all_x = [p["rs_ratio_norm"] for p in rrg_points]
+        all_y = [p["rs_momentum_norm"] for p in rrg_points]
+        if trails:
+            for _name, path in trails:
+                for (px, py) in path:
+                    all_x.append(px)
+                    all_y.append(py)
+        x_min, x_max = min(all_x), max(all_x)
+        y_min, y_max = min(all_y), max(all_y)
+        x_pad = max((x_max - x_min) * 0.12, 5)
+        y_pad = max((y_max - y_min) * 0.12, 5)
+        x_lo = max(0, x_min - x_pad)
+        x_hi = min(100, x_max + x_pad)
+        y_lo = max(0, y_min - y_pad)
+        y_hi = min(100, y_max + y_pad)
+        if x_hi - x_lo < 10:
+            x_lo, x_hi = max(0, (x_lo + x_hi) / 2 - 15), min(100, (x_lo + x_hi) / 2 + 15)
+        if y_hi - y_lo < 10:
+            y_lo, y_hi = max(0, (y_lo + y_hi) / 2 - 15), min(100, (y_lo + y_hi) / 2 + 15)
+        x_mid = (x_lo + x_hi) / 2
+        y_mid = (y_lo + y_hi) / 2
+
+        # Quadrant shading and dividers at view center (so quadrants stay meaningful when zoomed)
+        ax.set_xlim(x_lo, x_hi)
+        ax.set_ylim(y_lo, y_hi)
+        ax.axvspan(x_mid, x_hi, (y_mid - y_lo) / (y_hi - y_lo) if y_hi != y_lo else 0.5, 1.0, facecolor="#22c55e", alpha=0.06, zorder=0)
+        ax.axvspan(x_lo, x_mid, (y_mid - y_lo) / (y_hi - y_lo) if y_hi != y_lo else 0.5, 1.0, facecolor="#eab308", alpha=0.06, zorder=0)
+        ax.axvspan(x_lo, x_mid, 0.0, (y_mid - y_lo) / (y_hi - y_lo) if y_hi != y_lo else 0.5, facecolor="#ef4444", alpha=0.05, zorder=0)
+        ax.axvspan(x_mid, x_hi, 0.0, (y_mid - y_lo) / (y_hi - y_lo) if y_hi != y_lo else 0.5, facecolor="#06b6d4", alpha=0.05, zorder=0)
+        ax.axvline(x=x_mid, color="#4a5568", linestyle="--", linewidth=1)
+        ax.axhline(y=y_mid, color="#4a5568", linestyle="--", linewidth=1)
+        ax.text((x_mid + x_hi) / 2, (y_mid + y_hi) / 2, "Leading", color="#e0e0e0", alpha=0.5, fontsize=11, fontweight="bold", ha="center", va="center", zorder=0)
+        ax.text((x_lo + x_mid) / 2, (y_mid + y_hi) / 2, "Weakening", color="#e0e0e0", alpha=0.5, fontsize=11, fontweight="bold", ha="center", va="center", zorder=0)
+        ax.text((x_lo + x_mid) / 2, (y_lo + y_mid) / 2, "Lagging", color="#e0e0e0", alpha=0.5, fontsize=11, fontweight="bold", ha="center", va="center", zorder=0)
+        ax.text((x_mid + x_hi) / 2, (y_lo + y_mid) / 2, "Improving", color="#e0e0e0", alpha=0.5, fontsize=11, fontweight="bold", ha="center", va="center", zorder=0)
+
+        # Build name -> index for consistent colors between trails and dots
+        name_to_idx = {p["name"]: i for i, p in enumerate(rrg_points)}
+
+        # Draw trail lines: different color per group; old segments more transparent, recent more vivid
+        if trails:
+            for name, path in trails:
+                if not path or len(path) < 2:
+                    continue
+                idx = name_to_idx.get(name, 0)
+                color = RRG_COLORS[idx % len(RRG_COLORS)]
+                n = len(path)
+                for j in range(n - 1):
+                    # Alpha increases along trail: old (start) ~0.15, recent (end) ~0.9
+                    alpha = 0.15 + 0.75 * (j + 1) / n
+                    ax.plot([path[j][0], path[j + 1][0]], [path[j][1], path[j + 1][1]],
+                            color=color, alpha=alpha, linewidth=1.2, zorder=1)
+                ax.scatter([path[0][0]], [path[0][1]], c=color, s=18, alpha=0.25, zorder=2, edgecolors="none")
+                # Arrowhead on most recent segment (shows direction "where it's going")
+                try:
+                    x0, y0 = path[-2]
+                    x1, y1 = path[-1]
+                    ax.annotate(
+                        "",
+                        xy=(x1, y1),
+                        xytext=(x0, y0),
+                        arrowprops=dict(arrowstyle="-|>", color=color, lw=2.2, alpha=0.95, shrinkA=0, shrinkB=2),
+                        zorder=4,
+                    )
+                except Exception:
+                    pass
+
+        xs = [p["rs_ratio_norm"] for p in rrg_points]
+        ys = [p["rs_momentum_norm"] for p in rrg_points]
+        names = [p["name"] for p in rrg_points]
+        colors = [RRG_COLORS[name_to_idx.get(n, 0) % len(RRG_COLORS)] for n in names]
+        ax.scatter(xs, ys, c=colors, s=85, edgecolors="#e0e0e0", linewidths=1.2, zorder=3, alpha=0.95)
+        for i, label in enumerate(names):
+            short = label.replace("The ", "").replace(" 7", "") if label.startswith("The ") and label.endswith(" 7") else label[:12]
+            ax.annotate(short, (xs[i], ys[i]), xytext=(6, 6), textcoords="offset points", fontsize=8, color="#e0e0e0")
+        ax.set_xlabel("RS-Ratio (3M vs SPY)", color="#9ca3af", fontsize=10)
+        ax.set_ylabel("RS-Momentum (1M vs SPY)", color="#9ca3af", fontsize=10)
+        ax.tick_params(colors="#9ca3af")
+        for s in ax.spines.values():
+            s.set_color("#4a5568")
+        ax.set_title("7s Rotation Graph (3M / 1M vs SPY) — lines show path over last ~30 days", color="#e0e0e0", fontsize=12)
+        fig.tight_layout()
+        path = os.path.join(charts_dir, "seven_rrg.png")
+        fig.savefig(path, format="png", dpi=100, bbox_inches="tight", facecolor="#1a1a1a")
+        plt.close(fig)
+        return "data/charts/seven_rrg.png"
+    except Exception as e:
+        print("RRG chart error", e)
+        return None
+
+
 def get_stock_data(ticker_symbol, charts_dir):
     try:
         stock = yf.Ticker(ticker_symbol)
@@ -352,7 +470,13 @@ def get_stock_data(ticker_symbol, charts_dir):
             if len(yearly_filtered) >= 2:
                 ytd_change = (yearly_filtered['Close'].iloc[-1] / yearly_filtered['Close'].iloc[0] - 1) * 100
 
-        
+        one_month_return = None
+        three_month_return = None
+        if len(daily) >= 22:
+            one_month_return = round((daily['Close'].iloc[-1] / daily['Close'].iloc[-22] - 1) * 100, 2)
+        if yearly is not None and len(yearly) >= 64:
+            three_month_return = round((yearly['Close'].iloc[-1] / yearly['Close'].iloc[-64] - 1) * 100, 2)
+
         sma50 = calculate_sma(daily)
         atr = calculate_atr(daily)
         current_close = daily['Close'].iloc[-1]
@@ -395,6 +519,10 @@ def get_stock_data(ticker_symbol, charts_dir):
         rs_chart_path = create_rs_chart_png(rrs_data, ticker_symbol, charts_dir) if rrs_data is not None and len(rrs_data) > 0 else None
         vol_chart_path = create_vol_chart_png(vol_history, ticker_symbol, charts_dir) if vol_history else None
         long_etfs, short_etfs = get_leveraged_etfs(ticker_symbol)
+        # Keep last 20 rolling RRS for equal-weighted summary charts (The 7s at a Glance)
+        rolling_rrs = None
+        if rrs_data is not None and len(rrs_data) >= 20:
+            rolling_rrs = rrs_data['rollingRRS'].iloc[-20:].tolist()
 
         return {
             "ticker": ticker_symbol,
@@ -404,8 +532,12 @@ def get_stock_data(ticker_symbol, charts_dir):
             "20d": round(twenty_day_change, 2) if twenty_day_change is not None else None,
             "wtd": round(wtd_change, 2) if wtd_change is not None else None,
             "ytd": round(ytd_change, 2) if ytd_change is not None else None,
+            "1m_return": one_month_return,
+            "3m_return": three_month_return,
             "vol_ratio": vol_ratio,
             "vol_chart": vol_chart_path,
+            "vol_history": vol_history if vol_history else None,
+            "rolling_rrs": rolling_rrs,
             "atr_pct": round(atr_pct, 1) if atr_pct is not None else None,
             "dist_sma50_atr": round(dist_sma50_atr, 2) if dist_sma50_atr is not None else None,
             "rs": round(rs_sts, 0) if rs_sts is not None else None,
@@ -417,6 +549,87 @@ def get_stock_data(ticker_symbol, charts_dir):
     except Exception as e:
         print("Error", ticker_symbol, e)
         return None
+
+
+def get_all_etfs_for_holdings():
+    """Unique tickers across all groups (ETFs + stocks; holdings JSON only for funds)."""
+    etfs = set()
+    for _group, tickers in STOCK_GROUPS.items():
+        etfs.update(tickers)
+    return sorted(etfs)
+
+
+def fetch_etf_holdings(etf_list, out_dir):
+    """Top 10 holdings per symbol via yfinance; writes data/holdings/{SYM}.json when fund data exists."""
+    holdings_dir = os.path.join(out_dir, "holdings")
+    os.makedirs(holdings_dir, exist_ok=True)
+    print("\nFetching ETF/fund holdings for {} symbols...".format(len(etf_list)))
+    for i, etf_symbol in enumerate(etf_list):
+        try:
+            ticker = yf.Ticker(etf_symbol)
+            holdings_data = None
+            try:
+                fd = getattr(ticker, "funds_data", None)
+                if fd is not None:
+                    holdings_data = getattr(fd, "top_holdings", None)
+            except Exception:
+                holdings_data = None
+            has_holdings = holdings_data is not None and len(holdings_data) > 0
+            if has_holdings:
+                holdings = []
+                for idx, item in holdings_data.head(10).iterrows():
+                    holding_symbol = str(idx).strip() if idx is not None else ""
+                    if not holding_symbol or holding_symbol == "nan":
+                        try:
+                            holding_symbol = str(item.get("Symbol", item.get("name", "")) or "")
+                        except Exception:
+                            holding_symbol = ""
+                    weight = None
+                    try:
+                        weight = item.get("Holding Percent", item.get("weight"))
+                        if weight is not None:
+                            weight = float(weight)
+                    except (ValueError, TypeError):
+                        weight = None
+                    if holding_symbol:
+                        holdings.append({"symbol": holding_symbol, "weight": weight})
+                if holdings:
+                    path = os.path.join(holdings_dir, "{}.json".format(etf_symbol))
+                    with open(path, "w", encoding="utf-8") as f:
+                        json.dump({"symbol": etf_symbol, "holdings": holdings}, f, ensure_ascii=False, indent=2)
+                    print("  [{}/{}] {}: {} holdings".format(i + 1, len(etf_list), etf_symbol, len(holdings)))
+                else:
+                    print("  [{}/{}] {}: (empty)".format(i + 1, len(etf_list), etf_symbol))
+            else:
+                info = {}
+                try:
+                    info = ticker.info or {}
+                except Exception:
+                    pass
+                top_holdings = info.get("topHoldings") or []
+                if top_holdings:
+                    holdings = []
+                    for h in top_holdings[:10]:
+                        sym = h.get("symbol") or h.get("ticker") or ""
+                        w = h.get("holdingPercent") or h.get("weight")
+                        try:
+                            w = float(w) if w is not None else None
+                        except (ValueError, TypeError):
+                            w = None
+                        if sym:
+                            holdings.append({"symbol": sym, "weight": w})
+                    if holdings:
+                        path = os.path.join(holdings_dir, "{}.json".format(etf_symbol))
+                        with open(path, "w", encoding="utf-8") as f:
+                            json.dump({"symbol": etf_symbol, "holdings": holdings}, f, ensure_ascii=False, indent=2)
+                        print("  [{}/{}] {}: {} (info)".format(i + 1, len(etf_list), etf_symbol, len(holdings)))
+                    else:
+                        print("  [{}/{}] {}: no holdings".format(i + 1, len(etf_list), etf_symbol))
+                else:
+                    print("  [{}/{}] {}: no fund holdings".format(i + 1, len(etf_list), etf_symbol))
+            time.sleep(0.25)
+        except Exception as ex:
+            print("  [{}/{}] {}: {}".format(i + 1, len(etf_list), etf_symbol, ex))
 
 
 def main():
@@ -443,6 +656,228 @@ def main():
                 all_ticker_data[ticker] = row
             time.sleep(0.15)
         groups_data[group_name] = rows
+
+    # Build "The 7s at a Glance" – one row per "The X 7" group with aggregate metrics (equal-weighted)
+    seven_group_names = [k for k in STOCK_GROUPS if k.startswith("The ") and k.endswith(" 7")]
+    summary_rows = []
+    for gname in seven_group_names:
+        rows = groups_data.get(gname, [])
+        if not rows:
+            continue
+        def _avg(key):
+            vals = [r.get(key) for r in rows if r.get(key) is not None]
+            return sum(vals) / len(vals) if vals else None
+        def _avg_round(key, ndec=2):
+            v = _avg(key)
+            return round(v, ndec) if v is not None else None
+        abc_vals = [r.get("abc") for r in rows if r.get("abc")]
+        abc_majority = max(set(abc_vals), key=abc_vals.count) if abc_vals else None
+
+        # Equal-weighted Vol Chart: average vol_history (list of 20) across the 7 tickers
+        vol_histories = [r.get("vol_history") for r in rows if r.get("vol_history") and len(r.get("vol_history")) == 20]
+        vol_chart_path = None
+        if vol_histories:
+            avg_vol = np.mean(vol_histories, axis=0).tolist()
+            safe_gname = re.sub(r'[^a-zA-Z0-9]', '_', gname)
+            vol_chart_path = create_vol_chart_png(avg_vol, "Glance_" + safe_gname, charts_dir)
+
+        # Equal-weighted VARS (RS) chart: average last 20 rollingRRS across the 7 tickers
+        rolling_list = [r.get("rolling_rrs") for r in rows if r.get("rolling_rrs") and len(r.get("rolling_rrs")) == 20]
+        rs_chart_path = None
+        if rolling_list:
+            avg_rr = np.mean(rolling_list, axis=0)
+            rr_series = pd.Series(avg_rr)
+            rs_sma = rr_series.rolling(5, min_periods=1).mean().values
+            rs_df = pd.DataFrame({"rollingRRS": avg_rr, "RRS_SMA": rs_sma})
+            safe_gname = re.sub(r'[^a-zA-Z0-9]', '_', gname)
+            rs_chart_path = create_rs_chart_png(rs_df, "Glance_" + safe_gname, charts_dir)
+
+        summary_rows.append({
+            "ticker": gname,
+            "daily": _avg_round("daily"),
+            "intra": _avg_round("intra"),
+            "5d": _avg_round("5d"),
+            "20d": _avg_round("20d"),
+            "wtd": _avg_round("wtd"),
+            "ytd": _avg_round("ytd"),
+            "vol_ratio": _avg_round("vol_ratio"),
+            "vol_chart": vol_chart_path,
+            "atr_pct": _avg_round("atr_pct", 1),
+            "dist_sma50_atr": _avg_round("dist_sma50_atr"),
+            "rs": round(_avg("rs"), 0) if _avg("rs") is not None else None,
+            "rs_chart": rs_chart_path,
+            "long": [],
+            "short": [],
+            "abc": abc_majority,
+        })
+
+    spy_3m = None
+    spy_1m = None
+    try:
+        spy = yf.Ticker("SPY")
+        spy_hist = spy.history(period="1y")
+        if spy_hist is not None and len(spy_hist) >= 64:
+            spy_3m = (spy_hist["Close"].iloc[-1] / spy_hist["Close"].iloc[-64] - 1) * 100
+        if spy_hist is not None and len(spy_hist) >= 22:
+            spy_1m = (spy_hist["Close"].iloc[-1] / spy_hist["Close"].iloc[-22] - 1) * 100
+    except Exception as e:
+        print("SPY fetch for RRG:", e)
+
+    rrg_points = []
+    if spy_3m is not None and spy_1m is not None:
+        for gname in seven_group_names:
+            rows = groups_data.get(gname, [])
+            if not rows:
+                continue
+            vals_3m = [r.get("3m_return") for r in rows if r.get("3m_return") is not None]
+            vals_1m = [r.get("1m_return") for r in rows if r.get("1m_return") is not None]
+            avg_3m = sum(vals_3m) / len(vals_3m) if vals_3m else None
+            avg_1m = sum(vals_1m) / len(vals_1m) if vals_1m else None
+            if avg_3m is not None and avg_1m is not None:
+                rs_ratio_raw = avg_3m - spy_3m
+                rs_momentum_raw = avg_1m - spy_1m
+                rrg_points.append({"name": gname, "rs_ratio_raw": rs_ratio_raw, "rs_momentum_raw": rs_momentum_raw})
+
+    trails = None
+    group_series_raw = None
+    if rrg_points:
+        # Fetch long history for trail: RRG at 30, 20, 10, 0 trading days ago (shorter path = less clutter)
+        lookbacks = [30, 20, 10, 0]
+        seven_tickers = []
+        for gname in seven_group_names:
+            for r in groups_data.get(gname, []):
+                t = r.get("ticker")
+                if t and t not in seven_tickers:
+                    seven_tickers.append(t)
+        long_hist = {}
+        try:
+            print("Fetching long history for RRG trails...")
+            spy_long = yf.Ticker("SPY").history(period="400d")
+            if spy_long is not None and len(spy_long) >= 320:
+                long_hist["SPY"] = spy_long
+            for i, t in enumerate(seven_tickers):
+                try:
+                    df = yf.Ticker(t).history(period="400d")
+                    if df is not None and len(df) >= 320:
+                        long_hist[t] = df
+                except Exception:
+                    pass
+                if (i + 1) % 20 == 0:
+                    print("  RRG history {}/{}".format(i + 1, len(seven_tickers)))
+                time.sleep(0.08)
+        except Exception as e:
+            print("RRG long history:", e)
+
+        spy_long = long_hist.get("SPY")
+        if spy_long is not None and len(spy_long) >= 320 and len(long_hist) > 1:
+            spy_close = spy_long["Close"]
+            group_series_raw = {}
+            for gname in seven_group_names:
+                rows = groups_data.get(gname, [])
+                tickers_in_g = [r["ticker"] for r in rows if r.get("ticker") in long_hist]
+                if not tickers_in_g:
+                    continue
+                series = []
+                for lb in lookbacks:
+                    end_idx = -1 - lb
+                    need_len = -end_idx + 63
+                    if len(spy_close) < need_len:
+                        continue
+                    spy_3m_lb = (spy_close.iloc[end_idx] / spy_close.iloc[end_idx - 63] - 1) * 100
+                    spy_1m_lb = (spy_close.iloc[end_idx] / spy_close.iloc[end_idx - 21] - 1) * 100
+                    group_3m = []
+                    group_1m = []
+                    for t in tickers_in_g:
+                        c = long_hist[t]["Close"]
+                        if len(c) < need_len:
+                            continue
+                        group_3m.append((c.iloc[end_idx] / c.iloc[end_idx - 63] - 1) * 100)
+                        group_1m.append((c.iloc[end_idx] / c.iloc[end_idx - 21] - 1) * 100)
+                    if group_3m and group_1m:
+                        avg_3m_lb = sum(group_3m) / len(group_3m)
+                        avg_1m_lb = sum(group_1m) / len(group_1m)
+                        rr = avg_3m_lb - spy_3m_lb
+                        rm = avg_1m_lb - spy_1m_lb
+                        series.append((rr, rm))
+                if len(series) == len(lookbacks):
+                    group_series_raw[gname] = series
+
+    if rrg_points:
+        r_vals = [p["rs_ratio_raw"] for p in rrg_points]
+        m_vals = [p["rs_momentum_raw"] for p in rrg_points]
+        r_min, r_max = min(r_vals), max(r_vals)
+        m_min, m_max = min(m_vals), max(m_vals)
+        r_span = (r_max - r_min) if r_max != r_min else 1
+        m_span = (m_max - m_min) if m_max != m_min else 1
+        for p in rrg_points:
+            p["rs_ratio_norm"] = 50 + 50 * (p["rs_ratio_raw"] - (r_min + r_max) / 2) / (r_span / 2) if r_span else 50
+            p["rs_momentum_norm"] = 50 + 50 * (p["rs_momentum_raw"] - (m_min + m_max) / 2) / (m_span / 2) if m_span else 50
+            p["rs_ratio_norm"] = max(0, min(100, p["rs_ratio_norm"]))
+            p["rs_momentum_norm"] = max(0, min(100, p["rs_momentum_norm"]))
+        if group_series_raw and r_span and m_span:
+            trails = []
+            name_to_xy = {p["name"]: (p["rs_ratio_norm"], p["rs_momentum_norm"]) for p in rrg_points}
+            for gname, series in group_series_raw.items():
+                if len(series) < 2:
+                    continue
+                smoothed = [series[0]]
+                for i in range(1, len(series)):
+                    smoothed.append((
+                        (series[i - 1][0] + series[i][0]) / 2,
+                        (series[i - 1][1] + series[i][1]) / 2,
+                    ))
+                path = []
+                for rr, rm in smoothed[:-1]:
+                    x = 50 + 50 * (rr - (r_min + r_max) / 2) / (r_span / 2)
+                    y = 50 + 50 * (rm - (m_min + m_max) / 2) / (m_span / 2)
+                    x = max(0, min(100, x))
+                    y = max(0, min(100, y))
+                    path.append((x, y))
+                if gname in name_to_xy:
+                    path.append(name_to_xy[gname])
+                trails.append((gname, path))
+        rrg_chart_path = create_rrg_chart_png(rrg_points, charts_dir, trails=trails)
+    else:
+        rrg_chart_path = None
+
+    rrg_row = {
+        "ticker": "7s Rotation Graph",
+        "daily": None,
+        "intra": None,
+        "5d": None,
+        "20d": None,
+        "wtd": None,
+        "ytd": None,
+        "vol_ratio": None,
+        "vol_chart": None,
+        "atr_pct": None,
+        "dist_sma50_atr": None,
+        "rs": None,
+        "rs_chart": None,
+        "long": [],
+        "short": [],
+        "abc": None,
+        "rrg_chart": rrg_chart_path,
+        "is_rrg_row": True,
+    }
+    summary_rows.insert(0, rrg_row)
+    groups_data["The 7s at a Glance"] = summary_rows
+    # Place summary section right after EW Sectors (before The Cloud 7, etc.)
+    order = list(groups_data.keys())
+    if "EW Sectors" in order:
+        idx = order.index("EW Sectors") + 1
+        new_order = order[:idx] + ["The 7s at a Glance"] + [k for k in order[idx:] if k != "The 7s at a Glance"]
+    else:
+        new_order = order
+    groups_data = {k: groups_data[k] for k in new_order}
+
+    # Remove temporary series from rows so they are not written to snapshot.json
+    for _gn, rows in groups_data.items():
+        for r in rows:
+            r.pop("vol_history", None)
+            r.pop("rolling_rrs", None)
+            r.pop("1m_return", None)
+            r.pop("3m_return", None)
 
     print("Computing column ranges...")
     column_ranges = {}
@@ -483,7 +918,17 @@ def main():
         json.dump(meta, f, ensure_ascii=False, indent=2)
 
     print("Wrote", snapshot_path, events_path, meta_path, "and charts in", charts_dir)
+    fetch_etf_holdings(get_all_etfs_for_holdings(), out_dir)
+    print("Done.")
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    if "--holdings" in sys.argv:
+        p = argparse.ArgumentParser()
+        p.add_argument("--out-dir", default="data")
+        p.add_argument("--holdings", action="store_true")
+        args = p.parse_args()
+        fetch_etf_holdings(get_all_etfs_for_holdings(), args.out_dir)
+    else:
+        main()

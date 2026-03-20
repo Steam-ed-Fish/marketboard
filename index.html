@@ -15,9 +15,17 @@
         .group-header {
             background-color: #2d3748; padding: 6px 8px; font-weight: bold; font-size: 0.9em;
             display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;
-            position: sticky; top: 0; z-index: 3; cursor: pointer; color: #e0e0e0; border-bottom: 1px solid #444;
+            position: sticky; top: 0; z-index: 3; color: #e0e0e0; border-bottom: 1px solid #444;
         }
         .group-header:hover { background-color: #374151; }
+        .group-header-title { cursor: pointer; }
+        .group-header-actions { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+        .group-chart-btn {
+            font-size: 11px; font-weight: 600; background-color: #1f2933; color: #e0e0e0;
+            padding: 4px 8px; border: 1px solid #4a5568; border-radius: 3px; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 0.03em;
+        }
+        .group-chart-btn:hover { background-color: #374151; }
         .legend { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
         .legend-item { padding: 2px 6px; border-radius: 6px; font-size: 0.75em; color: white; user-select: none; }
         .ticker-table { width: 100%; border-collapse: collapse; font-size: 0.80em; table-layout: fixed; }
@@ -58,7 +66,13 @@
         .short-etf { color: #f87171; cursor: pointer; text-decoration: underline; }
         .etf-list { white-space: nowrap; font-size: 0.8em; }
         .etf-list span:hover { font-weight: bold; }
-        .ticker-label { display: inline-block; padding: 2px 8px; border-radius: 12px; background-color: #4a5568; color: #e0e0e0; }
+        .ticker-label { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 12px; background-color: #4a5568; color: #e0e0e0; }
+        .holdings-btn {
+            font-size: 10px; font-weight: 600; background-color: #1f2933; color: #9ca3af;
+            width: 18px; height: 18px; padding: 0; border: 1px solid #4a5568; border-radius: 50%;
+            cursor: pointer; margin-left: 4px; flex-shrink: 0;
+        }
+        .holdings-btn:hover { background-color: #374151; color: #e0e0e0; }
         .abc-rating { display: inline-block; width: 20px; height: 20px; border-radius: 50%; text-align: center; line-height: 20px; font-weight: bold; color: white; }
         .abc-a { background-color: #3b82f6; }
         .abc-b { background-color: #10b981; }
@@ -109,6 +123,44 @@
         .column-guide dt:first-child { margin-top: 0; }
         .column-guide dd { margin: 2px 0 0 12px; color: #cbd5e1; }
         .loading-msg { padding: 20px; text-align: center; color: #9ca3af; }
+        .market-breadth { margin-bottom: 10px; position: relative; }
+        .multi-chart-panel { flex: 1; min-height: 0; overflow: auto; display: none; }
+        .multi-group-title { margin: 8px 0 4px; font-size: 0.85rem; font-weight: 600; color: #9ca3af; }
+        .multi-chart-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+        .econ-modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+            display: none; align-items: center; justify-content: center; z-index: 9999;
+        }
+        .econ-modal {
+            background: #111827; border-radius: 8px; border: 1px solid #4a5568;
+            padding: 8px; max-width: 440px; width: 440px; max-height: 90vh; overflow: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+        .econ-modal-header {
+            display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;
+            font-size: 0.9rem; font-weight: 600; color: #e0e0e0;
+        }
+        .econ-modal-close { background: transparent; border: none; color: #9ca3af; cursor: pointer; font-size: 1.2rem; padding: 0 4px; }
+        .econ-modal-close:hover { color: #fff; }
+        .holdings-modal-overlay {
+            position: fixed; inset: 0; background: transparent; display: none; z-index: 9999;
+        }
+        .holdings-modal {
+            position: fixed; left: 20px; top: 50%; transform: translateY(-50%);
+            background: #111827; border-radius: 8px; border: 1px solid #4a5568; padding: 8px 12px;
+            width: 400px; max-width: 90vw; max-height: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+        .holdings-modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; font-weight: 600; color: #e0e0e0; }
+        .holdings-modal-close { background: transparent; border: none; color: #9ca3af; cursor: pointer; font-size: 1.2rem; }
+        .holdings-list { max-height: 400px; overflow-y: auto; font-size: 0.85em; }
+        .holdings-item { display: flex; justify-content: space-between; padding: 6px 8px; border-bottom: 1px solid #374151; cursor: pointer; color: #e0e0e0; }
+        .holdings-item:hover { background: #1f2933; }
+        .holdings-item.active { background: #374151; }
+        .holdings-rank { color: #9ca3af; width: 24px; }
+        .holdings-symbol { font-weight: 600; color: #60a5fa; }
+        .holdings-weight { color: #10b981; }
+        .holdings-loading, .holdings-error { padding: 20px; text-align: center; }
+        .holdings-error { color: #ef4444; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1a1a1a; }
         ::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 4px; }
@@ -120,12 +172,20 @@
             <button class="events-button">📅 MACRO EVENTS</button>
             <div class="events-content" id="events-content"></div>
         </div>
+        <div class="market-breadth" style="position:relative;margin-bottom:10px">
+            <button class="events-button" type="button" onclick="openMarketBreadth()">📊 MARKET BREADTH</button>
+        </div>
+        <div class="economic-tv" style="position:relative;margin-bottom:10px">
+            <button class="events-button" type="button" onclick="openEconomicCalendar()">🗓 ECONOMIC CALENDAR</button>
+        </div>
         <div class="column-guide" style="position:relative">
             <button class="column-guide-btn" type="button">📋 COLUMN GUIDE</button>
             <div class="column-guide-content">
                 <dl>
                     <dt>Grade</dt>
                     <dd>ABC rating (A = EMA10 &gt; EMA20 &gt; SMA50 uptrend; B = mixed; C = downtrend).</dd>
+                    <dt>Vol Chart</dt>
+                    <dd>Volume trend bar: last 20 days volume vs 20-day average. Red bars = 2× avg or higher.</dd>
                     <dt>ATRx</dt>
                     <dd>Distance from SMA50 in ATR units.</dd>
                     <dt>1M-VARS</dt>
@@ -134,15 +194,49 @@
             </div>
         </div>
         <div id="groups-container"></div>
-        <div class="key-hint">↑ ↓ Use arrow keys to navigate · Data auto-refreshed daily via GitHub Actions · Yahoo Finance</div>
+        <div class="key-hint">↑ ↓ Navigate · h Holdings · Data via CI · Yahoo Finance</div>
     </div>
-    <div class="chart-container">
-        <div class="tradingview-widget-container">
-            <div id="tradingview-chart" style="height:100%;width:100%;"></div>
-            <div style="color:#9ca3af;font-size:11px;margin-top:4px;">
-                <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:#9ca3af;">Track all markets on TradingView</a>
+    <div id="economic-calendar-modal-overlay" class="econ-modal-overlay" onclick="closeEconomicCalendar(event)">
+        <div class="econ-modal" onclick="event.stopPropagation()">
+            <div class="econ-modal-header"><span>Economic Calendar</span><button type="button" class="econ-modal-close" onclick="closeEconomicCalendar(event)">&times;</button></div>
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+                {"colorTheme":"dark","isTransparent":false,"locale":"en","countryFilter":"us","importanceFilter":"-1,0,1","width":400,"height":550}
+                </script>
             </div>
         </div>
+    </div>
+    <div id="market-breadth-modal-overlay" class="econ-modal-overlay" onclick="closeMarketBreadth(event)">
+        <div class="econ-modal" onclick="event.stopPropagation()">
+            <div class="econ-modal-header"><span>Market Breadth (McClellan / NYSE)</span><button type="button" class="econ-modal-close" onclick="closeMarketBreadth(event)">&times;</button></div>
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                {"colorTheme":"dark","dateRange":"12M","locale":"en","isTransparent":false,"showChart":true,"width":"400","height":"550","tabs":[{"title":"Breadth","symbols":[{"s":"INDEX:MMFI","d":"NYSE McClellan"},{"s":"INDEX:MMTW","d":"NYSE % Above MA"},{"s":"INDEX:MMFD","d":"NYSE Diff"},{"s":"INDEX:MMTH","d":"NYSE Issues"},{"s":"INDEX:MMOH","d":"NYSE Hi"},{"s":"INDEX:MMOF","d":"NYSE Lo"}],"originalTitle":"Indices"}]}
+                </script>
+            </div>
+        </div>
+    </div>
+    <div id="holdings-modal-overlay" class="holdings-modal-overlay" onclick="closeHoldings(event)">
+        <div class="holdings-modal" onclick="event.stopPropagation()">
+            <div class="holdings-modal-header"><span id="holdings-modal-title">Holdings</span><button type="button" class="holdings-modal-close" onclick="closeHoldings(event)">&times;</button></div>
+            <div id="holdings-modal-content" class="holdings-list"></div>
+        </div>
+    </div>
+    <div class="chart-container">
+        <div id="single-chart-panel" style="flex:1;min-height:0;display:flex;flex-direction:column;">
+            <div id="tradingview-chart-wrapper" class="tradingview-widget-container" style="flex:1;min-height:0;display:flex;flex-direction:column;">
+                <div id="tradingview-chart" style="height:100%;width:100%;min-height:320px;"></div>
+                <div style="color:#9ca3af;font-size:11px;margin-top:4px;">
+                    <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:#9ca3af;">TradingView</a>
+                </div>
+            </div>
+            <div id="rrg-chart-panel" style="display:none;flex:1;min-height:0;align-items:center;justify-content:center;padding:10px;">
+                <img id="rrg-chart-img" src="" alt="7s Rotation Graph" style="max-width:100%;max-height:100%;object-fit:contain;">
+            </div>
+        </div>
+        <div id="multi-chart-panel" class="multi-chart-panel"></div>
     </div>
 
     <script src="https://s3.tradingview.com/tv.js"></script>
@@ -154,6 +248,11 @@
     let currentSortStates = {};
     let snapshot = null;
     let meta = null;
+    let multiChartMode = false;
+    let defaultSymbol = 'QQQE';
+    let currentHoldingsSymbol = null;
+    let holdingsList = [];
+    let holdingsIndex = -1;
 
     function safeGroupId(name) {
         return name.replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-+|-+$/g, '');
@@ -205,13 +304,19 @@
             if (!rows || rows.length === 0) continue;
             var safeId = safeGroupId(groupName);
             var ranges = (snapshot.column_ranges && snapshot.column_ranges[groupName]) || { daily: [-10,10], intra: [-10,10], '5d': [-20,20], '20d': [-30,30] };
+            var gnEsc = groupName.replace(/'/g, "\\'");
             html += '<div class="group-container" id="group-' + safeId + '">';
-            html += '<div class="group-header" onclick="scrollToGroup(\'' + groupName.replace(/'/g, "\\'") + '\')">';
-            html += '<span>' + groupName + '</span>';
+            html += '<div class="group-header">';
+            html += '<span class="group-header-title" onclick="scrollToGroup(\'' + gnEsc + '\')">' + groupName + '</span>';
             if (groupName === 'Industries' && meta && meta.SECTOR_COLORS) {
                 html += '<div class="legend" onclick="event.stopPropagation()">';
                 for (var s in meta.SECTOR_COLORS)
                     html += '<span class="legend-item" style="background-color:' + meta.SECTOR_COLORS[s] + '">' + s + '</span>';
+                html += '</div>';
+            }
+            if (groupName !== 'The 7s at a Glance') {
+                html += '<div class="group-header-actions" onclick="event.stopPropagation()">';
+                html += '<button type="button" class="group-chart-btn" data-group="' + gnEsc + '" onclick="toggleGroupChart(\'' + gnEsc + '\', this)">MultiChart</button>';
                 html += '</div>';
             }
             html += '</div>';
@@ -226,7 +331,7 @@
             html += th('20d', '20D');
             html += th('ytd', 'YTD');
             html += th('vol_ratio', 'Vol%');
-            html += th('vol_chart', 'Vol Chart');
+            html += '<th title="Visual only">Vol Chart</th>';
             html += th('atr_pct', 'ATR%');
             html += th('dist_sma50_atr', 'ATRx');
             html += th('rs', '1M-VARS');
@@ -250,8 +355,12 @@
                 var atrPct = r.atr_pct != null ? r.atr_pct : 0;
                 var dist = r.dist_sma50_atr != null ? r.dist_sma50_atr : 0;
                 var labelClass = getGroupLabelClass(groupName, r.ticker);
-                html += '<tr class="ticker-row" onclick="updateChart(\'' + r.ticker + '\', this)" data-symbol="' + r.ticker + '" data-group="' + groupName.replace(/"/g, '&quot;') + '" data-daily="' + (daily != null ? daily : 0) + '" data-intra="' + (intra != null ? intra : 0) + '" data-5d="' + (five != null ? five : 0) + '" data-20d="' + (twenty != null ? twenty : 0) + '" data-atr_pct="' + atrPct + '" data-dist_sma50_atr="' + dist + '" data-rs="' + rs + '" data-abc="' + abc + '" data-letf="' + letf + '" data-index="' + i + '">';
-                html += '<td><span class="ticker-label ' + labelClass + '">' + r.ticker + '</span></td>';
+                var wtdV = r.wtd != null ? r.wtd : 0, ytdV = r.ytd != null ? r.ytd : 0, volR = r.vol_ratio != null ? r.vol_ratio : 0;
+                var isSummaryGroup = (groupName === 'The 7s at a Glance');
+                var isRrgRow = !!(r.is_rrg_row && r.rrg_chart);
+                var rowOnclick = isRrgRow ? ('showRrgChart(\'' + (r.rrg_chart || '').replace(/'/g, "\\'") + '\', this)') : (isSummaryGroup ? ('handleSummaryRowClick(\'' + r.ticker.replace(/'/g, "\\'") + '\', this)') : ('updateChart(\'' + r.ticker.replace(/'/g, "\\'") + '\', this)'));
+                html += '<tr class="ticker-row" onclick="' + rowOnclick + '" data-symbol="' + r.ticker + '" data-group="' + groupName.replace(/"/g, '&quot;') + '" data-daily="' + (daily != null ? daily : 0) + '" data-intra="' + (intra != null ? intra : 0) + '" data-wtd="' + wtdV + '" data-5d="' + (five != null ? five : 0) + '" data-20d="' + (twenty != null ? twenty : 0) + '" data-ytd="' + ytdV + '" data-vol_ratio="' + volR + '" data-atr_pct="' + atrPct + '" data-dist_sma50_atr="' + dist + '" data-rs="' + rs + '" data-abc="' + abc + '" data-letf="' + letf + '" data-index="' + i + '"' + (isRrgRow ? ' data-rrg-chart="' + (r.rrg_chart || '') + '"' : '') + '>';
+                html += '<td><span class="ticker-label ' + labelClass + '">' + r.ticker + '</span>' + (isSummaryGroup && !isRrgRow ? '' : (isRrgRow ? '' : '<button type="button" class="holdings-btn" onclick="event.stopPropagation();showHoldings(\'' + r.ticker + '\')" title="Holdings">h</button>')) + '</td>';
                 html += '<td>' + (abc ? '<span class="abc-rating abc-' + abc.toLowerCase() + '">' + abc + '</span>' : '-') + '</td>';
                 html += '<td class="' + dailyCl + '">' + (daily != null ? '<div class="value-visualization"><div class="value-bar ' + (daily >= 0 ? 'positive' : 'negative') + '" style="width:' + dailyW + '%"></div><span class="value-text">' + (daily >= 0 ? '+' : '') + daily.toFixed(2) + '%</span></div>' : 'N/A') + '</td>';
                 html += '<td class="' + intraCl + '">' + (intra != null ? '<div class="value-visualization"><div class="value-bar ' + (intra >= 0 ? 'positive' : 'negative') + '" style="width:' + intraW + '%"></div><span class="value-text">' + (intra >= 0 ? '+' : '') + intra.toFixed(2) + '%</span></div>' : 'N/A') + '</td>';
@@ -295,7 +404,173 @@
         initApp();
     }
 
+    function buildMultiChartForGroup(groupName) {
+        var panel = document.getElementById('multi-chart-panel');
+        if (!panel) return;
+        panel.innerHTML = '';
+        var gc = document.getElementById('group-' + safeGroupId(groupName));
+        if (!gc) return;
+        var table = gc.querySelector('table.ticker-table');
+        if (!table) return;
+        var rows = [].slice.call(table.querySelectorAll('.ticker-row'));
+        if (!rows.length) return;
+        var title = document.createElement('div');
+        title.className = 'multi-group-title';
+        title.textContent = groupName;
+        var grid = document.createElement('div');
+        grid.className = 'multi-chart-grid';
+        rows.forEach(function(row) {
+            var sym = (row.getAttribute('data-symbol') || '').trim();
+            if (!sym) return;
+            var wrap = document.createElement('div');
+            wrap.className = 'tradingview-widget-container';
+            wrap.style.height = '325px';
+            wrap.style.width = '100%';
+            var inner = document.createElement('div');
+            inner.className = 'tradingview-widget-container__widget';
+            inner.style.height = '100%';
+            inner.style.width = '100%';
+            inner.style.border = '1px solid rgba(255,255,255,0.06)';
+            inner.style.borderRadius = '4px';
+            wrap.appendChild(inner);
+            var script = document.createElement('script');
+            script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+            script.async = true;
+            script.textContent = JSON.stringify({
+                allow_symbol_change: true, calendar: false, details: false, hide_side_toolbar: true,
+                hide_top_toolbar: false, hide_legend: true, hide_volume: true, hotlist: false,
+                interval: 'D', locale: 'en', save_image: false, style: '1', symbol: sym, theme: 'dark',
+                timezone: 'America/Toronto', backgroundColor: '#1a1a1a',
+                gridColor: 'rgba(242, 242, 242, 0.06)', watchlist: [], withdateranges: false,
+                studies: ['STD;MA%Ribbon'], autosize: true
+            });
+            inner.appendChild(script);
+            grid.appendChild(wrap);
+        });
+        panel.appendChild(title);
+        panel.appendChild(grid);
+    }
+
+    window.openGroupMultiChart = function(groupName) {
+        multiChartMode = true;
+        var singlePanel = document.getElementById('single-chart-panel');
+        var multiPanel = document.getElementById('multi-chart-panel');
+        if (chartWidget) { try { chartWidget.remove(); } catch (e) {} chartWidget = null; }
+        if (singlePanel) singlePanel.style.display = 'none';
+        if (multiPanel) { multiPanel.style.display = 'block'; buildMultiChartForGroup(groupName); }
+    };
+    window.openSingleChart = function() {
+        multiChartMode = false;
+        var singlePanel = document.getElementById('single-chart-panel');
+        var multiPanel = document.getElementById('multi-chart-panel');
+        if (singlePanel) singlePanel.style.display = 'flex';
+        if (multiPanel) { multiPanel.innerHTML = ''; multiPanel.style.display = 'none'; }
+        var active = document.querySelector('.ticker-row.active');
+        var sym = active ? active.getAttribute('data-symbol') : defaultSymbol;
+        initChart(sym || defaultSymbol);
+    };
+    function updateGroupChartButtons(activeGroup) {
+        document.querySelectorAll('.group-header-actions .group-chart-btn').forEach(function(btn) {
+            btn.textContent = (activeGroup && btn.getAttribute('data-group') === activeGroup) ? 'SingleChart' : 'MultiChart';
+        });
+    }
+    window.toggleGroupChart = function(groupName, btnEl) {
+        if (!multiChartMode) { openGroupMultiChart(groupName); updateGroupChartButtons(groupName); }
+        else { openSingleChart(); updateGroupChartButtons(null); }
+    };
+    window.handleSummaryRowClick = function(groupName, element) {
+        allTickerRows.forEach(function(row) { row.classList.remove('active'); });
+        if (element) { element.classList.add('active'); currentIndex = allTickerRows.indexOf(element); }
+        openGroupMultiChart(groupName);
+        updateGroupChartButtons(groupName);
+    };
+    window.showRrgChart = function(rrgChartPath, element) {
+        if (!rrgChartPath) return;
+        multiChartMode = false;
+        var singlePanel = document.getElementById('single-chart-panel');
+        var multiPanel = document.getElementById('multi-chart-panel');
+        var tvWrapper = document.getElementById('tradingview-chart-wrapper');
+        var rrgPanel = document.getElementById('rrg-chart-panel');
+        var rrgImg = document.getElementById('rrg-chart-img');
+        allTickerRows.forEach(function(row) { row.classList.remove('active'); });
+        if (element) { element.classList.add('active'); currentIndex = allTickerRows.indexOf(element); }
+        if (chartWidget) { try { chartWidget.remove(); } catch (e) {} chartWidget = null; }
+        if (multiPanel) { multiPanel.innerHTML = ''; multiPanel.style.display = 'none'; }
+        if (singlePanel) singlePanel.style.display = 'flex';
+        if (tvWrapper) tvWrapper.style.display = 'none';
+        if (rrgPanel && rrgImg) { rrgImg.src = rrgChartPath; rrgPanel.style.display = 'flex'; }
+        updateGroupChartButtons(null);
+    };
+    window.openEconomicCalendar = function() {
+        var ov = document.getElementById('economic-calendar-modal-overlay');
+        if (ov) ov.style.display = 'flex';
+    };
+    window.closeEconomicCalendar = function(ev) {
+        if (ev) ev.preventDefault();
+        var ov = document.getElementById('economic-calendar-modal-overlay');
+        if (ov) ov.style.display = 'none';
+    };
+    window.openMarketBreadth = function() {
+        var ov = document.getElementById('market-breadth-modal-overlay');
+        if (ov) ov.style.display = 'flex';
+    };
+    window.closeMarketBreadth = function(ev) {
+        if (ev) ev.preventDefault();
+        var ov = document.getElementById('market-breadth-modal-overlay');
+        if (ov) ov.style.display = 'none';
+    };
+    window.showHoldings = function(symbol) {
+        var modal = document.getElementById('holdings-modal-overlay');
+        var title = document.getElementById('holdings-modal-title');
+        var content = document.getElementById('holdings-modal-content');
+        if (!modal || !title || !content) return;
+        currentHoldingsSymbol = symbol;
+        holdingsList = [];
+        holdingsIndex = -1;
+        title.textContent = symbol + ' - Top holdings';
+        content.innerHTML = '<div class="holdings-loading">Loading…</div>';
+        modal.style.display = 'block';
+        fetch('data/holdings/' + symbol + '.json').then(function(res) {
+            return res.ok ? res.json() : Promise.reject();
+        }).then(function(data) {
+            if (data && data.holdings && data.holdings.length) {
+                holdingsList = data.holdings;
+                content.innerHTML = data.holdings.map(function(h, i) {
+                    return '<div class="holdings-item" data-index="' + i + '" onclick="selectHoldingSymbol(\'' + String(h.symbol).replace(/'/g, "\\'") + '\',' + i + ')"><span class="holdings-rank">' + (i + 1) + '</span><span class="holdings-symbol">' + escapeHtml(h.symbol) + '</span><span class="holdings-weight">' + (h.weight != null ? Number(h.weight).toFixed(2) + '%' : '-') + '</span></div>';
+                }).join('');
+            } else content.innerHTML = '<div class="holdings-error">No holdings</div>';
+        }).catch(function() {
+            content.innerHTML = '<div class="holdings-error">No holdings file (ETFs only — run build_data.py)</div>';
+        });
+    };
+    window.closeHoldings = function(ev) {
+        if (ev) ev.preventDefault();
+        var modal = document.getElementById('holdings-modal-overlay');
+        if (modal) modal.style.display = 'none';
+        currentHoldingsSymbol = null;
+        holdingsList = [];
+    };
+    window.selectHoldingSymbol = function(symbol, index) {
+        if (typeof index === 'number') holdingsIndex = index;
+        document.querySelectorAll('.holdings-item').forEach(function(el, i) {
+            el.classList.toggle('active', i === holdingsIndex);
+        });
+        updateChart(symbol, null);
+    };
+    function updateHoldingsHighlight() {
+        document.querySelectorAll('.holdings-item').forEach(function(item, i) {
+            item.classList.toggle('active', i === holdingsIndex);
+            if (i === holdingsIndex) item.scrollIntoView({ block: 'nearest' });
+        });
+        if (holdingsIndex >= 0 && holdingsList[holdingsIndex])
+            updateChart(holdingsList[holdingsIndex].symbol, null);
+    }
+
     function initChart(symbol) {
+        var rrgPanel = document.getElementById('rrg-chart-panel');
+        var tvWrapper = document.getElementById('tradingview-chart-wrapper');
+        if (rrgPanel) rrgPanel.style.display = 'none';
+        if (tvWrapper) tvWrapper.style.display = 'flex';
         if (chartWidget) { chartWidget.remove(); chartWidget = null; }
         chartWidget = new TradingView.widget({
             allow_symbol_change: true, calendar: false, details: true, hide_side_toolbar: false, hide_top_toolbar: false,
@@ -307,6 +582,7 @@
     }
 
     window.updateChart = function(symbol, element) {
+        if (multiChartMode) { openSingleChart(); updateGroupChartButtons(null); }
         allTickerRows.forEach(function(row) { row.classList.remove('active'); });
         if (element) {
             element.classList.add('active');
@@ -351,9 +627,12 @@
         state.sortBy = sortBy;
         if (state.count === 2) state.direction *= -1; else state.direction = 1;
 
-        var colMap = { symbol: 0, abc: 1, daily: 2, intra: 3, '5d': 4, '20d': 5, atr_pct: 6, dist_sma50_atr: 7, rs: 8, letf: 10 };
-        var hi = colMap[sortBy] !== undefined ? colMap[sortBy] : 9;
-        var headerIndices = (sortBy === 'rs') ? [8, 9] : [hi];  /* highlight both 1M-VARS and VARS when sorting by rs */
+        /* Ticker,Grade,Daily,Intra,WTD,5D,20D,YTD,Vol%,VolChart,ATR%,ATRx,1M-VARS,VARS,LETF */
+        var colMap = { symbol: 0, abc: 1, daily: 2, intra: 3, wtd: 4, '5d': 5, '20d': 6, ytd: 7, vol_ratio: 8,
+            atr_pct: 10, dist_sma50_atr: 11, rs: 12, letf: 14 };
+        var hi = colMap[sortBy];
+        if (hi === undefined) hi = 9;
+        var headerIndices = (sortBy === 'rs') ? [12, 13] : [hi];
         headerIndices.forEach(function(idx) {
             var h = table.querySelectorAll('th')[idx];
             if (h) h.classList.add(state.direction === 1 ? 'sort-asc' : 'sort-desc', 'sorted-column');
@@ -382,7 +661,9 @@
             } else if (sortBy === 'letf') {
                 return (parseInt(a.getAttribute('data-letf') || '0') - parseInt(b.getAttribute('data-letf') || '0')) * state.direction;
             } else {
-                return (parseFloat(a.getAttribute('data-' + sortBy)) - parseFloat(b.getAttribute('data-' + sortBy))) * state.direction;
+                var ak = 'data-' + sortBy, av = parseFloat(a.getAttribute(ak) || '0'), bv = parseFloat(b.getAttribute(ak) || '0');
+                if (sortBy === 'vol_chart') return 0;
+                return (av - bv) * state.direction;
             }
         });
         tbody.innerHTML = ''; rows.forEach(function(r) { tbody.appendChild(r); });
@@ -417,16 +698,26 @@
                 if (group && sortBy) window.sortGroup(group, sortBy);
             });
         }
-        var defaultSymbol = (meta && meta.default_symbol) ? meta.default_symbol : 'QQQE';
+        defaultSymbol = (meta && meta.default_symbol) ? meta.default_symbol : 'QQQE';
         initChart(defaultSymbol);
-        if (allTickerRows.length > 0) {
-            allTickerRows[0].classList.add('active');
-        }
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowDown') { e.preventDefault(); if (currentIndex < allTickerRows.length - 1) { currentIndex++; updateChart(allTickerRows[currentIndex].getAttribute('data-symbol'), allTickerRows[currentIndex]); } }
-            if (e.key === 'ArrowUp')   { e.preventDefault(); if (currentIndex > 0) { currentIndex--; updateChart(allTickerRows[currentIndex].getAttribute('data-symbol'), allTickerRows[currentIndex]); } }
-        });
+        if (allTickerRows.length > 0) allTickerRows[0].classList.add('active');
     }
+    document.addEventListener('keydown', function(e) {
+        var holdOv = document.getElementById('holdings-modal-overlay');
+        if (holdOv && holdOv.style.display === 'block' && holdingsList.length) {
+            if (e.key === 'ArrowDown') { e.preventDefault(); holdingsIndex = Math.min(holdingsIndex + 1, holdingsList.length - 1); updateHoldingsHighlight(); return; }
+            if (e.key === 'ArrowUp') { e.preventDefault(); holdingsIndex = Math.max(holdingsIndex - 1, 0); updateHoldingsHighlight(); return; }
+            if (e.key === 'Enter' && holdingsIndex >= 0) { e.preventDefault(); selectHoldingSymbol(holdingsList[holdingsIndex].symbol, holdingsIndex); return; }
+            if (e.key === 'Escape') { closeHoldings(e); return; }
+        }
+        if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+        if (e.key === 'ArrowDown' && allTickerRows.length) { e.preventDefault(); if (currentIndex < allTickerRows.length - 1) { currentIndex++; updateChart(allTickerRows[currentIndex].getAttribute('data-symbol'), allTickerRows[currentIndex]); } }
+        if (e.key === 'ArrowUp' && allTickerRows.length) { e.preventDefault(); if (currentIndex > 0) { currentIndex--; updateChart(allTickerRows[currentIndex].getAttribute('data-symbol'), allTickerRows[currentIndex]); } }
+        if ((e.key === 'h' || e.key === 'H') && !e.ctrlKey && !e.metaKey) {
+            var row = document.querySelector('.ticker-row.active');
+            if (row) showHoldings(row.getAttribute('data-symbol'));
+        }
+    });
 
     function loadData() {
         Promise.all([
