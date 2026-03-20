@@ -159,6 +159,9 @@
         .holdings-rank { color: #9ca3af; width: 24px; }
         .holdings-symbol { font-weight: 600; color: #60a5fa; }
         .holdings-weight { color: #10b981; }
+        .holdings-gain { color: #10b981; }
+        .holdings-loss { color: #ef4444; }
+        .holdings-neutral { color: #9ca3af; }
         .holdings-loading, .holdings-error { padding: 20px; text-align: center; }
         .holdings-error { color: #ef4444; }
         ::-webkit-scrollbar { width: 8px; }
@@ -530,13 +533,22 @@
         title.textContent = symbol + ' - Top holdings';
         content.innerHTML = '<div class="holdings-loading">Loading…</div>';
         modal.style.display = 'block';
+        var dailyLookup = {};
+        if (snapshot && snapshot.groups) {
+            Object.values(snapshot.groups).forEach(function(tickers) {
+                tickers.forEach(function(t) { dailyLookup[t.ticker] = t.daily; });
+            });
+        }
         fetch('data/holdings/' + symbol + '.json').then(function(res) {
             return res.ok ? res.json() : Promise.reject();
         }).then(function(data) {
             if (data && data.holdings && data.holdings.length) {
                 holdingsList = data.holdings;
                 content.innerHTML = data.holdings.map(function(h, i) {
-                    return '<div class="holdings-item" data-index="' + i + '" onclick="selectHoldingSymbol(\'' + String(h.symbol).replace(/'/g, "\\'") + '\',' + i + ')"><span class="holdings-rank">' + (i + 1) + '</span><span class="holdings-symbol">' + escapeHtml(h.symbol) + '</span><span class="holdings-weight">' + (h.weight != null ? Number(h.weight).toFixed(2) + '%' : '-') + '</span></div>';
+                    var daily = dailyLookup[h.symbol];
+                    var dailyStr = daily != null ? (daily > 0 ? '+' : '') + Number(daily).toFixed(2) + '%' : '-';
+                    var dailyClass = daily != null ? (daily >= 0 ? 'holdings-gain' : 'holdings-loss') : 'holdings-neutral';
+                    return '<div class="holdings-item" data-index="' + i + '" onclick="selectHoldingSymbol(\'' + String(h.symbol).replace(/'/g, "\\'") + '\',' + i + ')"><span class="holdings-rank">' + (i + 1) + '</span><span class="holdings-symbol">' + escapeHtml(h.symbol) + '</span><span class="' + dailyClass + '">' + dailyStr + '</span></div>';
                 }).join('');
             } else content.innerHTML = '<div class="holdings-error">No holdings</div>';
         }).catch(function() {
