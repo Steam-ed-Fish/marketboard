@@ -3,50 +3,53 @@
   "holdings": [
     {
       "symbol": "BG",
-      "weight": 0.0325223
+      "weight": 0.0325223,
+      "daily": -3.19
     },
     {
       "symbol": "HSY",
       "weight": 0.0323584,
-      "daily": -1.01
+      "daily": -0.21
     },
     {
       "symbol": "CL",
       "weight": 0.0314495,
-      "daily": -2.31
+      "daily": -0.44
     },
     {
       "symbol": "CHD",
       "weight": 0.031048201,
-      "daily": -1.21
+      "daily": 0.12
     },
     {
       "symbol": "PM",
       "weight": 0.0307828,
-      "daily": -1.67
+      "daily": -0.16
     },
     {
       "symbol": "DG",
       "weight": 0.0306174,
-      "daily": -2.54
+      "daily": 0.87
     },
     {
       "symbol": "CLX",
       "weight": 0.0306019,
-      "daily": -1.21
+      "daily": -0.44
     },
     {
       "symbol": "SYY",
-      "weight": 0.0305654
+      "weight": 0.0305654,
+      "daily": -0.42
     },
     {
       "symbol": "TGT",
       "weight": 0.029669398,
-      "daily": -0.5
+      "daily": -1.06
     },
     {
       "symbol": "PG",
-      "weight": 0.0295109
+      "weight": 0.0295109,
+      "daily": -0.39
     }
   ]
 }
