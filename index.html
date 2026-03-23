@@ -199,15 +199,6 @@
         .rel-ticker-b { color: #9ca3af; font-weight: 700; font-size: 0.9em; }
         .rel-highlight-pos { background: #10b98133; border-radius: 3px; padding: 1px 4px; }
         .rel-highlight-neg { background: #ef444433; border-radius: 3px; padding: 1px 4px; }
-        .theme-perf-table { width: 100%; border-collapse: collapse; font-size: 0.82em; }
-        .theme-perf-table thead th { padding: 5px 8px; color: #9ca3af; font-weight: 600; text-align: right; border-bottom: 1px solid #374151; }
-        .theme-perf-table thead th:first-child { text-align: left; }
-        .theme-perf-row td { padding: 6px 8px; border-bottom: 1px solid #2d3748; vertical-align: middle; }
-        .theme-perf-row:last-child td { border-bottom: none; }
-        .theme-perf-row:hover { background: #2a2a2a; }
-        .theme-name { color: #e0e0e0; font-weight: 600; white-space: nowrap; }
-        .theme-tickers { font-size: 0.78em; color: #6b7280; margin-top: 1px; }
-        .theme-val { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; min-width: 60px; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1a1a1a; }
         ::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 4px; }
@@ -265,6 +256,7 @@
             </div>
         </div>
     </div>
+    <div id="theme-constituent-tooltip" style="display:none;position:fixed;z-index:9999;background:#1f2937;border:1px solid #374151;border-radius:6px;padding:10px 14px;font-size:0.82em;min-width:150px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,0.5)"></div>
     <div id="holdings-modal-overlay" class="holdings-modal-overlay" onclick="closeHoldings(event)">
         <div class="holdings-modal" onclick="event.stopPropagation()">
             <div class="holdings-modal-header"><span id="holdings-modal-title">Holdings</span><button type="button" class="holdings-modal-close" onclick="closeHoldings(event)">&times;</button></div>
@@ -381,26 +373,62 @@
         return html;
     }
 
+    function showThemeTooltip(e, dataJson) {
+        var tt = document.getElementById('theme-constituent-tooltip');
+        var constituents = JSON.parse(dataJson);
+        var inner = constituents.map(function(c) {
+            var cls = c.d > 0 ? 'price-up' : (c.d < 0 ? 'price-down' : '');
+            var str = c.d != null ? (c.d > 0 ? '+' : '') + c.d.toFixed(2) + '%' : '-';
+            return '<div style="display:flex;justify-content:space-between;gap:16px"><span style="color:#9ca3af">' + c.t + '</span><span class="' + cls + '" style="font-weight:600">' + str + '</span></div>';
+        }).join('');
+        tt.innerHTML = inner;
+        tt.style.display = 'block';
+        tt.style.left = (e.clientX + 12) + 'px';
+        tt.style.top = (e.clientY - 10) + 'px';
+    }
+    function hideThemeTooltip() {
+        document.getElementById('theme-constituent-tooltip').style.display = 'none';
+    }
+
     function renderAIThemes() {
         if (!snapshot || !snapshot.themes || !snapshot.themes.length) return '';
-        function fmt(val) {
-            if (val == null) return '<span style="color:#4b5563">-</span>';
-            var str = (val > 0 ? '+' : '') + val.toFixed(2) + '%';
-            var cls = val > 0 ? 'price-up' : (val < 0 ? 'price-down' : '');
-            var hlCls = Math.abs(val) >= 3 ? (val > 0 ? ' rel-highlight-pos' : ' rel-highlight-neg') : '';
-            return '<span class="' + cls + hlCls + '">' + str + '</span>';
+        function vw(val, lo, hi) {
+            if (val == null) return 0;
+            var span = hi - lo; if (!span) return 50;
+            return Math.min(100, Math.max(0, Math.abs(val) / (Math.max(Math.abs(lo), Math.abs(hi))) * 100));
+        }
+        function cell(val, lo, hi) {
+            if (val == null) return '<td>N/A</td>';
+            var cl = val > 0 ? 'price-up' : (val < 0 ? 'price-down' : '');
+            var bar = val >= 0 ? 'positive' : 'negative';
+            return '<td class="' + cl + '"><div class="value-visualization"><div class="value-bar ' + bar + '" style="width:' + vw(val,lo,hi) + '%"></div><span class="value-text">' + (val >= 0 ? '+' : '') + val.toFixed(2) + '%</span></div></td>';
         }
         var html = '<div class="group-container" id="group-ai-themes">';
         html += '<div class="group-header"><span class="group-header-title">AI Themes</span></div>';
-        html += '<table class="theme-perf-table"><thead><tr>';
-        html += '<th>Theme</th><th>Daily</th><th>5D</th><th>YTD</th></tr></thead><tbody>';
+        html += '<table class="ticker-table"><thead><tr>';
+        html += '<th>Theme</th><th>Grade</th><th>Daily</th><th>Intra</th><th>WTD</th><th>5D</th><th>20D</th><th>YTD</th>';
+        html += '<th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>1M-VARS</th><th>VARS</th><th>LETF</th><th>Gap</th>';
+        html += '</tr></thead><tbody>';
         snapshot.themes.forEach(function(t) {
-            html += '<tr class="theme-perf-row">';
-            html += '<td><div class="theme-name">' + t.name + '</div>';
-            html += '<div class="theme-tickers">' + t.tickers.join(' · ') + '</div></td>';
-            html += '<td class="theme-val">' + fmt(t.daily) + '</td>';
-            html += '<td class="theme-val">' + fmt(t['5d']) + '</td>';
-            html += '<td class="theme-val">' + fmt(t.ytd) + '</td>';
+            var cd = t.constituent_daily || {};
+            var cdArr = t.tickers.map(function(tk) { return {t: tk, d: cd[tk] != null ? cd[tk] : null}; });
+            var dataJson = JSON.stringify(cdArr).replace(/"/g, '&quot;');
+            html += '<tr class="ticker-row">';
+            html += '<td><span class="ticker-label" style="background:#2d3748;font-size:0.85em">' + t.name + '</span>';
+            html += '<button type="button" class="holdings-btn" onmouseenter="showThemeTooltip(event,this.dataset.cd)" onmouseleave="hideThemeTooltip()" data-cd="' + dataJson + '" title="Constituent 1D performance">h</button></td>';
+            html += '<td>-</td>';
+            html += cell(t.daily, -5, 5);
+            html += cell(t.intra, -5, 5);
+            html += cell(t.wtd, -10, 10);
+            html += cell(t['5d'], -10, 10);
+            html += cell(t['20d'], -20, 20);
+            html += cell(t.ytd, -30, 30);
+            html += '<td>' + (t.vol_ratio != null ? t.vol_ratio.toFixed(2) + 'x' : 'N/A') + '</td>';
+            html += '<td>-</td>';
+            html += '<td>' + (t.atr_pct != null ? t.atr_pct.toFixed(1) + '%' : 'N/A') + '</td>';
+            html += '<td>' + (t.dist_sma50_atr != null ? t.dist_sma50_atr.toFixed(2) : 'N/A') + '</td>';
+            html += '<td>' + (t.rs != null ? Math.round(t.rs) + '%' : 'N/A') + '</td>';
+            html += '<td>-</td><td>-</td><td>-</td>';
             html += '</tr>';
         });
         html += '</tbody></table></div>';
