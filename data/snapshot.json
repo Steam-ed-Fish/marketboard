@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-03-23T01:16:08.343320Z",
+  "built_at": "2026-03-23T07:16:24.296166Z",
   "groups": {
     "Indices": [
       {
@@ -23,8 +23,13 @@
           "SQQQ"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "DIA",
@@ -43,8 +48,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "SPY",
@@ -58,7 +68,7 @@
         "vol_chart": "data/charts/vol_SPY.png",
         "atr_pct": 1.5,
         "dist_sma50_atr": -3.39,
-        "rs": 92.0,
+        "rs": 10.0,
         "rs_chart": "data/charts/SPY.png",
         "long": [
           "SPXL",
@@ -69,8 +79,13 @@
           "SH"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "RSP",
@@ -89,8 +104,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IWM",
@@ -113,8 +133,13 @@
           "TZA"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IJH",
@@ -133,8 +158,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "IJR",
@@ -153,8 +183,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "GLD",
@@ -177,8 +212,13 @@
           "GLL"
         ],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          null
+        ]
       },
       {
         "ticker": "SLV",
@@ -201,8 +241,13 @@
           "ZSL"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       }
     ],
     "S&P Style ETFs": [
@@ -223,8 +268,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IJR",
@@ -243,8 +293,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IJT",
@@ -263,8 +318,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "IJJ",
@@ -283,8 +343,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IJH",
@@ -303,8 +368,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "IJK",
@@ -323,8 +393,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "IVE",
@@ -343,8 +418,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IVV",
@@ -363,8 +443,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IVW",
@@ -383,8 +468,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       }
     ],
     "Sel Sectors": [
@@ -409,8 +499,13 @@
           "TECS"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "XLI",
@@ -431,8 +526,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "XLC",
@@ -453,8 +553,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "XLF",
@@ -477,8 +582,13 @@
           "FAZ"
         ],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "XLU",
@@ -499,8 +609,13 @@
         ],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "XLY",
@@ -523,8 +638,13 @@
           "SCC"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "XLRE",
@@ -547,8 +667,13 @@
           "DRV"
         ],
         "abc": "B",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "XLP",
@@ -571,8 +696,13 @@
           "SZK"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "XLB",
@@ -595,8 +725,13 @@
           "SMN"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "XLE",
@@ -619,8 +754,13 @@
           "ERY"
         ],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "up",
+          null,
+          "up",
+          null
+        ]
       },
       {
         "ticker": "XLV",
@@ -641,8 +781,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       }
     ],
     "EW Sectors": [
@@ -663,8 +808,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "RSPC",
@@ -683,8 +833,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          null
+        ]
       },
       {
         "ticker": "RSPN",
@@ -703,8 +858,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "RSPF",
@@ -723,8 +883,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "RSP",
@@ -743,8 +908,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "RSPD",
@@ -763,8 +933,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "RSPU",
@@ -783,8 +958,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 5
+        "gaps": [
+          null,
+          null,
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "RSPR",
@@ -803,8 +983,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "RSPH",
@@ -823,8 +1008,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "RSPM",
@@ -843,8 +1033,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          null
+        ]
       },
       {
         "ticker": "RSPS",
@@ -863,8 +1058,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "RSPG",
@@ -883,8 +1083,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "up",
+          null,
+          "up",
+          null
+        ]
       }
     ],
     "The 7s at a Glance": [
@@ -1287,8 +1492,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "AMZN",
@@ -1307,8 +1517,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          null
+        ]
       },
       {
         "ticker": "GOOGL",
@@ -1327,8 +1542,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "ORCL",
@@ -1347,8 +1567,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "IBM",
@@ -1367,8 +1592,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "META",
@@ -1387,8 +1617,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "NET",
@@ -1407,8 +1642,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "down"
+        ]
       }
     ],
     "The Software 7": [
@@ -1429,8 +1669,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          null,
+          "down",
+          null,
+          null
+        ]
       },
       {
         "ticker": "PANW",
@@ -1449,8 +1694,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          null
+        ]
       },
       {
         "ticker": "PLTR",
@@ -1469,8 +1719,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "up",
-        "gap_days": 5
+        "gaps": [
+          null,
+          null,
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "INTU",
@@ -1489,8 +1744,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "up",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "CRM",
@@ -1509,8 +1769,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "up",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "NOW",
@@ -1529,8 +1794,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "WDAY",
@@ -1549,8 +1819,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          null,
+          "down",
+          null,
+          null
+        ]
       }
     ],
     "The New Staples 7": [
@@ -1571,8 +1846,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "AMZN",
@@ -1591,8 +1871,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          null
+        ]
       },
       {
         "ticker": "META",
@@ -1611,8 +1896,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "NFLX",
@@ -1631,8 +1921,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": null,
-        "gap_days": null
+        "gaps": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       },
       {
         "ticker": "GOOGL",
@@ -1651,8 +1946,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "SPOT",
@@ -1671,8 +1971,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "down"
+        ]
       },
       {
         "ticker": "UBER",
@@ -1691,8 +1996,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       }
     ],
     "The Old Staples 7": [
@@ -1713,8 +2023,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "KO",
@@ -1733,8 +2048,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "PEP",
@@ -1753,8 +2073,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "PM",
@@ -1773,8 +2098,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "CL",
@@ -1793,8 +2123,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "MDLZ",
@@ -1813,8 +2148,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "WMT",
@@ -1833,8 +2173,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          null
+        ]
       }
     ],
     "The Toll Road 7": [
@@ -1855,8 +2200,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": null,
-        "gap_days": null
+        "gaps": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       },
       {
         "ticker": "MA",
@@ -1875,8 +2225,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          null
+        ]
       },
       {
         "ticker": "PYPL",
@@ -1895,8 +2250,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "CME",
@@ -1915,8 +2275,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "up",
+          null,
+          null,
+          "down"
+        ]
       },
       {
         "ticker": "ICE",
@@ -1935,8 +2300,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "SPGI",
@@ -1955,8 +2325,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "MSCI",
@@ -1975,8 +2350,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          null
+        ]
       }
     ],
     "The Energy 7": [
@@ -1997,8 +2377,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          null,
+          "up",
+          "up",
+          null
+        ]
       },
       {
         "ticker": "CVX",
@@ -2017,8 +2402,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "up",
+          "up",
+          null,
+          null
+        ]
       },
       {
         "ticker": "COP",
@@ -2037,8 +2427,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "up",
+          "up",
+          "up",
+          "down"
+        ]
       },
       {
         "ticker": "EOG",
@@ -2057,8 +2452,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "up",
+          "up",
+          null,
+          null
+        ]
       },
       {
         "ticker": "FANG",
@@ -2077,8 +2477,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "up",
+          null,
+          null,
+          null
+        ]
       },
       {
         "ticker": "DVN",
@@ -2097,8 +2502,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "down"
+        ]
       },
       {
         "ticker": "SLB",
@@ -2117,8 +2527,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          null
+        ]
       }
     ],
     "The Defense 7": [
@@ -2139,8 +2554,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "up",
+          null,
+          null
+        ]
       },
       {
         "ticker": "RTX",
@@ -2159,8 +2579,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          null
+        ]
       },
       {
         "ticker": "NOC",
@@ -2179,8 +2604,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "up",
+          null,
+          null
+        ]
       },
       {
         "ticker": "GD",
@@ -2199,8 +2629,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          null
+        ]
       },
       {
         "ticker": "BA",
@@ -2219,8 +2654,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          null
+        ]
       },
       {
         "ticker": "LHX",
@@ -2239,8 +2679,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          null
+        ]
       },
       {
         "ticker": "HII",
@@ -2259,8 +2704,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          null,
+          null
+        ]
       }
     ],
     "The Industrial 7": [
@@ -2281,8 +2731,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "DE",
@@ -2301,8 +2756,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "HON",
@@ -2321,8 +2781,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          null
+        ]
       },
       {
         "ticker": "PH",
@@ -2341,8 +2806,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "up",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EMR",
@@ -2361,8 +2831,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "GE",
@@ -2381,8 +2856,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "TT",
@@ -2401,8 +2881,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       }
     ],
     "The Semi 7": [
@@ -2423,8 +2908,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "AVGO",
@@ -2443,8 +2933,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "AMD",
@@ -2463,8 +2958,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "QCOM",
@@ -2483,8 +2983,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "INTC",
@@ -2503,8 +3008,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "TXN",
@@ -2523,8 +3033,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "MRVL",
@@ -2543,8 +3058,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       }
     ],
     "The Fab 7": [
@@ -2565,8 +3085,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "AMAT",
@@ -2585,8 +3110,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "LRCX",
@@ -2605,8 +3135,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "KLAC",
@@ -2625,8 +3160,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "TSM",
@@ -2645,8 +3185,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "MU",
@@ -2665,8 +3210,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "up",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "TER",
@@ -2685,8 +3235,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "up",
+          null,
+          "up"
+        ]
       }
     ],
     "The Buildout 7": [
@@ -2707,8 +3262,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          null,
+          null
+        ]
       },
       {
         "ticker": "VRT",
@@ -2727,8 +3287,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "up",
+          "down",
+          "up"
+        ]
       },
       {
         "ticker": "APH",
@@ -2747,8 +3312,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "PWR",
@@ -2767,8 +3337,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "up",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "EME",
@@ -2787,8 +3362,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "up",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "GEV",
@@ -2807,8 +3387,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "ETN",
@@ -2827,8 +3412,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       }
     ],
     "The Housing 7": [
@@ -2849,8 +3439,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "LEN",
@@ -2869,8 +3464,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "VMC",
@@ -2889,8 +3489,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "MLM",
@@ -2909,8 +3514,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "SHW",
@@ -2929,8 +3539,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "HD",
@@ -2949,8 +3564,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "LOW",
@@ -2969,8 +3589,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       }
     ],
     "The Old Metals 7": [
@@ -2991,8 +3616,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "down"
+        ]
       },
       {
         "ticker": "GOLD",
@@ -3011,8 +3641,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "AEM",
@@ -3031,8 +3666,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "down"
+        ]
       },
       {
         "ticker": "WPM",
@@ -3051,8 +3691,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          "down",
+          "down",
+          "up",
+          "down"
+        ]
       },
       {
         "ticker": "FNV",
@@ -3071,8 +3716,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          null
+        ]
       },
       {
         "ticker": "RGLD",
@@ -3091,8 +3741,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "down"
+        ]
       },
       {
         "ticker": "AGI",
@@ -3111,8 +3766,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "down"
+        ]
       }
     ],
     "The New Metals 7": [
@@ -3133,8 +3793,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "SCCO",
@@ -3153,8 +3818,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "CCJ",
@@ -3173,8 +3843,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "ALB",
@@ -3193,8 +3868,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "SQM",
@@ -3213,8 +3893,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "MP",
@@ -3233,8 +3918,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "PAAS",
@@ -3253,8 +3943,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "down"
+        ]
       }
     ],
     "The Bank 7": [
@@ -3275,8 +3970,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "GS",
@@ -3295,8 +3995,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "MS",
@@ -3315,8 +4020,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "BAC",
@@ -3335,8 +4045,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "WFC",
@@ -3355,8 +4070,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "BLK",
@@ -3375,8 +4095,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "C",
@@ -3395,8 +4120,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       }
     ],
     "The Health 7": [
@@ -3417,8 +4147,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          null,
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "LLY",
@@ -3437,8 +4172,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          null,
+          "down",
+          "down",
+          "up"
+        ]
       },
       {
         "ticker": "ABBV",
@@ -3457,8 +4197,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "JNJ",
@@ -3477,8 +4222,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "up",
-        "gap_days": 5
+        "gaps": [
+          null,
+          null,
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "PFE",
@@ -3497,8 +4247,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          null
+        ]
       },
       {
         "ticker": "MRK",
@@ -3517,8 +4272,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "GILD",
@@ -3537,8 +4297,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          "down"
+        ]
       }
     ],
     "The Medtech 7": [
@@ -3559,8 +4324,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          null
+        ]
       },
       {
         "ticker": "TMO",
@@ -3579,8 +4349,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "ABT",
@@ -3599,8 +4374,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "MDT",
@@ -3619,8 +4399,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": null,
-        "gap_days": null
+        "gaps": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       },
       {
         "ticker": "SYK",
@@ -3639,8 +4424,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "BSX",
@@ -3659,8 +4449,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          null
+        ]
       },
       {
         "ticker": "DHR",
@@ -3679,8 +4474,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       }
     ],
     "The Freight 7": [
@@ -3701,8 +4501,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "CSX",
@@ -3721,8 +4526,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "FDX",
@@ -3741,8 +4551,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "UPS",
@@ -3761,8 +4576,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "ODFL",
@@ -3781,8 +4601,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "JBHT",
@@ -3801,8 +4626,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "NSC",
@@ -3821,8 +4651,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       }
     ],
     "The Insurance 7": [
@@ -3843,8 +4678,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "up",
+          null,
+          "up",
+          null
+        ]
       },
       {
         "ticker": "CB",
@@ -3863,8 +4703,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          null
+        ]
       },
       {
         "ticker": "AON",
@@ -3883,8 +4728,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "up",
+          null,
+          null,
+          null
+        ]
       },
       {
         "ticker": "AIG",
@@ -3903,8 +4753,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          null
+        ]
       },
       {
         "ticker": "MET",
@@ -3923,8 +4778,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "AFL",
@@ -3943,8 +4803,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          "up"
+        ]
       }
     ],
     "The Power 7": [
@@ -3965,8 +4830,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "SO",
@@ -3985,8 +4855,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          null
+        ]
       },
       {
         "ticker": "DUK",
@@ -4005,8 +4880,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "CEG",
@@ -4025,8 +4905,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "VST",
@@ -4045,8 +4930,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "up",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "AEP",
@@ -4065,8 +4955,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 5
+        "gaps": [
+          null,
+          null,
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "SRE",
@@ -4085,8 +4980,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       }
     ],
     "Industries": [
@@ -4107,8 +5007,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "KCE",
@@ -4127,8 +5032,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IBUY",
@@ -4147,8 +5057,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "QQQE",
@@ -4167,8 +5082,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "JETS",
@@ -4187,8 +5107,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IBB",
@@ -4207,8 +5132,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "SMH",
@@ -4231,8 +5161,13 @@
           "SOXS"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "CIBR",
@@ -4251,8 +5186,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "UTES",
@@ -4271,8 +5211,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "ROBO",
@@ -4293,8 +5238,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IGV",
@@ -4313,8 +5263,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "WCLD",
@@ -4335,8 +5290,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "ITA",
@@ -4357,8 +5317,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "PAVE",
@@ -4377,8 +5342,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "BLOK",
@@ -4397,8 +5367,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "AIQ",
@@ -4417,8 +5392,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "IYZ",
@@ -4437,8 +5417,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "PEJ",
@@ -4459,8 +5444,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "FDN",
@@ -4483,8 +5473,13 @@
           "WEBS"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "KBE",
@@ -4503,8 +5498,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "UNG",
@@ -4527,8 +5527,13 @@
           "KOLD"
         ],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "up",
+          null,
+          "up",
+          "down"
+        ]
       },
       {
         "ticker": "BOAT",
@@ -4547,8 +5552,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "KWEB",
@@ -4569,8 +5579,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "KRE",
@@ -4591,8 +5606,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IBIT",
@@ -4617,8 +5637,13 @@
           "BITI"
         ],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "XRT",
@@ -4639,8 +5664,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IHI",
@@ -4659,8 +5689,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "DRIV",
@@ -4681,8 +5716,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "MSOS",
@@ -4703,8 +5743,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          null
+        ]
       },
       {
         "ticker": "SOCL",
@@ -4723,8 +5768,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "XLU",
@@ -4745,8 +5795,13 @@
         ],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "ARKF",
@@ -4765,8 +5820,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "SLX",
@@ -4785,8 +5845,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "ARKK",
@@ -4809,8 +5874,13 @@
           "SARK"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "XTN",
@@ -4831,8 +5901,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "XME",
@@ -4851,8 +5926,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "KIE",
@@ -4871,8 +5951,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "GLD",
@@ -4895,8 +5980,13 @@
           "GLL"
         ],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          null
+        ]
       },
       {
         "ticker": "GXC",
@@ -4915,8 +6005,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "SCHH",
@@ -4935,8 +6030,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "GDX",
@@ -4961,8 +6061,13 @@
           "GDXD"
         ],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          "down",
+          "down",
+          null,
+          null
+        ]
       },
       {
         "ticker": "IPAY",
@@ -4981,8 +6086,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IWM",
@@ -5005,8 +6115,13 @@
           "TZA"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "XOP",
@@ -5029,8 +6144,13 @@
           "DRIP"
         ],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "up",
+          null,
+          "up",
+          null
+        ]
       },
       {
         "ticker": "VNQ",
@@ -5049,8 +6169,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EATZ",
@@ -5069,8 +6194,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "up",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "FXI",
@@ -5093,8 +6223,13 @@
           "YANG"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "DBA",
@@ -5113,8 +6248,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          null
+        ]
       },
       {
         "ticker": "ICLN",
@@ -5133,8 +6273,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "SILJ",
@@ -5153,8 +6298,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          null
+        ]
       },
       {
         "ticker": "REZ",
@@ -5173,8 +6323,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "LIT",
@@ -5193,8 +6348,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "SLV",
@@ -5217,8 +6377,13 @@
           "ZSL"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "XHB",
@@ -5239,8 +6404,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "XHE",
@@ -5259,8 +6429,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "PBJ",
@@ -5279,8 +6454,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "up",
-        "gap_days": 5
+        "gaps": [
+          null,
+          null,
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "USO",
@@ -5303,8 +6483,13 @@
           "SCO"
         ],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          "down",
+          "up",
+          "up",
+          "down"
+        ]
       },
       {
         "ticker": "DBC",
@@ -5323,8 +6508,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "up",
+          "up",
+          null
+        ]
       },
       {
         "ticker": "FCG",
@@ -5343,8 +6533,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "up",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "up",
+          "up",
+          "up",
+          null
+        ]
       },
       {
         "ticker": "XBI",
@@ -5367,8 +6562,13 @@
           "LABD"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "ARKG",
@@ -5387,8 +6587,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "CPER",
@@ -5407,8 +6612,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "down",
+          "up"
+        ]
       },
       {
         "ticker": "XES",
@@ -5427,8 +6637,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          null
+        ]
       },
       {
         "ticker": "OIH",
@@ -5447,8 +6662,13 @@
         "long": [],
         "short": [],
         "abc": "A",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          null
+        ]
       },
       {
         "ticker": "PPH",
@@ -5469,8 +6689,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "FNGS",
@@ -5493,8 +6718,13 @@
           "FNGD"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          null,
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "URA",
@@ -5513,8 +6743,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "WGMI",
@@ -5533,8 +6768,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "down",
+          "up"
+        ]
       },
       {
         "ticker": "REMX",
@@ -5553,8 +6793,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "down",
+          "up"
+        ]
       }
     ],
     "Countries": [
@@ -5575,8 +6820,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "ARGT",
@@ -5595,8 +6845,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EWA",
@@ -5615,8 +6870,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "THD",
@@ -5635,8 +6895,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EIDO",
@@ -5655,8 +6920,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "down"
+        ]
       },
       {
         "ticker": "EWC",
@@ -5675,8 +6945,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "GREK",
@@ -5695,8 +6970,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 1
+        "gaps": [
+          "up",
+          "down",
+          "up",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EWP",
@@ -5715,8 +6995,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EWG",
@@ -5735,8 +7020,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EWL",
@@ -5755,8 +7045,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "EUFN",
@@ -5775,8 +7070,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EWY",
@@ -5797,8 +7097,13 @@
         ],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IEUR",
@@ -5817,8 +7122,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EFA",
@@ -5837,8 +7147,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "ACWI",
@@ -5857,8 +7172,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "IEV",
@@ -5879,8 +7199,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EWQ",
@@ -5899,8 +7224,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EWI",
@@ -5919,8 +7249,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EWJ",
@@ -5941,8 +7276,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EWW",
@@ -5963,8 +7303,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "ECH",
@@ -5983,8 +7328,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EWD",
@@ -6003,8 +7353,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "ASHR",
@@ -6025,8 +7380,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          null
+        ]
       },
       {
         "ticker": "EWS",
@@ -6045,8 +7405,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "KSA",
@@ -6065,8 +7430,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 4
+        "gaps": [
+          null,
+          null,
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "INDA",
@@ -6087,8 +7457,13 @@
         ],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 2
+        "gaps": [
+          null,
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "EEM",
@@ -6111,8 +7486,13 @@
           "EDZ"
         ],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "EWZ",
@@ -6133,8 +7513,13 @@
         ],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          null,
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "TUR",
@@ -6153,8 +7538,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 3
+        "gaps": [
+          null,
+          null,
+          "down",
+          "up",
+          null
+        ]
       },
       {
         "ticker": "EWH",
@@ -6173,8 +7563,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "up",
-        "gap_days": 5
+        "gaps": [
+          null,
+          null,
+          null,
+          null,
+          "up"
+        ]
       },
       {
         "ticker": "EWT",
@@ -6193,8 +7588,13 @@
         "long": [],
         "short": [],
         "abc": "B",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          "up",
+          "up"
+        ]
       },
       {
         "ticker": "MCHI",
@@ -6213,8 +7613,13 @@
         "long": [],
         "short": [],
         "abc": "C",
-        "gap_dir": "down",
-        "gap_days": 1
+        "gaps": [
+          "down",
+          "down",
+          "down",
+          null,
+          "up"
+        ]
       }
     ]
   },
