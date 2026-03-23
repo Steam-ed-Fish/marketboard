@@ -182,9 +182,11 @@
         .holdings-neutral { color: #9ca3af; }
         .holdings-loading, .holdings-error { padding: 20px; text-align: center; }
         .holdings-error { color: #ef4444; }
-        .gap-up { color: #10b981; font-weight: 700; white-space: nowrap; }
-        .gap-down { color: #ef4444; font-weight: 700; white-space: nowrap; }
-        .gap-days { font-size: 0.7em; vertical-align: super; margin-left: 1px; }
+        .gap-bar { display: flex; gap: 2px; align-items: center; justify-content: center; }
+        .gap-dot { width: 7px; height: 7px; border-radius: 1px; flex-shrink: 0; }
+        .gap-dot-up { background: #10b981; }
+        .gap-dot-down { background: #ef4444; }
+        .gap-dot-none { background: #2d3748; }
         .rel-perf-table { width: 100%; border-collapse: collapse; font-size: 0.82em; }
         .rel-perf-table thead th { padding: 5px 8px; color: #9ca3af; font-weight: 600; text-align: right; border-bottom: 1px solid #374151; }
         .rel-perf-table thead th:first-child { text-align: left; }
@@ -466,13 +468,20 @@
                 if (r.short && r.short.length) { if (r.long && r.long.length) html += '<br>'; html += r.short.map(function(etf){ return '<span class="short-etf" onclick="event.stopPropagation();updateChart(\'' + etf + '\')">' + etf + '</span>'; }).join(', '); }
                 if (!(r.long && r.long.length) && !(r.short && r.short.length)) html += '-';
                 html += '</td>';
-                if (r.gap_dir === 'up') {
-                    html += '<td class="gap-up">&#8679;<span class="gap-days">' + r.gap_days + '</span></td>';
-                } else if (r.gap_dir === 'down') {
-                    html += '<td class="gap-down">&#8681;<span class="gap-days">' + r.gap_days + '</span></td>';
+                html += '<td>';
+                if (r.gaps && r.gaps.length) {
+                    html += '<div class="gap-bar">';
+                    for (var gi = r.gaps.length - 1; gi >= 0; gi--) {
+                        var g = r.gaps[gi];
+                        var cls = g === 'up' ? 'gap-dot-up' : (g === 'down' ? 'gap-dot-down' : 'gap-dot-none');
+                        var tip = 'D-' + (gi + 1) + (g ? ': gap ' + g : '');
+                        html += '<div class="gap-dot ' + cls + '" title="' + tip + '"></div>';
+                    }
+                    html += '</div>';
                 } else {
-                    html += '<td style="color:#374151">-</td>';
+                    html += '<span style="color:#374151">-</span>';
                 }
+                html += '</td>';
                 html += '</tr>';
             }
             html += '</tbody></table></div>';
