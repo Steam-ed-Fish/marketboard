@@ -3,51 +3,53 @@
   "holdings": [
     {
       "symbol": "BPOP",
-      "weight": 0.0218642
+      "weight": 0.0218642,
+      "daily": -0.29
     },
     {
       "symbol": "WBS",
       "weight": 0.021856599,
-      "daily": 0.06
+      "daily": -1.37
     },
     {
       "symbol": "VLY",
       "weight": 0.020669,
-      "daily": 0.77
+      "daily": -0.85
     },
     {
       "symbol": "CFR",
       "weight": 0.0206232,
-      "daily": 1.18
+      "daily": 0.97
     },
     {
       "symbol": "MTB",
       "weight": 0.020560501,
-      "daily": -0.42
+      "daily": 0.97
     },
     {
       "symbol": "SSB",
-      "weight": 0.020097202
+      "weight": 0.020097202,
+      "daily": 0.5
     },
     {
       "symbol": "CFG",
       "weight": 0.0199656,
-      "daily": 0.74
+      "daily": -0.05
     },
     {
       "symbol": "WTFC",
       "weight": 0.019810801,
-      "daily": 1.91
+      "daily": -0.52
     },
     {
       "symbol": "RF",
       "weight": 0.0197093,
-      "daily": 0.04
+      "daily": 0.6
     },
     {
       "symbol": "HWC",
       "weight": 0.0194206,
-      "daily": 0.46
+      "daily": 0.08
     }
   ]
 }
