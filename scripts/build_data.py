@@ -520,24 +520,27 @@ def get_stock_data(ticker_symbol, charts_dir):
         vol_chart_path = create_vol_chart_png(vol_history, ticker_symbol, charts_dir) if vol_history else None
         long_etfs, short_etfs = get_leveraged_etfs(ticker_symbol)
 
-        # Gap detection: most recent gap in last 5 trading days
-        gap_dir, gap_days = None, None
+        # Gap detection: all gaps in last 5 trading days [day1=most recent, day5=oldest]
+        gaps = []
         GAP_THRESHOLD = 0.5
         try:
             for i in range(1, 6):
                 if len(hist) < i + 1:
-                    break
+                    gaps.append(None)
+                    continue
                 open_price = float(hist['Open'].iloc[-i])
                 prev_close = float(hist['Close'].iloc[-(i + 1)])
                 gap_pct = (open_price - prev_close) / prev_close * 100
                 if gap_pct >= GAP_THRESHOLD:
-                    gap_dir, gap_days = 'up', i
-                    break
+                    gaps.append('up')
                 elif gap_pct <= -GAP_THRESHOLD:
-                    gap_dir, gap_days = 'down', i
-                    break
+                    gaps.append('down')
+                else:
+                    gaps.append(None)
         except Exception:
             pass
+        while len(gaps) < 5:
+            gaps.append(None)
         # Keep last 20 rolling RRS for equal-weighted summary charts (The 7s at a Glance)
         rolling_rrs = None
         if rrs_data is not None and len(rrs_data) >= 20:
@@ -564,8 +567,7 @@ def get_stock_data(ticker_symbol, charts_dir):
             "long": long_etfs,
             "short": short_etfs,
             "abc": abc_rating,
-            "gap_dir": gap_dir,
-            "gap_days": gap_days
+            "gaps": gaps
         }
     except Exception as e:
         print("Error", ticker_symbol, e)
