@@ -478,6 +478,15 @@
                         html += '<div class="gap-dot ' + cls + '" title="' + tip + '"></div>';
                     }
                     html += '</div>';
+                } else if (r.gap_dir) {
+                    html += '<div class="gap-bar">';
+                    for (var li = 4; li >= 0; li--) {
+                        var dayNum = li + 1;
+                        var lcls = (dayNum === r.gap_days) ? (r.gap_dir === 'up' ? 'gap-dot-up' : 'gap-dot-down') : 'gap-dot-none';
+                        var ltip = 'D-' + dayNum + (dayNum === r.gap_days ? ': gap ' + r.gap_dir : '');
+                        html += '<div class="gap-dot ' + lcls + '" title="' + ltip + '"></div>';
+                    }
+                    html += '</div>';
                 } else {
                     html += '<span style="color:#374151">-</span>';
                 }
