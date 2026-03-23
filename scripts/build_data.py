@@ -733,15 +733,23 @@ def main():
     themes_data = []
     for theme_name, tickers in AI_THEMES.items():
         t_rows = [all_ticker_data[t] for t in tickers if t in all_ticker_data]
-        def _theme_avg(key, rows=t_rows):
+        def _theme_avg(key, ndec=2, rows=t_rows):
             vals = [r.get(key) for r in rows if r.get(key) is not None]
-            return round(sum(vals) / len(vals), 2) if vals else None
+            return round(sum(vals) / len(vals), ndec) if vals else None
         themes_data.append({
             "name": theme_name,
             "tickers": tickers,
             "daily": _theme_avg("daily"),
+            "intra": _theme_avg("intra"),
+            "wtd": _theme_avg("wtd"),
             "5d": _theme_avg("5d"),
+            "20d": _theme_avg("20d"),
             "ytd": _theme_avg("ytd"),
+            "vol_ratio": _theme_avg("vol_ratio"),
+            "atr_pct": _theme_avg("atr_pct", 1),
+            "dist_sma50_atr": _theme_avg("dist_sma50_atr"),
+            "rs": _theme_avg("rs"),
+            "constituent_daily": {t: all_ticker_data[t].get("daily") for t in tickers if t in all_ticker_data},
         })
 
     # Build "The 7s at a Glance" – one row per "The X 7" group with aggregate metrics (equal-weighted)
