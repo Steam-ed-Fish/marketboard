@@ -199,6 +199,15 @@
         .rel-ticker-b { color: #9ca3af; font-weight: 700; font-size: 0.9em; }
         .rel-highlight-pos { background: #10b98133; border-radius: 3px; padding: 1px 4px; }
         .rel-highlight-neg { background: #ef444433; border-radius: 3px; padding: 1px 4px; }
+        .theme-perf-table { width: 100%; border-collapse: collapse; font-size: 0.82em; }
+        .theme-perf-table thead th { padding: 5px 8px; color: #9ca3af; font-weight: 600; text-align: right; border-bottom: 1px solid #374151; }
+        .theme-perf-table thead th:first-child { text-align: left; }
+        .theme-perf-row td { padding: 6px 8px; border-bottom: 1px solid #2d3748; vertical-align: middle; }
+        .theme-perf-row:last-child td { border-bottom: none; }
+        .theme-perf-row:hover { background: #2a2a2a; }
+        .theme-name { color: #e0e0e0; font-weight: 600; white-space: nowrap; }
+        .theme-tickers { font-size: 0.78em; color: #6b7280; margin-top: 1px; }
+        .theme-val { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; min-width: 60px; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1a1a1a; }
         ::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 4px; }
@@ -372,12 +381,38 @@
         return html;
     }
 
+    function renderAIThemes() {
+        if (!snapshot || !snapshot.themes || !snapshot.themes.length) return '';
+        function fmt(val) {
+            if (val == null) return '<span style="color:#4b5563">-</span>';
+            var str = (val > 0 ? '+' : '') + val.toFixed(2) + '%';
+            var cls = val > 0 ? 'price-up' : (val < 0 ? 'price-down' : '');
+            var hlCls = Math.abs(val) >= 3 ? (val > 0 ? ' rel-highlight-pos' : ' rel-highlight-neg') : '';
+            return '<span class="' + cls + hlCls + '">' + str + '</span>';
+        }
+        var html = '<div class="group-container" id="group-ai-themes">';
+        html += '<div class="group-header"><span class="group-header-title">AI Themes</span></div>';
+        html += '<table class="theme-perf-table"><thead><tr>';
+        html += '<th>Theme</th><th>Daily</th><th>5D</th><th>YTD</th></tr></thead><tbody>';
+        snapshot.themes.forEach(function(t) {
+            html += '<tr class="theme-perf-row">';
+            html += '<td><div class="theme-name">' + t.name + '</div>';
+            html += '<div class="theme-tickers">' + t.tickers.join(' · ') + '</div></td>';
+            html += '<td class="theme-val">' + fmt(t.daily) + '</td>';
+            html += '<td class="theme-val">' + fmt(t['5d']) + '</td>';
+            html += '<td class="theme-val">' + fmt(t.ytd) + '</td>';
+            html += '</tr>';
+        });
+        html += '</tbody></table></div>';
+        return html;
+    }
+
     function renderGroups() {
         if (!snapshot || !snapshot.groups) {
             document.getElementById('groups-container').innerHTML = '<div class="loading-msg">LOADING DATA...</div>';
             return;
         }
-        var html = renderRelativePerf();
+        var html = renderRelativePerf() + renderAIThemes();
         var groupOrder = Object.keys(snapshot.groups);
         for (var g = 0; g < groupOrder.length; g++) {
             var groupName = groupOrder[g];

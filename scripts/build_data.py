@@ -74,6 +74,12 @@ STOCK_GROUPS = {
     ],
 }
 
+AI_THEMES = {
+    "Mag 7":        ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA"],
+    "Memory":       ["MU", "WDC", "STX"],
+    "Optical Comms (光通信)": ["COHR", "LITE", "AAOI", "VIAV"],
+}
+
 LEVERAGED_ETFS = {
     "QQQ": {"long": ["TQQQ"], "short": ["SQQQ"]},
     "MDY": {"long": ["MIDU"], "short": []},
@@ -714,6 +720,30 @@ def main():
             time.sleep(0.15)
         groups_data[group_name] = rows
 
+    # Fetch any AI_THEMES tickers not already fetched via STOCK_GROUPS
+    theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers)
+    for ticker in sorted(theme_ticker_set - set(all_ticker_data.keys())):
+        print(f"  [AI Themes] {ticker}")
+        row = get_stock_data(ticker, charts_dir)
+        if row:
+            all_ticker_data[ticker] = row
+        time.sleep(0.15)
+
+    # Build AI themes summary (equal-weighted averages)
+    themes_data = []
+    for theme_name, tickers in AI_THEMES.items():
+        t_rows = [all_ticker_data[t] for t in tickers if t in all_ticker_data]
+        def _theme_avg(key, rows=t_rows):
+            vals = [r.get(key) for r in rows if r.get(key) is not None]
+            return round(sum(vals) / len(vals), 2) if vals else None
+        themes_data.append({
+            "name": theme_name,
+            "tickers": tickers,
+            "daily": _theme_avg("daily"),
+            "5d": _theme_avg("5d"),
+            "ytd": _theme_avg("ytd"),
+        })
+
     # Build "The 7s at a Glance" – one row per "The X 7" group with aggregate metrics (equal-weighted)
     seven_group_names = [k for k in STOCK_GROUPS if k.startswith("The ") and k.endswith(" 7")]
     summary_rows = []
@@ -954,6 +984,7 @@ def main():
         "built_at": datetime.utcnow().isoformat() + "Z",
         "groups": groups_data,
         "column_ranges": column_ranges,
+        "themes": themes_data,
     }
     meta = {
         "SECTOR_COLORS": SECTOR_COLORS,
