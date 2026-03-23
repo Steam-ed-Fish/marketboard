@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-03-23T07:16:24.296166Z",
+  "built_at": "2026-03-23T09:28:57.004047Z",
   "groups": {
     "Indices": [
       {
@@ -68,7 +68,7 @@
         "vol_chart": "data/charts/vol_SPY.png",
         "atr_pct": 1.5,
         "dist_sma50_atr": -3.39,
-        "rs": 10.0,
+        "rs": 92.0,
         "rs_chart": "data/charts/SPY.png",
         "long": [
           "SPXL",
@@ -1399,7 +1399,7 @@
         "rs_chart": "data/charts/Glance_The_Health_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "B"
       },
       {
         "ticker": "The Medtech 7",
@@ -8110,5 +8110,46 @@
         -4.79
       ]
     }
-  }
+  },
+  "themes": [
+    {
+      "name": "Mag 7",
+      "tickers": [
+        "AAPL",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "META",
+        "NVDA",
+        "TSLA"
+      ],
+      "daily": -2.06,
+      "5d": -2.72,
+      "ytd": -10.62
+    },
+    {
+      "name": "Memory",
+      "tickers": [
+        "MU",
+        "WDC",
+        "SNDK",
+        "STX"
+      ],
+      "daily": -6.45,
+      "5d": 5.33,
+      "ytd": 72.79
+    },
+    {
+      "name": "Optical Comms (光通信)",
+      "tickers": [
+        "COHR",
+        "LITE",
+        "AAOI",
+        "VIAV"
+      ],
+      "daily": -9.7,
+      "5d": 3.32,
+      "ytd": 76.93
+    }
+  ]
 }
