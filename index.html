@@ -535,9 +535,9 @@
                 if (r.gaps && r.gaps.length) {
                     html += '<div class="gap-bar">';
                     for (var gi = r.gaps.length - 1; gi >= 0; gi--) {
-                        var g = r.gaps[gi];
-                        var cls = g === 'up' ? 'gap-dot-up' : (g === 'down' ? 'gap-dot-down' : 'gap-dot-none');
-                        var tip = 'D-' + (gi + 1) + (g ? ': gap ' + g : '');
+                        var gapVal = r.gaps[gi];
+                        var cls = gapVal === 'up' ? 'gap-dot-up' : (gapVal === 'down' ? 'gap-dot-down' : 'gap-dot-none');
+                        var tip = 'D-' + (gi + 1) + (gapVal ? ': gap ' + gapVal : '');
                         html += '<div class="gap-dot ' + cls + '" title="' + tip + '"></div>';
                     }
                     html += '</div>';
