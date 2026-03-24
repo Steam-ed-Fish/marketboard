@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-03-24T08:47:30.055830Z",
+  "built_at": "2026-03-24T09:12:19.426351Z",
   "groups": {
     "Indices": [
       {
@@ -68,7 +68,7 @@
         "vol_chart": "data/charts/vol_SPY.png",
         "atr_pct": 1.5,
         "dist_sma50_atr": -2.58,
-        "rs": 90.0,
+        "rs": 12.0,
         "rs_chart": "data/charts/SPY.png",
         "long": [
           "SPXL",
@@ -1399,7 +1399,7 @@
         "rs_chart": "data/charts/Glance_The_Health_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "B"
       },
       {
         "ticker": "The Medtech 7",
@@ -8204,13 +8204,13 @@
     }
   ],
   "fear_greed": {
-    "score": 50.2,
+    "score": 50.1,
     "sentiment": "Neutral",
     "components": {
       "volatility": {
-        "score": 66.7,
+        "score": 66.1,
         "label": "VIX Volatility",
-        "detail": "VIX 26.4 (52wk: 13.5–52.3)"
+        "detail": "VIX 26.7 (52wk: 13.5–52.3)"
       },
       "trend": {
         "score": 30.9,
