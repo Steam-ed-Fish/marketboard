@@ -256,7 +256,7 @@
             </div>
         </div>
     </div>
-    <div id="theme-constituent-tooltip" style="display:none;position:fixed;z-index:9999;background:#1f2937;border:1px solid #374151;border-radius:6px;padding:10px 14px;font-size:0.82em;min-width:150px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,0.5)"></div>
+    <div id="theme-constituent-tooltip" style="display:none;position:fixed;z-index:9999;background:#1f2937;border:1px solid #374151;border-radius:6px;padding:10px 14px;font-size:0.82em;min-width:150px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,0.5);color:#e0e0e0"></div>
     <div id="holdings-modal-overlay" class="holdings-modal-overlay" onclick="closeHoldings(event)">
         <div class="holdings-modal" onclick="event.stopPropagation()">
             <div class="holdings-modal-header"><span id="holdings-modal-title">Holdings</span><button type="button" class="holdings-modal-close" onclick="closeHoldings(event)">&times;</button></div>
@@ -373,22 +373,22 @@
         return html;
     }
 
-    function showThemeTooltip(e, dataJson) {
+    window.showThemeTooltip = function(e, dataJson) {
         var tt = document.getElementById('theme-constituent-tooltip');
         var constituents = JSON.parse(dataJson);
         var inner = constituents.map(function(c) {
-            var cls = c.d > 0 ? 'price-up' : (c.d < 0 ? 'price-down' : '');
+            var color = c.d > 0 ? '#10b981' : (c.d < 0 ? '#ef4444' : '#9ca3af');
             var str = c.d != null ? (c.d > 0 ? '+' : '') + c.d.toFixed(2) + '%' : '-';
-            return '<div style="display:flex;justify-content:space-between;gap:16px"><span style="color:#9ca3af">' + c.t + '</span><span class="' + cls + '" style="font-weight:600">' + str + '</span></div>';
+            return '<div style="display:flex;justify-content:space-between;gap:16px"><span style="color:#9ca3af">' + c.t + '</span><span style="color:' + color + ';font-weight:600">' + str + '</span></div>';
         }).join('');
         tt.innerHTML = inner;
         tt.style.display = 'block';
         tt.style.left = (e.clientX + 12) + 'px';
         tt.style.top = (e.clientY - 10) + 'px';
-    }
-    function hideThemeTooltip() {
+    };
+    window.hideThemeTooltip = function() {
         document.getElementById('theme-constituent-tooltip').style.display = 'none';
-    }
+    };
 
     function renderAIThemes() {
         if (!snapshot || !snapshot.themes || !snapshot.themes.length) return '';
