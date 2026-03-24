@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-03-24T02:04:46.967330Z",
+  "built_at": "2026-03-24T06:39:35.935815Z",
   "groups": {
     "Indices": [
       {
@@ -8169,28 +8169,34 @@
       }
     },
     {
-      "name": "Optical Comms (光通信)",
+      "name": "Optical Comms",
       "tickers": [
         "COHR",
         "LITE",
         "AAOI",
-        "VIAV"
+        "VIAV",
+        "TSEM",
+        "AXTI",
+        "GLW"
       ],
-      "daily": 5.01,
-      "intra": 2.32,
-      "wtd": 5.01,
-      "5d": 6.98,
-      "20d": 27.69,
-      "ytd": 86.76,
-      "vol_ratio": 0.87,
-      "atr_pct": 9.4,
-      "dist_sma50_atr": 3.26,
-      "rs": 100.0,
+      "daily": 7.03,
+      "intra": 4.11,
+      "wtd": 7.03,
+      "5d": 12.08,
+      "20d": 37.55,
+      "ytd": 102.52,
+      "vol_ratio": 1.07,
+      "atr_pct": 8.8,
+      "dist_sma50_atr": 4.16,
+      "rs": 96.43,
       "constituent_daily": {
         "COHR": 0.56,
         "LITE": 3.2,
         "AAOI": 9.39,
-        "VIAV": 6.9
+        "VIAV": 6.9,
+        "TSEM": 5.19,
+        "AXTI": 18.81,
+        "GLW": 5.13
       }
     }
   ]
