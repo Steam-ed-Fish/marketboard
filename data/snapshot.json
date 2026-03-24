@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-03-24T06:39:35.935815Z",
+  "built_at": "2026-03-24T06:57:32.459103Z",
   "groups": {
     "Indices": [
       {
@@ -68,7 +68,7 @@
         "vol_chart": "data/charts/vol_SPY.png",
         "atr_pct": 1.5,
         "dist_sma50_atr": -2.58,
-        "rs": 90.0,
+        "rs": 12.0,
         "rs_chart": "data/charts/SPY.png",
         "long": [
           "SPXL",
@@ -1299,8 +1299,8 @@
         "intra": 0.83,
         "5d": 0.05,
         "20d": 0.13,
-        "wtd": 2.3,
-        "ytd": 18.16,
+        "wtd": 2.33,
+        "ytd": 18.18,
         "vol_ratio": 0.86,
         "vol_chart": "data/charts/vol_Glance_The_Buildout_7.png",
         "atr_pct": 4.4,
@@ -1399,7 +1399,7 @@
         "rs_chart": "data/charts/Glance_The_Health_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "B"
       },
       {
         "ticker": "The Medtech 7",
@@ -3301,12 +3301,12 @@
         "intra": 1.2,
         "5d": -4.48,
         "20d": -11.6,
-        "wtd": 3.1,
-        "ytd": -6.47,
+        "wtd": 3.3,
+        "ytd": -6.29,
         "vol_ratio": 0.78,
         "vol_chart": "data/charts/vol_APH.png",
         "atr_pct": 5.2,
-        "dist_sma50_atr": -1.64,
+        "dist_sma50_atr": -1.61,
         "rs": 100.0,
         "rs_chart": "data/charts/APH.png",
         "long": [],
@@ -5652,12 +5652,12 @@
         "5d": -0.39,
         "20d": -8.01,
         "wtd": 1.54,
-        "ytd": -7.03,
+        "ytd": -6.78,
         "vol_ratio": 1.53,
         "vol_chart": "data/charts/vol_XRT.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": -3.22,
-        "rs": 10.0,
+        "rs": 15.0,
         "rs_chart": "data/charts/XRT.png",
         "long": [
           "RETL"
@@ -8133,6 +8133,7 @@
       "atr_pct": 2.8,
       "dist_sma50_atr": -2.17,
       "rs": 81.43,
+      "vol_chart": "data/charts/vol_Theme_Mag_7.png",
       "constituent_daily": {
         "AAPL": 1.41,
         "MSFT": 0.3,
@@ -8161,6 +8162,7 @@
       "atr_pct": 7.1,
       "dist_sma50_atr": 1.22,
       "rs": 67.5,
+      "vol_chart": "data/charts/vol_Theme_Memory.png",
       "constituent_daily": {
         "MU": -4.39,
         "WDC": 0.58,
@@ -8189,6 +8191,7 @@
       "atr_pct": 8.8,
       "dist_sma50_atr": 4.16,
       "rs": 96.43,
+      "vol_chart": "data/charts/vol_Theme_Optical_Comms.png",
       "constituent_daily": {
         "COHR": 0.56,
         "LITE": 3.2,
