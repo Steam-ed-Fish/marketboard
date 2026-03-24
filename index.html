@@ -407,7 +407,7 @@
         html += '<div class="group-header"><span class="group-header-title">AI Themes</span></div>';
         html += '<table class="ticker-table"><thead><tr>';
         html += '<th>Theme</th><th>Grade</th><th>Daily</th><th>Intra</th><th>WTD</th><th>5D</th><th>20D</th><th>YTD</th>';
-        html += '<th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>1M-VARS</th><th>VARS</th><th>LETF</th><th>Gap</th>';
+        html += '<th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>1M-VARS</th>';
         html += '</tr></thead><tbody>';
         snapshot.themes.forEach(function(t) {
             var cd = t.constituent_daily || {};
@@ -428,7 +428,6 @@
             html += '<td>' + (t.atr_pct != null ? t.atr_pct.toFixed(1) + '%' : 'N/A') + '</td>';
             html += '<td>' + (t.dist_sma50_atr != null ? t.dist_sma50_atr.toFixed(2) : 'N/A') + '</td>';
             html += '<td>' + (t.rs != null ? Math.round(t.rs) + '%' : 'N/A') + '</td>';
-            html += '<td>-</td><td>-</td><td>-</td>';
             html += '</tr>';
         });
         html += '</tbody></table></div>';
