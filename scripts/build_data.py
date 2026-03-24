@@ -695,6 +695,78 @@ def fetch_etf_holdings(etf_list, out_dir):
             print("  [{}/{}] {}: {}".format(i + 1, len(etf_list), etf_symbol, ex))
 
 
+def compute_fear_greed(all_ticker_data):
+    """Compute a 0–100 Fear & Greed composite from 6 market signals."""
+    def _g(ticker, field):
+        return all_ticker_data.get(ticker, {}).get(field) or 0
+
+    components = {}
+
+    # 1. VIX Volatility (15%) — high VIX = fear = low score
+    try:
+        vix_hist = yf.Ticker("^VIX").history(period="1y")
+        vix_now = float(vix_hist["Close"].iloc[-1])
+        vix_min = float(vix_hist["Close"].min())
+        vix_max = float(vix_hist["Close"].max())
+        s = max(0.0, min(100.0, (1 - (vix_now - vix_min) / max(vix_max - vix_min, 0.01)) * 100))
+        components["volatility"] = {"score": round(s, 1), "label": "VIX Volatility",
+                                     "detail": "VIX {:.1f} (52wk: {:.1f}–{:.1f})".format(vix_now, vix_min, vix_max)}
+    except Exception:
+        components["volatility"] = {"score": 50.0, "label": "VIX Volatility", "detail": "N/A"}
+
+    # 2. SPY Trend (20%) — SMA50 dist + 20d return
+    dist = _g("SPY", "dist_sma50_atr")
+    r20  = _g("SPY", "20d")
+    dist_s = max(0.0, min(100.0, (dist + 5) / 10 * 100))
+    r20_s  = max(0.0, min(100.0, (r20  + 15) / 30 * 100))
+    components["trend"] = {"score": round((dist_s + r20_s) / 2, 1), "label": "SPY Trend",
+                            "detail": "SMA50 {:+.1f}ATR, 20d {:+.1f}%".format(dist, r20)}
+
+    # 3. Sector Momentum (15%) — % Sel Sectors positive 20d
+    sel = ["XLK","XLI","XLC","XLF","XLU","XLY","XLRE","XLP","XLB","XLE","XLV"]
+    avail = [t for t in sel if t in all_ticker_data]
+    pos   = sum(1 for t in avail if (_g(t, "20d") > 0))
+    s = (pos / max(len(avail), 1)) * 100
+    components["momentum"] = {"score": round(s, 1), "label": "Sector Momentum",
+                               "detail": "{}/{} sectors positive 20d".format(pos, len(avail))}
+
+    # 4. HYG/TLT Credit (20%) — HYG outperforms TLT = less fear
+    hyg_20d = _g("HYG", "20d")
+    tlt_20d = _g("TLT", "20d")
+    diff = hyg_20d - tlt_20d
+    s = max(0.0, min(100.0, (diff + 10) / 20 * 100))
+    components["credit"] = {"score": round(s, 1), "label": "HYG/TLT Credit",
+                             "detail": "HYG {:+.1f}%, TLT {:+.1f}%".format(hyg_20d, tlt_20d)}
+
+    # 5. RSP/SPY Breadth (15%) — RSP outperforms SPY = broader participation = less fear
+    rsp_20d = _g("RSP", "20d")
+    spy_20d = _g("SPY", "20d")
+    diff = rsp_20d - spy_20d
+    s = max(0.0, min(100.0, (diff + 5) / 10 * 100))
+    components["breadth"] = {"score": round(s, 1), "label": "RSP/SPY Breadth",
+                              "detail": "RSP {:+.1f}%, SPY {:+.1f}%".format(rsp_20d, spy_20d)}
+
+    # 6. GLD/TLT Cross-Asset (15%) — safe-haven demand = fear = low score (inverted)
+    gld_20d = _g("GLD", "20d")
+    safe_haven = gld_20d + tlt_20d
+    s = max(0.0, min(100.0, (1 - (safe_haven + 15) / 30) * 100))
+    components["cross_asset"] = {"score": round(s, 1), "label": "GLD/TLT Cross-Asset",
+                                  "detail": "GLD {:+.1f}%, TLT {:+.1f}%".format(gld_20d, tlt_20d)}
+
+    weights = {"volatility": 0.15, "trend": 0.20, "momentum": 0.15,
+               "credit": 0.20, "breadth": 0.15, "cross_asset": 0.15}
+    total = sum(weights[k] * components[k]["score"] for k in weights)
+
+    if   total <= 20: sentiment = "Extreme Fear"
+    elif total <= 40: sentiment = "Fear"
+    elif total <= 60: sentiment = "Neutral"
+    elif total <= 80: sentiment = "Greed"
+    else:             sentiment = "Extreme Greed"
+
+    return {"score": round(total, 1), "sentiment": sentiment,
+            "components": components, "weights": weights}
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--out-dir", default="data", help="Output directory (default: data)")
@@ -720,8 +792,8 @@ def main():
             time.sleep(0.15)
         groups_data[group_name] = rows
 
-    # Fetch any AI_THEMES tickers not already fetched via STOCK_GROUPS
-    theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers)
+    # Fetch any AI_THEMES tickers + Fear & Greed tickers not already fetched
+    theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers) | {"HYG", "TLT"}
     for ticker in sorted(theme_ticker_set - set(all_ticker_data.keys())):
         print(f"  [AI Themes] {ticker}")
         row = get_stock_data(ticker, charts_dir)
@@ -995,11 +1067,14 @@ def main():
             "20d": (min(twenty_v) if twenty_v else -30, max(twenty_v) if twenty_v else 30),
         }
 
+    fear_greed = compute_fear_greed(all_ticker_data)
+
     snapshot = {
         "built_at": datetime.utcnow().isoformat() + "Z",
         "groups": groups_data,
         "column_ranges": column_ranges,
         "themes": themes_data,
+        "fear_greed": fear_greed,
     }
     meta = {
         "SECTOR_COLORS": SECTOR_COLORS,

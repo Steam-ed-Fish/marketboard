@@ -202,6 +202,17 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1a1a1a; }
         ::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 4px; }
+        /* Fear & Greed */
+        .fg-gauge-wrap { display:flex; flex-direction:column; align-items:center; margin-bottom:14px; }
+        .fg-score-num  { font-size:2rem; font-weight:700; margin-top:2px; }
+        .fg-sentiment  { font-size:0.85rem; color:#9ca3af; }
+        .fg-grid       { display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:0 2px; }
+        .fg-card       { background:#1a2332; border-radius:6px; padding:8px 10px; }
+        .fg-card-lbl   { font-size:0.68rem; color:#9ca3af; margin-bottom:3px; }
+        .fg-card-score { font-size:1.05rem; font-weight:700; }
+        .fg-card-det   { font-size:0.63rem; color:#6b7280; margin-top:2px; }
+        .fg-bar-bg     { background:#2d3748; border-radius:3px; height:5px; margin-top:5px; }
+        .fg-bar-fill   { height:5px; border-radius:3px; }
     </style>
 </head>
 <body>
@@ -209,6 +220,9 @@
         <div class="economic-events" style="position:relative">
             <button class="events-button">📅 MACRO EVENTS</button>
             <div class="events-content" id="events-content"></div>
+        </div>
+        <div style="position:relative;margin-bottom:10px">
+            <button class="events-button" type="button" onclick="openFearGreed()">🌡️ FEAR &amp; GREED</button>
         </div>
         <div class="market-breadth" style="position:relative;margin-bottom:10px">
             <button class="events-button" type="button" onclick="openMarketBreadth()">📊 MARKET BREADTH</button>
@@ -254,6 +268,15 @@
                 {"colorTheme":"dark","dateRange":"12M","locale":"en","isTransparent":false,"showChart":true,"width":"400","height":"550","tabs":[{"title":"Breadth","symbols":[{"s":"INDEX:MMFI","d":"NYSE McClellan"},{"s":"INDEX:MMTW","d":"NYSE % Above MA"},{"s":"INDEX:MMFD","d":"NYSE Diff"},{"s":"INDEX:MMTH","d":"NYSE Issues"},{"s":"INDEX:MMOH","d":"NYSE Hi"},{"s":"INDEX:MMOF","d":"NYSE Lo"}],"originalTitle":"Indices"}]}
                 </script>
             </div>
+        </div>
+    </div>
+    <div id="fear-greed-modal-overlay" class="econ-modal-overlay" onclick="closeFearGreed(event)">
+        <div class="econ-modal" onclick="event.stopPropagation()" style="max-width:480px;width:480px">
+            <div class="econ-modal-header">
+                <span>Fear &amp; Greed Index</span>
+                <button type="button" class="econ-modal-close" onclick="closeFearGreed(event)">&times;</button>
+            </div>
+            <div id="fear-greed-content"></div>
         </div>
     </div>
     <div id="theme-constituent-tooltip" style="display:none;position:fixed;z-index:9999;background:#1f2937;border:1px solid #374151;border-radius:6px;padding:10px 14px;font-size:0.82em;min-width:150px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,0.5);color:#e0e0e0"></div>
@@ -687,6 +710,58 @@
         var ov = document.getElementById('market-breadth-modal-overlay');
         if (ov) ov.style.display = 'none';
     };
+    window.openFearGreed = function() {
+        renderFearGreed();
+        var ov = document.getElementById('fear-greed-modal-overlay');
+        if (ov) ov.style.display = 'flex';
+    };
+    window.closeFearGreed = function(ev) {
+        if (ev) ev.preventDefault();
+        var ov = document.getElementById('fear-greed-modal-overlay');
+        if (ov) ov.style.display = 'none';
+    };
+    function renderFearGreed() {
+        var el = document.getElementById('fear-greed-content');
+        if (!el) return;
+        var fg = snapshot && snapshot.fear_greed;
+        if (!fg) { el.innerHTML = '<div style="padding:16px;color:#9ca3af">No data — run build_data.py.</div>'; return; }
+        var score = fg.score, sentiment = fg.sentiment;
+        var col = score<=20?'#ef4444':score<=40?'#f97316':score<=60?'#eab308':score<=80?'#22c55e':'#10b981';
+        // SVG gauge
+        var cx=120,cy=110,r=90;
+        var ang = Math.PI - (score/100)*Math.PI;
+        var ex=(cx+r*Math.cos(ang)).toFixed(1), ey=(cy-r*Math.sin(ang)).toFixed(1);
+        var bgArc='M '+(cx-r)+','+cy+' A '+r+','+r+' 0 0,1 '+(cx+r)+','+cy;
+        var fillArc= score<0.5?'': score>99.5?bgArc:'M '+(cx-r)+','+cy+' A '+r+','+r+' 0 0,1 '+ex+','+ey;
+        var nlx=(cx+75*Math.cos(ang)).toFixed(1), nly=(cy-75*Math.sin(ang)).toFixed(1);
+        var svg='<svg viewBox="0 0 240 120" width="220" height="110" style="overflow:visible">'+
+            '<path d="'+bgArc+'" fill="none" stroke="#374151" stroke-width="20"/>'+
+            (fillArc?'<path d="'+fillArc+'" fill="none" stroke="'+col+'" stroke-width="20"/>':'')+
+            '<text x="18" y="118" fill="#ef4444" font-size="9" font-family="monospace">FEAR</text>'+
+            '<text x="165" y="118" fill="#10b981" font-size="9" font-family="monospace">GREED</text>'+
+            '<line x1="'+cx+'" y1="'+cy+'" x2="'+nlx+'" y2="'+nly+'" stroke="#e0e0e0" stroke-width="2.5" stroke-linecap="round"/>'+
+            '<circle cx="'+cx+'" cy="'+cy+'" r="5" fill="#e0e0e0"/>'+
+            '</svg>';
+        // Component cards
+        var order=['volatility','trend','momentum','credit','breadth','cross_asset'];
+        var cards=order.map(function(k){
+            var c=fg.components[k]; if(!c) return '';
+            var w=Math.round((fg.weights[k]||0)*100);
+            var s=c.score;
+            var cc=s<=30?'#ef4444':s<=50?'#f97316':s<=70?'#eab308':'#22c55e';
+            return '<div class="fg-card">'+
+                '<div class="fg-card-lbl">'+c.label+' <span style="color:#4b5563">('+w+'%)</span></div>'+
+                '<div class="fg-card-score" style="color:'+cc+'">'+s.toFixed(0)+'<span style="font-size:0.68rem;font-weight:400;color:#6b7280">/100</span></div>'+
+                '<div class="fg-card-det">'+c.detail+'</div>'+
+                '<div class="fg-bar-bg"><div class="fg-bar-fill" style="width:'+s+'%;background:'+cc+'"></div></div>'+
+                '</div>';
+        }).join('');
+        el.innerHTML='<div class="fg-gauge-wrap">'+svg+
+            '<div class="fg-score-num" style="color:'+col+'">'+score.toFixed(0)+'</div>'+
+            '<div class="fg-sentiment">'+sentiment+'</div></div>'+
+            '<div class="fg-grid">'+cards+'</div>'+
+            '<div style="text-align:center;margin-top:8px;font-size:0.63rem;color:#4b5563">VIX · SPY · Sel Sectors · HYG/TLT · RSP · GLD</div>';
+    }
     window.showHoldings = function(symbol) {
         var modal = document.getElementById('holdings-modal-overlay');
         var title = document.getElementById('holdings-modal-title');
