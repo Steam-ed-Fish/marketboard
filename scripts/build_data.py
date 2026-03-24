@@ -77,7 +77,7 @@ STOCK_GROUPS = {
 AI_THEMES = {
     "Mag 7":        ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA"],
     "Memory":       ["MU", "WDC", "SNDK", "STX"],
-    "Optical Comms (光通信)": ["COHR", "LITE", "AAOI", "VIAV"],
+    "Optical Comms": ["COHR", "LITE", "AAOI", "VIAV"],
 }
 
 LEVERAGED_ETFS = {
