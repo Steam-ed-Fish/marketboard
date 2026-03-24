@@ -424,7 +424,7 @@
             html += cell(t['20d'], -20, 20);
             html += cell(t.ytd, -30, 30);
             html += '<td>' + (t.vol_ratio != null ? t.vol_ratio.toFixed(2) + 'x' : 'N/A') + '</td>';
-            html += '<td>-</td>';
+            html += '<td>' + (t.vol_chart ? '<img src="' + t.vol_chart + '" class="rs-chart" alt="Vol">' : '-') + '</td>';
             html += '<td>' + (t.atr_pct != null ? t.atr_pct.toFixed(1) + '%' : 'N/A') + '</td>';
             html += '<td>' + (t.dist_sma50_atr != null ? t.dist_sma50_atr.toFixed(2) : 'N/A') + '</td>';
             html += '<td>' + (t.rs != null ? Math.round(t.rs) + '%' : 'N/A') + '</td>';

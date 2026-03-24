@@ -736,6 +736,12 @@ def main():
         def _theme_avg(key, ndec=2, rows=t_rows):
             vals = [r.get(key) for r in rows if r.get(key) is not None]
             return round(sum(vals) / len(vals), ndec) if vals else None
+        vol_histories = [r.get("vol_history") for r in t_rows if r.get("vol_history") and len(r.get("vol_history")) == 20]
+        vol_chart_path = None
+        if vol_histories:
+            avg_vol = np.mean(vol_histories, axis=0).tolist()
+            safe_name = re.sub(r'[^a-zA-Z0-9]', '_', theme_name)
+            vol_chart_path = create_vol_chart_png(avg_vol, "Theme_" + safe_name, charts_dir)
         themes_data.append({
             "name": theme_name,
             "tickers": tickers,
@@ -749,6 +755,7 @@ def main():
             "atr_pct": _theme_avg("atr_pct", 1),
             "dist_sma50_atr": _theme_avg("dist_sma50_atr"),
             "rs": _theme_avg("rs"),
+            "vol_chart": vol_chart_path,
             "constituent_daily": {t: all_ticker_data[t].get("daily") for t in tickers if t in all_ticker_data},
         })
 
