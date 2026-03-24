@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-03-24T06:57:32.459103Z",
+  "built_at": "2026-03-24T08:15:12.933836Z",
   "groups": {
     "Indices": [
       {
@@ -1299,8 +1299,8 @@
         "intra": 0.83,
         "5d": 0.05,
         "20d": 0.13,
-        "wtd": 2.33,
-        "ytd": 18.18,
+        "wtd": 2.3,
+        "ytd": 18.16,
         "vol_ratio": 0.86,
         "vol_chart": "data/charts/vol_Glance_The_Buildout_7.png",
         "atr_pct": 4.4,
@@ -1399,7 +1399,7 @@
         "rs_chart": "data/charts/Glance_The_Health_7.png",
         "long": [],
         "short": [],
-        "abc": "B"
+        "abc": "C"
       },
       {
         "ticker": "The Medtech 7",
@@ -3301,12 +3301,12 @@
         "intra": 1.2,
         "5d": -4.48,
         "20d": -11.6,
-        "wtd": 3.3,
-        "ytd": -6.29,
+        "wtd": 3.1,
+        "ytd": -6.47,
         "vol_ratio": 0.78,
         "vol_chart": "data/charts/vol_APH.png",
         "atr_pct": 5.2,
-        "dist_sma50_atr": -1.61,
+        "dist_sma50_atr": -1.64,
         "rs": 100.0,
         "rs_chart": "data/charts/APH.png",
         "long": [],
@@ -5652,12 +5652,12 @@
         "5d": -0.39,
         "20d": -8.01,
         "wtd": 1.54,
-        "ytd": -6.78,
+        "ytd": -7.03,
         "vol_ratio": 1.53,
         "vol_chart": "data/charts/vol_XRT.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": -3.22,
-        "rs": 15.0,
+        "rs": 10.0,
         "rs_chart": "data/charts/XRT.png",
         "long": [
           "RETL"
@@ -8202,5 +8202,49 @@
         "GLW": 5.13
       }
     }
-  ]
+  ],
+  "fear_greed": {
+    "score": 50.4,
+    "sentiment": "Neutral",
+    "components": {
+      "volatility": {
+        "score": 67.9,
+        "label": "VIX Volatility",
+        "detail": "VIX 25.9 (52wk: 13.5–52.3)"
+      },
+      "trend": {
+        "score": 30.9,
+        "label": "SPY Trend",
+        "detail": "SMA50 -2.6ATR, 20d -3.7%"
+      },
+      "momentum": {
+        "score": 9.1,
+        "label": "Sector Momentum",
+        "detail": "1/11 sectors positive 20d"
+      },
+      "credit": {
+        "score": 60.6,
+        "label": "HYG/TLT Credit",
+        "detail": "HYG -1.3%, TLT -3.4%"
+      },
+      "breadth": {
+        "score": 36.7,
+        "label": "RSP/SPY Breadth",
+        "detail": "RSP -5.0%, SPY -3.7%"
+      },
+      "cross_asset": {
+        "score": 100.0,
+        "label": "GLD/TLT Cross-Asset",
+        "detail": "GLD -16.1%, TLT -3.4%"
+      }
+    },
+    "weights": {
+      "volatility": 0.15,
+      "trend": 0.2,
+      "momentum": 0.15,
+      "credit": 0.2,
+      "breadth": 0.15,
+      "cross_asset": 0.15
+    }
+  }
 }
