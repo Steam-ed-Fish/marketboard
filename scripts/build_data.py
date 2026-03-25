@@ -40,8 +40,6 @@ KEY_EVENTS = [
 STOCK_GROUPS = {
     "Indices": ["QQQ", "DIA", "SPY", "RSP", "IWM", "IJH", "IJR", "GLD", "SLV"],
     "S&P Style ETFs": ["IJS", "IJR", "IJT", "IJJ", "IJH", "IJK", "IVE", "IVV", "IVW"],
-    "Sel Sectors": ["XLK", "XLI", "XLC", "XLF", "XLU", "XLY", "XLRE", "XLP", "XLB", "XLE", "XLV"],
-    "EW Sectors": ["RSPT", "RSPC", "RSPN", "RSPF", "RSP", "RSPD", "RSPU", "RSPR", "RSPH", "RSPM", "RSPS", "RSPG"],
     "The Cloud 7": ["MSFT", "AMZN", "GOOGL", "ORCL", "IBM", "META", "NET"],
     "The Software 7": ["ADBE", "PANW", "PLTR", "INTU", "CRM", "NOW", "WDAY"],
     "The New Staples 7": ["AAPL", "AMZN", "META", "NFLX", "GOOGL", "SPOT", "UBER"],
@@ -68,6 +66,8 @@ STOCK_GROUPS = {
         "GDX", "IPAY", "IWM", "XOP", "VNQ", "EATZ", "FXI", "DBA", "ICLN", "SILJ", "REZ", "LIT", "SLV", "XHB", "XHE", "PBJ", "USO", "DBC", "FCG", "XBI",
         "ARKG", "CPER", "XES", "OIH", "PPH", "FNGS", "URA", "WGMI", "REMX"
     ],
+    "Sel Sectors": ["XLK", "XLI", "XLC", "XLF", "XLU", "XLY", "XLRE", "XLP", "XLB", "XLE", "XLV"],
+    "EW Sectors": ["RSPT", "RSPC", "RSPN", "RSPF", "RSP", "RSPD", "RSPU", "RSPR", "RSPH", "RSPM", "RSPS", "RSPG"],
     "Countries": [
         "EZA", "ARGT", "EWA", "THD", "EIDO", "EWC", "GREK", "EWP", "EWG", "EWL", "EUFN", "EWY", "IEUR", "EFA", "ACWI",
         "IEV", "EWQ", "EWI", "EWJ", "EWW", "ECH", "EWD", "ASHR", "EWS", "KSA", "INDA", "EEM", "EWZ", "TUR", "EWH", "EWT", "MCHI"
@@ -443,13 +443,14 @@ def create_rrg_chart_png(rrg_points, charts_dir, trails=None):
         return None
 
 
-def get_stock_data(ticker_symbol, charts_dir):
+def get_stock_data(ticker_symbol, charts_dir, spy_hist=None):
     try:
         stock = yf.Ticker(ticker_symbol)
-        hist = stock.history(period="21d")
-        daily = stock.history(period="60d")
-        yearly = stock.history(period="1y")
-        
+        all_hist = stock.history(period="1y")
+        hist = all_hist.tail(21)
+        daily = all_hist.tail(60)
+        yearly = all_hist
+
         if len(hist) < 2 or len(daily) < 50:
             return None
 
@@ -512,7 +513,7 @@ def get_stock_data(ticker_symbol, charts_dir):
         start_date = end_date - timedelta(days=120)
         try:
             stock_history = stock.history(start=start_date, end=end_date)
-            spy_history = yf.Ticker("SPY").history(start=start_date, end=end_date)
+            spy_history = spy_hist.loc[spy_hist.index >= pd.Timestamp(start_date, tz=spy_hist.index.tz)] if spy_hist is not None and len(spy_hist) > 0 else yf.Ticker("SPY").history(start=start_date, end=end_date)
             if stock_history is not None and spy_history is not None:
                 rrs_data = calculate_rrs(stock_history, spy_history, atr_length=14, length_rolling=50, length_sma=20, atr_multiplier=1.0)
                 if rrs_data is not None and len(rrs_data) >= 21:
@@ -778,17 +779,31 @@ def main():
     print("Fetching economic events...")
     events = get_upcoming_key_events()
 
+    print("Fetching SPY history (cached for full run)...")
+    try:
+        _spy_cache = yf.Ticker("SPY").history(period="400d")
+    except Exception as e:
+        print("SPY cache fetch failed:", e)
+        _spy_cache = None
+
     print("Fetching stock data (no Liquid Stocks)...")
     groups_data = {}
     all_ticker_data = {}
+    failed_tickers = []
     for group_name, tickers in STOCK_GROUPS.items():
         rows = []
         for i, ticker in enumerate(tickers):
+            if ticker in all_ticker_data:
+                # already fetched from a previous group — reuse cached data
+                rows.append(all_ticker_data[ticker])
+                continue
             print(f"  [{group_name}] {i+1}/{len(tickers)} {ticker}")
-            row = get_stock_data(ticker, charts_dir)
+            row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache)
             if row:
                 rows.append(row)
                 all_ticker_data[ticker] = row
+            else:
+                failed_tickers.append(ticker)
             time.sleep(0.15)
         groups_data[group_name] = rows
 
@@ -796,9 +811,11 @@ def main():
     theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers) | {"HYG", "TLT"}
     for ticker in sorted(theme_ticker_set - set(all_ticker_data.keys())):
         print(f"  [AI Themes] {ticker}")
-        row = get_stock_data(ticker, charts_dir)
+        row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache)
         if row:
             all_ticker_data[ticker] = row
+        else:
+            failed_tickers.append(ticker)
         time.sleep(0.15)
 
     # Build AI themes summary (equal-weighted averages)
@@ -888,14 +905,13 @@ def main():
     spy_3m = None
     spy_1m = None
     try:
-        spy = yf.Ticker("SPY")
-        spy_hist = spy.history(period="1y")
+        spy_hist = _spy_cache
         if spy_hist is not None and len(spy_hist) >= 64:
             spy_3m = (spy_hist["Close"].iloc[-1] / spy_hist["Close"].iloc[-64] - 1) * 100
         if spy_hist is not None and len(spy_hist) >= 22:
             spy_1m = (spy_hist["Close"].iloc[-1] / spy_hist["Close"].iloc[-22] - 1) * 100
     except Exception as e:
-        print("SPY fetch for RRG:", e)
+        print("SPY RRG calc error:", e)
 
     rrg_points = []
     if spy_3m is not None and spy_1m is not None:
@@ -926,7 +942,7 @@ def main():
         long_hist = {}
         try:
             print("Fetching long history for RRG trails...")
-            spy_long = yf.Ticker("SPY").history(period="400d")
+            spy_long = _spy_cache
             if spy_long is not None and len(spy_long) >= 320:
                 long_hist["SPY"] = spy_long
             for i, t in enumerate(seven_tickers):
@@ -1036,13 +1052,11 @@ def main():
     }
     summary_rows.insert(0, rrg_row)
     groups_data["The 7s at a Glance"] = summary_rows
-    # Place summary section right after EW Sectors (before The Cloud 7, etc.)
-    order = list(groups_data.keys())
-    if "EW Sectors" in order:
-        idx = order.index("EW Sectors") + 1
-        new_order = order[:idx] + ["The 7s at a Glance"] + [k for k in order[idx:] if k != "The 7s at a Glance"]
-    else:
-        new_order = order
+    # Explicit section order
+    seven_groups = [k for k in STOCK_GROUPS.keys() if k.startswith("The ") and k.endswith(" 7")]
+    desired_order = ["Indices", "The 7s at a Glance"] + seven_groups + ["S&P Style ETFs", "Sel Sectors", "EW Sectors", "Industries", "Countries"]
+    remaining = [k for k in groups_data.keys() if k not in desired_order]
+    new_order = [k for k in desired_order if k in groups_data] + remaining
     groups_data = {k: groups_data[k] for k in new_order}
 
     # Remove temporary series from rows so they are not written to snapshot.json
@@ -1096,6 +1110,8 @@ def main():
         json.dump(meta, f, ensure_ascii=False, indent=2)
 
     print("Wrote", snapshot_path, events_path, meta_path, "and charts in", charts_dir)
+    if failed_tickers:
+        print(f"FAILED ({len(failed_tickers)}): {', '.join(failed_tickers)}")
     fetch_etf_holdings(get_all_etfs_for_holdings(), out_dir)
     print("Done.")
 
