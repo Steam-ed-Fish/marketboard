@@ -122,6 +122,10 @@
         .event-item .event-datetime { font-weight: bold; color: #a5b4fc; }
         .event-item .event-name { color: #cbd5e1; }
         .loading-msg { padding: 20px; text-align: center; color: #9ca3af; }
+        .seven-detail-row > td { padding: 0 !important; border-top: 2px solid #3b82f6; }
+        .seven-detail-panel { background: #0f172a; padding: 6px 8px; }
+        .seven-detail-panel .ticker-table { margin: 0; }
+        .ticker-row.seven-expanded > td:first-child { border-left: 3px solid #3b82f6; }
         .market-breadth { margin-bottom: 10px; position: relative; }
         .multi-chart-panel { flex: 1; min-height: 0; overflow: auto; display: none; }
         .multi-group-title { margin: 8px 0 4px; font-size: 0.85rem; font-weight: 600; color: #9ca3af; }
@@ -508,6 +512,7 @@
             var groupName = groupOrder[g];
             var rows = snapshot.groups[groupName];
             if (!rows || rows.length === 0) continue;
+            if (groupName !== 'The 7s at a Glance' && groupName.indexOf('The ') === 0 && groupName.slice(-2) === ' 7') continue;
             var safeId = safeGroupId(groupName);
             var ranges = (snapshot.column_ranges && snapshot.column_ranges[groupName]) || { daily: [-10,10], intra: [-10,10], '5d': [-20,20], '20d': [-30,30] };
             var gnEsc = groupName.replace(/'/g, "\\'");
@@ -582,7 +587,7 @@
                 var wtdV = r.wtd != null ? r.wtd : 0, ytdV = r.ytd != null ? r.ytd : 0, volR = r.vol_ratio != null ? r.vol_ratio : 0;
                 var isSummaryGroup = (groupName === 'The 7s at a Glance');
                 var isRrgRow = !!(r.is_rrg_row && r.rrg_chart);
-                var rowOnclick = isRrgRow ? ('showRrgChart(\'' + (r.rrg_chart || '').replace(/'/g, "\\'") + '\', this)') : (isSummaryGroup ? ('handleSummaryRowClick(\'' + r.ticker.replace(/'/g, "\\'") + '\', this)') : ('updateChart(\'' + r.ticker.replace(/'/g, "\\'") + '\', this)'));
+                var rowOnclick = isRrgRow ? ('showRrgChart(\'' + (r.rrg_chart || '').replace(/'/g, "\\'") + '\', this)') : (isSummaryGroup ? ('toggleSevenDetail(\'' + r.ticker.replace(/'/g, "\\'") + '\', this)') : ('updateChart(\'' + r.ticker.replace(/'/g, "\\'") + '\', this)'));
                 html += '<tr class="ticker-row" onclick="' + rowOnclick + '" data-symbol="' + r.ticker + '" data-group="' + groupName.replace(/"/g, '&quot;') + '" data-daily="' + (daily != null ? daily : 0) + '" data-intra="' + (intra != null ? intra : 0) + '" data-wtd="' + wtdV + '" data-5d="' + (five != null ? five : 0) + '" data-20d="' + (twenty != null ? twenty : 0) + '" data-ytd="' + ytdV + '" data-vol_ratio="' + volR + '" data-atr_pct="' + atrPct + '" data-dist_sma50_atr="' + dist + '" data-rs="' + rs + '" data-abc="' + abc + '" data-letf="' + letf + '" data-index="' + i + '"' + (isRrgRow ? ' data-rrg-chart="' + (r.rrg_chart || '') + '"' : '') + '>';
                 html += '<td><span class="ticker-label ' + labelClass + '">' + r.ticker + '</span></td>';
                 if (isSummaryGroup) {
@@ -739,6 +744,66 @@
     window.handleSummaryRowClick = function(groupName, element) {
         allTickerRows.forEach(function(row) { row.classList.remove('active'); });
         if (element) { element.classList.add('active'); currentIndex = allTickerRows.indexOf(element); }
+        openGroupMultiChart(groupName);
+        updateGroupChartButtons(groupName);
+    };
+    window.toggleSevenDetail = function(groupName, rowEl) {
+        var tbody = rowEl.parentNode;
+        var existing = tbody.querySelector('.seven-detail-row');
+        var isSameGroup = existing && existing.getAttribute('data-for') === groupName;
+        // Remove existing detail row and expanded highlight
+        if (existing) {
+            existing.remove();
+            tbody.querySelectorAll('.seven-expanded').forEach(function(r) { r.classList.remove('seven-expanded'); });
+        }
+        // If same row clicked again, just collapse
+        if (isSameGroup) return;
+        // Mark row as expanded
+        rowEl.classList.add('seven-expanded');
+        // Build inner table
+        var grpRows = (snapshot.groups && snapshot.groups[groupName]) || [];
+        var ranges = (snapshot.column_ranges && snapshot.column_ranges[groupName]) || {daily:[-10,10],'5d':[-20,20],'20d':[-30,30]};
+        var inner = '<table class="ticker-table" style="width:100%"><thead><tr>';
+        inner += '<th>Ticker</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
+        inner += '</tr></thead><tbody>';
+        grpRows.forEach(function(r) {
+            var dc = (r.daily||0)>0?'price-up':((r.daily||0)<0?'price-down':'');
+            var fc = (r['5d']||0)>0?'price-up':((r['5d']||0)<0?'price-down':'');
+            var tc = (r['20d']||0)>0?'price-up':((r['20d']||0)<0?'price-down':'');
+            var yc = (r.ytd||0)>0?'price-up':((r.ytd||0)<0?'price-down':'');
+            var abc = r.abc || '';
+            var lc = getGroupLabelClass(groupName, r.ticker);
+            inner += '<tr class="ticker-row" onclick="updateChart(\'' + r.ticker.replace(/'/g,"\\'") + '\',this)" data-symbol="' + r.ticker + '">';
+            inner += '<td><span class="ticker-label ' + lc + '">' + r.ticker + '</span></td>';
+            inner += '<td>' + (abc ? '<span class="abc-rating abc-' + abc.toLowerCase() + '">' + abc + '</span>' : '-') + '</td>';
+            inner += '<td class="' + dc + '">' + (r.daily!=null?(r.daily>=0?'+':'')+r.daily.toFixed(2)+'%':'-') + '</td>';
+            inner += '<td class="' + fc + '">' + (r['5d']!=null?(r['5d']>=0?'+':'')+r['5d'].toFixed(2)+'%':'-') + '</td>';
+            inner += '<td class="' + tc + '">' + (r['20d']!=null?(r['20d']>=0?'+':'')+r['20d'].toFixed(2)+'%':'-') + '</td>';
+            inner += '<td class="' + yc + '">' + (r.ytd!=null?(r.ytd>=0?'+':'')+r.ytd.toFixed(2)+'%':'-') + '</td>';
+            inner += '<td>' + (r.atr_pct!=null?r.atr_pct.toFixed(1)+'%':'-') + '</td>';
+            inner += '<td>' + (r.dist_sma50_atr!=null?r.dist_sma50_atr.toFixed(2):'-') + '</td>';
+            inner += '<td>';
+            if (r.gaps && r.gaps.length) {
+                inner += '<div class="gap-bar">';
+                for (var gi = r.gaps.length-1; gi >= 0; gi--) {
+                    var gv = r.gaps[gi];
+                    inner += '<div class="gap-dot ' + (gv==='up'?'gap-dot-up':gv==='down'?'gap-dot-down':'gap-dot-none') + '" title="D-'+(gi+1)+(gv?': gap '+gv:'')+'"></div>';
+                }
+                inner += '</div>';
+            } else { inner += '-'; }
+            inner += '</td></tr>';
+        });
+        inner += '</tbody></table>';
+        // Insert detail row after rowEl
+        var detailTr = document.createElement('tr');
+        detailTr.className = 'seven-detail-row';
+        detailTr.setAttribute('data-for', groupName);
+        var td = document.createElement('td');
+        td.colSpan = 17;
+        td.innerHTML = '<div class="seven-detail-panel">' + inner + '</div>';
+        detailTr.appendChild(td);
+        rowEl.insertAdjacentElement('afterend', detailTr);
+        // Also open multichart for that group
         openGroupMultiChart(groupName);
         updateGroupChartButtons(groupName);
     };
