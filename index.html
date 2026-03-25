@@ -73,6 +73,16 @@
             cursor: pointer; margin-left: 4px; flex-shrink: 0;
         }
         .holdings-btn:hover { background-color: #374151; color: #e0e0e0; }
+        .hcol-btn {
+            font-size: 9px; font-weight: 700; padding: 2px 5px; border-radius: 3px;
+            border: none; cursor: pointer; color: #fff; letter-spacing: 0.02em; display: block; width: 100%;
+        }
+        .hcol-btn-up   { background-color: #065f46; }
+        .hcol-btn-up:hover { background-color: #10b981; }
+        .hcol-btn-down { background-color: #7f1d1d; }
+        .hcol-btn-down:hover { background-color: #ef4444; }
+        .hcol-btn-flat { background-color: #374151; }
+        .hcol-btn-flat:hover { background-color: #4a5568; }
         .abc-rating { display: inline-block; width: 20px; height: 20px; border-radius: 50%; text-align: center; line-height: 20px; font-weight: bold; color: white; }
         .abc-a { background-color: #3b82f6; }
         .abc-b { background-color: #10b981; }
@@ -489,6 +499,7 @@
             html += '<table class="ticker-table" data-group="' + escapeHtml(groupName) + '"><thead><tr>';
             var th = function(key, label) { return '<th class="sortable" data-sort-by="' + key + '" title="Click to sort">' + label + '</th>'; };
             html += th('symbol', 'Ticker');
+            html += '<th>Holdings</th>';
             html += th('abc', 'Grade');
             html += th('daily', 'Daily');
             html += th('intra', 'Intra');
@@ -512,7 +523,7 @@
                     var _oc = r.rrg_chart ? ('showRrgChart(\'' + (r.rrg_chart||'').replace(/'/g,"\\'") + '\',this)') : '';
                     html += '<tr class="ticker-row"' + (_oc ? ' onclick="'+_oc+'"' : '') + ' data-symbol="'+r.ticker+'" data-group="'+groupName.replace(/"/g,'&quot;')+'" data-daily="0" data-intra="0" data-wtd="0" data-5d="0" data-20d="0" data-ytd="0" data-vol_ratio="0" data-atr_pct="0" data-dist_sma50_atr="0" data-rs="0" data-abc="" data-letf="0" data-index="'+i+'"'+(r.rrg_chart?' data-rrg-chart="'+r.rrg_chart+'"':'')+' >';
                     html += '<td><span class="ticker-label '+_lc+'">'+r.ticker+'</span></td>';
-                    for (var _dc=0;_dc<15;_dc++) html += '<td>-</td>';
+                    for (var _dc=0;_dc<16;_dc++) html += '<td>-</td>';
                     html += '</tr>';
                     continue;
                 }
@@ -536,7 +547,9 @@
                 var isRrgRow = !!(r.is_rrg_row && r.rrg_chart);
                 var rowOnclick = isRrgRow ? ('showRrgChart(\'' + (r.rrg_chart || '').replace(/'/g, "\\'") + '\', this)') : (isSummaryGroup ? ('handleSummaryRowClick(\'' + r.ticker.replace(/'/g, "\\'") + '\', this)') : ('updateChart(\'' + r.ticker.replace(/'/g, "\\'") + '\', this)'));
                 html += '<tr class="ticker-row" onclick="' + rowOnclick + '" data-symbol="' + r.ticker + '" data-group="' + groupName.replace(/"/g, '&quot;') + '" data-daily="' + (daily != null ? daily : 0) + '" data-intra="' + (intra != null ? intra : 0) + '" data-wtd="' + wtdV + '" data-5d="' + (five != null ? five : 0) + '" data-20d="' + (twenty != null ? twenty : 0) + '" data-ytd="' + ytdV + '" data-vol_ratio="' + volR + '" data-atr_pct="' + atrPct + '" data-dist_sma50_atr="' + dist + '" data-rs="' + rs + '" data-abc="' + abc + '" data-letf="' + letf + '" data-index="' + i + '"' + (isRrgRow ? ' data-rrg-chart="' + (r.rrg_chart || '') + '"' : '') + '>';
-                html += '<td><span class="ticker-label ' + labelClass + '">' + r.ticker + '</span>' + (isSummaryGroup && !isRrgRow ? '' : (isRrgRow ? '' : '<button type="button" class="holdings-btn" onclick="event.stopPropagation();showHoldings(\'' + r.ticker + '\')" title="Holdings">h</button>')) + '</td>';
+                html += '<td><span class="ticker-label ' + labelClass + '">' + r.ticker + '</span></td>';
+                var _hcls = daily > 0 ? 'hcol-btn-up' : (daily < 0 ? 'hcol-btn-down' : 'hcol-btn-flat');
+                html += '<td style="padding:3px 4px"><button type="button" class="hcol-btn ' + _hcls + '" onclick="event.stopPropagation();showHoldings(\'' + r.ticker.replace(/'/g,"\\'") + '\')" title="Holdings">h</button></td>';
                 html += '<td>' + (abc ? '<span class="abc-rating abc-' + abc.toLowerCase() + '">' + abc + '</span>' : '-') + '</td>';
                 html += '<td class="' + dailyCl + '">' + (daily != null ? '<div class="value-visualization"><div class="value-bar ' + (daily >= 0 ? 'positive' : 'negative') + '" style="width:' + dailyW + '%"></div><span class="value-text">' + (daily >= 0 ? '+' : '') + daily.toFixed(2) + '%</span></div>' : na) + '</td>';
                 html += '<td class="' + intraCl + '">' + (intra != null ? '<div class="value-visualization"><div class="value-bar ' + (intra >= 0 ? 'positive' : 'negative') + '" style="width:' + intraW + '%"></div><span class="value-text">' + (intra >= 0 ? '+' : '') + intra.toFixed(2) + '%</span></div>' : na) + '</td>';
