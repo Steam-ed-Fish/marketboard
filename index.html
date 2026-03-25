@@ -94,8 +94,7 @@
         .abc-b { background-color: #10b981; }
         .abc-c { background-color: #f59e0b; }
         .economic-events { margin-bottom: 10px; }
-        .events-button,
-        .column-guide-btn {
+        .events-button {
             font-family: Arial, sans-serif;
             font-size: 14px;
             font-weight: bold;
@@ -110,8 +109,7 @@
             text-transform: uppercase;
             letter-spacing: 0.02em;
         }
-        .events-button:hover,
-        .column-guide-btn:hover { background-color: #374151; }
+        .events-button:hover { background-color: #374151; }
         .events-tab { background: transparent; border: none; border-bottom: 2px solid transparent; color: #9ca3af; cursor: pointer; padding: 4px 12px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.03em; }
         .events-tab.active { color: #e0e0e0; border-bottom-color: #3b82f6; }
         .events-tab:hover { color: #e0e0e0; }
@@ -123,17 +121,6 @@
         .event-item:last-child { border-bottom: none; }
         .event-item .event-datetime { font-weight: bold; color: #a5b4fc; }
         .event-item .event-name { color: #cbd5e1; }
-        .column-guide { margin-bottom: 10px; position: relative; }
-        .column-guide-content {
-            display: none; position: absolute; top: 100%; left: 0; right: 0; background-color: #2d3748;
-            z-index: 999; border-radius: 4px; max-height: 420px; overflow-y: auto; padding: 10px 12px;
-            border: 1px solid #4a5568; margin-top: 4px; font-size: 0.8em; color: #e0e0e0; line-height: 1.5;
-        }
-        .column-guide:hover .column-guide-content { display: block; }
-        .column-guide dl { margin: 0; }
-        .column-guide dt { font-weight: bold; color: #a5b4fc; margin-top: 8px; }
-        .column-guide dt:first-child { margin-top: 0; }
-        .column-guide dd { margin: 2px 0 0 12px; color: #cbd5e1; }
         .loading-msg { padding: 20px; text-align: center; color: #9ca3af; }
         .market-breadth { margin-bottom: 10px; position: relative; }
         .multi-chart-panel { flex: 1; min-height: 0; overflow: auto; display: none; }
@@ -237,21 +224,6 @@
         </div>
         <div class="market-breadth" style="position:relative;margin-bottom:10px">
             <button class="events-button" type="button" onclick="openMarketBreadth()">📊 MARKET BREADTH</button>
-        </div>
-        <div class="column-guide" style="position:relative">
-            <button class="column-guide-btn" type="button">📋 COLUMN GUIDE</button>
-            <div class="column-guide-content">
-                <dl>
-                    <dt>Grade</dt>
-                    <dd>ABC rating (A = EMA10 &gt; EMA20 &gt; SMA50 uptrend; B = mixed; C = downtrend).</dd>
-                    <dt>Vol Chart</dt>
-                    <dd>Volume trend bar: last 20 days volume vs 20-day average. Red bars = 2× avg or higher.</dd>
-                    <dt>ATRx</dt>
-                    <dd>Distance from SMA50 in ATR units.</dd>
-                    <dt>1M-VARS</dt>
-                    <dd>Volatility Adjusted Relative Strength Stands vs SPY over last 21 days (0–100%).</dd>
-                </dl>
-            </div>
         </div>
         <div id="groups-container"></div>
         <div class="key-hint">↑ ↓ Navigate · h Holdings · Data via CI · Yahoo Finance</div>
@@ -570,24 +542,24 @@
             html += '</div>';
             html += '<div class="card-body" id="card-body-' + safeId + '" style="' + (_grpOpen ? '' : 'display:none') + '">';
             html += '<table class="ticker-table" data-group="' + escapeHtml(groupName) + '"><thead><tr>';
-            var th = function(key, label) { return '<th class="sortable" data-sort-by="' + key + '" title="Click to sort">' + label + '</th>'; };
-            html += th('symbol', 'Ticker');
-            html += '<th>Holdings</th>';
-            html += th('abc', 'Grade');
-            html += th('daily', 'Daily');
-            html += th('intra', 'Intra');
-            html += th('wtd', 'WTD');
-            html += th('5d', '5D');
-            html += th('20d', '20D');
-            html += th('ytd', 'YTD');
-            html += th('vol_ratio', 'Vol%');
-            html += '<th title="Visual only">Vol Chart</th>';
-            html += th('atr_pct', 'ATR%');
-            html += th('dist_sma50_atr', 'ATRx');
-            html += th('rs', '1M-VARS');
-            html += th('rs', 'VARS');
-            html += th('letf', 'LETF');
-            html += '<th title="Gap up/down in last 5 days">Gap</th>';
+            var th = function(key, label, tip) { return '<th class="sortable" data-sort-by="' + key + '" title="' + (tip || '') + '&#10;Click to sort">' + label + '</th>'; };
+            html += th('symbol', 'Ticker', 'Ticker symbol');
+            html += '<th title="Click to view holdings. For The 7s at a Glance, hover to see constituent performance.">Holdings</th>';
+            html += th('abc', 'Grade', 'ABC trend rating:\nA = EMA10 > EMA20 > SMA50 (uptrend)\nB = mixed signals\nC = downtrend');
+            html += th('daily', 'Daily', 'Today\'s price change %');
+            html += th('intra', 'Intra', 'Intraday % change (open to current)');
+            html += th('wtd', 'WTD', 'Week-to-date % change');
+            html += th('5d', '5D', '5-day % change');
+            html += th('20d', '20D', '20-day % change');
+            html += th('ytd', 'YTD', 'Year-to-date % change');
+            html += th('vol_ratio', 'Vol%', 'Today\'s volume vs 20-day average volume');
+            html += '<th title="Volume trend: last 20 days vs 20-day average. Red bars = 2× avg or higher.">Vol Chart</th>';
+            html += th('atr_pct', 'ATR%', 'Average True Range as % of price (daily volatility measure)');
+            html += th('dist_sma50_atr', 'ATRx', 'Distance from SMA50 measured in ATR units.\nPositive = above SMA50, negative = below.');
+            html += th('rs', '1M-VARS', 'Volatility Adjusted Relative Strength vs SPY over last 21 days (0–100%)');
+            html += th('rs', 'VARS', 'Volatility Adjusted Relative Strength vs SPY (raw score)');
+            html += th('letf', 'LETF', 'Leveraged ETF exists for this ticker (long/short)');
+            html += '<th title="Full candle gap in last 5 trading days.\nGreen = entire candle above previous candle.\nRed = entire candle below previous candle.">Gap</th>';
             html += '</tr></thead><tbody id="' + safeId + '-body">';
             for (var i = 0; i < rows.length; i++) {
                 var r = rows[i];
