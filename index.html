@@ -507,7 +507,6 @@
             html += '</tr></thead><tbody id="' + safeId + '-body">';
             for (var i = 0; i < rows.length; i++) {
                 var r = rows[i];
-                if (r.is_rrg_row && !r.rrg_chart) continue;
                 var daily = r.daily, intra = r.intra, five = r['5d'], twenty = r['20d'];
                 var dailyW = vizWidth(daily, ranges.daily[0], ranges.daily[1]);
                 var intraW = vizWidth(intra, ranges.intra[0], ranges.intra[1]);
@@ -526,7 +525,7 @@
                 var wtdV = r.wtd != null ? r.wtd : 0, ytdV = r.ytd != null ? r.ytd : 0, volR = r.vol_ratio != null ? r.vol_ratio : 0;
                 var isSummaryGroup = (groupName === 'The 7s at a Glance');
                 var isRrgRow = !!(r.is_rrg_row && r.rrg_chart);
-                var na = isRrgRow ? '-' : 'N/A';
+                var na = r.is_rrg_row ? '-' : 'N/A';
                 var rowOnclick = isRrgRow ? ('showRrgChart(\'' + (r.rrg_chart || '').replace(/'/g, "\\'") + '\', this)') : (isSummaryGroup ? ('handleSummaryRowClick(\'' + r.ticker.replace(/'/g, "\\'") + '\', this)') : ('updateChart(\'' + r.ticker.replace(/'/g, "\\'") + '\', this)'));
                 html += '<tr class="ticker-row" onclick="' + rowOnclick + '" data-symbol="' + r.ticker + '" data-group="' + groupName.replace(/"/g, '&quot;') + '" data-daily="' + (daily != null ? daily : 0) + '" data-intra="' + (intra != null ? intra : 0) + '" data-wtd="' + wtdV + '" data-5d="' + (five != null ? five : 0) + '" data-20d="' + (twenty != null ? twenty : 0) + '" data-ytd="' + ytdV + '" data-vol_ratio="' + volR + '" data-atr_pct="' + atrPct + '" data-dist_sma50_atr="' + dist + '" data-rs="' + rs + '" data-abc="' + abc + '" data-letf="' + letf + '" data-index="' + i + '"' + (isRrgRow ? ' data-rrg-chart="' + (r.rrg_chart || '') + '"' : '') + '>';
                 html += '<td><span class="ticker-label ' + labelClass + '">' + r.ticker + '</span>' + (isSummaryGroup && !isRrgRow ? '' : (isRrgRow ? '' : '<button type="button" class="holdings-btn" onclick="event.stopPropagation();showHoldings(\'' + r.ticker + '\')" title="Holdings">h</button>')) + '</td>';
