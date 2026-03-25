@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-03-25T03:39:46.610079Z",
+  "built_at": "2026-03-25T05:48:31.842810Z",
   "groups": {
     "Indices": [
       {
@@ -24,10 +24,10 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -49,11 +49,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
-          null
+          null,
+          "down"
         ]
       },
       {
@@ -68,7 +68,7 @@
         "vol_chart": "data/charts/vol_SPY.png",
         "atr_pct": 1.5,
         "dist_sma50_atr": -2.77,
-        "rs": 85.0,
+        "rs": 95.0,
         "rs_chart": "data/charts/SPY.png",
         "long": [
           "SPXL",
@@ -80,10 +80,10 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -91,25 +91,25 @@
         "ticker": "RSP",
         "daily": 0.12,
         "intra": 0.73,
-        "5d": -2.11,
-        "20d": -5.67,
-        "wtd": 0.76,
-        "ytd": -0.49,
+        "5d": -1.69,
+        "20d": -5.27,
+        "wtd": 1.19,
+        "ytd": -0.06,
         "vol_ratio": 0.79,
         "vol_chart": "data/charts/vol_RSP.png",
         "atr_pct": 1.5,
-        "dist_sma50_atr": -2.49,
+        "dist_sma50_atr": -2.19,
         "rs": 10.0,
         "rs_chart": "data/charts/RSP.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          null
+          null,
+          null,
+          null,
+          "down"
         ]
       },
       {
@@ -134,11 +134,11 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -159,10 +159,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -184,11 +184,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -213,8 +213,8 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
-          "down",
+          null,
+          null,
           null,
           "down",
           "down"
@@ -242,9 +242,9 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
           null,
-          "down",
+          null,
+          null,
           "down",
           "down"
         ]
@@ -419,14 +419,14 @@
         "ticker": "The Semi 7",
         "daily": 0.82,
         "intra": 1.57,
-        "5d": -0.06,
-        "20d": -3.04,
-        "wtd": 2.07,
-        "ytd": -3.32,
+        "5d": -0.03,
+        "20d": -3.01,
+        "wtd": 2.1,
+        "ytd": -3.3,
         "vol_ratio": 0.73,
         "vol_chart": "data/charts/vol_Glance_The_Semi_7.png",
         "atr_pct": 4.0,
-        "dist_sma50_atr": -0.95,
+        "dist_sma50_atr": -0.94,
         "rs": 87.0,
         "rs_chart": "data/charts/Glance_The_Semi_7.png",
         "long": [],
@@ -455,14 +455,14 @@
         "ticker": "The Buildout 7",
         "daily": 1.6,
         "intra": 2.37,
-        "5d": 1.45,
-        "20d": -1.02,
-        "wtd": 3.91,
-        "ytd": 20.47,
+        "5d": 1.47,
+        "20d": -1.0,
+        "wtd": 3.94,
+        "ytd": 20.49,
         "vol_ratio": 0.9,
         "vol_chart": "data/charts/vol_Glance_The_Buildout_7.png",
         "atr_pct": 4.3,
-        "dist_sma50_atr": 1.4,
+        "dist_sma50_atr": 1.41,
         "rs": 99.0,
         "rs_chart": "data/charts/Glance_The_Buildout_7.png",
         "long": [],
@@ -655,10 +655,10 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -682,8 +682,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           null
@@ -693,15 +693,15 @@
         "ticker": "XLC",
         "daily": -1.4,
         "intra": -0.91,
-        "5d": -3.68,
-        "20d": -4.33,
-        "wtd": -0.98,
-        "ytd": -4.94,
+        "5d": -3.37,
+        "20d": -4.02,
+        "wtd": -0.66,
+        "ytd": -4.63,
         "vol_ratio": 0.93,
         "vol_chart": "data/charts/vol_XLC.png",
         "atr_pct": 1.4,
-        "dist_sma50_atr": -3.1,
-        "rs": 50.0,
+        "dist_sma50_atr": -2.86,
+        "rs": 60.0,
         "rs_chart": "data/charts/XLC.png",
         "long": [
           "LTL"
@@ -710,7 +710,7 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           "down"
@@ -720,14 +720,14 @@
         "ticker": "XLF",
         "daily": 0.02,
         "intra": 0.98,
-        "5d": -0.56,
-        "20d": -3.33,
-        "wtd": 0.41,
-        "ytd": -10.29,
+        "5d": -0.05,
+        "20d": -2.84,
+        "wtd": 0.92,
+        "ytd": -9.82,
         "vol_ratio": 0.67,
         "vol_chart": "data/charts/vol_XLF.png",
         "atr_pct": 1.8,
-        "dist_sma50_atr": -2.93,
+        "dist_sma50_atr": -2.63,
         "rs": 100.0,
         "rs_chart": "data/charts/XLF.png",
         "long": [
@@ -738,7 +738,7 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
           null,
@@ -749,14 +749,14 @@
         "ticker": "XLU",
         "daily": 0.69,
         "intra": 1.19,
-        "5d": -4.33,
-        "20d": -4.47,
-        "wtd": 0.99,
-        "ytd": 4.42,
+        "5d": -3.66,
+        "20d": -3.8,
+        "wtd": 1.69,
+        "ytd": 5.15,
         "vol_ratio": 0.8,
         "vol_chart": "data/charts/vol_XLU.png",
-        "atr_pct": 1.8,
-        "dist_sma50_atr": 0.02,
+        "atr_pct": 1.9,
+        "dist_sma50_atr": 0.38,
         "rs": 100.0,
         "rs_chart": "data/charts/XLU.png",
         "long": [
@@ -766,7 +766,7 @@
         "abc": "B",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           null
@@ -776,14 +776,14 @@
         "ticker": "XLY",
         "daily": -0.4,
         "intra": 0.59,
-        "5d": -3.09,
-        "20d": -6.05,
-        "wtd": 1.8,
-        "ytd": -7.33,
+        "5d": -2.9,
+        "20d": -5.86,
+        "wtd": 2.01,
+        "ytd": -7.14,
         "vol_ratio": 0.72,
         "vol_chart": "data/charts/vol_XLY.png",
         "atr_pct": 2.0,
-        "dist_sma50_atr": -3.17,
+        "dist_sma50_atr": -3.06,
         "rs": 45.0,
         "rs_chart": "data/charts/XLY.png",
         "long": [
@@ -794,26 +794,26 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
           "down",
-          "down"
+          null
         ]
       },
       {
         "ticker": "XLRE",
         "daily": -0.81,
         "intra": -0.32,
-        "5d": -5.69,
-        "20d": -7.87,
-        "wtd": -0.74,
-        "ytd": -0.22,
+        "5d": -5.05,
+        "20d": -7.25,
+        "wtd": -0.07,
+        "ytd": 0.45,
         "vol_ratio": 1.0,
         "vol_chart": "data/charts/vol_XLRE.png",
         "atr_pct": 1.6,
-        "dist_sma50_atr": -2.88,
-        "rs": 30.0,
+        "dist_sma50_atr": -2.45,
+        "rs": 60.0,
         "rs_chart": "data/charts/XLRE.png",
         "long": [
           "DRN"
@@ -824,24 +824,24 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
           null,
           null,
-          null
+          null,
+          "down"
         ]
       },
       {
         "ticker": "XLP",
         "daily": -0.09,
         "intra": 0.38,
-        "5d": -4.24,
-        "20d": -9.62,
-        "wtd": -0.22,
-        "ytd": 4.4,
+        "5d": -3.7,
+        "20d": -9.11,
+        "wtd": 0.34,
+        "ytd": 4.99,
         "vol_ratio": 0.71,
         "vol_chart": "data/charts/vol_XLP.png",
         "atr_pct": 1.6,
-        "dist_sma50_atr": -3.12,
+        "dist_sma50_atr": -2.78,
         "rs": 30.0,
         "rs_chart": "data/charts/XLP.png",
         "long": [
@@ -853,7 +853,7 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           "down"
@@ -863,14 +863,14 @@
         "ticker": "XLB",
         "daily": 1.89,
         "intra": 2.49,
-        "5d": -2.16,
-        "20d": -9.2,
-        "wtd": 3.13,
-        "ytd": 5.05,
+        "5d": -1.73,
+        "20d": -8.8,
+        "wtd": 3.59,
+        "ytd": 5.52,
         "vol_ratio": 0.87,
         "vol_chart": "data/charts/vol_XLB.png",
         "atr_pct": 2.2,
-        "dist_sma50_atr": -1.98,
+        "dist_sma50_atr": -1.77,
         "rs": 10.0,
         "rs_chart": "data/charts/XLB.png",
         "long": [
@@ -881,8 +881,8 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           "down"
@@ -892,14 +892,14 @@
         "ticker": "XLE",
         "daily": 2.03,
         "intra": 1.74,
-        "5d": 3.98,
-        "20d": 10.42,
-        "wtd": 2.58,
-        "ytd": 33.27,
+        "5d": 4.66,
+        "20d": 11.14,
+        "wtd": 3.25,
+        "ytd": 34.15,
         "vol_ratio": 0.71,
         "vol_chart": "data/charts/vol_XLE.png",
         "atr_pct": 2.0,
-        "dist_sma50_atr": 6.48,
+        "dist_sma50_atr": 6.86,
         "rs": 100.0,
         "rs_chart": "data/charts/XLE.png",
         "long": [
@@ -911,9 +911,9 @@
         "abc": "A",
         "gaps": [
           null,
-          "down",
           null,
-          "up",
+          null,
+          null,
           null
         ]
       },
@@ -921,14 +921,14 @@
         "ticker": "XLV",
         "daily": 0.01,
         "intra": 0.58,
-        "5d": -3.24,
-        "20d": -8.29,
-        "wtd": -0.37,
-        "ytd": -6.89,
+        "5d": -2.84,
+        "20d": -7.91,
+        "wtd": 0.04,
+        "ytd": -6.51,
         "vol_ratio": 1.52,
         "vol_chart": "data/charts/vol_XLV.png",
-        "atr_pct": 1.6,
-        "dist_sma50_atr": -4.17,
+        "atr_pct": 1.5,
+        "dist_sma50_atr": -3.94,
         "rs": 20.0,
         "rs_chart": "data/charts/XLV.png",
         "long": [
@@ -937,8 +937,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           null,
           "down"
@@ -964,10 +964,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -989,11 +989,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -1014,11 +1014,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -1039,11 +1039,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -1064,10 +1064,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -1089,10 +1089,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -1114,11 +1114,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
           null,
-          null
+          null,
+          null,
+          "down"
         ]
       },
       {
@@ -1139,11 +1139,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          null
+          null,
+          null,
+          null,
+          "down"
         ]
       },
       {
@@ -1165,9 +1165,9 @@
         "abc": "C",
         "gaps": [
           "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
           null
         ]
       }
@@ -1177,24 +1177,24 @@
         "ticker": "RSPT",
         "daily": -0.06,
         "intra": 0.72,
-        "5d": -1.26,
-        "20d": -0.77,
-        "wtd": 1.2,
-        "ytd": 1.18,
+        "5d": -1.17,
+        "20d": -0.69,
+        "wtd": 1.29,
+        "ytd": 1.27,
         "vol_ratio": 1.53,
         "vol_chart": "data/charts/vol_RSPT.png",
         "atr_pct": 2.4,
-        "dist_sma50_atr": -0.47,
+        "dist_sma50_atr": -0.44,
         "rs": 100.0,
         "rs_chart": "data/charts/RSPT.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -1202,21 +1202,21 @@
         "ticker": "RSPC",
         "daily": -0.37,
         "intra": 0.02,
-        "5d": -2.31,
-        "20d": -2.57,
-        "wtd": -0.21,
-        "ytd": -6.11,
+        "5d": -2.08,
+        "20d": -2.34,
+        "wtd": 0.02,
+        "ytd": -5.89,
         "vol_ratio": 0.14,
         "vol_chart": "data/charts/vol_RSPC.png",
         "atr_pct": 1.2,
-        "dist_sma50_atr": -2.76,
+        "dist_sma50_atr": -2.57,
         "rs": 80.0,
         "rs_chart": "data/charts/RSPC.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          null,
+          "down",
           null,
           null,
           null,
@@ -1241,10 +1241,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -1252,21 +1252,21 @@
         "ticker": "RSPF",
         "daily": -0.22,
         "intra": 0.56,
-        "5d": -1.07,
-        "20d": -4.23,
-        "wtd": 0.27,
-        "ytd": -9.4,
+        "5d": -0.54,
+        "20d": -3.72,
+        "wtd": 0.81,
+        "ytd": -8.91,
         "vol_ratio": 0.2,
         "vol_chart": "data/charts/vol_RSPF.png",
-        "atr_pct": 1.5,
-        "dist_sma50_atr": -3.79,
-        "rs": 95.0,
+        "atr_pct": 1.6,
+        "dist_sma50_atr": -3.41,
+        "rs": 100.0,
         "rs_chart": "data/charts/RSPF.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
           null,
@@ -1277,49 +1277,49 @@
         "ticker": "RSP",
         "daily": 0.12,
         "intra": 0.73,
-        "5d": -2.11,
-        "20d": -5.67,
-        "wtd": 0.76,
-        "ytd": -0.49,
+        "5d": -1.69,
+        "20d": -5.27,
+        "wtd": 1.19,
+        "ytd": -0.06,
         "vol_ratio": 0.79,
         "vol_chart": "data/charts/vol_RSP.png",
         "atr_pct": 1.5,
-        "dist_sma50_atr": -2.49,
+        "dist_sma50_atr": -2.19,
         "rs": 10.0,
         "rs_chart": "data/charts/RSP.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          null
+          null,
+          null,
+          null,
+          "down"
         ]
       },
       {
         "ticker": "RSPD",
         "daily": -0.41,
         "intra": 0.64,
-        "5d": -2.13,
-        "20d": -8.32,
-        "wtd": 1.62,
-        "ytd": -6.07,
+        "5d": -1.9,
+        "20d": -8.11,
+        "wtd": 1.86,
+        "ytd": -5.85,
         "vol_ratio": 0.23,
         "vol_chart": "data/charts/vol_RSPD.png",
         "atr_pct": 2.0,
-        "dist_sma50_atr": -3.42,
+        "dist_sma50_atr": -3.3,
         "rs": 15.0,
         "rs_chart": "data/charts/RSPD.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
-          "down",
-          "down",
+          null,
+          null,
           "down"
         ]
       },
@@ -1341,25 +1341,25 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
           null,
           null,
-          null
+          null,
+          null,
+          "down"
         ]
       },
       {
         "ticker": "RSPR",
         "daily": -0.91,
         "intra": -0.97,
-        "5d": -5.63,
-        "20d": -8.39,
-        "wtd": -1.0,
-        "ytd": -2.92,
+        "5d": -4.7,
+        "20d": -7.49,
+        "wtd": -0.03,
+        "ytd": -1.96,
         "vol_ratio": 1.36,
         "vol_chart": "data/charts/vol_RSPR.png",
-        "atr_pct": 1.5,
-        "dist_sma50_atr": -3.86,
+        "atr_pct": 1.6,
+        "dist_sma50_atr": -3.2,
         "rs": 15.0,
         "rs_chart": "data/charts/RSPR.png",
         "long": [],
@@ -1377,22 +1377,22 @@
         "ticker": "RSPH",
         "daily": 0.2,
         "intra": 0.84,
-        "5d": -2.33,
-        "20d": -8.22,
-        "wtd": 0.37,
-        "ytd": -5.81,
+        "5d": -2.15,
+        "20d": -8.05,
+        "wtd": 0.55,
+        "ytd": -5.63,
         "vol_ratio": 0.54,
         "vol_chart": "data/charts/vol_RSPH.png",
         "atr_pct": 1.6,
-        "dist_sma50_atr": -4.05,
+        "dist_sma50_atr": -3.92,
         "rs": 15.0,
         "rs_chart": "data/charts/RSPH.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           null,
           "down"
@@ -1402,14 +1402,14 @@
         "ticker": "RSPM",
         "daily": 2.34,
         "intra": 2.73,
-        "5d": -1.26,
-        "20d": -7.07,
-        "wtd": 4.27,
-        "ytd": 8.51,
+        "5d": -1.08,
+        "20d": -6.9,
+        "wtd": 4.46,
+        "ytd": 8.7,
         "vol_ratio": 0.4,
         "vol_chart": "data/charts/vol_RSPM.png",
         "atr_pct": 2.0,
-        "dist_sma50_atr": -1.23,
+        "dist_sma50_atr": -1.14,
         "rs": 10.0,
         "rs_chart": "data/charts/RSPM.png",
         "long": [],
@@ -1417,25 +1417,25 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           "down",
-          null
+          "down"
         ]
       },
       {
         "ticker": "RSPS",
         "daily": -0.51,
         "intra": -0.03,
-        "5d": -4.74,
-        "20d": -12.36,
-        "wtd": -0.72,
-        "ytd": 0.14,
+        "5d": -4.02,
+        "20d": -11.7,
+        "wtd": 0.03,
+        "ytd": 0.89,
         "vol_ratio": 0.57,
         "vol_chart": "data/charts/vol_RSPS.png",
         "atr_pct": 1.5,
-        "dist_sma50_atr": -4.81,
-        "rs": 10.0,
+        "dist_sma50_atr": -4.33,
+        "rs": 20.0,
         "rs_chart": "data/charts/RSPS.png",
         "long": [],
         "short": [],
@@ -1444,7 +1444,7 @@
           null,
           null,
           null,
-          null,
+          "down",
           "down"
         ]
       },
@@ -1452,14 +1452,14 @@
         "ticker": "RSPG",
         "daily": 2.29,
         "intra": 1.74,
-        "5d": 4.68,
-        "20d": 11.14,
-        "wtd": 2.7,
-        "ytd": 34.58,
+        "5d": 5.18,
+        "20d": 11.67,
+        "wtd": 3.2,
+        "ytd": 35.23,
         "vol_ratio": 0.47,
         "vol_chart": "data/charts/vol_RSPG.png",
         "atr_pct": 2.0,
-        "dist_sma50_atr": 7.23,
+        "dist_sma50_atr": 7.52,
         "rs": 100.0,
         "rs_chart": "data/charts/RSPG.png",
         "long": [],
@@ -1467,7 +1467,7 @@
         "abc": "A",
         "gaps": [
           "up",
-          "down",
+          null,
           null,
           "up",
           null
@@ -1493,11 +1493,11 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -1518,11 +1518,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
-          "down"
+          null,
+          null
         ]
       },
       {
@@ -1543,8 +1543,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           "down"
@@ -1552,26 +1552,26 @@
       },
       {
         "ticker": "QQQE",
-        "daily": -1.09,
+        "daily": -0.93,
         "intra": -0.29,
-        "5d": -3.03,
-        "20d": -3.91,
-        "wtd": -0.09,
-        "ytd": -3.47,
+        "5d": -2.87,
+        "20d": -3.75,
+        "wtd": 0.07,
+        "ytd": -3.31,
         "vol_ratio": 1.89,
         "vol_chart": "data/charts/vol_QQQE.png",
         "atr_pct": 1.7,
-        "dist_sma50_atr": -2.38,
-        "rs": 55.0,
+        "dist_sma50_atr": -2.31,
+        "rs": 60.0,
         "rs_chart": "data/charts/QQQE.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -1593,10 +1593,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
+          null,
           null
         ]
       },
@@ -1618,11 +1618,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          null
+          null,
+          null,
+          null,
+          null,
+          "down"
         ]
       },
       {
@@ -1647,10 +1647,10 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -1672,10 +1672,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -1697,10 +1697,10 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -1724,10 +1724,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -1749,11 +1749,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -1776,11 +1776,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -1803,8 +1803,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           null
@@ -1828,10 +1828,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -1853,11 +1853,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -1879,9 +1879,9 @@
         "abc": "C",
         "gaps": [
           "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -1904,9 +1904,9 @@
         "abc": "A",
         "gaps": [
           null,
-          "up",
           null,
-          "down",
+          null,
+          null,
           null
         ]
       },
@@ -1914,14 +1914,14 @@
         "ticker": "PEJ",
         "daily": -0.05,
         "intra": 0.93,
-        "5d": -0.56,
-        "20d": -3.43,
-        "wtd": 2.63,
-        "ytd": -4.72,
+        "5d": -0.35,
+        "20d": -3.23,
+        "wtd": 2.85,
+        "ytd": -4.52,
         "vol_ratio": 0.44,
         "vol_chart": "data/charts/vol_PEJ.png",
         "atr_pct": 2.1,
-        "dist_sma50_atr": -1.38,
+        "dist_sma50_atr": -1.28,
         "rs": 100.0,
         "rs_chart": "data/charts/PEJ.png",
         "long": [
@@ -1930,10 +1930,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
+          null,
           "down"
         ]
       },
@@ -1960,9 +1960,9 @@
         "abc": "C",
         "gaps": [
           "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
           null
         ]
       },
@@ -1984,10 +1984,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
+          null,
           null
         ]
       },
@@ -2013,10 +2013,10 @@
         ],
         "abc": "C",
         "gaps": [
-          "up",
+          null,
           "down",
-          "down",
-          "up",
+          null,
+          null,
           null
         ]
       },
@@ -2065,9 +2065,9 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
+          null,
+          null,
+          null,
           "down",
           "down"
         ]
@@ -2076,14 +2076,14 @@
         "ticker": "KRE",
         "daily": 0.83,
         "intra": 1.84,
-        "5d": 1.4,
-        "20d": -6.31,
-        "wtd": 2.06,
-        "ytd": -1.38,
+        "5d": 1.99,
+        "20d": -5.76,
+        "wtd": 2.65,
+        "ytd": -0.81,
         "vol_ratio": 0.69,
         "vol_chart": "data/charts/vol_KRE.png",
         "atr_pct": 2.7,
-        "dist_sma50_atr": -1.98,
+        "dist_sma50_atr": -1.77,
         "rs": 100.0,
         "rs_chart": "data/charts/KRE.png",
         "long": [
@@ -2092,10 +2092,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
+          null,
           null
         ]
       },
@@ -2124,7 +2124,7 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           "down",
           "down"
@@ -2150,11 +2150,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
           null,
-          "down"
+          null
         ]
       },
       {
@@ -2176,7 +2176,7 @@
         "abc": "C",
         "gaps": [
           "down",
-          "up",
+          null,
           null,
           null,
           "down"
@@ -2202,11 +2202,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -2229,11 +2229,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -2265,14 +2265,14 @@
         "ticker": "XLU",
         "daily": 0.69,
         "intra": 1.19,
-        "5d": -4.33,
-        "20d": -4.47,
-        "wtd": 0.99,
-        "ytd": 4.42,
+        "5d": -3.66,
+        "20d": -3.8,
+        "wtd": 1.69,
+        "ytd": 5.15,
         "vol_ratio": 0.8,
         "vol_chart": "data/charts/vol_XLU.png",
-        "atr_pct": 1.8,
-        "dist_sma50_atr": 0.02,
+        "atr_pct": 1.9,
+        "dist_sma50_atr": 0.38,
         "rs": 100.0,
         "rs_chart": "data/charts/XLU.png",
         "long": [
@@ -2282,7 +2282,7 @@
         "abc": "B",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           null
@@ -2306,11 +2306,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
-          "down"
+          null
         ]
       },
       {
@@ -2331,10 +2331,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
-          "down",
-          "down",
+          null,
+          null,
           null
         ]
       },
@@ -2360,25 +2360,25 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
         "ticker": "XTN",
         "daily": 1.15,
         "intra": 2.52,
-        "5d": 1.25,
-        "20d": -9.79,
-        "wtd": 3.55,
-        "ytd": -1.42,
+        "5d": 1.48,
+        "20d": -9.59,
+        "wtd": 3.78,
+        "ytd": -1.2,
         "vol_ratio": 0.32,
         "vol_chart": "data/charts/vol_XTN.png",
         "atr_pct": 2.8,
-        "dist_sma50_atr": -2.43,
+        "dist_sma50_atr": -2.35,
         "rs": 35.0,
         "rs_chart": "data/charts/XTN.png",
         "long": [
@@ -2387,11 +2387,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -2412,8 +2412,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           "down"
@@ -2423,21 +2423,21 @@
         "ticker": "KIE",
         "daily": -0.05,
         "intra": 0.46,
-        "5d": -2.37,
-        "20d": -3.83,
-        "wtd": 0.7,
-        "ytd": -8.03,
+        "5d": -1.87,
+        "20d": -3.34,
+        "wtd": 1.22,
+        "ytd": -7.56,
         "vol_ratio": 0.43,
         "vol_chart": "data/charts/vol_KIE.png",
         "atr_pct": 1.8,
-        "dist_sma50_atr": -2.72,
+        "dist_sma50_atr": -2.42,
         "rs": 100.0,
         "rs_chart": "data/charts/KIE.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
           null,
@@ -2466,8 +2466,8 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
-          "down",
+          null,
+          null,
           null,
           "down",
           "down"
@@ -2491,11 +2491,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           null,
           "down",
           "down",
-          null
+          "down"
         ]
       },
       {
@@ -2516,11 +2516,11 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
           null,
           null,
-          null
+          null,
+          null,
+          "down"
         ]
       },
       {
@@ -2547,9 +2547,9 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "up",
+          null,
+          null,
+          null,
           "down",
           "down"
         ]
@@ -2575,7 +2575,7 @@
           "down",
           "up",
           null,
-          "down",
+          null,
           "down"
         ]
       },
@@ -2601,26 +2601,26 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
         "ticker": "XOP",
         "daily": 3.07,
         "intra": 2.19,
-        "5d": 5.97,
-        "20d": 20.51,
-        "wtd": 1.76,
-        "ytd": 39.76,
+        "5d": 6.4,
+        "20d": 21.0,
+        "wtd": 2.17,
+        "ytd": 40.33,
         "vol_ratio": 0.72,
         "vol_chart": "data/charts/vol_XOP.png",
         "atr_pct": 2.7,
-        "dist_sma50_atr": 7.42,
-        "rs": 95.0,
+        "dist_sma50_atr": 7.65,
+        "rs": 100.0,
         "rs_chart": "data/charts/XOP.png",
         "long": [
           "GUSH"
@@ -2630,8 +2630,8 @@
         ],
         "abc": "A",
         "gaps": [
-          "up",
-          "down",
+          null,
+          null,
           null,
           "up",
           null
@@ -2639,27 +2639,27 @@
       },
       {
         "ticker": "VNQ",
-        "daily": -1.71,
+        "daily": -0.66,
         "intra": -0.07,
-        "5d": -5.82,
-        "20d": -7.59,
-        "wtd": -0.95,
-        "ytd": -0.69,
+        "5d": -4.81,
+        "20d": -6.6,
+        "wtd": 0.11,
+        "ytd": 0.37,
         "vol_ratio": 0.85,
         "vol_chart": "data/charts/vol_VNQ.png",
-        "atr_pct": 1.7,
-        "dist_sma50_atr": -2.86,
-        "rs": 5.0,
+        "atr_pct": 1.6,
+        "dist_sma50_atr": -2.37,
+        "rs": 30.0,
         "rs_chart": "data/charts/VNQ.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
           null,
-          null
+          null,
+          null,
+          "down"
         ]
       },
       {
@@ -2680,10 +2680,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          null,
-          null,
-          null,
           "up",
+          null,
+          null,
+          null,
           "down"
         ]
       },
@@ -2709,10 +2709,10 @@
         ],
         "abc": "C",
         "gaps": [
+          null,
+          null,
           "down",
-          "up",
-          "down",
-          "down",
+          null,
           "down"
         ]
       },
@@ -2759,10 +2759,10 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -2784,8 +2784,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           "down"
@@ -2809,8 +2809,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           null,
           "down"
@@ -2834,8 +2834,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           "down"
@@ -2863,9 +2863,9 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
           null,
-          "down",
+          null,
+          null,
           "down",
           "down"
         ]
@@ -2874,15 +2874,15 @@
         "ticker": "XHB",
         "daily": 0.29,
         "intra": 1.71,
-        "5d": -2.34,
-        "20d": -14.95,
-        "wtd": 3.55,
-        "ytd": -4.65,
+        "5d": -2.12,
+        "20d": -14.76,
+        "wtd": 3.79,
+        "ytd": -4.43,
         "vol_ratio": 0.7,
         "vol_chart": "data/charts/vol_XHB.png",
         "atr_pct": 2.8,
-        "dist_sma50_atr": -3.63,
-        "rs": 0.0,
+        "dist_sma50_atr": -3.55,
+        "rs": 5.0,
         "rs_chart": "data/charts/XHB.png",
         "long": [
           "NAIL"
@@ -2890,11 +2890,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
-          "down"
+          null
         ]
       },
       {
@@ -2915,10 +2915,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
+          null,
           "down"
         ]
       },
@@ -2926,25 +2926,25 @@
         "ticker": "PBJ",
         "daily": 1.14,
         "intra": 1.27,
-        "5d": -1.83,
-        "20d": -5.53,
-        "wtd": 1.93,
-        "ytd": 7.61,
+        "5d": -1.51,
+        "20d": -5.23,
+        "wtd": 2.26,
+        "ytd": 7.96,
         "vol_ratio": 0.11,
         "vol_chart": "data/charts/vol_PBJ.png",
         "atr_pct": 1.4,
-        "dist_sma50_atr": -0.82,
+        "dist_sma50_atr": -0.58,
         "rs": 95.0,
         "rs_chart": "data/charts/PBJ.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          null,
           "up",
           null,
           null,
-          null
+          null,
+          "down"
         ]
       },
       {
@@ -2969,11 +2969,11 @@
         ],
         "abc": "A",
         "gaps": [
-          "up",
+          null,
           "down",
-          "up",
-          "down",
-          "up"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -2994,10 +2994,10 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "up",
-          "down",
           null,
           "down",
+          null,
+          null,
           "up"
         ]
       },
@@ -3019,11 +3019,11 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "up",
-          "down",
+          null,
+          null,
           null,
           "up",
-          "up"
+          null
         ]
       },
       {
@@ -3049,9 +3049,9 @@
         "abc": "C",
         "gaps": [
           "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
           "down"
         ]
       },
@@ -3073,11 +3073,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -3098,10 +3098,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           "down"
         ]
       },
@@ -3109,14 +3109,14 @@
         "ticker": "XES",
         "daily": 1.94,
         "intra": 2.39,
-        "5d": 3.34,
-        "20d": 3.39,
-        "wtd": 4.12,
-        "ytd": 38.87,
+        "5d": 3.63,
+        "20d": 3.69,
+        "wtd": 4.42,
+        "ytd": 39.27,
         "vol_ratio": 0.75,
         "vol_chart": "data/charts/vol_XES.png",
         "atr_pct": 2.8,
-        "dist_sma50_atr": 4.13,
+        "dist_sma50_atr": 4.25,
         "rs": 100.0,
         "rs_chart": "data/charts/XES.png",
         "long": [],
@@ -3124,9 +3124,9 @@
         "abc": "A",
         "gaps": [
           null,
-          "down",
           null,
-          "down",
+          null,
+          null,
           null
         ]
       },
@@ -3151,7 +3151,7 @@
           null,
           null,
           null,
-          "down",
+          null,
           null
         ]
       },
@@ -3178,7 +3178,7 @@
           null,
           null,
           null,
-          "down",
+          null,
           "down"
         ]
       },
@@ -3205,9 +3205,9 @@
         "abc": "C",
         "gaps": [
           "down",
-          "up",
-          "down",
           null,
+          "down",
+          "down",
           null
         ]
       },
@@ -3229,11 +3229,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
+          null,
+          null,
+          null,
           "down",
-          "up",
-          "up",
-          "down",
-          "down"
+          null
         ]
       },
       {
@@ -3254,11 +3254,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -3279,8 +3279,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           "down"
@@ -3306,9 +3306,9 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
+          null,
+          null,
+          null,
           "down",
           "down"
         ]
@@ -3332,10 +3332,10 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -3357,9 +3357,9 @@
         "abc": "B",
         "gaps": [
           "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
           "down"
         ]
       },
@@ -3384,7 +3384,7 @@
           "down",
           "up",
           null,
-          "down",
+          null,
           "down"
         ]
       },
@@ -3406,10 +3406,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -3431,8 +3431,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           "down"
@@ -3457,10 +3457,10 @@
         "abc": "C",
         "gaps": [
           "down",
-          "up",
-          "up",
-          "down",
-          "up"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -3481,10 +3481,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -3506,10 +3506,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           "down"
         ]
       },
@@ -3531,10 +3531,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           "down"
         ]
       },
@@ -3556,10 +3556,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -3583,10 +3583,10 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -3608,10 +3608,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           "down"
         ]
       },
@@ -3633,10 +3633,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           "down"
         ]
       },
@@ -3658,11 +3658,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          null
+          null,
+          null,
+          null,
+          "down"
         ]
       },
       {
@@ -3685,11 +3685,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          null
+          null,
+          null,
+          null,
+          null,
+          "down"
         ]
       },
       {
@@ -3710,10 +3710,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -3735,10 +3735,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -3762,10 +3762,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -3789,11 +3789,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -3814,11 +3814,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -3839,9 +3839,9 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
+          null,
+          null,
+          null,
           "down",
           "down"
         ]
@@ -3866,10 +3866,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           null,
           "down",
-          "down",
+          null,
           "down"
         ]
       },
@@ -3891,9 +3891,9 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -3916,8 +3916,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "up",
-          "up",
+          null,
+          null,
           null,
           null,
           null
@@ -3944,9 +3944,9 @@
         "abc": "C",
         "gaps": [
           "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
           "down"
         ]
       },
@@ -3972,11 +3972,11 @@
         ],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -3999,10 +3999,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -4025,7 +4025,7 @@
         "abc": "C",
         "gaps": [
           "down",
-          "up",
+          null,
           null,
           null,
           "down"
@@ -4074,11 +4074,11 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4100,8 +4100,8 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
-          "down",
+          null,
+          null,
           "down",
           "down"
         ]
@@ -4127,10 +4127,10 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
+          null,
           "down",
           null,
-          "down"
+          null
         ]
       },
       {
@@ -4153,9 +4153,9 @@
         "gaps": [
           "down",
           "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4178,9 +4178,9 @@
         "gaps": [
           "down",
           null,
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4201,11 +4201,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4226,11 +4226,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4251,11 +4251,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
+          null,
+          null,
+          null,
           "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null
         ]
       },
       {
@@ -4279,7 +4279,7 @@
           null,
           null,
           null,
-          "down",
+          null,
           null
         ]
       }
@@ -4305,9 +4305,9 @@
         "gaps": [
           "down",
           null,
-          "down",
           null,
-          "down"
+          null,
+          null
         ]
       },
       {
@@ -4328,11 +4328,11 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
           null,
           null,
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4354,7 +4354,7 @@
         "abc": "A",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           null
@@ -4378,11 +4378,11 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
           null,
-          "down",
-          "up",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4403,11 +4403,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "up",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4430,9 +4430,9 @@
         "gaps": [
           "down",
           null,
-          "down",
           null,
-          "down"
+          null,
+          null
         ]
       },
       {
@@ -4453,11 +4453,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
           null,
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       }
     ],
@@ -4484,7 +4484,7 @@
           "up",
           null,
           null,
-          "down"
+          null
         ]
       },
       {
@@ -4507,9 +4507,9 @@
         "gaps": [
           "down",
           "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4530,11 +4530,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
+          null,
+          null,
+          null,
           "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null
         ]
       },
       {
@@ -4555,7 +4555,7 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "down",
+          null,
           null,
           null,
           null,
@@ -4582,9 +4582,9 @@
         "gaps": [
           "down",
           null,
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4605,11 +4605,11 @@
         "short": [],
         "abc": "B",
         "gaps": [
+          null,
+          null,
+          null,
           "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null
         ]
       },
       {
@@ -4630,9 +4630,9 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
+          null,
+          "down",
           null,
           null
         ]
@@ -4658,7 +4658,7 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           "down"
@@ -4683,7 +4683,7 @@
         "abc": "B",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           "down"
@@ -4708,7 +4708,7 @@
         "abc": "B",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           "down"
@@ -4733,7 +4733,7 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           "down"
@@ -4757,9 +4757,9 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "up",
+          null,
+          null,
+          null,
           null,
           "down"
         ]
@@ -4782,11 +4782,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
           null,
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4808,7 +4808,7 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           "down"
@@ -4834,8 +4834,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           null,
           null
@@ -4859,7 +4859,7 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
           null,
@@ -4884,11 +4884,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4909,10 +4909,10 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "down",
-          "down",
           null,
-          "up",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -4935,7 +4935,7 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           "down"
@@ -4960,10 +4960,10 @@
         "abc": "C",
         "gaps": [
           "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -4987,8 +4987,8 @@
           "down",
           null,
           null,
-          "down",
-          "down"
+          null,
+          null
         ]
       }
     ],
@@ -5012,10 +5012,10 @@
         "abc": "A",
         "gaps": [
           null,
-          "down",
-          "up",
           null,
-          "up"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -5036,11 +5036,11 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          null,
-          "down",
-          null,
           "up",
-          "up"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -5062,10 +5062,10 @@
         "abc": "A",
         "gaps": [
           null,
-          "down",
           null,
-          "up",
-          "up"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -5087,10 +5087,10 @@
         "abc": "A",
         "gaps": [
           null,
-          "down",
           null,
-          "up",
-          "up"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -5112,9 +5112,9 @@
         "abc": "A",
         "gaps": [
           "up",
-          "down",
           null,
-          "up",
+          null,
+          null,
           null
         ]
       },
@@ -5136,10 +5136,10 @@
         "short": [],
         "abc": "A",
         "gaps": [
+          null,
+          null,
+          null,
           "up",
-          "down",
-          null,
-          null,
           null
         ]
       },
@@ -5162,10 +5162,10 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
           null,
           null,
-          "down"
+          null,
+          null
         ]
       }
     ],
@@ -5188,11 +5188,11 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
           null,
           null,
-          "down",
-          "up"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -5213,7 +5213,7 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
+          null,
           null,
           null,
           "down",
@@ -5238,11 +5238,11 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
           null,
           null,
-          "down",
-          "up"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -5263,8 +5263,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           null
@@ -5288,11 +5288,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
-          "down"
+          null
         ]
       },
       {
@@ -5313,8 +5313,8 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           null
@@ -5338,10 +5338,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "down",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       }
@@ -5365,10 +5365,10 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
+          null,
           null
         ]
       },
@@ -5390,10 +5390,10 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5415,10 +5415,10 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5440,11 +5440,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "up"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -5465,10 +5465,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5490,9 +5490,9 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
+          null,
+          null,
+          null,
           "down",
           null
         ]
@@ -5515,10 +5515,10 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       }
@@ -5543,7 +5543,7 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           "down",
           null
@@ -5553,24 +5553,24 @@
         "ticker": "AVGO",
         "daily": -1.31,
         "intra": -0.4,
-        "5d": -0.94,
-        "20d": -2.21,
-        "wtd": 2.51,
-        "ytd": -8.44,
+        "5d": -0.73,
+        "20d": -2.01,
+        "wtd": 2.72,
+        "ytd": -8.25,
         "vol_ratio": 0.64,
         "vol_chart": "data/charts/vol_AVGO.png",
         "atr_pct": 4.1,
-        "dist_sma50_atr": -0.84,
+        "dist_sma50_atr": -0.79,
         "rs": 95.0,
         "rs_chart": "data/charts/AVGO.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5592,10 +5592,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5618,10 +5618,10 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -5642,10 +5642,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "up",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5667,10 +5667,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5692,10 +5692,10 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       }
@@ -5719,11 +5719,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -5744,10 +5744,10 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "down",
-          "up",
-          "up",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5769,10 +5769,10 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5794,10 +5794,10 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5819,10 +5819,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5844,11 +5844,11 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
-          "up"
+          null
         ]
       },
       {
@@ -5869,11 +5869,11 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "up"
+          null,
+          null,
+          null,
+          null
         ]
       }
     ],
@@ -5896,10 +5896,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5922,34 +5922,34 @@
         "abc": "A",
         "gaps": [
           null,
-          "up",
           null,
-          "down",
-          "up"
+          null,
+          null,
+          null
         ]
       },
       {
         "ticker": "APH",
         "daily": -2.07,
         "intra": -0.5,
-        "5d": -5.3,
-        "20d": -15.54,
-        "wtd": 0.96,
-        "ytd": -8.41,
+        "5d": -5.11,
+        "20d": -15.37,
+        "wtd": 1.16,
+        "ytd": -8.23,
         "vol_ratio": 0.97,
         "vol_chart": "data/charts/vol_APH.png",
         "atr_pct": 5.2,
-        "dist_sma50_atr": -1.97,
+        "dist_sma50_atr": -1.93,
         "rs": 95.0,
         "rs_chart": "data/charts/APH.png",
         "long": [],
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -5971,11 +5971,11 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "up"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -5997,10 +5997,10 @@
         "abc": "B",
         "gaps": [
           null,
-          "up",
           null,
-          "down",
-          "up"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -6021,11 +6021,11 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          null
+          null,
+          null,
+          null,
+          "up"
         ]
       },
       {
@@ -6047,9 +6047,9 @@
         "abc": "A",
         "gaps": [
           null,
-          "up",
           null,
-          "down",
+          null,
+          null,
           null
         ]
       }
@@ -6073,11 +6073,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
           null,
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -6098,11 +6098,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -6123,10 +6123,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
+          null,
           "down"
         ]
       },
@@ -6148,11 +6148,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -6173,10 +6173,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           "down"
         ]
       },
@@ -6198,10 +6198,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           "down"
         ]
       },
@@ -6223,7 +6223,7 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
           null,
@@ -6250,7 +6250,7 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           null,
           null,
           "down",
@@ -6275,11 +6275,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
+          null,
+          null,
+          null,
           "down",
-          "up",
-          "up",
-          "down",
-          "down"
+          null
         ]
       },
       {
@@ -6300,7 +6300,7 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           null,
           null,
           "down",
@@ -6325,9 +6325,9 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
           null,
-          "up",
+          null,
+          null,
           "down",
           "down"
         ]
@@ -6350,7 +6350,7 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           null,
           null,
           "down",
@@ -6375,8 +6375,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           "down"
@@ -6400,8 +6400,8 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "down",
+          null,
+          null,
           null,
           "down",
           "down"
@@ -6427,9 +6427,9 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "down",
+          null,
+          null,
+          null,
           "down",
           "down"
         ]
@@ -6452,8 +6452,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           "down"
@@ -6477,8 +6477,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           null
@@ -6502,11 +6502,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -6527,11 +6527,11 @@
         "short": [],
         "abc": "B",
         "gaps": [
+          null,
+          null,
+          null,
           "down",
-          "up",
-          "down",
-          "down",
-          "down"
+          null
         ]
       },
       {
@@ -6552,8 +6552,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           "down",
           null
@@ -6577,7 +6577,7 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           null,
           null,
           "down",
@@ -6604,8 +6604,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           null,
           null
@@ -6629,11 +6629,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
-          "down"
+          null,
+          null
         ]
       },
       {
@@ -6654,11 +6654,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
-          "down"
+          null,
+          null
         ]
       },
       {
@@ -6679,10 +6679,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
+          null,
           null
         ]
       },
@@ -6704,11 +6704,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
-          "down"
+          null,
+          null
         ]
       },
       {
@@ -6729,11 +6729,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -6754,11 +6754,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       }
     ],
@@ -6782,10 +6782,10 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
-          "down",
           null,
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -6807,10 +6807,10 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
-          "down",
           null,
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -6831,8 +6831,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           null,
           "down"
@@ -6856,8 +6856,8 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           null,
           null
@@ -6881,11 +6881,11 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "down",
           null,
           null,
           null,
-          "down"
+          null,
+          null
         ]
       },
       {
@@ -6906,11 +6906,11 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
           null,
           null,
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -6932,10 +6932,10 @@
         "abc": "B",
         "gaps": [
           null,
-          "up",
           null,
           null,
-          "down"
+          null,
+          null
         ]
       }
     ],
@@ -6959,10 +6959,10 @@
         "abc": "C",
         "gaps": [
           "down",
-          "up",
           null,
           null,
-          "down"
+          null,
+          null
         ]
       },
       {
@@ -6983,10 +6983,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
+          null,
+          null,
+          null,
           "down"
         ]
       },
@@ -7008,11 +7008,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
           null,
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -7033,8 +7033,8 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           null,
           null
@@ -7058,11 +7058,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          null,
-          null,
-          null,
           "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       },
       {
@@ -7083,11 +7083,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
           null,
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -7108,11 +7108,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
-          "down",
-          "down"
+          null,
+          null,
+          null,
+          null
         ]
       }
     ],
@@ -7135,7 +7135,7 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
           null,
@@ -7160,7 +7160,7 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
           "down",
@@ -7185,10 +7185,10 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
-          "up",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -7210,10 +7210,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
-          "up",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -7235,11 +7235,11 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
-          "down"
+          null,
+          null
         ]
       },
       {
@@ -7260,10 +7260,10 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
-          "down",
+          null,
           null
         ]
       },
@@ -7285,7 +7285,7 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
+          null,
           "up",
           null,
           null,
@@ -7315,7 +7315,7 @@
           null,
           null,
           null,
-          "up",
+          null,
           null
         ]
       },
@@ -7338,7 +7338,7 @@
         "abc": "B",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           null
@@ -7363,9 +7363,9 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
           null,
-          "up",
+          null,
+          null,
           null
         ]
       },
@@ -7388,7 +7388,7 @@
         "abc": "B",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           null
@@ -7412,11 +7412,11 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "down",
-          "up",
           null,
           null,
-          "down"
+          null,
+          null,
+          null
         ]
       },
       {
@@ -7438,10 +7438,10 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
           null,
           null,
-          "down"
+          null,
+          null
         ]
       }
     ],
@@ -7465,7 +7465,7 @@
         "abc": "A",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           null
@@ -7490,7 +7490,7 @@
         "abc": "A",
         "gaps": [
           null,
-          "up",
+          null,
           null,
           null,
           "down"
@@ -7515,10 +7515,10 @@
         "abc": "A",
         "gaps": [
           null,
-          "up",
-          "up",
           null,
-          null
+          null,
+          null,
+          "down"
         ]
       },
       {
@@ -7539,10 +7539,10 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
-          "down",
-          "down",
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -7565,9 +7565,9 @@
         "abc": "C",
         "gaps": [
           null,
-          "up",
           null,
-          "down",
+          null,
+          null,
           "up"
         ]
       },
@@ -7589,8 +7589,8 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           null,
           null
@@ -7614,8 +7614,8 @@
         "short": [],
         "abc": "A",
         "gaps": [
-          "down",
-          "up",
+          null,
+          null,
           null,
           null,
           null
@@ -7670,12 +7670,12 @@
         2.49
       ],
       "5d": [
-        -5.69,
-        3.98
+        -5.05,
+        4.66
       ],
       "20d": [
-        -9.62,
-        10.42
+        -9.11,
+        11.14
       ]
     },
     "S&P Style ETFs": {
@@ -7706,12 +7706,12 @@
         2.73
       ],
       "5d": [
-        -5.63,
-        4.68
+        -4.7,
+        5.18
       ],
       "20d": [
-        -12.36,
-        11.14
+        -11.7,
+        11.67
       ]
     },
     "Industries": {
@@ -7725,7 +7725,7 @@
       ],
       "5d": [
         -12.15,
-        5.97
+        6.4
       ],
       "20d": [
         -25.85,
@@ -7940,11 +7940,11 @@
         5.82
       ],
       "5d": [
-        -5.3,
+        -5.11,
         7.74
       ],
       "20d": [
-        -15.54,
+        -15.37,
         7.03
       ]
     },
@@ -8204,7 +8204,7 @@
     }
   ],
   "fear_greed": {
-    "score": 50.3,
+    "score": 50.9,
     "sentiment": "Neutral",
     "components": {
       "volatility": {
@@ -8228,9 +8228,9 @@
         "detail": "HYG -1.6%, TLT -4.0%"
       },
       "breadth": {
-        "score": 40.4,
+        "score": 44.4,
         "label": "RSP/SPY Breadth",
-        "detail": "RSP -5.7%, SPY -4.7%"
+        "detail": "RSP -5.3%, SPY -4.7%"
       },
       "cross_asset": {
         "score": 100.0,
