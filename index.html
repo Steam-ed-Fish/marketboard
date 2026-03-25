@@ -127,6 +127,16 @@
         .event-item:last-child { border-bottom: none; }
         .event-item .event-datetime { font-weight: bold; color: #38bdf8; }
         .event-item .event-name { color: #a8c8e0; }
+        /* Daily Briefing card */
+        .briefing-card { border: 1px solid rgba(56,189,248,0.25); border-radius: 6px; margin: 8px; overflow: hidden; background: linear-gradient(180deg, #071828 0%, #050e1a 100%); }
+        .briefing-header { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background: linear-gradient(90deg, #0a2545 0%, #071828 100%); border-bottom: 1px solid rgba(56,189,248,0.15); cursor: pointer; }
+        .briefing-label { font-size: 0.72rem; font-weight: 700; color: #38bdf8; letter-spacing: 0.08em; text-transform: uppercase; }
+        .briefing-meta { font-size: 0.65rem; color: #2d6080; margin-left: 8px; }
+        .briefing-body { padding: 12px 14px; font-size: 0.78rem; line-height: 1.65; color: #c8d8e8; white-space: pre-wrap; font-family: Arial, sans-serif; }
+        .briefing-body .b-section { color: #38bdf8; font-weight: 700; }
+        .briefing-toggle { font-size: 0.62rem; color: #2d6080; cursor: pointer; padding: 2px 7px; border: 1px solid #0d2540; border-radius: 3px; background: transparent; flex-shrink: 0; }
+        .briefing-toggle:hover { color: #38bdf8; border-color: rgba(56,189,248,0.3); }
+        .briefing-divider { padding: 5px 12px; font-size: 0.65rem; font-weight: 700; color: #2d6080; letter-spacing: 0.06em; border-top: 1px solid #0a1e35; margin-top: 2px; }
         .loading-msg { padding: 20px; text-align: center; color: #9ca3af; }
         .seven-detail-row > td { padding: 0 !important; border-top: 2px solid #38bdf8; border-bottom: 2px solid #38bdf8; }
         .seven-detail-panel { background: #040c1a; }
@@ -373,14 +383,46 @@
     function renderEvents(events) {
         var el = document.getElementById('events-modal-content');
         if (!el) return;
-        if (!events || events.length === 0) {
+        var html = '';
+        var calEvents = events || [];
+
+        // Briefing card — always first entry if present
+        if (calEvents.length > 0 && calEvents[0].type === 'briefing') {
+            var b = calEvents[0];
+            calEvents = calEvents.slice(1);
+            // Highlight ALL-CAPS section labels (e.g. "MARKET PULSE —")
+            var rawText = (b.text || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+            var fmtText = rawText.replace(/^([A-Z][A-Z &]+—)/gm, '<span class="b-section">$1</span>');
+            html += '<div class="briefing-card">' +
+                '<div class="briefing-header" onclick="toggleBriefing()">' +
+                    '<div><span class="briefing-label">&#128200; Intelligence Briefing</span>' +
+                    '<span class="briefing-meta">' + (b.date || '') + ' ' + (b.time || '') + ' UTC</span></div>' +
+                    '<button type="button" class="briefing-toggle" id="briefing-toggle-btn">&#9660; collapse</button>' +
+                '</div>' +
+                '<div id="briefing-body" class="briefing-body">' + fmtText + '</div>' +
+            '</div>';
+            if (calEvents.length > 0) {
+                html += '<div class="briefing-divider">UPCOMING MACRO EVENTS</div>';
+            }
+        }
+
+        if (calEvents.length === 0 && !html) {
             el.innerHTML = '<div class="event-item">No high-importance U.S. macro events in the next 7 days.</div>';
             return;
         }
-        el.innerHTML = events.map(function(e) {
+        html += calEvents.map(function(e) {
             return '<div class="event-item"><span class="event-datetime">' + (e.date || '') + ' ' + (e.time || '') + '</span><span class="event-name"> · ' + (e.event || '') + '</span></div>';
         }).join('');
+        el.innerHTML = html;
     }
+    window.toggleBriefing = function() {
+        var body = document.getElementById('briefing-body');
+        var btn  = document.getElementById('briefing-toggle-btn');
+        if (!body) return;
+        var collapsed = body.style.display === 'none';
+        body.style.display = collapsed ? '' : 'none';
+        if (btn) btn.innerHTML = collapsed ? '&#9660; collapse' : '&#9658; expand';
+    };
     window.openEventsModal = function() {
         var ov = document.getElementById('events-modal-overlay');
         if (ov) ov.style.display = 'flex';
