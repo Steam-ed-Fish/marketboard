@@ -1061,6 +1061,16 @@ def main():
     new_order = [k for k in desired_order if k in groups_data] + remaining
     groups_data = {k: groups_data[k] for k in new_order}
 
+    # Sort Industries rows by sector order and tag each row with its sector
+    if "Industries" in groups_data:
+        _sector_order = list(SECTOR_COLORS.keys())
+        for row in groups_data["Industries"]:
+            row["sector"] = TICKER_TO_SECTOR.get(row.get("ticker", ""), "Broad Market")
+        groups_data["Industries"].sort(
+            key=lambda r: _sector_order.index(r["sector"]) if r["sector"] in _sector_order else len(_sector_order)
+        )
+
+
     # Remove temporary series from rows so they are not written to snapshot.json
     for _gn, rows in groups_data.items():
         for r in rows:
