@@ -122,9 +122,16 @@
         .event-item .event-datetime { font-weight: bold; color: #a5b4fc; }
         .event-item .event-name { color: #cbd5e1; }
         .loading-msg { padding: 20px; text-align: center; color: #9ca3af; }
-        .seven-detail-row > td { padding: 0 !important; border-top: 2px solid #3b82f6; }
-        .seven-detail-panel { background: #0f172a; padding: 6px 8px; }
-        .seven-detail-panel .ticker-table { margin: 0; }
+        .seven-detail-row > td { padding: 0 !important; border-top: 2px solid #3b82f6; border-bottom: 2px solid #3b82f6; }
+        .seven-detail-panel { background: #0d1424; }
+        .seven-detail-header { padding: 6px 12px; font-size: 0.75rem; font-weight: 700; color: #60a5fa; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid #1e3a5f; display: flex; align-items: center; gap: 10px; }
+        .seven-detail-header .sdh-stats { font-weight: 400; color: #475569; font-size: 0.7rem; letter-spacing: 0; text-transform: none; }
+        .seven-detail-panel .ticker-table { margin: 0; width: auto; min-width: 100%; border-collapse: collapse; }
+        .seven-detail-panel .ticker-table th { background: #0f172a; color: #64748b; font-size: 0.68rem; padding: 4px 8px; white-space: nowrap; border-bottom: 1px solid #1e293b; }
+        .seven-detail-panel .ticker-table td { padding: 4px 8px; font-size: 0.78rem; white-space: nowrap; border-bottom: 1px solid #0f172a; }
+        .seven-detail-panel .ticker-row:hover > td { background: #1e3a5f; }
+        .seven-detail-panel .ticker-row:last-child td { border-bottom: none; }
+        .ticker-row.seven-expanded { background: #1a2a40 !important; }
         .ticker-row.seven-expanded > td:first-child { border-left: 3px solid #3b82f6; }
         .market-breadth { margin-bottom: 10px; position: relative; }
         .multi-chart-panel { flex: 1; min-height: 0; overflow: auto; display: none; }
@@ -751,35 +758,42 @@
         var tbody = rowEl.parentNode;
         var existing = tbody.querySelector('.seven-detail-row');
         var isSameGroup = existing && existing.getAttribute('data-for') === groupName;
-        // Remove existing detail row and expanded highlight
         if (existing) {
             existing.remove();
             tbody.querySelectorAll('.seven-expanded').forEach(function(r) { r.classList.remove('seven-expanded'); });
         }
-        // If same row clicked again, just collapse
         if (isSameGroup) return;
-        // Mark row as expanded
         rowEl.classList.add('seven-expanded');
-        // Build inner table
         var grpRows = (snapshot.groups && snapshot.groups[groupName]) || [];
-        var ranges = (snapshot.column_ranges && snapshot.column_ranges[groupName]) || {daily:[-10,10],'5d':[-20,20],'20d':[-30,30]};
-        var inner = '<table class="ticker-table" style="width:100%"><thead><tr>';
-        inner += '<th>Ticker</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
+        var green = grpRows.filter(function(r){return (r.daily||0)>0;}).length;
+        var avg = grpRows.length ? grpRows.reduce(function(s,r){return s+(r.daily||0);},0)/grpRows.length : 0;
+        var avgStr = (avg>=0?'+':'')+avg.toFixed(2)+'%';
+        // Header
+        var inner = '<div class="seven-detail-header">' + groupName +
+            '<span class="sdh-stats">' + green + '/' + grpRows.length + ' green &middot; ' + avgStr + ' avg</span></div>';
+        // Table with fixed col widths
+        inner += '<div style="overflow-x:auto"><table class="ticker-table"><colgroup>';
+        inner += '<col style="width:72px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px">';
+        inner += '</colgroup><thead><tr>';
+        inner += '<th>Ticker</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
         inner += '</tr></thead><tbody>';
         grpRows.forEach(function(r) {
             var dc = (r.daily||0)>0?'price-up':((r.daily||0)<0?'price-down':'');
             var fc = (r['5d']||0)>0?'price-up':((r['5d']||0)<0?'price-down':'');
             var tc = (r['20d']||0)>0?'price-up':((r['20d']||0)<0?'price-down':'');
             var yc = (r.ytd||0)>0?'price-up':((r.ytd||0)<0?'price-down':'');
+            var vc = (r.vol_ratio!=null && r.vol_ratio>=2)?'price-down':'';
             var abc = r.abc || '';
             var lc = getGroupLabelClass(groupName, r.ticker);
             inner += '<tr class="ticker-row" onclick="updateChart(\'' + r.ticker.replace(/'/g,"\\'") + '\',this)" data-symbol="' + r.ticker + '">';
             inner += '<td><span class="ticker-label ' + lc + '">' + r.ticker + '</span></td>';
-            inner += '<td>' + (abc ? '<span class="abc-rating abc-' + abc.toLowerCase() + '">' + abc + '</span>' : '-') + '</td>';
+            inner += '<td>' + (abc?'<span class="abc-rating abc-'+abc.toLowerCase()+'">'+abc+'</span>':'-') + '</td>';
             inner += '<td class="' + dc + '">' + (r.daily!=null?(r.daily>=0?'+':'')+r.daily.toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + fc + '">' + (r['5d']!=null?(r['5d']>=0?'+':'')+r['5d'].toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + tc + '">' + (r['20d']!=null?(r['20d']>=0?'+':'')+r['20d'].toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + yc + '">' + (r.ytd!=null?(r.ytd>=0?'+':'')+r.ytd.toFixed(2)+'%':'-') + '</td>';
+            inner += '<td class="' + vc + '">' + (r.vol_ratio!=null?r.vol_ratio.toFixed(2)+'x':'-') + '</td>';
+            inner += '<td>' + (r.vol_chart?'<img src="'+r.vol_chart+'" class="rs-chart" alt="Vol">':'-') + '</td>';
             inner += '<td>' + (r.atr_pct!=null?r.atr_pct.toFixed(1)+'%':'-') + '</td>';
             inner += '<td>' + (r.dist_sma50_atr!=null?r.dist_sma50_atr.toFixed(2):'-') + '</td>';
             inner += '<td>';
@@ -787,14 +801,13 @@
                 inner += '<div class="gap-bar">';
                 for (var gi = r.gaps.length-1; gi >= 0; gi--) {
                     var gv = r.gaps[gi];
-                    inner += '<div class="gap-dot ' + (gv==='up'?'gap-dot-up':gv==='down'?'gap-dot-down':'gap-dot-none') + '" title="D-'+(gi+1)+(gv?': gap '+gv:'')+'"></div>';
+                    inner += '<div class="gap-dot '+(gv==='up'?'gap-dot-up':gv==='down'?'gap-dot-down':'gap-dot-none')+'" title="D-'+(gi+1)+(gv?': gap '+gv:'')+'"></div>';
                 }
                 inner += '</div>';
             } else { inner += '-'; }
             inner += '</td></tr>';
         });
-        inner += '</tbody></table>';
-        // Insert detail row after rowEl
+        inner += '</tbody></table></div>';
         var detailTr = document.createElement('tr');
         detailTr.className = 'seven-detail-row';
         detailTr.setAttribute('data-for', groupName);
@@ -803,7 +816,6 @@
         td.innerHTML = '<div class="seven-detail-panel">' + inner + '</div>';
         detailTr.appendChild(td);
         rowEl.insertAdjacentElement('afterend', detailTr);
-        // Also open multichart for that group
         openGroupMultiChart(groupName);
         updateGroupChartButtons(groupName);
     };
