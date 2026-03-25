@@ -527,20 +527,22 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None):
         vol_chart_path = create_vol_chart_png(vol_history, ticker_symbol, charts_dir) if vol_history else None
         long_etfs, short_etfs = get_leveraged_etfs(ticker_symbol)
 
-        # Gap detection: all gaps in last 5 trading days [day1=most recent, day5=oldest]
+        # Gap detection: full candle gap in last 5 trading days [day1=most recent, day5=oldest]
+        # 'up'   = entire current candle above previous candle (curr_low > prev_high)
+        # 'down' = entire current candle below previous candle (curr_high < prev_low)
         gaps = []
-        GAP_THRESHOLD = 0.5
         try:
             for i in range(1, 6):
                 if len(hist) < i + 1:
                     gaps.append(None)
                     continue
-                open_price = float(hist['Open'].iloc[-i])
-                prev_close = float(hist['Close'].iloc[-(i + 1)])
-                gap_pct = (open_price - prev_close) / prev_close * 100
-                if gap_pct >= GAP_THRESHOLD:
+                curr_low  = float(hist['Low'].iloc[-i])
+                curr_high = float(hist['High'].iloc[-i])
+                prev_low  = float(hist['Low'].iloc[-(i + 1)])
+                prev_high = float(hist['High'].iloc[-(i + 1)])
+                if curr_low > prev_high:
                     gaps.append('up')
-                elif gap_pct <= -GAP_THRESHOLD:
+                elif curr_high < prev_low:
                     gaps.append('down')
                 else:
                     gaps.append(None)
