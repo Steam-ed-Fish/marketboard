@@ -229,6 +229,29 @@
         .fg-card-det   { font-size:0.63rem; color:#1a3550; margin-top:2px; }
         .fg-bar-bg     { background:#0a1e35; border-radius:3px; height:5px; margin-top:5px; }
         .fg-bar-fill   { height:5px; border-radius:3px; }
+        /* FRED Macro Monitor */
+        .fred-signal-banner { display:flex; gap:5px; flex-wrap:wrap; padding:10px 12px 4px; }
+        .fred-pill { font-size:0.68rem; font-weight:700; padding:2px 8px; border-radius:3px; letter-spacing:0.04em; text-transform:uppercase; }
+        .fred-pill-hawkish   { background:rgba(239,68,68,.12);  color:#ef4444; border:1px solid rgba(239,68,68,.3); }
+        .fred-pill-dovish    { background:rgba(16,185,129,.12); color:#10b981; border:1px solid rgba(16,185,129,.3); }
+        .fred-pill-tightening{ background:rgba(245,158,11,.12); color:#f59e0b; border:1px solid rgba(245,158,11,.3); }
+        .fred-pill-neutral   { background:rgba(56,189,248,.10); color:#38bdf8; border:1px solid rgba(56,189,248,.25); }
+        .fred-pill-mixed     { background:rgba(139,92,246,.12); color:#8b5cf6; border:1px solid rgba(139,92,246,.3); }
+        .fred-narrative { padding:2px 12px 10px; font-size:0.78rem; color:#7ab8d8; border-bottom:1px solid #0a1e35; font-style:italic; }
+        .fred-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; padding:8px; }
+        .fred-card { background:#071828; border-radius:6px; padding:7px 10px 6px; border-left:3px solid #1a3550; }
+        .fred-card.hawkish    { border-left-color:#ef4444; }
+        .fred-card.dovish     { border-left-color:#10b981; }
+        .fred-card.tightening { border-left-color:#f59e0b; }
+        .fred-card.mixed      { border-left-color:#8b5cf6; }
+        .fred-card.neutral    { border-left-color:#38bdf8; }
+        .fred-card-top { display:flex; justify-content:space-between; align-items:baseline; }
+        .fred-card-label { font-size:0.63rem; color:#2d6080; text-transform:uppercase; letter-spacing:0.05em; }
+        .fred-card-signal { font-size:0.6rem; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; }
+        .fred-card-value { font-size:1.15rem; font-weight:700; color:#d4e4f4; line-height:1.2; margin-top:1px; }
+        .fred-card-unit { font-size:0.7rem; font-weight:400; color:#3d7090; margin-left:1px; }
+        .fred-card-change { font-size:0.65rem; margin-top:1px; }
+        .fred-sparkline { width:100%; height:26px; object-fit:contain; margin-top:4px; display:block; }
     </style>
 </head>
 <body>
@@ -246,24 +269,28 @@
         <div class="key-hint">↑ ↓ Navigate · h Holdings · Data via CI · Yahoo Finance</div>
     </div>
     <div id="events-modal-overlay" class="econ-modal-overlay" onclick="closeEventsModal(event)">
-        <div class="econ-modal" onclick="event.stopPropagation()" style="max-width:440px;width:440px">
+        <div class="econ-modal" onclick="event.stopPropagation()" style="max-width:500px;width:500px">
             <div class="econ-modal-header">
-                <div style="display:flex;gap:0;border-bottom:1px solid #374151;margin-bottom:-8px">
+                <div style="display:flex;gap:0;border-bottom:1px solid #0a1e35;margin-bottom:-8px">
                     <button type="button" class="events-tab active" id="tab-macro" onclick="switchEventsTab('macro')">Macro Events</button>
-                    <button type="button" class="events-tab" id="tab-cal" onclick="switchEventsTab('cal')">Economic Calendar</button>
+                    <button type="button" class="events-tab" id="tab-cal" onclick="switchEventsTab('cal')">Econ Calendar</button>
+                    <button type="button" class="events-tab" id="tab-fred" onclick="switchEventsTab('fred')">📊 FRED Macro</button>
                 </div>
                 <button type="button" class="econ-modal-close" onclick="closeEventsModal(event)">&times;</button>
             </div>
-            <div id="events-tab-macro" style="max-height:560px;overflow-y:auto">
+            <div id="events-tab-macro" style="max-height:580px;overflow-y:auto">
                 <div id="events-modal-content"></div>
             </div>
             <div id="events-tab-cal" style="display:none">
                 <div class="tradingview-widget-container">
                     <div class="tradingview-widget-container__widget"></div>
                     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-                    {"colorTheme":"dark","isTransparent":false,"locale":"en","countryFilter":"us","importanceFilter":"-1,0,1","width":400,"height":550}
+                    {"colorTheme":"dark","isTransparent":false,"locale":"en","countryFilter":"us","importanceFilter":"-1,0,1","width":460,"height":550}
                     </script>
                 </div>
+            </div>
+            <div id="events-tab-fred" style="display:none;max-height:580px;overflow-y:auto">
+                <div id="fred-macro-content"></div>
             </div>
         </div>
     </div>
@@ -365,9 +392,12 @@
     };
     window.switchEventsTab = function(tab) {
         document.getElementById('events-tab-macro').style.display = tab === 'macro' ? '' : 'none';
-        document.getElementById('events-tab-cal').style.display = tab === 'cal' ? '' : 'none';
+        document.getElementById('events-tab-cal').style.display  = tab === 'cal'   ? '' : 'none';
+        document.getElementById('events-tab-fred').style.display = tab === 'fred'  ? '' : 'none';
         document.getElementById('tab-macro').classList.toggle('active', tab === 'macro');
-        document.getElementById('tab-cal').classList.toggle('active', tab === 'cal');
+        document.getElementById('tab-cal').classList.toggle('active',   tab === 'cal');
+        document.getElementById('tab-fred').classList.toggle('active',  tab === 'fred');
+        if (tab === 'fred') renderMacroFred();
     };
 
     function getGroupLabelClass(groupName, ticker) {
@@ -1054,6 +1084,53 @@
         });
         if (holdingsIndex >= 0 && holdingsList[holdingsIndex])
             updateChart(holdingsList[holdingsIndex].symbol, null);
+    }
+
+    function renderMacroFred() {
+        var el = document.getElementById('fred-macro-content');
+        if (!el) return;
+        var mf = snapshot && snapshot.macro_fred;
+        if (!mf || !mf.series || Object.keys(mf.series).length === 0) {
+            el.innerHTML = '<div style="padding:20px;color:#2d6080;text-align:center;font-size:0.82rem">No FRED data — add <code>FRED_API_KEY</code> secret in GitHub repo settings and re-run the workflow.</div>';
+            return;
+        }
+        var sc = mf.signal_counts || {};
+        var PILL_CLS = {hawkish:'fred-pill-hawkish',dovish:'fred-pill-dovish',tightening:'fred-pill-tightening',neutral:'fred-pill-neutral',mixed:'fred-pill-mixed'};
+        var SIG_COL  = {hawkish:'#ef4444',dovish:'#10b981',tightening:'#f59e0b',neutral:'#38bdf8',mixed:'#8b5cf6'};
+
+        // Signal banner
+        var banner = '';
+        ['hawkish','tightening','dovish','neutral','mixed'].forEach(function(s) {
+            if (sc[s] > 0) banner += '<span class="fred-pill ' + PILL_CLS[s] + '">' + sc[s] + ' ' + s + '</span>';
+        });
+
+        // KPI cards
+        var order = mf.series_order || Object.keys(mf.series);
+        var cards = order.map(function(sid) {
+            var d = mf.series[sid]; if (!d) return '';
+            var col = SIG_COL[d.signal] || '#38bdf8';
+            var chg = d.change != null ? (d.change >= 0 ? '+' : '') + d.change.toFixed(2) + (d.unit || '') : '';
+            var chgCol = d.change == null ? '' : (d.change > 0 ? 'color:#10b981' : (d.change < 0 ? 'color:#ef4444' : 'color:#3d7090'));
+            var valStr = d.unit === '$' ? ('$' + d.value.toFixed(1)) :
+                         d.unit === 'k' ? (d.value > 0 ? '+' : '') + d.value.toFixed(0) + 'k' :
+                         d.value.toFixed(d.unit === '%' ? 2 : 1);
+            var unitStr = (d.unit === '$' || d.unit === 'k') ? '' : (d.unit || '');
+            return '<div class="fred-card ' + d.signal + '">' +
+                '<div class="fred-card-top">' +
+                '<span class="fred-card-label">' + d.label + '</span>' +
+                '<span class="fred-card-signal" style="color:' + col + '">' + d.signal + '</span>' +
+                '</div>' +
+                '<div class="fred-card-value">' + valStr + '<span class="fred-card-unit">' + unitStr + '</span></div>' +
+                (chg ? '<div class="fred-card-change" style="' + chgCol + '">' + chg + ' vs prev</div>' : '') +
+                (d.chart ? '<img class="fred-sparkline" src="' + d.chart + '" alt="">' : '') +
+                '</div>';
+        }).join('');
+
+        el.innerHTML =
+            '<div class="fred-signal-banner">' + banner + '</div>' +
+            '<div class="fred-narrative">' + (mf.narrative || '') + '</div>' +
+            '<div class="fred-grid">' + cards + '</div>' +
+            '<div style="text-align:center;padding:6px 0 2px;font-size:0.6rem;color:#1a3550">Source: Federal Reserve Economic Data (FRED)</div>';
     }
 
     function initChart(symbol) {

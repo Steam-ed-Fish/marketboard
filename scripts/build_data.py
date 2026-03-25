@@ -9,6 +9,7 @@ import json
 import os
 import re
 import time
+import requests
 
 import yfinance as yf
 import pandas as pd
@@ -770,6 +771,157 @@ def compute_fear_greed(all_ticker_data):
             "components": components, "weights": weights}
 
 
+# ── FRED Macro Monitor ─────────────────────────────────────────────────────────
+
+FRED_SERIES_CONFIG = [
+    # (series_id,      label,           unit,  transform)
+    ("DFF",            "Fed Funds",      "%",   "level"),
+    ("CPIAUCSL",       "CPI YoY",        "%",   "yoy"),
+    ("CPILFESL",       "Core CPI YoY",   "%",   "yoy"),
+    ("PCEPI",          "PCE YoY",        "%",   "yoy"),
+    ("PCEPILFE",       "Core PCE YoY",   "%",   "yoy"),
+    ("UNRATE",         "Unemployment",   "%",   "level"),
+    ("PAYEMS",         "NFP MoM",        "k",   "mom_k"),
+    ("UMCSENT",        "Consumer Sent.", "",    "level"),
+    ("T10Y2Y",         "Yield Curve",    "%",   "level"),
+    ("DCOILBRENTEU",   "Brent Crude",    "$",   "level"),
+]
+
+def _fred_signal(series_id, value):
+    """Classify a macro value into a policy signal."""
+    if series_id == "DFF":
+        return "tightening" if value > 4 else ("dovish" if value < 2 else "neutral")
+    if series_id in ("CPIAUCSL", "CPILFESL"):
+        return "hawkish" if value > 3 else ("dovish" if value < 2 else "neutral")
+    if series_id in ("PCEPI", "PCEPILFE"):
+        return "hawkish" if value > 2.5 else ("dovish" if value < 2 else "neutral")
+    if series_id == "UNRATE":
+        return "dovish" if value > 5 else ("hawkish" if value < 4 else "neutral")
+    if series_id == "PAYEMS":
+        return "hawkish" if value > 200 else ("dovish" if value < 0 else "neutral")
+    if series_id == "UMCSENT":
+        return "hawkish" if value > 80 else ("dovish" if value < 60 else "neutral")
+    if series_id == "T10Y2Y":
+        return "mixed" if value < 0 else ("hawkish" if value > 0.5 else "neutral")
+    if series_id == "DCOILBRENTEU":
+        return "hawkish" if value > 90 else ("dovish" if value < 60 else "neutral")
+    return "neutral"
+
+def fetch_fred_series(api_key, series_id, limit=40):
+    """Fetch the last `limit` observations from FRED."""
+    try:
+        resp = requests.get(
+            "https://api.stlouisfed.org/fred/series/observations",
+            params={"series_id": series_id, "api_key": api_key,
+                    "file_type": "json", "sort_order": "desc", "limit": limit},
+            timeout=12)
+        resp.raise_for_status()
+        pairs = []
+        for obs in reversed(resp.json().get("observations", [])):
+            try:
+                pairs.append((obs["date"], float(obs["value"])))
+            except (ValueError, KeyError):
+                pass
+        return pairs
+    except Exception as e:
+        print(f"FRED fetch error {series_id}: {e}")
+        return []
+
+def create_fred_sparkline(values, series_id, charts_dir, color="#38bdf8"):
+    """Thin line + fill sparkline for a FRED series."""
+    try:
+        if not values or len(values) < 2:
+            return None
+        plt.style.use('dark_background')
+        fig, ax = plt.subplots(figsize=(8, 2))
+        fig.patch.set_facecolor('#060d1c')
+        ax.set_facecolor('#060d1c')
+        xs = range(len(values))
+        ax.plot(xs, values, color=color, lw=1.8, solid_capstyle='round')
+        ax.fill_between(xs, values, min(values), alpha=0.18, color=color)
+        ax.set_xticks([]); ax.set_yticks([])
+        for s in ax.spines.values(): s.set_visible(False)
+        fig.tight_layout(pad=0)
+        safe = re.sub(r'[^a-zA-Z0-9]', '_', series_id)
+        path = os.path.join(charts_dir, f"fred_{safe}.png")
+        fig.savefig(path, format='png', dpi=80, bbox_inches='tight', facecolor='#060d1c')
+        plt.close(fig)
+        return f"data/charts/fred_{safe}.png"
+    except Exception as e:
+        print(f"FRED sparkline error {series_id}: {e}")
+        return None
+
+def build_macro_fred(api_key, charts_dir):
+    """Fetch FRED series, transform, classify signals, generate sparklines."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    SIGNAL_COLORS = {"hawkish": "#ef4444", "dovish": "#10b981",
+                     "tightening": "#f59e0b", "neutral": "#38bdf8", "mixed": "#8b5cf6"}
+    raw = {}
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        futs = {ex.submit(fetch_fred_series, api_key, sid, 40): sid
+                for sid, *_ in FRED_SERIES_CONFIG}
+        for f in as_completed(futs):
+            raw[futs[f]] = f.result()
+
+    series_out = {}
+    signal_counts = {"hawkish": 0, "dovish": 0, "tightening": 0, "neutral": 0, "mixed": 0}
+
+    for series_id, label, unit, transform in FRED_SERIES_CONFIG:
+        pairs = raw.get(series_id, [])
+        if not pairs:
+            continue
+        values = [v for _, v in pairs]
+
+        if transform == "yoy":
+            if len(values) < 13:
+                continue
+            transformed = [(values[i] / values[i-12] - 1) * 100
+                           for i in range(12, len(values)) if values[i-12] != 0]
+            spark = transformed[-24:]
+        elif transform == "mom_k":
+            if len(values) < 2:
+                continue
+            transformed = [(values[i] - values[i-1]) / 1000 for i in range(1, len(values))]
+            spark = transformed[-24:]
+        else:
+            transformed = values
+            spark = values[-24:]
+
+        if not transformed:
+            continue
+        current = round(transformed[-1], 2)
+        prev    = round(transformed[-2], 2) if len(transformed) >= 2 else None
+        signal  = _fred_signal(series_id, current)
+        signal_counts[signal] = signal_counts.get(signal, 0) + 1
+        chart = create_fred_sparkline(spark, series_id, charts_dir, SIGNAL_COLORS.get(signal, "#38bdf8"))
+        series_out[series_id] = {
+            "label": label, "value": current, "prev": prev,
+            "change": round(current - prev, 2) if prev is not None else None,
+            "unit": unit, "signal": signal, "chart": chart,
+        }
+
+    # Narrative
+    dominant = max(signal_counts, key=signal_counts.get) if signal_counts else "neutral"
+    parts = []
+    if "CPIAUCSL" in series_out:
+        parts.append(f"CPI at {series_out['CPIAUCSL']['value']:.1f}%")
+    if "DFF" in series_out:
+        parts.append(f"Fed Funds at {series_out['DFF']['value']:.2f}%")
+    if "UNRATE" in series_out:
+        parts.append(f"unemployment at {series_out['UNRATE']['value']:.1f}%")
+    narrative = f"Leaning {dominant.capitalize()}"
+    if parts:
+        narrative += ": " + ", ".join(parts) + "."
+
+    return {
+        "series": series_out,
+        "signal_counts": signal_counts,
+        "dominant_signal": dominant,
+        "narrative": narrative,
+        "series_order": [s[0] for s in FRED_SERIES_CONFIG if s[0] in series_out],
+    }
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--out-dir", default="data", help="Output directory (default: data)")
@@ -1123,12 +1275,22 @@ def main():
 
     fear_greed = compute_fear_greed(all_ticker_data)
 
+    fred_api_key = os.environ.get("FRED_API_KEY", "")
+    macro_fred = {}
+    if fred_api_key:
+        print("Fetching FRED macro data...")
+        macro_fred = build_macro_fred(fred_api_key, charts_dir)
+        print(f"  FRED: {len(macro_fred.get('series', {}))} series, dominant={macro_fred.get('dominant_signal')}")
+    else:
+        print("No FRED_API_KEY set — skipping macro data")
+
     snapshot = {
         "built_at": datetime.utcnow().isoformat() + "Z",
         "groups": groups_data,
         "column_ranges": column_ranges,
         "themes": themes_data,
         "fear_greed": fear_greed,
+        "macro_fred": macro_fred,
         "industries_sector_charts": industries_sector_charts,
         "industries_sector_rs_charts": industries_sector_rs_charts,
     }

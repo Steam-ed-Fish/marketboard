@@ -34,6 +34,7 @@ jobs:
           python scripts/build_data.py --out-dir data
         env:
           TZ: UTC
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
 
       - name: Commit and push data
         run: |
