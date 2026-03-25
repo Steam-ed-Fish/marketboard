@@ -1054,7 +1054,7 @@ def main():
     groups_data["The 7s at a Glance"] = summary_rows
     # Explicit section order
     seven_groups = [k for k in STOCK_GROUPS.keys() if k.startswith("The ") and k.endswith(" 7")]
-    desired_order = ["Indices", "The 7s at a Glance"] + seven_groups + ["S&P Style ETFs", "Sel Sectors", "EW Sectors", "Industries", "Countries"]
+    desired_order = ["Indices", "The 7s at a Glance", "Sel Sectors", "S&P Style ETFs", "EW Sectors", "Industries", "Countries"] + seven_groups
     remaining = [k for k in groups_data.keys() if k not in desired_order]
     new_order = [k for k in desired_order if k in groups_data] + remaining
     groups_data = {k: groups_data[k] for k in new_order}
