@@ -112,13 +112,9 @@
         }
         .events-button:hover,
         .column-guide-btn:hover { background-color: #374151; }
-        .events-content {
-            display: none; position: absolute; top: 100%; left: 0; right: 0; background-color: #2d3748;
-            min-width: 100%; z-index: 1000; border-radius: 4px; max-height: 400px; overflow-y: auto;
-            padding: 10px 12px; border: 1px solid #4a5568; margin-top: 4px;
-            font-family: Arial, sans-serif; font-size: 0.8em; color: #e0e0e0; line-height: 1.5;
-        }
-        .economic-events:hover .events-content { display: block; }
+        .events-tab { background: transparent; border: none; border-bottom: 2px solid transparent; color: #9ca3af; cursor: pointer; padding: 4px 12px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.03em; }
+        .events-tab.active { color: #e0e0e0; border-bottom-color: #3b82f6; }
+        .events-tab:hover { color: #e0e0e0; }
         .event-item {
             padding: 10px 12px; border-bottom: 1px solid #4a5568; background-color: #1a1a1a;
             font-family: Arial, sans-serif; font-size: 0.8em; line-height: 1.5;
@@ -233,18 +229,14 @@
 </head>
 <body>
     <div class="ticker-list">
-        <div class="economic-events" style="position:relative">
-            <button class="events-button">📅 MACRO EVENTS</button>
-            <div class="events-content" id="events-content"></div>
+        <div style="position:relative;margin-bottom:10px">
+            <button class="events-button" type="button" onclick="openEventsModal()">📅 EVENTS</button>
         </div>
         <div style="position:relative;margin-bottom:10px">
             <button class="events-button" type="button" onclick="openFearGreed()">🌡️ FEAR &amp; GREED</button>
         </div>
         <div class="market-breadth" style="position:relative;margin-bottom:10px">
             <button class="events-button" type="button" onclick="openMarketBreadth()">📊 MARKET BREADTH</button>
-        </div>
-        <div class="economic-tv" style="position:relative;margin-bottom:10px">
-            <button class="events-button" type="button" onclick="openEconomicCalendar()">🗓 ECONOMIC CALENDAR</button>
         </div>
         <div class="column-guide" style="position:relative">
             <button class="column-guide-btn" type="button">📋 COLUMN GUIDE</button>
@@ -264,14 +256,25 @@
         <div id="groups-container"></div>
         <div class="key-hint">↑ ↓ Navigate · h Holdings · Data via CI · Yahoo Finance</div>
     </div>
-    <div id="economic-calendar-modal-overlay" class="econ-modal-overlay" onclick="closeEconomicCalendar(event)">
-        <div class="econ-modal" onclick="event.stopPropagation()">
-            <div class="econ-modal-header"><span>Economic Calendar</span><button type="button" class="econ-modal-close" onclick="closeEconomicCalendar(event)">&times;</button></div>
-            <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-                {"colorTheme":"dark","isTransparent":false,"locale":"en","countryFilter":"us","importanceFilter":"-1,0,1","width":400,"height":550}
-                </script>
+    <div id="events-modal-overlay" class="econ-modal-overlay" onclick="closeEventsModal(event)">
+        <div class="econ-modal" onclick="event.stopPropagation()" style="max-width:440px;width:440px">
+            <div class="econ-modal-header">
+                <div style="display:flex;gap:0;border-bottom:1px solid #374151;margin-bottom:-8px">
+                    <button type="button" class="events-tab active" id="tab-macro" onclick="switchEventsTab('macro')">Macro Events</button>
+                    <button type="button" class="events-tab" id="tab-cal" onclick="switchEventsTab('cal')">Economic Calendar</button>
+                </div>
+                <button type="button" class="econ-modal-close" onclick="closeEventsModal(event)">&times;</button>
+            </div>
+            <div id="events-tab-macro" style="max-height:560px;overflow-y:auto">
+                <div id="events-modal-content"></div>
+            </div>
+            <div id="events-tab-cal" style="display:none">
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+                    {"colorTheme":"dark","isTransparent":false,"locale":"en","countryFilter":"us","importanceFilter":"-1,0,1","width":400,"height":550}
+                    </script>
+                </div>
             </div>
         </div>
     </div>
@@ -352,7 +355,8 @@
     }
 
     function renderEvents(events) {
-        const el = document.getElementById('events-content');
+        var el = document.getElementById('events-modal-content');
+        if (!el) return;
         if (!events || events.length === 0) {
             el.innerHTML = '<div class="event-item">No high-importance U.S. macro events in the next 7 days.</div>';
             return;
@@ -361,6 +365,21 @@
             return '<div class="event-item"><span class="event-datetime">' + (e.date || '') + ' ' + (e.time || '') + '</span><span class="event-name"> · ' + (e.event || '') + '</span></div>';
         }).join('');
     }
+    window.openEventsModal = function() {
+        var ov = document.getElementById('events-modal-overlay');
+        if (ov) ov.style.display = 'flex';
+    };
+    window.closeEventsModal = function(ev) {
+        if (ev) ev.preventDefault();
+        var ov = document.getElementById('events-modal-overlay');
+        if (ov) ov.style.display = 'none';
+    };
+    window.switchEventsTab = function(tab) {
+        document.getElementById('events-tab-macro').style.display = tab === 'macro' ? '' : 'none';
+        document.getElementById('events-tab-cal').style.display = tab === 'cal' ? '' : 'none';
+        document.getElementById('tab-macro').classList.toggle('active', tab === 'macro');
+        document.getElementById('tab-cal').classList.toggle('active', tab === 'cal');
+    };
 
     function getGroupLabelClass(groupName, ticker) {
         if (groupName === 'Industries' && meta && meta.Industries_COLORS && meta.Industries_COLORS[ticker])
@@ -767,15 +786,6 @@
         if (tvWrapper) tvWrapper.style.display = 'none';
         if (rrgPanel && rrgImg) { rrgImg.src = rrgChartPath; rrgPanel.style.display = 'flex'; }
         updateGroupChartButtons(null);
-    };
-    window.openEconomicCalendar = function() {
-        var ov = document.getElementById('economic-calendar-modal-overlay');
-        if (ov) ov.style.display = 'flex';
-    };
-    window.closeEconomicCalendar = function(ev) {
-        if (ev) ev.preventDefault();
-        var ov = document.getElementById('economic-calendar-modal-overlay');
-        if (ov) ov.style.display = 'none';
     };
     window.openMarketBreadth = function() {
         var ov = document.getElementById('market-breadth-modal-overlay');
