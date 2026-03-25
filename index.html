@@ -35,18 +35,19 @@
         .legend { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
         .legend-item { padding: 2px 6px; border-radius: 6px; font-size: 0.75em; color: white; user-select: none; }
         .ticker-table { width: 100%; border-collapse: collapse; font-size: 0.80em; table-layout: fixed; }
-        .ticker-table th:nth-child(3), .ticker-table td:nth-child(3) { width: 59px; padding: 6px 4px; overflow: hidden; }
-        .ticker-table th:nth-child(4), .ticker-table td:nth-child(4) { width: 59px; padding: 6px 4px; overflow: hidden; }
-        .ticker-table th:nth-child(5), .ticker-table td:nth-child(5) { width: 59px; padding: 6px 4px; overflow: hidden; }
-        .ticker-table th:nth-child(6), .ticker-table td:nth-child(6) { width: 59px; padding: 6px 4px; overflow: hidden; }
-        .ticker-table th:nth-child(7), .ticker-table td:nth-child(7) { width: 59px; padding: 6px 4px; overflow: hidden; }
-        .ticker-table th:nth-child(8), .ticker-table td:nth-child(8) { width: 59px; padding: 6px 4px; overflow: hidden; }
-        .ticker-table th:nth-child(9), .ticker-table td:nth-child(9) { width: 48px; padding: 6px 2px; overflow: hidden; }
-        .ticker-table th:nth-child(10), .ticker-table td:nth-child(10) { width: 48px; padding: 6px 2px; overflow: hidden; }
+        .ticker-table th:nth-child(1), .ticker-table td:nth-child(1) { width: 90px; overflow: hidden; }
+        .ticker-table th:nth-child(3), .ticker-table td:nth-child(3) { width: 59px; padding: 3px 4px; overflow: hidden; }
+        .ticker-table th:nth-child(4), .ticker-table td:nth-child(4) { width: 59px; padding: 3px 4px; overflow: hidden; }
+        .ticker-table th:nth-child(5), .ticker-table td:nth-child(5) { width: 59px; padding: 3px 4px; overflow: hidden; }
+        .ticker-table th:nth-child(6), .ticker-table td:nth-child(6) { width: 59px; padding: 3px 4px; overflow: hidden; }
+        .ticker-table th:nth-child(7), .ticker-table td:nth-child(7) { width: 59px; padding: 3px 4px; overflow: hidden; }
+        .ticker-table th:nth-child(8), .ticker-table td:nth-child(8) { width: 59px; padding: 3px 4px; overflow: hidden; }
+        .ticker-table th:nth-child(9), .ticker-table td:nth-child(9) { width: 48px; padding: 3px 2px; overflow: hidden; }
+        .ticker-table th:nth-child(10), .ticker-table td:nth-child(10) { width: 48px; padding: 3px 2px; overflow: hidden; }
         .ticker-table th:nth-child(12), .ticker-table td:nth-child(12) { width: 110px; padding: 2px 4px; overflow: hidden; }
         .ticker-table thead { position: sticky; z-index: 2; }
         .ticker-table th {
-            text-align: left; padding: 6px 8px; background-color: #2d3748; cursor: pointer; user-select: none;
+            text-align: left; padding: 4px 6px; background-color: #2d3748; cursor: pointer; user-select: none;
             font-weight: bold; border-bottom: 1px solid #444; color: #e0e0e0;
         }
         .ticker-table th:hover { background-color: #374151; }
@@ -54,7 +55,7 @@
         .ticker-table th.sortable:hover { color: #fff; }
         .ticker-table th.sort-asc::after { content: " ↑"; }
         .ticker-table th.sort-desc::after { content: " ↓"; }
-        .ticker-table td { padding: 6px 8px; border-bottom: 1px solid #333; vertical-align: middle; color: #e0e0e0; }
+        .ticker-table td { padding: 3px 6px; border-bottom: 1px solid #333; vertical-align: middle; color: #e0e0e0; }
         .ticker-row { cursor: pointer; transition: all 0.2s; }
         .ticker-row:hover { background-color: #2a2a2a; }
         .ticker-row.active { background-color: #374151; }
@@ -65,14 +66,14 @@
         .value-bar.positive { background-color: #10b981; left: 0; right: auto; }
         .value-bar.negative { background-color: #ef4444; right: 0; left: auto; }
         .value-text { position: relative; z-index: 1; }
-        .rs-chart { width: 100%; max-width: 100px; height: 30px; display: block; object-fit: contain; }
+        .rs-chart { width: 100%; max-width: 100px; height: 22px; display: block; object-fit: contain; }
         .tradingview-widget-container { flex: 1; min-height: 0; }
         .key-hint { font-size: 11px; color: #9ca3af; margin-top: 15px; padding: 5px; background-color: #2d3748; border-radius: 3px; position: sticky; bottom: 0; border: 1px solid #444; }
         .long-etf { color: #4ade80; cursor: pointer; text-decoration: underline; }
         .short-etf { color: #f87171; cursor: pointer; text-decoration: underline; }
         .etf-list { white-space: nowrap; font-size: 0.8em; }
         .etf-list span:hover { font-weight: bold; }
-        .ticker-label { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 12px; background-color: #4a5568; color: #e0e0e0; }
+        .ticker-label { display: inline-block; padding: 2px 7px; border-radius: 12px; background-color: #4a5568; color: #e0e0e0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; vertical-align: middle; }
         .holdings-btn {
             font-size: 10px; font-weight: 600; background-color: #1f2933; color: #9ca3af;
             width: 18px; height: 18px; padding: 0; border: 1px solid #4a5568; border-radius: 50%;
