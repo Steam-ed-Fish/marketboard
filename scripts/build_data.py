@@ -1070,22 +1070,34 @@ def main():
             key=lambda r: _sector_order.index(r["sector"]) if r["sector"] in _sector_order else len(_sector_order)
         )
 
-    # Generate equal-weighted vol chart PNGs per Industries sector (must run before vol_history is popped)
+    # Generate equal-weighted vol + RS chart PNGs per Industries sector (must run before histories are popped)
     industries_sector_charts = {}
+    industries_sector_rs_charts = {}
     if "Industries" in groups_data:
         from collections import defaultdict
         _sec_vol_hists = defaultdict(list)
+        _sec_rrs_hists = defaultdict(list)
         for _row in groups_data["Industries"]:
             _vh = _row.get("vol_history")
             if _vh and len(_vh) == 20:
                 _sec_vol_hists[_row["sector"]].append(_vh)
-        for _sec_name, _hists in _sec_vol_hists.items():
-            if _hists:
-                _avg_vol = np.mean(_hists, axis=0).tolist()
-                _safe_sec = re.sub(r'[^a-zA-Z0-9]', '_', _sec_name)
+            _rh = _row.get("rolling_rrs")
+            if _rh and len(_rh) == 20:
+                _sec_rrs_hists[_row["sector"]].append(_rh)
+        for _sec_name in set(list(_sec_vol_hists.keys()) + list(_sec_rrs_hists.keys())):
+            _safe_sec = re.sub(r'[^a-zA-Z0-9]', '_', _sec_name)
+            if _sec_vol_hists[_sec_name]:
+                _avg_vol = np.mean(_sec_vol_hists[_sec_name], axis=0).tolist()
                 _path = create_vol_chart_png(_avg_vol, "IndSec_" + _safe_sec, charts_dir)
                 if _path:
                     industries_sector_charts[_sec_name] = _path
+            if _sec_rrs_hists[_sec_name]:
+                _avg_rr = np.mean(_sec_rrs_hists[_sec_name], axis=0)
+                _rs_sma = pd.Series(_avg_rr).rolling(5, min_periods=1).mean().values
+                _rs_df = pd.DataFrame({"rollingRRS": _avg_rr, "RRS_SMA": _rs_sma})
+                _rpath = create_rs_chart_png(_rs_df, "IndSecRS_" + _safe_sec, charts_dir)
+                if _rpath:
+                    industries_sector_rs_charts[_sec_name] = _rpath
 
     # Remove temporary series from rows so they are not written to snapshot.json
     for _gn, rows in groups_data.items():
@@ -1118,6 +1130,7 @@ def main():
         "themes": themes_data,
         "fear_greed": fear_greed,
         "industries_sector_charts": industries_sector_charts,
+        "industries_sector_rs_charts": industries_sector_rs_charts,
     }
     meta = {
         "SECTOR_COLORS": SECTOR_COLORS,

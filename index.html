@@ -650,9 +650,9 @@
                     // Col 14: 1M-VARS (plain RS%)
                     var _rsCl = _sRs != null ? (_sRs >= 60 ? 'price-up' : (_sRs < 40 ? 'price-down' : '')) : '';
                     html += '<td class="' + _rsCl + '" style="padding:3px 4px;font-size:0.72rem">' + (_sRs != null ? Math.round(_sRs) + '%' : '-') + '</td>';
-                    // Col 15: VARS — bar viz of EW avg RS% (range 0–100)
-                    html += '<td class="' + _rsCl + '" style="padding:3px 4px">' + (_sRs != null ?
-                        '<div class="value-visualization"><div class="value-bar ' + (_sRs >= 50 ? 'positive' : 'negative') + '" style="width:' + Math.round(_sRs) + '%"></div><span class="value-text">' + Math.round(_sRs) + '%</span></div>' : '-') + '</td>';
+                    // Col 15: VARS — EW averaged RS sparkline PNG from snapshot
+                    var _secRsChart = snapshot.industries_sector_rs_charts && snapshot.industries_sector_rs_charts[r.sector];
+                    html += '<td style="padding:2px 4px">' + (_secRsChart ? '<img src="' + _secRsChart + '" class="rs-chart" alt="RS">' : '-') + '</td>';
                     html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // letf
                     html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // gap
                     html += '</tr>';
