@@ -1070,6 +1070,22 @@ def main():
             key=lambda r: _sector_order.index(r["sector"]) if r["sector"] in _sector_order else len(_sector_order)
         )
 
+    # Generate equal-weighted vol chart PNGs per Industries sector (must run before vol_history is popped)
+    industries_sector_charts = {}
+    if "Industries" in groups_data:
+        from collections import defaultdict
+        _sec_vol_hists = defaultdict(list)
+        for _row in groups_data["Industries"]:
+            _vh = _row.get("vol_history")
+            if _vh and len(_vh) == 20:
+                _sec_vol_hists[_row["sector"]].append(_vh)
+        for _sec_name, _hists in _sec_vol_hists.items():
+            if _hists:
+                _avg_vol = np.mean(_hists, axis=0).tolist()
+                _safe_sec = re.sub(r'[^a-zA-Z0-9]', '_', _sec_name)
+                _path = create_vol_chart_png(_avg_vol, "IndSec_" + _safe_sec, charts_dir)
+                if _path:
+                    industries_sector_charts[_sec_name] = _path
 
     # Remove temporary series from rows so they are not written to snapshot.json
     for _gn, rows in groups_data.items():
@@ -1101,6 +1117,7 @@ def main():
         "column_ranges": column_ranges,
         "themes": themes_data,
         "fear_greed": fear_greed,
+        "industries_sector_charts": industries_sector_charts,
     }
     meta = {
         "SECTOR_COLORS": SECTOR_COLORS,

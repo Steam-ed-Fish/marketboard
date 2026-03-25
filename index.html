@@ -630,8 +630,7 @@
                     // Cols 1+2+3 merged: sector label + chevron (spans Ticker + Holdings + Grade)
                     html += '<td colspan="3" style="padding:3px 6px;white-space:nowrap">' +
                         '<span class="card-chevron' + (_secOpen ? ' open' : '') + '" id="sec-chev-' + _secId + '" style="margin-right:4px;font-size:0.7rem">&#9658;</span>' +
-                        '<span style="background:' + _sc + ';color:#fff;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:0.05em;text-transform:uppercase">' + r.sector + '</span>' +
-                        '<span style="font-size:0.68rem;color:' + (_ss.green > (_ss.total||1)/2 ? '#10b981' : '#9ca3af') + ';margin-left:7px">' + _ss.green + '/' + (_ss.total||0) + '</span></td>';
+                        '<span style="background:' + _sc + ';color:#fff;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:0.05em;text-transform:uppercase">' + r.sector + '</span></td>';
                     // Cols 4–9: averaged returns
                     html += _secVizCell(_sDaily,  ranges.daily[0],  ranges.daily[1]);
                     html += _secVizCell(_sIntra,  ranges.intra[0],  ranges.intra[1]);
@@ -642,10 +641,9 @@
                     // Col 10: avg vol ratio (plain)
                     var _volCl = _sVol != null && _sVol >= 2 ? 'price-down' : '';
                     html += '<td class="' + _volCl + '" style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sVol != null ? _sVol.toFixed(1) + 'x' : '-') + '</td>';
-                    // Col 11: Vol Chart — bar viz of EW avg vol ratio (range 0–3)
-                    var _volBarW = _sVol != null ? Math.min(100, (_sVol / 3) * 100) : 0;
-                    html += '<td class="' + _volCl + '" style="padding:3px 4px">' + (_sVol != null ?
-                        '<div class="value-visualization"><div class="value-bar positive" style="width:' + _volBarW + '%"></div><span class="value-text">' + _sVol.toFixed(1) + 'x</span></div>' : '-') + '</td>';
+                    // Col 11: Vol Chart — EW averaged sparkline PNG from snapshot
+                    var _secVolChart = snapshot.industries_sector_charts && snapshot.industries_sector_charts[r.sector];
+                    html += '<td style="padding:2px 4px">' + (_secVolChart ? '<img src="' + _secVolChart + '" class="rs-chart" alt="Vol">' : '-') + '</td>';
                     // Col 12–13: atr, dist
                     html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sAtr  != null ? _sAtr.toFixed(1) + '%' : '-') + '</td>';
                     html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sDist != null ? _sDist.toFixed(2)     : '-') + '</td>';
