@@ -491,7 +491,15 @@
                     html += '<span class="legend-item" style="background-color:' + meta.SECTOR_COLORS[s] + '">' + s + '</span>';
                 html += '</div>';
             }
-            if (groupName !== 'The 7s at a Glance') {
+            if (groupName === 'The 7s at a Glance') {
+                var _rrgRow = null;
+                for (var _ri = 0; _ri < rows.length; _ri++) { if (rows[_ri].is_rrg_row) { _rrgRow = rows[_ri]; break; } }
+                if (_rrgRow && _rrgRow.rrg_chart) {
+                    html += '<div class="group-header-actions" onclick="event.stopPropagation()">';
+                    html += '<button type="button" class="group-chart-btn" onclick="showRrgChart(\'' + _rrgRow.rrg_chart.replace(/'/g, "\\'") + '\', this)">Rotation Chart</button>';
+                    html += '</div>';
+                }
+            } else {
                 html += '<div class="group-header-actions" onclick="event.stopPropagation()">';
                 html += '<button type="button" class="group-chart-btn" data-group="' + gnEsc + '" onclick="toggleGroupChart(\'' + gnEsc + '\', this)">MultiChart</button>';
                 html += '</div>';
@@ -519,15 +527,7 @@
             html += '</tr></thead><tbody id="' + safeId + '-body">';
             for (var i = 0; i < rows.length; i++) {
                 var r = rows[i];
-                if (r.is_rrg_row) {
-                    var _lc = getGroupLabelClass(groupName, r.ticker);
-                    var _oc = r.rrg_chart ? ('showRrgChart(\'' + (r.rrg_chart||'').replace(/'/g,"\\'") + '\',this)') : '';
-                    html += '<tr class="ticker-row"' + (_oc ? ' onclick="'+_oc+'"' : '') + ' data-symbol="'+r.ticker+'" data-group="'+groupName.replace(/"/g,'&quot;')+'" data-daily="0" data-intra="0" data-wtd="0" data-5d="0" data-20d="0" data-ytd="0" data-vol_ratio="0" data-atr_pct="0" data-dist_sma50_atr="0" data-rs="0" data-abc="" data-letf="0" data-index="'+i+'"'+(r.rrg_chart?' data-rrg-chart="'+r.rrg_chart+'"':'')+' >';
-                    html += '<td><span class="ticker-label '+_lc+'">'+r.ticker+'</span></td>';
-                    for (var _dc=0;_dc<16;_dc++) html += '<td>-</td>';
-                    html += '</tr>';
-                    continue;
-                }
+                if (r.is_rrg_row) { continue; }
                 var daily = r.daily, intra = r.intra, five = r['5d'], twenty = r['20d'];
                 var dailyW = vizWidth(daily, ranges.daily[0], ranges.daily[1]);
                 var intraW = vizWidth(intra, ranges.intra[0], ranges.intra[1]);
