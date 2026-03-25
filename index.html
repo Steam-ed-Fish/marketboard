@@ -36,6 +36,7 @@
         .legend-item { padding: 2px 6px; border-radius: 6px; font-size: 0.75em; color: white; user-select: none; }
         .ticker-table { width: 100%; border-collapse: collapse; font-size: 0.80em; table-layout: fixed; }
         .ticker-table th:nth-child(1), .ticker-table td:nth-child(1) { width: 90px; overflow: hidden; }
+        .ticker-table-glance th:nth-child(1), .ticker-table-glance td:nth-child(1) { width: 140px; }
         .ticker-table th:nth-child(3), .ticker-table td:nth-child(3) { width: 54px; padding: 3px 4px; overflow: hidden; }
         .ticker-table th:nth-child(4), .ticker-table td:nth-child(4) { width: 66px; padding: 3px 4px; overflow: hidden; }
         .ticker-table th:nth-child(5), .ticker-table td:nth-child(5) { width: 66px; padding: 3px 4px; overflow: hidden; }
@@ -554,8 +555,9 @@
                 html += '</div>';
             }
             html += '</div>';
+            var _isGlance = (groupName === 'The 7s at a Glance');
             html += '<div class="card-body" id="card-body-' + safeId + '" style="' + (_grpOpen ? '' : 'display:none') + '">';
-            html += '<table class="ticker-table" data-group="' + escapeHtml(groupName) + '"><thead><tr>';
+            html += '<table class="ticker-table' + (_isGlance ? ' ticker-table-glance' : '') + '" data-group="' + escapeHtml(groupName) + '"><thead><tr>';
             var th = function(key, label, tip) { return '<th class="sortable" data-sort-by="' + key + '" title="' + (tip || '') + '&#10;Click to sort">' + label + '</th>'; };
             html += th('symbol', 'Ticker', 'Ticker symbol');
             html += '<th title="Click to view holdings. For The 7s at a Glance, hover to see constituent performance.">Holdings</th>';
@@ -572,8 +574,10 @@
             html += th('dist_sma50_atr', 'ATRx', 'Distance from SMA50 measured in 14-period ATR units.\nPositive = above SMA50, negative = below.');
             html += th('rs', '1M-VARS', 'Volatility Adjusted Relative Strength vs SPY over last 21 days (0–100%)');
             html += th('rs', 'VARS', 'Volatility Adjusted Relative Strength vs SPY (raw score)');
-            html += th('letf', 'LETF', 'Leveraged ETF exists for this ticker (long/short)');
-            html += '<th title="Full candle gap in last 5 trading days.\nGreen = entire candle above previous candle.\nRed = entire candle below previous candle.">Gap</th>';
+            if (!_isGlance) {
+                html += th('letf', 'LETF', 'Leveraged ETF exists for this ticker (long/short)');
+                html += '<th title="Full candle gap in last 5 trading days.\nGreen = entire candle above previous candle.\nRed = entire candle below previous candle.">Gap</th>';
+            }
             html += '</tr></thead><tbody id="' + safeId + '-body">';
             for (var i = 0; i < rows.length; i++) {
                 var r = rows[i];
@@ -629,34 +633,36 @@
                 html += '<td>' + (r.dist_sma50_atr != null ? r.dist_sma50_atr.toFixed(2) : na) + '</td>';
                 html += '<td>' + (r.rs != null ? Math.round(r.rs) + '%' : na) + '</td>';
                 html += '<td>' + (r.rs_chart ? '<img src="' + r.rs_chart + '" class="rs-chart" alt="RS">' : na) + '</td>';
-                html += '<td class="etf-list">';
-                if (r.long && r.long.length) html += r.long.map(function(etf){ return '<span class="long-etf" onclick="event.stopPropagation();updateChart(\'' + etf + '\')">' + etf + '</span>'; }).join(', ');
-                if (r.short && r.short.length) { if (r.long && r.long.length) html += '<br>'; html += r.short.map(function(etf){ return '<span class="short-etf" onclick="event.stopPropagation();updateChart(\'' + etf + '\')">' + etf + '</span>'; }).join(', '); }
-                if (!(r.long && r.long.length) && !(r.short && r.short.length)) html += '-';
-                html += '</td>';
-                html += '<td>';
-                if (r.gaps && r.gaps.length) {
-                    html += '<div class="gap-bar">';
-                    for (var gi = r.gaps.length - 1; gi >= 0; gi--) {
-                        var gapVal = r.gaps[gi];
-                        var cls = gapVal === 'up' ? 'gap-dot-up' : (gapVal === 'down' ? 'gap-dot-down' : 'gap-dot-none');
-                        var tip = 'D-' + (gi + 1) + (gapVal ? ': gap ' + gapVal : '');
-                        html += '<div class="gap-dot ' + cls + '" title="' + tip + '"></div>';
+                if (!isSummaryGroup) {
+                    html += '<td class="etf-list">';
+                    if (r.long && r.long.length) html += r.long.map(function(etf){ return '<span class="long-etf" onclick="event.stopPropagation();updateChart(\'' + etf + '\')">' + etf + '</span>'; }).join(', ');
+                    if (r.short && r.short.length) { if (r.long && r.long.length) html += '<br>'; html += r.short.map(function(etf){ return '<span class="short-etf" onclick="event.stopPropagation();updateChart(\'' + etf + '\')">' + etf + '</span>'; }).join(', '); }
+                    if (!(r.long && r.long.length) && !(r.short && r.short.length)) html += '-';
+                    html += '</td>';
+                    html += '<td>';
+                    if (r.gaps && r.gaps.length) {
+                        html += '<div class="gap-bar">';
+                        for (var gi = r.gaps.length - 1; gi >= 0; gi--) {
+                            var gapVal = r.gaps[gi];
+                            var cls = gapVal === 'up' ? 'gap-dot-up' : (gapVal === 'down' ? 'gap-dot-down' : 'gap-dot-none');
+                            var tip = 'D-' + (gi + 1) + (gapVal ? ': gap ' + gapVal : '');
+                            html += '<div class="gap-dot ' + cls + '" title="' + tip + '"></div>';
+                        }
+                        html += '</div>';
+                    } else if (r.gap_dir) {
+                        html += '<div class="gap-bar">';
+                        for (var li = 4; li >= 0; li--) {
+                            var dayNum = li + 1;
+                            var lcls = (dayNum === r.gap_days) ? (r.gap_dir === 'up' ? 'gap-dot-up' : 'gap-dot-down') : 'gap-dot-none';
+                            var ltip = 'D-' + dayNum + (dayNum === r.gap_days ? ': gap ' + r.gap_dir : '');
+                            html += '<div class="gap-dot ' + lcls + '" title="' + ltip + '"></div>';
+                        }
+                        html += '</div>';
+                    } else {
+                        html += '<span style="color:#374151">-</span>';
                     }
-                    html += '</div>';
-                } else if (r.gap_dir) {
-                    html += '<div class="gap-bar">';
-                    for (var li = 4; li >= 0; li--) {
-                        var dayNum = li + 1;
-                        var lcls = (dayNum === r.gap_days) ? (r.gap_dir === 'up' ? 'gap-dot-up' : 'gap-dot-down') : 'gap-dot-none';
-                        var ltip = 'D-' + dayNum + (dayNum === r.gap_days ? ': gap ' + r.gap_dir : '');
-                        html += '<div class="gap-dot ' + lcls + '" title="' + ltip + '"></div>';
-                    }
-                    html += '</div>';
-                } else {
-                    html += '<span style="color:#374151">-</span>';
+                    html += '</td>';
                 }
-                html += '</td>';
                 html += '</tr>';
             }
             html += '</tbody></table></div></div>';
@@ -814,7 +820,7 @@
         detailTr.className = 'seven-detail-row';
         detailTr.setAttribute('data-for', groupName);
         var td = document.createElement('td');
-        td.colSpan = 17;
+        td.colSpan = 15;
         td.innerHTML = '<div class="seven-detail-panel">' + inner + '</div>';
         detailTr.appendChild(td);
         rowEl.insertAdjacentElement('afterend', detailTr);
