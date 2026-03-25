@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-03-25T09:12:29.505980Z",
+  "built_at": "2026-03-25T09:56:47.393833Z",
   "groups": {
     "Indices": [
       {
@@ -560,7 +560,7 @@
         "rs_chart": "data/charts/Glance_The_Health_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "B"
       },
       {
         "ticker": "The Medtech 7",
@@ -8281,9 +8281,9 @@
     "sentiment": "Neutral",
     "components": {
       "volatility": {
-        "score": 68.1,
+        "score": 68.4,
         "label": "VIX Volatility",
-        "detail": "VIX 25.9 (52wk: 13.5–52.3)"
+        "detail": "VIX 25.8 (52wk: 13.5–52.3)"
       },
       "trend": {
         "score": 28.3,
@@ -8436,35 +8436,35 @@
     ]
   },
   "industries_sector_charts": {
-    "Commodities": "data/charts/vol_IndSec_Commodities.png",
-    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
-    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
-    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
-    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
-    "Industrials": "data/charts/vol_IndSec_Industrials.png",
-    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
-    "Financials": "data/charts/vol_IndSec_Financials.png",
-    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
-    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
-    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
-    "Energy": "data/charts/vol_IndSec_Energy.png",
     "Materials": "data/charts/vol_IndSec_Materials.png",
-    "Utilities": "data/charts/vol_IndSec_Utilities.png"
+    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
+    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
+    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
+    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
+    "Industrials": "data/charts/vol_IndSec_Industrials.png",
+    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
+    "Financials": "data/charts/vol_IndSec_Financials.png",
+    "Energy": "data/charts/vol_IndSec_Energy.png",
+    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
+    "Commodities": "data/charts/vol_IndSec_Commodities.png",
+    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
+    "Utilities": "data/charts/vol_IndSec_Utilities.png",
+    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png"
   },
   "industries_sector_rs_charts": {
-    "Commodities": "data/charts/IndSecRS_Commodities.png",
-    "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
-    "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
-    "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
-    "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
-    "Industrials": "data/charts/IndSecRS_Industrials.png",
-    "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
-    "Financials": "data/charts/IndSecRS_Financials.png",
-    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
-    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
-    "Health Care": "data/charts/IndSecRS_Health_Care.png",
-    "Energy": "data/charts/IndSecRS_Energy.png",
     "Materials": "data/charts/IndSecRS_Materials.png",
-    "Utilities": "data/charts/IndSecRS_Utilities.png"
+    "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
+    "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
+    "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
+    "Health Care": "data/charts/IndSecRS_Health_Care.png",
+    "Industrials": "data/charts/IndSecRS_Industrials.png",
+    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
+    "Financials": "data/charts/IndSecRS_Financials.png",
+    "Energy": "data/charts/IndSecRS_Energy.png",
+    "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
+    "Commodities": "data/charts/IndSecRS_Commodities.png",
+    "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
+    "Utilities": "data/charts/IndSecRS_Utilities.png",
+    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png"
   }
 }
