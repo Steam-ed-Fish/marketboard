@@ -381,7 +381,7 @@
         var chev = document.getElementById('card-chev-' + id);
         if (!body) return;
         var nowOpen = body.style.display !== 'none';
-        body.style.display = nowOpen ? 'none' : '';
+        body.style.display = nowOpen ? 'none' : 'block';
         if (chev) chev.classList.toggle('open', !nowOpen);
         _cardSave(id, !nowOpen);
     };
