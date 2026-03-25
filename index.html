@@ -537,12 +537,6 @@
             html += '<div class="card-left"><span class="card-chevron' + (_grpOpen ? ' open' : '') + '" id="card-chev-' + safeId + '">&#9658;</span>';
             html += '<span class="group-header-title">' + groupName + '</span>';
             html += '<span class="card-summary">' + _grpGreen + '/' + _grpTotal + ' green &middot; ' + _grpAvgStr + ' avg</span></div>';
-            if (groupName === 'Industries' && meta && meta.SECTOR_COLORS) {
-                html += '<div class="legend" onclick="event.stopPropagation()">';
-                for (var s in meta.SECTOR_COLORS)
-                    html += '<span class="legend-item" style="background-color:' + meta.SECTOR_COLORS[s] + '">' + s + '</span>';
-                html += '</div>';
-            }
             if (groupName === 'The 7s at a Glance') {
                 var _rrgRow = null;
                 for (var _ri = 0; _ri < rows.length; _ri++) { if (rows[_ri].is_rrg_row) { _rrgRow = rows[_ri]; break; } }
@@ -580,14 +574,85 @@
             }
             html += '</tr></thead><tbody id="' + safeId + '-body">';
             var _lastSector = null;
+            // Pre-compute per-sector stats for Industries (all numeric columns)
+            var _secStats = {};
+            if (groupName === 'Industries') {
+                rows.forEach(function(r) {
+                    if (!r.sector) return;
+                    if (!_secStats[r.sector]) _secStats[r.sector] = {
+                        total:0, green:0,
+                        daily_s:0, daily_n:0, intra_s:0, intra_n:0,
+                        wtd_s:0, wtd_n:0, five_s:0, five_n:0, twenty_s:0, twenty_n:0,
+                        ytd_s:0, ytd_n:0, vol_s:0, vol_n:0, atr_s:0, atr_n:0,
+                        dist_s:0, dist_n:0, rs_s:0, rs_n:0
+                    };
+                    var ss = _secStats[r.sector];
+                    ss.total++;
+                    if ((r.daily||0) > 0) ss.green++;
+                    if (r.daily != null)          { ss.daily_s  += r.daily;            ss.daily_n++;  }
+                    if (r.intra != null)          { ss.intra_s  += r.intra;            ss.intra_n++;  }
+                    if (r.wtd != null)            { ss.wtd_s    += r.wtd;              ss.wtd_n++;    }
+                    if (r['5d'] != null)          { ss.five_s   += r['5d'];            ss.five_n++;   }
+                    if (r['20d'] != null)         { ss.twenty_s += r['20d'];           ss.twenty_n++; }
+                    if (r.ytd != null)            { ss.ytd_s    += r.ytd;              ss.ytd_n++;    }
+                    if (r.vol_ratio != null)      { ss.vol_s    += r.vol_ratio;        ss.vol_n++;    }
+                    if (r.atr_pct != null)        { ss.atr_s    += r.atr_pct;          ss.atr_n++;    }
+                    if (r.dist_sma50_atr != null) { ss.dist_s   += r.dist_sma50_atr;   ss.dist_n++;   }
+                    if (r.rs != null)             { ss.rs_s     += r.rs;               ss.rs_n++;     }
+                });
+            }
+            function _secVizCell(v, rMin, rMax) {
+                if (v == null) return '<td style="padding:3px 4px;color:#4b5563">-</td>';
+                var cl = v > 0 ? 'price-up' : (v < 0 ? 'price-down' : '');
+                var w = vizWidth(v, rMin, rMax);
+                return '<td class="' + cl + '" style="padding:3px 4px"><div class="value-visualization"><div class="value-bar ' + (v >= 0 ? 'positive' : 'negative') + '" style="width:' + w + '%"></div><span class="value-text">' + (v >= 0 ? '+' : '') + v.toFixed(2) + '%</span></div></td>';
+            }
             for (var i = 0; i < rows.length; i++) {
                 var r = rows[i];
                 if (r.is_rrg_row) { continue; }
                 if (groupName === 'Industries' && r.sector && r.sector !== _lastSector) {
                     _lastSector = r.sector;
                     var _sc = (meta && meta.SECTOR_COLORS && meta.SECTOR_COLORS[r.sector]) || '#4a5568';
-                    html += '<tr class="industry-sector-divider"><td colspan="17" style="padding:4px 8px;background:#111827;border-bottom:1px solid #1f2937">' +
-                        '<span style="background:' + _sc + ';color:#fff;font-size:0.68rem;font-weight:700;padding:2px 9px;border-radius:3px;letter-spacing:0.06em;text-transform:uppercase">' + r.sector + '</span></td></tr>';
+                    var _ss = _secStats[r.sector] || {total:0, green:0};
+                    var _secId = r.sector.replace(/\s+/g,'_');
+                    var _secOpen = _cardOpen('sec_' + _secId);
+                    var _sDaily  = _ss.daily_n  ? _ss.daily_s/_ss.daily_n   : null;
+                    var _sIntra  = _ss.intra_n  ? _ss.intra_s/_ss.intra_n   : null;
+                    var _sWtd    = _ss.wtd_n    ? _ss.wtd_s/_ss.wtd_n       : null;
+                    var _sFive   = _ss.five_n   ? _ss.five_s/_ss.five_n     : null;
+                    var _sTwenty = _ss.twenty_n ? _ss.twenty_s/_ss.twenty_n : null;
+                    var _sYtd    = _ss.ytd_n    ? _ss.ytd_s/_ss.ytd_n       : null;
+                    var _sVol    = _ss.vol_n    ? _ss.vol_s/_ss.vol_n       : null;
+                    var _sAtr    = _ss.atr_n    ? _ss.atr_s/_ss.atr_n       : null;
+                    var _sDist   = _ss.dist_n   ? _ss.dist_s/_ss.dist_n     : null;
+                    var _sRs     = _ss.rs_n     ? _ss.rs_s/_ss.rs_n         : null;
+                    html += '<tr class="industry-sector-divider" onclick="toggleIndustrySector(\'' + r.sector.replace(/'/g,"\\'") + '\',this)" style="cursor:pointer;background:#0d1117">';
+                    // Col 1: sector label + chevron
+                    html += '<td style="padding:3px 6px;white-space:nowrap">' +
+                        '<span class="card-chevron' + (_secOpen ? ' open' : '') + '" id="sec-chev-' + _secId + '" style="margin-right:4px;font-size:0.7rem">&#9658;</span>' +
+                        '<span style="background:' + _sc + ';color:#fff;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:0.05em;text-transform:uppercase">' + r.sector + '</span></td>';
+                    // Col 2: count (Holdings column)
+                    html += '<td style="padding:3px 4px;font-size:0.7rem;color:#6b7280;text-align:center">' + _ss.total + '</td>';
+                    // Col 3: green/total (Grade column)
+                    html += '<td style="padding:3px 4px;font-size:0.7rem;text-align:center;color:' + (_ss.green > (_ss.total||1)/2 ? '#10b981' : '#9ca3af') + '">' + _ss.green + '/' + (_ss.total||0) + '</td>';
+                    // Cols 4–9: averaged returns
+                    html += _secVizCell(_sDaily,  ranges.daily[0],  ranges.daily[1]);
+                    html += _secVizCell(_sIntra,  ranges.intra[0],  ranges.intra[1]);
+                    html += _secVizCell(_sWtd,    -10, 10);
+                    html += _secVizCell(_sFive,   ranges['5d'][0],  ranges['5d'][1]);
+                    html += _secVizCell(_sTwenty, ranges['20d'][0], ranges['20d'][1]);
+                    html += _secVizCell(_sYtd,    -30, 30);
+                    // Col 10: avg vol ratio
+                    html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sVol  != null ? _sVol.toFixed(1)  + 'x' : '-') + '</td>';
+                    html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // vol chart
+                    // Col 12–14: atr, dist, rs
+                    html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sAtr  != null ? _sAtr.toFixed(1)  + '%' : '-') + '</td>';
+                    html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sDist != null ? _sDist.toFixed(2)       : '-') + '</td>';
+                    html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sRs   != null ? Math.round(_sRs) + '%'  : '-') + '</td>';
+                    html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // rs chart
+                    html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // letf
+                    html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // gap
+                    html += '</tr>';
                 }
                 var daily = r.daily, intra = r.intra, five = r['5d'], twenty = r['20d'];
                 var dailyW = vizWidth(daily, ranges.daily[0], ranges.daily[1]);
@@ -608,7 +673,10 @@
                 var isSummaryGroup = (groupName === 'The 7s at a Glance');
                 var isRrgRow = !!(r.is_rrg_row && r.rrg_chart);
                 var rowOnclick = isRrgRow ? ('showRrgChart(\'' + (r.rrg_chart || '').replace(/'/g, "\\'") + '\', this)') : (isSummaryGroup ? ('toggleSevenDetail(\'' + r.ticker.replace(/'/g, "\\'") + '\', this)') : ('updateChart(\'' + r.ticker.replace(/'/g, "\\'") + '\', this)'));
-                html += '<tr class="ticker-row" onclick="' + rowOnclick + '" data-symbol="' + r.ticker + '" data-group="' + groupName.replace(/"/g, '&quot;') + '" data-daily="' + (daily != null ? daily : 0) + '" data-intra="' + (intra != null ? intra : 0) + '" data-wtd="' + wtdV + '" data-5d="' + (five != null ? five : 0) + '" data-20d="' + (twenty != null ? twenty : 0) + '" data-ytd="' + ytdV + '" data-vol_ratio="' + volR + '" data-atr_pct="' + atrPct + '" data-dist_sma50_atr="' + dist + '" data-rs="' + rs + '" data-abc="' + abc + '" data-letf="' + letf + '" data-index="' + i + '"' + (isRrgRow ? ' data-rrg-chart="' + (r.rrg_chart || '') + '"' : '') + '>';
+                var _isIndustriesRow = (groupName === 'Industries' && r.sector);
+                var _indSecId = _isIndustriesRow ? r.sector.replace(/\s+/g,'_') : '';
+                var _indHidden = _isIndustriesRow && !_cardOpen('sec_' + _indSecId);
+                html += '<tr class="ticker-row" onclick="' + rowOnclick + '" data-symbol="' + r.ticker + '" data-group="' + groupName.replace(/"/g, '&quot;') + '" data-daily="' + (daily != null ? daily : 0) + '" data-intra="' + (intra != null ? intra : 0) + '" data-wtd="' + wtdV + '" data-5d="' + (five != null ? five : 0) + '" data-20d="' + (twenty != null ? twenty : 0) + '" data-ytd="' + ytdV + '" data-vol_ratio="' + volR + '" data-atr_pct="' + atrPct + '" data-dist_sma50_atr="' + dist + '" data-rs="' + rs + '" data-abc="' + abc + '" data-letf="' + letf + '" data-index="' + i + '"' + (isRrgRow ? ' data-rrg-chart="' + (r.rrg_chart || '') + '"' : '') + (_isIndustriesRow ? ' data-sector="' + r.sector.replace(/"/g,'&quot;') + '"' : '') + (_indHidden ? ' style="display:none"' : '') + '>';
                 html += '<td><span class="ticker-label ' + labelClass + '">' + r.ticker + '</span></td>';
                 if (isSummaryGroup) {
                     var _cgRows = (snapshot.groups && snapshot.groups[r.ticker]) || [];
@@ -869,6 +937,20 @@
         if (ev) ev.preventDefault();
         var ov = document.getElementById('fear-greed-modal-overlay');
         if (ov) ov.style.display = 'none';
+    };
+    window.toggleIndustrySector = function(sector, dividerEl) {
+        var secId = sector.replace(/\s+/g,'_');
+        var isOpen = _cardOpen('sec_' + secId);
+        var nowOpen = !isOpen;
+        _cardSave('sec_' + secId, nowOpen);
+        // Toggle chevron
+        var chev = document.getElementById('sec-chev-' + secId);
+        if (chev) { if (nowOpen) chev.classList.add('open'); else chev.classList.remove('open'); }
+        // Toggle rows
+        var rows = document.querySelectorAll('tr[data-sector="' + sector.replace(/"/g,'\\"') + '"]');
+        for (var i = 0; i < rows.length; i++) {
+            rows[i].style.display = nowOpen ? '' : 'none';
+        }
     };
     function renderFearGreed() {
         var el = document.getElementById('fear-greed-content');
