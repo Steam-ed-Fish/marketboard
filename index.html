@@ -11,14 +11,20 @@
         .ticker-table td.sorted-column { background-color: #2a3441; }
         .ticker-list { width: 1200px; background-color: #1a1a1a; padding: 0; overflow-y: auto; border-right: 1px solid #333; }
         .chart-container { flex: 1; display: flex; flex-direction: column; padding: 10px; background-color: #1a1a1a; min-height: 0; }
-        .group-container { margin-bottom: 15px; }
+        .group-container { margin-bottom: 10px; border-radius: 8px; border: 1px solid #2d3748; overflow: hidden; }
         .group-header {
             background-color: #2d3748; padding: 6px 8px; font-weight: bold; font-size: 0.9em;
             display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;
             position: sticky; top: 0; z-index: 3; color: #e0e0e0; border-bottom: 1px solid #444;
+            cursor: pointer; user-select: none;
         }
         .group-header:hover { background-color: #374151; }
         .group-header-title { cursor: pointer; }
+        .card-left { display: flex; align-items: center; gap: 6px; }
+        .card-chevron { font-size: 0.8rem; color: #6b7280; transition: transform 0.18s; display: inline-block; }
+        .card-chevron.open { transform: rotate(90deg); }
+        .card-summary { font-size: 0.72rem; color: #6b7280; font-weight: 400; }
+        .card-body { display: none; }
         .group-header-actions { display: flex; align-items: center; gap: 6px; margin-left: auto; }
         .group-chart-btn {
             font-size: 11px; font-weight: 600; background-color: #1f2933; color: #e0e0e0;
@@ -363,6 +369,23 @@
         return 'ticker-label-' + safe;
     }
 
+    function _cardOpen(id) {
+        try { return !!(JSON.parse(localStorage.getItem('dash_cards') || '{}')[id]); } catch(e) { return false; }
+    }
+    function _cardSave(id, open) {
+        try { var s = JSON.parse(localStorage.getItem('dash_cards') || '{}'); s[id] = open; localStorage.setItem('dash_cards', JSON.stringify(s)); } catch(e) {}
+    }
+    window.toggleCard = function(id, ev) {
+        if (ev) ev.stopPropagation();
+        var body = document.getElementById('card-body-' + id);
+        var chev = document.getElementById('card-chev-' + id);
+        if (!body) return;
+        var nowOpen = body.style.display !== 'none';
+        body.style.display = nowOpen ? 'none' : '';
+        if (chev) chev.classList.toggle('open', !nowOpen);
+        _cardSave(id, !nowOpen);
+    };
+
     function renderRelativePerf() {
         var pairs = [
             ["Tangibles vs. Intangibles",   "DBC",  "IGV"],
@@ -388,8 +411,14 @@
             var hlCls = Math.abs(val) >= 3 ? (val > 0 ? ' rel-highlight-pos' : ' rel-highlight-neg') : '';
             return '<span class="' + cls + hlCls + '">' + str + '</span>';
         }
+        var _rpOpen = _cardOpen('rel-perf');
         var html = '<div class="group-container" id="group-rel-perf">';
-        html += '<div class="group-header"><span class="group-header-title">Relative Performance</span></div>';
+        html += '<div class="group-header" onclick="toggleCard(\'rel-perf\',event)">';
+        html += '<div class="card-left"><span class="card-chevron' + (_rpOpen ? ' open' : '') + '" id="card-chev-rel-perf">&#9658;</span>';
+        html += '<span class="group-header-title">Relative Performance</span>';
+        html += '<span class="card-summary">' + pairs.length + ' pairs</span></div>';
+        html += '</div>';
+        html += '<div class="card-body" id="card-body-rel-perf" style="' + (_rpOpen ? '' : 'display:none') + '">';
         html += '<table class="rel-perf-table"><thead><tr>';
         html += '<th>Pair</th><th>Daily</th><th>5D</th><th>YTD</th></tr></thead><tbody>';
         pairs.forEach(function(p) {
@@ -402,7 +431,7 @@
             html += '<td class="rel-perf-val">' + relFmt(a, b, 'ytd') + '</td>';
             html += '</tr>';
         });
-        html += '</tbody></table></div>';
+        html += '</tbody></table></div></div>';
         return html;
     }
 
@@ -436,8 +465,17 @@
             var bar = val >= 0 ? 'positive' : 'negative';
             return '<td class="' + cl + '"><div class="value-visualization"><div class="value-bar ' + bar + '" style="width:' + vw(val,lo,hi) + '%"></div><span class="value-text">' + (val >= 0 ? '+' : '') + val.toFixed(2) + '%</span></div></td>';
         }
+        var _atGreen = snapshot.themes.filter(function(t){return (t.daily||0)>0;}).length;
+        var _atAvg = snapshot.themes.reduce(function(s,t){return s+(t.daily||0);},0) / snapshot.themes.length;
+        var _atSign = _atAvg >= 0 ? '+' : '';
+        var _atOpen = _cardOpen('ai-themes');
         var html = '<div class="group-container" id="group-ai-themes">';
-        html += '<div class="group-header"><span class="group-header-title">Themes</span></div>';
+        html += '<div class="group-header" onclick="toggleCard(\'ai-themes\',event)">';
+        html += '<div class="card-left"><span class="card-chevron' + (_atOpen ? ' open' : '') + '" id="card-chev-ai-themes">&#9658;</span>';
+        html += '<span class="group-header-title">Themes</span>';
+        html += '<span class="card-summary">' + _atGreen + '/' + snapshot.themes.length + ' green &middot; ' + _atSign + _atAvg.toFixed(2) + '% avg</span></div>';
+        html += '</div>';
+        html += '<div class="card-body" id="card-body-ai-themes" style="' + (_atOpen ? '' : 'display:none') + '">';
         html += '<table class="ticker-table"><thead><tr>';
         html += '<th>Theme</th><th>Holdings</th><th>Grade</th><th>Daily</th><th>Intra</th><th>WTD</th><th>5D</th><th>20D</th><th>YTD</th>';
         html += '<th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>1M-VARS</th>';
@@ -464,7 +502,7 @@
             html += '<td>' + (t.rs != null ? Math.round(t.rs) + '%' : 'N/A') + '</td>';
             html += '</tr>';
         });
-        html += '</tbody></table></div>';
+        html += '</tbody></table></div></div>';
         return html;
     }
 
@@ -482,9 +520,17 @@
             var safeId = safeGroupId(groupName);
             var ranges = (snapshot.column_ranges && snapshot.column_ranges[groupName]) || { daily: [-10,10], intra: [-10,10], '5d': [-20,20], '20d': [-30,30] };
             var gnEsc = groupName.replace(/'/g, "\\'");
+            var _grpNonRrg = rows.filter(function(x){return !x.is_rrg_row;});
+            var _grpGreen = _grpNonRrg.filter(function(x){return (x.daily||0)>0;}).length;
+            var _grpTotal = _grpNonRrg.length;
+            var _grpAvg = _grpTotal > 0 ? _grpNonRrg.reduce(function(acc,x){return acc+(x.daily||0);},0)/_grpTotal : 0;
+            var _grpAvgStr = (_grpAvg>=0?'+':'')+_grpAvg.toFixed(2)+'%';
+            var _grpOpen = _cardOpen(safeId);
             html += '<div class="group-container" id="group-' + safeId + '">';
-            html += '<div class="group-header">';
-            html += '<span class="group-header-title" onclick="scrollToGroup(\'' + gnEsc + '\')">' + groupName + '</span>';
+            html += '<div class="group-header" onclick="toggleCard(\'' + safeId + '\',event)">';
+            html += '<div class="card-left"><span class="card-chevron' + (_grpOpen ? ' open' : '') + '" id="card-chev-' + safeId + '">&#9658;</span>';
+            html += '<span class="group-header-title">' + groupName + '</span>';
+            html += '<span class="card-summary">' + _grpGreen + '/' + _grpTotal + ' green &middot; ' + _grpAvgStr + ' avg</span></div>';
             if (groupName === 'Industries' && meta && meta.SECTOR_COLORS) {
                 html += '<div class="legend" onclick="event.stopPropagation()">';
                 for (var s in meta.SECTOR_COLORS)
@@ -495,7 +541,7 @@
                 var _rrgRow = null;
                 for (var _ri = 0; _ri < rows.length; _ri++) { if (rows[_ri].is_rrg_row) { _rrgRow = rows[_ri]; break; } }
                 if (_rrgRow && _rrgRow.rrg_chart) {
-                    html += '<button type="button" class="group-chart-btn" style="margin-left:8px" onclick="event.stopPropagation();showRrgChart(\'' + _rrgRow.rrg_chart.replace(/'/g, "\\'") + '\', this)">Rotation Chart</button>';
+                    html += '<button type="button" class="group-chart-btn" onclick="event.stopPropagation();showRrgChart(\'' + _rrgRow.rrg_chart.replace(/'/g, "\\'") + '\', this)">Rotation Chart</button>';
                 }
             } else {
                 html += '<div class="group-header-actions" onclick="event.stopPropagation()">';
@@ -503,6 +549,7 @@
                 html += '</div>';
             }
             html += '</div>';
+            html += '<div class="card-body" id="card-body-' + safeId + '" style="' + (_grpOpen ? '' : 'display:none') + '">';
             html += '<table class="ticker-table" data-group="' + escapeHtml(groupName) + '"><thead><tr>';
             var th = function(key, label) { return '<th class="sortable" data-sort-by="' + key + '" title="Click to sort">' + label + '</th>'; };
             html += th('symbol', 'Ticker');
@@ -607,7 +654,7 @@
                 html += '</td>';
                 html += '</tr>';
             }
-            html += '</tbody></table></div>';
+            html += '</tbody></table></div></div>';
         }
         document.getElementById('groups-container').innerHTML = html;
 
