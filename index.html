@@ -627,12 +627,10 @@
                     var _sDist   = _ss.dist_n   ? _ss.dist_s/_ss.dist_n     : null;
                     var _sRs     = _ss.rs_n     ? _ss.rs_s/_ss.rs_n         : null;
                     html += '<tr class="industry-sector-divider" onclick="toggleIndustrySector(\'' + r.sector.replace(/'/g,"\\'") + '\',this)" style="cursor:pointer;background:#0d1117">';
-                    // Col 1: sector label + chevron
-                    html += '<td style="padding:3px 6px;white-space:nowrap">' +
+                    // Cols 1+2 merged: sector label + chevron (spans Ticker + Holdings columns)
+                    html += '<td colspan="2" style="padding:3px 6px;white-space:nowrap">' +
                         '<span class="card-chevron' + (_secOpen ? ' open' : '') + '" id="sec-chev-' + _secId + '" style="margin-right:4px;font-size:0.7rem">&#9658;</span>' +
                         '<span style="background:' + _sc + ';color:#fff;font-size:0.68rem;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:0.05em;text-transform:uppercase">' + r.sector + '</span></td>';
-                    // Col 2: count (Holdings column)
-                    html += '<td style="padding:3px 4px;font-size:0.7rem;color:#6b7280;text-align:center">' + _ss.total + '</td>';
                     // Col 3: green/total (Grade column)
                     html += '<td style="padding:3px 4px;font-size:0.7rem;text-align:center;color:' + (_ss.green > (_ss.total||1)/2 ? '#10b981' : '#9ca3af') + '">' + _ss.green + '/' + (_ss.total||0) + '</td>';
                     // Cols 4–9: averaged returns
@@ -643,13 +641,16 @@
                     html += _secVizCell(_sTwenty, ranges['20d'][0], ranges['20d'][1]);
                     html += _secVizCell(_sYtd,    -30, 30);
                     // Col 10: avg vol ratio
-                    html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sVol  != null ? _sVol.toFixed(1)  + 'x' : '-') + '</td>';
-                    html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // vol chart
-                    // Col 12–14: atr, dist, rs
+                    html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sVol != null ? _sVol.toFixed(1) + 'x' : '-') + '</td>';
+                    // Col 11: Vol Chart — show EW avg vol ratio
+                    html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sVol != null ? _sVol.toFixed(1) + 'x avg' : '-') + '</td>';
+                    // Col 12–13: atr, dist
                     html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sAtr  != null ? _sAtr.toFixed(1)  + '%' : '-') + '</td>';
                     html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sDist != null ? _sDist.toFixed(2)       : '-') + '</td>';
-                    html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sRs   != null ? Math.round(_sRs) + '%'  : '-') + '</td>';
-                    html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // rs chart
+                    // Col 14: 1M-VARS (RS%)
+                    html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sRs != null ? Math.round(_sRs) + '%' : '-') + '</td>';
+                    // Col 15: VARS (RS chart) — show EW avg RS%
+                    html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sRs != null ? Math.round(_sRs) + '% avg' : '-') + '</td>';
                     html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // letf
                     html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // gap
                     html += '</tr>';
