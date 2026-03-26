@@ -37,6 +37,7 @@ jobs:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
 
       - name: Generate briefing
+        if: github.event_name == 'schedule'
         run: |
           python scripts/generate_briefing.py --out-dir data
         env:
