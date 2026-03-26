@@ -41,6 +41,7 @@ jobs:
           python scripts/generate_briefing.py --out-dir data
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
 
       - name: Commit and push data
         run: |

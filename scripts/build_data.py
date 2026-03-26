@@ -961,8 +961,8 @@ def main():
             time.sleep(0.15)
         groups_data[group_name] = rows
 
-    # Fetch any AI_THEMES tickers + Fear & Greed tickers not already fetched
-    theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers) | {"HYG", "TLT"}
+    # Fetch any AI_THEMES tickers + Fear & Greed tickers + cross-asset tickers not already fetched
+    theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers) | {"HYG", "TLT", "VIXY", "USO", "UNG", "UUP", "LQD", "IEF", "SHY"}
     for ticker in sorted(theme_ticker_set - set(all_ticker_data.keys())):
         print(f"  [AI Themes] {ticker}")
         row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache)
@@ -1284,6 +1284,19 @@ def main():
     else:
         print("No FRED_API_KEY set — skipping macro data")
 
+    # Cross-asset snapshot for briefing agent
+    _ca_tickers = ["TLT", "HYG", "LQD", "IEF", "SHY", "UUP", "GLD", "SLV", "USO", "UNG", "VIXY"]
+    cross_asset = {}
+    for _t in _ca_tickers:
+        _r = all_ticker_data.get(_t)
+        if _r:
+            cross_asset[_t] = {
+                "daily": _r.get("daily"),
+                "5d": _r.get("5d"),
+                "20d": _r.get("20d"),
+                "vol_ratio": _r.get("vol_ratio"),
+            }
+
     snapshot = {
         "built_at": datetime.utcnow().isoformat() + "Z",
         "groups": groups_data,
@@ -1291,6 +1304,7 @@ def main():
         "themes": themes_data,
         "fear_greed": fear_greed,
         "macro_fred": macro_fred,
+        "cross_asset": cross_asset,
         "industries_sector_charts": industries_sector_charts,
         "industries_sector_rs_charts": industries_sector_rs_charts,
     }
