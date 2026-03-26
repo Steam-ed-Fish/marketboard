@@ -149,6 +149,9 @@
         .seven-detail-panel .ticker-row:last-child td { border-bottom: none; }
         .ticker-row.seven-expanded { background: #071e38 !important; }
         .ticker-row.seven-expanded > td:first-child { border-left: 3px solid #38bdf8; }
+        .industry-sector-divider.ind-expanded { background: #071e38 !important; }
+        .industry-sector-divider.ind-expanded > td:first-child { border-left: 3px solid #38bdf8; }
+        .industry-detail-row > td { padding: 0 !important; border-top: 2px solid #38bdf8; border-bottom: 2px solid #38bdf8; }
         .market-breadth { margin-bottom: 10px; position: relative; }
         .multi-chart-panel { flex: 1; min-height: 0; overflow: auto; display: none; }
         .multi-group-title { margin: 8px 0 4px; font-size: 0.85rem; font-weight: 600; color: #9ca3af; }
@@ -732,6 +735,7 @@
                     html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // gap
                     html += '</tr>';
                 }
+                if (groupName === 'Industries') continue; // ticker rows rendered in detail panel on click
                 var daily = r.daily, intra = r.intra, five = r['5d'], twenty = r['20d'];
                 var dailyW = vizWidth(daily, ranges.daily[0], ranges.daily[1]);
                 var intraW = vizWidth(intra, ranges.intra[0], ranges.intra[1]);
@@ -1017,18 +1021,75 @@
         if (ov) ov.style.display = 'none';
     };
     window.toggleIndustrySector = function(sector, dividerEl) {
-        var secId = sector.replace(/\s+/g,'_');
-        var isOpen = _cardOpen('sec_' + secId);
-        var nowOpen = !isOpen;
-        _cardSave('sec_' + secId, nowOpen);
-        // Toggle chevron
-        var chev = document.getElementById('sec-chev-' + secId);
-        if (chev) { if (nowOpen) chev.classList.add('open'); else chev.classList.remove('open'); }
-        // Toggle rows
-        var rows = document.querySelectorAll('tr[data-sector="' + sector.replace(/"/g,'\\"') + '"]');
-        for (var i = 0; i < rows.length; i++) {
-            rows[i].style.display = nowOpen ? '' : 'none';
+        var tbody = dividerEl.parentNode;
+        var existing = tbody.querySelector('.industry-detail-row');
+        var isSame = existing && existing.getAttribute('data-for') === sector;
+        // Close any open sector
+        if (existing) {
+            existing.remove();
+            tbody.querySelectorAll('.industry-sector-divider').forEach(function(d) {
+                d.classList.remove('ind-expanded');
+                var chev = d.querySelector('.card-chevron');
+                if (chev) chev.classList.remove('open');
+            });
         }
+        if (isSame) return;
+        // Open new sector
+        dividerEl.classList.add('ind-expanded');
+        var chev = dividerEl.querySelector('.card-chevron');
+        if (chev) chev.classList.add('open');
+        var indRows = ((snapshot.groups && snapshot.groups['Industries']) || []).filter(function(r) { return r.sector === sector; });
+        var green = indRows.filter(function(r){ return (r.daily||0) > 0; }).length;
+        var avg = indRows.length ? indRows.reduce(function(s,r){return s+(r.daily||0);},0)/indRows.length : 0;
+        var avgStr = (avg>=0?'+':'')+avg.toFixed(2)+'%';
+        var inner = '<div class="seven-detail-header">' + sector +
+            '<span class="sdh-stats">' + green + '/' + indRows.length + ' green &middot; ' + avgStr + ' avg</span></div>';
+        inner += '<div style="overflow-x:auto"><table class="ticker-table"><colgroup>';
+        inner += '<col style="width:72px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px"><col style="width:60px">';
+        inner += '</colgroup><thead><tr>';
+        inner += '<th>Ticker</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th><th>LETF</th>';
+        inner += '</tr></thead><tbody>';
+        indRows.forEach(function(r) {
+            var dc = (r.daily||0)>0?'price-up':((r.daily||0)<0?'price-down':'');
+            var fc = (r['5d']||0)>0?'price-up':((r['5d']||0)<0?'price-down':'');
+            var tc = (r['20d']||0)>0?'price-up':((r['20d']||0)<0?'price-down':'');
+            var yc = (r.ytd||0)>0?'price-up':((r.ytd||0)<0?'price-down':'');
+            var vc = (r.vol_ratio!=null && r.vol_ratio>=2)?'price-down':'';
+            var abc = r.abc || '';
+            var lc = getGroupLabelClass('Industries', r.ticker);
+            inner += '<tr class="ticker-row" onclick="updateChart(\'' + r.ticker.replace(/'/g,"\\'") + '\',this)" data-symbol="' + r.ticker + '">';
+            inner += '<td><span class="ticker-label ' + lc + '">' + r.ticker + '</span></td>';
+            inner += '<td>' + (abc?'<span class="abc-rating abc-'+abc.toLowerCase()+'">'+abc+'</span>':'-') + '</td>';
+            inner += '<td class="' + dc + '">' + (r.daily!=null?(r.daily>=0?'+':'')+r.daily.toFixed(2)+'%':'-') + '</td>';
+            inner += '<td class="' + fc + '">' + (r['5d']!=null?(r['5d']>=0?'+':'')+r['5d'].toFixed(2)+'%':'-') + '</td>';
+            inner += '<td class="' + tc + '">' + (r['20d']!=null?(r['20d']>=0?'+':'')+r['20d'].toFixed(2)+'%':'-') + '</td>';
+            inner += '<td class="' + yc + '">' + (r.ytd!=null?(r.ytd>=0?'+':'')+r.ytd.toFixed(2)+'%':'-') + '</td>';
+            inner += '<td class="' + vc + '">' + (r.vol_ratio!=null?r.vol_ratio.toFixed(2)+'x':'-') + '</td>';
+            inner += '<td>' + (r.vol_chart?'<img src="'+r.vol_chart+'" class="rs-chart" alt="Vol">':'-') + '</td>';
+            inner += '<td>' + (r.atr_pct!=null?r.atr_pct.toFixed(1)+'%':'-') + '</td>';
+            inner += '<td>' + (r.dist_sma50_atr!=null?r.dist_sma50_atr.toFixed(2):'-') + '</td>';
+            if (r.gaps && r.gaps.length) {
+                inner += '<td><div class="gap-bar">';
+                for (var gi = r.gaps.length-1; gi >= 0; gi--) {
+                    var gv = r.gaps[gi];
+                    inner += '<div class="gap-dot '+(gv==='up'?'gap-dot-up':gv==='down'?'gap-dot-down':'gap-dot-none')+'" title="D-'+(gi+1)+(gv?': gap '+gv:'')+'"></div>';
+                }
+                inner += '</div></td>';
+            } else { inner += '<td>-</td>'; }
+            var longStr = (r.long||[]).join('/') || '', shortStr = (r.short||[]).join('/') || '';
+            var letfStr = [longStr ? '\u2191'+longStr : '', shortStr ? '\u2193'+shortStr : ''].filter(Boolean).join(' ') || '-';
+            inner += '<td style="font-size:0.65rem;white-space:nowrap">' + letfStr + '</td>';
+            inner += '</tr>';
+        });
+        inner += '</tbody></table></div>';
+        var detailTr = document.createElement('tr');
+        detailTr.className = 'industry-detail-row';
+        detailTr.setAttribute('data-for', sector);
+        var td = document.createElement('td');
+        td.colSpan = 17;
+        td.innerHTML = '<div class="seven-detail-panel">' + inner + '</div>';
+        detailTr.appendChild(td);
+        dividerEl.insertAdjacentElement('afterend', detailTr);
     };
     function renderFearGreed() {
         var el = document.getElementById('fear-greed-content');
