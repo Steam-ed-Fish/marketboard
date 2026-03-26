@@ -175,8 +175,9 @@ SYSTEM_PROMPT = (
     "SIGNALS — Fear & Greed score and what it implies. Any vol spikes (>2x avg volume). "
     "20-day trend: which sectors and baskets have the strongest and weakest 20d momentum. "
     "RSP vs SPY breadth — state the direction explicitly using the NOTE provided in the data.\n\n"
-    "Total length: 300–450 words. Plain text, section labels in ALL CAPS followed by em-dash. "
-    "No markdown. Use exact numbers from the data — do not round aggressively or invent values."
+    "Total length: strictly under 250 words. Plain text, section labels in ALL CAPS followed by em-dash. "
+    "No markdown. Use exact numbers from the data — do not round aggressively or invent values. "
+    "Be ruthlessly concise — one tight sentence per point, no repetition."
 )
 
 
