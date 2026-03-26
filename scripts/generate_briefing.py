@@ -180,6 +180,7 @@ SYSTEM_PROMPT = (
     "SECTORS — Rank all 11 sectors by today's return, best to worst, with exact %s. "
     "Then one sentence on top 2 and bottom 2 Industries ETFs today with %s.\n\n"
     "THE 7s — Rank all baskets by today's return, best to worst, with exact %s. "
+    "When naming baskets drop 'The' and '7' — write just the theme name e.g. 'Energy +0.08%, Semi -1.17%' not 'The Energy 7 +0.08%'. "
     "Name the strongest individual ticker in the top basket and weakest in the bottom basket.\n\n"
     "SIGNALS — Fear & Greed score. Top vol spikes. "
     "20d trend leaders and laggards (best and worst sector + basket). "
