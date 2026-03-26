@@ -42,7 +42,7 @@ def build_context(snapshot):
         for sid, sd in (mf.get("series") or {}).items():
             lines.append("  {}: {} [{}]  chg={}".format(
                 sd.get("label", sid),
-                sd.get("formatted_value", ""),
+                "{:.2f}{}".format(sd["value"], sd.get("unit", "")) if sd.get("value") is not None else "N/A",
                 sd.get("signal", ""),
                 sd.get("change", "")))
         lines.append("")
@@ -51,14 +51,23 @@ def build_context(snapshot):
 
     # Indices
     idx_rows = groups.get("Indices") or []
+    idx_lookup = {r.get("ticker"): r for r in idx_rows}
     if idx_rows:
         lines.append("INDICES:")
         for r in idx_rows:
-            lines.append("  {}: 1d={:+.1f}%  5d={:+.1f}%  20d={:+.1f}%  ytd={:+.1f}%  vol={:.1f}x  rs={:.0f}".format(
+            lines.append("  {}: 1d={:+.2f}%  5d={:+.2f}%  20d={:+.2f}%  ytd={:+.2f}%  vol={:.2f}x  rs={:.0f}".format(
                 r.get("ticker", "?"),
                 r.get("daily") or 0, r.get("5d") or 0,
                 r.get("20d") or 0, r.get("ytd") or 0,
                 r.get("vol_ratio") or 1.0, r.get("rs") or 50))
+        # Explicit breadth note so Claude doesn't infer wrong direction
+        spy_20d = (idx_lookup.get("SPY") or {}).get("20d") or 0
+        rsp_20d = (idx_lookup.get("RSP") or {}).get("20d") or 0
+        diff = rsp_20d - spy_20d
+        direction = "OUTPERFORMING" if diff > 0 else "UNDERPERFORMING"
+        lines.append("  NOTE: RSP {:+.2f}% vs SPY {:+.2f}% over 20d — RSP is {} SPY by {:.2f}pp (breadth {})".format(
+            rsp_20d, spy_20d, direction, abs(diff),
+            "expanding" if diff > 0 else "contracting"))
         lines.append("")
 
     # Sel Sectors ranked by 20d
