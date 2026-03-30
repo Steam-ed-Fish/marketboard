@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-03-30T09:13:52.365584Z",
+  "built_at": "2026-03-30T09:42:09.127884Z",
   "groups": {
     "Indices": [
       {
@@ -271,7 +271,7 @@
         "long": [],
         "short": [],
         "abc": null,
-        "rrg_chart": "data/charts/seven_rrg.png",
+        "rrg_chart": null,
         "is_rrg_row": true
       },
       {
@@ -8277,13 +8277,13 @@
     }
   ],
   "fear_greed": {
-    "score": 47.9,
+    "score": 47.8,
     "sentiment": "Neutral",
     "components": {
       "volatility": {
-        "score": 55.9,
+        "score": 55.3,
         "label": "VIX Volatility",
-        "detail": "VIX 30.6 (52wk: 13.5–52.3)"
+        "detail": "VIX 30.8 (52wk: 13.5–52.3)"
       },
       "trend": {
         "score": 16.9,
@@ -8320,7 +8320,121 @@
       "cross_asset": 0.15
     }
   },
-  "macro_fred": {},
+  "macro_fred": {
+    "series": {
+      "DFF": {
+        "label": "Fed Funds",
+        "value": 3.64,
+        "prev": 3.64,
+        "change": 0.0,
+        "unit": "%",
+        "signal": "neutral",
+        "chart": "data/charts/fred_DFF.png"
+      },
+      "CPIAUCSL": {
+        "label": "CPI YoY",
+        "value": 2.66,
+        "prev": 2.83,
+        "change": -0.17,
+        "unit": "%",
+        "signal": "neutral",
+        "chart": "data/charts/fred_CPIAUCSL.png"
+      },
+      "CPILFESL": {
+        "label": "Core CPI YoY",
+        "value": 2.73,
+        "prev": 2.95,
+        "change": -0.22,
+        "unit": "%",
+        "signal": "neutral",
+        "chart": "data/charts/fred_CPILFESL.png"
+      },
+      "PCEPI": {
+        "label": "PCE YoY",
+        "value": 2.83,
+        "prev": 2.91,
+        "change": -0.08,
+        "unit": "%",
+        "signal": "hawkish",
+        "chart": "data/charts/fred_PCEPI.png"
+      },
+      "PCEPILFE": {
+        "label": "Core PCE YoY",
+        "value": 3.06,
+        "prev": 3.01,
+        "change": 0.05,
+        "unit": "%",
+        "signal": "hawkish",
+        "chart": "data/charts/fred_PCEPILFE.png"
+      },
+      "UNRATE": {
+        "label": "Unemployment",
+        "value": 4.4,
+        "prev": 4.3,
+        "change": 0.1,
+        "unit": "%",
+        "signal": "neutral",
+        "chart": "data/charts/fred_UNRATE.png"
+      },
+      "PAYEMS": {
+        "label": "NFP MoM",
+        "value": -0.09,
+        "prev": 0.13,
+        "change": -0.22,
+        "unit": "k",
+        "signal": "dovish",
+        "chart": "data/charts/fred_PAYEMS.png"
+      },
+      "UMCSENT": {
+        "label": "Consumer Sent.",
+        "value": 56.6,
+        "prev": 56.4,
+        "change": 0.2,
+        "unit": "",
+        "signal": "dovish",
+        "chart": "data/charts/fred_UMCSENT.png"
+      },
+      "T10Y2Y": {
+        "label": "Yield Curve",
+        "value": 0.56,
+        "prev": 0.46,
+        "change": 0.1,
+        "unit": "%",
+        "signal": "hawkish",
+        "chart": "data/charts/fred_T10Y2Y.png"
+      },
+      "DCOILBRENTEU": {
+        "label": "Brent Crude",
+        "value": 103.79,
+        "prev": 118.42,
+        "change": -14.63,
+        "unit": "$",
+        "signal": "hawkish",
+        "chart": "data/charts/fred_DCOILBRENTEU.png"
+      }
+    },
+    "signal_counts": {
+      "hawkish": 4,
+      "dovish": 2,
+      "tightening": 0,
+      "neutral": 4,
+      "mixed": 0
+    },
+    "dominant_signal": "hawkish",
+    "narrative": "Leaning Hawkish: CPI at 2.7%, Fed Funds at 3.64%, unemployment at 4.4%.",
+    "series_order": [
+      "DFF",
+      "CPIAUCSL",
+      "CPILFESL",
+      "PCEPI",
+      "PCEPILFE",
+      "UNRATE",
+      "PAYEMS",
+      "UMCSENT",
+      "T10Y2Y",
+      "DCOILBRENTEU"
+    ]
+  },
   "cross_asset": {
     "TLT": {
       "daily": -0.55,
@@ -8390,35 +8504,35 @@
     }
   },
   "industries_sector_charts": {
-    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
-    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
     "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
-    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
-    "Utilities": "data/charts/vol_IndSec_Utilities.png",
-    "Commodities": "data/charts/vol_IndSec_Commodities.png",
-    "Industrials": "data/charts/vol_IndSec_Industrials.png",
     "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
-    "Materials": "data/charts/vol_IndSec_Materials.png",
-    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
-    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
-    "Energy": "data/charts/vol_IndSec_Energy.png",
+    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
     "Financials": "data/charts/vol_IndSec_Financials.png",
-    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png"
+    "Commodities": "data/charts/vol_IndSec_Commodities.png",
+    "Energy": "data/charts/vol_IndSec_Energy.png",
+    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
+    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
+    "Industrials": "data/charts/vol_IndSec_Industrials.png",
+    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
+    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
+    "Materials": "data/charts/vol_IndSec_Materials.png",
+    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
+    "Utilities": "data/charts/vol_IndSec_Utilities.png"
   },
   "industries_sector_rs_charts": {
-    "Health Care": "data/charts/IndSecRS_Health_Care.png",
-    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
     "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
-    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
-    "Utilities": "data/charts/IndSecRS_Utilities.png",
-    "Commodities": "data/charts/IndSecRS_Commodities.png",
-    "Industrials": "data/charts/IndSecRS_Industrials.png",
     "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
-    "Materials": "data/charts/IndSecRS_Materials.png",
-    "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
-    "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
-    "Energy": "data/charts/IndSecRS_Energy.png",
+    "Health Care": "data/charts/IndSecRS_Health_Care.png",
     "Financials": "data/charts/IndSecRS_Financials.png",
-    "Real Estate": "data/charts/IndSecRS_Real_Estate.png"
+    "Commodities": "data/charts/IndSecRS_Commodities.png",
+    "Energy": "data/charts/IndSecRS_Energy.png",
+    "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
+    "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
+    "Industrials": "data/charts/IndSecRS_Industrials.png",
+    "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
+    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
+    "Materials": "data/charts/IndSecRS_Materials.png",
+    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
+    "Utilities": "data/charts/IndSecRS_Utilities.png"
   }
 }
