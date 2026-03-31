@@ -955,9 +955,9 @@
             '<span class="sdh-stats">' + green + '/' + grpRows.length + ' green &middot; ' + avgStr + ' avg</span></div>';
         // Table with fixed col widths
         inner += '<div style="overflow-x:auto"><table class="ticker-table"><colgroup>';
-        inner += '<col style="width:72px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px">';
+        inner += '<col style="width:72px"><col style="width:56px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px">';
         inner += '</colgroup><thead><tr>';
-        inner += '<th>Ticker</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
+        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
         inner += '</tr></thead><tbody>';
         grpRows.forEach(function(r) {
             var dc = (r.daily||0)>0?'price-up':((r.daily||0)<0?'price-down':'');
@@ -969,6 +969,10 @@
             var lc = getGroupLabelClass(groupName, r.ticker);
             inner += '<tr class="ticker-row" onclick="updateChart(\'' + r.ticker.replace(/'/g,"\\'") + '\',this)" data-symbol="' + r.ticker + '">';
             inner += '<td><span class="ticker-label ' + lc + '">' + r.ticker + '</span></td>';
+            if (r.sr && r.sr.near) {
+                var _nt=r.sr.near.type,_nd=r.sr.near.dist_pct,_nc=_nt==='resistance'?'#f59e0b':'#38bdf8';
+                inner += '<td style="white-space:nowrap"><span style="font-size:0.62rem;font-weight:700;padding:2px 4px;border-radius:2px;background:'+_nc+';color:#020810" title="Near '+_nt+' at $'+r.sr.near.price+'">' + (_nt==='resistance'?'R':'S')+' '+(_nd>0?'+':'')+_nd+'%</span></td>';
+            } else { inner += '<td></td>'; }
             inner += '<td>' + (abc?'<span class="abc-rating abc-'+abc.toLowerCase()+'">'+abc+'</span>':'-') + '</td>';
             inner += '<td class="' + dc + '">' + (r.daily!=null?(r.daily>=0?'+':'')+r.daily.toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + fc + '">' + (r['5d']!=null?(r['5d']>=0?'+':'')+r['5d'].toFixed(2)+'%':'-') + '</td>';
@@ -1062,9 +1066,9 @@
         var inner = '<div class="seven-detail-header">' + sector +
             '<span class="sdh-stats">' + green + '/' + indRows.length + ' green &middot; ' + avgStr + ' avg</span></div>';
         inner += '<div style="overflow-x:auto"><table class="ticker-table"><colgroup>';
-        inner += '<col style="width:72px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px"><col style="width:60px">';
+        inner += '<col style="width:72px"><col style="width:56px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px"><col style="width:60px">';
         inner += '</colgroup><thead><tr>';
-        inner += '<th>Ticker</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th><th>LETF</th>';
+        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th><th>LETF</th>';
         inner += '</tr></thead><tbody>';
         indRows.forEach(function(r) {
             var dc = (r.daily||0)>0?'price-up':((r.daily||0)<0?'price-down':'');
@@ -1076,6 +1080,10 @@
             var lc = getGroupLabelClass('Industries', r.ticker);
             inner += '<tr class="ticker-row" onclick="updateChart(\'' + r.ticker.replace(/'/g,"\\'") + '\',this)" data-symbol="' + r.ticker + '">';
             inner += '<td><span class="ticker-label ' + lc + '">' + r.ticker + '</span></td>';
+            if (r.sr && r.sr.near) {
+                var _nt=r.sr.near.type,_nd=r.sr.near.dist_pct,_nc=_nt==='resistance'?'#f59e0b':'#38bdf8';
+                inner += '<td style="white-space:nowrap"><span style="font-size:0.62rem;font-weight:700;padding:2px 4px;border-radius:2px;background:'+_nc+';color:#020810" title="Near '+_nt+' at $'+r.sr.near.price+'">' + (_nt==='resistance'?'R':'S')+' '+(_nd>0?'+':'')+_nd+'%</span></td>';
+            } else { inner += '<td></td>'; }
             inner += '<td>' + (abc?'<span class="abc-rating abc-'+abc.toLowerCase()+'">'+abc+'</span>':'-') + '</td>';
             inner += '<td class="' + dc + '">' + (r.daily!=null?(r.daily>=0?'+':'')+r.daily.toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + fc + '">' + (r['5d']!=null?(r['5d']>=0?'+':'')+r['5d'].toFixed(2)+'%':'-') + '</td>';
