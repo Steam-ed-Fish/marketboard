@@ -1267,10 +1267,20 @@
                 var bar = prob != null ? '<div style="height:3px;background:#0a1e35;border-radius:2px;margin:4px 0 2px"><div style="height:3px;width:' + Math.round(prob) + '%;background:' + probCol + ';border-radius:2px"></div></div>' : '';
                 var vol = m.volume24hr >= 1000000 ? '$' + (m.volume24hr/1000000).toFixed(1) + 'M' : m.volume24hr >= 1000 ? '$' + (m.volume24hr/1000).toFixed(0) + 'K' : '$' + m.volume24hr;
                 var end = m.end_date ? ' · ' + m.end_date : '';
+                var deltaStr = '';
+                if (m.delta_5d != null) {
+                    var d = m.delta_5d;
+                    var dCol = d > 0 ? '#10b981' : d < 0 ? '#ef4444' : '#3d7090';
+                    var dArrow = d > 0 ? '▲' : d < 0 ? '▼' : '—';
+                    deltaStr = '<span style="font-size:0.65rem;font-weight:600;color:' + dCol + ';margin-left:5px">' + dArrow + (d > 0 ? '+' : '') + d.toFixed(1) + ' 5d</span>';
+                }
                 html += '<div style="padding:7px 12px;border-bottom:1px solid #070f1c">' +
                     '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">' +
                     '<div style="font-size:0.75rem;color:#c8dce8;line-height:1.35;flex:1">' + m.question + '</div>' +
-                    '<div style="font-size:0.85rem;font-weight:700;color:' + probCol + ';white-space:nowrap;min-width:40px;text-align:right">' + probStr + '</div>' +
+                    '<div style="white-space:nowrap;text-align:right">' +
+                    '<span style="font-size:0.85rem;font-weight:700;color:' + probCol + '">' + probStr + '</span>' +
+                    deltaStr +
+                    '</div>' +
                     '</div>' +
                     bar +
                     '<div style="font-size:0.62rem;color:#2d6080">' + vol + ' 24h vol' + end + '</div>' +

@@ -2,11 +2,11 @@
 """Fetch financially relevant Polymarket prediction markets and output polymarket.json."""
 
 import argparse
+import hashlib
 import json
 import os
-import re
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 CATEGORIES = {
     "Fed / Rates": [
@@ -27,13 +27,48 @@ CATEGORIES = {
     ],
     "Geopolitical": [
         "tariff", "trade war", "china", "russia", "ukraine", "taiwan", "sanctions",
-        "trump", "election", "congress", "senate", "house", "debt ceiling",
-        "shutdown", "g7", "g20", "opec", "oil",
+        "trump", "congress", "senate", "debt ceiling", "shutdown", "g7", "g20", "opec", "oil",
     ],
 }
 
+# Patterns to cluster duplicate markets by underlying topic
+# Each entry: (regex pattern, topic key)
+TOPIC_PATTERNS = [
+    (r"bitcoin|btc", "bitcoin"),
+    (r"crude oil|\(cl\)", "crude_oil"),
+    (r"fed.*april|april.*fed|fomc.*april|april.*fomc", "fed_april"),
+    (r"fed.*may|may.*fed|fomc.*may|may.*fomc", "fed_may"),
+    (r"fed.*june|june.*fed|fomc.*june|june.*fomc", "fed_june"),
+    (r"fed.*july|july.*fed|fomc.*july|july.*fomc", "fed_july"),
+    (r"fed.*2026|2026.*fed rate|federal funds rate.*2026", "fed_2026"),
+    (r"2028.*president|president.*2028|2028.*election", "us_2028_election"),
+    (r"2026.*midterm|midterm.*2026", "us_2026_midterm"),
+    (r"russia.*ukraine|ukraine.*russia|ceasefire", "ukraine_russia"),
+    (r"china.*taiwan|taiwan.*china", "taiwan_china"),
+    (r"s&p 500|sp500|spx", "sp500"),
+    (r"nasdaq|qqq", "nasdaq"),
+]
+
+# Max markets to show per topic cluster
+MAX_PER_TOPIC = 2
+# Max markets per category
+MAX_PER_CATEGORY = 8
+
 API_URL = "https://gamma-api.polymarket.com/markets"
 FETCH_LIMIT = 500
+HISTORY_DAYS = 7
+
+
+def q_hash(question):
+    return hashlib.md5(question.encode()).hexdigest()[:12]
+
+
+def get_topic_key(question):
+    q = question.lower()
+    for pattern, key in TOPIC_PATTERNS:
+        if __import__("re").search(pattern, q):
+            return key
+    return q_hash(question)
 
 
 def fetch_markets():
@@ -62,7 +97,6 @@ def parse_market(m):
     outcomes = json.loads(m.get("outcomes", '["Yes","No"]'))
     prices = json.loads(m.get("outcomePrices", '["0.5","0.5"]'))
 
-    # Build outcome→probability map
     probs = {}
     for i, outcome in enumerate(outcomes):
         try:
@@ -70,14 +104,12 @@ def parse_market(m):
         except (IndexError, ValueError):
             probs[outcome] = None
 
-    # For Yes/No markets show just the Yes probability
-    yes_prob = probs.get("Yes")
-
     end_date = m.get("endDateIso") or (m.get("endDate", "")[:10] if m.get("endDate") else None)
 
     return {
+        "id": q_hash(question),
         "question": question,
-        "yes_prob": yes_prob,
+        "yes_prob": probs.get("Yes"),
         "probs": probs,
         "volume24hr": round(m.get("volume24hr", 0)),
         "volume": round(m.get("volumeNum", 0)),
@@ -88,6 +120,53 @@ def parse_market(m):
     }
 
 
+def deduplicate(items):
+    """Group by topic, keep MAX_PER_TOPIC highest-volume per topic, then cap total."""
+    seen_topics = {}
+    result = []
+    for m in items:
+        key = get_topic_key(m["question"])
+        count = seen_topics.get(key, 0)
+        if count < MAX_PER_TOPIC:
+            seen_topics[key] = count + 1
+            result.append(m)
+        if len(result) >= MAX_PER_CATEGORY:
+            break
+    return result
+
+
+def load_history(out_dir):
+    path = os.path.join(out_dir, "polymarket_history.json")
+    if os.path.exists(path):
+        with open(path) as f:
+            return json.load(f)
+    return {}
+
+
+def save_history(history, today_probs, out_dir):
+    today_str = datetime.now(timezone.utc).date().isoformat()
+    history[today_str] = today_probs
+
+    # Keep last HISTORY_DAYS
+    cutoff = (datetime.now(timezone.utc).date() - timedelta(days=HISTORY_DAYS)).isoformat()
+    history = {k: v for k, v in history.items() if k >= cutoff}
+
+    path = os.path.join(out_dir, "polymarket_history.json")
+    with open(path, "w") as f:
+        json.dump(history, f, separators=(",", ":"))
+    return history
+
+
+def get_5d_prob(history, market_id):
+    today = datetime.now(timezone.utc).date()
+    target = (today - timedelta(days=5)).isoformat()
+    # Look for closest date at or before target
+    candidates = sorted([d for d in history if d <= target], reverse=True)
+    if not candidates:
+        return None
+    return history[candidates[0]].get(market_id)
+
+
 def build_polymarket(out_dir):
     print("Fetching Polymarket data...")
     try:
@@ -96,12 +175,14 @@ def build_polymarket(out_dir):
         print(f"  Polymarket fetch error: {e}")
         return
 
+    os.makedirs(out_dir, exist_ok=True)
+    history = load_history(out_dir)
+
     grouped = {cat: [] for cat in CATEGORIES}
     skipped = 0
-
     today = datetime.now(timezone.utc).date()
+
     for m in markets:
-        # Skip already-ended markets
         end_iso = m.get("endDateIso") or (m.get("endDate", "")[:10] if m.get("endDate") else None)
         if end_iso:
             try:
@@ -117,12 +198,34 @@ def build_polymarket(out_dir):
             continue
         grouped[cat].append(parse_market(m))
 
-    # Sort each category by 24hr volume
+    # Sort by 24hr volume
     for cat in grouped:
         grouped[cat].sort(key=lambda x: x["volume24hr"], reverse=True)
 
+    # Deduplicate
+    for cat in grouped:
+        grouped[cat] = deduplicate(grouped[cat])
+
+    # Save today's probs to history
+    today_probs = {}
+    for items in grouped.values():
+        for m in items:
+            if m["yes_prob"] is not None:
+                today_probs[m["id"]] = m["yes_prob"]
+    history = save_history(history, today_probs, out_dir)
+
+    # Attach 5-day delta
+    for items in grouped.values():
+        for m in items:
+            prob_5d = get_5d_prob(history, m["id"])
+            m["prob_5d"] = prob_5d
+            if prob_5d is not None and m["yes_prob"] is not None:
+                m["delta_5d"] = round(m["yes_prob"] - prob_5d, 1)
+            else:
+                m["delta_5d"] = None
+
     total = sum(len(v) for v in grouped.values())
-    print(f"  {total} relevant markets across {len(CATEGORIES)} categories ({skipped} skipped)")
+    print(f"  {total} markets after dedup ({skipped} skipped)")
     for cat, items in grouped.items():
         print(f"    {cat}: {len(items)}")
 
@@ -131,7 +234,6 @@ def build_polymarket(out_dir):
         "categories": grouped,
     }
 
-    os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "polymarket.json")
     with open(path, "w") as f:
         json.dump(output, f, separators=(",", ":"))
