@@ -288,6 +288,7 @@
                     <button type="button" class="events-tab active" id="tab-macro" onclick="switchEventsTab('macro')">Macro Events</button>
                     <button type="button" class="events-tab" id="tab-cal" onclick="switchEventsTab('cal')">Econ Calendar</button>
                     <button type="button" class="events-tab" id="tab-fred" onclick="switchEventsTab('fred')">📊 FRED Macro</button>
+                    <button type="button" class="events-tab" id="tab-poly" onclick="switchEventsTab('poly')">🎲 Polymarket</button>
                 </div>
                 <button type="button" class="econ-modal-close" onclick="closeEventsModal(event)">&times;</button>
             </div>
@@ -304,6 +305,9 @@
             </div>
             <div id="events-tab-fred" style="display:none;max-height:580px;overflow-y:auto">
                 <div id="fred-macro-content"></div>
+            </div>
+            <div id="events-tab-poly" style="display:none;max-height:580px;overflow-y:auto">
+                <div id="polymarket-content"></div>
             </div>
         </div>
     </div>
@@ -439,10 +443,13 @@
         document.getElementById('events-tab-macro').style.display = tab === 'macro' ? '' : 'none';
         document.getElementById('events-tab-cal').style.display  = tab === 'cal'   ? '' : 'none';
         document.getElementById('events-tab-fred').style.display = tab === 'fred'  ? '' : 'none';
+        document.getElementById('events-tab-poly').style.display = tab === 'poly'  ? '' : 'none';
         document.getElementById('tab-macro').classList.toggle('active', tab === 'macro');
         document.getElementById('tab-cal').classList.toggle('active',   tab === 'cal');
         document.getElementById('tab-fred').classList.toggle('active',  tab === 'fred');
+        document.getElementById('tab-poly').classList.toggle('active',  tab === 'poly');
         if (tab === 'fred') renderMacroFred();
+        if (tab === 'poly') renderPolymarket();
     };
 
     function getGroupLabelClass(groupName, ticker) {
@@ -1236,6 +1243,45 @@
             '<div style="text-align:center;padding:6px 0 2px;font-size:0.6rem;color:#1a3550">Source: Federal Reserve Economic Data (FRED)</div>';
     }
 
+    var polyData = null;
+
+    function renderPolymarket() {
+        var el = document.getElementById('polymarket-content');
+        if (!el) return;
+        if (!polyData || !polyData.categories) {
+            el.innerHTML = '<div style="padding:20px;color:#2d6080;text-align:center;font-size:0.82rem">No Polymarket data available.</div>';
+            return;
+        }
+        var CAT_COLORS = {'Fed / Rates':'#38bdf8','Macro':'#10b981','Markets':'#f59e0b','Geopolitical':'#f87171'};
+        var html = '';
+        var cats = ['Fed / Rates','Macro','Markets','Geopolitical'];
+        cats.forEach(function(cat) {
+            var items = polyData.categories[cat];
+            if (!items || items.length === 0) return;
+            var col = CAT_COLORS[cat] || '#38bdf8';
+            html += '<div style="padding:8px 12px 4px;font-size:0.7rem;font-weight:700;color:' + col + ';letter-spacing:0.08em;border-bottom:1px solid #0a1e35">' + cat.toUpperCase() + '</div>';
+            items.slice(0, 8).forEach(function(m) {
+                var prob = m.yes_prob;
+                var probStr = prob != null ? prob.toFixed(1) + '%' : '—';
+                var probCol = prob == null ? '#3d7090' : prob >= 60 ? '#10b981' : prob <= 40 ? '#ef4444' : '#f59e0b';
+                var bar = prob != null ? '<div style="height:3px;background:#0a1e35;border-radius:2px;margin:4px 0 2px"><div style="height:3px;width:' + Math.round(prob) + '%;background:' + probCol + ';border-radius:2px"></div></div>' : '';
+                var vol = m.volume24hr >= 1000000 ? '$' + (m.volume24hr/1000000).toFixed(1) + 'M' : m.volume24hr >= 1000 ? '$' + (m.volume24hr/1000).toFixed(0) + 'K' : '$' + m.volume24hr;
+                var end = m.end_date ? ' · ' + m.end_date : '';
+                html += '<div style="padding:7px 12px;border-bottom:1px solid #070f1c">' +
+                    '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">' +
+                    '<div style="font-size:0.75rem;color:#c8dce8;line-height:1.35;flex:1">' + m.question + '</div>' +
+                    '<div style="font-size:0.85rem;font-weight:700;color:' + probCol + ';white-space:nowrap;min-width:40px;text-align:right">' + probStr + '</div>' +
+                    '</div>' +
+                    bar +
+                    '<div style="font-size:0.62rem;color:#2d6080">' + vol + ' 24h vol' + end + '</div>' +
+                    '</div>';
+            });
+        });
+        var built = polyData.built_at ? polyData.built_at.replace('T',' ').slice(0,16) + ' UTC' : '';
+        html += '<div style="text-align:center;padding:6px 0 2px;font-size:0.6rem;color:#1a3550">Source: Polymarket · ' + built + '</div>';
+        el.innerHTML = html;
+    }
+
     function initChart(symbol) {
         var rrgPanel = document.getElementById('rrg-chart-panel');
         var tvWrapper = document.getElementById('tradingview-chart-wrapper');
@@ -1393,9 +1439,11 @@
         Promise.all([
             fetch('data/snapshot.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; }),
             fetch('data/events.json').then(function(res) { return res.ok ? res.json() : []; }).catch(function() { return []; }),
-            fetch('data/meta.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; })
+            fetch('data/meta.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; }),
+            fetch('data/polymarket.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; })
         ]).then(function(results) {
             snapshot = results[0];
+            polyData = results[3];
             var events = results[1];
             meta = results[2];
             renderEvents(events);
