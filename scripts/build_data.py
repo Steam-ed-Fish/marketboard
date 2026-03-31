@@ -20,6 +20,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 from io import BytesIO
 from scipy.stats import rankdata
+from scipy.signal import find_peaks
 
 try:
     import investpy
@@ -245,6 +246,71 @@ def calculate_sma(hist_data, period=50):
 def calculate_ema(hist_data, period=10):
     try:
         return hist_data['Close'].ewm(span=period, adjust=False).mean().iloc[-1]
+    except Exception:
+        return None
+
+
+def calculate_sr_levels(hist_data, current_price):
+    """Detect S/R levels via swing high/low peak detection, merge nearby levels, score by touch count."""
+    try:
+        highs = hist_data['High'].values.astype(float)
+        lows = hist_data['Low'].values.astype(float)
+        closes = hist_data['Close'].values.astype(float)
+        if len(highs) < 30 or current_price <= 0:
+            return None
+
+        PROX_PCT = 0.015   # merge levels within 1.5% of each other
+        TOUCH_PCT = 0.005  # count a touch if any OHLC value is within 0.5%
+
+        peaks, _ = find_peaks(highs, distance=5)
+        troughs, _ = find_peaks(-lows, distance=5)
+        raw = sorted([float(highs[i]) for i in peaks] + [float(lows[i]) for i in troughs])
+        if not raw:
+            return None
+
+        # Merge nearby levels into clusters
+        merged = []
+        for lvl in raw:
+            if merged and abs(lvl - merged[-1]['p']) / merged[-1]['p'] < PROX_PCT:
+                total = merged[-1]['p'] * merged[-1]['c'] + lvl
+                merged[-1]['c'] += 1
+                merged[-1]['p'] = total / merged[-1]['c']
+            else:
+                merged.append({'p': lvl, 'c': 1})
+
+        # Score each level by how many OHLC values touched it
+        all_vals = np.concatenate([highs, lows, closes])
+        for m in merged:
+            m['score'] = int(np.sum(np.abs(all_vals - m['p']) / m['p'] < TOUCH_PCT))
+
+        # Split support (below) / resistance (above), top 3 by score each, nearest-first
+        sup = sorted([m for m in merged if m['p'] < current_price * 0.998], key=lambda x: -x['score'])[:3]
+        res = sorted([m for m in merged if m['p'] > current_price * 1.002], key=lambda x: -x['score'])[:3]
+        sup.sort(key=lambda x: -x['p'])   # nearest support first
+        res.sort(key=lambda x: x['p'])    # nearest resistance first
+
+        def fmt(m):
+            return {'price': round(m['p'], 2), 'score': m['score'],
+                    'dist_pct': round((m['p'] - current_price) / current_price * 100, 1)}
+
+        result = {'support': [fmt(m) for m in sup], 'resistance': [fmt(m) for m in res]}
+
+        # Near alert: within 2% of a level
+        near = None
+        for m in res:
+            if (m['p'] - current_price) / current_price <= 0.02:
+                near = {'type': 'resistance', 'price': round(m['p'], 2),
+                        'dist_pct': round((m['p'] - current_price) / current_price * 100, 1)}
+                break
+        if not near:
+            for m in sup:
+                if (current_price - m['p']) / current_price <= 0.02:
+                    near = {'type': 'support', 'price': round(m['p'], 2),
+                            'dist_pct': round((m['p'] - current_price) / current_price * 100, 1)}
+                    break
+        if near:
+            result['near'] = near
+        return result
     except Exception:
         return None
 
@@ -491,6 +557,7 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None):
         atr_pct = (atr / current_close) * 100 if atr and current_close else None
         dist_sma50_atr = (100 * (current_close / sma50 - 1) / atr_pct) if (sma50 and atr_pct and atr_pct != 0) else None
         abc_rating = calculate_abc_rating(daily)
+        sr_levels = calculate_sr_levels(all_hist, current_close)
         # Volume calculations
         vol_ratio = None
         vol_history = None
@@ -577,7 +644,8 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None):
             "long": long_etfs,
             "short": short_etfs,
             "abc": abc_rating,
-            "gaps": gaps
+            "gaps": gaps,
+            "sr": sr_levels,
         }
     except Exception as e:
         print("Error", ticker_symbol, e)

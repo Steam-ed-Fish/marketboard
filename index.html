@@ -349,6 +349,7 @@
             <div id="rrg-chart-panel" style="display:none;flex:1;min-height:0;align-items:center;justify-content:center;padding:10px;">
                 <img id="rrg-chart-img" src="" alt="7s Rotation Graph" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
+            <div id="sr-strip" style="display:none;padding:5px 12px;background:#040c1a;border-top:1px solid #0a1e35;font-size:0.7rem;"></div>
         </div>
         <div id="multi-chart-panel" class="multi-chart-panel"></div>
     </div>
@@ -766,7 +767,14 @@
                 var _indSecId = _isIndustriesRow ? r.sector.replace(/\s+/g,'_') : '';
                 var _indHidden = _isIndustriesRow && !_cardOpen('sec_' + _indSecId);
                 html += '<tr class="ticker-row" onclick="' + rowOnclick + '" data-symbol="' + r.ticker + '" data-group="' + groupName.replace(/"/g, '&quot;') + '" data-daily="' + (daily != null ? daily : 0) + '" data-intra="' + (intra != null ? intra : 0) + '" data-wtd="' + wtdV + '" data-5d="' + (five != null ? five : 0) + '" data-20d="' + (twenty != null ? twenty : 0) + '" data-ytd="' + ytdV + '" data-vol_ratio="' + volR + '" data-atr_pct="' + atrPct + '" data-dist_sma50_atr="' + dist + '" data-rs="' + rs + '" data-abc="' + abc + '" data-letf="' + letf + '" data-index="' + i + '"' + (isRrgRow ? ' data-rrg-chart="' + (r.rrg_chart || '') + '"' : '') + (_isIndustriesRow ? ' data-sector="' + r.sector.replace(/"/g,'&quot;') + '"' : '') + (_indHidden ? ' style="display:none"' : '') + '>';
-                html += '<td><span class="ticker-label ' + labelClass + '">' + r.ticker + '</span></td>';
+                html += '<td><span class="ticker-label ' + labelClass + '">' + r.ticker + '</span>';
+                if (r.sr && r.sr.near) {
+                    var _nt = r.sr.near.type, _nd = r.sr.near.dist_pct;
+                    var _nc = _nt === 'resistance' ? '#f59e0b' : '#38bdf8';
+                    var _nl = (_nt === 'resistance' ? 'R' : 'S') + ' ' + (_nd > 0 ? '+' : '') + _nd + '%';
+                    html += '<span style="margin-left:3px;font-size:0.55rem;font-weight:700;padding:1px 3px;border-radius:2px;background:' + _nc + ';color:#020810" title="Near ' + _nt + ' at $' + r.sr.near.price + '">' + _nl + '</span>';
+                }
+                html += '</td>';
                 if (isSummaryGroup) {
                     var _cgRows = (snapshot.groups && snapshot.groups[r.ticker]) || [];
                     var _cgArr = _cgRows.map(function(cr) { return {t: cr.ticker, d: cr.daily}; });
@@ -1307,6 +1315,32 @@
         });
     }
 
+    function renderSRStrip(symbol) {
+        var el = document.getElementById('sr-strip');
+        if (!el) return;
+        var srData = null;
+        if (snapshot && snapshot.groups) {
+            Object.values(snapshot.groups).forEach(function(rows) {
+                rows.forEach(function(r) { if (r.ticker === symbol && r.sr) srData = r.sr; });
+            });
+        }
+        if (!srData || (!srData.support.length && !srData.resistance.length)) { el.style.display = 'none'; return; }
+        el.style.display = 'block';
+        var h = '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">';
+        h += '<span style="color:#2d6080;font-weight:700;font-size:0.62rem;letter-spacing:0.06em">S/R</span>';
+        srData.resistance.forEach(function(lvl) {
+            var scored = lvl.score >= 5 ? ' ★' : '';
+            h += '<span style="color:#f59e0b" title="Resistance · touched ' + lvl.score + 'x">R&nbsp;<b>$' + lvl.price + '</b>&nbsp;<span style="color:#3d7090">(+' + lvl.dist_pct + '%' + scored + ')</span></span>';
+        });
+        h += '<span style="color:#0d2035">│</span>';
+        srData.support.forEach(function(lvl) {
+            var scored = lvl.score >= 5 ? ' ★' : '';
+            h += '<span style="color:#38bdf8" title="Support · touched ' + lvl.score + 'x">S&nbsp;<b>$' + lvl.price + '</b>&nbsp;<span style="color:#3d7090">(' + lvl.dist_pct + '%' + scored + ')</span></span>';
+        });
+        h += '</div>';
+        el.innerHTML = h;
+    }
+
     window.updateChart = function(symbol, element) {
         if (multiChartMode) { openSingleChart(); updateGroupChartButtons(null); }
         allTickerRows.forEach(function(row) { row.classList.remove('active'); });
@@ -1318,6 +1352,7 @@
             if (row) { row.classList.add('active'); currentIndex = allTickerRows.indexOf(row); }
         }
         initChart(symbol);
+        renderSRStrip(symbol);
         var activeRow = document.querySelector('.ticker-row.active');
         if (activeRow) activeRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     };
