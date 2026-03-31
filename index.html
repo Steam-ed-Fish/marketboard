@@ -640,6 +640,7 @@
             html += '<table class="ticker-table' + (_isGlance ? ' ticker-table-glance' : '') + '" data-group="' + escapeHtml(groupName) + '"><thead><tr>';
             var th = function(key, label, tip) { return '<th class="sortable" data-sort-by="' + key + '" title="' + (tip || '') + '&#10;Click to sort">' + label + '</th>'; };
             html += th('symbol', 'Ticker', 'Ticker symbol');
+            html += '<th title="Nearest support/resistance level within 2% of current price.\n\nHow it\'s computed:\n1. scipy find_peaks() detects swing highs (resistance) and swing lows (support) on 1 year of daily OHLC data, requiring at least 5 bars between peaks.\n2. Nearby levels within 1.5% of each other are merged into a single zone.\n3. Each zone is scored by how many OHLC values touched it (within 0.5%).\n4. Top 3 support + top 3 resistance zones are kept, sorted nearest-first.\n5. A badge appears here when the current price is within 2% of any level.\n\nAmber R = approaching resistance from below.\nBlue S = sitting just above support.\nNo badge = nearest level is >2% away.">S/R</th>';
             html += '<th title="Click to view holdings. For The 7s at a Glance, hover to see constituent performance.">Holdings</th>';
             html += th('abc', 'Grade', 'ABC trend rating:\nA = EMA10 > EMA20 > SMA50 (uptrend)\nB = mixed signals\nC = downtrend');
             html += th('daily', 'Daily', 'Today\'s price change %');
@@ -767,14 +768,15 @@
                 var _indSecId = _isIndustriesRow ? r.sector.replace(/\s+/g,'_') : '';
                 var _indHidden = _isIndustriesRow && !_cardOpen('sec_' + _indSecId);
                 html += '<tr class="ticker-row" onclick="' + rowOnclick + '" data-symbol="' + r.ticker + '" data-group="' + groupName.replace(/"/g, '&quot;') + '" data-daily="' + (daily != null ? daily : 0) + '" data-intra="' + (intra != null ? intra : 0) + '" data-wtd="' + wtdV + '" data-5d="' + (five != null ? five : 0) + '" data-20d="' + (twenty != null ? twenty : 0) + '" data-ytd="' + ytdV + '" data-vol_ratio="' + volR + '" data-atr_pct="' + atrPct + '" data-dist_sma50_atr="' + dist + '" data-rs="' + rs + '" data-abc="' + abc + '" data-letf="' + letf + '" data-index="' + i + '"' + (isRrgRow ? ' data-rrg-chart="' + (r.rrg_chart || '') + '"' : '') + (_isIndustriesRow ? ' data-sector="' + r.sector.replace(/"/g,'&quot;') + '"' : '') + (_indHidden ? ' style="display:none"' : '') + '>';
-                html += '<td><span class="ticker-label ' + labelClass + '">' + r.ticker + '</span>';
+                html += '<td><span class="ticker-label ' + labelClass + '">' + r.ticker + '</span></td>';
                 if (r.sr && r.sr.near) {
                     var _nt = r.sr.near.type, _nd = r.sr.near.dist_pct;
                     var _nc = _nt === 'resistance' ? '#f59e0b' : '#38bdf8';
                     var _nl = (_nt === 'resistance' ? 'R' : 'S') + ' ' + (_nd > 0 ? '+' : '') + _nd + '%';
-                    html += '<span style="margin-left:3px;font-size:0.55rem;font-weight:700;padding:1px 3px;border-radius:2px;background:' + _nc + ';color:#020810" title="Near ' + _nt + ' at $' + r.sr.near.price + '">' + _nl + '</span>';
+                    html += '<td style="white-space:nowrap"><span style="font-size:0.62rem;font-weight:700;padding:2px 4px;border-radius:2px;background:' + _nc + ';color:#020810" title="Near ' + _nt + ' at $' + r.sr.near.price + '">' + _nl + '</span></td>';
+                } else {
+                    html += '<td></td>';
                 }
-                html += '</td>';
                 if (isSummaryGroup) {
                     var _cgRows = (snapshot.groups && snapshot.groups[r.ticker]) || [];
                     var _cgArr = _cgRows.map(function(cr) { return {t: cr.ticker, d: cr.daily}; });
