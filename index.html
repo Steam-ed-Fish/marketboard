@@ -350,11 +350,13 @@
                 <img id="rrg-chart-img" src="" alt="7s Rotation Graph" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
             <div id="sr-strip" style="display:none;padding:5px 12px;background:#040c1a;border-top:1px solid #0a1e35;font-size:0.7rem;"></div>
+            <div id="mini-chart" style="display:none;height:200px;border-top:1px solid #0a1e35;"></div>
         </div>
         <div id="multi-chart-panel" class="multi-chart-panel"></div>
     </div>
 
     <script src="https://s3.tradingview.com/tv.js"></script>
+    <script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
     <script>
 (function() {
     let chartWidget = null;
@@ -1020,6 +1022,10 @@
         if (singlePanel) singlePanel.style.display = 'flex';
         if (tvWrapper) tvWrapper.style.display = 'none';
         if (rrgPanel && rrgImg) { rrgImg.src = rrgChartPath; rrgPanel.style.display = 'flex'; }
+        var miniEl = document.getElementById('mini-chart');
+        var srEl = document.getElementById('sr-strip');
+        if (miniEl) miniEl.style.display = 'none';
+        if (srEl) srEl.style.display = 'none';
         updateGroupChartButtons(null);
     };
     window.openMarketBreadth = function() {
@@ -1325,6 +1331,78 @@
         });
     }
 
+    var ohlcCache = {};
+    var miniChartInstance = null;
+
+    function renderMiniChart(symbol) {
+        var el = document.getElementById('mini-chart');
+        if (!el || typeof LightweightCharts === 'undefined') return;
+        var srData = null;
+        if (snapshot && snapshot.groups) {
+            Object.values(snapshot.groups).forEach(function(rows) {
+                rows.forEach(function(r) { if (r.ticker === symbol && r.sr) srData = r.sr; });
+            });
+        }
+        if (miniChartInstance) { try { miniChartInstance.remove(); } catch(e) {} miniChartInstance = null; }
+        el.innerHTML = '';
+
+        function buildChart(data) {
+            if (!data || !data.ohlc || !data.ohlc.length) { el.style.display = 'none'; return; }
+            el.style.display = 'block';
+            var chart = LightweightCharts.createChart(el, {
+                autoSize: true,
+                layout: { background: { color: '#040c1a' }, textColor: '#4a7090' },
+                grid: { vertLines: { color: '#080e1a' }, horzLines: { color: '#080e1a' } },
+                crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+                rightPriceScale: { borderColor: '#0a1e35', scaleMargins: { top: 0.08, bottom: 0.22 } },
+                timeScale: { borderColor: '#0a1e35', timeVisible: false },
+                watermark: { visible: true, fontSize: 10, horzAlign: 'left', vertAlign: 'top',
+                    color: 'rgba(56,189,248,0.25)', text: '60D  ·  S/R ZONES' },
+            });
+            miniChartInstance = chart;
+
+            var candles = chart.addCandlestickSeries({
+                upColor: '#10b981', downColor: '#ef4444',
+                borderUpColor: '#10b981', borderDownColor: '#ef4444',
+                wickUpColor: '#10b981', wickDownColor: '#ef4444',
+            });
+            candles.setData(data.ohlc.map(function(d) {
+                return { time: d.t, open: d.o, high: d.h, low: d.l, close: d.c };
+            }));
+
+            var vol = chart.addHistogramSeries({ priceFormat: { type: 'volume' }, priceScaleId: 'vol' });
+            vol.priceScale().applyOptions({ scaleMargins: { top: 0.82, bottom: 0 } });
+            vol.setData(data.ohlc.map(function(d) {
+                return { time: d.t, value: d.v,
+                    color: d.c >= d.o ? 'rgba(16,185,129,0.25)' : 'rgba(239,68,68,0.25)' };
+            }));
+
+            if (srData) {
+                (srData.resistance || []).forEach(function(lvl) {
+                    candles.createPriceLine({ price: lvl.price, color: '#f59e0b', lineWidth: 1,
+                        lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true,
+                        title: 'R ' + (lvl.dist_pct > 0 ? '+' : '') + lvl.dist_pct + '%' });
+                });
+                (srData.support || []).forEach(function(lvl) {
+                    candles.createPriceLine({ price: lvl.price, color: '#38bdf8', lineWidth: 1,
+                        lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true,
+                        title: 'S ' + lvl.dist_pct + '%' });
+                });
+            }
+            chart.timeScale().fitContent();
+        }
+
+        var safe = symbol.replace(/[^a-zA-Z0-9]/g, '_');
+        if (ohlcCache[safe]) {
+            buildChart(ohlcCache[safe]);
+        } else {
+            fetch('data/ohlc/' + safe + '.json')
+                .then(function(r) { return r.ok ? r.json() : null; })
+                .then(function(data) { if (data) ohlcCache[safe] = data; buildChart(data); })
+                .catch(function() { el.style.display = 'none'; });
+        }
+    }
+
     function renderSRStrip(symbol) {
         var el = document.getElementById('sr-strip');
         if (!el) return;
@@ -1363,6 +1441,7 @@
         }
         initChart(symbol);
         renderSRStrip(symbol);
+        renderMiniChart(symbol);
         var activeRow = document.querySelector('.ticker-row.active');
         if (activeRow) activeRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     };

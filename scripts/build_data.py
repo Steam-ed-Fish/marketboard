@@ -510,7 +510,7 @@ def create_rrg_chart_png(rrg_points, charts_dir, trails=None):
         return None
 
 
-def get_stock_data(ticker_symbol, charts_dir, spy_hist=None):
+def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
     try:
         stock = yf.Ticker(ticker_symbol)
         all_hist = stock.history(period="1y")
@@ -520,6 +520,21 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None):
 
         if len(hist) < 2 or len(daily) < 50:
             return None
+
+        if ohlc_dir:
+            try:
+                safe = re.sub(r'[^a-zA-Z0-9]', '_', ticker_symbol)
+                ohlc_rows = [
+                    {"t": idx.date().isoformat(),
+                     "o": round(float(r['Open']), 4), "h": round(float(r['High']), 4),
+                     "l": round(float(r['Low']), 4),  "c": round(float(r['Close']), 4),
+                     "v": int(r['Volume'])}
+                    for idx, r in all_hist.tail(60).iterrows()
+                ]
+                with open(os.path.join(ohlc_dir, f"{safe}.json"), 'w') as _f:
+                    json.dump({"ticker": ticker_symbol, "ohlc": ohlc_rows}, _f, separators=(',', ':'))
+            except Exception as _e:
+                print(f"OHLC write error {ticker_symbol}: {_e}")
 
         daily_change = (hist['Close'].iloc[-1] / hist['Close'].iloc[-2] - 1) * 100
         intraday_change = (hist['Close'].iloc[-1] / hist['Open'].iloc[-1] - 1) * 100
@@ -996,7 +1011,9 @@ def main():
     args = parser.parse_args()
     out_dir = args.out_dir
     charts_dir = os.path.join(out_dir, "charts")
+    ohlc_dir = os.path.join(out_dir, "ohlc")
     os.makedirs(charts_dir, exist_ok=True)
+    os.makedirs(ohlc_dir, exist_ok=True)
 
     print("Fetching economic events...")
     events = get_upcoming_key_events()
@@ -1020,7 +1037,7 @@ def main():
                 rows.append(all_ticker_data[ticker])
                 continue
             print(f"  [{group_name}] {i+1}/{len(tickers)} {ticker}")
-            row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache)
+            row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache, ohlc_dir=ohlc_dir)
             if row:
                 rows.append(row)
                 all_ticker_data[ticker] = row
@@ -1033,7 +1050,7 @@ def main():
     theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers) | {"HYG", "TLT", "VIXY", "USO", "UNG", "UUP", "LQD", "IEF", "SHY"}
     for ticker in sorted(theme_ticker_set - set(all_ticker_data.keys())):
         print(f"  [AI Themes] {ticker}")
-        row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache)
+        row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache, ohlc_dir=ohlc_dir)
         if row:
             all_ticker_data[ticker] = row
         else:
