@@ -305,17 +305,19 @@
         <div style="margin-bottom:0">
             <button class="events-button fg-toggle-btn" id="fg-toggle-btn" type="button" onclick="toggleFGSection()">📡 RISK RADAR</button>
         </div>
-        <div id="fg-inline-panel" class="fg-inline-panel">
-            <div class="fg-inline-col fg-inline-col-fg">
-                <div class="fg-inline-col-hdr">🌡️ Fear &amp; Greed Gauge</div>
+        <div id="fg-inline-panel" class="fg-inline-panel" style="flex-direction:column">
+            <div style="display:flex;gap:0;border-bottom:1px solid #0a1e35;padding:0 4px;background:#060d1c;position:sticky;top:0;z-index:2">
+                <button type="button" class="events-tab active" id="fg-tab-fg" onclick="switchFGTab('fg')">🌡️ Fear &amp; Greed</button>
+                <button type="button" class="events-tab" id="fg-tab-poly" onclick="switchFGTab('poly')">🎲 Polymarket</button>
+                <button type="button" class="events-tab" id="fg-tab-geo" onclick="switchFGTab('geo')">🌍 Geopolitical</button>
+            </div>
+            <div id="fg-tab-content-fg" style="overflow-y:auto;max-height:560px">
                 <div id="fear-greed-content"></div>
             </div>
-            <div class="fg-inline-col fg-inline-col-poly">
-                <div class="fg-inline-col-hdr">🎲 Polymarket</div>
+            <div id="fg-tab-content-poly" style="display:none;overflow-y:auto;max-height:560px">
                 <div id="polymarket-content"></div>
             </div>
-            <div class="fg-inline-col fg-inline-col-geo">
-                <div class="fg-inline-col-hdr">🌍 Geopolitical</div>
+            <div id="fg-tab-content-geo" style="display:none;overflow-y:auto;max-height:560px">
                 <div id="geo-content"></div>
             </div>
         </div>
@@ -471,10 +473,19 @@
         } else {
             panel.classList.add('open');
             btn.classList.add('active');
-            renderFearGreed();
-            renderPolymarket();
-            renderGeoTab();
+            switchFGTab('fg');
         }
+    };
+    window.switchFGTab = function(tab) {
+        document.getElementById('fg-tab-content-fg').style.display   = tab === 'fg'   ? '' : 'none';
+        document.getElementById('fg-tab-content-poly').style.display = tab === 'poly' ? '' : 'none';
+        document.getElementById('fg-tab-content-geo').style.display  = tab === 'geo'  ? '' : 'none';
+        document.getElementById('fg-tab-fg').classList.toggle('active',   tab === 'fg');
+        document.getElementById('fg-tab-poly').classList.toggle('active', tab === 'poly');
+        document.getElementById('fg-tab-geo').classList.toggle('active',  tab === 'geo');
+        if (tab === 'fg')   renderFearGreed();
+        if (tab === 'poly') renderPolymarket();
+        if (tab === 'geo')  renderGeoTab();
     };
 
     function getGroupLabelClass(groupName, ticker) {
