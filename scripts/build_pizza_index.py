@@ -207,13 +207,22 @@ def alert_level(pizza_score, bar_score, pizza_ma, bar_ma) -> str:
       BAR_ALERT    — bar empty only (military staff called in)
       NORMAL       — nothing unusual
       INSUFFICIENT — not enough data
+
+    When MA is available: compare current vs MA with threshold.
+    When MA is not yet available (< 20 days): use absolute fallback thresholds
+    so we don't false-alarm on day 1.
     """
-    pizza_elevated = pizza_score is not None and (
-        pizza_ma is None or pizza_score > max(pizza_ma * 1.3, 65)
-    )
-    bar_empty = bar_score is not None and (
-        bar_ma is None or bar_score < min(bar_ma * 0.5, 30)
-    )
+    if pizza_ma is not None:
+        pizza_elevated = pizza_score is not None and pizza_score > pizza_ma * 1.3
+    else:
+        # No baseline yet — require absolute threshold (>= 80% is unusual for late night)
+        pizza_elevated = pizza_score is not None and pizza_score >= 80
+
+    if bar_ma is not None:
+        bar_empty = bar_score is not None and bar_score < bar_ma * 0.5
+    else:
+        # No baseline yet — require clearly empty bar (< 20%)
+        bar_empty = bar_score is not None and bar_score < 20
 
     if pizza_elevated and bar_empty:
         return "DUAL_SIGNAL"
