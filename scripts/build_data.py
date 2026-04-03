@@ -78,7 +78,7 @@ STOCK_GROUPS = {
 
 AI_THEMES = {
     "Mag 7":        ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA"],
-    "Memory":       ["MU", "WDC", "SNDK", "STX"],
+    "Memory":       ["MU", "WDC", "SNDK", "STX", "000660.KS", "005930.KS"],
     "Optical Comms": ["COHR", "LITE", "AAOI", "VIAV", "TSEM", "AXTI", "GLW"],
 }
 
