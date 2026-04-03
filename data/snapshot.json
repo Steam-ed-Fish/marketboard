@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-04-03T07:09:40.652530Z",
+  "built_at": "2026-04-03T09:09:17.772567Z",
   "groups": {
     "Indices": [
       {
@@ -70,7 +70,9 @@
             "price": 594.45,
             "dist_pct": 1.6
           }
-        }
+        },
+        "em_pct": 1.45,
+        "em_days": 3
       },
       {
         "ticker": "DIA",
@@ -109,9 +111,9 @@
               "dist_pct": -5.4
             },
             {
-              "price": 413.63,
+              "price": 413.82,
               "score": 19,
-              "dist_pct": -11.1
+              "dist_pct": -11.0
             }
           ],
           "resistance": [
@@ -136,7 +138,9 @@
             "price": 466.24,
             "dist_pct": 0.3
           }
-        }
+        },
+        "em_pct": 2.31,
+        "em_days": 7
       },
       {
         "ticker": "SPY",
@@ -150,7 +154,7 @@
         "vol_chart": "data/charts/vol_SPY.png",
         "atr_pct": 1.6,
         "dist_sma50_atr": -1.76,
-        "rs": 65.0,
+        "rs": 70.0,
         "rs_chart": "data/charts/SPY.png",
         "long": [
           "SPXL",
@@ -203,7 +207,9 @@
             "price": 645.98,
             "dist_pct": -1.5
           }
-        }
+        },
+        "em_pct": 1.34,
+        "em_days": 3
       },
       {
         "ticker": "RSP",
@@ -232,19 +238,19 @@
         "sr": {
           "support": [
             {
-              "price": 189.5,
-              "score": 64,
-              "dist_pct": -1.9
+              "price": 188.86,
+              "score": 69,
+              "dist_pct": -2.2
             },
             {
-              "price": 185.19,
-              "score": 80,
-              "dist_pct": -4.1
+              "price": 183.49,
+              "score": 55,
+              "dist_pct": -5.0
             },
             {
-              "price": 175.42,
-              "score": 36,
-              "dist_pct": -9.1
+              "price": 177.71,
+              "score": 17,
+              "dist_pct": -8.0
             }
           ],
           "resistance": [
@@ -269,7 +275,9 @@
             "price": 195.12,
             "dist_pct": 1.1
           }
-        }
+        },
+        "em_pct": 2.46,
+        "em_days": 7
       },
       {
         "ticker": "IWM",
@@ -340,7 +348,9 @@
             "dist_pct": 0.6
           }
         },
-        "sector": "Broad Market"
+        "sector": "Broad Market",
+        "em_pct": 2.02,
+        "em_days": 3
       },
       {
         "ticker": "IJH",
@@ -396,7 +406,9 @@
               "dist_pct": 6.0
             }
           ]
-        }
+        },
+        "em_pct": 4.48,
+        "em_days": 14
       },
       {
         "ticker": "IJR",
@@ -462,7 +474,9 @@
             "price": 127.63,
             "dist_pct": 1.8
           }
-        }
+        },
+        "em_pct": 4.48,
+        "em_days": 14
       },
       {
         "ticker": "GLD",
@@ -528,7 +542,9 @@
             }
           ]
         },
-        "sector": "Commodities"
+        "sector": "Commodities",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SLV",
@@ -594,7 +610,9 @@
             }
           ]
         },
-        "sector": "Commodities"
+        "sector": "Commodities",
+        "em_pct": 4.73,
+        "em_days": 3
       }
     ],
     "The 7s at a Glance": [
@@ -616,7 +634,9 @@
         "short": [],
         "abc": null,
         "rrg_chart": "data/charts/seven_rrg.png",
-        "is_rrg_row": true
+        "is_rrg_row": true,
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Cloud 7",
@@ -634,7 +654,9 @@
         "rs_chart": "data/charts/Glance_The_Cloud_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Software 7",
@@ -652,7 +674,9 @@
         "rs_chart": "data/charts/Glance_The_Software_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The New Staples 7",
@@ -670,7 +694,9 @@
         "rs_chart": "data/charts/Glance_The_New_Staples_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Old Staples 7",
@@ -688,7 +714,9 @@
         "rs_chart": "data/charts/Glance_The_Old_Staples_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Toll Road 7",
@@ -706,7 +734,9 @@
         "rs_chart": "data/charts/Glance_The_Toll_Road_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Energy 7",
@@ -724,7 +754,9 @@
         "rs_chart": "data/charts/Glance_The_Energy_7.png",
         "long": [],
         "short": [],
-        "abc": "A"
+        "abc": "A",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Defense 7",
@@ -742,7 +774,9 @@
         "rs_chart": "data/charts/Glance_The_Defense_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Industrial 7",
@@ -760,7 +794,9 @@
         "rs_chart": "data/charts/Glance_The_Industrial_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Semi 7",
@@ -778,7 +814,9 @@
         "rs_chart": "data/charts/Glance_The_Semi_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Fab 7",
@@ -796,7 +834,9 @@
         "rs_chart": "data/charts/Glance_The_Fab_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Buildout 7",
@@ -814,7 +854,9 @@
         "rs_chart": "data/charts/Glance_The_Buildout_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Housing 7",
@@ -832,7 +874,9 @@
         "rs_chart": "data/charts/Glance_The_Housing_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Old Metals 7",
@@ -850,7 +894,9 @@
         "rs_chart": "data/charts/Glance_The_Old_Metals_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The New Metals 7",
@@ -868,7 +914,9 @@
         "rs_chart": "data/charts/Glance_The_New_Metals_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Bank 7",
@@ -886,7 +934,9 @@
         "rs_chart": "data/charts/Glance_The_Bank_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Health 7",
@@ -904,7 +954,9 @@
         "rs_chart": "data/charts/Glance_The_Health_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Medtech 7",
@@ -922,7 +974,9 @@
         "rs_chart": "data/charts/Glance_The_Medtech_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Freight 7",
@@ -940,7 +994,9 @@
         "rs_chart": "data/charts/Glance_The_Freight_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Insurance 7",
@@ -958,7 +1014,9 @@
         "rs_chart": "data/charts/Glance_The_Insurance_7.png",
         "long": [],
         "short": [],
-        "abc": "C"
+        "abc": "C",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "The Power 7",
@@ -976,7 +1034,9 @@
         "rs_chart": "data/charts/Glance_The_Power_7.png",
         "long": [],
         "short": [],
-        "abc": "A"
+        "abc": "A",
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "Sel Sectors": [
@@ -1048,7 +1108,9 @@
             "price": 136.31,
             "dist_pct": 0.2
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XLI",
@@ -1116,7 +1178,9 @@
             "price": 166.3,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XLC",
@@ -1157,9 +1221,9 @@
               "dist_pct": -6.5
             },
             {
-              "price": 101.12,
-              "score": 19,
-              "dist_pct": -9.5
+              "price": 101.03,
+              "score": 22,
+              "dist_pct": -9.6
             }
           ],
           "resistance": [
@@ -1184,7 +1248,9 @@
             "price": 112.19,
             "dist_pct": 0.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XLF",
@@ -1254,7 +1320,9 @@
             "price": 50.12,
             "dist_pct": 1.2
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XLU",
@@ -1318,7 +1386,9 @@
             "dist_pct": 0.4
           }
         },
-        "sector": "Broad Market"
+        "sector": "Broad Market",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XLY",
@@ -1388,7 +1458,9 @@
             "price": 107.14,
             "dist_pct": -0.9
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XLRE",
@@ -1458,7 +1530,9 @@
             "price": 41.79,
             "dist_pct": 0.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XLP",
@@ -1528,7 +1602,9 @@
             "price": 82.92,
             "dist_pct": 1.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XLB",
@@ -1588,7 +1664,9 @@
               "dist_pct": 6.5
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XLE",
@@ -1653,7 +1731,9 @@
             "price": 59.93,
             "dist_pct": 1.1
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XLV",
@@ -1716,7 +1796,9 @@
               "dist_pct": 7.7
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "S&P Style ETFs": [
@@ -1784,7 +1866,9 @@
             "price": 119.28,
             "dist_pct": 0.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IJR",
@@ -1850,7 +1934,9 @@
             "price": 127.63,
             "dist_pct": 1.8
           }
-        }
+        },
+        "em_pct": 4.48,
+        "em_days": 14
       },
       {
         "ticker": "IJT",
@@ -1911,7 +1997,9 @@
             "price": 148.99,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IJJ",
@@ -1977,7 +2065,9 @@
             "price": 134.97,
             "dist_pct": 1.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IJH",
@@ -2033,7 +2123,9 @@
               "dist_pct": 6.0
             }
           ]
-        }
+        },
+        "em_pct": 4.48,
+        "em_days": 14
       },
       {
         "ticker": "IJK",
@@ -2099,7 +2191,9 @@
             "price": 102.49,
             "dist_pct": 0.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IVE",
@@ -2128,31 +2222,26 @@
         "sr": {
           "support": [
             {
-              "price": 206.83,
-              "score": 52,
-              "dist_pct": -2.4
+              "price": 208.7,
+              "score": 48,
+              "dist_pct": -1.5
             },
             {
-              "price": 200.09,
+              "price": 201.92,
               "score": 43,
-              "dist_pct": -5.6
+              "dist_pct": -4.7
             },
             {
-              "price": 189.15,
-              "score": 30,
-              "dist_pct": -10.7
+              "price": 197.12,
+              "score": 28,
+              "dist_pct": -7.0
             }
           ],
           "resistance": [
             {
-              "price": 212.32,
-              "score": 56,
-              "dist_pct": 0.2
-            },
-            {
-              "price": 216.98,
-              "score": 40,
-              "dist_pct": 2.4
+              "price": 215.34,
+              "score": 39,
+              "dist_pct": 1.6
             },
             {
               "price": 221.67,
@@ -2162,10 +2251,12 @@
           ],
           "near": {
             "type": "resistance",
-            "price": 212.32,
-            "dist_pct": 0.2
+            "price": 215.34,
+            "dist_pct": 1.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IVV",
@@ -2226,7 +2317,9 @@
             "price": 671.98,
             "dist_pct": 2.0
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IVW",
@@ -2292,7 +2385,9 @@
             "price": 116.64,
             "dist_pct": 1.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "EW Sectors": [
@@ -2360,7 +2455,9 @@
             "price": 46.02,
             "dist_pct": -0.8
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "RSPC",
@@ -2421,7 +2518,9 @@
               "dist_pct": 7.9
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "RSPN",
@@ -2487,7 +2586,9 @@
             "price": 57.66,
             "dist_pct": -0.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "RSPF",
@@ -2538,8 +2639,8 @@
               "dist_pct": 1.5
             },
             {
-              "price": 75.4,
-              "score": 93,
+              "price": 75.39,
+              "score": 90,
               "dist_pct": 5.2
             },
             {
@@ -2553,7 +2654,9 @@
             "price": 72.77,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "RSP",
@@ -2582,19 +2685,19 @@
         "sr": {
           "support": [
             {
-              "price": 189.5,
-              "score": 64,
-              "dist_pct": -1.9
+              "price": 188.86,
+              "score": 69,
+              "dist_pct": -2.2
             },
             {
-              "price": 185.19,
-              "score": 80,
-              "dist_pct": -4.1
+              "price": 183.49,
+              "score": 55,
+              "dist_pct": -5.0
             },
             {
-              "price": 175.42,
-              "score": 36,
-              "dist_pct": -9.1
+              "price": 177.71,
+              "score": 17,
+              "dist_pct": -8.0
             }
           ],
           "resistance": [
@@ -2619,7 +2722,9 @@
             "price": 195.12,
             "dist_pct": 1.1
           }
-        }
+        },
+        "em_pct": 2.46,
+        "em_days": 7
       },
       {
         "ticker": "RSPD",
@@ -2680,7 +2785,9 @@
               "dist_pct": 10.7
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "RSPU",
@@ -2741,7 +2848,9 @@
             "price": 82.39,
             "dist_pct": 0.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "RSPR",
@@ -2792,7 +2901,9 @@
               "dist_pct": 5.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "RSPH",
@@ -2858,7 +2969,9 @@
             "price": 30.58,
             "dist_pct": 1.0
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "RSPM",
@@ -2924,7 +3037,9 @@
             "price": 39.4,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "RSPS",
@@ -2985,7 +3100,9 @@
             "price": 29.84,
             "dist_pct": 1.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "RSPG",
@@ -3019,13 +3136,13 @@
               "dist_pct": -25.4
             },
             {
-              "price": 75.12,
+              "price": 75.14,
               "score": 40,
               "dist_pct": -29.5
             },
             {
-              "price": 72.49,
-              "score": 35,
+              "price": 72.47,
+              "score": 37,
               "dist_pct": -32.0
             }
           ],
@@ -3046,7 +3163,9 @@
             "price": 107.77,
             "dist_pct": 1.1
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "Industries": [
@@ -3119,7 +3238,9 @@
             "dist_pct": 1.9
           }
         },
-        "sector": "Information Technology"
+        "sector": "Information Technology",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "CIBR",
@@ -3181,7 +3302,9 @@
             }
           ]
         },
-        "sector": "Information Technology"
+        "sector": "Information Technology",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IGV",
@@ -3243,7 +3366,9 @@
             "dist_pct": -1.1
           }
         },
-        "sector": "Information Technology"
+        "sector": "Information Technology",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "WCLD",
@@ -3307,7 +3432,9 @@
             }
           ]
         },
-        "sector": "Information Technology"
+        "sector": "Information Technology",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "BLOK",
@@ -3374,7 +3501,9 @@
             "dist_pct": -0.7
           }
         },
-        "sector": "Information Technology"
+        "sector": "Information Technology",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "AIQ",
@@ -3436,7 +3565,9 @@
             }
           ]
         },
-        "sector": "Information Technology"
+        "sector": "Information Technology",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ARKF",
@@ -3498,7 +3629,9 @@
             }
           ]
         },
-        "sector": "Information Technology"
+        "sector": "Information Technology",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ARKK",
@@ -3569,7 +3702,9 @@
             "dist_pct": -0.8
           }
         },
-        "sector": "Information Technology"
+        "sector": "Information Technology",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "WGMI",
@@ -3631,7 +3766,9 @@
             }
           ]
         },
-        "sector": "Information Technology"
+        "sector": "Information Technology",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ROBO",
@@ -3700,7 +3837,9 @@
             "dist_pct": 0.6
           }
         },
-        "sector": "Industrials"
+        "sector": "Industrials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ITA",
@@ -3769,7 +3908,9 @@
             "dist_pct": 1.8
           }
         },
-        "sector": "Industrials"
+        "sector": "Industrials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PAVE",
@@ -3836,7 +3977,9 @@
             "dist_pct": 1.1
           }
         },
-        "sector": "Industrials"
+        "sector": "Industrials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "BOAT",
@@ -3888,7 +4031,9 @@
             }
           ]
         },
-        "sector": "Industrials"
+        "sector": "Industrials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XTN",
@@ -3952,7 +4097,9 @@
             }
           ]
         },
-        "sector": "Industrials"
+        "sector": "Industrials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "KWEB",
@@ -4016,7 +4163,9 @@
             "dist_pct": -1.7
           }
         },
-        "sector": "Emerging Markets"
+        "sector": "Emerging Markets",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "GXC",
@@ -4083,7 +4232,9 @@
             "dist_pct": -1.1
           }
         },
-        "sector": "Emerging Markets"
+        "sector": "Emerging Markets",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "FXI",
@@ -4154,7 +4305,9 @@
             "dist_pct": -1.6
           }
         },
-        "sector": "Emerging Markets"
+        "sector": "Emerging Markets",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IBUY",
@@ -4221,7 +4374,9 @@
             "dist_pct": -0.7
           }
         },
-        "sector": "Consumer Discretionary"
+        "sector": "Consumer Discretionary",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "JETS",
@@ -4288,7 +4443,9 @@
             "dist_pct": -1.0
           }
         },
-        "sector": "Consumer Discretionary"
+        "sector": "Consumer Discretionary",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PEJ",
@@ -4357,7 +4514,9 @@
             "dist_pct": 0.9
           }
         },
-        "sector": "Consumer Discretionary"
+        "sector": "Consumer Discretionary",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "FDN",
@@ -4423,7 +4582,9 @@
             }
           ]
         },
-        "sector": "Consumer Discretionary"
+        "sector": "Consumer Discretionary",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XRT",
@@ -4487,7 +4648,9 @@
             }
           ]
         },
-        "sector": "Consumer Discretionary"
+        "sector": "Consumer Discretionary",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "DRIV",
@@ -4556,7 +4719,9 @@
             "dist_pct": 1.2
           }
         },
-        "sector": "Consumer Discretionary"
+        "sector": "Consumer Discretionary",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MSOS",
@@ -4625,7 +4790,9 @@
             "dist_pct": 1.4
           }
         },
-        "sector": "Consumer Discretionary"
+        "sector": "Consumer Discretionary",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EATZ",
@@ -4682,7 +4849,9 @@
             }
           ]
         },
-        "sector": "Consumer Discretionary"
+        "sector": "Consumer Discretionary",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XHB",
@@ -4735,9 +4904,9 @@
               "dist_pct": 5.5
             },
             {
-              "price": 106.79,
-              "score": 49,
-              "dist_pct": 8.7
+              "price": 106.7,
+              "score": 43,
+              "dist_pct": 8.6
             },
             {
               "price": 111.81,
@@ -4751,7 +4920,9 @@
             "dist_pct": -0.4
           }
         },
-        "sector": "Consumer Discretionary"
+        "sector": "Consumer Discretionary",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IBB",
@@ -4790,8 +4961,8 @@
               "dist_pct": -18.0
             },
             {
-              "price": 127.12,
-              "score": 23,
+              "price": 127.03,
+              "score": 25,
               "dist_pct": -25.0
             }
           ],
@@ -4818,7 +4989,9 @@
             "dist_pct": 0.5
           }
         },
-        "sector": "Health Care"
+        "sector": "Health Care",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IHI",
@@ -4875,7 +5048,9 @@
             "dist_pct": -1.5
           }
         },
-        "sector": "Health Care"
+        "sector": "Health Care",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XHE",
@@ -4942,7 +5117,9 @@
             "dist_pct": 0.5
           }
         },
-        "sector": "Health Care"
+        "sector": "Health Care",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XBI",
@@ -5008,7 +5185,9 @@
             "dist_pct": 0.9
           }
         },
-        "sector": "Health Care"
+        "sector": "Health Care",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ARKG",
@@ -5070,7 +5249,9 @@
             }
           ]
         },
-        "sector": "Health Care"
+        "sector": "Health Care",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PPH",
@@ -5101,7 +5282,7 @@
         "sr": {
           "support": [
             {
-              "price": 99.72,
+              "price": 99.69,
               "score": 27,
               "dist_pct": -4.3
             },
@@ -5139,7 +5320,9 @@
             "dist_pct": 1.9
           }
         },
-        "sector": "Health Care"
+        "sector": "Health Care",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "KCE",
@@ -5201,7 +5384,9 @@
             }
           ]
         },
-        "sector": "Financials"
+        "sector": "Financials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "KBE",
@@ -5230,9 +5415,9 @@
         "sr": {
           "support": [
             {
-              "price": 59.46,
-              "score": 58,
-              "dist_pct": -1.3
+              "price": 59.4,
+              "score": 57,
+              "dist_pct": -1.4
             },
             {
               "price": 57.51,
@@ -5268,7 +5453,9 @@
             "dist_pct": 1.3
           }
         },
-        "sector": "Financials"
+        "sector": "Financials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "KRE",
@@ -5337,7 +5524,9 @@
             "dist_pct": 0.2
           }
         },
-        "sector": "Financials"
+        "sector": "Financials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "KIE",
@@ -5399,7 +5588,9 @@
             "dist_pct": 0.8
           }
         },
-        "sector": "Financials"
+        "sector": "Financials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IPAY",
@@ -5461,7 +5652,9 @@
             "dist_pct": -0.7
           }
         },
-        "sector": "Financials"
+        "sector": "Financials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "TAN",
@@ -5528,7 +5721,9 @@
             "dist_pct": 0.8
           }
         },
-        "sector": "Energy"
+        "sector": "Energy",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XOP",
@@ -5594,7 +5789,9 @@
             "dist_pct": 0.7
           }
         },
-        "sector": "Energy"
+        "sector": "Energy",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ICLN",
@@ -5661,7 +5858,9 @@
             "dist_pct": -0.4
           }
         },
-        "sector": "Energy"
+        "sector": "Energy",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "FCG",
@@ -5723,7 +5922,9 @@
             "dist_pct": 0.9
           }
         },
-        "sector": "Energy"
+        "sector": "Energy",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XES",
@@ -5785,7 +5986,9 @@
             "dist_pct": 0.4
           }
         },
-        "sector": "Energy"
+        "sector": "Energy",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "OIH",
@@ -5847,7 +6050,9 @@
             "dist_pct": 1.8
           }
         },
-        "sector": "Energy"
+        "sector": "Energy",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "URA",
@@ -5914,7 +6119,9 @@
             "dist_pct": 0.7
           }
         },
-        "sector": "Energy"
+        "sector": "Energy",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IYZ",
@@ -5971,7 +6178,9 @@
             "dist_pct": 0.6
           }
         },
-        "sector": "Communication Services"
+        "sector": "Communication Services",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SOCL",
@@ -6033,7 +6242,9 @@
             }
           ]
         },
-        "sector": "Communication Services"
+        "sector": "Communication Services",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SCHH",
@@ -6090,7 +6301,9 @@
             }
           ]
         },
-        "sector": "Real Estate"
+        "sector": "Real Estate",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "VNQ",
@@ -6157,7 +6370,9 @@
             "dist_pct": 1.4
           }
         },
-        "sector": "Real Estate"
+        "sector": "Real Estate",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "REZ",
@@ -6219,7 +6434,9 @@
             "dist_pct": -1.1
           }
         },
-        "sector": "Real Estate"
+        "sector": "Real Estate",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "UNG",
@@ -6280,7 +6497,9 @@
             }
           ]
         },
-        "sector": "Commodities"
+        "sector": "Commodities",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "GLD",
@@ -6346,7 +6565,9 @@
             }
           ]
         },
-        "sector": "Commodities"
+        "sector": "Commodities",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "DBA",
@@ -6403,7 +6624,9 @@
             "dist_pct": 0.8
           }
         },
-        "sector": "Commodities"
+        "sector": "Commodities",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SLV",
@@ -6469,7 +6692,9 @@
             }
           ]
         },
-        "sector": "Commodities"
+        "sector": "Commodities",
+        "em_pct": 4.73,
+        "em_days": 3
       },
       {
         "ticker": "USO",
@@ -6519,7 +6744,9 @@
           ],
           "resistance": []
         },
-        "sector": "Commodities"
+        "sector": "Commodities",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "DBC",
@@ -6565,7 +6792,9 @@
           ],
           "resistance": []
         },
-        "sector": "Commodities"
+        "sector": "Commodities",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "CPER",
@@ -6632,7 +6861,9 @@
             "dist_pct": 1.7
           }
         },
-        "sector": "Commodities"
+        "sector": "Commodities",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SLX",
@@ -6699,7 +6930,9 @@
             "dist_pct": 0.5
           }
         },
-        "sector": "Materials"
+        "sector": "Materials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XME",
@@ -6766,7 +6999,9 @@
             "dist_pct": 0.9
           }
         },
-        "sector": "Materials"
+        "sector": "Materials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "GDX",
@@ -6834,7 +7069,9 @@
             }
           ]
         },
-        "sector": "Materials"
+        "sector": "Materials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SILJ",
@@ -6896,7 +7133,9 @@
             }
           ]
         },
-        "sector": "Materials"
+        "sector": "Materials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "LIT",
@@ -6958,7 +7197,9 @@
             "dist_pct": 1.4
           }
         },
-        "sector": "Materials"
+        "sector": "Materials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "REMX",
@@ -7025,7 +7266,9 @@
             "dist_pct": 1.0
           }
         },
-        "sector": "Materials"
+        "sector": "Materials",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "UTES",
@@ -7092,7 +7335,9 @@
             "dist_pct": 0.5
           }
         },
-        "sector": "Utilities"
+        "sector": "Utilities",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PBJ",
@@ -7149,7 +7394,9 @@
             "dist_pct": 2.0
           }
         },
-        "sector": "Consumer Staples"
+        "sector": "Consumer Staples",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "QQQE",
@@ -7211,7 +7458,9 @@
             }
           ]
         },
-        "sector": "Broad Market"
+        "sector": "Broad Market",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IBIT",
@@ -7274,7 +7523,9 @@
             }
           ]
         },
-        "sector": "Broad Market"
+        "sector": "Broad Market",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "XLU",
@@ -7338,7 +7589,9 @@
             "dist_pct": 0.4
           }
         },
-        "sector": "Broad Market"
+        "sector": "Broad Market",
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IWM",
@@ -7409,7 +7662,9 @@
             "dist_pct": 0.6
           }
         },
-        "sector": "Broad Market"
+        "sector": "Broad Market",
+        "em_pct": 2.02,
+        "em_days": 3
       },
       {
         "ticker": "FNGS",
@@ -7480,7 +7735,9 @@
             "dist_pct": -1.0
           }
         },
-        "sector": "Broad Market"
+        "sector": "Broad Market",
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "Countries": [
@@ -7548,7 +7805,9 @@
             "price": 68.31,
             "dist_pct": 0.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ARGT",
@@ -7614,7 +7873,9 @@
             "price": 95.56,
             "dist_pct": 1.8
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWA",
@@ -7680,7 +7941,9 @@
             "price": 28.62,
             "dist_pct": 1.9
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "THD",
@@ -7746,7 +8009,9 @@
             "price": 69.63,
             "dist_pct": 1.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EIDO",
@@ -7797,14 +8062,14 @@
               "dist_pct": 13.1
             },
             {
-              "price": 18.08,
-              "score": 55,
-              "dist_pct": 16.3
+              "price": 18.09,
+              "score": 56,
+              "dist_pct": 16.4
             },
             {
-              "price": 18.53,
-              "score": 44,
-              "dist_pct": 19.2
+              "price": 18.55,
+              "score": 53,
+              "dist_pct": 19.4
             }
           ],
           "near": {
@@ -7812,7 +8077,9 @@
             "price": 15.36,
             "dist_pct": -1.2
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWC",
@@ -7873,7 +8140,9 @@
             "price": 55.07,
             "dist_pct": -0.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "GREK",
@@ -7939,7 +8208,9 @@
             "price": 65.85,
             "dist_pct": 0.9
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWP",
@@ -8005,7 +8276,9 @@
             "price": 55.23,
             "dist_pct": 0.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWG",
@@ -8071,7 +8344,9 @@
             "price": 40.31,
             "dist_pct": 1.0
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWL",
@@ -8132,7 +8407,9 @@
               "dist_pct": 8.7
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EUFN",
@@ -8193,7 +8470,9 @@
               "dist_pct": 7.7
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWY",
@@ -8256,7 +8535,9 @@
               "dist_pct": 10.0
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IEUR",
@@ -8322,7 +8603,9 @@
             "price": 71.51,
             "dist_pct": 0.8
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EFA",
@@ -8388,7 +8671,9 @@
             "price": 99.33,
             "dist_pct": 1.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ACWI",
@@ -8454,7 +8739,9 @@
             "price": 142.22,
             "dist_pct": 2.0
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IEV",
@@ -8522,7 +8809,9 @@
             "price": 69.19,
             "dist_pct": 0.9
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWQ",
@@ -8588,7 +8877,9 @@
             "price": 43.92,
             "dist_pct": 0.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWI",
@@ -8654,7 +8945,9 @@
             "price": 55.13,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWJ",
@@ -8722,7 +9015,9 @@
             "price": 85.61,
             "dist_pct": 0.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWW",
@@ -8790,7 +9085,9 @@
             "price": 76.4,
             "dist_pct": 0.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ECH",
@@ -8856,7 +9153,9 @@
             "price": 40.55,
             "dist_pct": 1.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWD",
@@ -8917,7 +9216,9 @@
               "dist_pct": 6.2
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ASHR",
@@ -8985,7 +9286,9 @@
             "price": 32.7,
             "dist_pct": 0.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWS",
@@ -9046,7 +9349,9 @@
             "price": 28.46,
             "dist_pct": 0.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "KSA",
@@ -9107,7 +9412,9 @@
             "price": 40.08,
             "dist_pct": 1.8
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "INDA",
@@ -9160,7 +9467,9 @@
               "dist_pct": 18.2
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EEM",
@@ -9230,7 +9539,9 @@
             "price": 57.64,
             "dist_pct": 1.9
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWZ",
@@ -9293,7 +9604,9 @@
             "price": 38.6,
             "dist_pct": 0.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "TUR",
@@ -9354,7 +9667,9 @@
               "dist_pct": 7.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWH",
@@ -9415,7 +9730,9 @@
             "price": 23.11,
             "dist_pct": -0.2
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EWT",
@@ -9481,7 +9798,9 @@
             "price": 71.46,
             "dist_pct": 1.0
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MCHI",
@@ -9542,7 +9861,9 @@
               "dist_pct": 14.2
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Cloud 7": [
@@ -9600,7 +9921,9 @@
               "dist_pct": 37.1
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "AMZN",
@@ -9661,7 +9984,9 @@
               "dist_pct": 8.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "GOOGL",
@@ -9727,7 +10052,9 @@
             "price": 300.31,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ORCL",
@@ -9793,7 +10120,9 @@
             "price": 147.19,
             "dist_pct": 0.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "IBM",
@@ -9859,7 +10188,9 @@
             "price": 249.15,
             "dist_pct": 0.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "META",
@@ -9920,7 +10251,9 @@
               "dist_pct": 23.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "NET",
@@ -9981,7 +10314,9 @@
               "dist_pct": 7.9
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Software 7": [
@@ -10034,7 +10369,9 @@
               "dist_pct": 49.1
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PANW",
@@ -10100,7 +10437,9 @@
             "price": 161.36,
             "dist_pct": -1.1
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PLTR",
@@ -10161,7 +10500,9 @@
               "dist_pct": 23.8
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "INTU",
@@ -10222,7 +10563,9 @@
               "dist_pct": 77.5
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "CRM",
@@ -10278,7 +10621,9 @@
               "dist_pct": 42.2
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "NOW",
@@ -10329,7 +10674,9 @@
               "dist_pct": 99.1
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "WDAY",
@@ -10395,7 +10742,9 @@
             "price": 131.16,
             "dist_pct": -0.8
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The New Staples 7": [
@@ -10463,7 +10812,9 @@
             "price": 254.34,
             "dist_pct": -0.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "AMZN",
@@ -10524,7 +10875,9 @@
               "dist_pct": 8.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "META",
@@ -10585,7 +10938,9 @@
               "dist_pct": 23.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "NFLX",
@@ -10651,7 +11006,9 @@
             "price": 97.33,
             "dist_pct": -1.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "GOOGL",
@@ -10717,7 +11074,9 @@
             "price": 300.31,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SPOT",
@@ -10778,7 +11137,9 @@
               "dist_pct": 47.6
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "UBER",
@@ -10839,7 +11200,9 @@
               "dist_pct": 34.9
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Old Staples 7": [
@@ -10902,7 +11265,9 @@
             "price": 141.85,
             "dist_pct": -0.9
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "KO",
@@ -10968,7 +11333,9 @@
             "price": 77.83,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PEP",
@@ -11034,7 +11401,9 @@
             "price": 157.9,
             "dist_pct": 0.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PM",
@@ -11095,7 +11464,9 @@
               "dist_pct": 12.8
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "CL",
@@ -11161,7 +11532,9 @@
             "price": 85.94,
             "dist_pct": 0.9
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MDLZ",
@@ -11222,7 +11595,9 @@
               "dist_pct": 11.0
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "WMT",
@@ -11283,7 +11658,9 @@
               "dist_pct": 6.9
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Toll Road 7": [
@@ -11341,7 +11718,9 @@
             "price": 295.9,
             "dist_pct": -1.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MA",
@@ -11402,7 +11781,9 @@
             "price": 485.94,
             "dist_pct": -1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PYPL",
@@ -11463,7 +11844,9 @@
               "dist_pct": 57.5
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "CME",
@@ -11514,7 +11897,9 @@
               "dist_pct": 4.6
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ICE",
@@ -11575,7 +11960,9 @@
               "dist_pct": 10.7
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SPGI",
@@ -11636,7 +12023,9 @@
               "dist_pct": 22.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MSCI",
@@ -11702,7 +12091,9 @@
             "price": 553.87,
             "dist_pct": 1.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Energy 7": [
@@ -11765,7 +12156,9 @@
             "price": 162.44,
             "dist_pct": 1.1
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "CVX",
@@ -11816,7 +12209,9 @@
               "dist_pct": 7.9
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "COP",
@@ -11867,7 +12262,9 @@
               "dist_pct": 4.1
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EOG",
@@ -11918,7 +12315,9 @@
               "dist_pct": 6.5
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "FANG",
@@ -11979,7 +12378,9 @@
             "price": 194.68,
             "dist_pct": 0.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "DVN",
@@ -12040,7 +12441,9 @@
             "price": 49.83,
             "dist_pct": 0.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SLB",
@@ -12101,7 +12504,9 @@
               "dist_pct": 10.8
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Defense 7": [
@@ -12169,7 +12574,9 @@
             "price": 632.14,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "RTX",
@@ -12230,7 +12637,9 @@
               "dist_pct": 6.7
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "NOC",
@@ -12296,7 +12705,9 @@
             "price": 713.33,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "GD",
@@ -12335,8 +12746,8 @@
               "dist_pct": -8.5
             },
             {
-              "price": 274.39,
-              "score": 33,
+              "price": 274.25,
+              "score": 35,
               "dist_pct": -21.4
             }
           ],
@@ -12352,7 +12763,9 @@
               "dist_pct": 5.1
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "BA",
@@ -12418,7 +12831,9 @@
             "price": 206.19,
             "dist_pct": -1.0
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "LHX",
@@ -12484,7 +12899,9 @@
             "price": 360.66,
             "dist_pct": 1.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "HII",
@@ -12550,7 +12967,9 @@
             "price": 402.44,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Industrial 7": [
@@ -12618,7 +13037,9 @@
             "price": 726.97,
             "dist_pct": 1.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "DE",
@@ -12679,7 +13100,9 @@
               "dist_pct": 6.3
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "HON",
@@ -12745,7 +13168,9 @@
             "price": 230.28,
             "dist_pct": 0.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PH",
@@ -12811,7 +13236,9 @@
             "price": 914.77,
             "dist_pct": 0.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EMR",
@@ -12857,8 +13284,8 @@
           ],
           "resistance": [
             {
-              "price": 133.06,
-              "score": 51,
+              "price": 133.03,
+              "score": 52,
               "dist_pct": 1.0
             },
             {
@@ -12874,10 +13301,12 @@
           ],
           "near": {
             "type": "resistance",
-            "price": 133.06,
+            "price": 133.03,
             "dist_pct": 1.0
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "GE",
@@ -12938,7 +13367,9 @@
               "dist_pct": 9.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "TT",
@@ -13004,7 +13435,9 @@
             "price": 430.28,
             "dist_pct": 0.8
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Semi 7": [
@@ -13072,7 +13505,9 @@
             "price": 179.51,
             "dist_pct": 1.2
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "AVGO",
@@ -13133,7 +13568,9 @@
               "dist_pct": 9.0
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "AMD",
@@ -13199,7 +13636,9 @@
             "price": 219.0,
             "dist_pct": 0.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "QCOM",
@@ -13260,7 +13699,9 @@
             "price": 126.54,
             "dist_pct": -0.2
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "INTC",
@@ -13316,7 +13757,9 @@
               "dist_pct": 8.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "TXN",
@@ -13377,7 +13820,9 @@
               "dist_pct": 10.0
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MRVL",
@@ -13433,7 +13878,9 @@
             "price": 107.84,
             "dist_pct": 0.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Fab 7": [
@@ -13496,7 +13943,9 @@
               "dist_pct": 12.7
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "AMAT",
@@ -13557,7 +14006,9 @@
               "dist_pct": 8.5
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "LRCX",
@@ -13618,7 +14069,9 @@
               "dist_pct": 8.0
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "KLAC",
@@ -13684,7 +14137,9 @@
             "price": 1539.93,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "TSM",
@@ -13745,7 +14200,9 @@
               "dist_pct": 11.8
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MU",
@@ -13806,7 +14263,9 @@
               "dist_pct": 15.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "TER",
@@ -13872,7 +14331,9 @@
             "price": 311.31,
             "dist_pct": 0.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Buildout 7": [
@@ -13940,7 +14401,9 @@
             "price": 124.95,
             "dist_pct": -1.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "VRT",
@@ -14006,7 +14469,9 @@
             "price": 264.8,
             "dist_pct": 1.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "APH",
@@ -14067,7 +14532,9 @@
               "dist_pct": 9.8
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PWR",
@@ -14123,7 +14590,9 @@
               "dist_pct": 4.0
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "EME",
@@ -14184,7 +14653,9 @@
               "dist_pct": 10.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "GEV",
@@ -14235,7 +14706,9 @@
               "dist_pct": 5.5
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ETN",
@@ -14296,7 +14769,9 @@
               "dist_pct": 9.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Housing 7": [
@@ -14359,7 +14834,9 @@
               "dist_pct": 12.5
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "LEN",
@@ -14410,7 +14887,9 @@
               "dist_pct": 42.2
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "VMC",
@@ -14476,7 +14955,9 @@
             "price": 284.17,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MLM",
@@ -14542,7 +15023,9 @@
             "price": 601.47,
             "dist_pct": 0.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SHW",
@@ -14598,7 +15081,9 @@
               "dist_pct": 12.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "HD",
@@ -14654,7 +15139,9 @@
             "price": 319.76,
             "dist_pct": -0.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "LOW",
@@ -14720,7 +15207,9 @@
             "price": 234.73,
             "dist_pct": 1.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Old Metals 7": [
@@ -14788,7 +15277,9 @@
             "price": 115.52,
             "dist_pct": 1.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "GOLD",
@@ -14849,7 +15340,9 @@
               "dist_pct": 39.2
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "AEM",
@@ -14910,7 +15403,9 @@
               "dist_pct": 7.7
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "WPM",
@@ -14976,7 +15471,9 @@
             "price": 137.81,
             "dist_pct": 1.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "FNV",
@@ -15042,7 +15539,9 @@
             "price": 261.21,
             "dist_pct": 1.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "RGLD",
@@ -15108,7 +15607,9 @@
             "price": 266.45,
             "dist_pct": 1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "AGI",
@@ -15169,7 +15670,9 @@
               "dist_pct": 12.9
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The New Metals 7": [
@@ -15237,7 +15740,9 @@
             "price": 62.13,
             "dist_pct": 1.2
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SCCO",
@@ -15298,7 +15803,9 @@
               "dist_pct": 12.6
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "CCJ",
@@ -15364,7 +15871,9 @@
             "price": 114.59,
             "dist_pct": 1.8
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ALB",
@@ -15430,7 +15939,9 @@
             "price": 178.7,
             "dist_pct": 0.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SQM",
@@ -15491,7 +16002,9 @@
             "price": 83.6,
             "dist_pct": 0.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MP",
@@ -15552,7 +16065,9 @@
               "dist_pct": 25.9
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PAAS",
@@ -15618,7 +16133,9 @@
             "price": 55.62,
             "dist_pct": -0.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Bank 7": [
@@ -15686,7 +16203,9 @@
             "price": 293.8,
             "dist_pct": -0.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "GS",
@@ -15752,7 +16271,9 @@
             "price": 869.98,
             "dist_pct": 0.8
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MS",
@@ -15813,7 +16334,9 @@
               "dist_pct": 9.6
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "BAC",
@@ -15879,7 +16402,9 @@
             "price": 49.76,
             "dist_pct": 0.8
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "WFC",
@@ -15908,44 +16433,46 @@
         "sr": {
           "support": [
             {
-              "price": 79.32,
+              "price": 78.4,
               "score": 31,
-              "dist_pct": -1.6
-            },
-            {
-              "price": 77.64,
-              "score": 26,
-              "dist_pct": -3.7
+              "dist_pct": -2.7
             },
             {
               "price": 76.18,
               "score": 27,
               "dist_pct": -5.5
+            },
+            {
+              "price": 73.65,
+              "score": 20,
+              "dist_pct": -8.6
             }
           ],
           "resistance": [
             {
-              "price": 81.37,
-              "score": 34,
-              "dist_pct": 1.0
+              "price": 80.95,
+              "score": 45,
+              "dist_pct": 0.4
             },
             {
-              "price": 83.32,
-              "score": 24,
-              "dist_pct": 3.4
+              "price": 82.83,
+              "score": 30,
+              "dist_pct": 2.8
             },
             {
-              "price": 85.79,
-              "score": 31,
-              "dist_pct": 6.4
+              "price": 85.61,
+              "score": 28,
+              "dist_pct": 6.2
             }
           ],
           "near": {
             "type": "resistance",
-            "price": 81.37,
-            "dist_pct": 1.0
+            "price": 80.95,
+            "dist_pct": 0.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "BLK",
@@ -16011,7 +16538,9 @@
             "price": 976.04,
             "dist_pct": 1.0
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "C",
@@ -16077,7 +16606,9 @@
             "price": 116.35,
             "dist_pct": 1.0
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Health 7": [
@@ -16140,7 +16671,9 @@
               "dist_pct": 7.9
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "LLY",
@@ -16201,7 +16734,9 @@
               "dist_pct": 13.7
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ABBV",
@@ -16262,7 +16797,9 @@
               "dist_pct": 9.6
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "JNJ",
@@ -16323,7 +16860,9 @@
             "price": 245.62,
             "dist_pct": 1.1
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "PFE",
@@ -16368,7 +16907,9 @@
             }
           ],
           "resistance": []
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MRK",
@@ -16429,7 +16970,9 @@
             "price": 122.12,
             "dist_pct": 1.0
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "GILD",
@@ -16495,7 +17038,9 @@
             "price": 141.62,
             "dist_pct": 1.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Medtech 7": [
@@ -16563,7 +17108,9 @@
             "price": 449.87,
             "dist_pct": -0.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "TMO",
@@ -16629,7 +17176,9 @@
             "price": 500.03,
             "dist_pct": 1.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ABT",
@@ -16690,7 +17239,9 @@
             "price": 102.41,
             "dist_pct": -0.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MDT",
@@ -16756,7 +17307,9 @@
             "price": 85.37,
             "dist_pct": -1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SYK",
@@ -16817,7 +17370,9 @@
             "price": 326.68,
             "dist_pct": -1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "BSX",
@@ -16868,7 +17423,9 @@
               "dist_pct": 68.5
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "DHR",
@@ -16929,7 +17486,9 @@
               "dist_pct": 8.1
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Freight 7": [
@@ -16997,7 +17556,9 @@
             "price": 246.83,
             "dist_pct": 0.9
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "CSX",
@@ -17058,7 +17619,9 @@
             "price": 41.79,
             "dist_pct": 1.4
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "FDX",
@@ -17124,7 +17687,9 @@
             "price": 365.05,
             "dist_pct": 0.9
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "UPS",
@@ -17190,7 +17755,9 @@
             "price": 99.41,
             "dist_pct": 1.3
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "ODFL",
@@ -17256,7 +17823,9 @@
             "price": 201.15,
             "dist_pct": 1.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "JBHT",
@@ -17322,7 +17891,9 @@
             "price": 216.08,
             "dist_pct": 0.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "NSC",
@@ -17388,7 +17959,9 @@
             "price": 291.09,
             "dist_pct": 1.1
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Insurance 7": [
@@ -17451,7 +18024,9 @@
             "price": 191.92,
             "dist_pct": -1.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "CB",
@@ -17512,7 +18087,9 @@
             "price": 334.48,
             "dist_pct": 1.9
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "AON",
@@ -17568,7 +18145,9 @@
               "dist_pct": 13.9
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "AIG",
@@ -17629,7 +18208,9 @@
             "price": 76.31,
             "dist_pct": 1.2
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "MET",
@@ -17690,7 +18271,9 @@
               "dist_pct": 13.4
             }
           ]
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "AFL",
@@ -17719,31 +18302,31 @@
         "sr": {
           "support": [
             {
-              "price": 107.84,
-              "score": 67,
-              "dist_pct": -2.4
+              "price": 110.05,
+              "score": 85,
+              "dist_pct": -0.4
             },
             {
-              "price": 104.85,
-              "score": 42,
-              "dist_pct": -5.1
+              "price": 106.9,
+              "score": 68,
+              "dist_pct": -3.2
             },
             {
-              "price": 101.61,
-              "score": 50,
-              "dist_pct": -8.0
+              "price": 103.69,
+              "score": 44,
+              "dist_pct": -6.1
             }
           ],
           "resistance": [
             {
-              "price": 111.02,
-              "score": 47,
-              "dist_pct": 0.5
+              "price": 112.55,
+              "score": 40,
+              "dist_pct": 1.9
             },
             {
-              "price": 113.75,
-              "score": 19,
-              "dist_pct": 3.0
+              "price": 114.77,
+              "score": 14,
+              "dist_pct": 3.9
             },
             {
               "price": 118.12,
@@ -17753,10 +18336,12 @@
           ],
           "near": {
             "type": "resistance",
-            "price": 111.02,
-            "dist_pct": 0.5
+            "price": 112.55,
+            "dist_pct": 1.9
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ],
     "The Power 7": [
@@ -17814,7 +18399,9 @@
             "price": 94.87,
             "dist_pct": 1.8
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SO",
@@ -17870,7 +18457,9 @@
             "price": 98.62,
             "dist_pct": 1.2
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "DUK",
@@ -17926,7 +18515,9 @@
             "price": 133.29,
             "dist_pct": 0.8
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "CEG",
@@ -17992,7 +18583,9 @@
             "price": 270.89,
             "dist_pct": -0.7
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "VST",
@@ -18058,7 +18651,9 @@
             "price": 148.91,
             "dist_pct": -1.5
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "AEP",
@@ -18114,7 +18709,9 @@
             "price": 134.8,
             "dist_pct": 1.6
           }
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       },
       {
         "ticker": "SRE",
@@ -18159,7 +18756,9 @@
             }
           ],
           "resistance": []
-        }
+        },
+        "em_pct": null,
+        "em_days": null
       }
     ]
   },
@@ -18700,7 +19299,7 @@
       "5d": 6.32,
       "20d": 6.84,
       "ytd": 58.73,
-      "vol_ratio": 0.82,
+      "vol_ratio": 0.81,
       "atr_pct": 7.4,
       "dist_sma50_atr": 0.44,
       "rs": 6.25,
@@ -18791,121 +19390,7 @@
       "cross_asset": 0.15
     }
   },
-  "macro_fred": {
-    "series": {
-      "DFF": {
-        "label": "Fed Funds",
-        "value": 3.64,
-        "prev": 3.64,
-        "change": 0.0,
-        "unit": "%",
-        "signal": "neutral",
-        "chart": "data/charts/fred_DFF.png"
-      },
-      "CPIAUCSL": {
-        "label": "CPI YoY",
-        "value": 2.66,
-        "prev": 2.83,
-        "change": -0.17,
-        "unit": "%",
-        "signal": "neutral",
-        "chart": "data/charts/fred_CPIAUCSL.png"
-      },
-      "CPILFESL": {
-        "label": "Core CPI YoY",
-        "value": 2.73,
-        "prev": 2.95,
-        "change": -0.22,
-        "unit": "%",
-        "signal": "neutral",
-        "chart": "data/charts/fred_CPILFESL.png"
-      },
-      "PCEPI": {
-        "label": "PCE YoY",
-        "value": 2.83,
-        "prev": 2.91,
-        "change": -0.08,
-        "unit": "%",
-        "signal": "hawkish",
-        "chart": "data/charts/fred_PCEPI.png"
-      },
-      "PCEPILFE": {
-        "label": "Core PCE YoY",
-        "value": 3.06,
-        "prev": 3.01,
-        "change": 0.05,
-        "unit": "%",
-        "signal": "hawkish",
-        "chart": "data/charts/fred_PCEPILFE.png"
-      },
-      "UNRATE": {
-        "label": "Unemployment",
-        "value": 4.4,
-        "prev": 4.3,
-        "change": 0.1,
-        "unit": "%",
-        "signal": "neutral",
-        "chart": "data/charts/fred_UNRATE.png"
-      },
-      "PAYEMS": {
-        "label": "NFP MoM",
-        "value": -0.09,
-        "prev": 0.13,
-        "change": -0.22,
-        "unit": "k",
-        "signal": "dovish",
-        "chart": "data/charts/fred_PAYEMS.png"
-      },
-      "UMCSENT": {
-        "label": "Consumer Sent.",
-        "value": 56.6,
-        "prev": 56.4,
-        "change": 0.2,
-        "unit": "",
-        "signal": "dovish",
-        "chart": "data/charts/fred_UMCSENT.png"
-      },
-      "T10Y2Y": {
-        "label": "Yield Curve",
-        "value": 0.52,
-        "prev": 0.52,
-        "change": 0.0,
-        "unit": "%",
-        "signal": "hawkish",
-        "chart": "data/charts/fred_T10Y2Y.png"
-      },
-      "DCOILBRENTEU": {
-        "label": "Brent Crude",
-        "value": 121.88,
-        "prev": 121.47,
-        "change": 0.41,
-        "unit": "$",
-        "signal": "hawkish",
-        "chart": "data/charts/fred_DCOILBRENTEU.png"
-      }
-    },
-    "signal_counts": {
-      "hawkish": 4,
-      "dovish": 2,
-      "tightening": 0,
-      "neutral": 4,
-      "mixed": 0
-    },
-    "dominant_signal": "hawkish",
-    "narrative": "Leaning Hawkish: CPI at 2.7%, Fed Funds at 3.64%, unemployment at 4.4%.",
-    "series_order": [
-      "DFF",
-      "CPIAUCSL",
-      "CPILFESL",
-      "PCEPI",
-      "PCEPILFE",
-      "UNRATE",
-      "PAYEMS",
-      "UMCSENT",
-      "T10Y2Y",
-      "DCOILBRENTEU"
-    ]
-  },
+  "macro_fred": {},
   "cross_asset": {
     "TLT": {
       "daily": 0.61,
@@ -18975,35 +19460,35 @@
     }
   },
   "industries_sector_charts": {
-    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
-    "Financials": "data/charts/vol_IndSec_Financials.png",
-    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
     "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
-    "Utilities": "data/charts/vol_IndSec_Utilities.png",
-    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
-    "Industrials": "data/charts/vol_IndSec_Industrials.png",
-    "Materials": "data/charts/vol_IndSec_Materials.png",
-    "Energy": "data/charts/vol_IndSec_Energy.png",
-    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
-    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
-    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
     "Commodities": "data/charts/vol_IndSec_Commodities.png",
-    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png"
+    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
+    "Materials": "data/charts/vol_IndSec_Materials.png",
+    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
+    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
+    "Industrials": "data/charts/vol_IndSec_Industrials.png",
+    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
+    "Energy": "data/charts/vol_IndSec_Energy.png",
+    "Financials": "data/charts/vol_IndSec_Financials.png",
+    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
+    "Utilities": "data/charts/vol_IndSec_Utilities.png",
+    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
+    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png"
   },
   "industries_sector_rs_charts": {
-    "Health Care": "data/charts/IndSecRS_Health_Care.png",
-    "Financials": "data/charts/IndSecRS_Financials.png",
-    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
     "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
-    "Utilities": "data/charts/IndSecRS_Utilities.png",
-    "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
-    "Industrials": "data/charts/IndSecRS_Industrials.png",
-    "Materials": "data/charts/IndSecRS_Materials.png",
-    "Energy": "data/charts/IndSecRS_Energy.png",
-    "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
-    "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
-    "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
     "Commodities": "data/charts/IndSecRS_Commodities.png",
-    "Communication Services": "data/charts/IndSecRS_Communication_Services.png"
+    "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
+    "Materials": "data/charts/IndSecRS_Materials.png",
+    "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
+    "Health Care": "data/charts/IndSecRS_Health_Care.png",
+    "Industrials": "data/charts/IndSecRS_Industrials.png",
+    "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
+    "Energy": "data/charts/IndSecRS_Energy.png",
+    "Financials": "data/charts/IndSecRS_Financials.png",
+    "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
+    "Utilities": "data/charts/IndSecRS_Utilities.png",
+    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
+    "Information Technology": "data/charts/IndSecRS_Information_Technology.png"
   }
 }
