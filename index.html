@@ -321,6 +321,19 @@
                 <div id="geo-content"></div>
             </div>
         </div>
+        <div style="margin-bottom:0">
+            <button class="events-button fg-toggle-btn" id="rot-toggle-btn" type="button" onclick="toggleRotationSection()">🔄 ROTATION DELTA</button>
+        </div>
+        <div id="rot-inline-panel" class="fg-inline-panel" style="flex-direction:column">
+            <div style="display:flex;gap:0;border-bottom:1px solid #0a1e35;padding:0 4px;background:#060d1c;position:sticky;top:0;z-index:2">
+                <button type="button" class="events-tab active" id="rot-tab-industries" onclick="switchRotTab('industries')">📊 Industries</button>
+                <button type="button" class="events-tab" id="rot-tab-sectors" onclick="switchRotTab('sectors')">🏢 S&amp;P Sectors</button>
+                <button type="button" class="events-tab" id="rot-tab-countries" onclick="switchRotTab('countries')">🌏 Countries</button>
+            </div>
+            <div id="rot-content-industries" style="overflow-y:auto;max-height:560px"></div>
+            <div id="rot-content-sectors" style="display:none;overflow-y:auto;max-height:560px"></div>
+            <div id="rot-content-countries" style="display:none;overflow-y:auto;max-height:560px"></div>
+        </div>
         <div class="market-breadth" style="position:relative;margin-bottom:10px">
             <button class="events-button" type="button" onclick="openMarketBreadth()">📊 MARKET BREADTH</button>
         </div>
@@ -1422,6 +1435,151 @@
     }
 
     var polyData = null;
+    var rotationData = null;
+
+    // ── Rotation Delta ─────────────────────────────────────────────────────────
+    window.toggleRotationSection = function() {
+        var panel = document.getElementById('rot-inline-panel');
+        var btn   = document.getElementById('rot-toggle-btn');
+        var isOpen = panel.classList.contains('open');
+        if (isOpen) {
+            panel.classList.remove('open');
+            btn.classList.remove('active');
+        } else {
+            panel.classList.add('open');
+            btn.classList.add('active');
+            switchRotTab('industries');
+        }
+    };
+    window.switchRotTab = function(tab) {
+        ['industries','sectors','countries'].forEach(function(t) {
+            document.getElementById('rot-content-' + t).style.display = t === tab ? '' : 'none';
+            document.getElementById('rot-tab-' + t).classList.toggle('active', t === tab);
+        });
+        renderRotation(tab);
+    };
+
+    function renderRotation(tab) {
+        var GROUP_MAP = { industries: 'Industries', sectors: 'Sel Sectors', countries: 'Countries' };
+        var gname = GROUP_MAP[tab];
+        var el = document.getElementById('rot-content-' + tab);
+        if (!el || !snapshot || !snapshot.groups || !snapshot.groups[gname]) {
+            if (el) el.innerHTML = '<div style="padding:20px;color:#2d6080">No data — run build_data.py first.</div>';
+            return;
+        }
+        var currentRows = snapshot.groups[gname].filter(function(r) { return r.ticker && r['20d'] != null; });
+        var sorted = currentRows.slice().sort(function(a,b) { return (b['20d']||0) - (a['20d']||0); });
+        var currentRankMap = {};
+        sorted.forEach(function(r,i) { currentRankMap[r.ticker] = i + 1; });
+
+        // Find snapshot ~7 days ago from rotation history
+        var prevSnap = null;
+        var prevDate = null;
+        if (rotationData && rotationData.snapshots && rotationData.snapshots.length >= 2) {
+            var snaps = rotationData.snapshots;
+            var target = Date.now() - 7 * 86400000;
+            var bestDiff = Infinity;
+            for (var i = 0; i < snaps.length - 1; i++) {
+                var d = new Date(snaps[i].date).getTime();
+                var diff = Math.abs(d - target);
+                if (diff < bestDiff) { bestDiff = diff; prevSnap = snaps[i]; }
+            }
+            if (prevSnap) prevDate = prevSnap.date;
+        }
+
+        var prevData = prevSnap && prevSnap.groups && prevSnap.groups[gname] ? prevSnap.groups[gname] : null;
+        var prevRankMap = null;
+        if (prevData) {
+            var prevTickers = Object.keys(prevData).filter(function(t) { return prevData[t]['20d'] != null; });
+            var prevSorted = prevTickers.slice().sort(function(a,b) { return (prevData[b]['20d']||0) - (prevData[a]['20d']||0); });
+            prevRankMap = {};
+            prevSorted.forEach(function(t,i) { prevRankMap[t] = i + 1; });
+        }
+
+        // Detect zero-crossover signals
+        var crossPos = [], crossNeg = [];
+        if (prevData) {
+            sorted.forEach(function(r) {
+                var prev20 = prevData[r.ticker] ? prevData[r.ticker]['20d'] : null;
+                if (prev20 == null) return;
+                if (r['20d'] > 0 && prev20 <= 0) crossPos.push(r.ticker);
+                if (r['20d'] <= 0 && prev20 > 0) crossNeg.push(r.ticker);
+            });
+        }
+
+        // Top movers (biggest rank jumps)
+        var movers = sorted.map(function(r) {
+            var pr = prevRankMap ? (prevRankMap[r.ticker] || null) : null;
+            return { ticker: r.ticker, delta: pr ? (pr - currentRankMap[r.ticker]) : null };
+        }).filter(function(m) { return m.delta != null; });
+        var topUp   = movers.slice().sort(function(a,b){return b.delta-a.delta;}).slice(0,3).filter(function(m){return m.delta>0;});
+        var topDown = movers.slice().sort(function(a,b){return a.delta-b.delta;}).slice(0,3).filter(function(m){return m.delta<0;});
+
+        var html = '';
+
+        // Signals bar
+        var hasSignals = crossPos.length || crossNeg.length || topUp.length || topDown.length;
+        if (hasSignals) {
+            html += '<div style="padding:6px 10px;border-bottom:1px solid #0a1e35;display:flex;gap:5px;flex-wrap:wrap;align-items:center">';
+            crossPos.forEach(function(t) {
+                html += '<span style="font-size:0.63rem;font-weight:700;padding:2px 7px;border-radius:3px;background:rgba(16,185,129,.12);color:#10b981;border:1px solid rgba(16,185,129,.25)">↑ '+t+' 20D crossed +0</span>';
+            });
+            crossNeg.forEach(function(t) {
+                html += '<span style="font-size:0.63rem;font-weight:700;padding:2px 7px;border-radius:3px;background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.25)">↓ '+t+' 20D crossed -0</span>';
+            });
+            topUp.forEach(function(m) {
+                html += '<span style="font-size:0.63rem;font-weight:700;padding:2px 7px;border-radius:3px;background:rgba(16,185,129,.08);color:#10b981;border:1px solid rgba(16,185,129,.15)">▲'+m.delta+' '+m.ticker+'</span>';
+            });
+            topDown.forEach(function(m) {
+                html += '<span style="font-size:0.63rem;font-weight:700;padding:2px 7px;border-radius:3px;background:rgba(239,68,68,.08);color:#ef4444;border:1px solid rgba(239,68,68,.15)">▼'+Math.abs(m.delta)+' '+m.ticker+'</span>';
+            });
+            html += '</div>';
+        }
+
+        // Meta line
+        var vsStr = prevDate ? 'vs ' + prevDate : 'no history yet — check back after next build';
+        html += '<div style="padding:4px 10px 3px;font-size:0.62rem;color:#1a3550;border-bottom:1px solid #070f1c">'+sorted.length+' tickers · ranked by 20D return · '+vsStr+'</div>';
+
+        // Table
+        html += '<table style="width:100%;border-collapse:collapse;font-size:0.72rem">';
+        html += '<thead><tr style="background:#071628">'
+            + '<th style="padding:4px 8px;text-align:left;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35;white-space:nowrap">Rank</th>'
+            + '<th style="padding:4px 8px;text-align:left;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35">Ticker</th>'
+            + '<th style="padding:4px 8px;text-align:right;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35">20D%</th>'
+            + '<th style="padding:4px 8px;text-align:right;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35">5D%</th>'
+            + '<th style="padding:4px 8px;text-align:right;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35">Daily%</th>'
+            + '<th style="padding:4px 8px;text-align:right;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35">Δ Rank</th>'
+            + '<th style="padding:4px 8px;text-align:right;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35">RS</th>'
+            + '</tr></thead><tbody>';
+
+        sorted.forEach(function(r, idx) {
+            var rank = idx + 1;
+            var n = sorted.length;
+            var prevRank = prevRankMap ? (prevRankMap[r.ticker] || null) : null;
+            var delta = prevRank ? (prevRank - rank) : null;
+            var r20 = r['20d'], r5 = r['5d'], rd = r['daily'];
+            var c = function(v) { return v > 0 ? '#10b981' : v < 0 ? '#ef4444' : '#3d7090'; };
+            var fmt = function(v) { return v != null ? (v > 0 ? '+' : '') + v.toFixed(1) + '%' : '—'; };
+            var deltaHtml = delta == null ? '<span style="color:#1a3550">new</span>'
+                : delta > 0 ? '<span style="color:#10b981">▲'+delta+'</span>'
+                : delta < 0 ? '<span style="color:#ef4444">▼'+Math.abs(delta)+'</span>'
+                : '<span style="color:#1a3550">—</span>';
+            // Subtle bg for top 5 and bottom 5
+            var bg = rank <= 5 ? '#07182a' : rank > n - 5 ? '#130a0a' : '';
+            var borderTop = rank === n - 4 ? 'border-top:1px solid #1a3550;' : '';
+            html += '<tr style="border-bottom:1px solid #070f1c;' + (bg ? 'background:'+bg+';' : '') + borderTop + '">'
+                + '<td style="padding:3px 8px;color:#2d6080">'+rank+'</td>'
+                + '<td style="padding:3px 8px;font-weight:600;color:#d4e4f4">'+r.ticker+'</td>'
+                + '<td style="padding:3px 8px;text-align:right;color:'+c(r20)+'">'+fmt(r20)+'</td>'
+                + '<td style="padding:3px 8px;text-align:right;color:'+c(r5)+'">'+fmt(r5)+'</td>'
+                + '<td style="padding:3px 8px;text-align:right;color:'+c(rd)+'">'+fmt(rd)+'</td>'
+                + '<td style="padding:3px 8px;text-align:right">'+deltaHtml+'</td>'
+                + '<td style="padding:3px 8px;text-align:right;color:#3d7090">'+(r.rs != null ? Math.round(r.rs) : '—')+'</td>'
+                + '</tr>';
+        });
+        html += '</tbody></table>';
+        el.innerHTML = html;
+    }
 
     function renderPolymarket() {
         var el = document.getElementById('polymarket-content');
@@ -1739,10 +1897,12 @@
             fetch('data/snapshot.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; }),
             fetch('data/events.json').then(function(res) { return res.ok ? res.json() : []; }).catch(function() { return []; }),
             fetch('data/meta.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; }),
-            fetch('data/polymarket.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; })
+            fetch('data/polymarket.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; }),
+            fetch('data/rotation_history.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; })
         ]).then(function(results) {
             snapshot = results[0];
             polyData = results[3];
+            rotationData = results[4];
             var events = results[1];
             meta = results[2];
             renderEvents(events);

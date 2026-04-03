@@ -1401,6 +1401,33 @@ def main():
         "default_symbol": STOCK_GROUPS["Indices"][0] if STOCK_GROUPS["Indices"] else "SPY",
     }
 
+    # ── Rotation history snapshot ────────────────────────────────────────────────
+    ROTATION_GROUPS = ["Industries", "Sel Sectors", "Countries"]
+    rot_path = os.path.join(out_dir, "rotation_history.json")
+    rot_history = []
+    if os.path.exists(rot_path):
+        try:
+            with open(rot_path) as f:
+                rot_history = json.load(f).get("snapshots", [])
+        except Exception:
+            pass
+    today_str = datetime.utcnow().date().isoformat()
+    rot_entry = {"date": today_str, "groups": {}}
+    for gname in ROTATION_GROUPS:
+        rows = groups_data.get(gname, [])
+        if not rows:
+            continue
+        rot_entry["groups"][gname] = {
+            r["ticker"]: {"20d": r.get("20d"), "5d": r.get("5d"), "daily": r.get("daily"), "rs": r.get("rs")}
+            for r in rows if r.get("ticker")
+        }
+    rot_history = [h for h in rot_history if h.get("date") != today_str]
+    rot_history.append(rot_entry)
+    rot_history = rot_history[-60:]
+    with open(rot_path, "w") as f:
+        json.dump({"snapshots": rot_history}, f, separators=(",", ":"))
+    print(f"Rotation snapshot saved ({today_str}, {len(rot_history)} entries total)")
+
     snapshot_path = os.path.join(out_dir, "snapshot.json")
     events_path = os.path.join(out_dir, "events.json")
     meta_path = os.path.join(out_dir, "meta.json")
