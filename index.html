@@ -326,11 +326,15 @@
         </div>
         <div id="rot-inline-panel" class="fg-inline-panel" style="flex-direction:column">
             <div style="display:flex;gap:0;border-bottom:1px solid #0a1e35;padding:0 4px;background:#060d1c;position:sticky;top:0;z-index:2">
-                <button type="button" class="events-tab active" id="rot-tab-industries" onclick="switchRotTab('industries')">📊 Industries</button>
+                <button type="button" class="events-tab active" id="rot-tab-indices" onclick="switchRotTab('indices')">📈 Indices</button>
+                <button type="button" class="events-tab" id="rot-tab-sevens" onclick="switchRotTab('sevens')">💼 The 7s</button>
+                <button type="button" class="events-tab" id="rot-tab-industries" onclick="switchRotTab('industries')">📊 Industries</button>
                 <button type="button" class="events-tab" id="rot-tab-sectors" onclick="switchRotTab('sectors')">🏢 S&amp;P Sectors</button>
                 <button type="button" class="events-tab" id="rot-tab-countries" onclick="switchRotTab('countries')">🌏 Countries</button>
             </div>
-            <div id="rot-content-industries" style="overflow-y:auto;max-height:560px"></div>
+            <div id="rot-content-indices" style="overflow-y:auto;max-height:560px"></div>
+            <div id="rot-content-sevens" style="display:none;overflow-y:auto;max-height:560px"></div>
+            <div id="rot-content-industries" style="display:none;overflow-y:auto;max-height:560px"></div>
             <div id="rot-content-sectors" style="display:none;overflow-y:auto;max-height:560px"></div>
             <div id="rot-content-countries" style="display:none;overflow-y:auto;max-height:560px"></div>
         </div>
@@ -1448,11 +1452,11 @@
         } else {
             panel.classList.add('open');
             btn.classList.add('active');
-            switchRotTab('industries');
+            switchRotTab('indices');
         }
     };
     window.switchRotTab = function(tab) {
-        ['industries','sectors','countries'].forEach(function(t) {
+        ['indices','sevens','industries','sectors','countries'].forEach(function(t) {
             document.getElementById('rot-content-' + t).style.display = t === tab ? '' : 'none';
             document.getElementById('rot-tab-' + t).classList.toggle('active', t === tab);
         });
@@ -1460,14 +1464,14 @@
     };
 
     function renderRotation(tab) {
-        var GROUP_MAP = { industries: 'Industries', sectors: 'Sel Sectors', countries: 'Countries' };
+        var GROUP_MAP = { indices: 'Indices', sevens: 'The 7s at a Glance', industries: 'Industries', sectors: 'Sel Sectors', countries: 'Countries' };
         var gname = GROUP_MAP[tab];
         var el = document.getElementById('rot-content-' + tab);
         if (!el || !snapshot || !snapshot.groups || !snapshot.groups[gname]) {
             if (el) el.innerHTML = '<div style="padding:20px;color:#2d6080">No data — run build_data.py first.</div>';
             return;
         }
-        var currentRows = snapshot.groups[gname].filter(function(r) { return r.ticker && r['20d'] != null; });
+        var currentRows = snapshot.groups[gname].filter(function(r) { return r.ticker && r['20d'] != null && !r.is_rrg_row; });
         var sorted = currentRows.slice().sort(function(a,b) { return (b['20d']||0) - (a['20d']||0); });
         var currentRankMap = {};
         sorted.forEach(function(r,i) { currentRankMap[r.ticker] = i + 1; });
