@@ -1546,14 +1546,19 @@
 
         // Table
         html += '<table style="width:100%;border-collapse:collapse;font-size:0.72rem">';
+        var rth = function(label, tip, align) {
+            var a = align || 'right';
+            return '<th style="padding:4px 8px;text-align:'+a+';color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35;white-space:nowrap;cursor:default" title="'+tip+'">'
+                + label + ' <span style="font-size:0.6rem;color:#1a3550;vertical-align:middle">ⓘ</span></th>';
+        };
         html += '<thead><tr style="background:#071628">'
-            + '<th style="padding:4px 8px;text-align:left;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35;white-space:nowrap" title="Position in this group ranked by 20-day return.\n#1 = strongest 20D performer, last = weakest.\nUpdated daily.">Rank</th>'
+            + rth('Rank', 'Position in this group ranked by 20-day return.\n#1 = strongest 20D performer, last = weakest.\nUpdated daily.', 'left')
             + '<th style="padding:4px 8px;text-align:left;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35">Ticker</th>'
-            + '<th style="padding:4px 8px;text-align:right;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35" title="Total % return over the past 20 trading days (~1 calendar month).\nThis is the primary sort key — the ranking is based on this number.">20D%</th>'
-            + '<th style="padding:4px 8px;text-align:right;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35" title="Total % return over the past 5 trading days (~1 week).\nUseful for spotting recent acceleration or fading momentum.">5D%</th>'
-            + '<th style="padding:4px 8px;text-align:right;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35" title="Yesterday\'s single-day % return.\nHelps identify intraday momentum or sudden reversals.">Daily%</th>'
-            + '<th style="padding:4px 8px;text-align:right;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35" title="Change in rank vs ~7 days ago.\n+3 means this ticker moved UP 3 spots (improving).\n-3 means it dropped 3 spots (deteriorating).\nBlank = no historical snapshot available yet.">Δ Rank</th>'
-            + '<th style="padding:4px 8px;text-align:right;color:#2d6080;font-weight:600;border-bottom:1px solid #0a1e35" title="Volatility-Adjusted Relative Strength vs SPY over the last 21 days.\nFormula: (ticker 21D return − SPY 21D return) ÷ ticker volatility, scaled 0–100%.\n>50 = outperforming SPY on a risk-adjusted basis.\n<50 = underperforming.\n100 = strongest possible relative momentum.">RS</th>'
+            + rth('20D%', 'Total % return over the past 20 trading days (~1 calendar month).\nThis is the primary sort key — the ranking is based on this number.')
+            + rth('5D%', 'Total % return over the past 5 trading days (~1 week).\nUseful for spotting recent acceleration or fading momentum.')
+            + rth('Daily%', "Yesterday's single-day % return.\nHelps identify intraday momentum or sudden reversals.")
+            + rth('Δ Rank', 'Change in rank vs ~7 days ago.\n▲3 means this ticker moved UP 3 spots (improving momentum).\n▼3 means it dropped 3 spots (deteriorating).\n— = no historical snapshot available yet.')
+            + rth('RS', 'Volatility-Adjusted Relative Strength vs SPY over the last 21 days.\nFormula: (ticker 21D return − SPY 21D return) ÷ ticker volatility, scaled 0–100%.\n>50 = outperforming SPY on a risk-adjusted basis.\n<50 = underperforming SPY.\n100 = strongest possible relative momentum.')
             + '</tr></thead><tbody>';
 
         sorted.forEach(function(r, idx) {
