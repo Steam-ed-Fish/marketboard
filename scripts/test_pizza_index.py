@@ -91,26 +91,31 @@ def ensure_deps():
 
 def extract_busyness(content: str) -> int | None:
     """
-    Parse Google Maps page HTML/text for current live busyness percentage.
-    Returns 0–100 or None if unavailable.
-    """
-    # Google encodes live busyness in several ways depending on page state:
-    # "72% busy"  /  "Usually 55% busy"  /  "Live: 80% busy"
-    # "Busier than usual"  /  aria-label="Currently 60% busy"
+    Parse Google Maps page HTML/text for LIVE current busyness percentage.
+    Only returns a value when Google is showing real-time data (place is open).
+    Returns 1–100 or None if no live reading available.
 
-    patterns = [
+    Google shows live data as:
+      - aria-label="Currently 72% busy"
+      - JS data: current_popularity:72
+      - Text: "72% busy right now" / "Live: 72%"
+    Historical histogram bars also contain "X% busy" but we must NOT match those —
+    they cause false 0% readings when the place is closed.
+    """
+    # Most specific first — these only appear with live data
+    live_patterns = [
         r'aria-label="Currently (\d+)% busy"',
+        r'Currently\s+(\d+)%\s+busy',
         r'(\d+)%\s+busy\s+right\s+now',
         r'Live[:\s]+(\d+)%',
-        r'(\d+)%\s+busy',
-        r'Usually\s+(\d+)%\s+busy',
-        r'"current_popularity":(\d+)',
+        r'"current_popularity"\s*:\s*(\d+)',
         r'currentPopularity["\s:]+(\d+)',
     ]
-    for pat in patterns:
+    for pat in live_patterns:
         m = re.search(pat, content, re.IGNORECASE)
         if m:
-            return int(m.group(1))
+            val = int(m.group(1))
+            return val if val > 0 else None  # 0 means closed / no live data
     return None
 
 
@@ -173,7 +178,7 @@ def scrape_venue(page, venue: dict) -> dict:
     return result
 
 
-def run(json_only=False):
+def run(json_only=False, debug=False):
     from playwright.sync_api import sync_playwright
 
     results = []
@@ -196,6 +201,20 @@ def run(json_only=False):
             if not json_only:
                 print(f"  Checking {venue['name']}...", end="", flush=True)
             r = scrape_venue(page, venue)
+            if debug:
+                # Save raw HTML for inspection
+                fname = f"/tmp/debug_{venue['name'].replace(' ','_')}.html"
+                try:
+                    page.goto(
+                        f"https://www.google.com/maps/search/{venue['maps_query'].replace(' ','+')}/?hl=en",
+                        wait_until="domcontentloaded", timeout=20_000
+                    )
+                    page.wait_for_timeout(3000)
+                    with open(fname, "w") as fh:
+                        fh.write(page.content())
+                    print(f"\n    [debug] saved {fname}")
+                except Exception as e:
+                    print(f"\n    [debug] failed to save: {e}")
             results.append(r)
             if not json_only:
                 if r["busyness"] is not None:
@@ -246,6 +265,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--json",    action="store_true", help="JSON output only")
     parser.add_argument("--install", action="store_true", help="Install deps before running")
+    parser.add_argument("--debug",   action="store_true", help="Save raw HTML to /tmp for inspection")
     args = parser.parse_args()
 
     if args.install:
@@ -263,7 +283,7 @@ def main():
         print(f"\nPentagon Pizza + Gay Bar Index  [{datetime.now().strftime('%Y-%m-%d %H:%M ET')}]")
         print("Note: live data only appears when places are currently open & busy.\n")
 
-    results = run(json_only=args.json)
+    results = run(json_only=args.json, debug=args.debug)
 
     if args.json:
         print(json.dumps(results, indent=2))
