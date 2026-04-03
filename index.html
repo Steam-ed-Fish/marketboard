@@ -1279,7 +1279,15 @@
             '<line x1="'+cx+'" y1="'+cy+'" x2="'+nlx+'" y2="'+nly+'" stroke="#e0e0e0" stroke-width="2.5" stroke-linecap="round"/>'+
             '<circle cx="'+cx+'" cy="'+cy+'" r="5" fill="#e0e0e0"/>'+
             '</svg>';
-        // Component cards
+        // Component cards with "why" explanations
+        var COMP_WHY = {
+            volatility:  'VIX vs 50D avg — elevated VIX = fear, suppressed = complacency/greed',
+            trend:       'SPY vs 125D MA — above = bullish trend, below = downtrend pressure',
+            momentum:    'SPY RSI — >70 overbought (greed), <30 oversold (fear/capitulation)',
+            credit:      'HYG/TLT spread — tight spread = risk appetite on; wide = credit stress',
+            breadth:     'RSP vs SPY — broad participation = healthy greed; narrow mega-cap = fragile',
+            cross_asset: 'GLD/SPY ratio — gold outperforming = risk-off fear; stocks leading = greed',
+        };
         var order=['volatility','trend','momentum','credit','breadth','cross_asset'];
         var cards=order.map(function(k){
             var c=fg.components[k]; if(!c) return '';
@@ -1291,6 +1299,7 @@
                 '<div class="fg-card-score" style="color:'+cc+'">'+s.toFixed(0)+'<span style="font-size:0.68rem;font-weight:400;color:#6b7280">/100</span></div>'+
                 '<div class="fg-card-det">'+c.detail+'</div>'+
                 '<div class="fg-bar-bg"><div class="fg-bar-fill" style="width:'+s+'%;background:'+cc+'"></div></div>'+
+                (COMP_WHY[k]?'<div style="font-size:0.6rem;color:#1a3550;margin-top:4px;line-height:1.35;font-style:italic">'+COMP_WHY[k]+'</div>':'')+
                 '</div>';
         }).join('');
         el.innerHTML='<div class="fg-gauge-wrap">'+svg+
@@ -1411,43 +1420,43 @@
             el.innerHTML = '<div style="padding:20px;color:#2d6080;text-align:center;font-size:0.82rem">No Polymarket data available.</div>';
             return;
         }
-        var CAT_COLORS = {'Fed / Rates':'#38bdf8','Macro':'#10b981','Markets':'#f59e0b','Geopolitical':'#f87171'};
+        var CAT_COLORS = {'Fed / Rates':'#38bdf8','Macro':'#10b981','Markets':'#f59e0b'};
         var html = '';
         var cats = ['Fed / Rates','Macro','Markets'];
         cats.forEach(function(cat) {
             var items = polyData.categories[cat];
             if (!items || items.length === 0) return;
             var col = CAT_COLORS[cat] || '#38bdf8';
-            html += '<div style="padding:8px 12px 4px;font-size:0.7rem;font-weight:700;color:' + col + ';letter-spacing:0.08em;border-bottom:1px solid #0a1e35">' + cat.toUpperCase() + '</div>';
-            items.slice(0, 8).forEach(function(m) {
+            // Sort by 24h volume desc, take top 4
+            var top = items.slice().sort(function(a,b){ return (b.volume24hr||0)-(a.volume24hr||0); }).slice(0,4);
+            html += '<div style="padding:6px 10px 3px;font-size:0.68rem;font-weight:700;color:' + col + ';letter-spacing:0.08em;border-bottom:1px solid #0a1e35">' + cat.toUpperCase() + '</div>';
+            top.forEach(function(m) {
                 var prob = m.yes_prob;
-                var probStr = prob != null ? prob.toFixed(1) + '%' : '—';
+                var probStr = prob != null ? prob.toFixed(0) + '%' : '—';
                 var probCol = prob == null ? '#3d7090' : prob >= 60 ? '#10b981' : prob <= 40 ? '#ef4444' : '#f59e0b';
-                var bar = prob != null ? '<div style="height:3px;background:#0a1e35;border-radius:2px;margin:4px 0 2px"><div style="height:3px;width:' + Math.round(prob) + '%;background:' + probCol + ';border-radius:2px"></div></div>' : '';
-                var vol = m.volume24hr >= 1000000 ? '$' + (m.volume24hr/1000000).toFixed(1) + 'M' : m.volume24hr >= 1000 ? '$' + (m.volume24hr/1000).toFixed(0) + 'K' : '$' + m.volume24hr;
-                var end = m.end_date ? ' · ' + m.end_date : '';
+                var bar = prob != null ? '<div style="height:2px;background:#0a1e35;border-radius:2px;margin:3px 0 2px"><div style="height:2px;width:' + Math.round(prob) + '%;background:' + probCol + ';border-radius:2px"></div></div>' : '';
+                var vol = m.volume24hr >= 1000000 ? '$' + (m.volume24hr/1000000).toFixed(1) + 'M' : m.volume24hr >= 1000 ? '$' + (m.volume24hr/1000).toFixed(0) + 'K' : '';
                 var deltaStr = '';
-                if (m.delta_5d != null) {
+                if (m.delta_5d != null && Math.abs(m.delta_5d) >= 1) {
                     var d = m.delta_5d;
-                    var dCol = d > 0 ? '#10b981' : d < 0 ? '#ef4444' : '#3d7090';
-                    var dArrow = d > 0 ? '▲' : d < 0 ? '▼' : '—';
-                    deltaStr = '<span style="font-size:0.65rem;font-weight:600;color:' + dCol + ';margin-left:5px">' + dArrow + (d > 0 ? '+' : '') + d.toFixed(1) + ' 5d</span>';
+                    var dCol = d > 0 ? '#10b981' : '#ef4444';
+                    deltaStr = '<span style="font-size:0.6rem;font-weight:600;color:' + dCol + ';margin-left:4px">' + (d > 0 ? '▲+' : '▼') + d.toFixed(0) + '</span>';
                 }
-                html += '<div style="padding:7px 12px;border-bottom:1px solid #070f1c">' +
-                    '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">' +
-                    '<div style="font-size:0.75rem;color:#c8dce8;line-height:1.35;flex:1">' + m.question + '</div>' +
-                    '<div style="white-space:nowrap;text-align:right">' +
-                    '<span style="font-size:0.85rem;font-weight:700;color:' + probCol + '">' + probStr + '</span>' +
+                html += '<div style="padding:5px 10px;border-bottom:1px solid #070f1c">' +
+                    '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:6px">' +
+                    '<div style="font-size:0.72rem;color:#c8dce8;line-height:1.3;flex:1">' + m.question + '</div>' +
+                    '<div style="white-space:nowrap">' +
+                    '<span style="font-size:0.82rem;font-weight:700;color:' + probCol + '">' + probStr + '</span>' +
                     deltaStr +
                     '</div>' +
                     '</div>' +
                     bar +
-                    '<div style="font-size:0.62rem;color:#2d6080">' + vol + ' 24h vol' + end + '</div>' +
+                    (vol ? '<div style="font-size:0.6rem;color:#1a3550">' + vol + ' 24h vol</div>' : '') +
                     '</div>';
             });
         });
         var built = polyData.built_at ? polyData.built_at.replace('T',' ').slice(0,16) + ' UTC' : '';
-        html += '<div style="text-align:center;padding:6px 0 2px;font-size:0.6rem;color:#1a3550">Source: Polymarket · ' + built + '</div>';
+        html += '<div style="text-align:center;padding:4px 0 2px;font-size:0.6rem;color:#1a3550">Polymarket · ' + built + '</div>';
         el.innerHTML = html;
     }
 
