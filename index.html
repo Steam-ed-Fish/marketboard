@@ -288,7 +288,6 @@
                     <button type="button" class="events-tab active" id="tab-macro" onclick="switchEventsTab('macro')">Macro Events</button>
                     <button type="button" class="events-tab" id="tab-cal" onclick="switchEventsTab('cal')">Econ Calendar</button>
                     <button type="button" class="events-tab" id="tab-fred" onclick="switchEventsTab('fred')">📊 FRED Macro</button>
-                    <button type="button" class="events-tab" id="tab-poly" onclick="switchEventsTab('poly')">🎲 Polymarket</button>
                 </div>
                 <button type="button" class="econ-modal-close" onclick="closeEventsModal(event)">&times;</button>
             </div>
@@ -306,9 +305,6 @@
             <div id="events-tab-fred" style="display:none;max-height:580px;overflow-y:auto">
                 <div id="fred-macro-content"></div>
             </div>
-            <div id="events-tab-poly" style="display:none;max-height:580px;overflow-y:auto">
-                <div id="polymarket-content"></div>
-            </div>
         </div>
     </div>
     <div id="market-breadth-modal-overlay" class="econ-modal-overlay" onclick="closeMarketBreadth(event)">
@@ -323,12 +319,24 @@
         </div>
     </div>
     <div id="fear-greed-modal-overlay" class="econ-modal-overlay" onclick="closeFearGreed(event)">
-        <div class="econ-modal" onclick="event.stopPropagation()" style="max-width:480px;width:480px">
+        <div class="econ-modal" onclick="event.stopPropagation()" style="max-width:540px;width:540px">
             <div class="econ-modal-header">
-                <span>Fear &amp; Greed Index</span>
+                <div style="display:flex;gap:0;border-bottom:1px solid #0a1e35;margin-bottom:-8px">
+                    <button type="button" class="events-tab active" id="fg-tab-fg" onclick="switchFGTab('fg')">🌡️ Fear &amp; Greed</button>
+                    <button type="button" class="events-tab" id="fg-tab-poly" onclick="switchFGTab('poly')">🎲 Polymarket</button>
+                    <button type="button" class="events-tab" id="fg-tab-geo" onclick="switchFGTab('geo')">🌍 Geopolitical</button>
+                </div>
                 <button type="button" class="econ-modal-close" onclick="closeFearGreed(event)">&times;</button>
             </div>
-            <div id="fear-greed-content"></div>
+            <div id="fg-content-fg" style="max-height:580px;overflow-y:auto">
+                <div id="fear-greed-content"></div>
+            </div>
+            <div id="fg-content-poly" style="display:none;max-height:580px;overflow-y:auto">
+                <div id="polymarket-content"></div>
+            </div>
+            <div id="fg-content-geo" style="display:none;max-height:580px;overflow-y:auto">
+                <div id="geo-content"></div>
+            </div>
         </div>
     </div>
     <div id="theme-constituent-tooltip" style="display:none;position:fixed;z-index:9999;background:#1f2937;border:1px solid #374151;border-radius:6px;padding:10px 14px;font-size:0.82em;min-width:150px;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,0.5);color:#e0e0e0"></div>
@@ -446,13 +454,22 @@
         document.getElementById('events-tab-macro').style.display = tab === 'macro' ? '' : 'none';
         document.getElementById('events-tab-cal').style.display  = tab === 'cal'   ? '' : 'none';
         document.getElementById('events-tab-fred').style.display = tab === 'fred'  ? '' : 'none';
-        document.getElementById('events-tab-poly').style.display = tab === 'poly'  ? '' : 'none';
         document.getElementById('tab-macro').classList.toggle('active', tab === 'macro');
         document.getElementById('tab-cal').classList.toggle('active',   tab === 'cal');
         document.getElementById('tab-fred').classList.toggle('active',  tab === 'fred');
-        document.getElementById('tab-poly').classList.toggle('active',  tab === 'poly');
         if (tab === 'fred') renderMacroFred();
+    };
+
+    window.switchFGTab = function(tab) {
+        document.getElementById('fg-content-fg').style.display   = tab === 'fg'   ? '' : 'none';
+        document.getElementById('fg-content-poly').style.display = tab === 'poly' ? '' : 'none';
+        document.getElementById('fg-content-geo').style.display  = tab === 'geo'  ? '' : 'none';
+        document.getElementById('fg-tab-fg').classList.toggle('active',   tab === 'fg');
+        document.getElementById('fg-tab-poly').classList.toggle('active', tab === 'poly');
+        document.getElementById('fg-tab-geo').classList.toggle('active',  tab === 'geo');
+        if (tab === 'fg')   renderFearGreed();
         if (tab === 'poly') renderPolymarket();
+        if (tab === 'geo')  renderGeoTab();
     };
 
     function getGroupLabelClass(groupName, ticker) {
@@ -1038,9 +1055,9 @@
         if (ov) ov.style.display = 'none';
     };
     window.openFearGreed = function() {
-        renderFearGreed();
         var ov = document.getElementById('fear-greed-modal-overlay');
         if (ov) ov.style.display = 'flex';
+        switchFGTab('fg');
     };
     window.closeFearGreed = function(ev) {
         if (ev) ev.preventDefault();
@@ -1122,6 +1139,128 @@
         detailTr.appendChild(td);
         dividerEl.insertAdjacentElement('afterend', detailTr);
     };
+    var pizzaData = null;
+
+    function renderGeoTab() {
+        var el = document.getElementById('geo-content');
+        if (!el) return;
+        if (!pizzaData) {
+            fetch('data/pizza_index.json')
+                .then(function(r) { return r.ok ? r.json() : null; })
+                .then(function(d) { pizzaData = d; buildGeoTab(el); })
+                .catch(function() { buildGeoTab(el); });
+        } else {
+            buildGeoTab(el);
+        }
+    }
+
+    function buildGeoTab(el) {
+        var html = '';
+
+        // ── Pentagon Pizza + Bar Index ────────────────────────────────────────
+        html += '<div style="padding:10px 14px 10px;border-bottom:1px solid #0a1e35">';
+        html += '<div style="font-size:0.68rem;font-weight:700;color:#f87171;letter-spacing:0.08em;margin-bottom:8px">PENTAGON PIZZA + BAR INDEX</div>';
+
+        if (pizzaData && pizzaData.latest) {
+            var L = pizzaData.latest;
+            var history = pizzaData.history || [];
+            var alertColors = { DUAL_SIGNAL:'#ef4444', PIZZA_ALERT:'#f59e0b', BAR_ALERT:'#f59e0b', NORMAL:'#10b981', INSUFFICIENT:'#3d7090' };
+            var alertLabels = { DUAL_SIGNAL:'🚨 DUAL SIGNAL', PIZZA_ALERT:'⚡ PIZZA ELEVATED', BAR_ALERT:'⚡ BAR EMPTY', NORMAL:'✅ NORMAL', INSUFFICIENT:'⚠ BUILDING BASELINE' };
+            var aCol = alertColors[L.alert] || '#3d7090';
+            var aLbl = alertLabels[L.alert] || L.alert;
+
+            // Alert badge + timestamp
+            html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">';
+            html += '<span style="font-size:0.7rem;font-weight:700;padding:2px 8px;border-radius:3px;background:' + aCol + '22;border:1px solid ' + aCol + '55;color:' + aCol + '">' + aLbl + '</span>';
+            html += '<span style="font-size:0.6rem;color:#2d6080">as of ' + (L.date||'') + ' ' + (L.time||'') + ' ET</span>';
+            html += '</div>';
+
+            function scoreRow(icon, label, score, ma, vsma, inverted) {
+                if (score == null) return '<div style="font-size:0.7rem;color:#2d6080;margin-bottom:6px">' + icon + ' ' + label + ' — no live data tonight</div>';
+                var bCol = inverted
+                    ? (score < 25 ? '#ef4444' : score < 50 ? '#f59e0b' : '#10b981')
+                    : (score > 75 ? '#ef4444' : score > 55 ? '#f59e0b' : '#38bdf8');
+                var maStr = ma != null
+                    ? '<span style="color:#2d6080;font-size:0.6rem">&nbsp;20D MA ' + ma + '%</span>'
+                    : '<span style="color:#2d6080;font-size:0.6rem">&nbsp;building baseline…</span>';
+                var vsStr = vsma != null
+                    ? '&nbsp;<span style="color:' + (vsma[0]==='+' ? '#f59e0b' : '#38bdf8') + ';font-size:0.63rem;font-weight:700">' + vsma + ' vs MA</span>'
+                    : '';
+                var note = inverted ? '&nbsp;<span style="color:#2d6080;font-size:0.58rem">(low&nbsp;=&nbsp;alert)</span>' : '';
+                return '<div style="margin-bottom:8px">' +
+                    '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px">' +
+                    '<span style="font-size:0.72rem;color:#c8dce8">' + icon + '&nbsp;' + label + note + '</span>' +
+                    '<span style="font-size:0.83rem;font-weight:700;color:' + bCol + '">' + score + '%' + vsStr + '</span>' +
+                    '</div>' +
+                    '<div style="display:flex;align-items:center;gap:8px">' +
+                    '<div style="flex:1;height:4px;background:#0a1e35;border-radius:2px"><div style="height:4px;width:' + score + '%;background:' + bCol + ';border-radius:2px"></div></div>' +
+                    maStr + '</div></div>';
+            }
+
+            html += scoreRow('🍕', 'Pizza Index (avg 5 venues)', L.pizza, L.pizza_ma20, L.pizza_vs_ma, false);
+            html += scoreRow('🏳️‍🌈', "Freddie's Bar", L.bar, L.bar_ma20, L.bar_vs_ma, true);
+
+            // Venue breakdown chips
+            if (L.venues) {
+                var shortNames = {
+                    "Papa John's Crystal City":"Papa J's", "Domino's Pentagon City":"Domino's",
+                    "Pizza Hut Pentagon City":"Pizza Hut", "MOD Pizza Pentagon City":"MOD",
+                    "Pizzato Pizza":"Pizzato", "Freddie's Beach Bar":"Freddie's"
+                };
+                html += '<div style="display:flex;flex-wrap:wrap;gap:3px;margin-top:4px">';
+                Object.entries(L.venues).forEach(function(kv) {
+                    var n = shortNames[kv[0]] || kv[0]; var p = kv[1].pct;
+                    var c = p == null ? '#2d6080' : p > 75 ? '#ef4444' : p > 50 ? '#f59e0b' : '#38bdf8';
+                    html += '<span style="font-size:0.6rem;padding:1px 5px;border-radius:2px;background:#0a1e35;color:' + c + '">' + n + '&nbsp;' + (p!=null?p+'%':'—') + '</span>';
+                });
+                html += '</div>';
+            }
+
+            // Sparkline (last 20 nights)
+            if (history.length > 1) {
+                var last20 = history.slice(-20);
+                var maxV = Math.max.apply(null, last20.map(function(e){ return e.pizza||0; }));
+                var SH = 28;
+                html += '<div style="margin-top:10px">';
+                html += '<div style="font-size:0.58rem;color:#2d6080;margin-bottom:3px">Pizza Index — last ' + last20.length + ' nights</div>';
+                html += '<div style="display:flex;align-items:flex-end;gap:1px;height:' + SH + 'px">';
+                last20.forEach(function(e, i) {
+                    var v = e.pizza;
+                    var h = v!=null && maxV>0 ? Math.max(2, Math.round((v/maxV)*SH)) : 2;
+                    var c = v==null ? '#0a1e35' : v>75 ? '#ef4444' : v>55 ? '#f59e0b' : '#38bdf8';
+                    var isToday = i === last20.length-1;
+                    html += '<div style="flex:1;height:' + h + 'px;background:' + c + ';border-radius:1px' + (isToday?';outline:1px solid rgba(56,189,248,0.6)':'') + '" title="' + (e.date||'') + ': ' + (v!=null?v+'%':'no data') + '"></div>';
+                });
+                html += '</div></div>';
+            } else {
+                html += '<div style="margin-top:6px;font-size:0.6rem;color:#1a3550">Sparkline builds after a few nights of data.</div>';
+            }
+        } else {
+            html += '<div style="font-size:0.73rem;color:#2d6080;padding:6px 0">No data yet — runs nightly at 10pm ET.</div>';
+        }
+        html += '</div>';
+
+        // ── Geopolitical Prediction Markets ───────────────────────────────────
+        if (polyData && polyData.categories && polyData.categories['Geopolitical']) {
+            html += '<div style="padding:8px 12px 4px;font-size:0.68rem;font-weight:700;color:#f87171;letter-spacing:0.08em;border-bottom:1px solid #0a1e35">GEOPOLITICAL MARKETS</div>';
+            polyData.categories['Geopolitical'].slice(0, 8).forEach(function(m) {
+                var prob = m.yes_prob;
+                var probStr = prob!=null ? prob.toFixed(1)+'%' : '—';
+                var probCol = prob==null ? '#3d7090' : prob>=60 ? '#10b981' : prob<=40 ? '#ef4444' : '#f59e0b';
+                var bar = prob!=null ? '<div style="height:3px;background:#0a1e35;border-radius:2px;margin:4px 0 2px"><div style="height:3px;width:'+Math.round(prob)+'%;background:'+probCol+';border-radius:2px"></div></div>' : '';
+                var d5 = m.delta_5d;
+                var dStr = d5!=null ? '<span style="font-size:0.63rem;font-weight:600;color:'+(d5>0?'#10b981':d5<0?'#ef4444':'#3d7090')+';margin-left:5px">'+(d5>0?'▲+':'▼')+d5.toFixed(1)+' 5d</span>' : '';
+                html += '<div style="padding:7px 12px;border-bottom:1px solid #070f1c">' +
+                    '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">' +
+                    '<div style="font-size:0.73rem;color:#c8dce8;line-height:1.35;flex:1">' + m.question + '</div>' +
+                    '<div style="white-space:nowrap"><span style="font-size:0.83rem;font-weight:700;color:'+probCol+'">' + probStr + '</span>' + dStr + '</div>' +
+                    '</div>' + bar + '</div>';
+            });
+        }
+
+        el.innerHTML = html;
+    }
+
     function renderFearGreed() {
         var el = document.getElementById('fear-greed-content');
         if (!el) return;
