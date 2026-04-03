@@ -1557,7 +1557,7 @@
             + rth('20D%', 'Total % return over the past 20 trading days (~1 calendar month).\nThis is the primary sort key — the ranking is based on this number.')
             + rth('5D%', 'Total % return over the past 5 trading days (~1 week).\nUseful for spotting recent acceleration or fading momentum.')
             + rth('Daily%', "Yesterday's single-day % return.\nHelps identify intraday momentum or sudden reversals.")
-            + rth('Δ Rank', 'Change in rank vs ~7 days ago.\n▲3 means this ticker moved UP 3 spots (improving momentum).\n▼3 means it dropped 3 spots (deteriorating).\n— = no historical snapshot available yet.')
+            + rth('Δ Rank', 'HOW RANKING WORKS:\nAll tickers in this group are sorted by 20D return, best to worst.\n#1 = highest 20D return in the group, last = lowest.\n\nWHAT Δ RANK MEANS:\nCompares today\'s rank vs the same ticker\'s rank ~7 days ago.\n▲3 = moved UP 3 spots (20D return improved relative to peers).\n▼3 = dropped 3 spots (peers outpaced it over the week).\n— = no snapshot from 7 days ago available yet.')
             + rth('RS', 'Volatility-Adjusted Relative Strength vs SPY over the last 21 days.\nFormula: (ticker 21D return − SPY 21D return) ÷ ticker volatility, scaled 0–100%.\n>50 = outperforming SPY on a risk-adjusted basis.\n<50 = underperforming SPY.\n100 = strongest possible relative momentum.')
             + '</tr></thead><tbody>';
 
