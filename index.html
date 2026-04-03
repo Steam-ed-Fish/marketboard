@@ -704,6 +704,8 @@
             html += th('vol_ratio', 'Vol%', 'Today\'s volume vs 20-day average volume');
             html += '<th title="Volume trend: last 20 days vs 20-day average. Red bars = 2× avg or higher.">Vol Chart</th>';
             html += th('atr_pct', 'ATR%', '14-period Average True Range as % of price (daily volatility measure)');
+            html += th('em_pct', 'EM%', "Tonight's expected move for tomorrow.\nFormula: (nearest next-day ATM call mid + put mid) ÷ price.\nPriced at market close — tells you what the options market expects overnight.\nIndices group only; — for all others.");
+            html += th('em_beat', 'Beat?', "Did today's actual daily move exceed yesterday's straddle expectation?\n✓ = stayed within expected range (ratio < 1).\n✗ = overshot — actual move was larger than expected.\nRatio: 1.4× means actual was 40% larger than the straddle priced in.");
             html += th('dist_sma50_atr', 'ATRx', 'Distance from SMA50 measured in 14-period ATR units.\nPositive = above SMA50, negative = below.');
             html += th('rs', '1M-VARS', 'Volatility Adjusted Relative Strength vs SPY over last 21 days (0–100%)');
             html += th('rs', 'VARS', 'Volatility Adjusted Relative Strength vs SPY (raw score)');
@@ -856,6 +858,25 @@
                 html += '<td class="' + volCl + '">' + (volRatio != null ? volRatio.toFixed(2) + 'x' : na) + '</td>';
                 html += '<td>' + (r.vol_chart ? '<img src="' + r.vol_chart + '" class="rs-chart" alt="Vol">' : na) + '</td>';
                 html += '<td>' + (r.atr_pct != null ? r.atr_pct.toFixed(1) + '%' : na) + '</td>';
+                // EM% — tonight's expected move (ATM straddle, next expiry)
+                var emCell = r.em_pct != null
+                    ? '<span style="color:#94a3b8">±' + r.em_pct.toFixed(1) + '%</span>'
+                      + (r.em_days != null ? '<span style="font-size:0.6rem;color:#2d6080"> ' + r.em_days + 'd</span>' : '')
+                    : na;
+                html += '<td style="text-align:right;white-space:nowrap">' + emCell + '</td>';
+                // Beat? — did today's actual move exceed yesterday's EM?
+                var beatCell = na;
+                if (r.em_pct != null && r.daily != null && emYesterday[r.ticker] != null) {
+                    var _actual = Math.abs(r.daily);
+                    var _exp = emYesterday[r.ticker];
+                    var _ratio = _actual / _exp;
+                    if (_actual > _exp) {
+                        beatCell = '<span style="color:#ef4444" title="Overshot: actual ' + _actual.toFixed(1) + '% vs expected ±' + _exp.toFixed(1) + '%">✗ ' + _ratio.toFixed(1) + '×</span>';
+                    } else {
+                        beatCell = '<span style="color:#10b981" title="Within range: actual ' + _actual.toFixed(1) + '% vs expected ±' + _exp.toFixed(1) + '%">✓ ' + _ratio.toFixed(1) + '×</span>';
+                    }
+                }
+                html += '<td style="text-align:right">' + beatCell + '</td>';
                 html += '<td>' + (r.dist_sma50_atr != null ? r.dist_sma50_atr.toFixed(2) : na) + '</td>';
                 html += '<td>' + (r.rs != null ? Math.round(r.rs) + '%' : na) + '</td>';
                 html += '<td>' + (r.rs_chart ? '<img src="' + r.rs_chart + '" class="rs-chart" alt="RS">' : na) + '</td>';
@@ -1440,6 +1461,7 @@
 
     var polyData = null;
     var rotationData = null;
+    var emYesterday = {};
 
     // ── Rotation Delta ─────────────────────────────────────────────────────────
     window.toggleRotationSection = function() {
@@ -1912,6 +1934,17 @@
             snapshot = results[0];
             polyData = results[3];
             rotationData = results[4];
+            // Build emYesterday lookup from second-to-last snapshot
+            emYesterday = {};
+            if (rotationData && rotationData.snapshots && rotationData.snapshots.length >= 2) {
+                var prevSnap = rotationData.snapshots[rotationData.snapshots.length - 2];
+                var indGrp = prevSnap.groups && prevSnap.groups['Indices'];
+                if (indGrp) {
+                    Object.keys(indGrp).forEach(function(tk) {
+                        if (indGrp[tk].em_pct != null) emYesterday[tk] = indGrp[tk].em_pct;
+                    });
+                }
+            }
             var events = results[1];
             meta = results[2];
             renderEvents(events);

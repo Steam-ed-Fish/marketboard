@@ -212,6 +212,45 @@ def calculate_atr(hist_data, period=14):
         return None
 
 
+def get_expected_move(ticker_sym):
+    """Fetch ATM straddle EM% from nearest next-day options expiry via yfinance.
+    Skips today's expiry (0DTE at close = nearly worthless).
+    Returns (em_pct, days_to_expiry) or (None, None) on failure.
+    """
+    try:
+        t = yf.Ticker(ticker_sym)
+        expirations = t.options
+        if not expirations:
+            return None, None
+        today = datetime.utcnow().date()
+        # Skip same-day expiry — take first expiry strictly after today
+        nearest = next(
+            (e for e in expirations if datetime.strptime(e, '%Y-%m-%d').date() > today),
+            expirations[0]  # fallback if all are today (e.g. weekend run)
+        )
+        days = max((datetime.strptime(nearest, '%Y-%m-%d').date() - today).days, 1)
+        chain = t.option_chain(nearest)
+        calls, puts = chain.calls, chain.puts
+        if calls.empty or puts.empty:
+            return None, None
+        price = (t.fast_info.get('last_price') or t.fast_info.get('previousClose'))
+        if not price:
+            return None, None
+        strikes = calls['strike'].values
+        atm = strikes[np.argmin(np.abs(strikes - price))]
+        call_row = calls[calls['strike'] == atm]
+        put_row  = puts[puts['strike']  == atm]
+        if call_row.empty or put_row.empty:
+            return None, None
+        def mid(row):
+            b, a = row['bid'].values[0], row['ask'].values[0]
+            return (b + a) / 2 if (b > 0 or a > 0) else row['lastPrice'].values[0]
+        straddle = mid(call_row) + mid(put_row)
+        return round(straddle / price * 100, 2), days
+    except Exception:
+        return None, None
+
+
 def calculate_rrs(stock_data, spy_data, atr_length=14, length_rolling=50, length_sma=20, atr_multiplier=1.0):
     try:
         merged = pd.merge(
@@ -1336,6 +1375,24 @@ def main():
                 if _rpath:
                     industries_sector_rs_charts[_sec_name] = _rpath
 
+    # ── Expected Move (ATM straddle) for Indices group ───────────────────────────
+    print("Fetching options expected move for Indices...")
+    indices_tickers = [r['ticker'] for r in groups_data.get('Indices', []) if r.get('ticker')]
+    em_data = {}
+    for sym in indices_tickers:
+        em_pct, em_days = get_expected_move(sym)
+        em_data[sym] = {'em_pct': em_pct, 'em_days': em_days}
+        if em_pct is not None:
+            print(f"  {sym}: ±{em_pct}% ({em_days}d)")
+        else:
+            print(f"  {sym}: no options data")
+        time.sleep(0.3)
+    for gname, rows in groups_data.items():
+        for r in rows:
+            ed = em_data.get(r.get('ticker'), {})
+            r['em_pct']  = ed.get('em_pct')
+            r['em_days'] = ed.get('em_days')
+
     # Remove temporary series from rows so they are not written to snapshot.json
     for _gn, rows in groups_data.items():
         for r in rows:
@@ -1418,7 +1475,7 @@ def main():
         if not rows:
             continue
         rot_entry["groups"][gname] = {
-            r["ticker"]: {"20d": r.get("20d"), "5d": r.get("5d"), "daily": r.get("daily"), "rs": r.get("rs")}
+            r["ticker"]: {"20d": r.get("20d"), "5d": r.get("5d"), "daily": r.get("daily"), "rs": r.get("rs"), "em_pct": r.get("em_pct")}
             for r in rows if r.get("ticker")
         }
     rot_history = [h for h in rot_history if h.get("date") != today_str]
