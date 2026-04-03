@@ -242,6 +242,15 @@
         .fg-card-det   { font-size:0.63rem; color:#1a3550; margin-top:2px; }
         .fg-bar-bg     { background:#0a1e35; border-radius:3px; height:5px; margin-top:5px; }
         .fg-bar-fill   { height:5px; border-radius:3px; }
+        /* Fear & Greed Inline Panel */
+        .fg-inline-panel { display:none; border:1px solid #0d2035; border-radius:0 0 8px 8px; border-top:none; background:#060d1c; overflow:hidden; margin-bottom:10px; }
+        .fg-inline-panel.open { display:flex; }
+        .fg-inline-col { display:flex; flex-direction:column; min-height:0; overflow-y:auto; padding:10px; max-height:560px; }
+        .fg-inline-col-fg   { width:260px; flex-shrink:0; border-right:1px solid #0d2035; }
+        .fg-inline-col-poly { flex:1; border-right:1px solid #0d2035; min-width:0; }
+        .fg-inline-col-geo  { width:340px; flex-shrink:0; }
+        .fg-inline-col-hdr  { font-size:0.72rem; font-weight:700; color:#2d6080; text-transform:uppercase; letter-spacing:0.07em; padding:0 2px 8px; border-bottom:1px solid #0a1e35; margin-bottom:8px; }
+        .fg-toggle-btn.active { border-bottom-left-radius:0; border-bottom-right-radius:0; border-bottom-color:transparent; }
         /* FRED Macro Monitor */
         .fred-signal-banner { display:flex; gap:5px; flex-wrap:wrap; padding:10px 12px 4px; }
         .fred-pill { font-size:0.68rem; font-weight:700; padding:2px 8px; border-radius:3px; letter-spacing:0.04em; text-transform:uppercase; }
@@ -272,8 +281,22 @@
         <div style="position:relative;margin-bottom:10px">
             <button class="events-button" type="button" onclick="openEventsModal()">📅 EVENTS</button>
         </div>
-        <div style="position:relative;margin-bottom:10px">
-            <button class="events-button" type="button" onclick="openFearGreed()">🌡️ FEAR &amp; GREED</button>
+        <div style="margin-bottom:0">
+            <button class="events-button fg-toggle-btn" id="fg-toggle-btn" type="button" onclick="toggleFGSection()">🌡️ FEAR &amp; GREED</button>
+        </div>
+        <div id="fg-inline-panel" class="fg-inline-panel">
+            <div class="fg-inline-col fg-inline-col-fg">
+                <div class="fg-inline-col-hdr">🌡️ Fear &amp; Greed</div>
+                <div id="fear-greed-content"></div>
+            </div>
+            <div class="fg-inline-col fg-inline-col-poly">
+                <div class="fg-inline-col-hdr">🎲 Polymarket</div>
+                <div id="polymarket-content"></div>
+            </div>
+            <div class="fg-inline-col fg-inline-col-geo">
+                <div class="fg-inline-col-hdr">🌍 Geopolitical</div>
+                <div id="geo-content"></div>
+            </div>
         </div>
         <div class="market-breadth" style="position:relative;margin-bottom:10px">
             <button class="events-button" type="button" onclick="openMarketBreadth()">📊 MARKET BREADTH</button>
@@ -315,27 +338,6 @@
                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
                 {"colorTheme":"dark","dateRange":"12M","locale":"en","isTransparent":false,"showChart":true,"width":"400","height":"550","tabs":[{"title":"Breadth","symbols":[{"s":"INDEX:MMFI","d":"NYSE McClellan"},{"s":"INDEX:MMTW","d":"NYSE % Above MA"},{"s":"INDEX:MMFD","d":"NYSE Diff"},{"s":"INDEX:MMTH","d":"NYSE Issues"},{"s":"INDEX:MMOH","d":"NYSE Hi"},{"s":"INDEX:MMOF","d":"NYSE Lo"}],"originalTitle":"Indices"}]}
                 </script>
-            </div>
-        </div>
-    </div>
-    <div id="fear-greed-modal-overlay" class="econ-modal-overlay" onclick="closeFearGreed(event)">
-        <div class="econ-modal" onclick="event.stopPropagation()" style="max-width:540px;width:540px">
-            <div class="econ-modal-header">
-                <div style="display:flex;gap:0;border-bottom:1px solid #0a1e35;margin-bottom:-8px">
-                    <button type="button" class="events-tab active" id="fg-tab-fg" onclick="switchFGTab('fg')">🌡️ Fear &amp; Greed</button>
-                    <button type="button" class="events-tab" id="fg-tab-poly" onclick="switchFGTab('poly')">🎲 Polymarket</button>
-                    <button type="button" class="events-tab" id="fg-tab-geo" onclick="switchFGTab('geo')">🌍 Geopolitical</button>
-                </div>
-                <button type="button" class="econ-modal-close" onclick="closeFearGreed(event)">&times;</button>
-            </div>
-            <div id="fg-content-fg" style="max-height:580px;overflow-y:auto">
-                <div id="fear-greed-content"></div>
-            </div>
-            <div id="fg-content-poly" style="display:none;max-height:580px;overflow-y:auto">
-                <div id="polymarket-content"></div>
-            </div>
-            <div id="fg-content-geo" style="display:none;max-height:580px;overflow-y:auto">
-                <div id="geo-content"></div>
             </div>
         </div>
     </div>
@@ -460,16 +462,20 @@
         if (tab === 'fred') renderMacroFred();
     };
 
-    window.switchFGTab = function(tab) {
-        document.getElementById('fg-content-fg').style.display   = tab === 'fg'   ? '' : 'none';
-        document.getElementById('fg-content-poly').style.display = tab === 'poly' ? '' : 'none';
-        document.getElementById('fg-content-geo').style.display  = tab === 'geo'  ? '' : 'none';
-        document.getElementById('fg-tab-fg').classList.toggle('active',   tab === 'fg');
-        document.getElementById('fg-tab-poly').classList.toggle('active', tab === 'poly');
-        document.getElementById('fg-tab-geo').classList.toggle('active',  tab === 'geo');
-        if (tab === 'fg')   renderFearGreed();
-        if (tab === 'poly') renderPolymarket();
-        if (tab === 'geo')  renderGeoTab();
+    window.toggleFGSection = function() {
+        var panel = document.getElementById('fg-inline-panel');
+        var btn   = document.getElementById('fg-toggle-btn');
+        var isOpen = panel.classList.contains('open');
+        if (isOpen) {
+            panel.classList.remove('open');
+            btn.classList.remove('active');
+        } else {
+            panel.classList.add('open');
+            btn.classList.add('active');
+            renderFearGreed();
+            renderPolymarket();
+            renderGeoTab();
+        }
     };
 
     function getGroupLabelClass(groupName, ticker) {
@@ -1052,16 +1058,6 @@
     window.closeMarketBreadth = function(ev) {
         if (ev) ev.preventDefault();
         var ov = document.getElementById('market-breadth-modal-overlay');
-        if (ov) ov.style.display = 'none';
-    };
-    window.openFearGreed = function() {
-        var ov = document.getElementById('fear-greed-modal-overlay');
-        if (ov) ov.style.display = 'flex';
-        switchFGTab('fg');
-    };
-    window.closeFearGreed = function(ev) {
-        if (ev) ev.preventDefault();
-        var ov = document.getElementById('fear-greed-modal-overlay');
         if (ov) ov.style.display = 'none';
     };
     window.toggleIndustrySector = function(sector, dividerEl) {
