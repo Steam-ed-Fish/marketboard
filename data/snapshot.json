@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-04-03T21:06:41.934168Z",
+  "built_at": "2026-04-05T02:06:52.549346Z",
   "groups": {
     "Indices": [
       {
@@ -72,7 +72,7 @@
           }
         },
         "em_pct": 1.45,
-        "em_days": 3
+        "em_days": 1
       },
       {
         "ticker": "DIA",
@@ -140,7 +140,7 @@
           }
         },
         "em_pct": 2.31,
-        "em_days": 7
+        "em_days": 5
       },
       {
         "ticker": "SPY",
@@ -154,7 +154,7 @@
         "vol_chart": "data/charts/vol_SPY.png",
         "atr_pct": 1.6,
         "dist_sma50_atr": -1.76,
-        "rs": 100.0,
+        "rs": 65.0,
         "rs_chart": "data/charts/SPY.png",
         "long": [
           "SPXL",
@@ -209,7 +209,7 @@
           }
         },
         "em_pct": 1.34,
-        "em_days": 3
+        "em_days": 1
       },
       {
         "ticker": "RSP",
@@ -277,7 +277,7 @@
           }
         },
         "em_pct": 2.46,
-        "em_days": 7
+        "em_days": 5
       },
       {
         "ticker": "IWM",
@@ -291,7 +291,7 @@
         "vol_chart": "data/charts/vol_IWM.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": -0.9,
-        "rs": 5.0,
+        "rs": 0.0,
         "rs_chart": "data/charts/IWM.png",
         "long": [
           "TNA"
@@ -350,7 +350,7 @@
         },
         "sector": "Broad Market",
         "em_pct": 2.02,
-        "em_days": 3
+        "em_days": 1
       },
       {
         "ticker": "IJH",
@@ -384,14 +384,14 @@
               "dist_pct": -3.6
             },
             {
-              "price": 64.11,
-              "score": 44,
-              "dist_pct": -6.0
+              "price": 63.96,
+              "score": 52,
+              "dist_pct": -6.2
             },
             {
-              "price": 62.57,
-              "score": 37,
-              "dist_pct": -8.2
+              "price": 60.57,
+              "score": 30,
+              "dist_pct": -11.2
             }
           ],
           "resistance": [
@@ -408,7 +408,7 @@
           ]
         },
         "em_pct": 4.48,
-        "em_days": 14
+        "em_days": 12
       },
       {
         "ticker": "IJR",
@@ -476,7 +476,7 @@
           }
         },
         "em_pct": 4.48,
-        "em_days": 14
+        "em_days": 12
       },
       {
         "ticker": "GLD",
@@ -612,7 +612,7 @@
         },
         "sector": "Commodities",
         "em_pct": 4.73,
-        "em_days": 3
+        "em_days": 1
       }
     ],
     "The 7s at a Glance": [
@@ -650,7 +650,7 @@
         "vol_chart": "data/charts/vol_Glance_The_Cloud_7.png",
         "atr_pct": 3.5,
         "dist_sma50_atr": -1.3,
-        "rs": 74.0,
+        "rs": 75.0,
         "rs_chart": "data/charts/Glance_The_Cloud_7.png",
         "long": [],
         "short": [],
@@ -670,7 +670,7 @@
         "vol_chart": "data/charts/vol_Glance_The_Software_7.png",
         "atr_pct": 4.5,
         "dist_sma50_atr": -1.13,
-        "rs": 82.0,
+        "rs": 81.0,
         "rs_chart": "data/charts/Glance_The_Software_7.png",
         "long": [],
         "short": [],
@@ -690,7 +690,7 @@
         "vol_chart": "data/charts/vol_Glance_The_New_Staples_7.png",
         "atr_pct": 3.2,
         "dist_sma50_atr": -0.46,
-        "rs": 67.0,
+        "rs": 66.0,
         "rs_chart": "data/charts/Glance_The_New_Staples_7.png",
         "long": [],
         "short": [],
@@ -770,7 +770,7 @@
         "vol_chart": "data/charts/vol_Glance_The_Defense_7.png",
         "atr_pct": 2.9,
         "dist_sma50_atr": -0.73,
-        "rs": 5.0,
+        "rs": 6.0,
         "rs_chart": "data/charts/Glance_The_Defense_7.png",
         "long": [],
         "short": [],
@@ -830,7 +830,7 @@
         "vol_chart": "data/charts/vol_Glance_The_Fab_7.png",
         "atr_pct": 5.4,
         "dist_sma50_atr": -0.31,
-        "rs": 5.0,
+        "rs": 4.0,
         "rs_chart": "data/charts/Glance_The_Fab_7.png",
         "long": [],
         "short": [],
@@ -850,7 +850,7 @@
         "vol_chart": "data/charts/vol_Glance_The_Buildout_7.png",
         "atr_pct": 4.6,
         "dist_sma50_atr": 0.37,
-        "rs": 26.0,
+        "rs": 27.0,
         "rs_chart": "data/charts/Glance_The_Buildout_7.png",
         "long": [],
         "short": [],
@@ -910,7 +910,7 @@
         "vol_chart": "data/charts/vol_Glance_The_New_Metals_7.png",
         "atr_pct": 5.6,
         "dist_sma50_atr": -0.21,
-        "rs": 8.0,
+        "rs": 7.0,
         "rs_chart": "data/charts/Glance_The_New_Metals_7.png",
         "long": [],
         "short": [],
@@ -970,7 +970,7 @@
         "vol_chart": "data/charts/vol_Glance_The_Medtech_7.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": -2.98,
-        "rs": 29.0,
+        "rs": 27.0,
         "rs_chart": "data/charts/Glance_The_Medtech_7.png",
         "long": [],
         "short": [],
@@ -990,7 +990,7 @@
         "vol_chart": "data/charts/vol_Glance_The_Freight_7.png",
         "atr_pct": 2.7,
         "dist_sma50_atr": -0.4,
-        "rs": 32.0,
+        "rs": 33.0,
         "rs_chart": "data/charts/Glance_The_Freight_7.png",
         "long": [],
         "short": [],
@@ -1030,7 +1030,7 @@
         "vol_chart": "data/charts/vol_Glance_The_Power_7.png",
         "atr_pct": 2.9,
         "dist_sma50_atr": 1.41,
-        "rs": 44.0,
+        "rs": 48.0,
         "rs_chart": "data/charts/Glance_The_Power_7.png",
         "long": [],
         "short": [],
@@ -1221,9 +1221,9 @@
               "dist_pct": -6.5
             },
             {
-              "price": 101.12,
-              "score": 19,
-              "dist_pct": -9.5
+              "price": 101.03,
+              "score": 22,
+              "dist_pct": -9.6
             }
           ],
           "resistance": [
@@ -1353,9 +1353,9 @@
         "sr": {
           "support": [
             {
-              "price": 44.4,
-              "score": 45,
-              "dist_pct": -4.2
+              "price": 44.49,
+              "score": 40,
+              "dist_pct": -4.0
             },
             {
               "price": 43.15,
@@ -1402,7 +1402,7 @@
         "vol_chart": "data/charts/vol_XLY.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": -2.73,
-        "rs": 10.0,
+        "rs": 5.0,
         "rs_chart": "data/charts/XLY.png",
         "long": [
           "WANT"
@@ -1936,7 +1936,7 @@
           }
         },
         "em_pct": 4.48,
-        "em_days": 14
+        "em_days": 12
       },
       {
         "ticker": "IJT",
@@ -2101,14 +2101,14 @@
               "dist_pct": -3.6
             },
             {
-              "price": 64.11,
-              "score": 44,
-              "dist_pct": -6.0
+              "price": 63.96,
+              "score": 52,
+              "dist_pct": -6.2
             },
             {
-              "price": 62.57,
-              "score": 37,
-              "dist_pct": -8.2
+              "price": 60.57,
+              "score": 30,
+              "dist_pct": -11.2
             }
           ],
           "resistance": [
@@ -2125,7 +2125,7 @@
           ]
         },
         "em_pct": 4.48,
-        "em_days": 14
+        "em_days": 12
       },
       {
         "ticker": "IJK",
@@ -2222,26 +2222,31 @@
         "sr": {
           "support": [
             {
-              "price": 208.7,
-              "score": 48,
-              "dist_pct": -1.5
+              "price": 206.83,
+              "score": 52,
+              "dist_pct": -2.4
             },
             {
-              "price": 201.92,
+              "price": 200.09,
               "score": 43,
-              "dist_pct": -4.7
+              "dist_pct": -5.6
             },
             {
-              "price": 197.12,
-              "score": 28,
-              "dist_pct": -7.0
+              "price": 189.15,
+              "score": 30,
+              "dist_pct": -10.7
             }
           ],
           "resistance": [
             {
-              "price": 215.34,
-              "score": 39,
-              "dist_pct": 1.6
+              "price": 212.32,
+              "score": 56,
+              "dist_pct": 0.2
+            },
+            {
+              "price": 216.98,
+              "score": 40,
+              "dist_pct": 2.4
             },
             {
               "price": 221.67,
@@ -2251,8 +2256,8 @@
           ],
           "near": {
             "type": "resistance",
-            "price": 215.34,
-            "dist_pct": 1.6
+            "price": 212.32,
+            "dist_pct": 0.2
           }
         },
         "em_pct": null,
@@ -2639,8 +2644,8 @@
               "dist_pct": 1.5
             },
             {
-              "price": 75.4,
-              "score": 93,
+              "price": 75.39,
+              "score": 90,
               "dist_pct": 5.2
             },
             {
@@ -2724,7 +2729,7 @@
           }
         },
         "em_pct": 2.46,
-        "em_days": 7
+        "em_days": 5
       },
       {
         "ticker": "RSPD",
@@ -2801,7 +2806,7 @@
         "vol_chart": "data/charts/vol_RSPU.png",
         "atr_pct": 1.4,
         "dist_sma50_atr": 1.99,
-        "rs": 25.0,
+        "rs": 30.0,
         "rs_chart": "data/charts/RSPU.png",
         "long": [],
         "short": [],
@@ -3080,14 +3085,14 @@
           ],
           "resistance": [
             {
-              "price": 29.84,
-              "score": 67,
-              "dist_pct": 1.4
+              "price": 29.76,
+              "score": 79,
+              "dist_pct": 1.1
             },
             {
-              "price": 30.65,
-              "score": 29,
-              "dist_pct": 4.2
+              "price": 30.44,
+              "score": 49,
+              "dist_pct": 3.4
             },
             {
               "price": 32.08,
@@ -3097,8 +3102,8 @@
           ],
           "near": {
             "type": "resistance",
-            "price": 29.84,
-            "dist_pct": 1.4
+            "price": 29.76,
+            "dist_pct": 1.1
           }
         },
         "em_pct": null,
@@ -3116,7 +3121,7 @@
         "vol_chart": "data/charts/vol_RSPG.png",
         "atr_pct": 2.5,
         "dist_sma50_atr": 3.23,
-        "rs": 30.0,
+        "rs": 25.0,
         "rs_chart": "data/charts/RSPG.png",
         "long": [],
         "short": [],
@@ -3136,13 +3141,13 @@
               "dist_pct": -25.4
             },
             {
-              "price": 75.12,
+              "price": 75.14,
               "score": 40,
               "dist_pct": -29.5
             },
             {
-              "price": 72.49,
-              "score": 35,
+              "price": 72.47,
+              "score": 37,
               "dist_pct": -32.0
             }
           ],
@@ -3517,7 +3522,7 @@
         "vol_chart": "data/charts/vol_AIQ.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": -1.68,
-        "rs": 5.0,
+        "rs": 0.0,
         "rs_chart": "data/charts/AIQ.png",
         "long": [],
         "short": [],
@@ -4008,14 +4013,14 @@
         "sr": {
           "support": [
             {
-              "price": 31.43,
-              "score": 45,
-              "dist_pct": -23.5
+              "price": 31.34,
+              "score": 51,
+              "dist_pct": -23.8
             },
             {
-              "price": 30.67,
+              "price": 30.53,
               "score": 27,
-              "dist_pct": -25.4
+              "dist_pct": -25.7
             },
             {
               "price": 28.15,
@@ -4047,7 +4052,7 @@
         "vol_chart": "data/charts/vol_XTN.png",
         "atr_pct": 2.7,
         "dist_sma50_atr": -0.55,
-        "rs": 15.0,
+        "rs": 5.0,
         "rs_chart": "data/charts/XTN.png",
         "long": [
           "TPOR"
@@ -4248,7 +4253,7 @@
         "vol_chart": "data/charts/vol_FXI.png",
         "atr_pct": 1.8,
         "dist_sma50_atr": -2.94,
-        "rs": 35.0,
+        "rs": 30.0,
         "rs_chart": "data/charts/FXI.png",
         "long": [
           "YINN"
@@ -4806,7 +4811,7 @@
         "vol_chart": "data/charts/vol_EATZ.png",
         "atr_pct": 1.2,
         "dist_sma50_atr": -3.0,
-        "rs": 10.0,
+        "rs": 15.0,
         "rs_chart": "data/charts/EATZ.png",
         "long": [],
         "short": [],
@@ -4904,14 +4909,14 @@
               "dist_pct": 5.5
             },
             {
-              "price": 106.79,
-              "score": 49,
-              "dist_pct": 8.7
+              "price": 106.7,
+              "score": 43,
+              "dist_pct": 8.6
             },
             {
-              "price": 111.81,
-              "score": 27,
-              "dist_pct": 13.8
+              "price": 112.0,
+              "score": 30,
+              "dist_pct": 14.0
             }
           ],
           "near": {
@@ -4961,8 +4966,8 @@
               "dist_pct": -18.0
             },
             {
-              "price": 127.12,
-              "score": 23,
+              "price": 127.03,
+              "score": 25,
               "dist_pct": -25.0
             }
           ],
@@ -5005,7 +5010,7 @@
         "vol_chart": "data/charts/vol_IHI.png",
         "atr_pct": 1.9,
         "dist_sma50_atr": -3.89,
-        "rs": 35.0,
+        "rs": 30.0,
         "rs_chart": "data/charts/IHI.png",
         "long": [],
         "short": [],
@@ -5064,7 +5069,7 @@
         "vol_chart": "data/charts/vol_XHE.png",
         "atr_pct": 2.0,
         "dist_sma50_atr": -3.36,
-        "rs": 20.0,
+        "rs": 15.0,
         "rs_chart": "data/charts/XHE.png",
         "long": [],
         "short": [],
@@ -5282,7 +5287,7 @@
         "sr": {
           "support": [
             {
-              "price": 99.69,
+              "price": 99.72,
               "score": 27,
               "dist_pct": -4.3
             },
@@ -5668,7 +5673,7 @@
         "vol_chart": "data/charts/vol_TAN.png",
         "atr_pct": 3.4,
         "dist_sma50_atr": -0.79,
-        "rs": 25.0,
+        "rs": 20.0,
         "rs_chart": "data/charts/TAN.png",
         "long": [],
         "short": [],
@@ -5805,7 +5810,7 @@
         "vol_chart": "data/charts/vol_ICLN.png",
         "atr_pct": 3.0,
         "dist_sma50_atr": -0.67,
-        "rs": 15.0,
+        "rs": 10.0,
         "rs_chart": "data/charts/ICLN.png",
         "long": [],
         "short": [],
@@ -6066,7 +6071,7 @@
         "vol_chart": "data/charts/vol_URA.png",
         "atr_pct": 5.0,
         "dist_sma50_atr": -1.24,
-        "rs": 5.0,
+        "rs": 0.0,
         "rs_chart": "data/charts/URA.png",
         "long": [],
         "short": [],
@@ -6581,7 +6586,7 @@
         "vol_chart": "data/charts/vol_DBA.png",
         "atr_pct": 0.8,
         "dist_sma50_atr": 4.27,
-        "rs": 75.0,
+        "rs": 80.0,
         "rs_chart": "data/charts/DBA.png",
         "long": [],
         "short": [],
@@ -6694,7 +6699,7 @@
         },
         "sector": "Commodities",
         "em_pct": 4.73,
-        "em_days": 3
+        "em_days": 1
       },
       {
         "ticker": "USO",
@@ -7213,7 +7218,7 @@
         "vol_chart": "data/charts/vol_REMX.png",
         "atr_pct": 4.6,
         "dist_sma50_atr": -0.48,
-        "rs": 5.0,
+        "rs": 0.0,
         "rs_chart": "data/charts/REMX.png",
         "long": [],
         "short": [],
@@ -7474,7 +7479,7 @@
         "vol_chart": "data/charts/vol_IBIT.png",
         "atr_pct": 3.8,
         "dist_sma50_atr": -1.77,
-        "rs": 25.0,
+        "rs": 30.0,
         "rs_chart": "data/charts/IBIT.png",
         "long": [
           "BITX",
@@ -7556,9 +7561,9 @@
         "sr": {
           "support": [
             {
-              "price": 44.4,
-              "score": 45,
-              "dist_pct": -4.2
+              "price": 44.49,
+              "score": 40,
+              "dist_pct": -4.0
             },
             {
               "price": 43.15,
@@ -7605,7 +7610,7 @@
         "vol_chart": "data/charts/vol_IWM.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": -0.9,
-        "rs": 5.0,
+        "rs": 0.0,
         "rs_chart": "data/charts/IWM.png",
         "long": [
           "TNA"
@@ -7664,7 +7669,7 @@
         },
         "sector": "Broad Market",
         "em_pct": 2.02,
-        "em_days": 3
+        "em_days": 1
       },
       {
         "ticker": "FNGS",
@@ -7821,7 +7826,7 @@
         "vol_chart": "data/charts/vol_ARGT.png",
         "atr_pct": 2.9,
         "dist_sma50_atr": 0.78,
-        "rs": 80.0,
+        "rs": 75.0,
         "rs_chart": "data/charts/ARGT.png",
         "long": [],
         "short": [],
@@ -7957,7 +7962,7 @@
         "vol_chart": "data/charts/vol_THD.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": 0.5,
-        "rs": 5.0,
+        "rs": 0.0,
         "rs_chart": "data/charts/THD.png",
         "long": [],
         "short": [],
@@ -8062,14 +8067,14 @@
               "dist_pct": 13.1
             },
             {
-              "price": 18.08,
-              "score": 55,
-              "dist_pct": 16.3
+              "price": 18.09,
+              "score": 56,
+              "dist_pct": 16.4
             },
             {
-              "price": 18.53,
-              "score": 44,
-              "dist_pct": 19.2
+              "price": 18.55,
+              "score": 53,
+              "dist_pct": 19.4
             }
           ],
           "near": {
@@ -8224,7 +8229,7 @@
         "vol_chart": "data/charts/vol_EWP.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": -0.18,
-        "rs": 75.0,
+        "rs": 80.0,
         "rs_chart": "data/charts/EWP.png",
         "long": [],
         "short": [],
@@ -8551,7 +8556,7 @@
         "vol_chart": "data/charts/vol_IEUR.png",
         "atr_pct": 2.0,
         "dist_sma50_atr": -1.41,
-        "rs": 0.0,
+        "rs": 5.0,
         "rs_chart": "data/charts/IEUR.png",
         "long": [],
         "short": [],
@@ -9555,7 +9560,7 @@
         "vol_chart": "data/charts/vol_EWZ.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 0.8,
-        "rs": 5.0,
+        "rs": 0.0,
         "rs_chart": "data/charts/EWZ.png",
         "long": [
           "BRZU"
@@ -10136,7 +10141,7 @@
         "vol_chart": "data/charts/vol_IBM.png",
         "atr_pct": 3.1,
         "dist_sma50_atr": -1.61,
-        "rs": 55.0,
+        "rs": 60.0,
         "rs_chart": "data/charts/IBM.png",
         "long": [],
         "short": [],
@@ -10267,7 +10272,7 @@
         "vol_chart": "data/charts/vol_NET.png",
         "atr_pct": 5.3,
         "dist_sma50_atr": 1.92,
-        "rs": 90.0,
+        "rs": 95.0,
         "rs_chart": "data/charts/NET.png",
         "long": [],
         "short": [],
@@ -10385,7 +10390,7 @@
         "vol_chart": "data/charts/vol_PANW.png",
         "atr_pct": 4.1,
         "dist_sma50_atr": 0.06,
-        "rs": 85.0,
+        "rs": 80.0,
         "rs_chart": "data/charts/PANW.png",
         "long": [],
         "short": [],
@@ -11153,7 +11158,7 @@
         "vol_chart": "data/charts/vol_UBER.png",
         "atr_pct": 3.3,
         "dist_sma50_atr": -1.18,
-        "rs": 15.0,
+        "rs": 5.0,
         "rs_chart": "data/charts/UBER.png",
         "long": [],
         "short": [],
@@ -11548,7 +11553,7 @@
         "vol_chart": "data/charts/vol_MDLZ.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": -0.41,
-        "rs": 35.0,
+        "rs": 30.0,
         "rs_chart": "data/charts/MDLZ.png",
         "long": [],
         "short": [],
@@ -12590,7 +12595,7 @@
         "vol_chart": "data/charts/vol_RTX.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": -0.72,
-        "rs": 5.0,
+        "rs": 10.0,
         "rs_chart": "data/charts/RTX.png",
         "long": [],
         "short": [],
@@ -12935,9 +12940,9 @@
               "dist_pct": -30.4
             },
             {
-              "price": 267.21,
-              "score": 25,
-              "dist_pct": -32.6
+              "price": 267.61,
+              "score": 28,
+              "dist_pct": -32.5
             },
             {
               "price": 226.3,
@@ -13284,8 +13289,8 @@
           ],
           "resistance": [
             {
-              "price": 133.06,
-              "score": 51,
+              "price": 133.03,
+              "score": 52,
               "dist_pct": 1.0
             },
             {
@@ -13301,7 +13306,7 @@
           ],
           "near": {
             "type": "resistance",
-            "price": 133.06,
+            "price": 133.03,
             "dist_pct": 1.0
           }
         },
@@ -14279,7 +14284,7 @@
         "vol_chart": "data/charts/vol_TER.png",
         "atr_pct": 6.3,
         "dist_sma50_atr": 0.82,
-        "rs": 5.0,
+        "rs": 0.0,
         "rs_chart": "data/charts/TER.png",
         "long": [],
         "short": [],
@@ -14548,7 +14553,7 @@
         "vol_chart": "data/charts/vol_PWR.png",
         "atr_pct": 4.0,
         "dist_sma50_atr": 1.16,
-        "rs": 10.0,
+        "rs": 15.0,
         "rs_chart": "data/charts/PWR.png",
         "long": [],
         "short": [],
@@ -14606,7 +14611,7 @@
         "vol_chart": "data/charts/vol_EME.png",
         "atr_pct": 4.1,
         "dist_sma50_atr": 0.36,
-        "rs": 5.0,
+        "rs": 10.0,
         "rs_chart": "data/charts/EME.png",
         "long": [],
         "short": [],
@@ -15887,7 +15892,7 @@
         "vol_chart": "data/charts/vol_ALB.png",
         "atr_pct": 5.4,
         "dist_sma50_atr": 0.63,
-        "rs": 10.0,
+        "rs": 5.0,
         "rs_chart": "data/charts/ALB.png",
         "long": [],
         "short": [],
@@ -17192,7 +17197,7 @@
         "vol_chart": "data/charts/vol_ABT.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": -2.68,
-        "rs": 55.0,
+        "rs": 50.0,
         "rs_chart": "data/charts/ABT.png",
         "long": [],
         "short": [],
@@ -17386,7 +17391,7 @@
         "vol_chart": "data/charts/vol_BSX.png",
         "atr_pct": 3.7,
         "dist_sma50_atr": -4.6,
-        "rs": 50.0,
+        "rs": 40.0,
         "rs_chart": "data/charts/BSX.png",
         "long": [],
         "short": [],
@@ -17771,7 +17776,7 @@
         "vol_chart": "data/charts/vol_ODFL.png",
         "atr_pct": 3.7,
         "dist_sma50_atr": 1.01,
-        "rs": 0.0,
+        "rs": 5.0,
         "rs_chart": "data/charts/ODFL.png",
         "long": [],
         "short": [],
@@ -18302,31 +18307,31 @@
         "sr": {
           "support": [
             {
-              "price": 107.84,
-              "score": 67,
-              "dist_pct": -2.4
+              "price": 110.05,
+              "score": 85,
+              "dist_pct": -0.4
             },
             {
-              "price": 104.85,
-              "score": 42,
-              "dist_pct": -5.1
+              "price": 106.9,
+              "score": 68,
+              "dist_pct": -3.2
             },
             {
-              "price": 101.61,
-              "score": 50,
-              "dist_pct": -8.0
+              "price": 103.69,
+              "score": 44,
+              "dist_pct": -6.1
             }
           ],
           "resistance": [
             {
-              "price": 111.02,
-              "score": 47,
-              "dist_pct": 0.5
+              "price": 112.55,
+              "score": 40,
+              "dist_pct": 1.9
             },
             {
-              "price": 113.75,
-              "score": 19,
-              "dist_pct": 3.0
+              "price": 114.77,
+              "score": 14,
+              "dist_pct": 3.9
             },
             {
               "price": 118.12,
@@ -18336,8 +18341,8 @@
           ],
           "near": {
             "type": "resistance",
-            "price": 111.02,
-            "dist_pct": 0.5
+            "price": 112.55,
+            "dist_pct": 1.9
           }
         },
         "em_pct": null,
@@ -18357,7 +18362,7 @@
         "vol_chart": "data/charts/vol_NEE.png",
         "atr_pct": 2.1,
         "dist_sma50_atr": 1.28,
-        "rs": 20.0,
+        "rs": 35.0,
         "rs_chart": "data/charts/NEE.png",
         "long": [],
         "short": [],
@@ -18415,7 +18420,7 @@
         "vol_chart": "data/charts/vol_SO.png",
         "atr_pct": 1.7,
         "dist_sma50_atr": 2.41,
-        "rs": 35.0,
+        "rs": 30.0,
         "rs_chart": "data/charts/SO.png",
         "long": [],
         "short": [],
@@ -18531,7 +18536,7 @@
         "vol_chart": "data/charts/vol_CEG.png",
         "atr_pct": 5.5,
         "dist_sma50_atr": -1.38,
-        "rs": 65.0,
+        "rs": 70.0,
         "rs_chart": "data/charts/CEG.png",
         "long": [],
         "short": [],
@@ -18667,7 +18672,7 @@
         "vol_chart": "data/charts/vol_AEP.png",
         "atr_pct": 1.9,
         "dist_sma50_atr": 2.26,
-        "rs": 10.0,
+        "rs": 20.0,
         "rs_chart": "data/charts/AEP.png",
         "long": [],
         "short": [],
@@ -19271,7 +19276,7 @@
       "vol_ratio": 0.83,
       "atr_pct": 3.0,
       "dist_sma50_atr": -1.81,
-      "rs": 67.86,
+      "rs": 67.14,
       "vol_chart": "data/charts/vol_Theme_Mag_7.png",
       "constituent_daily": {
         "AAPL": 0.11,
@@ -19302,7 +19307,7 @@
       "vol_ratio": 0.81,
       "atr_pct": 7.4,
       "dist_sma50_atr": 0.44,
-      "rs": 6.25,
+      "rs": 5.0,
       "vol_chart": "data/charts/vol_Theme_Memory.png",
       "constituent_daily": {
         "MU": -0.44,
@@ -19333,7 +19338,7 @@
       "vol_ratio": 1.01,
       "atr_pct": 9.6,
       "dist_sma50_atr": 3.29,
-      "rs": 54.29,
+      "rs": 53.57,
       "vol_chart": "data/charts/vol_Theme_Optical_Comms.png",
       "constituent_daily": {
         "COHR": 4.18,
@@ -19466,9 +19471,9 @@
       },
       "T10Y2Y": {
         "label": "Yield Curve",
-        "value": 0.52,
+        "value": 0.51,
         "prev": 0.52,
-        "change": 0.0,
+        "change": -0.01,
         "unit": "%",
         "signal": "hawkish",
         "chart": "data/charts/fred_T10Y2Y.png"
@@ -19574,35 +19579,35 @@
     }
   },
   "industries_sector_charts": {
+    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
+    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
+    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
+    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
+    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
+    "Energy": "data/charts/vol_IndSec_Energy.png",
+    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
     "Commodities": "data/charts/vol_IndSec_Commodities.png",
+    "Financials": "data/charts/vol_IndSec_Financials.png",
+    "Materials": "data/charts/vol_IndSec_Materials.png",
+    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
     "Utilities": "data/charts/vol_IndSec_Utilities.png",
     "Industrials": "data/charts/vol_IndSec_Industrials.png",
-    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
-    "Financials": "data/charts/vol_IndSec_Financials.png",
-    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
-    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
-    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
-    "Materials": "data/charts/vol_IndSec_Materials.png",
-    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
-    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
-    "Energy": "data/charts/vol_IndSec_Energy.png",
-    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
-    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png"
+    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png"
   },
   "industries_sector_rs_charts": {
+    "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
+    "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
+    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
+    "Health Care": "data/charts/IndSecRS_Health_Care.png",
+    "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
+    "Energy": "data/charts/IndSecRS_Energy.png",
+    "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
     "Commodities": "data/charts/IndSecRS_Commodities.png",
+    "Financials": "data/charts/IndSecRS_Financials.png",
+    "Materials": "data/charts/IndSecRS_Materials.png",
+    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
     "Utilities": "data/charts/IndSecRS_Utilities.png",
     "Industrials": "data/charts/IndSecRS_Industrials.png",
-    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
-    "Financials": "data/charts/IndSecRS_Financials.png",
-    "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
-    "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
-    "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
-    "Materials": "data/charts/IndSecRS_Materials.png",
-    "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
-    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
-    "Energy": "data/charts/IndSecRS_Energy.png",
-    "Health Care": "data/charts/IndSecRS_Health_Care.png",
-    "Information Technology": "data/charts/IndSecRS_Information_Technology.png"
+    "Communication Services": "data/charts/IndSecRS_Communication_Services.png"
   }
 }
