@@ -1949,8 +1949,8 @@
             meta = results[2];
             renderEvents(events);
             renderGroups();
-        }).catch(function() {
-            document.getElementById('groups-container').innerHTML = '<div class="loading-msg">LOADING DATA... (Run scripts/build_data.py or wait for GitHub Actions)</div>';
+        }).catch(function(err) {
+            document.getElementById('groups-container').innerHTML = '<div class="loading-msg">LOADING DATA... (Run scripts/build_data.py or wait for GitHub Actions)<br><span style="font-size:0.7rem;color:#ef4444;margin-top:8px;display:block">Error: ' + (err && err.message ? err.message : String(err)) + '</span></div>';
         });
     }
 
