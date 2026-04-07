@@ -1306,20 +1306,38 @@ def fetch_fred_release_id(api_key, series_id):
     except Exception:
         return None
 
-def fetch_fred_next_release_date(api_key, release_id):
-    """Return the next scheduled release date string (YYYY-MM-DD) for a FRED release."""
+def fetch_fred_release_dates(api_key, release_id):
+    """Return (most_recent_past_date, next_date) for a FRED release."""
+    today = datetime.utcnow().date().isoformat()
+    past_date = next_date = None
     try:
-        today = datetime.utcnow().date().isoformat()
-        resp = requests.get(
+        r = requests.get(
+            "https://api.stlouisfed.org/fred/release/dates",
+            params={"release_id": release_id, "api_key": api_key, "file_type": "json",
+                    "realtime_end": today, "sort_order": "desc", "limit": 2},
+            timeout=10)
+        r.raise_for_status()
+        dates = r.json().get("release_dates", [])
+        past_date = dates[0]["date"] if dates else None
+    except Exception:
+        pass
+    try:
+        r = requests.get(
             "https://api.stlouisfed.org/fred/release/dates",
             params={"release_id": release_id, "api_key": api_key, "file_type": "json",
                     "realtime_start": today, "sort_order": "asc", "limit": 3},
             timeout=10)
-        resp.raise_for_status()
-        dates = resp.json().get("release_dates", [])
-        return dates[0]["date"] if dates else None
+        r.raise_for_status()
+        dates = r.json().get("release_dates", [])
+        next_date = dates[0]["date"] if dates else None
     except Exception:
-        return None
+        pass
+    return past_date, next_date
+
+# Keep old name as thin wrapper for any existing callers
+def fetch_fred_next_release_date(api_key, release_id):
+    _, next_date = fetch_fred_release_dates(api_key, release_id)
+    return next_date
 
 def create_fred_sparkline(values, series_id, charts_dir, color="#38bdf8"):
     """Thin line + fill sparkline for a FRED series."""
@@ -1395,7 +1413,7 @@ def build_macro_fred(api_key, charts_dir, perplexity_api_key=None):
             "category": category, "last_date": pairs[-1][0] if pairs else None,
         }
 
-    # Fetch release IDs and next release dates
+    # Fetch release IDs, then both past and next release dates from FRED
     from concurrent.futures import ThreadPoolExecutor, as_completed as _as_completed
     release_ids = {}
     with ThreadPoolExecutor(max_workers=6) as ex:
@@ -1405,38 +1423,33 @@ def build_macro_fred(api_key, charts_dir, perplexity_api_key=None):
             release_ids[futs2[f]] = f.result()
 
     unique_rids = set(v for v in release_ids.values() if v)
-    next_dates = {}
+    fred_dates = {}   # rid -> (past_date, next_date)
     with ThreadPoolExecutor(max_workers=6) as ex:
-        futs3 = {ex.submit(fetch_fred_next_release_date, api_key, rid): rid
+        futs3 = {ex.submit(fetch_fred_release_dates, api_key, rid): rid
                  for rid in unique_rids}
         for f in _as_completed(futs3):
-            next_dates[futs3[f]] = f.result()
+            fred_dates[futs3[f]] = f.result()
 
     for sid, d in series_out.items():
         rid = release_ids.get(sid)
-        d["next_release"] = next_dates.get(rid) if rid else None
+        past_date, next_date = fred_dates.get(rid, (None, None))
+        d["release_date"] = past_date or d.get("last_date")
+        d["next_release"]  = next_date
 
-    # Merge consensus forecasts: try investing.com first, fall back to Perplexity
+    # Fetch consensus forecasts via Perplexity
     fc_data = {}
-    print("  Fetching economic calendar from Investing.com...")
-    try:
-        fc_data = fetch_investing_calendar_data()
-        if fc_data:
-            print(f"  Got calendar data for {len(fc_data)} series from Investing.com")
-        else:
-            raise ValueError("empty result")
-    except Exception as e:
-        print(f"  Investing.com calendar failed ({e})")
-        if perplexity_api_key:
-            print("  Falling back to Perplexity for forecasts...")
-            fc_data = fetch_economic_forecasts_perplexity(perplexity_api_key)
+    if perplexity_api_key:
+        print("  Fetching consensus forecasts via Perplexity...")
+        fc_data = fetch_economic_forecasts_perplexity(perplexity_api_key)
+        print(f"  Got forecast data for {len(fc_data)} series")
+    else:
+        print("  No PERPLEXITY_API_KEY — skipping consensus forecasts")
 
     for sid, d in series_out.items():
         fc = fc_data.get(sid, {})
-        d["forecast"]      = fc.get("forecast")
+        d["forecast"]     = fc.get("forecast")
         d["next_forecast"] = fc.get("next_forecast")
-        # Use calendar release date if available (more precise than FRED last obs date)
-        d["release_date"]  = fc.get("date") or d.get("last_date")
+        # Override next_release with Perplexity date only if FRED didn't find one
         if fc.get("next_date") and not d.get("next_release"):
             d["next_release"] = fc.get("next_date")
 
