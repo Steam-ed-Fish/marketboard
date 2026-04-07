@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-04-07T05:37:41.030792Z",
+  "built_at": "2026-04-07T06:08:14.771679Z",
   "groups": {
     "Indices": [
       {
@@ -149,7 +149,7 @@
         "vol_chart": "data/charts/vol_SPY.png",
         "atr_pct": 1.5,
         "dist_sma50_atr": -1.49,
-        "rs": 88.0,
+        "rs": 55.0,
         "rs_chart": "data/charts/SPY.png",
         "long": [
           "SPXL",
@@ -271,7 +271,7 @@
             "dist_pct": 0.4
           }
         },
-        "em_pct": 2.09,
+        "em_pct": 2.61,
         "em_days": 3
       },
       {
@@ -720,7 +720,7 @@
         "vol_chart": "data/charts/vol_Glance_The_Toll_Road_7.png",
         "atr_pct": 2.5,
         "dist_sma50_atr": -0.19,
-        "rs": 65.0,
+        "rs": 60.0,
         "rs_chart": "data/charts/Glance_The_Toll_Road_7.png",
         "long": [],
         "short": [],
@@ -1169,7 +1169,7 @@
             "dist_pct": 1.0
           }
         },
-        "em_pct": 2.51,
+        "em_pct": 2.5,
         "em_days": 3
       },
       {
@@ -2217,26 +2217,26 @@
         "sr": {
           "support": [
             {
-              "price": 206.83,
-              "score": 52,
-              "dist_pct": -2.8
+              "price": 208.7,
+              "score": 48,
+              "dist_pct": -1.9
             },
             {
-              "price": 200.09,
+              "price": 201.92,
               "score": 43,
-              "dist_pct": -5.9
+              "dist_pct": -5.1
             },
             {
-              "price": 189.15,
-              "score": 30,
-              "dist_pct": -11.1
+              "price": 197.12,
+              "score": 28,
+              "dist_pct": -7.3
             }
           ],
           "resistance": [
             {
-              "price": 216.98,
-              "score": 40,
-              "dist_pct": 2.0
+              "price": 215.34,
+              "score": 39,
+              "dist_pct": 1.2
             },
             {
               "price": 221.67,
@@ -2246,8 +2246,8 @@
           ],
           "near": {
             "type": "resistance",
-            "price": 216.98,
-            "dist_pct": 2.0
+            "price": 215.34,
+            "dist_pct": 1.2
           }
         },
         "em_pct": 3.33,
@@ -2639,8 +2639,8 @@
               "dist_pct": 0.9
             },
             {
-              "price": 75.39,
-              "score": 90,
+              "price": 75.4,
+              "score": 93,
               "dist_pct": 4.6
             },
             {
@@ -2723,7 +2723,7 @@
             "dist_pct": 0.4
           }
         },
-        "em_pct": 2.09,
+        "em_pct": 2.61,
         "em_days": 3
       },
       {
@@ -3146,13 +3146,13 @@
               "dist_pct": -25.8
             },
             {
-              "price": 75.14,
+              "price": 75.12,
               "score": 40,
               "dist_pct": -29.9
             },
             {
-              "price": 72.47,
-              "score": 37,
+              "price": 72.49,
+              "score": 35,
               "dist_pct": -32.4
             }
           ],
@@ -4919,19 +4919,19 @@
           ],
           "resistance": [
             {
-              "price": 104.49,
+              "price": 104.33,
+              "score": 52,
+              "dist_pct": 5.2
+            },
+            {
+              "price": 106.91,
               "score": 51,
-              "dist_pct": 5.3
+              "dist_pct": 7.8
             },
             {
-              "price": 107.24,
-              "score": 50,
-              "dist_pct": 8.1
-            },
-            {
-              "price": 110.45,
+              "price": 111.81,
               "score": 27,
-              "dist_pct": 11.4
+              "dist_pct": 12.7
             }
           ],
           "near": {
@@ -4981,9 +4981,9 @@
               "dist_pct": -17.7
             },
             {
-              "price": 127.03,
-              "score": 25,
-              "dist_pct": -24.8
+              "price": 127.12,
+              "score": 23,
+              "dist_pct": -24.7
             }
           ],
           "resistance": [
@@ -5440,9 +5440,9 @@
         "sr": {
           "support": [
             {
-              "price": 59.4,
-              "score": 57,
-              "dist_pct": -2.4
+              "price": 59.46,
+              "score": 58,
+              "dist_pct": -2.3
             },
             {
               "price": 57.51,
@@ -6268,9 +6268,9 @@
               "dist_pct": -2.3
             },
             {
-              "price": 20.99,
-              "score": 140,
-              "dist_pct": -4.2
+              "price": 20.97,
+              "score": 142,
+              "dist_pct": -4.3
             },
             {
               "price": 20.39,
@@ -8067,14 +8067,14 @@
               "dist_pct": 14.3
             },
             {
-              "price": 18.08,
-              "score": 55,
-              "dist_pct": 17.6
+              "price": 18.09,
+              "score": 56,
+              "dist_pct": 17.7
             },
             {
-              "price": 18.53,
-              "score": 44,
-              "dist_pct": 20.5
+              "price": 18.55,
+              "score": 53,
+              "dist_pct": 20.6
             }
           ],
           "near": {
@@ -11923,8 +11923,8 @@
         "vol_chart": "data/charts/vol_ICE.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": 1.34,
-        "rs": null,
-        "rs_chart": null,
+        "rs": 30.0,
+        "rs_chart": "data/charts/ICE.png",
         "long": [],
         "short": [],
         "abc": "B",
@@ -12751,9 +12751,9 @@
               "dist_pct": -3.0
             },
             {
-              "price": 274.39,
-              "score": 32,
-              "dist_pct": -21.9
+              "price": 274.25,
+              "score": 34,
+              "dist_pct": -22.0
             }
           ],
           "resistance": [
@@ -17533,7 +17533,7 @@
               "dist_pct": -5.5
             },
             {
-              "price": 225.98,
+              "price": 225.94,
               "score": 51,
               "dist_pct": -8.0
             },
@@ -19278,15 +19278,15 @@
         "000660.KS",
         "005930.KS"
       ],
-      "daily": 2.93,
-      "intra": -0.48,
-      "wtd": 10.09,
-      "5d": 13.54,
-      "20d": 15.3,
-      "ytd": 64.65,
-      "vol_ratio": 0.89,
+      "daily": 3.02,
+      "intra": -0.39,
+      "wtd": 10.19,
+      "5d": 13.64,
+      "20d": 15.39,
+      "ytd": 64.77,
+      "vol_ratio": 0.9,
       "atr_pct": 7.0,
-      "dist_sma50_atr": 0.94,
+      "dist_sma50_atr": 0.95,
       "rs": 15.0,
       "vol_chart": "data/charts/vol_Theme_Memory.png",
       "constituent_daily": {
@@ -19294,7 +19294,7 @@
         "WDC": 3.11,
         "SNDK": 3.28,
         "STX": 5.58,
-        "000660.KS": 1.58,
+        "000660.KS": 2.14,
         "005930.KS": 0.88
       }
     },
@@ -23825,15 +23825,6 @@
   },
   "macro_fred": {
     "series": {
-      "DFF": {
-        "label": "Fed Funds",
-        "value": 3.64,
-        "prev": 3.64,
-        "change": 0.0,
-        "unit": "%",
-        "signal": "neutral",
-        "chart": "data/charts/fred_DFF.png"
-      },
       "CPIAUCSL": {
         "label": "CPI YoY",
         "value": 2.66,
@@ -23841,7 +23832,10 @@
         "change": -0.17,
         "unit": "%",
         "signal": "neutral",
-        "chart": "data/charts/fred_CPIAUCSL.png"
+        "chart": "data/charts/fred_CPIAUCSL.png",
+        "category": "Inflation",
+        "last_date": "2026-02-01",
+        "next_release": null
       },
       "CPILFESL": {
         "label": "Core CPI YoY",
@@ -23850,7 +23844,10 @@
         "change": -0.22,
         "unit": "%",
         "signal": "neutral",
-        "chart": "data/charts/fred_CPILFESL.png"
+        "chart": "data/charts/fred_CPILFESL.png",
+        "category": "Inflation",
+        "last_date": "2026-02-01",
+        "next_release": null
       },
       "PCEPI": {
         "label": "PCE YoY",
@@ -23859,7 +23856,10 @@
         "change": -0.08,
         "unit": "%",
         "signal": "hawkish",
-        "chart": "data/charts/fred_PCEPI.png"
+        "chart": "data/charts/fred_PCEPI.png",
+        "category": "Inflation",
+        "last_date": "2026-01-01",
+        "next_release": null
       },
       "PCEPILFE": {
         "label": "Core PCE YoY",
@@ -23868,43 +23868,10 @@
         "change": 0.05,
         "unit": "%",
         "signal": "hawkish",
-        "chart": "data/charts/fred_PCEPILFE.png"
-      },
-      "UNRATE": {
-        "label": "Unemployment",
-        "value": 4.3,
-        "prev": 4.4,
-        "change": -0.1,
-        "unit": "%",
-        "signal": "neutral",
-        "chart": "data/charts/fred_UNRATE.png"
-      },
-      "PAYEMS": {
-        "label": "NFP MoM",
-        "value": 0.18,
-        "prev": -0.13,
-        "change": 0.31,
-        "unit": "k",
-        "signal": "neutral",
-        "chart": "data/charts/fred_PAYEMS.png"
-      },
-      "UMCSENT": {
-        "label": "Consumer Sent.",
-        "value": 56.6,
-        "prev": 56.4,
-        "change": 0.2,
-        "unit": "",
-        "signal": "dovish",
-        "chart": "data/charts/fred_UMCSENT.png"
-      },
-      "T10Y2Y": {
-        "label": "Yield Curve",
-        "value": 0.5,
-        "prev": 0.51,
-        "change": -0.01,
-        "unit": "%",
-        "signal": "neutral",
-        "chart": "data/charts/fred_T10Y2Y.png"
+        "chart": "data/charts/fred_PCEPILFE.png",
+        "category": "Inflation",
+        "last_date": "2026-01-01",
+        "next_release": null
       },
       "DCOILBRENTEU": {
         "label": "Brent Crude",
@@ -23913,7 +23880,70 @@
         "change": 0.41,
         "unit": "$",
         "signal": "hawkish",
-        "chart": "data/charts/fred_DCOILBRENTEU.png"
+        "chart": "data/charts/fred_DCOILBRENTEU.png",
+        "category": "Inflation",
+        "last_date": "2026-03-30",
+        "next_release": null
+      },
+      "UNRATE": {
+        "label": "Unemployment",
+        "value": 4.3,
+        "prev": 4.4,
+        "change": -0.1,
+        "unit": "%",
+        "signal": "neutral",
+        "chart": "data/charts/fred_UNRATE.png",
+        "category": "Employment",
+        "last_date": "2026-03-01",
+        "next_release": null
+      },
+      "PAYEMS": {
+        "label": "NFP MoM",
+        "value": 0.18,
+        "prev": -0.13,
+        "change": 0.31,
+        "unit": "k",
+        "signal": "neutral",
+        "chart": "data/charts/fred_PAYEMS.png",
+        "category": "Employment",
+        "last_date": "2026-03-01",
+        "next_release": null
+      },
+      "UMCSENT": {
+        "label": "Consumer Sent.",
+        "value": 56.6,
+        "prev": 56.4,
+        "change": 0.2,
+        "unit": "",
+        "signal": "dovish",
+        "chart": "data/charts/fred_UMCSENT.png",
+        "category": "Employment",
+        "last_date": "2026-02-01",
+        "next_release": null
+      },
+      "DFF": {
+        "label": "Fed Funds",
+        "value": 3.64,
+        "prev": 3.64,
+        "change": 0.0,
+        "unit": "%",
+        "signal": "neutral",
+        "chart": "data/charts/fred_DFF.png",
+        "category": "Interest Rates",
+        "last_date": "2026-04-03",
+        "next_release": null
+      },
+      "T10Y2Y": {
+        "label": "Yield Curve",
+        "value": 0.5,
+        "prev": 0.51,
+        "change": -0.01,
+        "unit": "%",
+        "signal": "neutral",
+        "chart": "data/charts/fred_T10Y2Y.png",
+        "category": "Interest Rates",
+        "last_date": "2026-04-06",
+        "next_release": null
       }
     },
     "signal_counts": {
@@ -23926,16 +23956,21 @@
     "dominant_signal": "neutral",
     "narrative": "Leaning Neutral: CPI at 2.7%, Fed Funds at 3.64%, unemployment at 4.3%.",
     "series_order": [
-      "DFF",
       "CPIAUCSL",
       "CPILFESL",
       "PCEPI",
       "PCEPILFE",
+      "DCOILBRENTEU",
       "UNRATE",
       "PAYEMS",
       "UMCSENT",
-      "T10Y2Y",
-      "DCOILBRENTEU"
+      "DFF",
+      "T10Y2Y"
+    ],
+    "categories": [
+      "Inflation",
+      "Employment",
+      "Interest Rates"
     ]
   },
   "cross_asset": {
@@ -24007,35 +24042,35 @@
     }
   },
   "industries_sector_charts": {
-    "Utilities": "data/charts/vol_IndSec_Utilities.png",
-    "Materials": "data/charts/vol_IndSec_Materials.png",
-    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
-    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
-    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
-    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
-    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
-    "Financials": "data/charts/vol_IndSec_Financials.png",
-    "Energy": "data/charts/vol_IndSec_Energy.png",
-    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
-    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
     "Industrials": "data/charts/vol_IndSec_Industrials.png",
+    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
+    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
+    "Energy": "data/charts/vol_IndSec_Energy.png",
+    "Commodities": "data/charts/vol_IndSec_Commodities.png",
+    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
+    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
+    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
+    "Materials": "data/charts/vol_IndSec_Materials.png",
+    "Financials": "data/charts/vol_IndSec_Financials.png",
+    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
     "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
-    "Commodities": "data/charts/vol_IndSec_Commodities.png"
+    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
+    "Utilities": "data/charts/vol_IndSec_Utilities.png"
   },
   "industries_sector_rs_charts": {
-    "Utilities": "data/charts/IndSecRS_Utilities.png",
-    "Materials": "data/charts/IndSecRS_Materials.png",
-    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
-    "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
-    "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
-    "Health Care": "data/charts/IndSecRS_Health_Care.png",
-    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
-    "Financials": "data/charts/IndSecRS_Financials.png",
-    "Energy": "data/charts/IndSecRS_Energy.png",
-    "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
-    "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
     "Industrials": "data/charts/IndSecRS_Industrials.png",
+    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
+    "Health Care": "data/charts/IndSecRS_Health_Care.png",
+    "Energy": "data/charts/IndSecRS_Energy.png",
+    "Commodities": "data/charts/IndSecRS_Commodities.png",
+    "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
+    "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
+    "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
+    "Materials": "data/charts/IndSecRS_Materials.png",
+    "Financials": "data/charts/IndSecRS_Financials.png",
+    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
     "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
-    "Commodities": "data/charts/IndSecRS_Commodities.png"
+    "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
+    "Utilities": "data/charts/IndSecRS_Utilities.png"
   }
 }
