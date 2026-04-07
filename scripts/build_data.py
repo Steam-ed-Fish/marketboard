@@ -1376,10 +1376,18 @@ def main():
                     industries_sector_rs_charts[_sec_name] = _rpath
 
     # ── Expected Move (ATM straddle) for Indices group ───────────────────────────
-    print("Fetching options expected move for Indices...")
-    indices_tickers = [r['ticker'] for r in groups_data.get('Indices', []) if r.get('ticker')]
+    print("Fetching options expected move for Indices, Sel Sectors, S&P Style ETFs...")
+    em_groups = ['Indices', 'Sel Sectors', 'S&P Style ETFs']
+    em_tickers = []
+    seen = set()
+    for g in em_groups:
+        for r in groups_data.get(g, []):
+            t = r.get('ticker')
+            if t and t not in seen:
+                em_tickers.append(t)
+                seen.add(t)
     em_data = {}
-    for sym in indices_tickers:
+    for sym in em_tickers:
         em_pct, em_days = get_expected_move(sym)
         em_data[sym] = {'em_pct': em_pct, 'em_days': em_days}
         if em_pct is not None:
