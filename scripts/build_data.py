@@ -1538,9 +1538,11 @@ def build_macro_fred(api_key, charts_dir, finnhub_api_key=None, perplexity_api_k
         fc = fc_data.get(sid, {})
         d["forecast"]      = fc.get("forecast")
         d["next_forecast"] = fc.get("next_forecast")
-        # Fill next_release from calendar if FRED didn't find one
-        if fc.get("next_date") and not d.get("next_release"):
+        # Prefer Finnhub next_date — it has the exact day (e.g. Apr 10).
+        # FRED only returns a month-start placeholder (e.g. 2026-05-01) for future dates.
+        if fc.get("next_date"):
             d["next_release"] = fc.get("next_date")
+        # FRED date is the fallback when Finnhub has nothing
 
     # Narrative
     dominant = max(signal_counts, key=signal_counts.get) if signal_counts else "neutral"
