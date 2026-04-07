@@ -1136,21 +1136,137 @@ def fetch_fred_series(api_key, series_id, limit=40):
         print(f"FRED fetch error {series_id}: {e}")
         return []
 
-def fetch_economic_forecasts(perplexity_api_key):
-    """Use Perplexity to get consensus forecasts (actual vs estimate) for key US indicators."""
+def fetch_investing_calendar_data():
+    """Scrape US economic calendar from investing.com (actual, forecast, dates).
+    Returns dict keyed by FRED series_id.
+    """
+    from bs4 import BeautifulSoup
+
+    # investing.com event name (lowercase) -> FRED series_id
+    EVENT_MAP = {
+        'cpi y/y':                           'CPIAUCSL',
+        'core cpi y/y':                      'CPILFESL',
+        'pce price index y/y':               'PCEPI',
+        'core pce price index y/y':          'PCEPILFE',
+        'core pce price index m/m':          'PCEPILFE',
+        'non-farm payrolls':                 'PAYEMS',
+        'unemployment rate':                 'UNRATE',
+        'michigan consumer sentiment':       'UMCSENT',
+        'michigan consumer sentiment prel.': 'UMCSENT',
+        'u. of mich. consumer sentiment':    'UMCSENT',
+        'u.of mich. consumer sentiment':     'UMCSENT',
+    }
+
+    today = datetime.utcnow()
+    from_date = (today - timedelta(days=60)).strftime('%Y-%m-%d')
+    to_date   = (today + timedelta(days=60)).strftime('%Y-%m-%d')
+
+    headers = {
+        'User-Agent': (
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+            'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+        ),
+        'X-Requested-With': 'XMLHttpRequest',
+        'Accept': '*/*',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Referer': 'https://www.investing.com/economic-calendar/',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Origin': 'https://www.investing.com',
+    }
+    payload = (
+        'country%5B%5D=5'          # US
+        '&importance%5B%5D=3'      # High importance only
+        f'&dateFrom={from_date}'
+        f'&dateTo={to_date}'
+        '&timeZone=8'
+        '&timeFilter=timeOnly'
+        '&currentTab=custom'
+        '&submitFilters=1'
+        '&limit_from=0'
+    )
+
+    resp = requests.post(
+        'https://www.investing.com/economic-calendar/Service/getCalendarFilteredData',
+        headers=headers, data=payload, timeout=25)
+    resp.raise_for_status()
+    html_content = resp.json().get('data', '')
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    def parse_num(text):
+        t = text.strip().replace('%', '').replace('K', '').replace(',', '').strip()
+        try:
+            return float(t)
+        except Exception:
+            return None
+
+    result = {}
+    current_date = None
+    today_str = today.strftime('%Y-%m-%d')
+
+    for row in soup.find_all('tr'):
+        classes = row.get('class', [])
+
+        # Date header rows
+        if 'theDay' in classes:
+            raw = row.get_text(strip=True)
+            for fmt in ('%A, %B %d, %Y', '%B %d, %Y'):
+                try:
+                    current_date = datetime.strptime(raw, fmt).strftime('%Y-%m-%d')
+                    break
+                except ValueError:
+                    pass
+            continue
+
+        row_id = row.get('id', '')
+        if not row_id.startswith('eventRowId_') or current_date is None:
+            continue
+
+        cells = row.find_all('td')
+        if len(cells) < 6:
+            continue
+
+        event_name = cells[3].get_text(strip=True).lower()
+        series_id  = EVENT_MAP.get(event_name)
+        if not series_id:
+            continue
+
+        actual_txt   = cells[4].get_text(strip=True) if len(cells) > 4 else ''
+        forecast_txt = cells[5].get_text(strip=True) if len(cells) > 5 else ''
+        actual   = parse_num(actual_txt)   if actual_txt   else None
+        forecast = parse_num(forecast_txt) if forecast_txt else None
+
+        entry = result.setdefault(series_id, {})
+
+        if current_date <= today_str:
+            # Keep the most recent past release
+            if not entry.get('date') or current_date > entry['date']:
+                entry['date']     = current_date
+                entry['actual']   = actual
+                entry['forecast'] = forecast
+        else:
+            # Keep the nearest upcoming release
+            if not entry.get('next_date') or current_date < entry['next_date']:
+                entry['next_date']     = current_date
+                entry['next_forecast'] = forecast
+
+    return result
+
+
+def fetch_economic_forecasts_perplexity(perplexity_api_key):
+    """Fallback: use Perplexity to get consensus forecasts when investing.com is unavailable."""
     import json as _json
     today_str = datetime.utcnow().strftime('%Y-%m-%d')
     prompt = (
         f"Today is {today_str}. For each US economic indicator below, provide the MOST RECENT RELEASE "
         "and the next upcoming release. Return ONLY valid JSON (no markdown, no explanation):\n"
-        '{"CPIAUCSL":{"actual":2.8,"forecast":2.9,"release_date":"2025-03-12","next_date":"2025-04-10","next_forecast":2.6},'
-        '"CPILFESL":{"actual":3.1,"forecast":3.2,"release_date":"2025-03-12","next_date":"2025-04-10","next_forecast":3.0},'
-        '"PCEPI":{"actual":2.5,"forecast":2.6,"release_date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.4},'
-        '"PCEPILFE":{"actual":2.8,"forecast":2.9,"release_date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.7},'
-        '"UNRATE":{"actual":4.1,"forecast":4.1,"release_date":"2025-03-07","next_date":"2025-04-04","next_forecast":4.1},'
-        '"PAYEMS":{"actual":151,"forecast":160,"release_date":"2025-03-07","next_date":"2025-04-04","next_forecast":140},'
-        '"UMCSENT":{"actual":64.7,"forecast":65.0,"release_date":"2025-03-14","next_date":"2025-04-11","next_forecast":63.0}}'
-        "\nUnits: actual/forecast are YoY% for CPI/PCE, level% for UNRATE, thousands for PAYEMS (NFP MoM change), level for UMCSENT."
+        '{"CPIAUCSL":{"actual":2.8,"forecast":2.9,"date":"2025-03-12","next_date":"2025-04-10","next_forecast":2.6},'
+        '"CPILFESL":{"actual":3.1,"forecast":3.2,"date":"2025-03-12","next_date":"2025-04-10","next_forecast":3.0},'
+        '"PCEPI":{"actual":2.5,"forecast":2.6,"date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.4},'
+        '"PCEPILFE":{"actual":2.8,"forecast":2.9,"date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.7},'
+        '"UNRATE":{"actual":4.1,"forecast":4.1,"date":"2025-03-07","next_date":"2025-04-04","next_forecast":4.1},'
+        '"PAYEMS":{"actual":151,"forecast":160,"date":"2025-03-07","next_date":"2025-04-04","next_forecast":140},'
+        '"UMCSENT":{"actual":64.7,"forecast":65.0,"date":"2025-03-14","next_date":"2025-04-11","next_forecast":63.0}}'
+        "\nUnits: YoY% for CPI/PCE, level% for UNRATE, thousands for PAYEMS, level for UMCSENT."
     )
     try:
         resp = requests.post(
@@ -1172,10 +1288,9 @@ def fetch_economic_forecasts(perplexity_api_key):
             content = content.split("```")[1]
             if content.startswith("json"):
                 content = content[4:]
-        content = content.strip().rstrip("```").strip()
-        return _json.loads(content)
+        return _json.loads(content.strip().rstrip("```").strip())
     except Exception as e:
-        print(f"  Economic forecasts fetch error: {e}")
+        print(f"  Perplexity forecast fallback error: {e}")
         return {}
 
 def fetch_fred_release_id(api_key, series_id):
@@ -1301,17 +1416,27 @@ def build_macro_fred(api_key, charts_dir, perplexity_api_key=None):
         rid = release_ids.get(sid)
         d["next_release"] = next_dates.get(rid) if rid else None
 
-    # Merge consensus forecasts from Perplexity
+    # Merge consensus forecasts: try investing.com first, fall back to Perplexity
     fc_data = {}
-    if perplexity_api_key:
-        print("  Fetching economic consensus forecasts...")
-        fc_data = fetch_economic_forecasts(perplexity_api_key)
+    print("  Fetching economic calendar from Investing.com...")
+    try:
+        fc_data = fetch_investing_calendar_data()
+        if fc_data:
+            print(f"  Got calendar data for {len(fc_data)} series from Investing.com")
+        else:
+            raise ValueError("empty result")
+    except Exception as e:
+        print(f"  Investing.com calendar failed ({e})")
+        if perplexity_api_key:
+            print("  Falling back to Perplexity for forecasts...")
+            fc_data = fetch_economic_forecasts_perplexity(perplexity_api_key)
+
     for sid, d in series_out.items():
         fc = fc_data.get(sid, {})
         d["forecast"]      = fc.get("forecast")
         d["next_forecast"] = fc.get("next_forecast")
-        # Use Perplexity release_date if more precise than FRED last_date
-        d["release_date"]  = fc.get("release_date") or d.get("last_date")
+        # Use calendar release date if available (more precise than FRED last obs date)
+        d["release_date"]  = fc.get("date") or d.get("last_date")
         if fc.get("next_date") and not d.get("next_release"):
             d["next_release"] = fc.get("next_date")
 
