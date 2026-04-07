@@ -1394,7 +1394,8 @@ def fetch_fred_release_dates(api_key, release_id):
         r = requests.get(
             "https://api.stlouisfed.org/fred/release/dates",
             params={"release_id": release_id, "api_key": api_key, "file_type": "json",
-                    "realtime_start": today, "sort_order": "asc", "limit": 3},
+                    "realtime_start": today, "sort_order": "asc", "limit": 3,
+                    "include_release_dates_with_no_data": "true"},
             timeout=10)
         r.raise_for_status()
         dates = r.json().get("release_dates", [])
@@ -1505,18 +1506,33 @@ def build_macro_fred(api_key, charts_dir, finnhub_api_key=None, perplexity_api_k
         d["release_date"] = past_date or d.get("last_date")
         d["next_release"]  = next_date
 
-    # Fetch consensus forecasts — Finnhub primary, Perplexity fallback
+    # Fetch consensus forecasts — Finnhub for dates + estimates, Perplexity fills any gaps
     fc_data = {}
     if finnhub_api_key:
-        print("  Fetching consensus forecasts from Finnhub...")
+        print("  Fetching calendar from Finnhub...")
         try:
             fc_data = fetch_finnhub_calendar(finnhub_api_key)
         except Exception as e:
-            print(f"  Finnhub failed ({e}), falling back to Perplexity")
-    if not fc_data and perplexity_api_key:
-        print("  Fetching consensus forecasts via Perplexity...")
-        fc_data = fetch_economic_forecasts_perplexity(perplexity_api_key)
-        print(f"  Got forecast data for {len(fc_data)} series")
+            print(f"  Finnhub failed ({e})")
+
+    # Always try Perplexity for forecasts if any series is missing an estimate
+    missing_forecasts = not fc_data or not any(
+        v.get("forecast") is not None or v.get("next_forecast") is not None
+        for v in fc_data.values()
+    )
+    if missing_forecasts and perplexity_api_key:
+        print("  Fetching consensus forecasts via Perplexity (Finnhub estimates missing)...")
+        perp_data = fetch_economic_forecasts_perplexity(perplexity_api_key)
+        print(f"  Perplexity: got forecast data for {len(perp_data)} series")
+        for sid, pd in perp_data.items():
+            entry = fc_data.setdefault(sid, {})
+            if entry.get("forecast") is None:
+                entry["forecast"] = pd.get("forecast")
+            if entry.get("next_forecast") is None:
+                entry["next_forecast"] = pd.get("next_forecast")
+            # Fill next_date from Perplexity if Finnhub didn't have it
+            if not entry.get("next_date") and pd.get("next_date"):
+                entry["next_date"] = pd["next_date"]
 
     for sid, d in series_out.items():
         fc = fc_data.get(sid, {})
