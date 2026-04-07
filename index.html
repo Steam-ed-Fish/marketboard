@@ -293,22 +293,13 @@
             <div style="display:flex;gap:0;border-bottom:1px solid #0a1e35;padding:0 4px;background:#060d1c;position:sticky;top:0;z-index:2">
                 <button type="button" class="events-tab active" id="macro-tab-liq" onclick="switchMacroTab('liq')">💵 USD Liquidity</button>
                 <button type="button" class="events-tab" id="macro-tab-fed" onclick="switchMacroTab('fed')">🦅 Fed Watch</button>
-                <button type="button" class="events-tab" id="macro-tab-cal" onclick="switchMacroTab('cal')">📅 Econ Calendar</button>
-                <button type="button" class="events-tab" id="macro-tab-fred" onclick="switchMacroTab('fred')">📊 FRED Macro</button>
+                <button type="button" class="events-tab" id="macro-tab-fred" onclick="switchMacroTab('fred')">📊 Data</button>
             </div>
             <div id="macro-tab-content-liq" style="overflow-y:auto;max-height:560px">
                 <div id="usd-liquidity-content"></div>
             </div>
             <div id="macro-tab-content-fed" style="display:none;overflow-y:auto;max-height:560px">
                 <div id="fed-watch-content"></div>
-            </div>
-            <div id="macro-tab-content-cal" style="display:none">
-                <div class="tradingview-widget-container">
-                    <div class="tradingview-widget-container__widget"></div>
-                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-                    {"colorTheme":"dark","isTransparent":true,"locale":"en","countryFilter":"us","importanceFilter":"-1,0,1","autosize":true,"height":540}
-                    </script>
-                </div>
             </div>
             <div id="macro-tab-content-fred" style="display:none;overflow-y:auto;max-height:560px">
                 <div id="fred-macro-content"></div>
@@ -488,7 +479,7 @@
         }
     };
     window.switchMacroTab = function(tab) {
-        ['liq','fed','cal','fred'].forEach(function(t) {
+        ['liq','fed','fred'].forEach(function(t) {
             document.getElementById('macro-tab-content-'+t).style.display = tab === t ? '' : 'none';
             document.getElementById('macro-tab-'+t).classList.toggle('active', tab === t);
         });
@@ -1734,43 +1725,59 @@
             el.innerHTML = '<div style="padding:20px;color:#2d6080;text-align:center;font-size:0.82rem">No FRED data — add <code>FRED_API_KEY</code> secret in GitHub repo settings and re-run the workflow.</div>';
             return;
         }
-        var sc = mf.signal_counts || {};
-        var PILL_CLS = {hawkish:'fred-pill-hawkish',dovish:'fred-pill-dovish',tightening:'fred-pill-tightening',neutral:'fred-pill-neutral',mixed:'fred-pill-mixed'};
-        var SIG_COL  = {hawkish:'#ef4444',dovish:'#10b981',tightening:'#f59e0b',neutral:'#38bdf8',mixed:'#8b5cf6'};
+        var SIG_COL = {hawkish:'#ef4444',dovish:'#10b981',tightening:'#f59e0b',neutral:'#38bdf8',mixed:'#8b5cf6'};
+        var CAT_ICON = {'Inflation':'🌡️','Employment':'👷','Interest Rates':'📈'};
+        var categories = mf.categories || ['Inflation','Employment','Interest Rates'];
 
-        // Signal banner
-        var banner = '';
-        ['hawkish','tightening','dovish','neutral','mixed'].forEach(function(s) {
-            if (sc[s] > 0) banner += '<span class="fred-pill ' + PILL_CLS[s] + '">' + sc[s] + ' ' + s + '</span>';
-        });
+        function fmtDate(d) {
+            if (!d) return null;
+            var parts = d.split('-');
+            if (parts.length !== 3) return d;
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            return months[parseInt(parts[1],10)-1] + ' ' + parseInt(parts[2],10);
+        }
 
-        // KPI cards
-        var order = mf.series_order || Object.keys(mf.series);
-        var cards = order.map(function(sid) {
+        function makeCard(sid) {
             var d = mf.series[sid]; if (!d) return '';
             var col = SIG_COL[d.signal] || '#38bdf8';
             var chg = d.change != null ? (d.change >= 0 ? '+' : '') + d.change.toFixed(2) + (d.unit || '') : '';
-            var chgCol = d.change == null ? '' : (d.change > 0 ? 'color:#10b981' : (d.change < 0 ? 'color:#ef4444' : 'color:#3d7090'));
+            var chgCol = d.change == null ? '' : (d.change > 0 ? 'color:#ef4444' : (d.change < 0 ? 'color:#10b981' : 'color:#3d7090'));
             var valStr = d.unit === '$' ? ('$' + d.value.toFixed(1)) :
                          d.unit === 'k' ? (d.value > 0 ? '+' : '') + d.value.toFixed(0) + 'k' :
                          d.value.toFixed(d.unit === '%' ? 2 : 1);
             var unitStr = (d.unit === '$' || d.unit === 'k') ? '' : (d.unit || '');
+            var lastStr = d.last_date ? '<span style="color:#1e4060">as of ' + fmtDate(d.last_date) + '</span>' : '';
+            var nextStr = d.next_release ? '<span style="color:#2d6080">next: ' + fmtDate(d.next_release) + '</span>' : '';
+            var metaStr = (lastStr || nextStr)
+                ? '<div style="font-size:0.6rem;margin-top:3px;display:flex;gap:6px">' + lastStr + nextStr + '</div>'
+                : '';
             return '<div class="fred-card ' + d.signal + '">' +
                 '<div class="fred-card-top">' +
-                '<span class="fred-card-label">' + d.label + '</span>' +
-                '<span class="fred-card-signal" style="color:' + col + '">' + d.signal + '</span>' +
+                    '<span class="fred-card-label">' + d.label + '</span>' +
+                    '<span class="fred-card-signal" style="color:' + col + '">' + d.signal + '</span>' +
                 '</div>' +
-                '<div class="fred-card-value">' + valStr + '<span class="fred-card-unit">' + unitStr + '</span></div>' +
-                (chg ? '<div class="fred-card-change" style="' + chgCol + '">' + chg + ' vs prev</div>' : '') +
+                '<div class="fred-card-value">' + valStr + '<span class="fred-card-unit">' + unitStr + '</span>' +
+                    (chg ? '<span class="fred-card-change" style="font-size:0.7rem;margin-left:5px;' + chgCol + '">' + chg + '</span>' : '') +
+                '</div>' +
+                metaStr +
                 (d.chart ? '<img class="fred-sparkline" src="' + d.chart + '" alt="">' : '') +
-                '</div>';
-        }).join('');
+            '</div>';
+        }
 
-        el.innerHTML =
-            '<div class="fred-signal-banner">' + banner + '</div>' +
-            '<div class="fred-narrative">' + (mf.narrative || '') + '</div>' +
-            '<div class="fred-grid">' + cards + '</div>' +
-            '<div style="text-align:center;padding:6px 0 2px;font-size:0.6rem;color:#1a3550">Source: Federal Reserve Economic Data (FRED)</div>';
+        var html = '<div style="padding:6px 8px 2px">';
+        categories.forEach(function(cat) {
+            var sids = (mf.series_order || Object.keys(mf.series)).filter(function(sid) {
+                return mf.series[sid] && mf.series[sid].category === cat;
+            });
+            if (!sids.length) return;
+            html += '<div style="padding:6px 8px 2px;font-size:0.7rem;font-weight:700;color:#2d6080;letter-spacing:0.06em;border-bottom:1px solid #0a1e35;margin:6px 0 4px">' +
+                (CAT_ICON[cat] || '') + ' ' + cat.toUpperCase() + '</div>';
+            html += '<div class="fred-grid" style="margin-bottom:4px">' + sids.map(makeCard).join('') + '</div>';
+        });
+        html += '</div>';
+        html += '<div style="text-align:center;padding:4px 0 2px;font-size:0.6rem;color:#1a3550">Source: FRED · St. Louis Fed</div>';
+
+        el.innerHTML = html;
     }
 
     var polyData = null;

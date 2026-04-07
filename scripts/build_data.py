@@ -1081,18 +1081,20 @@ def fetch_vol_signals():
 # ── FRED Macro Monitor ─────────────────────────────────────────────────────────
 
 FRED_SERIES_CONFIG = [
-    # (series_id,      label,           unit,  transform)
-    ("DFF",            "Fed Funds",      "%",   "level"),
-    ("CPIAUCSL",       "CPI YoY",        "%",   "yoy"),
-    ("CPILFESL",       "Core CPI YoY",   "%",   "yoy"),
-    ("PCEPI",          "PCE YoY",        "%",   "yoy"),
-    ("PCEPILFE",       "Core PCE YoY",   "%",   "yoy"),
-    ("UNRATE",         "Unemployment",   "%",   "level"),
-    ("PAYEMS",         "NFP MoM",        "k",   "mom_k"),
-    ("UMCSENT",        "Consumer Sent.", "",    "level"),
-    ("T10Y2Y",         "Yield Curve",    "%",   "level"),
-    ("DCOILBRENTEU",   "Brent Crude",    "$",   "level"),
+    # (series_id,      label,            unit,  transform,  category)
+    ("CPIAUCSL",       "CPI YoY",        "%",   "yoy",      "Inflation"),
+    ("CPILFESL",       "Core CPI YoY",   "%",   "yoy",      "Inflation"),
+    ("PCEPI",          "PCE YoY",        "%",   "yoy",      "Inflation"),
+    ("PCEPILFE",       "Core PCE YoY",   "%",   "yoy",      "Inflation"),
+    ("DCOILBRENTEU",   "Brent Crude",    "$",   "level",    "Inflation"),
+    ("UNRATE",         "Unemployment",   "%",   "level",    "Employment"),
+    ("PAYEMS",         "NFP MoM",        "k",   "mom_k",    "Employment"),
+    ("UMCSENT",        "Consumer Sent.", "",    "level",    "Employment"),
+    ("DFF",            "Fed Funds",      "%",   "level",    "Interest Rates"),
+    ("T10Y2Y",         "Yield Curve",    "%",   "level",    "Interest Rates"),
 ]
+
+FRED_CATEGORIES = ["Inflation", "Employment", "Interest Rates"]
 
 def _fred_signal(series_id, value):
     """Classify a macro value into a policy signal."""
@@ -1134,6 +1136,34 @@ def fetch_fred_series(api_key, series_id, limit=40):
         print(f"FRED fetch error {series_id}: {e}")
         return []
 
+def fetch_fred_release_id(api_key, series_id):
+    """Return the FRED release ID for a series."""
+    try:
+        resp = requests.get(
+            "https://api.stlouisfed.org/fred/series/release",
+            params={"series_id": series_id, "api_key": api_key, "file_type": "json"},
+            timeout=10)
+        resp.raise_for_status()
+        releases = resp.json().get("releases", [])
+        return releases[0]["id"] if releases else None
+    except Exception:
+        return None
+
+def fetch_fred_next_release_date(api_key, release_id):
+    """Return the next scheduled release date string (YYYY-MM-DD) for a FRED release."""
+    try:
+        today = datetime.utcnow().date().isoformat()
+        resp = requests.get(
+            "https://api.stlouisfed.org/fred/release/dates",
+            params={"release_id": release_id, "api_key": api_key, "file_type": "json",
+                    "realtime_start": today, "sort_order": "asc", "limit": 3},
+            timeout=10)
+        resp.raise_for_status()
+        dates = resp.json().get("release_dates", [])
+        return dates[0]["date"] if dates else None
+    except Exception:
+        return None
+
 def create_fred_sparkline(values, series_id, charts_dir, color="#38bdf8"):
     """Thin line + fill sparkline for a FRED series."""
     try:
@@ -1173,7 +1203,7 @@ def build_macro_fred(api_key, charts_dir):
     series_out = {}
     signal_counts = {"hawkish": 0, "dovish": 0, "tightening": 0, "neutral": 0, "mixed": 0}
 
-    for series_id, label, unit, transform in FRED_SERIES_CONFIG:
+    for series_id, label, unit, transform, category in FRED_SERIES_CONFIG:
         pairs = raw.get(series_id, [])
         if not pairs:
             continue
@@ -1205,7 +1235,29 @@ def build_macro_fred(api_key, charts_dir):
             "label": label, "value": current, "prev": prev,
             "change": round(current - prev, 2) if prev is not None else None,
             "unit": unit, "signal": signal, "chart": chart,
+            "category": category, "last_date": pairs[-1][0] if pairs else None,
         }
+
+    # Fetch release IDs and next release dates
+    from concurrent.futures import ThreadPoolExecutor, as_completed as _as_completed
+    release_ids = {}
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        futs2 = {ex.submit(fetch_fred_release_id, api_key, sid): sid
+                 for sid in series_out}
+        for f in _as_completed(futs2):
+            release_ids[futs2[f]] = f.result()
+
+    unique_rids = set(v for v in release_ids.values() if v)
+    next_dates = {}
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        futs3 = {ex.submit(fetch_fred_next_release_date, api_key, rid): rid
+                 for rid in unique_rids}
+        for f in _as_completed(futs3):
+            next_dates[futs3[f]] = f.result()
+
+    for sid, d in series_out.items():
+        rid = release_ids.get(sid)
+        d["next_release"] = next_dates.get(rid) if rid else None
 
     # Narrative
     dominant = max(signal_counts, key=signal_counts.get) if signal_counts else "neutral"
@@ -1226,6 +1278,7 @@ def build_macro_fred(api_key, charts_dir):
         "dominant_signal": dominant,
         "narrative": narrative,
         "series_order": [s[0] for s in FRED_SERIES_CONFIG if s[0] in series_out],
+        "categories": FRED_CATEGORIES,
     }
 
 
