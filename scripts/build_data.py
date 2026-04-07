@@ -1467,7 +1467,7 @@ def main():
     }
 
     # ── Rotation history snapshot ────────────────────────────────────────────────
-    ROTATION_GROUPS = ["Indices", "The 7s at a Glance", "Industries", "Sel Sectors", "Countries"]
+    ROTATION_GROUPS = ["Indices", "The 7s at a Glance", "Industries", "Sel Sectors", "Countries", "S&P Style ETFs"]
     rot_path = os.path.join(out_dir, "rotation_history.json")
     rot_history = []
     if os.path.exists(rot_path):
