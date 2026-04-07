@@ -1376,6 +1376,10 @@
             'Rates':      { icon: '🏦', desc: 'Bond market uncertainty — high MOVE = rates market stressed' },
             'Commodities':{ icon: '🛢️', desc: 'Commodity vol — spikes signal supply shocks or geopolitical stress' },
         };
+        var TV_SYM_MAP = {
+            'VIX': 'CBOE:VIX', 'VXN': 'CBOE:VXN', 'RVX': 'CBOE:RVX', 'VVIX': 'CBOE:VVIX',
+            'MOVE': 'TVC:MOVE', 'OVX': 'CBOE:OVX', 'GVZ': 'CBOE:GVZ',
+        };
 
         function vsColor(vs_ma) {
             if (vs_ma == null) return '#4b5563';
@@ -1410,7 +1414,9 @@
                 var pct = item.pct52 != null ? item.pct52 : null;
                 var barW = pct != null ? pct : 0;
                 var barCol = pct != null ? (pct > 70 ? '#ef4444' : pct > 40 ? '#f97316' : '#22c55e') : '#374151';
-                html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px">';
+                var tvSym = TV_SYM_MAP[item.name];
+                var clickAttr = tvSym ? ' onclick="initChart(\'' + tvSym + '\')" title="Click to open chart"' : '';
+                html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px' + (tvSym ? ';cursor:pointer' : '') + '"' + clickAttr + '>';
                 html += '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">';
                 html += '<span style="font-size:0.82rem;font-weight:700;color:#e2e8f0">' + item.name + '</span>';
                 html += '<span style="font-size:0.6rem;color:#4b5563">' + item.desc + '</span>';
@@ -1748,6 +1754,11 @@
 
     function toTVSymbol(sym) {
         // Convert Yahoo Finance ticker format to TradingView exchange:symbol format
+        var _overrides = {
+            '^VIX': 'CBOE:VIX', '^VXN': 'CBOE:VXN', '^RVX': 'CBOE:RVX', '^VVIX': 'CBOE:VVIX',
+            '^MOVE': 'TVC:MOVE', '^OVX': 'CBOE:OVX', '^GVZ': 'CBOE:GVZ',
+        };
+        if (_overrides[sym]) return _overrides[sym];
         if (sym.endsWith('.KS')) return 'KRX:' + sym.slice(0, -3);
         if (sym.endsWith('.KQ')) return 'KOSDAQ:' + sym.slice(0, -3);
         if (sym.endsWith('.T'))  return 'TSE:' + sym.slice(0, -2);
@@ -1757,7 +1768,7 @@
         return sym;
     }
 
-    function initChart(symbol) {
+    window.initChart = function initChart(symbol) {
         var rrgPanel = document.getElementById('rrg-chart-panel');
         var tvWrapper = document.getElementById('tradingview-chart-wrapper');
         if (rrgPanel) rrgPanel.style.display = 'none';
