@@ -1082,8 +1082,11 @@ def fetch_vol_signals():
 
 FRED_SERIES_CONFIG = [
     # (series_id,      label,            unit,  transform,  category)
+    # _MOM suffix = virtual ID; fetches from the base series, applies MoM % transform
     ("CPIAUCSL",       "CPI YoY",        "%",   "yoy",      "Inflation"),
+    ("CPIAUCSL_MOM",   "CPI MoM",        "%",   "mom_pct",  "Inflation"),
     ("CPILFESL",       "Core CPI YoY",   "%",   "yoy",      "Inflation"),
+    ("CPILFESL_MOM",   "Core CPI MoM",   "%",   "mom_pct",  "Inflation"),
     ("PCEPI",          "PCE YoY",        "%",   "yoy",      "Inflation"),
     ("PCEPILFE",       "Core PCE YoY",   "%",   "yoy",      "Inflation"),
     ("DCOILBRENTEU",   "Brent Crude",    "$",   "level",    "Inflation"),
@@ -1100,7 +1103,7 @@ def _fred_signal(series_id, value):
     """Classify a macro value into a policy signal."""
     if series_id == "DFF":
         return "tightening" if value > 4 else ("dovish" if value < 2 else "neutral")
-    if series_id in ("CPIAUCSL", "CPILFESL"):
+    if series_id in ("CPIAUCSL", "CPILFESL", "CPIAUCSL_MOM", "CPILFESL_MOM"):
         return "hawkish" if value > 3 else ("dovish" if value < 2 else "neutral")
     if series_id in ("PCEPI", "PCEPILFE"):
         return "hawkish" if value > 2.5 else ("dovish" if value < 2 else "neutral")
@@ -1256,6 +1259,14 @@ def fetch_finnhub_calendar(finnhub_api_key):
     """Fetch US economic calendar from Finnhub (actual + consensus estimate + dates)."""
     # Maps fragments of Finnhub event names (lowercase) to FRED series IDs
     EVENT_MAP = [
+        # MoM variants first — must match before the general 'core cpi' / 'cpi' fragments
+        ('core cpi mom',        'CPILFESL_MOM'),
+        ('core cpi m/m',        'CPILFESL_MOM'),
+        ('cpi mom',             'CPIAUCSL_MOM'),
+        ('cpi m/m',             'CPIAUCSL_MOM'),
+        # YoY / general
+        ('core cpi yoy',        'CPILFESL'),
+        ('core cpi y/y',        'CPILFESL'),
         ('core cpi',            'CPILFESL'),
         ('cpi yoy',             'CPIAUCSL'),
         ('cpi y/y',             'CPIAUCSL'),
@@ -1324,13 +1335,16 @@ def fetch_economic_forecasts_perplexity(perplexity_api_key):
         "with the most recent release data and next scheduled release for each US economic indicator. "
         "Use exactly these keys:\n"
         '{"CPIAUCSL":{"forecast":2.9,"date":"2025-03-12","next_date":"2025-04-10","next_forecast":2.6},'
+        '"CPIAUCSL_MOM":{"forecast":0.3,"date":"2025-03-12","next_date":"2025-04-10","next_forecast":0.2},'
         '"CPILFESL":{"forecast":3.2,"date":"2025-03-12","next_date":"2025-04-10","next_forecast":3.0},'
+        '"CPILFESL_MOM":{"forecast":0.3,"date":"2025-03-12","next_date":"2025-04-10","next_forecast":0.3},'
         '"PCEPI":{"forecast":2.6,"date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.4},'
         '"PCEPILFE":{"forecast":2.9,"date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.7},'
         '"UNRATE":{"forecast":4.1,"date":"2025-03-07","next_date":"2025-04-04","next_forecast":4.1},'
         '"PAYEMS":{"forecast":160,"date":"2025-03-07","next_date":"2025-04-04","next_forecast":140},'
         '"UMCSENT":{"forecast":65.0,"date":"2025-03-14","next_date":"2025-04-11","next_forecast":63.0}}'
-        "\nUnits: forecast/next_forecast are YoY% for CPI/PCE, level% for UNRATE, "
+        "\nUnits: forecast/next_forecast are YoY% for CPIAUCSL/CPILFESL/PCEPI/PCEPILFE, "
+        "MoM% for CPIAUCSL_MOM/CPILFESL_MOM, level% for UNRATE, "
         "thousands (integer) for PAYEMS NFP, level for UMCSENT. "
         "date = most recent release date YYYY-MM-DD. next_date = next scheduled release YYYY-MM-DD."
     )
@@ -1438,10 +1452,15 @@ def build_macro_fred(api_key, charts_dir, finnhub_api_key=None, perplexity_api_k
     from concurrent.futures import ThreadPoolExecutor, as_completed
     SIGNAL_COLORS = {"hawkish": "#ef4444", "dovish": "#10b981",
                      "tightening": "#f59e0b", "neutral": "#38bdf8", "mixed": "#8b5cf6"}
+    # _MOM virtual IDs re-use the base series data — deduplicate FRED fetches
+    def _real_sid(sid):
+        return sid[:-4] if sid.endswith('_MOM') else sid
+
+    real_sids = {_real_sid(sid) for sid, *_ in FRED_SERIES_CONFIG}
     raw = {}
     with ThreadPoolExecutor(max_workers=6) as ex:
-        futs = {ex.submit(fetch_fred_series, api_key, sid, 40): sid
-                for sid, *_ in FRED_SERIES_CONFIG}
+        futs = {ex.submit(fetch_fred_series, api_key, rsid, 40): rsid
+                for rsid in real_sids}
         for f in as_completed(futs):
             raw[futs[f]] = f.result()
 
@@ -1449,7 +1468,7 @@ def build_macro_fred(api_key, charts_dir, finnhub_api_key=None, perplexity_api_k
     signal_counts = {"hawkish": 0, "dovish": 0, "tightening": 0, "neutral": 0, "mixed": 0}
 
     for series_id, label, unit, transform, category in FRED_SERIES_CONFIG:
-        pairs = raw.get(series_id, [])
+        pairs = raw.get(_real_sid(series_id), [])
         if not pairs:
             continue
         values = [v for _, v in pairs]
@@ -1459,6 +1478,12 @@ def build_macro_fred(api_key, charts_dir, finnhub_api_key=None, perplexity_api_k
                 continue
             transformed = [(values[i] / values[i-12] - 1) * 100
                            for i in range(12, len(values)) if values[i-12] != 0]
+            spark = transformed[-24:]
+        elif transform == "mom_pct":
+            if len(values) < 2:
+                continue
+            transformed = [(values[i] / values[i-1] - 1) * 100
+                           for i in range(1, len(values)) if values[i-1] != 0]
             spark = transformed[-24:]
         elif transform == "mom_k":
             if len(values) < 2:
@@ -1487,7 +1512,8 @@ def build_macro_fred(api_key, charts_dir, finnhub_api_key=None, perplexity_api_k
     from concurrent.futures import ThreadPoolExecutor, as_completed as _as_completed
     release_ids = {}
     with ThreadPoolExecutor(max_workers=6) as ex:
-        futs2 = {ex.submit(fetch_fred_release_id, api_key, sid): sid
+        # Use real FRED series ID for release lookup (_MOM virtual IDs share the same release)
+        futs2 = {ex.submit(fetch_fred_release_id, api_key, _real_sid(sid)): sid
                  for sid in series_out}
         for f in _as_completed(futs2):
             release_ids[futs2[f]] = f.result()

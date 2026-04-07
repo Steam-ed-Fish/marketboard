@@ -1784,27 +1784,41 @@
             '</tr>';
         }
 
-        var THEAD = '<thead><tr style="font-size:0.6rem;color:#1e4060;letter-spacing:0.04em;text-transform:uppercase">' +
-            '<th style="text-align:left;padding:4px 8px;font-weight:600">Metric</th>' +
-            '<th style="text-align:right;padding:4px 4px">Actual</th>' +
-            '<th style="text-align:right;padding:4px 4px">Est.</th>' +
-            '<th style="text-align:right;padding:4px 4px">Δ</th>' +
-            '<th style="text-align:right;padding:4px 4px">Released</th>' +
-            '<th style="text-align:right;padding:4px 4px">Next</th>' +
-            '<th style="text-align:right;padding:4px 8px">Next Est.</th>' +
-            '</tr></thead>';
+        // Single table with colgroup so columns stay aligned across all category sections
+        var COLGROUP = '<colgroup>' +
+            '<col>' +
+            '<col style="width:76px">' +
+            '<col style="width:62px">' +
+            '<col style="width:48px">' +
+            '<col style="width:72px">' +
+            '<col style="width:72px">' +
+            '<col style="width:72px">' +
+            '</colgroup>';
 
-        var html = '';
+        function catHeaderRows(cat) {
+            return '<tr><td colspan="7" style="padding:10px 8px 2px;font-size:0.68rem;font-weight:700;color:#2d6080;letter-spacing:0.07em">' +
+                (CAT_ICON[cat] || '') + '\u00a0\u00a0' + cat.toUpperCase() + '</td></tr>' +
+                '<tr style="font-size:0.6rem;color:#1e4060;letter-spacing:0.04em;text-transform:uppercase">' +
+                '<th style="text-align:left;padding:4px 8px;font-weight:600">Metric</th>' +
+                '<th style="text-align:right;padding:4px 4px">Actual</th>' +
+                '<th style="text-align:right;padding:4px 4px">Est.</th>' +
+                '<th style="text-align:right;padding:4px 4px">Δ</th>' +
+                '<th style="text-align:right;padding:4px 4px">Released</th>' +
+                '<th style="text-align:right;padding:4px 4px">Next</th>' +
+                '<th style="text-align:right;padding:4px 8px">Next Est.</th>' +
+                '</tr>';
+        }
+
+        var html = '<table style="width:100%;border-collapse:collapse;font-size:0.76rem">' + COLGROUP + '<tbody>';
         categories.forEach(function(cat) {
             var sids = (mf.series_order || Object.keys(mf.series)).filter(function(sid) {
                 return mf.series[sid] && mf.series[sid].category === cat;
             });
             if (!sids.length) return;
-            html += '<div style="padding:8px 8px 2px 8px;font-size:0.68rem;font-weight:700;color:#2d6080;letter-spacing:0.07em">' +
-                (CAT_ICON[cat] || '') + '  ' + cat.toUpperCase() + '</div>';
-            html += '<table style="width:100%;border-collapse:collapse;font-size:0.76rem">' +
-                THEAD + '<tbody>' + sids.map(makeRow).join('') + '</tbody></table>';
+            html += catHeaderRows(cat);
+            html += sids.map(makeRow).join('');
         });
+        html += '</tbody></table>';
         html += '<div style="text-align:center;padding:6px 0 2px;font-size:0.6rem;color:#1a3550">Actual: FRED · Release dates: FRED calendar · Consensus estimates: Perplexity</div>';
         el.innerHTML = html;
     }
