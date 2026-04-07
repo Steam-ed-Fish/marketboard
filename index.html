@@ -279,27 +279,11 @@
 <body>
     <div class="ticker-list">
         <div style="margin-bottom:0">
-            <button class="events-button fg-toggle-btn" id="events-toggle-btn" type="button" onclick="toggleEventsSection()">📅 EVENTS</button>
+            <button class="events-button fg-toggle-btn" id="events-toggle-btn" type="button" onclick="toggleEventsSection()">📋 QUICK RECAP</button>
         </div>
         <div id="events-inline-panel" class="fg-inline-panel" style="flex-direction:column">
-            <div style="display:flex;gap:0;border-bottom:1px solid #0a1e35;padding:0 4px;background:#060d1c;position:sticky;top:0;z-index:2">
-                <button type="button" class="events-tab active" id="tab-macro" onclick="switchEventsTab('macro')">📋 Macro Events</button>
-                <button type="button" class="events-tab" id="tab-cal" onclick="switchEventsTab('cal')">📅 Econ Calendar</button>
-                <button type="button" class="events-tab" id="tab-fred" onclick="switchEventsTab('fred')">📊 FRED Macro</button>
-            </div>
             <div id="events-tab-macro" style="overflow-y:auto;max-height:560px">
                 <div id="events-modal-content"></div>
-            </div>
-            <div id="events-tab-cal" style="display:none">
-                <div class="tradingview-widget-container">
-                    <div class="tradingview-widget-container__widget"></div>
-                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-                    {"colorTheme":"dark","isTransparent":true,"locale":"en","countryFilter":"us","importanceFilter":"-1,0,1","autosize":true,"height":540}
-                    </script>
-                </div>
-            </div>
-            <div id="events-tab-fred" style="display:none;overflow-y:auto;max-height:560px">
-                <div id="fred-macro-content"></div>
             </div>
         </div>
         <div style="margin-bottom:0">
@@ -309,12 +293,25 @@
             <div style="display:flex;gap:0;border-bottom:1px solid #0a1e35;padding:0 4px;background:#060d1c;position:sticky;top:0;z-index:2">
                 <button type="button" class="events-tab active" id="macro-tab-liq" onclick="switchMacroTab('liq')">💵 USD Liquidity</button>
                 <button type="button" class="events-tab" id="macro-tab-fed" onclick="switchMacroTab('fed')">🦅 Fed Watch</button>
+                <button type="button" class="events-tab" id="macro-tab-cal" onclick="switchMacroTab('cal')">📅 Econ Calendar</button>
+                <button type="button" class="events-tab" id="macro-tab-fred" onclick="switchMacroTab('fred')">📊 FRED Macro</button>
             </div>
             <div id="macro-tab-content-liq" style="overflow-y:auto;max-height:560px">
                 <div id="usd-liquidity-content"></div>
             </div>
             <div id="macro-tab-content-fed" style="display:none;overflow-y:auto;max-height:560px">
                 <div id="fed-watch-content"></div>
+            </div>
+            <div id="macro-tab-content-cal" style="display:none">
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+                    {"colorTheme":"dark","isTransparent":true,"locale":"en","countryFilter":"us","importanceFilter":"-1,0,1","autosize":true,"height":540}
+                    </script>
+                </div>
+            </div>
+            <div id="macro-tab-content-fred" style="display:none;overflow-y:auto;max-height:560px">
+                <div id="fred-macro-content"></div>
             </div>
         </div>
         <div style="margin-bottom:0">
@@ -481,23 +478,8 @@
         var panel = document.getElementById('events-inline-panel');
         var btn   = document.getElementById('events-toggle-btn');
         var isOpen = panel.classList.contains('open');
-        if (isOpen) {
-            panel.classList.remove('open');
-            btn.classList.remove('active');
-        } else {
-            panel.classList.add('open');
-            btn.classList.add('active');
-            switchEventsTab('macro');
-        }
-    };
-    window.switchEventsTab = function(tab) {
-        document.getElementById('events-tab-macro').style.display = tab === 'macro' ? '' : 'none';
-        document.getElementById('events-tab-cal').style.display  = tab === 'cal'   ? '' : 'none';
-        document.getElementById('events-tab-fred').style.display = tab === 'fred'  ? '' : 'none';
-        document.getElementById('tab-macro').classList.toggle('active', tab === 'macro');
-        document.getElementById('tab-cal').classList.toggle('active',   tab === 'cal');
-        document.getElementById('tab-fred').classList.toggle('active',  tab === 'fred');
-        if (tab === 'fred') renderMacroFred();
+        if (isOpen) { panel.classList.remove('open'); btn.classList.remove('active'); }
+        else        { panel.classList.add('open');    btn.classList.add('active'); }
     };
 
     window.toggleMacroSection = function() {
@@ -514,12 +496,13 @@
         }
     };
     window.switchMacroTab = function(tab) {
-        document.getElementById('macro-tab-content-liq').style.display = tab === 'liq' ? '' : 'none';
-        document.getElementById('macro-tab-content-fed').style.display = tab === 'fed' ? '' : 'none';
-        document.getElementById('macro-tab-liq').classList.toggle('active', tab === 'liq');
-        document.getElementById('macro-tab-fed').classList.toggle('active', tab === 'fed');
-        if (tab === 'liq') renderUSDLiquidity();
-        if (tab === 'fed') renderFedWatch();
+        ['liq','fed','cal','fred'].forEach(function(t) {
+            document.getElementById('macro-tab-content-'+t).style.display = tab === t ? '' : 'none';
+            document.getElementById('macro-tab-'+t).classList.toggle('active', tab === t);
+        });
+        if (tab === 'liq')  renderUSDLiquidity();
+        if (tab === 'fed')  renderFedWatch();
+        if (tab === 'fred') renderMacroFred();
     };
 
     window.toggleFGSection = function() {
