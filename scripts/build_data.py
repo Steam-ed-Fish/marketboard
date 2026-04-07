@@ -1136,6 +1136,48 @@ def fetch_fred_series(api_key, series_id, limit=40):
         print(f"FRED fetch error {series_id}: {e}")
         return []
 
+def fetch_economic_forecasts(perplexity_api_key):
+    """Use Perplexity to get consensus forecasts (actual vs estimate) for key US indicators."""
+    import json as _json
+    today_str = datetime.utcnow().strftime('%Y-%m-%d')
+    prompt = (
+        f"Today is {today_str}. For each US economic indicator below, provide the MOST RECENT RELEASE "
+        "and the next upcoming release. Return ONLY valid JSON (no markdown, no explanation):\n"
+        '{"CPIAUCSL":{"actual":2.8,"forecast":2.9,"release_date":"2025-03-12","next_date":"2025-04-10","next_forecast":2.6},'
+        '"CPILFESL":{"actual":3.1,"forecast":3.2,"release_date":"2025-03-12","next_date":"2025-04-10","next_forecast":3.0},'
+        '"PCEPI":{"actual":2.5,"forecast":2.6,"release_date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.4},'
+        '"PCEPILFE":{"actual":2.8,"forecast":2.9,"release_date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.7},'
+        '"UNRATE":{"actual":4.1,"forecast":4.1,"release_date":"2025-03-07","next_date":"2025-04-04","next_forecast":4.1},'
+        '"PAYEMS":{"actual":151,"forecast":160,"release_date":"2025-03-07","next_date":"2025-04-04","next_forecast":140},'
+        '"UMCSENT":{"actual":64.7,"forecast":65.0,"release_date":"2025-03-14","next_date":"2025-04-11","next_forecast":63.0}}'
+        "\nUnits: actual/forecast are YoY% for CPI/PCE, level% for UNRATE, thousands for PAYEMS (NFP MoM change), level for UMCSENT."
+    )
+    try:
+        resp = requests.post(
+            "https://api.perplexity.ai/chat/completions",
+            json={
+                "model": "sonar",
+                "messages": [
+                    {"role": "system", "content": "Return only valid JSON, no markdown, no explanation."},
+                    {"role": "user", "content": prompt},
+                ],
+                "temperature": 0.1,
+            },
+            headers={"Authorization": f"Bearer {perplexity_api_key}", "Content-Type": "application/json"},
+            timeout=30,
+        )
+        resp.raise_for_status()
+        content = resp.json()["choices"][0]["message"]["content"].strip()
+        if "```" in content:
+            content = content.split("```")[1]
+            if content.startswith("json"):
+                content = content[4:]
+        content = content.strip().rstrip("```").strip()
+        return _json.loads(content)
+    except Exception as e:
+        print(f"  Economic forecasts fetch error: {e}")
+        return {}
+
 def fetch_fred_release_id(api_key, series_id):
     """Return the FRED release ID for a series."""
     try:
@@ -1188,7 +1230,7 @@ def create_fred_sparkline(values, series_id, charts_dir, color="#38bdf8"):
         print(f"FRED sparkline error {series_id}: {e}")
         return None
 
-def build_macro_fred(api_key, charts_dir):
+def build_macro_fred(api_key, charts_dir, perplexity_api_key=None):
     """Fetch FRED series, transform, classify signals, generate sparklines."""
     from concurrent.futures import ThreadPoolExecutor, as_completed
     SIGNAL_COLORS = {"hawkish": "#ef4444", "dovish": "#10b981",
@@ -1258,6 +1300,20 @@ def build_macro_fred(api_key, charts_dir):
     for sid, d in series_out.items():
         rid = release_ids.get(sid)
         d["next_release"] = next_dates.get(rid) if rid else None
+
+    # Merge consensus forecasts from Perplexity
+    fc_data = {}
+    if perplexity_api_key:
+        print("  Fetching economic consensus forecasts...")
+        fc_data = fetch_economic_forecasts(perplexity_api_key)
+    for sid, d in series_out.items():
+        fc = fc_data.get(sid, {})
+        d["forecast"]      = fc.get("forecast")
+        d["next_forecast"] = fc.get("next_forecast")
+        # Use Perplexity release_date if more precise than FRED last_date
+        d["release_date"]  = fc.get("release_date") or d.get("last_date")
+        if fc.get("next_date") and not d.get("next_release"):
+            d["next_release"] = fc.get("next_date")
 
     # Narrative
     dominant = max(signal_counts, key=signal_counts.get) if signal_counts else "neutral"
@@ -1687,7 +1743,7 @@ def main():
     macro_fred = {}
     if fred_api_key:
         print("Fetching FRED macro data...")
-        macro_fred = build_macro_fred(fred_api_key, charts_dir)
+        macro_fred = build_macro_fred(fred_api_key, charts_dir, perplexity_api_key)
         print(f"  FRED: {len(macro_fred.get('series', {}))} series, dominant={macro_fred.get('dominant_signal')}")
     else:
         print("No FRED_API_KEY set — skipping macro data")

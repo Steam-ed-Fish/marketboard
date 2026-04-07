@@ -1730,53 +1730,82 @@
         var categories = mf.categories || ['Inflation','Employment','Interest Rates'];
 
         function fmtDate(d) {
-            if (!d) return null;
+            if (!d) return '—';
             var parts = d.split('-');
             if (parts.length !== 3) return d;
             var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
             return months[parseInt(parts[1],10)-1] + ' ' + parseInt(parts[2],10);
         }
 
-        function makeCard(sid) {
-            var d = mf.series[sid]; if (!d) return '';
-            var col = SIG_COL[d.signal] || '#38bdf8';
-            var chg = d.change != null ? (d.change >= 0 ? '+' : '') + d.change.toFixed(2) + (d.unit || '') : '';
-            var chgCol = d.change == null ? '' : (d.change > 0 ? 'color:#ef4444' : (d.change < 0 ? 'color:#10b981' : 'color:#3d7090'));
-            var valStr = d.unit === '$' ? ('$' + d.value.toFixed(1)) :
-                         d.unit === 'k' ? (d.value > 0 ? '+' : '') + d.value.toFixed(0) + 'k' :
-                         d.value.toFixed(d.unit === '%' ? 2 : 1);
-            var unitStr = (d.unit === '$' || d.unit === 'k') ? '' : (d.unit || '');
-            var lastStr = d.last_date ? '<span style="color:#1e4060">as of ' + fmtDate(d.last_date) + '</span>' : '';
-            var nextStr = d.next_release ? '<span style="color:#2d6080">next: ' + fmtDate(d.next_release) + '</span>' : '';
-            var metaStr = (lastStr || nextStr)
-                ? '<div style="font-size:0.6rem;margin-top:3px;display:flex;gap:6px">' + lastStr + nextStr + '</div>'
-                : '';
-            return '<div class="fred-card ' + d.signal + '">' +
-                '<div class="fred-card-top">' +
-                    '<span class="fred-card-label">' + d.label + '</span>' +
-                    '<span class="fred-card-signal" style="color:' + col + '">' + d.signal + '</span>' +
-                '</div>' +
-                '<div class="fred-card-value">' + valStr + '<span class="fred-card-unit">' + unitStr + '</span>' +
-                    (chg ? '<span class="fred-card-change" style="font-size:0.7rem;margin-left:5px;' + chgCol + '">' + chg + '</span>' : '') +
-                '</div>' +
-                metaStr +
-                (d.chart ? '<img class="fred-sparkline" src="' + d.chart + '" alt="">' : '') +
-            '</div>';
+        function fmtVal(d) {
+            if (d.value == null) return '—';
+            if (d.unit === '$') return '$' + d.value.toFixed(1);
+            if (d.unit === 'k') return (d.value > 0 ? '+' : '') + d.value.toFixed(0) + 'k';
+            return d.value.toFixed(1) + (d.unit || '');
         }
 
-        var html = '<div style="padding:6px 8px 2px">';
+        function fmtFc(val, unit) {
+            if (val == null) return '—';
+            if (unit === '$') return '$' + val.toFixed(1);
+            if (unit === 'k') return (val > 0 ? '+' : '') + val.toFixed(0) + 'k';
+            return val.toFixed(1) + (unit || '');
+        }
+
+        function makeRow(sid) {
+            var d = mf.series[sid]; if (!d) return '';
+            var col = SIG_COL[d.signal] || '#38bdf8';
+            var actualStr = fmtVal(d);
+            var fcStr     = fmtFc(d.forecast, d.unit);
+            var nextFcStr = fmtFc(d.next_forecast, d.unit);
+
+            // Δ actual vs forecast
+            var deltaStr = '—', deltaStyle = 'color:#1e4060';
+            if (d.forecast != null && d.value != null) {
+                var diff = parseFloat((d.value - d.forecast).toFixed(2));
+                if (Math.abs(diff) >= 0.05) {
+                    deltaStr  = (diff > 0 ? '+' : '') + diff.toFixed(1);
+                    deltaStyle = diff > 0 ? 'color:#f59e0b' : 'color:#38bdf8';
+                } else {
+                    deltaStr = '≈'; deltaStyle = 'color:#2d6080';
+                }
+            }
+
+            var relStr  = fmtDate(d.release_date || d.last_date);
+            var nextStr = fmtDate(d.next_release);
+
+            return '<tr style="border-bottom:1px solid #071628">' +
+                '<td style="padding:5px 8px;color:#7ab8d8;font-weight:600;white-space:nowrap">' + d.label + '</td>' +
+                '<td style="padding:5px 4px;text-align:right;color:' + col + ';font-weight:700">' + actualStr + '</td>' +
+                '<td style="padding:5px 4px;text-align:right;color:#3d7090">' + fcStr + '</td>' +
+                '<td style="padding:5px 4px;text-align:right;' + deltaStyle + '">' + deltaStr + '</td>' +
+                '<td style="padding:5px 4px;text-align:right;color:#1e4060;white-space:nowrap">' + relStr + '</td>' +
+                '<td style="padding:5px 4px;text-align:right;color:#2d6080;white-space:nowrap">' + nextStr + '</td>' +
+                '<td style="padding:5px 8px;text-align:right;color:#38bdf8">' + nextFcStr + '</td>' +
+            '</tr>';
+        }
+
+        var THEAD = '<thead><tr style="font-size:0.6rem;color:#1e4060;letter-spacing:0.04em;text-transform:uppercase">' +
+            '<th style="text-align:left;padding:4px 8px;font-weight:600">Metric</th>' +
+            '<th style="text-align:right;padding:4px 4px">Actual</th>' +
+            '<th style="text-align:right;padding:4px 4px">Est.</th>' +
+            '<th style="text-align:right;padding:4px 4px">Δ</th>' +
+            '<th style="text-align:right;padding:4px 4px">Released</th>' +
+            '<th style="text-align:right;padding:4px 4px">Next</th>' +
+            '<th style="text-align:right;padding:4px 8px">Next Est.</th>' +
+            '</tr></thead>';
+
+        var html = '';
         categories.forEach(function(cat) {
             var sids = (mf.series_order || Object.keys(mf.series)).filter(function(sid) {
                 return mf.series[sid] && mf.series[sid].category === cat;
             });
             if (!sids.length) return;
-            html += '<div style="padding:6px 8px 2px;font-size:0.7rem;font-weight:700;color:#2d6080;letter-spacing:0.06em;border-bottom:1px solid #0a1e35;margin:6px 0 4px">' +
-                (CAT_ICON[cat] || '') + ' ' + cat.toUpperCase() + '</div>';
-            html += '<div class="fred-grid" style="margin-bottom:4px">' + sids.map(makeCard).join('') + '</div>';
+            html += '<div style="padding:8px 8px 2px 8px;font-size:0.68rem;font-weight:700;color:#2d6080;letter-spacing:0.07em">' +
+                (CAT_ICON[cat] || '') + '  ' + cat.toUpperCase() + '</div>';
+            html += '<table style="width:100%;border-collapse:collapse;font-size:0.76rem">' +
+                THEAD + '<tbody>' + sids.map(makeRow).join('') + '</tbody></table>';
         });
-        html += '</div>';
-        html += '<div style="text-align:center;padding:4px 0 2px;font-size:0.6rem;color:#1a3550">Source: FRED · St. Louis Fed</div>';
-
+        html += '<div style="text-align:center;padding:6px 0 2px;font-size:0.6rem;color:#1a3550">Source: FRED · St. Louis Fed · consensus via Perplexity</div>';
         el.innerHTML = html;
     }
 
