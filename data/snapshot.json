@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-04-07T07:22:02.542067Z",
+  "built_at": "2026-04-07T07:58:25.218879Z",
   "groups": {
     "Indices": [
       {
@@ -111,9 +111,9 @@
               "dist_pct": -5.7
             },
             {
-              "price": 413.63,
+              "price": 413.82,
               "score": 19,
-              "dist_pct": -11.4
+              "dist_pct": -11.3
             }
           ],
           "resistance": [
@@ -149,7 +149,7 @@
         "vol_chart": "data/charts/vol_SPY.png",
         "atr_pct": 1.5,
         "dist_sma50_atr": -1.49,
-        "rs": 85.0,
+        "rs": 55.0,
         "rs_chart": "data/charts/SPY.png",
         "long": [
           "SPXL",
@@ -233,19 +233,19 @@
         "sr": {
           "support": [
             {
-              "price": 188.86,
-              "score": 69,
-              "dist_pct": -2.6
+              "price": 189.5,
+              "score": 64,
+              "dist_pct": -2.3
             },
             {
-              "price": 183.49,
-              "score": 55,
-              "dist_pct": -5.4
+              "price": 185.19,
+              "score": 80,
+              "dist_pct": -4.5
             },
             {
-              "price": 177.71,
-              "score": 17,
-              "dist_pct": -8.4
+              "price": 175.42,
+              "score": 36,
+              "dist_pct": -9.5
             }
           ],
           "resistance": [
@@ -374,14 +374,14 @@
               "dist_pct": -4.0
             },
             {
-              "price": 64.11,
-              "score": 44,
-              "dist_pct": -6.4
+              "price": 63.96,
+              "score": 52,
+              "dist_pct": -6.6
             },
             {
-              "price": 62.57,
-              "score": 37,
-              "dist_pct": -8.6
+              "price": 60.57,
+              "score": 30,
+              "dist_pct": -11.5
             }
           ],
           "resistance": [
@@ -844,7 +844,7 @@
         "rs_chart": "data/charts/Glance_The_Buildout_7.png",
         "long": [],
         "short": [],
-        "abc": "A",
+        "abc": "C",
         "em_pct": null,
         "em_days": null
       },
@@ -1211,9 +1211,9 @@
               "dist_pct": -6.5
             },
             {
-              "price": 101.12,
-              "score": 19,
-              "dist_pct": -9.5
+              "price": 101.03,
+              "score": 22,
+              "dist_pct": -9.6
             }
           ],
           "resistance": [
@@ -1343,9 +1343,9 @@
         "sr": {
           "support": [
             {
-              "price": 44.49,
-              "score": 40,
-              "dist_pct": -3.6
+              "price": 44.4,
+              "score": 45,
+              "dist_pct": -3.8
             },
             {
               "price": 43.15,
@@ -2096,14 +2096,14 @@
               "dist_pct": -4.0
             },
             {
-              "price": 64.11,
-              "score": 44,
-              "dist_pct": -6.4
+              "price": 63.96,
+              "score": 52,
+              "dist_pct": -6.6
             },
             {
-              "price": 62.57,
-              "score": 37,
-              "dist_pct": -8.6
+              "price": 60.57,
+              "score": 30,
+              "dist_pct": -11.5
             }
           ],
           "resistance": [
@@ -2639,8 +2639,8 @@
               "dist_pct": 0.9
             },
             {
-              "price": 75.4,
-              "score": 93,
+              "price": 75.39,
+              "score": 90,
               "dist_pct": 4.6
             },
             {
@@ -2685,19 +2685,19 @@
         "sr": {
           "support": [
             {
-              "price": 188.86,
-              "score": 69,
-              "dist_pct": -2.6
+              "price": 189.5,
+              "score": 64,
+              "dist_pct": -2.3
             },
             {
-              "price": 183.49,
-              "score": 55,
-              "dist_pct": -5.4
+              "price": 185.19,
+              "score": 80,
+              "dist_pct": -4.5
             },
             {
-              "price": 177.71,
-              "score": 17,
-              "dist_pct": -8.4
+              "price": 175.42,
+              "score": 36,
+              "dist_pct": -9.5
             }
           ],
           "resistance": [
@@ -3090,26 +3090,21 @@
           ],
           "resistance": [
             {
-              "price": 29.84,
-              "score": 66,
-              "dist_pct": 0.3
+              "price": 30.44,
+              "score": 49,
+              "dist_pct": 2.3
             },
             {
-              "price": 30.65,
-              "score": 29,
-              "dist_pct": 3.1
+              "price": 30.9,
+              "score": 12,
+              "dist_pct": 3.9
             },
             {
               "price": 32.08,
               "score": 13,
               "dist_pct": 7.9
             }
-          ],
-          "near": {
-            "type": "resistance",
-            "price": 29.84,
-            "dist_pct": 0.3
-          }
+          ]
         },
         "em_pct": null,
         "em_days": null
@@ -3146,13 +3141,13 @@
               "dist_pct": -25.8
             },
             {
-              "price": 75.12,
+              "price": 75.14,
               "score": 40,
               "dist_pct": -29.9
             },
             {
-              "price": 72.49,
-              "score": 35,
+              "price": 72.47,
+              "score": 37,
               "dist_pct": -32.4
             }
           ],
@@ -4023,9 +4018,9 @@
         "sr": {
           "support": [
             {
-              "price": 31.34,
-              "score": 51,
-              "dist_pct": -23.8
+              "price": 31.3,
+              "score": 54,
+              "dist_pct": -23.9
             },
             {
               "price": 30.53,
@@ -4506,9 +4501,9 @@
               "dist_pct": -5.6
             },
             {
-              "price": 52.95,
-              "score": 14,
-              "dist_pct": -10.3
+              "price": 53.09,
+              "score": 16,
+              "dist_pct": -10.1
             }
           ],
           "resistance": [
@@ -4929,7 +4924,7 @@
               "dist_pct": 8.1
             },
             {
-              "price": 110.52,
+              "price": 110.45,
               "score": 27,
               "dist_pct": 11.4
             }
@@ -5440,9 +5435,9 @@
         "sr": {
           "support": [
             {
-              "price": 59.46,
-              "score": 58,
-              "dist_pct": -2.3
+              "price": 59.4,
+              "score": 57,
+              "dist_pct": -2.4
             },
             {
               "price": 57.51,
@@ -7576,9 +7571,9 @@
         "sr": {
           "support": [
             {
-              "price": 44.49,
-              "score": 40,
-              "dist_pct": -3.6
+              "price": 44.4,
+              "score": 45,
+              "dist_pct": -3.8
             },
             {
               "price": 43.15,
@@ -12945,9 +12940,9 @@
               "dist_pct": -32.3
             },
             {
-              "price": 267.21,
-              "score": 25,
-              "dist_pct": -34.5
+              "price": 267.61,
+              "score": 28,
+              "dist_pct": -34.4
             },
             {
               "price": 226.3,
@@ -18281,43 +18276,38 @@
         "sr": {
           "support": [
             {
-              "price": 107.84,
-              "score": 66,
-              "dist_pct": -2.2
+              "price": 106.9,
+              "score": 67,
+              "dist_pct": -3.0
             },
             {
-              "price": 104.85,
+              "price": 103.69,
+              "score": 44,
+              "dist_pct": -6.0
+            },
+            {
+              "price": 100.35,
               "score": 42,
-              "dist_pct": -4.9
-            },
-            {
-              "price": 101.61,
-              "score": 50,
-              "dist_pct": -7.8
+              "dist_pct": -9.0
             }
           ],
           "resistance": [
             {
-              "price": 111.02,
-              "score": 47,
-              "dist_pct": 0.7
+              "price": 112.55,
+              "score": 40,
+              "dist_pct": 2.1
             },
             {
-              "price": 113.75,
-              "score": 19,
-              "dist_pct": 3.2
+              "price": 114.77,
+              "score": 14,
+              "dist_pct": 4.1
             },
             {
               "price": 118.12,
               "score": 3,
               "dist_pct": 7.1
             }
-          ],
-          "near": {
-            "type": "resistance",
-            "price": 111.02,
-            "dist_pct": 0.7
-          }
+          ]
         },
         "em_pct": null,
         "em_days": null
@@ -19332,13 +19322,13 @@
     }
   ],
   "fear_greed": {
-    "score": 54.4,
+    "score": 54.0,
     "sentiment": "Neutral",
     "components": {
       "volatility": {
-        "score": 72.5,
+        "score": 70.1,
         "label": "VIX Volatility",
-        "detail": "VIX 24.2 (52wk: 13.5–52.3)"
+        "detail": "VIX 25.1 (52wk: 13.5–52.3)"
       },
       "trend": {
         "score": 39.7,
@@ -19406,17 +19396,13 @@
       {
         "name": "VIX",
         "desc": "S&P 500",
-        "current": 24.17,
-        "ma20": 25.82,
-        "vs_ma": -6.4,
+        "current": 25.08,
+        "ma20": 25.79,
+        "vs_ma": -2.8,
         "hi52": 52.33,
         "lo52": 13.47,
-        "pct52": 27.5,
+        "pct52": 29.9,
         "history": [
-          {
-            "t": "2025-11-24",
-            "v": 20.52
-          },
           {
             "t": "2025-11-25",
             "v": 18.56
@@ -19772,13 +19758,13 @@
           {
             "t": "2026-04-06",
             "v": 24.17
+          },
+          {
+            "t": "2026-04-07",
+            "v": 25.08
           }
         ],
         "ma_history": [
-          {
-            "t": "2025-11-24",
-            "v": 19.69
-          },
           {
             "t": "2025-11-25",
             "v": 19.8
@@ -20134,6 +20120,10 @@
           {
             "t": "2026-04-06",
             "v": 25.82
+          },
+          {
+            "t": "2026-04-07",
+            "v": 25.79
           }
         ]
       },
@@ -23836,7 +23826,7 @@
         "category": "Inflation",
         "last_date": "2026-02-01",
         "release_date": "2026-03-11",
-        "next_release": null,
+        "next_release": "2026-04-10",
         "forecast": null,
         "next_forecast": null
       },
@@ -23851,7 +23841,7 @@
         "category": "Inflation",
         "last_date": "2026-02-01",
         "release_date": "2026-03-11",
-        "next_release": null,
+        "next_release": "2026-04-10",
         "forecast": null,
         "next_forecast": null
       },
@@ -23866,7 +23856,7 @@
         "category": "Inflation",
         "last_date": "2026-01-01",
         "release_date": "2026-03-13",
-        "next_release": null,
+        "next_release": "2026-04-09",
         "forecast": null,
         "next_forecast": null
       },
@@ -23881,7 +23871,7 @@
         "category": "Inflation",
         "last_date": "2026-01-01",
         "release_date": "2026-03-13",
-        "next_release": null,
+        "next_release": "2026-04-09",
         "forecast": null,
         "next_forecast": null
       },
@@ -23896,7 +23886,7 @@
         "category": "Inflation",
         "last_date": "2026-03-30",
         "release_date": "2026-04-01",
-        "next_release": null,
+        "next_release": "2026-04-08",
         "forecast": null,
         "next_forecast": null
       },
@@ -23911,7 +23901,7 @@
         "category": "Employment",
         "last_date": "2026-03-01",
         "release_date": "2026-04-03",
-        "next_release": null,
+        "next_release": "2026-05-08",
         "forecast": null,
         "next_forecast": null
       },
@@ -23926,7 +23916,7 @@
         "category": "Employment",
         "last_date": "2026-03-01",
         "release_date": "2026-04-03",
-        "next_release": null,
+        "next_release": "2026-05-08",
         "forecast": null,
         "next_forecast": null
       },
@@ -23941,7 +23931,7 @@
         "category": "Employment",
         "last_date": "2026-02-01",
         "release_date": "2026-02-20",
-        "next_release": null,
+        "next_release": "2026-04-24",
         "forecast": null,
         "next_forecast": null
       },
@@ -23956,7 +23946,7 @@
         "category": "Interest Rates",
         "last_date": "2026-04-03",
         "release_date": "2026-04-06",
-        "next_release": null,
+        "next_release": "2026-04-07",
         "forecast": null,
         "next_forecast": null
       },
@@ -23971,7 +23961,7 @@
         "category": "Interest Rates",
         "last_date": "2026-04-06",
         "release_date": "2026-04-06",
-        "next_release": null,
+        "next_release": "2026-04-07",
         "forecast": null,
         "next_forecast": null
       }
@@ -24072,35 +24062,35 @@
     }
   },
   "industries_sector_charts": {
-    "Utilities": "data/charts/vol_IndSec_Utilities.png",
-    "Energy": "data/charts/vol_IndSec_Energy.png",
-    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
-    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
-    "Industrials": "data/charts/vol_IndSec_Industrials.png",
     "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
-    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
-    "Materials": "data/charts/vol_IndSec_Materials.png",
+    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
     "Health Care": "data/charts/vol_IndSec_Health_Care.png",
-    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
-    "Financials": "data/charts/vol_IndSec_Financials.png",
     "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
+    "Industrials": "data/charts/vol_IndSec_Industrials.png",
+    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
+    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
     "Commodities": "data/charts/vol_IndSec_Commodities.png",
-    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png"
+    "Utilities": "data/charts/vol_IndSec_Utilities.png",
+    "Materials": "data/charts/vol_IndSec_Materials.png",
+    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
+    "Energy": "data/charts/vol_IndSec_Energy.png",
+    "Financials": "data/charts/vol_IndSec_Financials.png",
+    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png"
   },
   "industries_sector_rs_charts": {
-    "Utilities": "data/charts/IndSecRS_Utilities.png",
-    "Energy": "data/charts/IndSecRS_Energy.png",
-    "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
-    "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
-    "Industrials": "data/charts/IndSecRS_Industrials.png",
     "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
-    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
-    "Materials": "data/charts/IndSecRS_Materials.png",
+    "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
     "Health Care": "data/charts/IndSecRS_Health_Care.png",
-    "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
-    "Financials": "data/charts/IndSecRS_Financials.png",
     "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
+    "Industrials": "data/charts/IndSecRS_Industrials.png",
+    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
+    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
     "Commodities": "data/charts/IndSecRS_Commodities.png",
-    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png"
+    "Utilities": "data/charts/IndSecRS_Utilities.png",
+    "Materials": "data/charts/IndSecRS_Materials.png",
+    "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
+    "Energy": "data/charts/IndSecRS_Energy.png",
+    "Financials": "data/charts/IndSecRS_Financials.png",
+    "Real Estate": "data/charts/IndSecRS_Real_Estate.png"
   }
 }
