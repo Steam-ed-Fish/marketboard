@@ -893,6 +893,53 @@ def compute_fear_greed(all_ticker_data):
             "components": components, "weights": weights}
 
 
+def fetch_vol_signals():
+    """Fetch implied volatility indices across asset classes."""
+    VOL_TICKERS = {
+        "Equities": [
+            {"sym": "^VIX",  "name": "VIX",  "desc": "S&P 500"},
+            {"sym": "^VXN",  "name": "VXN",  "desc": "Nasdaq 100"},
+            {"sym": "^RVX",  "name": "RVX",  "desc": "Russell 2000"},
+            {"sym": "^VVIX", "name": "VVIX", "desc": "VIX of VIX"},
+        ],
+        "Rates": [
+            {"sym": "^MOVE", "name": "MOVE", "desc": "Treasury Bonds"},
+        ],
+        "Commodities": [
+            {"sym": "^OVX", "name": "OVX", "desc": "Crude Oil"},
+            {"sym": "^GVZ", "name": "GVZ", "desc": "Gold"},
+        ],
+    }
+    result = {}
+    for category, items in VOL_TICKERS.items():
+        result[category] = []
+        for item in items:
+            try:
+                hist = yf.Ticker(item["sym"]).history(period="1y")
+                if hist.empty:
+                    raise ValueError("empty")
+                current = float(hist["Close"].iloc[-1])
+                ma20 = float(hist["Close"].tail(20).mean())
+                hi52 = float(hist["Close"].max())
+                lo52 = float(hist["Close"].min())
+                pct52 = round((current - lo52) / max(hi52 - lo52, 0.01) * 100, 1)
+                vs_ma = round((current - ma20) / max(ma20, 0.01) * 100, 1)
+                result[category].append({
+                    "name": item["name"], "desc": item["desc"],
+                    "current": round(current, 2), "ma20": round(ma20, 2),
+                    "vs_ma": vs_ma, "hi52": round(hi52, 2),
+                    "lo52": round(lo52, 2), "pct52": pct52,
+                })
+            except Exception:
+                result[category].append({
+                    "name": item["name"], "desc": item["desc"],
+                    "current": None, "ma20": None,
+                    "vs_ma": None, "hi52": None,
+                    "lo52": None, "pct52": None,
+                })
+    return result
+
+
 # ── FRED Macro Monitor ─────────────────────────────────────────────────────────
 
 FRED_SERIES_CONFIG = [
@@ -1425,6 +1472,15 @@ def main():
 
     fear_greed = compute_fear_greed(all_ticker_data)
 
+    print("Fetching volatility signals...")
+    vol_signals = fetch_vol_signals()
+    for cat, items in vol_signals.items():
+        for item in items:
+            if item['current'] is not None:
+                print(f"  {item['name']}: {item['current']:.2f} (vs MA20: {item['vs_ma']:+.1f}%)")
+            else:
+                print(f"  {item['name']}: no data")
+
     fred_api_key = os.environ.get("FRED_API_KEY", "")
     macro_fred = {}
     if fred_api_key:
@@ -1453,6 +1509,7 @@ def main():
         "column_ranges": column_ranges,
         "themes": themes_data,
         "fear_greed": fear_greed,
+        "vol_signals": vol_signals,
         "macro_fred": macro_fred,
         "cross_asset": cross_asset,
         "industries_sector_charts": industries_sector_charts,

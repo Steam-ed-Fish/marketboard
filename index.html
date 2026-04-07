@@ -310,6 +310,7 @@
                 <button type="button" class="events-tab active" id="fg-tab-fg" onclick="switchFGTab('fg')">🌡️ Fear &amp; Greed</button>
                 <button type="button" class="events-tab" id="fg-tab-poly" onclick="switchFGTab('poly')">🎲 Polymarket</button>
                 <button type="button" class="events-tab" id="fg-tab-geo" onclick="switchFGTab('geo')">🌍 Geopolitical</button>
+                <button type="button" class="events-tab" id="fg-tab-vol" onclick="switchFGTab('vol')">📊 Vol Signals</button>
             </div>
             <div id="fg-tab-content-fg" style="overflow-y:auto;max-height:560px">
                 <div id="fear-greed-content"></div>
@@ -319,6 +320,9 @@
             </div>
             <div id="fg-tab-content-geo" style="display:none;overflow-y:auto;max-height:560px">
                 <div id="geo-content"></div>
+            </div>
+            <div id="fg-tab-content-vol" style="display:none;overflow-y:auto;max-height:560px">
+                <div id="vol-signals-content"></div>
             </div>
         </div>
         <div style="margin-bottom:0">
@@ -497,12 +501,15 @@
         document.getElementById('fg-tab-content-fg').style.display   = tab === 'fg'   ? '' : 'none';
         document.getElementById('fg-tab-content-poly').style.display = tab === 'poly' ? '' : 'none';
         document.getElementById('fg-tab-content-geo').style.display  = tab === 'geo'  ? '' : 'none';
+        document.getElementById('fg-tab-content-vol').style.display  = tab === 'vol'  ? '' : 'none';
         document.getElementById('fg-tab-fg').classList.toggle('active',   tab === 'fg');
         document.getElementById('fg-tab-poly').classList.toggle('active', tab === 'poly');
         document.getElementById('fg-tab-geo').classList.toggle('active',  tab === 'geo');
+        document.getElementById('fg-tab-vol').classList.toggle('active',  tab === 'vol');
         if (tab === 'fg')   renderFearGreed();
         if (tab === 'poly') renderPolymarket();
         if (tab === 'geo')  renderGeoTab();
+        if (tab === 'vol')  renderVolSignals();
     };
 
     function getGroupLabelClass(groupName, ticker) {
@@ -1357,6 +1364,85 @@
             '<div class="fg-grid">'+cards+'</div>'+
             '<div style="text-align:center;margin-top:8px;font-size:0.63rem;color:#4b5563">VIX · SPY · Sel Sectors · HYG/TLT · RSP · GLD</div>';
     }
+
+    function renderVolSignals() {
+        var el = document.getElementById('vol-signals-content');
+        if (!el) return;
+        var vs = snapshot && snapshot.vol_signals;
+        if (!vs) { el.innerHTML = '<div style="padding:16px;color:#9ca3af">No data — run build_data.py.</div>'; return; }
+
+        var CAT_LABELS = {
+            'Equities':   { icon: '📈', desc: 'Equity volatility — higher = more fear/uncertainty in stocks' },
+            'Rates':      { icon: '🏦', desc: 'Bond market uncertainty — high MOVE = rates market stressed' },
+            'Commodities':{ icon: '🛢️', desc: 'Commodity vol — spikes signal supply shocks or geopolitical stress' },
+        };
+
+        function vsColor(vs_ma) {
+            if (vs_ma == null) return '#4b5563';
+            if (vs_ma >  30) return '#ef4444';
+            if (vs_ma >  10) return '#f97316';
+            if (vs_ma >   0) return '#eab308';
+            if (vs_ma > -10) return '#22c55e';
+            return '#10b981';
+        }
+        function vsLabel(vs_ma) {
+            if (vs_ma == null) return '—';
+            if (vs_ma >  30) return 'Spiking';
+            if (vs_ma >  10) return 'Elevated';
+            if (vs_ma >   0) return 'Slightly ↑';
+            if (vs_ma > -10) return 'Normal';
+            return 'Suppressed';
+        }
+
+        var html = '<div style="padding:10px 12px">';
+        Object.keys(CAT_LABELS).forEach(function(cat) {
+            var items = vs[cat];
+            if (!items || !items.length) return;
+            var meta = CAT_LABELS[cat];
+            html += '<div style="margin-bottom:14px">';
+            html += '<div style="font-size:0.7rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px">'
+                  + meta.icon + ' ' + cat + '</div>';
+            html += '<div style="font-size:0.6rem;color:#1a3550;margin-bottom:8px;font-style:italic">' + meta.desc + '</div>';
+            html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px">';
+            items.forEach(function(item) {
+                var col = vsColor(item.vs_ma);
+                var lbl = vsLabel(item.vs_ma);
+                var pct = item.pct52 != null ? item.pct52 : null;
+                var barW = pct != null ? pct : 0;
+                var barCol = pct != null ? (pct > 70 ? '#ef4444' : pct > 40 ? '#f97316' : '#22c55e') : '#374151';
+                html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px">';
+                html += '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">';
+                html += '<span style="font-size:0.82rem;font-weight:700;color:#e2e8f0">' + item.name + '</span>';
+                html += '<span style="font-size:0.6rem;color:#4b5563">' + item.desc + '</span>';
+                html += '</div>';
+                if (item.current != null) {
+                    html += '<div style="font-size:1.3rem;font-weight:700;color:' + col + ';line-height:1.1">' + item.current.toFixed(2) + '</div>';
+                    html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">';
+                    html += '<span style="font-size:0.62rem;color:' + col + ';font-weight:600">' + lbl + '</span>';
+                    html += '<span style="font-size:0.6rem;color:#4b5563" title="vs 20D MA">'
+                          + (item.vs_ma >= 0 ? '+' : '') + item.vs_ma.toFixed(1) + '% vs MA</span>';
+                    html += '</div>';
+                    // 52-week range bar
+                    html += '<div style="margin-top:6px">';
+                    html += '<div style="display:flex;justify-content:space-between;font-size:0.55rem;color:#374151;margin-bottom:2px">';
+                    html += '<span>' + item.lo52.toFixed(1) + '</span><span style="color:#4b5563">52wk</span><span>' + item.hi52.toFixed(1) + '</span>';
+                    html += '</div>';
+                    html += '<div style="height:4px;background:#0a1e35;border-radius:2px;position:relative">';
+                    html += '<div style="position:absolute;left:0;top:0;height:100%;width:' + barW + '%;background:' + barCol + ';border-radius:2px"></div>';
+                    html += '<div style="position:absolute;top:-2px;left:' + barW + '%;width:2px;height:8px;background:#e2e8f0;border-radius:1px;transform:translateX(-50%)"></div>';
+                    html += '</div></div>';
+                } else {
+                    html += '<div style="font-size:0.75rem;color:#4b5563;margin-top:4px">No data</div>';
+                }
+                html += '</div>';
+            });
+            html += '</div></div>';
+        });
+        html += '<div style="font-size:0.6rem;color:#1a3550;margin-top:4px;font-style:italic">Bar = 52-week percentile. Color = level vs 20D MA.</div>';
+        html += '</div>';
+        el.innerHTML = html;
+    }
+
     window.showHoldings = function(symbol) {
         var modal = document.getElementById('holdings-modal-overlay');
         var title = document.getElementById('holdings-modal-title');
