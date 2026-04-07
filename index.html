@@ -303,6 +303,21 @@
             </div>
         </div>
         <div style="margin-bottom:0">
+            <button class="events-button fg-toggle-btn" id="macro-toggle-btn" type="button" onclick="toggleMacroSection()">📊 MACRO</button>
+        </div>
+        <div id="macro-inline-panel" class="fg-inline-panel" style="flex-direction:column">
+            <div style="display:flex;gap:0;border-bottom:1px solid #0a1e35;padding:0 4px;background:#060d1c;position:sticky;top:0;z-index:2">
+                <button type="button" class="events-tab active" id="macro-tab-liq" onclick="switchMacroTab('liq')">💵 USD Liquidity</button>
+                <button type="button" class="events-tab" id="macro-tab-fed" onclick="switchMacroTab('fed')">🦅 Fed Watch</button>
+            </div>
+            <div id="macro-tab-content-liq" style="overflow-y:auto;max-height:560px">
+                <div id="usd-liquidity-content"></div>
+            </div>
+            <div id="macro-tab-content-fed" style="display:none;overflow-y:auto;max-height:560px">
+                <div id="fed-watch-content"></div>
+            </div>
+        </div>
+        <div style="margin-bottom:0">
             <button class="events-button fg-toggle-btn" id="fg-toggle-btn" type="button" onclick="toggleFGSection()">📡 RISK RADAR</button>
         </div>
         <div id="fg-inline-panel" class="fg-inline-panel" style="flex-direction:column">
@@ -483,6 +498,28 @@
         document.getElementById('tab-cal').classList.toggle('active',   tab === 'cal');
         document.getElementById('tab-fred').classList.toggle('active',  tab === 'fred');
         if (tab === 'fred') renderMacroFred();
+    };
+
+    window.toggleMacroSection = function() {
+        var panel = document.getElementById('macro-inline-panel');
+        var btn   = document.getElementById('macro-toggle-btn');
+        var isOpen = panel.classList.contains('open');
+        if (isOpen) {
+            panel.classList.remove('open');
+            btn.classList.remove('active');
+        } else {
+            panel.classList.add('open');
+            btn.classList.add('active');
+            switchMacroTab('liq');
+        }
+    };
+    window.switchMacroTab = function(tab) {
+        document.getElementById('macro-tab-content-liq').style.display = tab === 'liq' ? '' : 'none';
+        document.getElementById('macro-tab-content-fed').style.display = tab === 'fed' ? '' : 'none';
+        document.getElementById('macro-tab-liq').classList.toggle('active', tab === 'liq');
+        document.getElementById('macro-tab-fed').classList.toggle('active', tab === 'fed');
+        if (tab === 'liq') renderUSDLiquidity();
+        if (tab === 'fed') renderFedWatch();
     };
 
     window.toggleFGSection = function() {
@@ -1441,6 +1478,157 @@
             html += '</div></div>';
         });
         html += '<div style="font-size:0.6rem;color:#1a3550;margin-top:4px;font-style:italic">Bar = 52-week percentile. Color = level vs 20D MA.</div>';
+        html += '</div>';
+        el.innerHTML = html;
+    }
+
+    // ── USD Liquidity ─────────────────────────────────────────────────────────
+    function renderUSDLiquidity() {
+        var el = document.getElementById('usd-liquidity-content');
+        if (!el) return;
+        var liq = snapshot && snapshot.macro && snapshot.macro.usd_liquidity;
+        if (!liq) {
+            el.innerHTML = '<div style="padding:16px;color:#9ca3af;font-size:0.8rem">No data — add <code>FRED_API_KEY</code> secret and re-run the workflow.</div>';
+            return;
+        }
+        var ps = liq.pressure_score;
+        var psCol = ps == null ? '#4b5563' : ps > 60 ? '#ef4444' : ps > 35 ? '#f97316' : '#22c55e';
+        var psLbl = ps == null ? '—' : ps > 60 ? 'Stressed' : ps > 35 ? 'Elevated' : 'Calm';
+
+        function metricCard(label, value, unit, detail, stressed) {
+            var col = stressed === true ? '#ef4444' : stressed === false ? '#22c55e' : '#94a3b8';
+            var valStr = value != null ? value.toFixed(unit === 'B' ? 0 : 4) + (unit === 'B' ? 'B' : (unit === '%' ? '%' : '')) : '—';
+            return '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px">'
+                + '<div style="font-size:0.65rem;color:#4b5563;margin-bottom:2px">' + label + '</div>'
+                + '<div style="font-size:1.1rem;font-weight:700;color:' + col + '">' + valStr + '</div>'
+                + (detail ? '<div style="font-size:0.6rem;color:#2d6080;margin-top:3px">' + detail + '</div>' : '')
+                + '</div>';
+        }
+
+        var rrpChg = liq.fed_rrp_chg != null ? (liq.fed_rrp_chg >= 0 ? '+' : '') + liq.fed_rrp_chg.toFixed(1) + 'B vs prev' : '';
+        var tgaChg = liq.tga_chg    != null ? (liq.tga_chg    >= 0 ? '+' : '') + liq.tga_chg.toFixed(1)    + 'B vs prev' : '';
+
+        var html = '<div style="padding:10px 12px">';
+
+        // Pressure gauge row
+        html += '<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;padding:10px;background:#060d1c;border:1px solid #0a1e35;border-radius:6px">';
+        html += '<div><div style="font-size:0.6rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.08em">USD Liquidity Pressure</div>'
+             +  '<div style="font-size:2rem;font-weight:700;color:' + psCol + ';line-height:1.1">' + (ps != null ? ps : '—') + '</div>'
+             +  '<div style="font-size:0.7rem;color:' + psCol + ';font-weight:600">' + psLbl + '</div></div>';
+        html += '<div style="flex:1">';
+        html += '<div style="height:6px;background:#0a1e35;border-radius:3px;margin-bottom:6px">';
+        html += '<div style="height:100%;width:' + (ps || 0) + '%;background:' + psCol + ';border-radius:3px;transition:width 0.4s"></div></div>';
+        html += '<div style="font-size:0.58rem;color:#1a3550">0 = fully calm · 100 = extreme stress<br>Based on SOFR spread + SOFR vs T-bill</div>';
+        html += '</div></div>';
+
+        // Metric cards grid
+        html += '<div style="font-size:0.68rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Overnight Rates</div>';
+        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin-bottom:12px">';
+        html += metricCard('SOFR', liq.sofr, '%', 'Secured overnight rate', null);
+        html += metricCard('Effective FFR', liq.effr, '%', 'Fed Funds effective rate', null);
+        html += metricCard('3M T-Bill', liq.dtb3, '%', 'Secondary market rate', null);
+        html += '</div>';
+
+        html += '<div style="font-size:0.68rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Stress Spreads</div>';
+        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin-bottom:12px">';
+        var spreadStressed = liq.sofr_spread != null ? liq.sofr_spread > 0.08 : null;
+        var tbillStressed  = liq.sofr_tbill_spread != null ? liq.sofr_tbill_spread > 0.10 : null;
+        html += metricCard('SOFR 99th–1st', liq.sofr_spread, '%', 'Intraday rate spread — wider = more stress', spreadStressed);
+        html += metricCard('SOFR vs T-Bill', liq.sofr_tbill_spread, '%', 'Funding stress proxy — high = banks stressed', tbillStressed);
+        html += '</div>';
+
+        html += '<div style="font-size:0.68rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Liquidity Plumbing</div>';
+        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin-bottom:8px">';
+        var rrpDown = liq.fed_rrp_chg != null ? liq.fed_rrp_chg < -50 : null;
+        html += metricCard('Fed RRP Balance', liq.fed_rrp, 'B', rrpChg + ' — declining = banks using cash elsewhere', rrpDown === true ? false : null);
+        html += metricCard('Treasury (TGA)', liq.tga, 'B', tgaChg + ' — Treasury cash at Fed', null);
+        html += '</div>';
+
+        html += '<div style="font-size:0.6rem;color:#1a3550;font-style:italic">Source: FRED · SOFR data from NY Fed via FRED</div>';
+        html += '</div>';
+        el.innerHTML = html;
+    }
+
+    // ── Fed Watch ─────────────────────────────────────────────────────────────
+    function renderFedWatch() {
+        var el = document.getElementById('fed-watch-content');
+        if (!el) return;
+        var fw = snapshot && snapshot.macro && snapshot.macro.fed_watch;
+        if (!fw) {
+            el.innerHTML = '<div style="padding:16px;color:#9ca3af;font-size:0.8rem">No data — run the workflow.</div>';
+            return;
+        }
+
+        var hds = fw.hawk_dove_score;
+        var hdsCol = hds == null ? '#4b5563' : hds > 30 ? '#ef4444' : hds > 10 ? '#f97316' : hds > -10 ? '#eab308' : hds > -30 ? '#22c55e' : '#10b981';
+        var hdsLbl = hds == null ? '—' : hds > 30 ? 'Hawkish' : hds > 10 ? 'Slightly Hawkish' : hds > -10 ? 'Neutral' : hds > -30 ? 'Slightly Dovish' : 'Dovish';
+
+        var html = '<div style="padding:10px 12px">';
+
+        // Top row: FFR + countdown + hawk/dove
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">';
+
+        // FFR card
+        html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:10px">';
+        html += '<div style="font-size:0.6rem;color:#4b5563;text-transform:uppercase;margin-bottom:2px">Fed Funds Rate</div>';
+        html += '<div style="font-size:1.4rem;font-weight:700;color:#e2e8f0">' + (fw.ffr != null ? fw.ffr.toFixed(2) + '%' : '—') + '</div>';
+        if (fw.target_lower != null && fw.target_upper != null)
+            html += '<div style="font-size:0.62rem;color:#2d6080">Target: ' + fw.target_lower.toFixed(2) + '–' + fw.target_upper.toFixed(2) + '%</div>';
+        html += '</div>';
+
+        // Next FOMC
+        html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:10px">';
+        html += '<div style="font-size:0.6rem;color:#4b5563;text-transform:uppercase;margin-bottom:2px">Next FOMC</div>';
+        html += '<div style="font-size:1.4rem;font-weight:700;color:#e2e8f0">' + (fw.next_fomc_days != null ? fw.next_fomc_days + 'd' : '—') + '</div>';
+        html += '<div style="font-size:0.62rem;color:#2d6080">' + (fw.next_fomc_date || '') + '</div>';
+        html += '</div>';
+
+        // Hawk/dove gauge
+        html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:10px">';
+        html += '<div style="font-size:0.6rem;color:#4b5563;text-transform:uppercase;margin-bottom:2px">Hawk/Dove Tone</div>';
+        html += '<div style="font-size:1.4rem;font-weight:700;color:' + hdsCol + '">' + (hds != null ? (hds >= 0 ? '+' : '') + hds : '—') + '</div>';
+        html += '<div style="font-size:0.62rem;color:' + hdsCol + '">' + hdsLbl + '</div>';
+        html += '</div>';
+        html += '</div>';
+
+        // Market-implied cuts
+        if (fw.market_implied_cuts != null) {
+            html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px;margin-bottom:12px">';
+            html += '<span style="font-size:0.65rem;color:#4b5563">Market pricing (CME FedWatch): </span>';
+            html += '<span style="font-size:0.82rem;font-weight:700;color:#38bdf8">' + fw.market_implied_cuts + ' cuts</span>';
+            html += '<span style="font-size:0.6rem;color:#4b5563"> of 25bp priced in for remainder of 2026</span>';
+            html += '</div>';
+        }
+
+        // Speeches table
+        if (fw.speeches && fw.speeches.length) {
+            html += '<div style="font-size:0.68rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Recent Speeches</div>';
+            html += '<table style="width:100%;border-collapse:collapse;font-size:0.68rem">';
+            html += '<thead><tr style="border-bottom:1px solid #0a1e35">'
+                  + '<th style="text-align:left;padding:4px 6px;color:#2d6080;font-weight:600">Official</th>'
+                  + '<th style="text-align:center;padding:4px 6px;color:#2d6080;font-weight:600">Score</th>'
+                  + '<th style="text-align:left;padding:4px 6px;color:#2d6080;font-weight:600">Summary</th>'
+                  + '<th style="text-align:right;padding:4px 6px;color:#2d6080;font-weight:600">Date</th>'
+                  + '</tr></thead><tbody>';
+            fw.speeches.forEach(function(s) {
+                var sc = s.score || 0;
+                var scCol = sc >= 2 ? '#ef4444' : sc >= 1 ? '#f97316' : sc <= -2 ? '#10b981' : sc <= -1 ? '#22c55e' : '#eab308';
+                var scLbl = sc >= 2 ? '🦅 +2' : sc === 1 ? '↑ +1' : sc === 0 ? '— 0' : sc === -1 ? '↓ -1' : '🕊️ -2';
+                var voterBadge = s.voter ? '<span style="font-size:0.55rem;background:#0a1e35;color:#2d6080;padding:1px 4px;border-radius:2px;margin-left:3px">voter</span>' : '';
+                html += '<tr style="border-bottom:1px solid #080e1a">'
+                      + '<td style="padding:5px 6px;white-space:nowrap"><span style="color:#e2e8f0">' + (s.name||'') + '</span>' + voterBadge
+                      + '<br><span style="font-size:0.58rem;color:#4b5563">' + (s.role||'') + '</span></td>'
+                      + '<td style="padding:5px 6px;text-align:center;color:' + scCol + ';font-weight:700;white-space:nowrap">' + scLbl + '</td>'
+                      + '<td style="padding:5px 6px;color:#9ca3af;line-height:1.35">' + (s.summary||'') + '</td>'
+                      + '<td style="padding:5px 6px;text-align:right;color:#4b5563;white-space:nowrap">' + (s.date||'') + '</td>'
+                      + '</tr>';
+            });
+            html += '</tbody></table>';
+        } else {
+            html += '<div style="padding:12px;color:#4b5563;font-size:0.75rem;text-align:center">Speech data requires PERPLEXITY_API_KEY — add it as a GitHub Actions secret.</div>';
+        }
+
+        html += '<div style="font-size:0.6rem;color:#1a3550;font-style:italic;margin-top:8px">Source: FRED · CME FedWatch via Perplexity</div>';
         html += '</div>';
         el.innerHTML = html;
     }

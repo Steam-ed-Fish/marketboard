@@ -821,6 +821,130 @@ def fetch_etf_holdings(etf_list, out_dir):
             print("  [{}/{}] {}: {}".format(i + 1, len(etf_list), etf_symbol, ex))
 
 
+FOMC_DATES = [
+    "2026-05-06", "2026-06-17", "2026-07-29", "2026-09-16",
+    "2026-10-28", "2026-12-09", "2027-01-27", "2027-03-17",
+    "2027-05-05", "2027-06-16", "2027-07-28", "2027-09-15",
+]
+
+def next_fomc():
+    today = datetime.utcnow().date()
+    for d in FOMC_DATES:
+        dt = datetime.strptime(d, "%Y-%m-%d").date()
+        if dt >= today:
+            return d, (dt - today).days
+    return None, None
+
+
+def build_usd_liquidity(fred_api_key):
+    """Build USD Liquidity Pressure metrics from FRED."""
+    SERIES = ["SOFR", "SOFR1", "SOFR99", "DTB3", "RRPONTSYD", "WTREGEN", "EFFR"]
+    raw = {}
+    for sid in SERIES:
+        try:
+            raw[sid] = fetch_fred_series(fred_api_key, sid, 30)
+        except Exception:
+            raw[sid] = []
+
+    def latest(sid):
+        d = raw.get(sid, [])
+        return float(d[-1][1]) if d else None
+
+    def prev_val(sid):
+        d = raw.get(sid, [])
+        return float(d[-2][1]) if len(d) >= 2 else None
+
+    sofr    = latest("SOFR")
+    sofr1   = latest("SOFR1")
+    sofr99  = latest("SOFR99")
+    dtb3    = latest("DTB3")
+    rrp     = latest("RRPONTSYD")
+    rrp_p   = prev_val("RRPONTSYD")
+    tga     = latest("WTREGEN")
+    tga_p   = prev_val("WTREGEN")
+    effr    = latest("EFFR")
+
+    sofr_spread   = round(sofr99 - sofr1, 4)            if sofr99 is not None and sofr1 is not None   else None
+    sofr_tbill    = round(sofr - dtb3, 4)               if sofr   is not None and dtb3  is not None   else None
+    rrp_chg       = round(rrp - rrp_p, 1)               if rrp    is not None and rrp_p is not None   else None
+    tga_chg       = round(tga - tga_p, 1)               if tga    is not None and tga_p is not None   else None
+
+    scores = []
+    if sofr_spread is not None:
+        scores.append(min(100, max(0, sofr_spread / 0.20 * 100)))
+    if sofr_tbill is not None:
+        scores.append(min(100, max(0, sofr_tbill / 0.20 * 100)))
+    pressure_score = round(sum(scores) / len(scores)) if scores else None
+
+    return {
+        "sofr": sofr, "sofr1": sofr1, "sofr99": sofr99,
+        "sofr_spread": sofr_spread, "dtb3": dtb3,
+        "sofr_tbill_spread": sofr_tbill, "effr": effr,
+        "fed_rrp": rrp, "fed_rrp_chg": rrp_chg,
+        "tga": tga, "tga_chg": tga_chg,
+        "pressure_score": pressure_score,
+    }
+
+
+def build_fed_watch(fred_api_key, perplexity_api_key=None):
+    """Build Fed Watch: current rates, next FOMC, hawk/dove from Perplexity."""
+    fomc_date, fomc_days = next_fomc()
+
+    raw_dff   = fetch_fred_series(fred_api_key, "DFF",      5) if fred_api_key else []
+    raw_lower = fetch_fred_series(fred_api_key, "DFEDTARL", 5) if fred_api_key else []
+    raw_upper = fetch_fred_series(fred_api_key, "DFEDTARU", 5) if fred_api_key else []
+
+    result = {
+        "ffr":            float(raw_dff[-1][1])   if raw_dff   else None,
+        "target_lower":   float(raw_lower[-1][1]) if raw_lower else None,
+        "target_upper":   float(raw_upper[-1][1]) if raw_upper else None,
+        "next_fomc_date": fomc_date,
+        "next_fomc_days": fomc_days,
+        "speeches":       [],
+        "hawk_dove_score":      None,
+        "market_implied_cuts":  None,
+    }
+
+    if perplexity_api_key:
+        try:
+            import requests as _req
+            today_str = datetime.utcnow().strftime('%Y-%m-%d')
+            payload = {
+                "model": "sonar",
+                "messages": [
+                    {"role": "system", "content": "Return only valid JSON, no markdown."},
+                    {"role": "user", "content": (
+                        f"Today is {today_str}. Return a JSON object with:\n"
+                        '{"speeches":[last 5 Fed official speeches past 2 weeks, each: '
+                        '"name","role","voter"(bool),"date"(YYYY-MM-DD),"summary"(1 sentence),'
+                        '"score"(int -2 to +2 hawk/dove)],'
+                        '"market_implied_cuts":(int, 25bp cuts CME FedWatch prices for rest of 2026),'
+                        '"hawk_dove_score":(int -100 to +100 overall Fed tone)}'
+                    )},
+                ],
+            }
+            resp = _req.post(
+                "https://api.perplexity.ai/chat/completions",
+                json=payload,
+                headers={"Authorization": f"Bearer {perplexity_api_key}", "Content-Type": "application/json"},
+                timeout=25,
+            )
+            if resp.ok:
+                content = resp.json()["choices"][0]["message"]["content"].strip()
+                if "```" in content:
+                    content = content.split("```")[1]
+                    if content.startswith("json"):
+                        content = content[4:]
+                parsed = json.loads(content)
+                result["speeches"]            = parsed.get("speeches", [])
+                result["market_implied_cuts"] = parsed.get("market_implied_cuts")
+                result["hawk_dove_score"]     = parsed.get("hawk_dove_score")
+        except Exception as e:
+            print(f"  Fed Watch fetch error: {e}")
+
+    return result
+
+
 def compute_fear_greed(all_ticker_data):
     """Compute a 0–100 Fear & Greed composite from 6 market signals."""
     def _g(ticker, field):
@@ -1486,6 +1610,17 @@ def main():
 
     fear_greed = compute_fear_greed(all_ticker_data)
 
+    macro_data = {}
+    if fred_api_key:
+        print("Fetching USD Liquidity data...")
+        macro_data["usd_liquidity"] = build_usd_liquidity(fred_api_key)
+    perplexity_api_key = os.environ.get("PERPLEXITY_API_KEY", "")
+    print("Fetching Fed Watch data...")
+    macro_data["fed_watch"] = build_fed_watch(
+        fred_api_key if fred_api_key else None,
+        perplexity_api_key if perplexity_api_key else None,
+    )
+
     print("Fetching volatility signals...")
     vol_signals = fetch_vol_signals()
     for cat, items in vol_signals.items():
@@ -1523,6 +1658,7 @@ def main():
         "column_ranges": column_ranges,
         "themes": themes_data,
         "fear_greed": fear_greed,
+        "macro": macro_data,
         "vol_signals": vol_signals,
         "macro_fred": macro_fred,
         "cross_asset": cross_asset,
