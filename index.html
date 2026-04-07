@@ -651,10 +651,10 @@
 
     function renderGroups() {
         if (!snapshot || !snapshot.groups) {
-            var _dbgMsg = 'LOADING DATA...<br><span style="font-size:0.7rem;color:#888;margin-top:8px;display:block">snapshot=' + (snapshot === null ? 'null' : snapshot === undefined ? 'undefined' : 'object(no .groups)') + (window._snapshotErr ? ' | error: ' + window._snapshotErr : '') + '</span><span style="font-size:0.7rem;color:#2d6080;display:block;margin-top:4px"><a href="data/snapshot.json" target="_blank" style="color:#2d6080">Check snapshot.json directly</a></span>';
-            document.getElementById('groups-container').innerHTML = '<div class="loading-msg">' + _dbgMsg + '</div>';
+            document.getElementById('groups-container').innerHTML = '<div class="loading-msg">LOADING DATA... (Run scripts/build_data.py or wait for GitHub Actions)</div>';
             return;
         }
+        var na = '<span style="color:#4b5563">—</span>';
         var html = renderRelativePerf() + renderAIThemes();
         var groupOrder = Object.keys(snapshot.groups);
         for (var g = 0; g < groupOrder.length; g++) {
@@ -1926,7 +1926,7 @@
 
     function loadData() {
         Promise.all([
-            fetch('data/snapshot.json').then(function(res) { if (!res.ok) { window._snapshotErr = 'HTTP ' + res.status; return null; } return res.json().catch(function(e) { window._snapshotErr = 'JSON parse: ' + e.message; return null; }); }).catch(function(e) { window._snapshotErr = String(e); return null; }),
+            fetch('data/snapshot.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; }),
             fetch('data/events.json').then(function(res) { return res.ok ? res.json() : []; }).catch(function() { return []; }),
             fetch('data/meta.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; }),
             fetch('data/polymarket.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; }),
