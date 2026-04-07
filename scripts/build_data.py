@@ -924,11 +924,25 @@ def fetch_vol_signals():
                 lo52 = float(hist["Close"].min())
                 pct52 = round((current - lo52) / max(hi52 - lo52, 0.01) * 100, 1)
                 vs_ma = round((current - ma20) / max(ma20, 0.01) * 100, 1)
+                hist90 = hist.tail(90)
+                history = [
+                    {"t": str(d.date()), "v": round(float(v), 2)}
+                    for d, v in zip(hist90.index, hist90["Close"])
+                    if not (v != v)  # skip NaN
+                ]
+                # Rolling 20D MA series aligned to history
+                ma_series = hist["Close"].rolling(20).mean().tail(90)
+                ma_history = [
+                    {"t": str(d.date()), "v": round(float(v), 2)}
+                    for d, v in zip(ma_series.index, ma_series)
+                    if not (v != v)
+                ]
                 result[category].append({
                     "name": item["name"], "desc": item["desc"],
                     "current": round(current, 2), "ma20": round(ma20, 2),
                     "vs_ma": vs_ma, "hi52": round(hi52, 2),
                     "lo52": round(lo52, 2), "pct52": pct52,
+                    "history": history, "ma_history": ma_history,
                 })
             except Exception:
                 result[category].append({

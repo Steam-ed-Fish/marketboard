@@ -374,6 +374,7 @@
                     <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:#9ca3af;">TradingView</a>
                 </div>
             </div>
+            <div id="vol-chart-panel" style="display:none;flex:1;min-height:0;flex-direction:column;padding:10px;"></div>
             <div id="rrg-chart-panel" style="display:none;flex:1;min-height:0;align-items:center;justify-content:center;padding:10px;">
                 <img id="rrg-chart-img" src="" alt="7s Rotation Graph" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
@@ -1376,10 +1377,6 @@
             'Rates':      { icon: '🏦', desc: 'Bond market uncertainty — high MOVE = rates market stressed' },
             'Commodities':{ icon: '🛢️', desc: 'Commodity vol — spikes signal supply shocks or geopolitical stress' },
         };
-        var TV_SYM_MAP = {
-            'VIX': 'CBOE:VIX', 'VXN': 'CBOE:VXN', 'RVX': 'CBOE:RVX', 'VVIX': 'CBOE:VVIX',
-            'MOVE': 'TVC:MOVE', 'OVX': 'CBOE:OVX', 'GVZ': 'CBOE:GVZ',
-        };
 
         function vsColor(vs_ma) {
             if (vs_ma == null) return '#4b5563';
@@ -1414,9 +1411,8 @@
                 var pct = item.pct52 != null ? item.pct52 : null;
                 var barW = pct != null ? pct : 0;
                 var barCol = pct != null ? (pct > 70 ? '#ef4444' : pct > 40 ? '#f97316' : '#22c55e') : '#374151';
-                var tvSym = TV_SYM_MAP[item.name];
-                var clickAttr = tvSym ? ' onclick="initChart(\'' + tvSym + '\')" title="Click to open chart"' : '';
-                html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px' + (tvSym ? ';cursor:pointer' : '') + '"' + clickAttr + '>';
+                var clickAttr = ' onclick="renderVolChart(\'' + item.name + '\')" title="Click to open chart" style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px;cursor:pointer"';
+                html += '<div' + clickAttr + '>';
                 html += '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">';
                 html += '<span style="font-size:0.82rem;font-weight:700;color:#e2e8f0">' + item.name + '</span>';
                 html += '<span style="font-size:0.6rem;color:#4b5563">' + item.desc + '</span>';
@@ -1448,6 +1444,68 @@
         html += '</div>';
         el.innerHTML = html;
     }
+
+    var _volChartInstance = null;
+    window.renderVolChart = function(name) {
+        var vs = snapshot && snapshot.vol_signals;
+        if (!vs || typeof LightweightCharts === 'undefined') return;
+        var item = null;
+        Object.values(vs).forEach(function(arr) { arr.forEach(function(x) { if (x.name === name) item = x; }); });
+        if (!item || !item.history || !item.history.length) return;
+
+        // Switch right panel to vol-chart-panel
+        var tvW = document.getElementById('tradingview-chart-wrapper');
+        var rrgP = document.getElementById('rrg-chart-panel');
+        var volP = document.getElementById('vol-chart-panel');
+        if (tvW)  tvW.style.display  = 'none';
+        if (rrgP) rrgP.style.display = 'none';
+        if (volP) volP.style.display = 'flex';
+
+        if (_volChartInstance) { try { _volChartInstance.remove(); } catch(e) {} _volChartInstance = null; }
+        volP.innerHTML = '';
+
+        // Header
+        var col = item.vs_ma > 10 ? '#ef4444' : item.vs_ma > 0 ? '#f97316' : '#22c55e';
+        var hdr = document.createElement('div');
+        hdr.style.cssText = 'display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;flex-shrink:0';
+        hdr.innerHTML = '<span style="font-size:1rem;font-weight:700;color:#e2e8f0">' + item.name
+            + ' <span style="font-size:0.65rem;color:#4b5563;font-weight:400">' + item.desc + '</span></span>'
+            + '<span style="font-size:1.1rem;font-weight:700;color:' + col + '">' + (item.current != null ? item.current.toFixed(2) : '—')
+            + ' <span style="font-size:0.6rem;color:#4b5563">' + (item.vs_ma >= 0 ? '+' : '') + item.vs_ma + '% vs MA20</span></span>';
+        volP.appendChild(hdr);
+
+        var chartEl = document.createElement('div');
+        chartEl.style.cssText = 'flex:1;min-height:0';
+        volP.appendChild(chartEl);
+
+        var chart = LightweightCharts.createChart(chartEl, {
+            autoSize: true,
+            layout: { background: { color: '#040c1a' }, textColor: '#4a7090' },
+            grid: { vertLines: { color: '#080e1a' }, horzLines: { color: '#080e1a' } },
+            crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+            rightPriceScale: { borderColor: '#0a1e35' },
+            timeScale: { borderColor: '#0a1e35', timeVisible: false },
+        });
+        _volChartInstance = chart;
+
+        var area = chart.addAreaSeries({
+            lineColor: col, topColor: col.replace(')', ',0.25)').replace('rgb', 'rgba'),
+            bottomColor: 'rgba(0,0,0,0)', lineWidth: 2,
+        });
+        area.setData(item.history.map(function(d) { return { time: d.t, value: d.v }; }));
+
+        if (item.ma_history && item.ma_history.length) {
+            var maLine = chart.addLineSeries({ color: '#2d6080', lineWidth: 1, lineStyle: 1 });
+            maLine.setData(item.ma_history.map(function(d) { return { time: d.t, value: d.v }; }));
+        }
+        chart.timeScale().fitContent();
+
+        // Footer note
+        var footer = document.createElement('div');
+        footer.style.cssText = 'font-size:0.58rem;color:#1a3550;margin-top:4px;flex-shrink:0';
+        footer.textContent = '90-day history · dashed = 20D MA · via Yahoo Finance';
+        volP.appendChild(footer);
+    };
 
     window.showHoldings = function(symbol) {
         var modal = document.getElementById('holdings-modal-overlay');
@@ -1771,7 +1829,9 @@
     window.initChart = function initChart(symbol) {
         var rrgPanel = document.getElementById('rrg-chart-panel');
         var tvWrapper = document.getElementById('tradingview-chart-wrapper');
+        var volPanel = document.getElementById('vol-chart-panel');
         if (rrgPanel) rrgPanel.style.display = 'none';
+        if (volPanel) volPanel.style.display = 'none';
         if (tvWrapper) tvWrapper.style.display = 'flex';
         if (chartWidget) { chartWidget.remove(); chartWidget = null; }
         chartWidget = new TradingView.widget({
