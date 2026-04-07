@@ -1610,11 +1610,13 @@ def main():
 
     fear_greed = compute_fear_greed(all_ticker_data)
 
+    fred_api_key = os.environ.get("FRED_API_KEY", "")
+    perplexity_api_key = os.environ.get("PERPLEXITY_API_KEY", "")
+
     macro_data = {}
     if fred_api_key:
         print("Fetching USD Liquidity data...")
         macro_data["usd_liquidity"] = build_usd_liquidity(fred_api_key)
-    perplexity_api_key = os.environ.get("PERPLEXITY_API_KEY", "")
     print("Fetching Fed Watch data...")
     macro_data["fed_watch"] = build_fed_watch(
         fred_api_key if fred_api_key else None,
@@ -1629,8 +1631,6 @@ def main():
                 print(f"  {item['name']}: {item['current']:.2f} (vs MA20: {item['vs_ma']:+.1f}%)")
             else:
                 print(f"  {item['name']}: no data")
-
-    fred_api_key = os.environ.get("FRED_API_KEY", "")
     macro_fred = {}
     if fred_api_key:
         print("Fetching FRED macro data...")
