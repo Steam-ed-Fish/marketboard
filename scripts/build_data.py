@@ -1488,7 +1488,7 @@ def build_macro_fred(api_key, charts_dir, finnhub_api_key=None, perplexity_api_k
         elif transform == "mom_k":
             if len(values) < 2:
                 continue
-            transformed = [(values[i] - values[i-1]) / 1000 for i in range(1, len(values))]
+            transformed = [(values[i] - values[i-1]) for i in range(1, len(values))]
             spark = transformed[-24:]
         else:
             transformed = values
