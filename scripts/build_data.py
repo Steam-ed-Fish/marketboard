@@ -1253,20 +1253,22 @@ def fetch_investing_calendar_data():
 
 
 def fetch_economic_forecasts_perplexity(perplexity_api_key):
-    """Fallback: use Perplexity to get consensus forecasts when investing.com is unavailable."""
-    import json as _json
+    """Fetch consensus forecasts for key US indicators via Perplexity."""
     today_str = datetime.utcnow().strftime('%Y-%m-%d')
     prompt = (
-        f"Today is {today_str}. For each US economic indicator below, provide the MOST RECENT RELEASE "
-        "and the next upcoming release. Return ONLY valid JSON (no markdown, no explanation):\n"
-        '{"CPIAUCSL":{"actual":2.8,"forecast":2.9,"date":"2025-03-12","next_date":"2025-04-10","next_forecast":2.6},'
-        '"CPILFESL":{"actual":3.1,"forecast":3.2,"date":"2025-03-12","next_date":"2025-04-10","next_forecast":3.0},'
-        '"PCEPI":{"actual":2.5,"forecast":2.6,"date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.4},'
-        '"PCEPILFE":{"actual":2.8,"forecast":2.9,"date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.7},'
-        '"UNRATE":{"actual":4.1,"forecast":4.1,"date":"2025-03-07","next_date":"2025-04-04","next_forecast":4.1},'
-        '"PAYEMS":{"actual":151,"forecast":160,"date":"2025-03-07","next_date":"2025-04-04","next_forecast":140},'
-        '"UMCSENT":{"actual":64.7,"forecast":65.0,"date":"2025-03-14","next_date":"2025-04-11","next_forecast":63.0}}'
-        "\nUnits: YoY% for CPI/PCE, level% for UNRATE, thousands for PAYEMS, level for UMCSENT."
+        f"Today is {today_str}. Return a JSON object (and NOTHING else — no prose, no markdown) "
+        "with the most recent release data and next scheduled release for each US economic indicator. "
+        "Use exactly these keys:\n"
+        '{"CPIAUCSL":{"forecast":2.9,"date":"2025-03-12","next_date":"2025-04-10","next_forecast":2.6},'
+        '"CPILFESL":{"forecast":3.2,"date":"2025-03-12","next_date":"2025-04-10","next_forecast":3.0},'
+        '"PCEPI":{"forecast":2.6,"date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.4},'
+        '"PCEPILFE":{"forecast":2.9,"date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.7},'
+        '"UNRATE":{"forecast":4.1,"date":"2025-03-07","next_date":"2025-04-04","next_forecast":4.1},'
+        '"PAYEMS":{"forecast":160,"date":"2025-03-07","next_date":"2025-04-04","next_forecast":140},'
+        '"UMCSENT":{"forecast":65.0,"date":"2025-03-14","next_date":"2025-04-11","next_forecast":63.0}}'
+        "\nUnits: forecast/next_forecast are YoY% for CPI/PCE, level% for UNRATE, "
+        "thousands (integer) for PAYEMS NFP, level for UMCSENT. "
+        "date = most recent release date YYYY-MM-DD. next_date = next scheduled release YYYY-MM-DD."
     )
     try:
         resp = requests.post(
@@ -1274,23 +1276,26 @@ def fetch_economic_forecasts_perplexity(perplexity_api_key):
             json={
                 "model": "sonar",
                 "messages": [
-                    {"role": "system", "content": "Return only valid JSON, no markdown, no explanation."},
+                    {"role": "system", "content": "You output only raw JSON with no markdown, no code fences, no explanation."},
                     {"role": "user", "content": prompt},
                 ],
-                "temperature": 0.1,
+                "temperature": 0,
             },
             headers={"Authorization": f"Bearer {perplexity_api_key}", "Content-Type": "application/json"},
-            timeout=30,
+            timeout=35,
         )
         resp.raise_for_status()
         content = resp.json()["choices"][0]["message"]["content"].strip()
-        if "```" in content:
-            content = content.split("```")[1]
-            if content.startswith("json"):
-                content = content[4:]
-        return _json.loads(content.strip().rstrip("```").strip())
+        print(f"  Perplexity raw response (first 300 chars): {content[:300]}")
+        # Extract first JSON object from response regardless of surrounding text
+        m = re.search(r'\{[\s\S]*\}', content)
+        if not m:
+            raise ValueError(f"No JSON object found in response")
+        result = json.loads(m.group())
+        print(f"  Parsed forecast keys: {list(result.keys())}")
+        return result
     except Exception as e:
-        print(f"  Perplexity forecast fallback error: {e}")
+        print(f"  Perplexity forecast error: {e}")
         return {}
 
 def fetch_fred_release_id(api_key, series_id):
