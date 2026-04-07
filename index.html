@@ -437,21 +437,13 @@
         var html = '';
         var calEvents = events || [];
 
-        // Briefing card — always first entry if present
+        // Briefing — show content directly, no collapsible wrapper
         if (calEvents.length > 0 && calEvents[0].type === 'briefing') {
             var b = calEvents[0];
             calEvents = calEvents.slice(1);
-            // Highlight ALL-CAPS section labels (e.g. "MARKET PULSE —")
             var rawText = (b.text || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
             var fmtText = rawText.replace(/^([A-Z][A-Z &]+—)/gm, '<span class="b-section">$1</span>');
-            html += '<div class="briefing-card">' +
-                '<div class="briefing-header" onclick="toggleBriefing()">' +
-                    '<div><span class="briefing-label">&#128200; Intelligence Briefing</span>' +
-                    '<span class="briefing-meta">' + (b.date || '') + ' ' + (b.time || '') + ' UTC</span></div>' +
-                    '<button type="button" class="briefing-toggle" id="briefing-toggle-btn">&#9660; collapse</button>' +
-                '</div>' +
-                '<div id="briefing-body" class="briefing-body">' + fmtText + '</div>' +
-            '</div>';
+            html += '<div class="briefing-body" style="padding:10px 14px">' + fmtText + '</div>';
             if (calEvents.length > 0) {
                 html += '<div class="briefing-divider">UPCOMING MACRO EVENTS</div>';
             }
