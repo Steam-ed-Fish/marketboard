@@ -35,6 +35,7 @@ jobs:
         env:
           TZ: UTC
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
 
       - name: Generate briefing
         run: |

@@ -1252,6 +1252,70 @@ def fetch_investing_calendar_data():
     return result
 
 
+def fetch_finnhub_calendar(finnhub_api_key):
+    """Fetch US economic calendar from Finnhub (actual + consensus estimate + dates)."""
+    # Maps fragments of Finnhub event names (lowercase) to FRED series IDs
+    EVENT_MAP = [
+        ('core cpi',            'CPILFESL'),
+        ('cpi yoy',             'CPIAUCSL'),
+        ('cpi y/y',             'CPIAUCSL'),
+        ('core pce',            'PCEPILFE'),
+        ('pce price index',     'PCEPI'),
+        ('nonfarm payroll',     'PAYEMS'),
+        ('non farm payroll',    'PAYEMS'),
+        ('non-farm payroll',    'PAYEMS'),
+        ('unemployment rate',   'UNRATE'),
+        ('michigan consumer',   'UMCSENT'),
+        ('u. of mich',          'UMCSENT'),
+        ('consumer sentiment',  'UMCSENT'),
+    ]
+
+    today = datetime.utcnow()
+    from_date = (today - timedelta(days=60)).strftime('%Y-%m-%d')
+    to_date   = (today + timedelta(days=60)).strftime('%Y-%m-%d')
+
+    resp = requests.get(
+        'https://finnhub.io/api/v1/calendar/economic',
+        params={'from': from_date, 'to': to_date, 'token': finnhub_api_key},
+        timeout=15)
+    resp.raise_for_status()
+    events = [e for e in resp.json().get('economicCalendar', [])
+              if e.get('country', '').upper() == 'US']
+    print(f"  Finnhub: {len(events)} US events fetched")
+
+    result = {}
+    today_str = today.strftime('%Y-%m-%d')
+
+    for event in events:
+        name = event.get('event', '').lower()
+        series_id = next((sid for frag, sid in EVENT_MAP if frag in name), None)
+        if not series_id:
+            continue
+
+        time_str = event.get('time', '')
+        try:
+            event_date = time_str[:10]
+            datetime.strptime(event_date, '%Y-%m-%d')  # validate
+        except Exception:
+            continue
+
+        actual   = event.get('actual')
+        estimate = event.get('estimate')
+        entry = result.setdefault(series_id, {})
+
+        if event_date <= today_str:
+            if not entry.get('date') or event_date > entry['date']:
+                entry['date']     = event_date
+                entry['forecast'] = estimate   # consensus estimate for that release
+        else:
+            if not entry.get('next_date') or event_date < entry['next_date']:
+                entry['next_date']     = event_date
+                entry['next_forecast'] = estimate
+
+    print(f"  Finnhub: matched {len(result)} series")
+    return result
+
+
 def fetch_economic_forecasts_perplexity(perplexity_api_key):
     """Fetch consensus forecasts for key US indicators via Perplexity."""
     today_str = datetime.utcnow().strftime('%Y-%m-%d')
@@ -1368,7 +1432,7 @@ def create_fred_sparkline(values, series_id, charts_dir, color="#38bdf8"):
         print(f"FRED sparkline error {series_id}: {e}")
         return None
 
-def build_macro_fred(api_key, charts_dir, perplexity_api_key=None):
+def build_macro_fred(api_key, charts_dir, finnhub_api_key=None, perplexity_api_key=None):
     """Fetch FRED series, transform, classify signals, generate sparklines."""
     from concurrent.futures import ThreadPoolExecutor, as_completed
     SIGNAL_COLORS = {"hawkish": "#ef4444", "dovish": "#10b981",
@@ -1441,20 +1505,24 @@ def build_macro_fred(api_key, charts_dir, perplexity_api_key=None):
         d["release_date"] = past_date or d.get("last_date")
         d["next_release"]  = next_date
 
-    # Fetch consensus forecasts via Perplexity
+    # Fetch consensus forecasts — Finnhub primary, Perplexity fallback
     fc_data = {}
-    if perplexity_api_key:
+    if finnhub_api_key:
+        print("  Fetching consensus forecasts from Finnhub...")
+        try:
+            fc_data = fetch_finnhub_calendar(finnhub_api_key)
+        except Exception as e:
+            print(f"  Finnhub failed ({e}), falling back to Perplexity")
+    if not fc_data and perplexity_api_key:
         print("  Fetching consensus forecasts via Perplexity...")
         fc_data = fetch_economic_forecasts_perplexity(perplexity_api_key)
         print(f"  Got forecast data for {len(fc_data)} series")
-    else:
-        print("  No PERPLEXITY_API_KEY — skipping consensus forecasts")
 
     for sid, d in series_out.items():
         fc = fc_data.get(sid, {})
-        d["forecast"]     = fc.get("forecast")
+        d["forecast"]      = fc.get("forecast")
         d["next_forecast"] = fc.get("next_forecast")
-        # Override next_release with Perplexity date only if FRED didn't find one
+        # Fill next_release from calendar if FRED didn't find one
         if fc.get("next_date") and not d.get("next_release"):
             d["next_release"] = fc.get("next_date")
 
@@ -1886,7 +1954,10 @@ def main():
     macro_fred = {}
     if fred_api_key:
         print("Fetching FRED macro data...")
-        macro_fred = build_macro_fred(fred_api_key, charts_dir, perplexity_api_key)
+        finnhub_api_key = os.environ.get("FINNHUB_API_KEY", "")
+        macro_fred = build_macro_fred(fred_api_key, charts_dir,
+                                      finnhub_api_key or None,
+                                      perplexity_api_key or None)
         print(f"  FRED: {len(macro_fred.get('series', {}))} series, dominant={macro_fred.get('dominant_signal')}")
     else:
         print("No FRED_API_KEY set — skipping macro data")
