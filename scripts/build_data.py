@@ -27,6 +27,20 @@ try:
 except ImportError:
     investpy = None
 
+import math
+
+def sanitize_for_json(obj):
+    """Recursively replace NaN/Infinity with None so json.dump produces valid JSON."""
+    if isinstance(obj, float):
+        if math.isnan(obj) or math.isinf(obj):
+            return None
+        return obj
+    if isinstance(obj, dict):
+        return {k: sanitize_for_json(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [sanitize_for_json(v) for v in obj]
+    return obj
+
 # --- Config: no Liquid Stocks ---
 KEY_EVENTS = [
     "Fed", "Federal Reserve", "Interest Rate", "FOMC",
@@ -2238,7 +2252,7 @@ def main():
     meta_path = os.path.join(out_dir, "meta.json")
 
     with open(snapshot_path, "w", encoding="utf-8") as f:
-        json.dump(snapshot, f, ensure_ascii=False, indent=2)
+        json.dump(sanitize_for_json(snapshot), f, ensure_ascii=False, indent=2)
     with open(events_path, "w", encoding="utf-8") as f:
         json.dump(events, f, ensure_ascii=False, indent=2)
     with open(meta_path, "w", encoding="utf-8") as f:
