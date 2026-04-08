@@ -1089,6 +1089,7 @@ FRED_SERIES_CONFIG = [
     ("CPILFESL_MOM",   "Core CPI MoM",   "%",   "mom_pct",  "Inflation"),
     ("PCEPI",          "PCE YoY",        "%",   "yoy",      "Inflation"),
     ("PCEPILFE",       "Core PCE YoY",   "%",   "yoy",      "Inflation"),
+    ("PCEPILFE_MOM",   "Core PCE MoM",   "%",   "mom_pct",  "Inflation"),
     ("DCOILBRENTEU",   "Brent Crude",    "$",   "level",    "Inflation"),
     ("UNRATE",         "Unemployment",   "%",   "level",    "Employment"),
     ("PAYEMS",         "NFP MoM",        "k",   "mom_k",    "Employment"),
@@ -1105,7 +1106,7 @@ def _fred_signal(series_id, value):
         return "tightening" if value > 4 else ("dovish" if value < 2 else "neutral")
     if series_id in ("CPIAUCSL", "CPILFESL", "CPIAUCSL_MOM", "CPILFESL_MOM"):
         return "hawkish" if value > 3 else ("dovish" if value < 2 else "neutral")
-    if series_id in ("PCEPI", "PCEPILFE"):
+    if series_id in ("PCEPI", "PCEPILFE", "PCEPILFE_MOM"):
         return "hawkish" if value > 2.5 else ("dovish" if value < 2 else "neutral")
     if series_id == "UNRATE":
         return "dovish" if value > 5 else ("hawkish" if value < 4 else "neutral")
@@ -1270,6 +1271,8 @@ def fetch_finnhub_calendar(finnhub_api_key):
         ('core cpi',            'CPILFESL'),
         ('cpi yoy',             'CPIAUCSL'),
         ('cpi y/y',             'CPIAUCSL'),
+        ('core pce mom',        'PCEPILFE_MOM'),
+        ('core pce m/m',        'PCEPILFE_MOM'),
         ('core pce',            'PCEPILFE'),
         ('pce price index',     'PCEPI'),
         ('nonfarm payroll',     'PAYEMS'),
@@ -1340,6 +1343,7 @@ def fetch_economic_forecasts_perplexity(perplexity_api_key):
         '"CPILFESL_MOM":{"forecast":0.3,"date":"2025-03-12","next_date":"2025-04-10","next_forecast":0.3},'
         '"PCEPI":{"forecast":2.6,"date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.4},'
         '"PCEPILFE":{"forecast":2.9,"date":"2025-02-28","next_date":"2025-03-28","next_forecast":2.7},'
+        '"PCEPILFE_MOM":{"forecast":0.3,"date":"2025-02-28","next_date":"2025-03-28","next_forecast":0.3},'
         '"UNRATE":{"forecast":4.1,"date":"2025-03-07","next_date":"2025-04-04","next_forecast":4.1},'
         '"PAYEMS":{"forecast":160,"date":"2025-03-07","next_date":"2025-04-04","next_forecast":140},'
         '"UMCSENT":{"forecast":65.0,"date":"2025-03-14","next_date":"2025-04-11","next_forecast":63.0}}'
@@ -1456,13 +1460,29 @@ def build_macro_fred(api_key, charts_dir, finnhub_api_key=None, perplexity_api_k
     def _real_sid(sid):
         return sid[:-4] if sid.endswith('_MOM') else sid
 
-    real_sids = {_real_sid(sid) for sid, *_ in FRED_SERIES_CONFIG}
+    # Ordered dedup so fetch order is deterministic
+    seen_real = set()
+    real_sids_list = []
+    for sid, *_ in FRED_SERIES_CONFIG:
+        real = _real_sid(sid)
+        if real not in seen_real:
+            seen_real.add(real)
+            real_sids_list.append(real)
+
     raw = {}
-    with ThreadPoolExecutor(max_workers=6) as ex:
+    with ThreadPoolExecutor(max_workers=4) as ex:
         futs = {ex.submit(fetch_fred_series, api_key, rsid, 40): rsid
-                for rsid in real_sids}
+                for rsid in real_sids_list}
         for f in as_completed(futs):
             raw[futs[f]] = f.result()
+
+    # Retry any series that came back empty (transient FRED API failures)
+    failed = [rsid for rsid in real_sids_list if not raw.get(rsid)]
+    if failed:
+        print(f"  Retrying {len(failed)} empty FRED series: {failed}")
+        time.sleep(2)
+        for rsid in failed:
+            raw[rsid] = fetch_fred_series(api_key, rsid, 40)
 
     series_out = {}
     signal_counts = {"hawkish": 0, "dovish": 0, "tightening": 0, "neutral": 0, "mixed": 0}
