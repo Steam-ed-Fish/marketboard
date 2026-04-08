@@ -1090,7 +1090,6 @@ FRED_SERIES_CONFIG = [
     ("PCEPI",          "PCE YoY",        "%",   "yoy",      "Inflation"),
     ("PCEPILFE",       "Core PCE YoY",   "%",   "yoy",      "Inflation"),
     ("PCEPILFE_MOM",   "Core PCE MoM",   "%",   "mom_pct",  "Inflation"),
-    ("DCOILBRENTEU",   "Brent Crude",    "$",   "level",    "Inflation"),
     ("UNRATE",         "Unemployment",   "%",   "level",    "Employment"),
     ("PAYEMS",         "NFP MoM",        "k",   "mom_k",    "Employment"),
     ("UMCSENT",        "Consumer Sent.", "",    "level",    "Employment"),

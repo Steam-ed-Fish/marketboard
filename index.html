@@ -1314,6 +1314,12 @@
             });
         }
 
+        // Footer: polymarket fetch time
+        if (polyData && polyData.built_at) {
+            var geoBuilt = polyData.built_at.replace('T',' ').slice(0,16) + ' UTC';
+            html += '<div style="text-align:center;padding:4px 0 2px;font-size:0.6rem;color:#1a3550">Polymarket · ' + geoBuilt + '</div>';
+        }
+
         el.innerHTML = html;
     }
 
