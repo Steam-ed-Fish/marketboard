@@ -1552,7 +1552,31 @@
             daysToFomc = Math.ceil((new Date(mkt.next_fomc_date + 'T00:00:00') - new Date()) / 86400000);
         }
 
+        // Staleness helpers
+        function daysAgo(dateStr) {
+            if (!dateStr) return 999;
+            return Math.floor((new Date() - new Date(dateStr + 'T00:00:00')) / 86400000);
+        }
+        function staleTag(dateStr, threshold, label) {
+            var d = daysAgo(dateStr);
+            if (d <= threshold) return '';
+            return '<span title="Last updated ' + d + ' days ago — fetch may have failed" '
+                 + 'style="font-size:0.48rem;background:#7c2d12;color:#fca5a5;padding:1px 4px;border-radius:2px;margin-left:4px;vertical-align:middle">'
+                 + (label || '!stale') + '</span>';
+        }
+
+        var overallAge  = daysAgo(fw.last_updated);
+        var cmeAge      = daysAgo(mkt.cme_updated);
+
         var html = '<div style="padding:10px 12px">';
+
+        // ── Stale banner ───────────────────────────────────────────────────────
+        if (overallAge > 4) {
+            html += '<div style="background:#1c0a03;border:1px solid #7c2d12;border-radius:4px;padding:7px 10px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center">';
+            html += '<span style="font-size:0.65rem;color:#fca5a5">Data is ' + overallAge + ' days old — GitHub Actions workflow may have failed.</span>';
+            html += '<a href="https://github.com/Steam-ed-Fish/marketboard/actions" target="_blank" style="font-size:0.58rem;color:#f97316;white-space:nowrap;margin-left:8px">Check Actions ↗</a>';
+            html += '</div>';
+        }
 
         // ── Stats row ──────────────────────────────────────────────────────────
         html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px">';
@@ -1573,14 +1597,14 @@
 
         var cpiCol = mkt.cpi != null ? (mkt.cpi > 3 ? '#ef4444' : mkt.cpi > 2.5 ? '#f97316' : '#10b981') : '#4b5563';
         html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px">';
-        html += '<div style="font-size:0.56rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">CPI YoY</div>';
+        html += '<div style="font-size:0.56rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">CPI YoY' + staleTag(mkt.bls_cpi_updated, 35, '!stale') + '</div>';
         html += '<div style="font-size:1.2rem;font-weight:700;color:' + cpiCol + ';line-height:1">' + (mkt.cpi != null ? mkt.cpi + '%' : '—') + '</div>';
         html += '<div style="font-size:0.56rem;color:#2d6080;margin-top:2px">' + (mkt.cpi_month || '') + '</div>';
         html += '</div>';
 
         var uCol = mkt.unemployment != null ? (mkt.unemployment > 5 ? '#ef4444' : mkt.unemployment > 4.5 ? '#f97316' : '#10b981') : '#4b5563';
         html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px">';
-        html += '<div style="font-size:0.56rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Unemployment</div>';
+        html += '<div style="font-size:0.56rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Unemployment' + staleTag(mkt.bls_unemp_updated, 35, '!stale') + '</div>';
         html += '<div style="font-size:1.2rem;font-weight:700;color:' + uCol + ';line-height:1">' + (mkt.unemployment != null ? mkt.unemployment + '%' : '—') + '</div>';
         html += '<div style="font-size:0.56rem;color:#2d6080;margin-top:2px">' + (mkt.unemployment_month || '') + '</div>';
         html += '</div>';
@@ -1593,8 +1617,8 @@
         var hikePct = mkt.rate_hike_pct || 0;
         html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px;margin-bottom:10px">';
         html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">';
-        html += '<span style="font-size:0.6rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.06em">CME FedWatch · ' + (mkt.next_fomc_label || 'Next FOMC') + '</span>';
-        html += '<span style="font-size:0.54rem;color:#1a3550">ZQ 30-day futures</span>';
+        html += '<span style="font-size:0.6rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.06em">CME FedWatch · ' + (mkt.next_fomc_label || 'Next FOMC') + staleTag(mkt.cme_updated, 4, '!stale') + '</span>';
+        html += '<span style="font-size:0.54rem;color:#1a3550">' + (mkt.cme_updated ? 'updated ' + mkt.cme_updated : 'ZQ 30-day futures') + '</span>';
         html += '</div>';
         html += '<div style="display:flex;border-radius:3px;overflow:hidden;height:20px">';
         if (cutPct  > 0.5) html += '<div style="background:#10b981;flex:' + cutPct  + ';display:flex;align-items:center;justify-content:center"><span style="font-size:0.58rem;color:#fff;font-weight:700">'     + (cutPct > 6  ? cutPct  + '%' : '') + '</span></div>';

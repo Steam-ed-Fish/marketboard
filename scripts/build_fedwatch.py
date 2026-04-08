@@ -260,19 +260,23 @@ def main():
     print(f"[FedWatch] Updating at {datetime.now().isoformat()}")
     data = load_existing()
 
+    today = date.today().isoformat()
+
     # 1. Unemployment
     print("  Fetching unemployment (BLS)...")
     unemp, unemp_period = fetch_unemployment()
     if unemp is not None:
-        data['market']['unemployment']       = unemp
-        data['market']['unemployment_month'] = unemp_period
+        data['market']['unemployment']        = unemp
+        data['market']['unemployment_month']  = unemp_period
+        data['market']['bls_unemp_updated']   = today
 
     # 2. CPI
     print("  Fetching CPI (BLS)...")
     cpi, cpi_period = fetch_cpi()
     if cpi is not None:
-        data['market']['cpi']       = cpi
-        data['market']['cpi_month'] = cpi_period
+        data['market']['cpi']              = cpi
+        data['market']['cpi_month']        = cpi_period
+        data['market']['bls_cpi_updated']  = today
 
     # 3. Next FOMC date
     fomc_date, fomc_label = next_fomc()
@@ -285,6 +289,7 @@ def main():
     probs = fetch_cme_probabilities(fomc_date)
     if probs:
         data['market'].update(probs)
+        data['market']['cme_updated'] = today
 
     # 5. Fed speeches RSS
     print("  Fetching Fed speeches RSS...")
