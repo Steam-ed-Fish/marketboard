@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-04-08T01:02:50.456756Z",
+  "built_at": "2026-04-08T01:43:38.663200Z",
   "groups": {
     "Indices": [
       {
@@ -111,7 +111,7 @@
               "dist_pct": -5.5
             },
             {
-              "price": 413.63,
+              "price": 413.82,
               "score": 19,
               "dist_pct": -11.2
             }
@@ -149,7 +149,7 @@
         "vol_chart": "data/charts/vol_SPY.png",
         "atr_pct": 1.5,
         "dist_sma50_atr": -1.43,
-        "rs": 95.0,
+        "rs": 18.0,
         "rs_chart": "data/charts/SPY.png",
         "long": [
           "SPXL",
@@ -233,19 +233,19 @@
         "sr": {
           "support": [
             {
-              "price": 189.5,
-              "score": 64,
-              "dist_pct": -2.1
+              "price": 188.86,
+              "score": 69,
+              "dist_pct": -2.4
             },
             {
-              "price": 185.19,
-              "score": 80,
-              "dist_pct": -4.3
+              "price": 183.49,
+              "score": 55,
+              "dist_pct": -5.2
             },
             {
-              "price": 175.42,
-              "score": 36,
-              "dist_pct": -9.3
+              "price": 177.71,
+              "score": 17,
+              "dist_pct": -8.2
             }
           ],
           "resistance": [
@@ -2634,8 +2634,8 @@
               "dist_pct": 1.1
             },
             {
-              "price": 75.39,
-              "score": 90,
+              "price": 75.4,
+              "score": 93,
               "dist_pct": 4.8
             },
             {
@@ -2680,19 +2680,19 @@
         "sr": {
           "support": [
             {
-              "price": 189.5,
-              "score": 64,
-              "dist_pct": -2.1
+              "price": 188.86,
+              "score": 69,
+              "dist_pct": -2.4
             },
             {
-              "price": 185.19,
-              "score": 80,
-              "dist_pct": -4.3
+              "price": 183.49,
+              "score": 55,
+              "dist_pct": -5.2
             },
             {
-              "price": 175.42,
-              "score": 36,
-              "dist_pct": -9.3
+              "price": 177.71,
+              "score": 17,
+              "dist_pct": -8.2
             }
           ],
           "resistance": [
@@ -3141,13 +3141,13 @@
               "dist_pct": -26.4
             },
             {
-              "price": 75.14,
+              "price": 75.12,
               "score": 40,
               "dist_pct": -30.5
             },
             {
-              "price": 72.47,
-              "score": 37,
+              "price": 72.49,
+              "score": 35,
               "dist_pct": -32.9
             }
           ],
@@ -4008,9 +4008,9 @@
         "sr": {
           "support": [
             {
-              "price": 31.3,
-              "score": 54,
-              "dist_pct": -23.7
+              "price": 31.34,
+              "score": 51,
+              "dist_pct": -23.6
             },
             {
               "price": 30.53,
@@ -4904,19 +4904,19 @@
           ],
           "resistance": [
             {
-              "price": 104.33,
-              "score": 52,
-              "dist_pct": 7.6
-            },
-            {
-              "price": 106.91,
+              "price": 104.49,
               "score": 51,
-              "dist_pct": 10.2
+              "dist_pct": 7.7
             },
             {
-              "price": 111.81,
+              "price": 107.24,
+              "score": 50,
+              "dist_pct": 10.6
+            },
+            {
+              "price": 110.45,
               "score": 27,
-              "dist_pct": 15.3
+              "dist_pct": 13.9
             }
           ],
           "near": {
@@ -5425,9 +5425,9 @@
         "sr": {
           "support": [
             {
-              "price": 59.46,
-              "score": 58,
-              "dist_pct": -2.4
+              "price": 59.4,
+              "score": 57,
+              "dist_pct": -2.5
             },
             {
               "price": 57.51,
@@ -6228,9 +6228,9 @@
               "dist_pct": -2.5
             },
             {
-              "price": 20.97,
-              "score": 142,
-              "dist_pct": -4.5
+              "price": 20.99,
+              "score": 140,
+              "dist_pct": -4.4
             },
             {
               "price": 20.39,
@@ -12646,9 +12646,9 @@
               "dist_pct": -8.3
             },
             {
-              "price": 274.25,
-              "score": 34,
-              "dist_pct": -21.3
+              "price": 274.39,
+              "score": 32,
+              "dist_pct": -21.2
             }
           ],
           "resistance": [
@@ -12835,9 +12835,9 @@
               "dist_pct": -31.4
             },
             {
-              "price": 267.61,
-              "score": 28,
-              "dist_pct": -33.5
+              "price": 267.21,
+              "score": 25,
+              "dist_pct": -33.6
             },
             {
               "price": 226.3,
@@ -17408,7 +17408,7 @@
               "dist_pct": -5.7
             },
             {
-              "price": 225.94,
+              "price": 225.98,
               "score": 51,
               "dist_pct": -8.2
             },
@@ -19163,15 +19163,15 @@
         "000660.KS",
         "005930.KS"
       ],
-      "daily": 3.12,
-      "intra": 1.02,
-      "wtd": 13.89,
-      "5d": 19.27,
-      "20d": 12.69,
-      "ytd": 69.51,
-      "vol_ratio": 0.64,
+      "daily": 3.43,
+      "intra": 1.3,
+      "wtd": 14.21,
+      "5d": 19.58,
+      "20d": 12.99,
+      "ytd": 69.94,
+      "vol_ratio": 0.68,
       "atr_pct": 6.7,
-      "dist_sma50_atr": 1.48,
+      "dist_sma50_atr": 1.54,
       "rs": 22.5,
       "vol_chart": "data/charts/vol_Theme_Memory.png",
       "constituent_daily": {
@@ -19179,8 +19179,8 @@
         "WDC": 2.57,
         "SNDK": -1.91,
         "STX": 3.4,
-        "000660.KS": 8.73,
-        "005930.KS": 5.98
+        "000660.KS": 9.93,
+        "005930.KS": 6.62
       }
     },
     {
@@ -19283,48 +19283,48 @@
       "next_fomc_days": 28,
       "speeches": [
         {
-          "name": "Alberto Musalem",
-          "role": "St. Louis Fed President",
+          "name": "Philip N. Jefferson",
+          "role": "Vice Chair",
           "voter": true,
-          "date": "2026-04-01",
-          "summary": "St. Louis Fed President Alberto Musalem supported keeping the policy rate at 3.5%-3.75%, viewing it as appropriately balanced for the dual mandate amid risks of persistent above-target inflation due to geopolitical factors and tariffs.",
-          "score": 1
+          "date": "2026-04-07",
+          "summary": "Vice Chair Jefferson delivered a speech on the economic outlook and the labor market.",
+          "score": 0
+        },
+        {
+          "name": "Michelle W. Bowman",
+          "role": "Vice Chair for Supervision",
+          "voter": true,
+          "date": "2026-03-31",
+          "summary": "Vice Chair Bowman spoke on supporting small businesses.",
+          "score": 0
         },
         {
           "name": "Michael S. Barr",
           "role": "Governor",
-          "voter": false,
+          "voter": true,
+          "date": "2026-03-31",
+          "summary": "Governor Barr provided brief remarks on stablecoins.",
+          "score": 0
+        },
+        {
+          "name": "Lisa D. Cook",
+          "role": "Governor",
+          "voter": true,
           "date": "2026-03-26",
-          "summary": "Governor Michael S. Barr supported the FOMC's decision to maintain current monetary policy, stressing vigilance against inflation persistence from recent shocks while noting economic resilience.",
+          "summary": "Governor Cook reflected on financial stability.",
+          "score": 0
+        },
+        {
+          "name": "Stephen I. Miran",
+          "role": "Governor",
+          "voter": true,
+          "date": "2026-03-26",
+          "summary": "Governor Miran discussed prospects for shrinking the Fed’s balance sheet.",
           "score": 1
-        },
-        {
-          "name": "Susan M. Collins",
-          "role": "Boston Fed President",
-          "voter": true,
-          "date": "2026-03-06",
-          "summary": "Boston Fed President Susan M. Collins delivered observations on the economic outlook and small businesses, with no detailed monetary policy stance specified in available information.",
-          "score": 0
-        },
-        {
-          "name": "Beth M. Hammack",
-          "role": "Cleveland Fed President",
-          "voter": true,
-          "date": "2026-02-10",
-          "summary": "Cleveland Fed President Beth M. Hammack supported the FOMC's decision to keep the federal funds rate at 3.5%-3.75%, believing it is near neutral and appropriately positioned to observe economic developments.",
-          "score": 0
-        },
-        {
-          "name": "Jerome Powell",
-          "role": "Chair",
-          "voter": true,
-          "date": "2026-01-28",
-          "summary": "Chair Jerome Powell announced the FOMC's decision to maintain the federal funds rate at 3.5%-3.75% after prior cuts, stating it is within neutral range to stabilize the labor market and allow inflation to trend toward 2%.",
-          "score": 0
         }
       ],
-      "hawk_dove_score": 15,
-      "market_implied_cuts": 3
+      "hawk_dove_score": 5,
+      "market_implied_cuts": 0
     }
   },
   "vol_signals": {
@@ -23898,8 +23898,8 @@
         "last_date": "2026-03-01",
         "release_date": "2026-04-03",
         "next_release": "2026-05-01",
-        "forecast": 140,
-        "next_forecast": 130
+        "forecast": 151,
+        "next_forecast": 142
       },
       "UMCSENT": {
         "label": "Consumer Sent.",
@@ -24054,35 +24054,35 @@
     }
   },
   "industries_sector_charts": {
-    "Materials": "data/charts/vol_IndSec_Materials.png",
+    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
+    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
+    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
+    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
+    "Energy": "data/charts/vol_IndSec_Energy.png",
     "Utilities": "data/charts/vol_IndSec_Utilities.png",
     "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
+    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
+    "Materials": "data/charts/vol_IndSec_Materials.png",
     "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
-    "Energy": "data/charts/vol_IndSec_Energy.png",
-    "Financials": "data/charts/vol_IndSec_Financials.png",
-    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
-    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
     "Industrials": "data/charts/vol_IndSec_Industrials.png",
     "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
-    "Commodities": "data/charts/vol_IndSec_Commodities.png",
-    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
-    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
-    "Health Care": "data/charts/vol_IndSec_Health_Care.png"
+    "Financials": "data/charts/vol_IndSec_Financials.png",
+    "Commodities": "data/charts/vol_IndSec_Commodities.png"
   },
   "industries_sector_rs_charts": {
-    "Materials": "data/charts/IndSecRS_Materials.png",
+    "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
+    "Health Care": "data/charts/IndSecRS_Health_Care.png",
+    "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
+    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
+    "Energy": "data/charts/IndSecRS_Energy.png",
     "Utilities": "data/charts/IndSecRS_Utilities.png",
     "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
+    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
+    "Materials": "data/charts/IndSecRS_Materials.png",
     "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
-    "Energy": "data/charts/IndSecRS_Energy.png",
-    "Financials": "data/charts/IndSecRS_Financials.png",
-    "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
-    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
     "Industrials": "data/charts/IndSecRS_Industrials.png",
     "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
-    "Commodities": "data/charts/IndSecRS_Commodities.png",
-    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
-    "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
-    "Health Care": "data/charts/IndSecRS_Health_Care.png"
+    "Financials": "data/charts/IndSecRS_Financials.png",
+    "Commodities": "data/charts/IndSecRS_Commodities.png"
   }
 }
