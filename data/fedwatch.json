@@ -10,14 +10,16 @@
   "market": {
     "next_fomc_date": "2026-04-29",
     "next_fomc_label": "Apr 29, 2026",
-    "rate_hold_pct": 98.4,
+    "rate_hold_pct": 100.0,
     "rate_cut_pct": 0.0,
-    "rate_hike_pct": 1.6,
+    "rate_hike_pct": 0.0,
     "current_rate": "3.50%–3.75%",
     "cpi": 2.4,
-    "cpi_month": "Feb 2026",
+    "cpi_month": "February 2026",
     "unemployment": 4.3,
-    "unemployment_month": "Mar 2026"
+    "unemployment_month": "Mar 2026",
+    "bls_cpi_updated": "2026-04-08",
+    "cme_updated": "2026-04-08"
   },
   "members": [
     {
@@ -125,6 +127,13 @@
       "photo_url": "data/fedwatch_photos/bowman.jpg",
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
+        {
+          "date": "2026-02-19",
+          "event": "Bowman, Opening Remarks",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260219a.htm",
+          "brief_summary": "Speech At the Federal Reserve Bank of Atlanta 2026 Banking Outlook Conference: The Next Horizon in Banking, Atlanta, Georgia (via pre-recorded video)",
+          "detailed_summary": ""
+        },
         {
           "date": "2026-03-31",
           "event": "CBA LIVE 26, Consumer Bankers Association, San Diego, CA — 'Supporting Small Businesses'",
