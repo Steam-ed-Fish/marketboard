@@ -38,6 +38,10 @@ jobs:
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
 
+      - name: Update FedWatch data
+        run: |
+          python scripts/build_fedwatch.py
+
       - name: Generate briefing
         run: |
           python scripts/generate_briefing.py --out-dir data

@@ -1522,88 +1522,220 @@
     }
 
     // ── Fed Watch ─────────────────────────────────────────────────────────────
+    var fedwatchData = null;
+    var _fwTooltipEl = null;
+
     function renderFedWatch() {
         var el = document.getElementById('fed-watch-content');
         if (!el) return;
-        var fw = snapshot && snapshot.macro && snapshot.macro.fed_watch;
-        if (!fw) {
-            el.innerHTML = '<div style="padding:16px;color:#9ca3af;font-size:0.8rem">No data — run the workflow.</div>';
+
+        if (!fedwatchData) {
+            el.innerHTML = '<div style="padding:16px;color:#9ca3af;font-size:0.75rem">Loading…</div>';
+            fetch('data/fedwatch.json')
+                .then(function(r) { return r.ok ? r.json() : null; })
+                .then(function(d) { fedwatchData = d; renderFedWatch(); })
+                .catch(function() {
+                    el.innerHTML = '<div style="padding:16px;color:#9ca3af;font-size:0.75rem">Failed to load fedwatch.json</div>';
+                });
             return;
         }
 
-        var hds = fw.hawk_dove_score;
-        var hdsCol = hds == null ? '#4b5563' : hds > 30 ? '#ef4444' : hds > 10 ? '#f97316' : hds > -10 ? '#eab308' : hds > -30 ? '#22c55e' : '#10b981';
-        var hdsLbl = hds == null ? '—' : hds > 30 ? 'Hawkish' : hds > 10 ? 'Slightly Hawkish' : hds > -10 ? 'Neutral' : hds > -30 ? 'Slightly Dovish' : 'Dovish';
+        var fw      = fedwatchData;
+        var mkt     = fw.market || {};
+        var members = fw.members || [];
+        var hawks   = members.filter(function(m) { return m.stance === 'Hawk'; });
+        var neutral = members.filter(function(m) { return m.stance === 'Neutral'; });
+        var doves   = members.filter(function(m) { return m.stance === 'Dove'; });
+
+        var daysToFomc = null;
+        if (mkt.next_fomc_date) {
+            daysToFomc = Math.ceil((new Date(mkt.next_fomc_date + 'T00:00:00') - new Date()) / 86400000);
+        }
 
         var html = '<div style="padding:10px 12px">';
 
-        // Top row: FFR + countdown + hawk/dove
-        html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">';
+        // ── Stats row ──────────────────────────────────────────────────────────
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px">';
 
-        // FFR card
-        html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:10px">';
-        html += '<div style="font-size:0.6rem;color:#4b5563;text-transform:uppercase;margin-bottom:2px">Fed Funds Rate</div>';
-        html += '<div style="font-size:1.4rem;font-weight:700;color:#e2e8f0">' + (fw.ffr != null ? fw.ffr.toFixed(2) + '%' : '—') + '</div>';
-        if (fw.target_lower != null && fw.target_upper != null)
-            html += '<div style="font-size:0.62rem;color:#2d6080">Target: ' + fw.target_lower.toFixed(2) + '–' + fw.target_upper.toFixed(2) + '%</div>';
+        html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px">';
+        html += '<div style="font-size:0.56rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Next FOMC</div>';
+        html += '<div style="font-size:1.2rem;font-weight:700;color:#e2e8f0;line-height:1">'
+              + (daysToFomc !== null ? daysToFomc + '<span style="font-size:0.62rem;color:#4b5563"> days</span>' : '—')
+              + '</div>';
+        html += '<div style="font-size:0.56rem;color:#2d6080;margin-top:2px">' + (mkt.next_fomc_label || '') + '</div>';
         html += '</div>';
 
-        // Next FOMC
-        html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:10px">';
-        html += '<div style="font-size:0.6rem;color:#4b5563;text-transform:uppercase;margin-bottom:2px">Next FOMC</div>';
-        html += '<div style="font-size:1.4rem;font-weight:700;color:#e2e8f0">' + (fw.next_fomc_days != null ? fw.next_fomc_days + 'd' : '—') + '</div>';
-        html += '<div style="font-size:0.62rem;color:#2d6080">' + (fw.next_fomc_date || '') + '</div>';
+        html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px">';
+        html += '<div style="font-size:0.56rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Fed Funds Rate</div>';
+        html += '<div style="font-size:0.95rem;font-weight:700;color:#38bdf8;line-height:1.25">' + (mkt.current_rate || '—') + '</div>';
+        html += '<div style="font-size:0.56rem;color:#2d6080;margin-top:2px">Target range</div>';
         html += '</div>';
 
-        // Hawk/dove gauge
-        html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:10px">';
-        html += '<div style="font-size:0.6rem;color:#4b5563;text-transform:uppercase;margin-bottom:2px">Hawk/Dove Tone</div>';
-        html += '<div style="font-size:1.4rem;font-weight:700;color:' + hdsCol + '">' + (hds != null ? (hds >= 0 ? '+' : '') + hds : '—') + '</div>';
-        html += '<div style="font-size:0.62rem;color:' + hdsCol + '">' + hdsLbl + '</div>';
-        html += '</div>';
+        var cpiCol = mkt.cpi != null ? (mkt.cpi > 3 ? '#ef4444' : mkt.cpi > 2.5 ? '#f97316' : '#10b981') : '#4b5563';
+        html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px">';
+        html += '<div style="font-size:0.56rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">CPI YoY</div>';
+        html += '<div style="font-size:1.2rem;font-weight:700;color:' + cpiCol + ';line-height:1">' + (mkt.cpi != null ? mkt.cpi + '%' : '—') + '</div>';
+        html += '<div style="font-size:0.56rem;color:#2d6080;margin-top:2px">' + (mkt.cpi_month || '') + '</div>';
         html += '</div>';
 
-        // Market-implied cuts
-        if (fw.market_implied_cuts != null) {
-            html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px;margin-bottom:12px">';
-            html += '<span style="font-size:0.65rem;color:#4b5563">Market pricing (CME FedWatch): </span>';
-            html += '<span style="font-size:0.82rem;font-weight:700;color:#38bdf8">' + fw.market_implied_cuts + ' cuts</span>';
-            html += '<span style="font-size:0.6rem;color:#4b5563"> of 25bp priced in for remainder of 2026</span>';
+        var uCol = mkt.unemployment != null ? (mkt.unemployment > 5 ? '#ef4444' : mkt.unemployment > 4.5 ? '#f97316' : '#10b981') : '#4b5563';
+        html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px">';
+        html += '<div style="font-size:0.56rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px">Unemployment</div>';
+        html += '<div style="font-size:1.2rem;font-weight:700;color:' + uCol + ';line-height:1">' + (mkt.unemployment != null ? mkt.unemployment + '%' : '—') + '</div>';
+        html += '<div style="font-size:0.56rem;color:#2d6080;margin-top:2px">' + (mkt.unemployment_month || '') + '</div>';
+        html += '</div>';
+
+        html += '</div>';
+
+        // ── CME Probability bar ────────────────────────────────────────────────
+        var holdPct = mkt.rate_hold_pct || 0;
+        var cutPct  = mkt.rate_cut_pct  || 0;
+        var hikePct = mkt.rate_hike_pct || 0;
+        html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px;margin-bottom:10px">';
+        html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">';
+        html += '<span style="font-size:0.6rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.06em">CME FedWatch · ' + (mkt.next_fomc_label || 'Next FOMC') + '</span>';
+        html += '<span style="font-size:0.54rem;color:#1a3550">ZQ 30-day futures</span>';
+        html += '</div>';
+        html += '<div style="display:flex;border-radius:3px;overflow:hidden;height:20px">';
+        if (cutPct  > 0.5) html += '<div style="background:#10b981;flex:' + cutPct  + ';display:flex;align-items:center;justify-content:center"><span style="font-size:0.58rem;color:#fff;font-weight:700">'     + (cutPct > 6  ? cutPct  + '%' : '') + '</span></div>';
+        if (holdPct > 0)   html += '<div style="background:#38bdf8;flex:' + holdPct + ';display:flex;align-items:center;justify-content:center"><span style="font-size:0.62rem;color:#0a1e35;font-weight:700">' + holdPct + '%</span></div>';
+        if (hikePct > 0.5) html += '<div style="background:#ef4444;flex:' + hikePct + ';display:flex;align-items:center;justify-content:center"><span style="font-size:0.58rem;color:#fff;font-weight:700">'     + (hikePct > 6 ? hikePct + '%' : '') + '</span></div>';
+        html += '</div>';
+        html += '<div style="display:flex;gap:14px;margin-top:4px">';
+        html += '<span style="font-size:0.56rem;color:#10b981">▬ Cut ' + cutPct + '%</span>';
+        html += '<span style="font-size:0.56rem;color:#38bdf8">▬ Hold ' + holdPct + '%</span>';
+        html += '<span style="font-size:0.56rem;color:#ef4444">▬ Hike ' + hikePct + '%</span>';
+        html += '</div></div>';
+
+        // ── Member grid ────────────────────────────────────────────────────────
+        function memberCard(m) {
+            var cc = m.stance === 'Hawk' ? '#ef4444' : m.stance === 'Dove' ? '#10b981' : '#eab308';
+            var ln = m.name.split(/\s+/).pop();
+            var sid = 'fw-' + ln.toLowerCase().replace(/[^a-z0-9]/g,'');
+            var vb = m.is_voter
+                ? '<span style="font-size:0.48rem;background:#0a1e35;color:#38bdf8;padding:1px 3px;border-radius:2px;margin-left:3px;vertical-align:middle">VOTER</span>'
+                : '';
+            var lat = m.speeches && m.speeches[0];
+            var c = '<div id="' + sid + '" style="background:#070e1c;border:1px solid #0a1e35;border-radius:4px;padding:6px;margin-bottom:5px;position:relative"'
+                  + ' onmouseenter="fwShowTooltip(event,\'' + sid + '\')" onmouseleave="fwHideTooltip()">';
+            c += '<div style="display:flex;align-items:flex-start;gap:7px">';
+            c += '<img src="' + m.photo_url + '" alt="" onclick="fwShowDetail(event,\'' + sid + '\')"'
+               + ' style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid ' + cc + ';flex-shrink:0;cursor:pointer"'
+               + ' onerror="this.style.display=\'none\'">';
+            c += '<div style="flex:1;min-width:0">';
+            c += '<div style="font-size:0.65rem;font-weight:700;color:#e2e8f0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + m.name + vb + '</div>';
+            c += '<div style="font-size:0.55rem;color:#4b5563;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px">' + m.title + '</div>';
+            c += '</div></div>';
+            if (lat) {
+                c += '<div style="margin-top:4px;font-size:0.57rem;color:#6b7280;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">'
+                   + lat.brief_summary.replace(/</g,'&lt;').replace(/>/g,'&gt;').substring(0,130) + '</div>';
+                c += '<div style="margin-top:2px;font-size:0.52rem;color:#1a3550">' + lat.date + '</div>';
+            }
+            return c + '</div>';
+        }
+
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px">';
+        [
+            { label:'Hawks',   color:'#ef4444', members: hawks   },
+            { label:'Neutral', color:'#eab308', members: neutral },
+            { label:'Doves',   color:'#10b981', members: doves   }
+        ].forEach(function(col) {
+            html += '<div>';
+            html += '<div style="font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:' + col.color + ';margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid ' + col.color + '33">'
+                  + col.label + ' <span style="font-weight:400;color:#4b5563">(' + col.members.length + ')</span></div>';
+            col.members.forEach(function(m) { html += memberCard(m); });
             html += '</div>';
-        }
-
-        // Speeches table
-        if (fw.speeches && fw.speeches.length) {
-            html += '<div style="font-size:0.68rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Recent Speeches</div>';
-            html += '<table style="width:100%;border-collapse:collapse;font-size:0.68rem">';
-            html += '<thead><tr style="border-bottom:1px solid #0a1e35">'
-                  + '<th style="text-align:left;padding:4px 6px;color:#2d6080;font-weight:600">Official</th>'
-                  + '<th style="text-align:center;padding:4px 6px;color:#2d6080;font-weight:600">Score</th>'
-                  + '<th style="text-align:left;padding:4px 6px;color:#2d6080;font-weight:600">Summary</th>'
-                  + '<th style="text-align:right;padding:4px 6px;color:#2d6080;font-weight:600">Date</th>'
-                  + '</tr></thead><tbody>';
-            fw.speeches.forEach(function(s) {
-                var sc = s.score || 0;
-                var scCol = sc >= 2 ? '#ef4444' : sc >= 1 ? '#f97316' : sc <= -2 ? '#10b981' : sc <= -1 ? '#22c55e' : '#eab308';
-                var scLbl = sc >= 2 ? '🦅 +2' : sc === 1 ? '↑ +1' : sc === 0 ? '— 0' : sc === -1 ? '↓ -1' : '🕊️ -2';
-                var voterBadge = s.voter ? '<span style="font-size:0.55rem;background:#0a1e35;color:#2d6080;padding:1px 4px;border-radius:2px;margin-left:3px">voter</span>' : '';
-                html += '<tr style="border-bottom:1px solid #080e1a">'
-                      + '<td style="padding:5px 6px;white-space:nowrap"><span style="color:#e2e8f0">' + (s.name||'') + '</span>' + voterBadge
-                      + '<br><span style="font-size:0.58rem;color:#4b5563">' + (s.role||'') + '</span></td>'
-                      + '<td style="padding:5px 6px;text-align:center;color:' + scCol + ';font-weight:700;white-space:nowrap">' + scLbl + '</td>'
-                      + '<td style="padding:5px 6px;color:#9ca3af;line-height:1.35">' + (s.summary||'') + '</td>'
-                      + '<td style="padding:5px 6px;text-align:right;color:#4b5563;white-space:nowrap">' + (s.date||'') + '</td>'
-                      + '</tr>';
-            });
-            html += '</tbody></table>';
-        } else {
-            html += '<div style="padding:12px;color:#4b5563;font-size:0.75rem;text-align:center">Speech data requires PERPLEXITY_API_KEY — add it as a GitHub Actions secret.</div>';
-        }
-
-        html += '<div style="font-size:0.6rem;color:#1a3550;font-style:italic;margin-top:8px">Source: FRED · CME FedWatch via Perplexity</div>';
+        });
         html += '</div>';
+
+        html += '<div style="font-size:0.54rem;color:#1a3550;padding-top:5px;border-top:1px solid #080e1a;display:flex;justify-content:space-between">';
+        html += '<span>Updated: ' + (fw.last_updated || '—') + '</span>';
+        html += '<span><a href="' + ((fw.sources&&fw.sources.cme)||'#') + '" target="_blank" style="color:#2d6080">CME</a>'
+              + ' · <a href="https://www.bls.gov" target="_blank" style="color:#2d6080">BLS</a>'
+              + ' · <a href="' + ((fw.sources&&fw.sources.fed_speeches)||'#') + '" target="_blank" style="color:#2d6080">Fed RSS</a></span>';
+        html += '</div></div>';
+
         el.innerHTML = html;
+
+        window._fwMembers = {};
+        members.forEach(function(m) {
+            var sid = 'fw-' + m.name.split(/\s+/).pop().toLowerCase().replace(/[^a-z0-9]/g,'');
+            window._fwMembers[sid] = m;
+        });
     }
+
+    window.fwShowTooltip = function(e, sid) {
+        var m = window._fwMembers && window._fwMembers[sid];
+        if (!m) return;
+        if (!_fwTooltipEl) {
+            _fwTooltipEl = document.createElement('div');
+            _fwTooltipEl.style.cssText = 'position:fixed;z-index:9999;background:#0d1829;border:1px solid #1a3550;border-radius:4px;padding:9px;max-width:300px;pointer-events:none;box-shadow:0 4px 20px #00000090;font-size:0.62rem;color:#e2e8f0;line-height:1.35';
+            document.body.appendChild(_fwTooltipEl);
+        }
+        var cc = m.stance === 'Hawk' ? '#ef4444' : m.stance === 'Dove' ? '#10b981' : '#eab308';
+        var th = '<div style="font-weight:700;margin-bottom:5px;color:' + cc + '">' + m.name
+               + ' <span style="color:#4b5563;font-weight:400">· ' + m.stance + '</span></div>';
+        (m.speeches || []).slice(0,3).forEach(function(s) {
+            th += '<div style="border-top:1px solid #0a1e35;padding-top:4px;margin-top:4px">';
+            th += '<div style="font-size:0.55rem;color:#2d6080;margin-bottom:2px">' + s.date + '</div>';
+            th += '<div style="color:#9ca3af">' + s.brief_summary.replace(/</g,'&lt;').substring(0,160) + '</div>';
+            th += '</div>';
+        });
+        th += '<div style="margin-top:5px;font-size:0.52rem;color:#1a3550;font-style:italic">Click photo for full detail</div>';
+        _fwTooltipEl.innerHTML = th;
+        _fwTooltipEl.style.display = 'block';
+        var r = e.currentTarget.getBoundingClientRect();
+        var x = r.right + 10, y = r.top;
+        if (x + 310 > window.innerWidth)  x = r.left - 310;
+        if (y + 250 > window.innerHeight) y = window.innerHeight - 255;
+        _fwTooltipEl.style.left = x + 'px';
+        _fwTooltipEl.style.top  = Math.max(4, y) + 'px';
+    };
+
+    window.fwHideTooltip = function() {
+        if (_fwTooltipEl) _fwTooltipEl.style.display = 'none';
+    };
+
+    window.fwShowDetail = function(e, sid) {
+        e.stopPropagation();
+        window.fwHideTooltip();
+        var m = window._fwMembers && window._fwMembers[sid];
+        if (!m) return;
+        var cc = m.stance === 'Hawk' ? '#ef4444' : m.stance === 'Dove' ? '#10b981' : '#eab308';
+        var ov = document.getElementById('fw-detail-overlay');
+        if (!ov) {
+            ov = document.createElement('div');
+            ov.id = 'fw-detail-overlay';
+            ov.style.cssText = 'position:fixed;inset:0;z-index:10000;background:#00000088;display:flex;align-items:center;justify-content:center';
+            ov.addEventListener('click', function(ev) { if (ev.target === ov) ov.style.display = 'none'; });
+            document.body.appendChild(ov);
+        }
+        var dh = '<div style="background:#0d1829;border:1px solid #1a3550;border-radius:6px;padding:16px;max-width:480px;width:90vw;max-height:78vh;overflow-y:auto;position:relative;box-shadow:0 8px 32px #00000090">';
+        dh += '<div onclick="document.getElementById(\'fw-detail-overlay\').style.display=\'none\'" style="position:absolute;top:10px;right:12px;cursor:pointer;color:#4b5563;font-size:1.3rem;line-height:1">×</div>';
+        dh += '<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">';
+        dh += '<img src="' + m.photo_url + '" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid ' + cc + ';flex-shrink:0" onerror="this.style.display=\'none\'">';
+        dh += '<div>';
+        dh += '<div style="font-size:0.82rem;font-weight:700;color:#e2e8f0">' + m.name + '</div>';
+        dh += '<div style="font-size:0.6rem;color:#4b5563;margin-top:1px">' + m.title + '</div>';
+        dh += '<div style="margin-top:3px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">';
+        dh += '<span style="font-size:0.6rem;font-weight:700;color:' + cc + '">' + m.stance + '</span>';
+        if (m.is_voter) dh += '<span style="background:#0a1e35;color:#38bdf8;font-size:0.5rem;padding:1px 4px;border-radius:2px">VOTER 2026</span>';
+        dh += '<a href="' + m.bio_url + '" target="_blank" style="font-size:0.56rem;color:#2d6080">Official Bio ↗</a>';
+        dh += '</div></div></div>';
+        dh += '<div style="font-size:0.6rem;font-weight:700;color:' + cc + ';text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Recent Speeches</div>';
+        (m.speeches || []).forEach(function(s) {
+            dh += '<div style="border:1px solid #0a1e35;border-radius:4px;padding:8px;margin-bottom:6px">';
+            dh += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:4px">';
+            dh += '<a href="' + s.url + '" target="_blank" style="font-size:0.62rem;color:#38bdf8;font-weight:600;line-height:1.3;flex:1">' + s.event.replace(/</g,'&lt;') + '</a>';
+            dh += '<span style="font-size:0.56rem;color:#2d6080;white-space:nowrap">' + s.date + '</span>';
+            dh += '</div>';
+            dh += '<div style="font-size:0.6rem;color:#9ca3af;line-height:1.4">' + (s.detailed_summary || s.brief_summary || '').replace(/</g,'&lt;') + '</div>';
+            dh += '</div>';
+        });
+        dh += '</div>';
+        ov.innerHTML = dh;
+        ov.style.display = 'flex';
+    };
 
     var _volChartInstance = null;
     window.renderVolChart = function(name) {
