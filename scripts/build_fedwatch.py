@@ -100,6 +100,7 @@ def fetch_recent_speeches(top_n=30):
 def match_speeches(members, new_speeches):
     name_map = {m['name'].split()[-1].lower(): m for m in members}
     added = 0
+    updated = set()  # member names that received a new speech
     for speech in new_speeches:
         title = speech['raw_title'].lower()
         for last, member in name_map.items():
@@ -115,9 +116,46 @@ def match_speeches(members, new_speeches):
                     })
                     member['speeches'] = member['speeches'][:5]
                     added += 1
+                    updated.add(member['name'])
                 break
     print(f"  → {added} new speeches matched")
-    return members
+    return members, updated
+
+
+# ─── Stance reassessment via Claude ───────────────────────────
+def reassess_stance(member, api_key):
+    """Ask Claude to classify stance as Hawk/Neutral/Dove based on recent speeches."""
+    try:
+        import anthropic
+        speeches = member.get('speeches', [])[:3]
+        if not speeches:
+            return member.get('stance', 'Neutral')
+        speech_text = '\n\n'.join(
+            f"Date: {s['date']}\nEvent: {s['event']}\nSummary: {s['brief_summary']}"
+            for s in speeches
+        )
+        client = anthropic.Anthropic(api_key=api_key)
+        msg = client.messages.create(
+            model='claude-haiku-4-5-20251001',
+            max_tokens=5,
+            messages=[{
+                'role': 'user',
+                'content': (
+                    f"Based on these recent speeches by Federal Reserve official {member['name']}, "
+                    f"classify their current monetary policy stance as exactly one word.\n\n"
+                    f"{speech_text}\n\n"
+                    f"Respond with only one word: Hawk, Neutral, or Dove."
+                )
+            }]
+        )
+        result = msg.content[0].text.strip().capitalize()
+        if result in ('Hawk', 'Neutral', 'Dove'):
+            print(f"  → Stance reassessed: {member['name']} → {result} (was {member.get('stance')})")
+            return result
+        return member.get('stance', 'Neutral')
+    except Exception as e:
+        print(f"  [WARN] Stance reassessment for {member['name']}: {e}")
+        return member.get('stance', 'Neutral')
 
 
 # ─── CME Rate Probabilities via yfinance ZQ futures ──────────
@@ -251,9 +289,19 @@ def main():
     # 5. Fed speeches RSS
     print("  Fetching Fed speeches RSS...")
     recent = fetch_recent_speeches(30)
-    data['members'] = match_speeches(data['members'], recent)
+    data['members'], updated_members = match_speeches(data['members'], recent)
 
-    # 6. Timestamp
+    # 6. Reassess stance for members who received a new speech
+    anthropic_key = os.environ.get('ANTHROPIC_API_KEY')
+    if updated_members and anthropic_key:
+        print(f"  Reassessing stance for: {', '.join(updated_members)}")
+        for m in data['members']:
+            if m['name'] in updated_members:
+                m['stance'] = reassess_stance(m, anthropic_key)
+    elif updated_members:
+        print("  [INFO] ANTHROPIC_API_KEY not set — skipping stance reassessment")
+
+    # 7. Timestamp
     data['last_updated'] = date.today().isoformat()
 
     with open(DATA_PATH, 'w', encoding='utf-8') as f:
