@@ -1463,62 +1463,198 @@
             el.innerHTML = '<div style="padding:16px;color:#9ca3af;font-size:0.8rem">No data — add <code>FRED_API_KEY</code> secret and re-run the workflow.</div>';
             return;
         }
-        var ps = liq.pressure_score;
-        var psCol = ps == null ? '#4b5563' : ps > 60 ? '#ef4444' : ps > 35 ? '#f97316' : '#22c55e';
-        var psLbl = ps == null ? '—' : ps > 60 ? 'Stressed' : ps > 35 ? 'Elevated' : 'Calm';
 
-        function metricCard(label, value, unit, detail, stressed) {
-            var col = stressed === true ? '#ef4444' : stressed === false ? '#22c55e' : '#94a3b8';
-            var valStr = value != null ? value.toFixed(unit === 'B' ? 0 : 4) + (unit === 'B' ? 'B' : (unit === '%' ? '%' : '')) : '—';
-            return '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:8px 10px">'
-                + '<div style="font-size:0.65rem;color:#4b5563;margin-bottom:2px">' + label + '</div>'
-                + '<div style="font-size:1.1rem;font-weight:700;color:' + col + '">' + valStr + '</div>'
-                + (detail ? '<div style="font-size:0.6rem;color:#2d6080;margin-top:3px">' + detail + '</div>' : '')
-                + '</div>';
+        // Support both old flat format and new structured format
+        var score  = liq.score != null ? liq.score : liq.pressure_score;
+        var sLabel = liq.score_label || (score == null ? '—' : score > 75 ? 'Stressed' : score > 50 ? 'Elevated' : score > 25 ? 'Normal' : 'Calm');
+        var comps  = liq.components || [];
+        var raw    = liq.raw || liq;
+        var flinks = liq.fred_links || {};
+
+        var sCol = score == null ? '#4b5563' : score > 75 ? '#ef4444' : score > 50 ? '#f97316' : score > 25 ? '#38bdf8' : '#22c55e';
+
+        function pctCol(p) { return p > 75 ? '#ef4444' : p > 50 ? '#f97316' : p > 25 ? '#38bdf8' : '#22c55e'; }
+        function dirArrow(d) {
+            if (d === 'up')   return '<span style="color:#ef4444" title="Worsening">&#9650;</span>';
+            if (d === 'down') return '<span style="color:#22c55e" title="Easing">&#9660;</span>';
+            return '<span style="color:#4b5563">—</span>';
         }
-
-        var rrpChg = liq.fed_rrp_chg != null ? (liq.fed_rrp_chg >= 0 ? '+' : '') + liq.fed_rrp_chg.toFixed(1) + 'B vs prev' : '';
-        var tgaChg = liq.tga_chg    != null ? (liq.tga_chg    >= 0 ? '+' : '') + liq.tga_chg.toFixed(1)    + 'B vs prev' : '';
+        function fmtVal(v, unit) {
+            if (v == null) return '—';
+            if (unit === 'B') return v >= 1000 ? (v/1000).toFixed(1) + 'T' : v.toFixed(0) + 'B';
+            return v.toFixed(4) + '%';
+        }
+        function fredLink(sid) {
+            var url = flinks[sid] || ('https://fred.stlouisfed.org/series/' + sid);
+            return '<a href="' + url + '" target="_blank" style="color:#2d6080;font-size:0.5rem;text-decoration:none" title="Verify on FRED">FRED &#8599;</a>';
+        }
 
         var html = '<div style="padding:10px 12px">';
 
-        // Pressure gauge row
-        html += '<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;padding:10px;background:#060d1c;border:1px solid #0a1e35;border-radius:6px">';
-        html += '<div><div style="font-size:0.6rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.08em">USD Liquidity Pressure</div>'
-             +  '<div style="font-size:2rem;font-weight:700;color:' + psCol + ';line-height:1.1">' + (ps != null ? ps : '—') + '</div>'
-             +  '<div style="font-size:0.7rem;color:' + psCol + ';font-weight:600">' + psLbl + '</div></div>';
+        // ── Composite gauge ────────────────────────────────────────────────────
+        html += '<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:10px;background:#060d1c;border:1px solid #0a1e35;border-radius:6px">';
+        html += '<div style="min-width:80px">';
+        html += '<div style="font-size:0.56rem;color:#4b5563;text-transform:uppercase;letter-spacing:0.08em">Liquidity Stress</div>';
+        html += '<div style="font-size:1.8rem;font-weight:700;color:' + sCol + ';line-height:1.1">' + (score != null ? score : '—') + '</div>';
+        html += '<div style="font-size:0.65rem;color:' + sCol + ';font-weight:600">' + sLabel + '</div>';
+        html += '</div>';
         html += '<div style="flex:1">';
-        html += '<div style="height:6px;background:#0a1e35;border-radius:3px;margin-bottom:6px">';
-        html += '<div style="height:100%;width:' + (ps || 0) + '%;background:' + psCol + ';border-radius:3px;transition:width 0.4s"></div></div>';
-        html += '<div style="font-size:0.58rem;color:#1a3550">0 = fully calm · 100 = extreme stress<br>Based on SOFR spread + SOFR vs T-bill</div>';
+        // Segmented bar: green | blue | orange | red
+        html += '<div style="display:flex;height:6px;border-radius:3px;overflow:hidden;margin-bottom:5px">';
+        html += '<div style="flex:25;background:#22c55e40"></div><div style="flex:25;background:#38bdf840"></div>';
+        html += '<div style="flex:25;background:#f9731640"></div><div style="flex:25;background:#ef444440"></div>';
+        html += '</div>';
+        // Marker
+        html += '<div style="position:relative;height:0">';
+        html += '<div style="position:absolute;left:' + (score || 0) + '%;top:-11px;transform:translateX(-50%);width:3px;height:10px;background:' + sCol + ';border-radius:1px"></div>';
+        html += '</div>';
+        html += '<div style="font-size:0.52rem;color:#1a3550;margin-top:8px">0 = calm · 100 = stressed · 5-component percentile model, calibrated to trailing 1 year</div>';
         html += '</div></div>';
 
-        // Metric cards grid
-        html += '<div style="font-size:0.68rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Overnight Rates</div>';
-        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin-bottom:12px">';
-        html += metricCard('SOFR', liq.sofr, '%', 'Secured overnight rate', null);
-        html += metricCard('Effective FFR', liq.effr, '%', 'Fed Funds effective rate', null);
-        html += metricCard('3M T-Bill', liq.dtb3, '%', 'Secondary market rate', null);
+        // ── Component breakdown ────────────────────────────────────────────────
+        if (comps.length) {
+            html += '<div style="font-size:0.62rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Score Breakdown</div>';
+            html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;margin-bottom:10px;overflow:hidden">';
+            // Header
+            html += '<div style="display:grid;grid-template-columns:2fr 1fr 0.7fr 3fr 0.5fr 0.8fr;gap:4px;padding:5px 8px;border-bottom:1px solid #0a1e35;font-size:0.52rem;color:#4b5563;text-transform:uppercase">';
+            html += '<div>Component</div><div style="text-align:right">Value</div><div style="text-align:center">%ile</div><div>1Y Range</div><div></div><div style="text-align:right">Wt</div>';
+            html += '</div>';
+            comps.forEach(function(c, idx) {
+                var pc = pctCol(c.percentile);
+                var cid = 'liq-spark-' + c.id;
+                html += '<div style="cursor:pointer" onclick="liqToggleSpark(\'' + c.id + '\')">';
+                html += '<div style="display:grid;grid-template-columns:2fr 1fr 0.7fr 3fr 0.5fr 0.8fr;gap:4px;padding:5px 8px;align-items:center;border-bottom:1px solid #080e1a;font-size:0.6rem">';
+                // Label + formula
+                html += '<div><span style="color:#e2e8f0">' + c.label + '</span><br><span style="font-size:0.48rem;color:#4b5563">' + c.formula + '</span></div>';
+                // Value + direction
+                html += '<div style="text-align:right;color:#94a3b8;white-space:nowrap">' + fmtVal(c.value, c.unit) + ' ' + dirArrow(c.direction) + '</div>';
+                // Percentile badge
+                html += '<div style="text-align:center"><span style="display:inline-block;background:' + pc + '22;color:' + pc + ';font-size:0.52rem;font-weight:700;padding:1px 5px;border-radius:8px;min-width:28px">' + c.percentile + '</span></div>';
+                // 1Y range bar
+                var range = c.max_1y - c.min_1y;
+                var pos = range > 0 ? ((c.value - c.min_1y) / range * 100) : 50;
+                pos = Math.max(2, Math.min(98, pos));
+                html += '<div style="position:relative;height:14px">';
+                html += '<div style="position:absolute;top:6px;left:0;right:0;height:3px;background:#0a1e35;border-radius:2px"></div>';
+                html += '<div style="position:absolute;top:3px;left:' + pos + '%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:' + pc + ';border:1px solid #0d1829"></div>';
+                html += '<span style="position:absolute;top:0;left:0;font-size:0.42rem;color:#1a3550">' + (c.unit === 'B' ? c.min_1y.toFixed(0) : c.min_1y.toFixed(2)) + '</span>';
+                html += '<span style="position:absolute;top:0;right:0;font-size:0.42rem;color:#1a3550">' + (c.unit === 'B' ? c.max_1y.toFixed(0) : c.max_1y.toFixed(2)) + '</span>';
+                html += '</div>';
+                // Empty (for arrow already inline)
+                html += '<div></div>';
+                // Weight + contribution
+                html += '<div style="text-align:right;font-size:0.5rem;color:#4b5563">' + (c.weight * 100).toFixed(0) + '% <span style="color:' + pc + '">(+' + c.contribution.toFixed(0) + ')</span></div>';
+                html += '</div>';
+                // Sparkline canvas (hidden by default)
+                html += '<div id="' + cid + '-wrap" style="display:none;padding:4px 8px 8px;border-bottom:1px solid #0a1e35">';
+                html += '<canvas id="' + cid + '" width="400" height="50" style="width:100%;height:50px;display:block"></canvas>';
+                html += '<div style="display:flex;justify-content:space-between;font-size:0.45rem;color:#1a3550;margin-top:2px">';
+                if (c.history && c.history.length > 1) {
+                    html += '<span>' + c.history[0].t + '</span><span>' + c.history[c.history.length-1].t + '</span>';
+                }
+                html += '</div></div>';
+                html += '</div>';
+            });
+            html += '</div>';
+        }
+
+        // ── Raw metric cards ───────────────────────────────────────────────────
+        function rCard(label, value, unit, detail, sids) {
+            var valStr = value != null ? (unit === 'B' ? (value >= 1000000 ? (value/1000000).toFixed(0)+'T' : value >= 1000 ? (value/1000).toFixed(0)+'B' : value.toFixed(1)) : value.toFixed(unit === '%4' ? 4 : 2) + '%') : '—';
+            var links = (sids || []).map(function(s) { return fredLink(s); }).join(' ');
+            return '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:4px;padding:7px 9px">'
+                + '<div style="font-size:0.58rem;color:#4b5563;margin-bottom:2px">' + label + ' ' + links + '</div>'
+                + '<div style="font-size:0.95rem;font-weight:700;color:#94a3b8">' + valStr + '</div>'
+                + (detail ? '<div style="font-size:0.52rem;color:#2d6080;margin-top:2px">' + detail + '</div>' : '')
+                + '</div>';
+        }
+
+        html += '<div style="font-size:0.62rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px">Overnight Rates</div>';
+        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:5px;margin-bottom:10px">';
+        html += rCard('SOFR', raw.sofr, '%4', 'Secured overnight', ['SOFR']);
+        html += rCard('Effective FFR', raw.effr, '%4', 'Fed Funds effective', ['EFFR']);
+        html += rCard('3M T-Bill', raw.dtb3, '%4', 'Secondary market', ['DTB3']);
+        html += rCard('3M Fin CP', raw.dcpf3m, '%4', 'Commercial paper', ['DCPF3M']);
         html += '</div>';
 
-        html += '<div style="font-size:0.68rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Stress Spreads</div>';
-        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin-bottom:12px">';
-        var spreadStressed = liq.sofr_spread != null ? liq.sofr_spread > 0.08 : null;
-        var tbillStressed  = liq.sofr_tbill_spread != null ? liq.sofr_tbill_spread > 0.10 : null;
-        html += metricCard('SOFR 99th–1st', liq.sofr_spread, '%', 'Intraday rate spread — wider = more stress', spreadStressed);
-        html += metricCard('SOFR vs T-Bill', liq.sofr_tbill_spread, '%', 'Funding stress proxy — high = banks stressed', tbillStressed);
+        html += '<div style="font-size:0.62rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px">Credit Spreads</div>';
+        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:5px;margin-bottom:10px">';
+        html += rCard('TED Spread', raw.tedrate, '%4', 'LIBOR − T-Bill', ['TEDRATE']);
+        html += rCard('HY OAS', raw.hy_oas, '%', 'High yield credit', ['BAMLH0A0HYM2']);
+        html += rCard('IG OAS', raw.ig_oas, '%', 'Investment grade', ['BAMLC0A0CM']);
         html += '</div>';
 
-        html += '<div style="font-size:0.68rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Liquidity Plumbing</div>';
-        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin-bottom:8px">';
-        var rrpDown = liq.fed_rrp_chg != null ? liq.fed_rrp_chg < -50 : null;
-        html += metricCard('Fed RRP Balance', liq.fed_rrp, 'B', rrpChg + ' — declining = banks using cash elsewhere', rrpDown === true ? false : null);
-        html += metricCard('Treasury (TGA)', liq.tga, 'B', tgaChg + ' — Treasury cash at Fed', null);
+        html += '<div style="font-size:0.62rem;font-weight:700;color:#2d6080;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px">Plumbing</div>';
+        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:5px;margin-bottom:8px">';
+        var rrpChg = raw.rrp_chg != null ? (raw.rrp_chg >= 0 ? '+' : '') + raw.rrp_chg.toFixed(1) + 'B' : '';
+        var tgaChg = raw.tga_chg != null ? (raw.tga_chg >= 0 ? '+' : '') + (raw.tga_chg/1000).toFixed(0) + 'B' : '';
+        html += rCard('Fed RRP', raw.rrp, 'B', rrpChg, ['RRPONTSYD']);
+        html += rCard('Treasury (TGA)', raw.tga, 'B', tgaChg, ['WTREGEN']);
+        html += rCard('Reserve Bal', raw.wresbal, 'B', 'Bank reserves at Fed', ['WRESBAL']);
         html += '</div>';
 
-        html += '<div style="font-size:0.6rem;color:#1a3550;font-style:italic">Source: FRED · SOFR data from NY Fed via FRED</div>';
-        html += '</div>';
+        // Footer
+        html += '<div style="font-size:0.52rem;color:#1a3550;padding-top:4px;border-top:1px solid #080e1a">';
+        html += 'Source: <a href="https://fred.stlouisfed.org" target="_blank" style="color:#2d6080">FRED (fred.stlouisfed.org)</a> — all values verifiable via FRED links above';
+        html += '</div></div>';
+
         el.innerHTML = html;
+
+        // Draw sparklines for any expanded components
+        comps.forEach(function(c) { liqDrawSpark(c); });
+    }
+
+    // Sparkline toggle + draw
+    window.liqToggleSpark = function(compId) {
+        var wrap = document.getElementById('liq-spark-' + compId + '-wrap');
+        if (!wrap) return;
+        var vis = wrap.style.display !== 'none';
+        wrap.style.display = vis ? 'none' : 'block';
+        if (!vis) {
+            var liq = snapshot && snapshot.macro && snapshot.macro.usd_liquidity;
+            var comp = (liq && liq.components || []).filter(function(c) { return c.id === compId; })[0];
+            if (comp) liqDrawSpark(comp);
+        }
+    };
+
+    function liqDrawSpark(comp) {
+        var canvas = document.getElementById('liq-spark-' + comp.id);
+        if (!canvas || !comp.history || comp.history.length < 2) return;
+        var ctx = canvas.getContext('2d');
+        var w = canvas.width, h = canvas.height;
+        var vals = comp.history.map(function(p) { return p.v; });
+        var mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals);
+        var rng = mx - mn || 1;
+        ctx.clearRect(0, 0, w, h);
+        // Fill area
+        ctx.beginPath();
+        ctx.moveTo(0, h);
+        for (var i = 0; i < vals.length; i++) {
+            var x = (i / (vals.length - 1)) * w;
+            var y = h - 4 - ((vals[i] - mn) / rng) * (h - 8);
+            ctx.lineTo(x, y);
+        }
+        ctx.lineTo(w, h);
+        ctx.closePath();
+        var pc = comp.percentile > 75 ? '#ef4444' : comp.percentile > 50 ? '#f97316' : comp.percentile > 25 ? '#38bdf8' : '#22c55e';
+        ctx.fillStyle = pc + '15';
+        ctx.fill();
+        // Line
+        ctx.beginPath();
+        for (var j = 0; j < vals.length; j++) {
+            var lx = (j / (vals.length - 1)) * w;
+            var ly = h - 4 - ((vals[j] - mn) / rng) * (h - 8);
+            if (j === 0) ctx.moveTo(lx, ly); else ctx.lineTo(lx, ly);
+        }
+        ctx.strokeStyle = pc;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        // Current dot
+        var lastX = w, lastY = h - 4 - ((vals[vals.length-1] - mn) / rng) * (h - 8);
+        ctx.beginPath();
+        ctx.arc(lastX, lastY, 3, 0, Math.PI*2);
+        ctx.fillStyle = pc;
+        ctx.fill();
     }
 
     // ── Fed Watch ─────────────────────────────────────────────────────────────

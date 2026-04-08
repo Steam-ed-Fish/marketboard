@@ -837,14 +837,23 @@ def next_fomc():
 
 
 def build_usd_liquidity(fred_api_key):
-    """Build USD Liquidity Pressure metrics from FRED."""
-    SERIES = ["SOFR", "SOFR1", "SOFR99", "DTB3", "RRPONTSYD", "WTREGEN", "EFFR"]
+    """Build USD Liquidity Pressure metrics from FRED.
+    Uses 1-year percentile ranks for a calibrated 5-component stress score."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    from scipy.stats import percentileofscore
+
+    ALL_SERIES = [
+        "SOFR", "SOFR1", "SOFR99", "DTB3", "RRPONTSYD", "WTREGEN",
+        "EFFR", "DCPF3M", "BAMLH0A0HYM2", "BAMLC0A0CM", "WRESBAL", "TEDRATE",
+    ]
+
+    # Fetch ~1 year of history concurrently
     raw = {}
-    for sid in SERIES:
-        try:
-            raw[sid] = fetch_fred_series(fred_api_key, sid, 30)
-        except Exception:
-            raw[sid] = []
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        futs = {ex.submit(fetch_fred_series, fred_api_key, sid, 260): sid
+                for sid in ALL_SERIES}
+        for f in as_completed(futs):
+            raw[futs[f]] = f.result()
 
     def latest(sid):
         d = raw.get(sid, [])
@@ -854,35 +863,146 @@ def build_usd_liquidity(fred_api_key):
         d = raw.get(sid, [])
         return float(d[-2][1]) if len(d) >= 2 else None
 
-    sofr    = latest("SOFR")
-    sofr1   = latest("SOFR1")
-    sofr99  = latest("SOFR99")
-    dtb3    = latest("DTB3")
-    rrp     = latest("RRPONTSYD")
-    rrp_p   = prev_val("RRPONTSYD")
-    tga     = latest("WTREGEN")
-    tga_p   = prev_val("WTREGEN")
-    effr    = latest("EFFR")
+    def series_vals(sid):
+        return [float(p[1]) for p in raw.get(sid, [])]
 
-    sofr_spread   = round(sofr99 - sofr1, 4)            if sofr99 is not None and sofr1 is not None   else None
-    sofr_tbill    = round(sofr - dtb3, 4)               if sofr   is not None and dtb3  is not None   else None
-    rrp_chg       = round(rrp - rrp_p, 1)               if rrp    is not None and rrp_p is not None   else None
-    tga_chg       = round(tga - tga_p, 1)               if tga    is not None and tga_p is not None   else None
+    def series_dates(sid):
+        return [p[0] for p in raw.get(sid, [])]
 
-    scores = []
-    if sofr_spread is not None:
-        scores.append(min(100, max(0, sofr_spread / 0.20 * 100)))
-    if sofr_tbill is not None:
-        scores.append(min(100, max(0, sofr_tbill / 0.20 * 100)))
-    pressure_score = round(sum(scores) / len(scores)) if scores else None
+    # ── Derived spread series ───────────────────────────────────────────
+    def aligned_spread(sid_a, sid_b):
+        """Compute spread between two series, aligning by date."""
+        da = {p[0]: float(p[1]) for p in raw.get(sid_a, [])}
+        db = {p[0]: float(p[1]) for p in raw.get(sid_b, [])}
+        dates = sorted(set(da.keys()) & set(db.keys()))
+        return [(d, round(da[d] - db[d], 4)) for d in dates]
+
+    sofr_disp_ts   = aligned_spread("SOFR99", "SOFR1")
+    sofr_tbill_ts  = aligned_spread("SOFR", "DTB3")
+    cp_tbill_ts    = aligned_spread("DCPF3M", "DTB3")
+
+    # HY OAS is a direct series (not a spread)
+    hy_oas_ts = [(p[0], float(p[1])) for p in raw.get("BAMLH0A0HYM2", [])]
+
+    # Reserve scarcity: use WRESBAL directly (inverted for percentile)
+    wresbal_ts = [(p[0], float(p[1])) for p in raw.get("WRESBAL", [])]
+
+    # ── Component definitions ───────────────────────────────────────────
+    COMPONENTS = [
+        {
+            "id": "sofr_dispersion", "label": "SOFR Dispersion",
+            "formula": "SOFR99 \u2212 SOFR1", "unit": "%",
+            "weight": 0.25, "fred_ids": ["SOFR99", "SOFR1"],
+            "ts": sofr_disp_ts, "invert": False,
+        },
+        {
+            "id": "sofr_tbill", "label": "SOFR vs T-Bill",
+            "formula": "SOFR \u2212 DTB3", "unit": "%",
+            "weight": 0.20, "fred_ids": ["SOFR", "DTB3"],
+            "ts": sofr_tbill_ts, "invert": False,
+        },
+        {
+            "id": "cp_tbill", "label": "CP\u2212Tbill Spread",
+            "formula": "DCPF3M \u2212 DTB3", "unit": "%",
+            "weight": 0.20, "fred_ids": ["DCPF3M", "DTB3"],
+            "ts": cp_tbill_ts, "invert": False,
+        },
+        {
+            "id": "hy_oas", "label": "HY Credit OAS",
+            "formula": "BAMLH0A0HYM2", "unit": "%",
+            "weight": 0.20, "fred_ids": ["BAMLH0A0HYM2"],
+            "ts": hy_oas_ts, "invert": False,
+        },
+        {
+            "id": "reserve_scarcity", "label": "Reserve Scarcity",
+            "formula": "\u2212WRESBAL (inverted)", "unit": "B",
+            "weight": 0.15, "fred_ids": ["WRESBAL"],
+            "ts": wresbal_ts, "invert": True,
+        },
+    ]
+
+    # ── Build component output ──────────────────────────────────────────
+    comp_out = []
+    total_weight = 0
+    weighted_sum = 0
+
+    for c in COMPONENTS:
+        ts = c["ts"]
+        vals = [v for _, v in ts]
+        if len(vals) < 20:
+            continue  # too few observations for meaningful percentile
+
+        current = vals[-1]
+        prev = vals[-2] if len(vals) >= 2 else current
+        mn, mx = min(vals), max(vals)
+
+        if c["invert"]:
+            pctile = round(100 - percentileofscore(vals, current, kind='rank'))
+        else:
+            pctile = round(percentileofscore(vals, current, kind='rank'))
+
+        direction = "up" if current > prev else ("down" if current < prev else "flat")
+        contribution = round(c["weight"] * pctile, 1)
+        total_weight += c["weight"]
+        weighted_sum += c["weight"] * pctile
+
+        # Last 90 data points for sparkline
+        hist_slice = ts[-90:]
+
+        comp_out.append({
+            "id": c["id"],
+            "label": c["label"],
+            "formula": c["formula"],
+            "value": round(current, 4) if c["unit"] == "%" else round(current, 1),
+            "unit": c["unit"],
+            "percentile": pctile,
+            "weight": c["weight"],
+            "contribution": contribution,
+            "direction": direction,
+            "prev_value": round(prev, 4) if c["unit"] == "%" else round(prev, 1),
+            "min_1y": round(mn, 4) if c["unit"] == "%" else round(mn, 1),
+            "max_1y": round(mx, 4) if c["unit"] == "%" else round(mx, 1),
+            "fred_ids": c["fred_ids"],
+            "history": [{"t": d, "v": round(v, 4)} for d, v in hist_slice],
+        })
+
+    # Composite score (renormalize if any components were skipped)
+    score = round(weighted_sum / total_weight) if total_weight > 0 else None
+    if score is not None:
+        score_label = (
+            "Calm" if score <= 25 else
+            "Normal" if score <= 50 else
+            "Elevated" if score <= 75 else
+            "Stressed"
+        )
+    else:
+        score_label = None
+
+    # ── Raw values for metric cards ─────────────────────────────────────
+    rrp    = latest("RRPONTSYD")
+    rrp_p  = prev_val("RRPONTSYD")
+    tga    = latest("WTREGEN")
+    tga_p  = prev_val("WTREGEN")
+
+    raw_out = {
+        "sofr": latest("SOFR"), "sofr1": latest("SOFR1"), "sofr99": latest("SOFR99"),
+        "dtb3": latest("DTB3"), "effr": latest("EFFR"), "dcpf3m": latest("DCPF3M"),
+        "rrp": rrp,
+        "rrp_chg": round(rrp - rrp_p, 1) if rrp is not None and rrp_p is not None else None,
+        "tga": tga,
+        "tga_chg": round(tga - tga_p, 1) if tga is not None and tga_p is not None else None,
+        "wresbal": latest("WRESBAL"), "tedrate": latest("TEDRATE"),
+        "hy_oas": latest("BAMLH0A0HYM2"), "ig_oas": latest("BAMLC0A0CM"),
+    }
+
+    fred_links = {sid: f"https://fred.stlouisfed.org/series/{sid}" for sid in ALL_SERIES}
 
     return {
-        "sofr": sofr, "sofr1": sofr1, "sofr99": sofr99,
-        "sofr_spread": sofr_spread, "dtb3": dtb3,
-        "sofr_tbill_spread": sofr_tbill, "effr": effr,
-        "fed_rrp": rrp, "fed_rrp_chg": rrp_chg,
-        "tga": tga, "tga_chg": tga_chg,
-        "pressure_score": pressure_score,
+        "score": score,
+        "score_label": score_label,
+        "components": comp_out,
+        "raw": raw_out,
+        "fred_links": fred_links,
     }
 
 
