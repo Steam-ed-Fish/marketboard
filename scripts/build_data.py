@@ -1590,6 +1590,32 @@ def build_macro_fred(api_key, charts_dir, finnhub_api_key=None, perplexity_api_k
             d["next_release"] = fc.get("next_date")
         # FRED date is the fallback when Finnhub has nothing
 
+    # NFP YTD comparison — uses PAYEMS absolute levels already in raw[]
+    payems_ytd = {}
+    payems_pairs = raw.get('PAYEMS', [])
+    if payems_pairs:
+        by_ym = {(p[0][:4], p[0][5:7]): p[1] for p in payems_pairs}
+        cur_date   = payems_pairs[-1][0]
+        cur_year   = cur_date[:4]
+        cur_month  = cur_date[5:7]
+        prev_year  = str(int(cur_year) - 1)
+        prev2_year = str(int(cur_year) - 2)
+
+        cur_level       = by_ym.get((cur_year, cur_month))
+        dec_prev        = by_ym.get((prev_year, '12'))
+        prev_same_month = by_ym.get((prev_year, cur_month))
+        dec_prev2       = by_ym.get((prev2_year, '12'))
+
+        if cur_level is not None and dec_prev is not None:
+            payems_ytd['ytd_current']  = round(cur_level - dec_prev)
+            payems_ytd['ytd_year']     = cur_year
+            payems_ytd['ytd_month']    = cur_month
+        if prev_same_month is not None and dec_prev2 is not None:
+            payems_ytd['ytd_prev']      = round(prev_same_month - dec_prev2)
+            payems_ytd['ytd_prev_year'] = prev_year
+        if payems_ytd.get('ytd_current') is not None and payems_ytd.get('ytd_prev') is not None:
+            payems_ytd['ytd_diff'] = payems_ytd['ytd_current'] - payems_ytd['ytd_prev']
+
     # Narrative
     dominant = max(signal_counts, key=signal_counts.get) if signal_counts else "neutral"
     parts = []
@@ -1610,6 +1636,7 @@ def build_macro_fred(api_key, charts_dir, finnhub_api_key=None, perplexity_api_k
         "narrative": narrative,
         "series_order": [s[0] for s in FRED_SERIES_CONFIG if s[0] in series_out],
         "categories": FRED_CATEGORIES,
+        "payems_ytd": payems_ytd,
     }
 
 

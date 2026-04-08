@@ -1809,6 +1809,24 @@
                 '</tr>';
         }
 
+        function makeYtdRow(ytd) {
+            var cur  = ytd.ytd_current != null ? (ytd.ytd_current >= 0 ? '+' : '') + ytd.ytd_current + 'k' : '—';
+            var prev = ytd.ytd_prev    != null ? (ytd.ytd_prev    >= 0 ? '+' : '') + ytd.ytd_prev    + 'k' : '—';
+            var diff = '—', diffStyle = 'color:#1e4060';
+            if (ytd.ytd_diff != null) {
+                diff = (ytd.ytd_diff >= 0 ? '+' : '') + ytd.ytd_diff + 'k';
+                diffStyle = ytd.ytd_diff >= 0 ? 'color:#f59e0b' : 'color:#38bdf8';
+            }
+            var vsLabel = ytd.ytd_prev_year ? 'vs ' + ytd.ytd_prev_year : '';
+            return '<tr style="border-bottom:1px solid #071628;background:rgba(0,20,40,0.3)">' +
+                '<td style="padding:4px 8px 4px 20px;color:#4a7a9a;font-size:0.72rem;white-space:nowrap">↳ YTD ' + (ytd.ytd_year || '') + '</td>' +
+                '<td style="padding:4px 4px;text-align:right;color:#7ab8d8;font-weight:600;font-size:0.72rem">' + cur + '</td>' +
+                '<td style="padding:4px 4px;text-align:right;color:#3d7090;font-size:0.72rem" title="Same period ' + (ytd.ytd_prev_year || '') + '">' + prev + '</td>' +
+                '<td style="padding:4px 4px;text-align:right;' + diffStyle + ';font-size:0.72rem">' + diff + '</td>' +
+                '<td colspan="3" style="padding:4px 8px;text-align:right;color:#1e4060;font-size:0.65rem">' + vsLabel + ' same period</td>' +
+                '</tr>';
+        }
+
         var html = '<table style="width:100%;border-collapse:collapse;font-size:0.76rem">' + COLGROUP + '<tbody>';
         categories.forEach(function(cat) {
             var sids = (mf.series_order || Object.keys(mf.series)).filter(function(sid) {
@@ -1816,7 +1834,12 @@
             });
             if (!sids.length) return;
             html += catHeaderRows(cat);
-            html += sids.map(makeRow).join('');
+            sids.forEach(function(sid) {
+                html += makeRow(sid);
+                if (sid === 'PAYEMS' && mf.payems_ytd && mf.payems_ytd.ytd_current != null) {
+                    html += makeYtdRow(mf.payems_ytd);
+                }
+            });
         });
         html += '</tbody></table>';
         html += '<div style="text-align:center;padding:6px 0 2px;font-size:0.6rem;color:#1a3550">Actual: FRED · Release dates: FRED calendar · Consensus estimates: Perplexity</div>';
