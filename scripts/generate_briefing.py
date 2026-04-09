@@ -55,7 +55,7 @@ def fetch_perplexity_context(api_key):
 # Context builder
 # ---------------------------------------------------------------------------
 
-def build_context(snapshot, news_context=None):
+def build_context(snapshot, news_context=None, fedwatch=None):
     lines = []
     built_at = snapshot.get("built_at", "unknown")
     lines.append("DATA TIMESTAMP: {}\n".format(built_at))
@@ -83,6 +83,67 @@ def build_context(snapshot, news_context=None):
             val_str = "{:.2f}{}".format(sd["value"], sd.get("unit", "")) if sd.get("value") is not None else "N/A"
             lines.append("  {}: {} [{}] chg={}".format(
                 sd.get("label", sid), val_str, sd.get("signal", ""), sd.get("change", "")))
+        lines.append("")
+
+    # FedWatch — FOMC, rate probabilities, hawk/dove balance
+    if fedwatch:
+        mkt = fedwatch.get("market") or {}
+        fomc_label = mkt.get("next_fomc_label", "?")
+        fomc_date = mkt.get("next_fomc_date", "")
+        rate = mkt.get("current_rate", "?")
+        hold = mkt.get("rate_hold_pct")
+        cut = mkt.get("rate_cut_pct")
+        hike = mkt.get("rate_hike_pct")
+        cpi = mkt.get("cpi")
+        cpi_month = mkt.get("cpi_month", "")
+        unemp = mkt.get("unemployment")
+        unemp_month = mkt.get("unemployment_month", "")
+
+        lines.append("FED POLICY:")
+        lines.append("  FFR target: {}".format(rate))
+        lines.append("  Next FOMC: {}".format(fomc_label))
+        if hold is not None:
+            lines.append("  CME probabilities: hold={:.0f}% cut={:.0f}% hike={:.0f}%".format(
+                hold or 0, cut or 0, hike or 0))
+        if cpi is not None:
+            lines.append("  CPI YoY: {:.1f}% ({})".format(cpi, cpi_month))
+        if unemp is not None:
+            lines.append("  Unemployment: {:.1f}% ({})".format(unemp, unemp_month))
+
+        # Hawk/dove tally
+        stances = {}
+        for m in fedwatch.get("members") or []:
+            s = m.get("stance", "Neutral")
+            stances.setdefault(s, []).append(m["name"].split()[-1])
+        if stances:
+            parts = []
+            for label in ["Hawk", "Neutral", "Dove"]:
+                names = stances.get(label, [])
+                if names:
+                    parts.append("{}({})={}".format(label, len(names), ",".join(names)))
+            lines.append("  Stance tally: {}".format("  ".join(parts)))
+        lines.append("")
+
+    # USD Liquidity Stress
+    liq = (snapshot.get("macro") or {}).get("usd_liquidity") or {}
+    if liq.get("components"):
+        score = liq.get("score", "?")
+        label = liq.get("score_label", "?")
+        lines.append("USD LIQUIDITY STRESS: {}/100 ({})".format(score, label))
+        for c in liq["components"]:
+            lines.append("  {}: {:.2f}{} ({}th percentile, weight={:.0f}%)".format(
+                c.get("label", c.get("id", "?")),
+                c.get("value") or 0,
+                c.get("unit", ""),
+                c.get("percentile", "?"),
+                (c.get("weight") or 0) * 100))
+        raw = liq.get("raw") or {}
+        if raw.get("tedrate") is not None:
+            lines.append("  TED Spread: {:.2f}%".format(raw["tedrate"]))
+        if raw.get("rrp") is not None:
+            lines.append("  ON-RRP: ${:.1f}B".format(raw["rrp"]))
+        if raw.get("tga") is not None:
+            lines.append("  TGA: ${:.0f}M (chg={})".format(raw["tga"], raw.get("tga_chg", "?")))
         lines.append("")
 
     groups = snapshot.get("groups") or {}
@@ -173,7 +234,7 @@ def build_context(snapshot, news_context=None):
 SYSTEM_PROMPT = (
     "You are writing a daily end-of-day market recap for a professional trader. "
     "Tone: direct, specific, zero filler. Every sentence must cite a number or a name.\n\n"
-    "Write exactly six sections in this order:\n\n"
+    "Write exactly seven sections in this order:\n\n"
     "REGIME — One sentence, max 10 words, capturing the day's tape character. "
     "e.g. 'Risk-on, small caps led, energy faded, breadth expanding.' No numbers needed.\n\n"
     "INDICES — VIX level and direction. Rank SPY/QQQ/IWM/DIA by today's return best to worst with exact %s. "
@@ -184,6 +245,11 @@ SYSTEM_PROMPT = (
     "THE 7s — Rank all baskets by today's return best to worst with exact %s. "
     "Drop 'The' and '7' — write 'Energy +0.08%' not 'The Energy 7 +0.08%'. "
     "Name the single strongest ticker in the top basket and weakest in the bottom basket.\n\n"
+    "FED & LIQUIDITY — If Fed policy data is provided: next FOMC date, CME rate probabilities (hold/cut/hike %), "
+    "and hawk/dove/neutral count in one sentence. If USD liquidity stress data is provided: composite score, "
+    "label, and name the single most-stressed component (highest percentile) with its percentile. "
+    "If TED spread or ON-RRP is notable, mention it. Keep to 2-3 sentences max. "
+    "Skip this section entirely if no Fed or liquidity data is available.\n\n"
     "SIGNALS — Fear & Greed score in one phrase. "
     "Top 3 individual movers across all groups today (name, %, group). "
     "20d momentum: best and worst sector + best and worst basket. "
@@ -191,16 +257,16 @@ SYSTEM_PROMPT = (
     "WATCH — 2-3 tickers worth closer attention tomorrow. For each: name, today's %, and one specific reason "
     "from the data (vol spike, trend divergence, cross-asset signal, momentum break). "
     "Flag what deserves a closer look — don't just repeat what already moved.\n\n"
-    "Total: strictly under 280 words. Plain text. Section labels ALL CAPS + em-dash. No markdown."
+    "Total: strictly under 320 words. Plain text. Section labels ALL CAPS + em-dash. No markdown."
 )
 
 
-def generate_briefing(snapshot, api_key, news_context=None):
-    context = build_context(snapshot, news_context)
+def generate_briefing(snapshot, api_key, news_context=None, fedwatch=None):
+    context = build_context(snapshot, news_context, fedwatch)
     client = anthropic.Anthropic(api_key=api_key)
     message = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=900,
+        max_tokens=1000,
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": context}],
     )
@@ -223,8 +289,9 @@ def main():
 
     perplexity_key = os.environ.get("PERPLEXITY_API_KEY", "")
 
-    snapshot_path = os.path.join(args.out_dir, "snapshot.json")
-    events_path   = os.path.join(args.out_dir, "events.json")
+    snapshot_path  = os.path.join(args.out_dir, "snapshot.json")
+    events_path    = os.path.join(args.out_dir, "events.json")
+    fedwatch_path  = os.path.join(args.out_dir, "fedwatch.json")
 
     if not os.path.exists(snapshot_path):
         print("Snapshot not found at {} — skipping briefing".format(snapshot_path))
@@ -232,6 +299,16 @@ def main():
 
     with open(snapshot_path, encoding="utf-8") as f:
         snapshot = json.load(f)
+
+    # Load FedWatch data if available
+    fedwatch = None
+    if os.path.exists(fedwatch_path):
+        try:
+            with open(fedwatch_path, encoding="utf-8") as f:
+                fedwatch = json.load(f)
+            print("Loaded FedWatch data ({} members)".format(len(fedwatch.get("members", []))))
+        except Exception as e:
+            print("FedWatch load failed: {}".format(e))
 
     # Optional: fetch market context from Perplexity
     news_context = None
@@ -243,7 +320,7 @@ def main():
 
     print("Generating intelligence briefing via Claude API...")
     try:
-        text = generate_briefing(snapshot, anthropic_key, news_context)
+        text = generate_briefing(snapshot, anthropic_key, news_context, fedwatch)
     except Exception as e:
         print("Briefing generation failed: {}".format(e))
         return
