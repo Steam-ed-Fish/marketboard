@@ -584,8 +584,14 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
                      "v": int(r['Volume'])}
                     for idx, r in all_hist.tail(60).iterrows()
                 ]
+                ticker_name = ""
+                try:
+                    ticker_name = stock.info.get("shortName", "") or stock.info.get("longName", "")
+                except Exception:
+                    pass
+                ohlc_payload = {"ticker": ticker_symbol, "name": ticker_name, "ohlc": ohlc_rows}
                 with open(os.path.join(ohlc_dir, f"{safe}.json"), 'w') as _f:
-                    json.dump({"ticker": ticker_symbol, "ohlc": ohlc_rows}, _f, separators=(',', ':'))
+                    json.dump(ohlc_payload, _f, separators=(',', ':'))
             except Exception as _e:
                 print(f"OHLC write error {ticker_symbol}: {_e}")
 

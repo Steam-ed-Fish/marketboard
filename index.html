@@ -2423,8 +2423,9 @@
         var chgColor = chg >= 0 ? '#26a69a' : '#ef5350';
         var info = document.createElement('div');
         info.style.cssText = 'position:absolute;top:8px;left:12px;z-index:3;pointer-events:none;font-family:monospace';
+        var tickerName = data.name || '';
         info.innerHTML = '<span style="font-size:16px;font-weight:700;color:#e1e4e8">' + symbol + '</span>' +
-            '<span style="font-size:13px;color:#9ca3af;margin-left:8px">· 1D</span>' +
+            (tickerName ? '<span style="font-size:13px;color:#9ca3af;margin-left:8px">' + tickerName + '</span>' : '') +
             '<br><span style="font-size:14px;font-weight:600;color:' + chgColor + '">' +
             last.c.toFixed(2) + '</span>' +
             '<span style="font-size:12px;color:' + chgColor + ';margin-left:6px">' +
