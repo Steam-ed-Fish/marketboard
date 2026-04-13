@@ -374,7 +374,7 @@
             <div id="tradingview-chart-wrapper" class="tradingview-widget-container" style="flex:1;min-height:0;display:flex;flex-direction:column;">
                 <div id="tradingview-chart" style="height:100%;width:100%;min-height:320px;"></div>
                 <div style="color:#9ca3af;font-size:11px;margin-top:4px;">
-                    <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:#9ca3af;">TradingView</a>
+                    <a href="https://tradingview.github.io/lightweight-charts/" target="_blank" rel="noopener" style="color:#9ca3af;">Lightweight Charts</a>
                 </div>
             </div>
             <div id="vol-chart-panel" style="display:none;flex:1;min-height:0;flex-direction:column;padding:10px;"></div>
@@ -382,12 +382,11 @@
                 <img id="rrg-chart-img" src="" alt="7s Rotation Graph" style="max-width:100%;max-height:100%;object-fit:contain;">
             </div>
             <div id="sr-strip" style="display:none;padding:5px 12px;background:#040c1a;border-top:1px solid #0a1e35;font-size:0.7rem;"></div>
-            <div id="mini-chart" style="display:none;height:200px;border-top:1px solid #0a1e35;"></div>
+            <div id="mini-chart" style="display:none;height:0;"></div>
         </div>
         <div id="multi-chart-panel" class="multi-chart-panel"></div>
     </div>
 
-    <script src="https://s3.tradingview.com/tv.js"></script>
     <script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
     <script>
 (function() {
@@ -945,6 +944,10 @@
         var panel = document.getElementById('multi-chart-panel');
         if (!panel) return;
         panel.innerHTML = '';
+        if (window._multiCharts) {
+            window._multiCharts.forEach(function(c) { try { c.remove(); } catch(e) {} });
+        }
+        window._multiCharts = [];
         var gc = document.getElementById('group-' + safeGroupId(groupName));
         if (!gc) return;
         var table = gc.querySelector('table.ticker-table');
@@ -960,29 +963,64 @@
             var sym = (row.getAttribute('data-symbol') || '').trim();
             if (!sym) return;
             var wrap = document.createElement('div');
-            wrap.className = 'tradingview-widget-container';
-            wrap.style.height = '325px';
-            wrap.style.width = '100%';
-            var inner = document.createElement('div');
-            inner.className = 'tradingview-widget-container__widget';
-            inner.style.height = '100%';
-            inner.style.width = '100%';
-            inner.style.border = '1px solid rgba(255,255,255,0.06)';
-            inner.style.borderRadius = '4px';
-            wrap.appendChild(inner);
-            var script = document.createElement('script');
-            script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
-            script.async = true;
-            script.textContent = JSON.stringify({
-                allow_symbol_change: true, calendar: false, details: false, hide_side_toolbar: true,
-                hide_top_toolbar: false, hide_legend: true, hide_volume: true, hotlist: false,
-                interval: 'D', locale: 'en', save_image: false, style: '1', symbol: sym, theme: 'dark',
-                timezone: 'America/Toronto', backgroundColor: '#1a1a1a',
-                gridColor: 'rgba(242, 242, 242, 0.06)', watchlist: [], withdateranges: false,
-                studies: ['STD;MA%Ribbon'], autosize: true
-            });
-            inner.appendChild(script);
+            wrap.style.cssText = 'height:280px;width:100%;border:1px solid rgba(255,255,255,0.06);border-radius:4px;position:relative';
+            var label = document.createElement('div');
+            label.style.cssText = 'position:absolute;top:4px;left:8px;z-index:2;font-size:11px;font-weight:700;color:#d4e4f4;opacity:0.8;pointer-events:none';
+            label.textContent = sym;
+            wrap.appendChild(label);
             grid.appendChild(wrap);
+            (function(el, s) {
+                var safe = s.replace(/[^a-zA-Z0-9]/g, '_');
+                function render(data) {
+                    if (!data || !data.ohlc || !data.ohlc.length) return;
+                    requestAnimationFrame(function() {
+                        var chart = LightweightCharts.createChart(el, {
+                            layout: { background: { type: 'solid', color: '#1a1a1a' }, textColor: '#d1d4dc' },
+                            grid: { vertLines: { color: 'rgba(255,255,255,0.04)' }, horzLines: { color: 'rgba(255,255,255,0.04)' } },
+                            rightPriceScale: { borderVisible: false },
+                            timeScale: { borderVisible: false, visible: false },
+                            crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+                            width: el.clientWidth, height: el.clientHeight,
+                            handleScroll: false, handleScale: false,
+                        });
+                        var cs = chart.addCandlestickSeries({
+                            upColor: '#26a69a', downColor: '#ef5350',
+                            borderUpColor: '#26a69a', borderDownColor: '#ef5350',
+                            wickUpColor: '#26a69a', wickDownColor: '#ef5350',
+                        });
+                        cs.setData(data.ohlc.map(function(d) { return { time: d.t, open: d.o, high: d.h, low: d.l, close: d.c }; }));
+                        var sma50 = computeSMA(data.ohlc, 50);
+                        if (sma50.length) {
+                            chart.addLineSeries({ color: '#FF9800', lineWidth: 1, priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false })
+                                .setData(sma50);
+                        }
+                        // S/R lines
+                        var srData = null;
+                        if (snapshot && snapshot.groups) {
+                            Object.values(snapshot.groups).forEach(function(rows) {
+                                rows.forEach(function(r) { if (r.ticker === s && r.sr) srData = r.sr; });
+                            });
+                        }
+                        if (srData) {
+                            (srData.resistance || []).forEach(function(lvl) {
+                                cs.createPriceLine({ price: lvl.price, color: '#f59e0b', lineWidth: 1, lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: false, title: '' });
+                            });
+                            (srData.support || []).forEach(function(lvl) {
+                                cs.createPriceLine({ price: lvl.price, color: '#38bdf8', lineWidth: 1, lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: false, title: '' });
+                            });
+                        }
+                        chart.timeScale().fitContent();
+                        window._multiCharts.push(chart);
+                    });
+                }
+                if (ohlcCache[safe]) { render(ohlcCache[safe]); }
+                else {
+                    fetch('data/ohlc/' + safe + '.json')
+                        .then(function(r) { return r.ok ? r.json() : null; })
+                        .then(function(data) { if (data) ohlcCache[safe] = data; render(data); })
+                        .catch(function() {});
+                }
+            })(wrap, sym);
         });
         panel.appendChild(title);
         panel.appendChild(grid);
@@ -998,6 +1036,10 @@
     };
     window.openSingleChart = function() {
         multiChartMode = false;
+        if (window._multiCharts) {
+            window._multiCharts.forEach(function(c) { try { c.remove(); } catch(e) {} });
+            window._multiCharts = [];
+        }
         var singlePanel = document.getElementById('single-chart-panel');
         var multiPanel = document.getElementById('multi-chart-panel');
         if (singlePanel) singlePanel.style.display = 'flex';
@@ -2360,6 +2402,97 @@
         return sym;
     }
 
+    var ohlcCache = {};
+
+    function computeSMA(bars, period) {
+        var result = [];
+        for (var i = period - 1; i < bars.length; i++) {
+            var sum = 0;
+            for (var j = i - period + 1; j <= i; j++) sum += bars[j].c;
+            result.push({ time: bars[i].t, value: sum / period });
+        }
+        return result;
+    }
+
+    function buildMainChart(container, data, symbol) {
+        // Info bar overlay
+        var last = data.ohlc[data.ohlc.length - 1];
+        var prev = data.ohlc.length > 1 ? data.ohlc[data.ohlc.length - 2] : last;
+        var chg = last.c - prev.c;
+        var chgPct = prev.c ? ((chg / prev.c) * 100) : 0;
+        var chgColor = chg >= 0 ? '#26a69a' : '#ef5350';
+        var info = document.createElement('div');
+        info.style.cssText = 'position:absolute;top:8px;left:12px;z-index:3;pointer-events:none;font-family:monospace';
+        info.innerHTML = '<span style="font-size:16px;font-weight:700;color:#e1e4e8">' + symbol + '</span>' +
+            '<span style="font-size:13px;color:#9ca3af;margin-left:8px">· 1D</span>' +
+            '<br><span style="font-size:14px;font-weight:600;color:' + chgColor + '">' +
+            last.c.toFixed(2) + '</span>' +
+            '<span style="font-size:12px;color:' + chgColor + ';margin-left:6px">' +
+            (chg >= 0 ? '+' : '') + chg.toFixed(2) + ' (' + (chgPct >= 0 ? '+' : '') + chgPct.toFixed(2) + '%)</span>' +
+            '<span style="font-size:11px;color:#6b7280;margin-left:8px">O ' + last.o.toFixed(2) +
+            '  H ' + last.h.toFixed(2) + '  L ' + last.l.toFixed(2) + '  C ' + last.c.toFixed(2) + '</span>';
+        container.style.position = 'relative';
+        container.appendChild(info);
+
+        var chart = LightweightCharts.createChart(container, {
+            layout: { background: { type: 'solid', color: '#1a1a1a' }, textColor: '#d1d4dc' },
+            grid: { vertLines: { color: 'rgba(255,255,255,0.06)' }, horzLines: { color: 'rgba(255,255,255,0.06)' } },
+            crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+            rightPriceScale: { borderColor: '#2B2B43', scaleMargins: { top: 0.08, bottom: 0.18 } },
+            timeScale: { borderColor: '#2B2B43', timeVisible: false },
+            width: container.clientWidth,
+            height: container.clientHeight,
+        });
+
+        var candles = chart.addCandlestickSeries({
+            upColor: '#26a69a', downColor: '#ef5350',
+            borderUpColor: '#26a69a', borderDownColor: '#ef5350',
+            wickUpColor: '#26a69a', wickDownColor: '#ef5350',
+        });
+        candles.setData(data.ohlc.map(function(d) {
+            return { time: d.t, open: d.o, high: d.h, low: d.l, close: d.c };
+        }));
+
+        var vol = chart.addHistogramSeries({ priceFormat: { type: 'volume' }, priceScaleId: 'vol' });
+        vol.priceScale().applyOptions({ scaleMargins: { top: 0.82, bottom: 0 } });
+        vol.setData(data.ohlc.map(function(d) {
+            return { time: d.t, value: d.v,
+                color: d.c >= d.o ? 'rgba(38,166,154,0.4)' : 'rgba(239,83,80,0.4)' };
+        }));
+
+        var maConfigs = [{ period: 20, color: '#2196F3' }, { period: 50, color: '#FF9800' }, { period: 200, color: '#E91E63' }];
+        maConfigs.forEach(function(ma) {
+            var line = chart.addLineSeries({
+                color: ma.color, lineWidth: 1,
+                priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false,
+            });
+            line.setData(computeSMA(data.ohlc, ma.period));
+        });
+
+        // S/R lines from snapshot
+        var srData = null;
+        if (snapshot && snapshot.groups) {
+            Object.values(snapshot.groups).forEach(function(rows) {
+                rows.forEach(function(r) { if (r.ticker === symbol && r.sr) srData = r.sr; });
+            });
+        }
+        if (srData) {
+            (srData.resistance || []).forEach(function(lvl) {
+                candles.createPriceLine({ price: lvl.price, color: '#f59e0b', lineWidth: 1,
+                    lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true,
+                    title: 'R ' + (lvl.dist_pct > 0 ? '+' : '') + lvl.dist_pct + '%' });
+            });
+            (srData.support || []).forEach(function(lvl) {
+                candles.createPriceLine({ price: lvl.price, color: '#38bdf8', lineWidth: 1,
+                    lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true,
+                    title: 'S ' + lvl.dist_pct + '%' });
+            });
+        }
+
+        chart.timeScale().fitContent();
+        return chart;
+    }
+
     window.initChart = function initChart(symbol) {
         var rrgPanel = document.getElementById('rrg-chart-panel');
         var tvWrapper = document.getElementById('tradingview-chart-wrapper');
@@ -2367,17 +2500,37 @@
         if (rrgPanel) rrgPanel.style.display = 'none';
         if (volPanel) volPanel.style.display = 'none';
         if (tvWrapper) tvWrapper.style.display = 'flex';
-        if (chartWidget) { chartWidget.remove(); chartWidget = null; }
-        chartWidget = new TradingView.widget({
-            allow_symbol_change: true, calendar: false, details: true, hide_side_toolbar: false, hide_top_toolbar: false,
-            hide_legend: false, hide_volume: true, hotlist: false, interval: 'D', locale: 'en', save_image: false,
-            style: '1', symbol: toTVSymbol(symbol), theme: 'dark', timezone: 'America/Toronto', toolbar_bg: '#1a1a1a', backgroundColor: '#1a1a1a',
-            gridColor: 'rgba(255,255,255,0.1)', watchlist: [], withdateranges: true, studies: ['STD;MA%Ribbon', 'Volume@tv-basicstudies'],
-            autosize: true, enable_publishing: false, container_id: 'tradingview-chart'
-        });
+
+        var container = document.getElementById('tradingview-chart');
+        if (chartWidget) { try { chartWidget.remove(); } catch(e) {} chartWidget = null; }
+        container.innerHTML = '';
+
+        var safe = symbol.replace(/[^a-zA-Z0-9]/g, '_');
+        function doRender(data) {
+            container.innerHTML = '';
+            if (!data || !data.ohlc || !data.ohlc.length) {
+                container.innerHTML = '<div style="color:#9ca3af;padding:40px;text-align:center">No data for ' + symbol + '</div>';
+                return;
+            }
+            chartWidget = buildMainChart(container, data, symbol);
+            if (window._lwcResizeObserver) window._lwcResizeObserver.disconnect();
+            window._lwcResizeObserver = new ResizeObserver(function() {
+                if (chartWidget) chartWidget.applyOptions({ width: container.clientWidth, height: container.clientHeight });
+            });
+            window._lwcResizeObserver.observe(container);
+        }
+
+        if (ohlcCache[safe]) {
+            doRender(ohlcCache[safe]);
+        } else {
+            container.innerHTML = '<div style="color:#9ca3af;padding:40px;text-align:center">Loading...</div>';
+            fetch('data/ohlc/' + safe + '.json')
+                .then(function(r) { return r.ok ? r.json() : null; })
+                .then(function(data) { if (data) ohlcCache[safe] = data; doRender(data); })
+                .catch(function() { doRender(null); });
+        }
     }
 
-    var ohlcCache = {};
     var miniChartInstance = null;
 
     function renderMiniChart(symbol) {
@@ -2487,7 +2640,6 @@
         }
         initChart(symbol);
         renderSRStrip(symbol);
-        renderMiniChart(symbol);
         var activeRow = document.querySelector('.ticker-row.active');
         if (activeRow) activeRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     };
