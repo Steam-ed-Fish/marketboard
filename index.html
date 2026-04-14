@@ -812,7 +812,7 @@
             html += th('symbol', 'Ticker', 'Ticker symbol');
             html += '<th title="Nearest support/resistance level within 2% of current price.\n\nHow it\'s computed:\n1. scipy find_peaks() detects swing highs (resistance) and swing lows (support) on 1 year of daily OHLC data, requiring at least 5 bars between peaks.\n2. Nearby levels within 1.5% of each other are merged into a single zone.\n3. Each zone is scored by how many OHLC values touched it (within 0.5%).\n4. Top 3 support + top 3 resistance zones are kept, sorted nearest-first.\n5. A badge appears here when the current price is within 2% of any level.\n\nAmber R = approaching resistance from below.\nBlue S = sitting just above support.\nNo badge = nearest level is >2% away.">S/R</th>';
             html += '<th title="Click to view holdings. For The 7s at a Glance, hover to see constituent performance.">Holdings</th>';
-            html += th('abc', 'Grade', 'ABC trend rating:\nA = EMA10 > EMA20 > SMA50 (uptrend)\nB = mixed signals\nC = downtrend');
+            html += th('abc', 'Grade', 'ABC trend rating:\nA = EMA10 > EMA20 > SMA50 (uptrend)\nB = mixed signals\nC = downtrend\n\nWeinstein Stage (number):\n1 = Basing (below flat MA)\n2 = Advancing (above rising MA)\n3 = Topping (above flattening MA)\n4 = Declining (below falling MA)\nBased on price vs 30-week SMA');
             html += th('daily', 'Daily', 'Today\'s price change %');
             html += th('intra', 'Intra', 'Intraday % change (open to current)');
             html += th('wtd', 'WTD', 'Week-to-date % change');
