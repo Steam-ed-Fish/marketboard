@@ -755,11 +755,6 @@
             html += cell(t['5d'], -10, 10);
             html += cell(t['20d'], -20, 20);
             html += cell(t.ytd, -30, 30);
-            var _s20=t.above_sma20,_s50=t.above_sma50,_s200=t.above_sma200;
-            html += '<td style="text-align:center;font-size:0.7rem;letter-spacing:1px" title="20 / 50 / 200 MA">'
-                + '<span style="color:'+(_s20===true?'#10b981':_s20===false?'#ef5350':'#333')+'">●</span>'
-                + '<span style="color:'+(_s50===true?'#10b981':_s50===false?'#ef5350':'#333')+'">●</span>'
-                + '<span style="color:'+(_s200===true?'#10b981':_s200===false?'#ef5350':'#333')+'">●</span></td>';
             html += '<td>' + (t.vol_ratio != null ? t.vol_ratio.toFixed(2) + 'x' : 'N/A') + '</td>';
             html += '<td>' + (t.vol_chart ? '<img src="' + t.vol_chart + '" class="rs-chart" alt="Vol">' : '-') + '</td>';
             html += '<td>' + (t.atr_pct != null ? t.atr_pct.toFixed(1) + '%' : 'N/A') + '</td>';
@@ -824,7 +819,6 @@
             html += th('5d', '5D', '5-day % change');
             html += th('20d', '20D', '20-day % change');
             html += th('ytd', 'YTD', 'Year-to-date % change');
-            html += '<th title="MA Health: tickers above 20/50/200-day MA" style="cursor:help">Hlth</th>';
             html += th('vol_ratio', 'Vol%', 'Today\'s volume vs 20-day average volume');
             html += '<th title="Volume trend: last 20 days vs 20-day average. Red bars = 2× avg or higher.">Vol Chart</th>';
             html += th('atr_pct', 'ATR%', '14-period Average True Range as % of price (daily volatility measure)');
@@ -902,8 +896,6 @@
                     html += _secVizCell(_sFive,   ranges['5d'][0],  ranges['5d'][1]);
                     html += _secVizCell(_sTwenty, ranges['20d'][0], ranges['20d'][1]);
                     html += _secVizCell(_sYtd,    -30, 30);
-                    // Hlth — sector avg (blank for sector divider)
-                    html += '<td style="padding:3px 4px;color:#4b5563;text-align:center">-</td>';
                     // Col 10: avg vol ratio (plain)
                     var _volCl = _sVol != null && _sVol >= 2 ? 'price-down' : '';
                     html += '<td class="' + _volCl + '" style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sVol != null ? _sVol.toFixed(1) + 'x' : '-') + '</td>';
@@ -978,18 +970,6 @@
                 html += '<td class="' + fiveCl + '">' + (five != null ? '<div class="value-visualization"><div class="value-bar ' + (five >= 0 ? 'positive' : 'negative') + '" style="width:' + fiveW + '%"></div><span class="value-text">' + (five >= 0 ? '+' : '') + five.toFixed(2) + '%</span></div>' : na) + '</td>';
                 html += '<td class="' + twentyCl + '">' + (twenty != null ? '<div class="value-visualization"><div class="value-bar ' + (twenty >= 0 ? 'positive' : 'negative') + '" style="width:' + twentyW + '%"></div><span class="value-text">' + (twenty >= 0 ? '+' : '') + twenty.toFixed(2) + '%</span></div>' : na) + '</td>';
                 html += '<td class="' + ytdCl + '">' + (ytd != null ? '<div class="value-visualization"><div class="value-bar ' + (ytd >= 0 ? 'positive' : 'negative') + '" style="width:' + ytdW + '%"></div><span class="value-text">' + (ytd >= 0 ? '+' : '') + ytd.toFixed(2) + '%</span></div>' : na) + '</td>';
-                // Hlth column — breadth health
-                if (isSummaryGroup && r.breadth) {
-                    var _b = r.breadth, _br = _b.above_50 / _b.total;
-                    var _bc = _br >= 0.7 ? '#10b981' : _br >= 0.4 ? '#f59e0b' : '#ef5350';
-                    html += '<td style="text-align:center;color:' + _bc + ';font-weight:600;font-size:0.78rem">' + _b.above_50 + '/' + _b.total + '</td>';
-                } else {
-                    var _d20 = r.above_sma20, _d50 = r.above_sma50, _d200 = r.above_sma200;
-                    var _dots = '<span style="color:' + (_d20 === true ? '#10b981' : _d20 === false ? '#ef5350' : '#333') + '">●</span>'
-                              + '<span style="color:' + (_d50 === true ? '#10b981' : _d50 === false ? '#ef5350' : '#333') + '">●</span>'
-                              + '<span style="color:' + (_d200 === true ? '#10b981' : _d200 === false ? '#ef5350' : '#333') + '">●</span>';
-                    html += '<td style="text-align:center;font-size:0.7rem;letter-spacing:1px" title="20 / 50 / 200 MA">' + _dots + '</td>';
-                }
                 var volRatio = r.vol_ratio;
                 var volCl = volRatio != null && volRatio >= 2 ? 'price-down' : '';
                 html += '<td class="' + volCl + '">' + (volRatio != null ? volRatio.toFixed(2) + 'x' : na) + '</td>';
@@ -1205,9 +1185,9 @@
             '<span class="sdh-stats">' + green + '/' + grpRows.length + ' green &middot; ' + avgStr + ' avg</span></div>';
         // Table with fixed col widths
         inner += '<div style="overflow-x:auto"><table class="ticker-table"><colgroup>';
-        inner += '<col style="width:72px"><col style="width:56px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:48px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px">';
+        inner += '<col style="width:72px"><col style="width:56px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px">';
         inner += '</colgroup><thead><tr>';
-        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th title="20/50/200 MA">Hlth</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
+        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
         inner += '</tr></thead><tbody>';
         grpRows.forEach(function(r) {
             var dc = (r.daily||0)>0?'price-up':((r.daily||0)<0?'price-down':'');
@@ -1229,11 +1209,6 @@
             inner += '<td class="' + fc + '">' + (r['5d']!=null?(r['5d']>=0?'+':'')+r['5d'].toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + tc + '">' + (r['20d']!=null?(r['20d']>=0?'+':'')+r['20d'].toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + yc + '">' + (r.ytd!=null?(r.ytd>=0?'+':'')+r.ytd.toFixed(2)+'%':'-') + '</td>';
-            var _h20=r.above_sma20,_h50=r.above_sma50,_h200=r.above_sma200;
-            inner += '<td style="text-align:center;font-size:0.7rem;letter-spacing:1px" title="20 / 50 / 200 MA">'
-                + '<span style="color:'+(_h20===true?'#10b981':_h20===false?'#ef5350':'#333')+'">●</span>'
-                + '<span style="color:'+(_h50===true?'#10b981':_h50===false?'#ef5350':'#333')+'">●</span>'
-                + '<span style="color:'+(_h200===true?'#10b981':_h200===false?'#ef5350':'#333')+'">●</span></td>';
             inner += '<td class="' + vc + '">' + (r.vol_ratio!=null?r.vol_ratio.toFixed(2)+'x':'-') + '</td>';
             inner += '<td>' + (r.vol_chart?'<img src="'+r.vol_chart+'" class="rs-chart" alt="Vol">':'-') + '</td>';
             inner += '<td>' + (r.atr_pct!=null?r.atr_pct.toFixed(1)+'%':'-') + '</td>';
@@ -1316,9 +1291,9 @@
         var inner = '<div class="seven-detail-header">' + sector +
             '<span class="sdh-stats">' + green + '/' + indRows.length + ' green &middot; ' + avgStr + ' avg</span></div>';
         inner += '<div style="overflow-x:auto"><table class="ticker-table"><colgroup>';
-        inner += '<col style="width:72px"><col style="width:56px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:48px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px">';
+        inner += '<col style="width:72px"><col style="width:56px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px">';
         inner += '</colgroup><thead><tr>';
-        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th title="20/50/200 MA">Hlth</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
+        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
         inner += '</tr></thead><tbody>';
         indRows.forEach(function(r) {
             var dc = (r.daily||0)>0?'price-up':((r.daily||0)<0?'price-down':'');
@@ -1340,11 +1315,6 @@
             inner += '<td class="' + fc + '">' + (r['5d']!=null?(r['5d']>=0?'+':'')+r['5d'].toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + tc + '">' + (r['20d']!=null?(r['20d']>=0?'+':'')+r['20d'].toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + yc + '">' + (r.ytd!=null?(r.ytd>=0?'+':'')+r.ytd.toFixed(2)+'%':'-') + '</td>';
-            var _ih20=r.above_sma20,_ih50=r.above_sma50,_ih200=r.above_sma200;
-            inner += '<td style="text-align:center;font-size:0.7rem;letter-spacing:1px" title="20 / 50 / 200 MA">'
-                + '<span style="color:'+(_ih20===true?'#10b981':_ih20===false?'#ef5350':'#333')+'">●</span>'
-                + '<span style="color:'+(_ih50===true?'#10b981':_ih50===false?'#ef5350':'#333')+'">●</span>'
-                + '<span style="color:'+(_ih200===true?'#10b981':_ih200===false?'#ef5350':'#333')+'">●</span></td>';
             inner += '<td class="' + vc + '">' + (r.vol_ratio!=null?r.vol_ratio.toFixed(2)+'x':'-') + '</td>';
             inner += '<td>' + (r.vol_chart?'<img src="'+r.vol_chart+'" class="rs-chart" alt="Vol">':'-') + '</td>';
             inner += '<td>' + (r.atr_pct!=null?r.atr_pct.toFixed(1)+'%':'-') + '</td>';
@@ -2872,12 +2842,12 @@
         state.sortBy = sortBy;
         if (state.count === 2) state.direction *= -1; else state.direction = 1;
 
-        /* Ticker,Grade,Daily,Intra,WTD,5D,20D,YTD,Hlth,Vol%,VolChart,ATR%,ATRx,RS,VARS */
-        var colMap = { symbol: 0, abc: 1, daily: 2, intra: 3, wtd: 4, '5d': 5, '20d': 6, ytd: 7, vol_ratio: 9,
-            atr_pct: 11, dist_sma50_atr: 12, rs: 13 };
+        /* Ticker(0),S/R(1),Holdings(2),Grade(3),Daily(4),Intra(5),WTD(6),5D(7),20D(8),YTD(9),Vol%(10),VolChart(11),ATR%(12),EM%(13),Beat?(14),ATRx(15),RS(16),VARS(17) */
+        var colMap = { symbol: 0, abc: 3, daily: 4, intra: 5, wtd: 6, '5d': 7, '20d': 8, ytd: 9, vol_ratio: 10,
+            atr_pct: 12, em_pct: 13, em_beat: 14, dist_sma50_atr: 15, rs: 16 };
         var hi = colMap[sortBy];
-        if (hi === undefined) hi = 9;
-        var headerIndices = (sortBy === 'rs') ? [12, 13] : [hi];
+        if (hi === undefined) hi = 10;
+        var headerIndices = (sortBy === 'rs') ? [16, 17] : [hi];
         headerIndices.forEach(function(idx) {
             var h = table.querySelectorAll('th')[idx];
             if (h) h.classList.add(state.direction === 1 ? 'sort-asc' : 'sort-desc', 'sorted-column');
