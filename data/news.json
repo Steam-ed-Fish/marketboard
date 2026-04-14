@@ -1,28 +1,28 @@
 {
   "market": [
     {
-      "title": "U.S. Stock Markets Today - Fox Business",
-      "url": "https://www.foxbusiness.com/stocks",
-      "snippet": "Discover the U.S. markets today with Fox Business. See the trending stocks in the USA stock market and today's stock market results.",
-      "source": "foxbusiness.com"
+      "title": "U.S. Stock Market Headlines | Breaking Stock Market News - Reuters",
+      "url": "https://www.reuters.com/markets/us/",
+      "snippet": "The S&P 500 and the Nasdaq composite indexes rallied more than 1% on Monday as investors appeared hopeful that a resolution to the Middle East war could be",
+      "source": "reuters.com"
     },
     {
-      "title": "Yahoo Finance - Stock Market Live, Quotes, Business & Finance News",
-      "url": "https://finance.yahoo.com/",
-      "snippet": "Stock market today: Dow, S&P 500, Nasdaq futures hold steady as US-Iran deal discussed.",
+      "title": "U.S Stock Market | U.S Financial Markets - Investing.com",
+      "url": "https://www.investing.com/markets/united-states",
+      "snippet": "United States Indices ; Dow Jones. 48,218.25. 15:59:59 | NYSE ; S&P 500. 6,886.24 · 15:59:59 | NYSE ; Nasdaq 100. 25,383.72. 13/04 | NASDAQ ; Nasdaq. 23,183.74. 13/",
+      "source": "investing.com"
+    },
+    {
+      "title": "Stock Market Data - US Markets, World Markets, and Stock Quotes",
+      "url": "https://www.cnn.com/markets",
+      "snippet": "Up-to-date stock market data coverage from CNN. Get the latest updates on US markets, world markets, stock quotes, crypto, commodities and currencies.",
+      "source": "cnn.com"
+    },
+    {
+      "title": "S&P 500 (^GSPC) Latest Stock News & Headlines - Yahoo Finance",
+      "url": "https://finance.yahoo.com/quote/%5EGSPC/news/",
+      "snippet": "Stock market today: Dow, S&P 500, Nasdaq futures hold steady as US-Iran deal discussed. Yahoo Finance • 3h ago. ^GSPC ; Stock market today: Dow, S&P 500, Nasdaq",
       "source": "finance.yahoo.com"
-    },
-    {
-      "title": "United States Stock Market Index - Quote - Chart - Trading Economics",
-      "url": "https://tradingeconomics.com/united-states/stock-market",
-      "snippet": "Leading the gains are Salesforce (4.76%), Microsoft (3.63%) and American Express (3.22%). Top losers were Goldman Sachs (-1.83%), Walmart (-1.73%) and Verizon",
-      "source": "tradingeconomics.com"
-    },
-    {
-      "title": "S&P 500 Index (SP500) Analysis, News, And Chart Today",
-      "url": "https://seekingalpha.com/symbol/SP500",
-      "snippet": "A high-level overview of the S&P 500 Index (SP500). Get the latest S&P 500 chart, news, and analysis, including analyst predictions and forecasts for today.",
-      "source": "seekingalpha.com"
     },
     {
       "title": "S&P 500 (^GSPC) Charts, Data & News - Yahoo Finance",
@@ -37,10 +37,16 @@
       "source": "markets.businessinsider.com"
     },
     {
-      "title": "Federal Reserve holds interest rates steady as inflation and hiring ...",
-      "url": "https://www.usbank.com/investing/financial-perspectives/market-news/federal-reserve-tapering-asset-purchases.html",
-      "snippet": "[](https://twitter.com/intent/tweet?url=https://www.usbank.com/content/usbank/us/en/investing/financial-perspectives/market-news/federal-reserve-tapering-asset-purchases.html&text=Federal+Reserve+holds+interest+rates+steady+as+inflation+and+hiring+remain+in+focus+%7C+U.S.+Bank&summary=Learn+from+U.S",
-      "source": "usbank.com"
+      "title": "Press Releases - Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases.htm",
+      "snippet": "[Skip to main content](https://www.federalreserve.gov/newsevents/pressreleases.htm#content). *   [Structure of the Federal Reserve System](https://www.federalreserve.gov/aboutthefed/fedexplained/who-we-are.htm). *   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-s",
+      "source": "federalreserve.gov"
+    },
+    {
+      "title": "News & Events - Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "snippet": "*   [Structure of the Federal Reserve System](https://www.federalreserve.gov/aboutthefed/fedexplained/who-we-are.htm). *   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Federal Reserve Act](https://www.federalreserve.gov/aboutthefed/fract.htm). ",
+      "source": "federalreserve.gov"
     },
     {
       "title": "U.S. Federal Reserve News | Today's Latest Stories | Reuters",
@@ -49,10 +55,11 @@
       "source": "reuters.com"
     },
     {
-      "title": "Federal Reserve (The Fed) - The New York Times",
-      "url": "https://www.nytimes.com/topic/organization/federal-reserve-the-fed",
-      "snippet": "[Federal Reserve (The Fed)](https://www.nytimes.com/topic/organization/federal-reserve-the-fed). # Federal Reserve (The Fed). Here’s One Reason Not to Panic.](/2026/04/10/opinion/inflation-prices-data-economy.html). [### Bessent and Powell’s A.I. Anxiety](/2026/04/10/business/dealbook/bessent-powell",
-      "source": "nytimes.com"
+      "title": "What is the geopolitical risk and how it impacts markets - StoneX EN",
+      "url": "https://www.stonex.com/en/business/financial-glossary/geopolitical-risk/",
+      "snippet": "Geopolitical risk refers to the potential impact of political events, instability, or conflicts on financial markets, institutions and the global economy. Geopolitical risk refers to the potential for political events, conflicts, or policy changes to disrupt markets, economies, and supply chains on ",
+      "source": "stonex.com",
+      "category": "geopolitical"
     },
     {
       "title": "SUERF - The European Money and Finance Forum",
@@ -62,123 +69,116 @@
       "category": "geopolitical"
     },
     {
-      "title": "Top Geopolitical Risks of 2025 - S&P Global",
+      "title": "Top Geopolitical Risks of 2025",
       "url": "https://www.spglobal.com/en/research-insights/market-insights/geopolitical-risk",
       "snippet": "Geopolitical risks have the potential to impact the global economic outlook, influencing growth, inflation, financial markets, and supply chains.",
       "source": "spglobal.com",
-      "category": "geopolitical"
-    },
-    {
-      "title": "How Rising Geopolitical Risks Weigh on Asset Prices",
-      "url": "https://www.imf.org/en/blogs/articles/2025/04/14/how-rising-geopolitical-risks-weigh-on-asset-prices",
-      "snippet": "## Heightened tensions can hurt stock markets, raise government borrowing costs, and pose risks to financial stability. As we show in a chapter of the latest Global Financial Stability Report, stock prices tend to decline significantly during major geopolitical risk events, as measured by more frequ",
-      "source": "imf.org",
       "category": "geopolitical"
     }
   ],
   "movers": {
     "ORCL": [
       {
-        "title": "Oracle: ORCL Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/stocks/ORCL",
-        "snippet": "Shares are currently priced at $138.33, which is +1.0% above the low and -13.0% below the high. Oracle(ORCL) shares are trading with a volume of 49.75M, against",
-        "source": "robinhood.com"
+        "title": "Oracle Corporation (ORCL) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/ORCL/",
+        "snippet": "Why is ORCL moving today? Oracle (ORCL) surged 14.24% after launching AI-powered upgrades and expanding cloud infrastructure in Morocco, significantly outpacing",
+        "source": "finance.yahoo.com"
       },
       {
-        "title": "ORCL: Oracle Corp - Stock Price, Quote and News - CNBC",
-        "url": "https://www.cnbc.com/quotes/ORCL",
-        "snippet": "Oracle Stock (ORCL) Is Surging over 11% on Tuesday – Here's Why 4 Hours Ago TipRanks. Morning News Wrap-Up 4/13/26: Today's Biggest Stock Market Stories! 5",
-        "source": "cnbc.com"
+        "title": "ORCL Stock Price | Analyst Target 240.92 & Consensus - eToro",
+        "url": "https://www.etoro.com/markets/orcl",
+        "snippet": "Commvault Systems Inc. ‎$‎89.62. +0.84%. Oracle Corporation News. Oracle Stock (ORCL) Is Surging over 11% on Tuesday – Here's Why. TipRanks • 13.04.26 • 11:51.",
+        "source": "etoro.com"
       },
       {
-        "title": "ORCL Stock Quote Price and Forecast - CNN",
-        "url": "https://www.cnn.com/markets/stocks/ORCL",
-        "snippet": "The price of ORCL shares has increased $17.53 since the market last closed. This is a 12.69% rise. Closed at $155.62. The stock has since risen $3.83 in after",
-        "source": "cnn.com"
+        "title": "Oracle - ORCL - Stock Price & News | The Motley Fool",
+        "url": "https://www.fool.com/quote/nyse/orcl/",
+        "snippet": "ORCL Financials ; Key Financial Metrics (TTM). Gross Margin. 66% ; Stock Overview. Market Cap. $397.15B ; Financials (TTM). Gross Profit. $40.47B.",
+        "source": "fool.com"
       }
     ],
     "NET": [
       {
-        "title": "META_TITLE_QUOTE - Yahoo Finance",
-        "url": "https://finance.yahoo.com/quote/NET/news/",
-        "snippet": "Cloudflare (NET) is experiencing a significant share price pullback despite strong long-term growth, with recent reports highlighting its $2.17 billion",
-        "source": "finance.yahoo.com"
+        "title": "NET Stock Price Quote & News - Cloudflare",
+        "url": "https://robinhood.com/stocks/NET",
+        "snippet": "Cloudflare (NET) closed at $221.32 in the latest trading session, marking a -1.48% move from the prior day. This move lagged the S&P 500's daily loss of 0.05%..",
+        "source": "robinhood.com"
       },
       {
-        "title": "NET: Cloudflare Inc - Stock Price, Quote and News - CNBC",
-        "url": "https://www.cnbc.com/quotes/NET",
-        "snippet": "PANW, CRWD, NET: Here's Why Cybersecurity Stocks Are Sinking Today, 4/9/26 April 9, 2026 TipRanks. Cloudflare falls -10.8% April 9, 2026 TipRanks. Analysts",
-        "source": "cnbc.com"
-      },
-      {
-        "title": "NET Stock Price Quote & News - Cloudflare - Robinhood",
+        "title": "NET Stock Price Quote & News - Cloudflare",
         "url": "https://robinhood.com/us/en/stocks/NET/",
         "snippet": "Cloudflare (NET) closed at $221.32 in the latest trading session, marking a -1.48% move from the prior day. This move lagged the S&P 500's daily loss of 0.05%..",
         "source": "robinhood.com"
+      },
+      {
+        "title": "NET: Cloudflare Inc - Stock Price, Quote and News",
+        "url": "https://www.cnbc.com/quotes/NET",
+        "snippet": "PANW, CRWD, NET: Here's Why Cybersecurity Stocks Are Sinking Today, 4/9/26 April 9, 2026 TipRanks. Cloudflare falls -10.8% April 9, 2026 TipRanks. Analysts",
+        "source": "cnbc.com"
       }
     ],
     "NOW": [
       {
-        "title": "ServiceNow: NOW Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/NOW/",
-        "snippet": "With shares now at $83.19, the stock is trading -1.0% above its intraday low and -6.6% below the session's peak. Trading activity shows a volume of 25.02M,",
-        "source": "robinhood.com"
-      },
-      {
-        "title": "ServiceNow, Inc. (NOW) - Yahoo Finance",
-        "url": "https://finance.yahoo.com/quote/NOW/news/",
-        "snippet": "ServiceNow (NOW) Stock Trades Down, Here Is Why. StockStory • 1d ago. NOW. +7.30% · Why Cloudflare (NET) Stock Is Down Today.",
+        "title": "ServiceNow, Inc. (NOW) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/NOW/",
+        "snippet": "ServiceNow (NOW) surged 8.73% as investors bought the dip in oversold SaaS stocks amid cautious optimism around U.S.-Iran ceasefire talks,",
         "source": "finance.yahoo.com"
       },
       {
-        "title": "NOW Stock Price | ServiceNow Inc. Stock Quote (U.S. - MarketWatch",
-        "url": "https://www.marketwatch.com/investing/stock/now",
-        "snippet": "ServiceNow (NOW) Faces Downgrade by UBS, Stock Drops 6%. Apr. 10, 2026 at 4:51 p.m. ET on GuruFocus.com. Why ServiceNow Stock Is Plunging Today. Apr. 10, 2026",
-        "source": "marketwatch.com"
+        "title": "ServiceNow: NOW Stock Price Quote & News - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/NOW/",
+        "snippet": "With shares now at $89.46, the stock is trading +6.5% above its intraday low and -0.0% below the session's peak. Trading activity shows a volume of 31.68M,",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "META_TITLE_QUOTE - Yahoo Finance",
+        "url": "https://finance.yahoo.com/quote/NOW/news/",
+        "snippet": "CRWD · NOW. +7.30% · ^DJI · Why ServiceNow (NOW) Stock Is Trading Up Today. StockStory • in 2h. NOW. +7.30%",
+        "source": "finance.yahoo.com"
       }
     ]
   },
   "sectors": {
     "XLK": [
       {
+        "title": "State Street Technology S…: XLK Stock Price Quote & News",
+        "url": "https://robinhood.com/stocks/XLK",
+        "snippet": "As of today, State Street Technology Select Sector SPDR ETF(XLK) shares are valued at $142.78. The company's market cap stands at 93.19B, with a P/E ratio",
+        "source": "robinhood.com"
+      },
+      {
         "title": "State Street Technology Select Sector SPDR ETF (XLK)",
-        "url": "https://finance.yahoo.com/quote/XLK/",
-        "snippet": "The major indices have bounced about today, initially mixed on U.S./Iran ceasefire hopes that turned into ceasefire worries, then lower on hot",
+        "url": "https://finance.yahoo.com/quote/XLK/news/",
+        "snippet": "State Street Technology Select Sector SPDR ETF (XLK) · Sector Update: Tech Stocks Gain Late Afternoon · Exchange-Traded Funds Rise, US Equities Mixed After Midday.",
         "source": "finance.yahoo.com"
       },
       {
-        "title": "(XLK) News Headlines - Nasdaq",
-        "url": "https://www.nasdaq.com/market-activity/etf/xlk/news-headlines",
-        "snippet": "Latest XLK News ... Tech ETFs to Soar on \"Fragile\" Truce Hopes in Iran War? ... Is Fidelity's FTEC a Better Tech ETF Than State Street's XLK? Mar 27, 2026 •",
-        "source": "nasdaq.com"
-      },
-      {
-        "title": "State Street Technology S…: XLK Stock Price Quote & News",
-        "url": "https://robinhood.com/stocks/XLK",
-        "snippet": "As of today, State Street Technology Select Sector SPDR ETF(XLK) shares are valued at $146.13. The company's market cap stands at 93.19B, with a P/E ratio",
-        "source": "robinhood.com"
+        "title": "XLK State Street Technology Select Sector SPDR ETF Latest News",
+        "url": "https://seekingalpha.com/symbol/XLK/news",
+        "snippet": "Get the latest news and real-time alerts from State Street Technology Select Sector SPDR ETF (XLK) stock at Seeking Alpha.",
+        "source": "seekingalpha.com"
       }
     ],
     "XLF": [
       {
-        "title": "Financial Select Sector SPDR Fund (XLF) News Today - MarketBeat",
-        "url": "https://www.marketbeat.com/stocks/NYSEARCA/XLF/news/",
-        "snippet": "XLF Latest News · Sector Update: Financial Stocks Lean Lower Premarket Friday · Exchange-Traded Funds Fall, US Equities Mixed After Midday · Sector Update:",
-        "source": "marketbeat.com"
+        "title": "Latest News THE FINANCIAL SELECT SECTOR SPDR FUND ETF ...",
+        "url": "https://stockinvest.us/news/XLF",
+        "snippet": "XLF: The Financial Sector At Crossroads. 04:20pm, Thursday, 09'th Apr 2026 ... Weaker Hold Today XLF ranks #524 as hold candidate in NYSEARCA. XLF: #524",
+        "source": "stockinvest.us"
       },
       {
-        "title": "(XLF) News Headlines - Nasdaq",
-        "url": "https://www.nasdaq.com/market-activity/etf/xlf/news-headlines",
-        "snippet": "Find the latest news headlines about State Street Financial Select Sector SPDR ETF (XLF) at Nasdaq.com.",
-        "source": "nasdaq.com"
+        "title": "State Street Financial Select Sector SPDR ETF (XLF) - Yahoo Finance",
+        "url": "https://finance.yahoo.com/quote/XLF/",
+        "snippet": "The news over the weekend was not what investors hoped to hear, and crude oil prices are moving higher yet again. The news over the weekend was not what",
+        "source": "finance.yahoo.com"
       },
       {
-        "title": "Financial Select Sector SPDR ETF - XLF Stock Price - Investing.com",
-        "url": "https://www.investing.com/etfs/financial-select-sector-spdr-fund",
-        "snippet": "The XLF stock price today is 51.66. Does XLF Pay Dividends? What's The Current Dividend Yield? The Financial Select Sector SPDR dividend yield is 1.95",
-        "source": "investing.com"
+        "title": "SPDR Financial Sector ETF (XLF) Stock Price Today & Analysis",
+        "url": "https://www.heygotrade.com/en/us-stock/xlf/",
+        "snippet": "XLF seeks to provide precise exposure to companies in the diversified financial services; insurance; banks; capital markets; mortgage real estate investment",
+        "source": "heygotrade.com"
       }
     ]
   },
-  "built_at": "2026-04-14T02:42:12Z"
+  "built_at": "2026-04-14T08:14:08Z"
 }
