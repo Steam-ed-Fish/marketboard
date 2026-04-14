@@ -385,7 +385,33 @@ def calculate_abc_rating(hist_data):
     except Exception:
         pass
     return None
-    
+
+
+def calculate_stage(hist_data):
+    """Weinstein Stage: 1=Basing, 2=Advancing, 3=Topping, 4=Declining.
+    Based on price vs 30-week MA (SMA150) and MA slope."""
+    try:
+        close = hist_data['Close']
+        if len(close) < 150:
+            return None
+        sma150 = close.rolling(150).mean()
+        cur = close.iloc[-1]
+        ma = sma150.iloc[-1]
+        ma_prev = sma150.iloc[-5]  # MA slope over ~1 week
+        ma_slope = (ma - ma_prev) / ma_prev if ma_prev else 0
+
+        above = cur > ma
+        ma_rising = ma_slope > 0.001
+        ma_falling = ma_slope < -0.001
+
+        if above and ma_rising:      return 2  # Advancing
+        if above and not ma_rising:   return 3  # Topping
+        if not above and ma_falling:  return 4  # Declining
+        return 1                                # Basing
+    except Exception:
+        return None
+
+
 def create_vol_chart_png(vol_history, ticker, charts_dir):
     try:
         if not vol_history or len(vol_history) == 0:
@@ -626,6 +652,13 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
         if yearly is not None and len(yearly) >= 64:
             three_month_return = round((yearly['Close'].iloc[-1] / yearly['Close'].iloc[-64] - 1) * 100, 2)
 
+        six_month_return = None
+        twelve_month_return = None
+        if yearly is not None and len(yearly) >= 126:
+            six_month_return = round((yearly['Close'].iloc[-1] / yearly['Close'].iloc[-126] - 1) * 100, 2)
+        if yearly is not None and len(yearly) >= 252:
+            twelve_month_return = round((yearly['Close'].iloc[-1] / yearly['Close'].iloc[-252] - 1) * 100, 2)
+
         sma50 = calculate_sma(daily)
         sma20 = calculate_sma(daily, 20)
         sma200 = calculate_sma(all_hist, 200) if len(all_hist) >= 200 else None
@@ -634,6 +667,7 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
         atr_pct = (atr / current_close) * 100 if atr and current_close else None
         dist_sma50_atr = (100 * (current_close / sma50 - 1) / atr_pct) if (sma50 and atr_pct and atr_pct != 0) else None
         abc_rating = calculate_abc_rating(daily)
+        stage = calculate_stage(all_hist)
         sr_levels = calculate_sr_levels(all_hist, current_close)
         # Volume calculations
         vol_ratio = None
@@ -710,6 +744,9 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
             "ytd": round(ytd_change, 2) if ytd_change is not None else None,
             "1m_return": one_month_return,
             "3m_return": three_month_return,
+            "6m_return": six_month_return,
+            "12m_return": twelve_month_return,
+            "stage": stage,
             "vol_ratio": vol_ratio,
             "vol_chart": vol_chart_path,
             "vol_history": vol_history if vol_history else None,
@@ -1882,6 +1919,8 @@ def main():
             return round(v, ndec) if v is not None else None
         abc_vals = [r.get("abc") for r in rows if r.get("abc")]
         abc_majority = max(set(abc_vals), key=abc_vals.count) if abc_vals else None
+        stage_vals = [r.get("stage") for r in rows if r.get("stage") is not None]
+        stage_majority = max(set(stage_vals), key=stage_vals.count) if stage_vals else None
 
         # Equal-weighted Vol Chart: average vol_history (list of 20) across the 7 tickers
         vol_histories = [r.get("vol_history") for r in rows if r.get("vol_history") and len(r.get("vol_history")) == 20]
@@ -1923,6 +1962,7 @@ def main():
             "long": [],
             "short": [],
             "abc": abc_majority,
+            "stage": stage_majority,
             "breadth": {
                 "above_20": above_20_count,
                 "above_50": above_50_count,
@@ -2152,6 +2192,43 @@ def main():
             r['em_pct']  = ed.get('em_pct')
             r['em_days'] = ed.get('em_days')
 
+    # ── RS Composite Ranking ──────────────────────────────────────────────────
+    print("Computing RS composite ranking...")
+    spy_data = all_ticker_data.get("SPY", {})
+    spy_1m_ret = spy_data.get("1m_return") or 0
+    spy_3m_ret = spy_data.get("3m_return") or 0
+    spy_6m_ret = spy_data.get("6m_return") or 0
+    spy_12m_ret = spy_data.get("12m_return") or 0
+
+    rs_composites = {}
+    for _gn, rows in groups_data.items():
+        for r in rows:
+            ticker = r.get("ticker", "")
+            if not ticker:
+                continue
+            active_1m = (r.get("1m_return") or 0) - spy_1m_ret
+            active_3m = (r.get("3m_return") or 0) - spy_3m_ret
+            active_6m = (r.get("6m_return") or 0) - spy_6m_ret
+            active_12m = (r.get("12m_return") or 0) - spy_12m_ret
+            composite = 0.2 * active_1m + 0.3 * active_3m + 0.3 * active_6m + 0.2 * active_12m
+            rs_composites[ticker] = composite
+
+    # Convert to percentile ranks
+    if rs_composites:
+        sorted_tickers = sorted(rs_composites.keys(), key=lambda t: rs_composites[t])
+        n = len(sorted_tickers)
+        for rank_i, ticker in enumerate(sorted_tickers):
+            pct = round(rank_i / max(n - 1, 1) * 100, 0)
+            rs_composites[ticker] = pct
+
+        # Assign back to rows
+        for _gn, rows in groups_data.items():
+            for r in rows:
+                ticker = r.get("ticker", "")
+                if ticker in rs_composites:
+                    r["rs_composite"] = rs_composites[ticker]
+    print(f"  RS composite: ranked {len(rs_composites)} tickers")
+
     # Remove temporary series from rows so they are not written to snapshot.json
     for _gn, rows in groups_data.items():
         for r in rows:
@@ -2159,6 +2236,8 @@ def main():
             r.pop("rolling_rrs", None)
             r.pop("1m_return", None)
             r.pop("3m_return", None)
+            r.pop("6m_return", None)
+            r.pop("12m_return", None)
 
     print("Computing column ranges...")
     column_ranges = {}
@@ -2221,6 +2300,84 @@ def main():
                 "vol_ratio": _r.get("vol_ratio"),
             }
 
+    # ── Correlation Matrix ────────────────────────────────────────────────────
+    CORR_TICKERS = ["SPY", "QQQ", "IWM", "TLT", "GLD", "USO", "UUP", "HYG", "VIXY"]
+    print("Computing correlation matrix...")
+    corr_data_map = {}
+    for _ct in CORR_TICKERS:
+        safe_ct = re.sub(r'[^a-zA-Z0-9]', '_', _ct)
+        ohlc_path = os.path.join(ohlc_dir, safe_ct + ".json")
+        if os.path.exists(ohlc_path):
+            try:
+                with open(ohlc_path) as f:
+                    ohlc = json.load(f)
+                closes = [bar["c"] for bar in ohlc.get("ohlc", [])]
+                if len(closes) > 60:
+                    returns = [(closes[i] / closes[i - 1] - 1) for i in range(1, len(closes))]
+                    corr_data_map[_ct] = returns[-60:]
+            except Exception:
+                pass
+
+    correlation = None
+    corr_tickers_sorted = sorted(corr_data_map.keys())
+    if len(corr_tickers_sorted) >= 4:
+        n_corr = len(corr_tickers_sorted)
+        corr_matrix = []
+        for i in range(n_corr):
+            row = []
+            for j in range(n_corr):
+                ri, rj = corr_data_map[corr_tickers_sorted[i]], corr_data_map[corr_tickers_sorted[j]]
+                min_len = min(len(ri), len(rj))
+                if min_len >= 20:
+                    c = float(np.corrcoef(ri[-min_len:], rj[-min_len:])[0, 1])
+                    row.append(round(c, 2))
+                else:
+                    row.append(None)
+            corr_matrix.append(row)
+        correlation = {"tickers": corr_tickers_sorted, "matrix": corr_matrix, "window": 60}
+        print(f"  Correlation: {n_corr}x{n_corr} matrix")
+    else:
+        print("  Correlation: insufficient OHLC data")
+
+    # ── Factor Regime ──────────────────────────────────────────────────────────
+    FACTOR_ETFS = {"VLUE": "Value", "MTUM": "Momentum", "QUAL": "Quality", "SIZE": "Size", "IWF": "Growth"}
+    print("Computing factor regime...")
+    factor_regime = {}
+    try:
+        spy_2y = yf.Ticker("SPY").history(period="2y")
+        spy_2y_returns = spy_2y['Close'].pct_change().dropna()
+        for fticker, fname in FACTOR_ETFS.items():
+            try:
+                fhist = yf.Ticker(fticker).history(period="2y")
+                if len(fhist) < 200:
+                    print(f"  {fticker}: insufficient data ({len(fhist)} bars)")
+                    continue
+                freturns = fhist['Close'].pct_change().dropna()
+                common = freturns.index.intersection(spy_2y_returns.index)
+                if len(common) < 200:
+                    continue
+                active = freturns[common] - spy_2y_returns[common]
+                ewma = active.ewm(halflife=90).mean()
+                exp_mean = ewma.expanding().mean()
+                exp_std = ewma.expanding().std()
+                zscore = ((ewma - exp_mean) / exp_std).ewm(halflife=30).mean()
+                latest_z = float(zscore.iloc[-1])
+                regime = "BULL" if latest_z >= 0 else "BEAR"
+                signs = (zscore >= 0).astype(int)
+                changes = signs.diff().abs()
+                last_change_idx = changes[changes == 1].index
+                last_change = last_change_idx[-1] if len(last_change_idx) > 0 else zscore.index[0]
+                days_in = len(zscore[zscore.index >= last_change])
+                factor_regime[fticker] = {
+                    "name": fname, "regime": regime,
+                    "zscore": round(latest_z, 2), "days_in_regime": days_in,
+                }
+                print(f"  {fticker} ({fname}): {regime} z={latest_z:.2f} ({days_in}d)")
+            except Exception as e:
+                print(f"  Factor {fticker} error: {e}")
+    except Exception as e:
+        print(f"  SPY 2y fetch error: {e}")
+
     snapshot = {
         "built_at": datetime.utcnow().isoformat() + "Z",
         "groups": groups_data,
@@ -2231,6 +2388,8 @@ def main():
         "vol_signals": vol_signals,
         "macro_fred": macro_fred,
         "cross_asset": cross_asset,
+        "correlation": correlation,
+        "factor_regime": factor_regime if factor_regime else None,
         "industries_sector_charts": industries_sector_charts,
         "industries_sector_rs_charts": industries_sector_rs_charts,
     }

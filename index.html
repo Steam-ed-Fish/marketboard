@@ -99,6 +99,11 @@
         .abc-a { background-color: #0ea5e9; }
         .abc-b { background-color: #10b981; }
         .abc-c { background-color: #f59e0b; }
+        .stage-tag { display:inline-block; font-size:0.6rem; font-weight:700; margin-left:2px; width:14px; height:14px; line-height:14px; text-align:center; border-radius:3px; vertical-align:middle; }
+        .stage-1 { background:#4b5563; color:#d1d5db; }
+        .stage-2 { background:#059669; color:#fff; }
+        .stage-3 { background:#d97706; color:#fff; }
+        .stage-4 { background:#dc2626; color:#fff; }
         .economic-events { margin-bottom: 10px; }
         .events-button {
             font-family: Arial, sans-serif;
@@ -310,6 +315,8 @@
                 <button type="button" class="events-tab active" id="macro-tab-liq" onclick="switchMacroTab('liq')">💵 USD Liquidity</button>
                 <button type="button" class="events-tab" id="macro-tab-fed" onclick="switchMacroTab('fed')">🦅 Fed Watch</button>
                 <button type="button" class="events-tab" id="macro-tab-fred" onclick="switchMacroTab('fred')">📊 Data</button>
+                <button type="button" class="events-tab" id="macro-tab-corr" onclick="switchMacroTab('corr')">🔗 Corr</button>
+                <button type="button" class="events-tab" id="macro-tab-factor" onclick="switchMacroTab('factor')">⚡ Factor</button>
             </div>
             <div id="macro-tab-content-liq" style="overflow-y:auto;max-height:560px">
                 <div id="usd-liquidity-content"></div>
@@ -319,6 +326,12 @@
             </div>
             <div id="macro-tab-content-fred" style="display:none;overflow-y:auto;max-height:560px">
                 <div id="fred-macro-content"></div>
+            </div>
+            <div id="macro-tab-content-corr" style="display:none;overflow-y:auto;max-height:560px">
+                <div id="correlation-content"></div>
+            </div>
+            <div id="macro-tab-content-factor" style="display:none;overflow-y:auto;max-height:560px">
+                <div id="factor-regime-content"></div>
             </div>
         </div>
         <div style="margin-bottom:0">
@@ -570,13 +583,15 @@
         }
     };
     window.switchMacroTab = function(tab) {
-        ['liq','fed','fred'].forEach(function(t) {
+        ['liq','fed','fred','corr','factor'].forEach(function(t) {
             document.getElementById('macro-tab-content-'+t).style.display = tab === t ? '' : 'none';
             document.getElementById('macro-tab-'+t).classList.toggle('active', tab === t);
         });
-        if (tab === 'liq')  renderUSDLiquidity();
-        if (tab === 'fed')  renderFedWatch();
-        if (tab === 'fred') renderMacroFred();
+        if (tab === 'liq')    renderUSDLiquidity();
+        if (tab === 'fed')    renderFedWatch();
+        if (tab === 'fred')   renderMacroFred();
+        if (tab === 'corr')   renderCorrelation();
+        if (tab === 'factor') renderFactorRegime();
     };
 
     window.toggleFGSection = function() {
@@ -723,7 +738,7 @@
         html += '<div class="card-body" id="card-body-ai-themes" style="' + (_atOpen ? '' : 'display:none') + '">';
         html += '<table class="ticker-table"><thead><tr>';
         html += '<th>Theme</th><th>Holdings</th><th>Grade</th><th>Daily</th><th>Intra</th><th>WTD</th><th>5D</th><th>20D</th><th>YTD</th>';
-        html += '<th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>1M-VARS</th>';
+        html += '<th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>RS</th>';
         html += '</tr></thead><tbody>';
         snapshot.themes.forEach(function(t) {
             var cd = t.constituent_daily || {};
@@ -816,7 +831,7 @@
             html += th('em_pct', 'EM%', "Tonight's expected move for tomorrow.\nFormula: (nearest next-day ATM call mid + put mid) ÷ price.\nPriced at market close — tells you what the options market expects overnight.\nIndices group only; — for all others.");
             html += th('em_beat', 'Beat?', "Did today's actual daily move exceed yesterday's straddle expectation?\n✓ = stayed within expected range (ratio < 1).\n✗ = overshot — actual move was larger than expected.\nRatio: 1.4× means actual was 40% larger than the straddle priced in.");
             html += th('dist_sma50_atr', 'ATRx', 'Distance from SMA50 measured in 14-period ATR units.\nPositive = above SMA50, negative = below.');
-            html += th('rs', '1M-VARS', 'Volatility Adjusted Relative Strength vs SPY over last 21 days (0–100%)');
+            html += th('rs', 'RS', 'RS Composite: multi-timeframe relative strength percentile vs SPY (0–100)');
             html += th('rs', 'VARS', 'Volatility Adjusted Relative Strength vs SPY (raw score)');
             if (!_isGlance) {
                 html += '<th title="Full candle gap in last 5 trading days.\nGreen = entire candle above previous candle.\nRed = entire candle below previous candle.">Gap</th>';
@@ -898,7 +913,7 @@
                     // Col 12–13: atr, dist
                     html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sAtr  != null ? _sAtr.toFixed(1) + '%' : '-') + '</td>';
                     html += '<td style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sDist != null ? _sDist.toFixed(2)     : '-') + '</td>';
-                    // Col 14: 1M-VARS (plain RS%)
+                    // Col 14: RS composite
                     var _rsCl = _sRs != null ? (_sRs >= 60 ? 'price-up' : (_sRs < 40 ? 'price-down' : '')) : '';
                     html += '<td class="' + _rsCl + '" style="padding:3px 4px;font-size:0.72rem">' + (_sRs != null ? Math.round(_sRs) + '%' : '-') + '</td>';
                     // Col 15: VARS — EW averaged RS sparkline PNG from snapshot
@@ -949,7 +964,9 @@
                     var _hcls = daily > 0 ? 'hcol-btn-up' : (daily < 0 ? 'hcol-btn-down' : 'hcol-btn-flat');
                     html += '<td style="padding:3px 4px"><button type="button" class="hcol-btn ' + _hcls + '" onclick="event.stopPropagation();showHoldings(\'' + r.ticker.replace(/'/g,"\\'") + '\')" title="Holdings">h</button></td>';
                 }
-                html += '<td>' + (abc ? '<span class="abc-rating abc-' + abc.toLowerCase() + '">' + abc + '</span>' : '-') + '</td>';
+                var _stg = r.stage;
+                var _stgHtml = _stg ? '<span class="stage-tag stage-' + _stg + '" title="Stage ' + _stg + '">' + _stg + '</span>' : '';
+                html += '<td>' + (abc ? '<span class="abc-rating abc-' + abc.toLowerCase() + '">' + abc + '</span>' : '-') + _stgHtml + '</td>';
                 html += '<td class="' + dailyCl + '">' + (daily != null ? '<div class="value-visualization"><div class="value-bar ' + (daily >= 0 ? 'positive' : 'negative') + '" style="width:' + dailyW + '%"></div><span class="value-text">' + (daily >= 0 ? '+' : '') + daily.toFixed(2) + '%</span></div>' : na) + '</td>';
                 html += '<td class="' + intraCl + '">' + (intra != null ? '<div class="value-visualization"><div class="value-bar ' + (intra >= 0 ? 'positive' : 'negative') + '" style="width:' + intraW + '%"></div><span class="value-text">' + (intra >= 0 ? '+' : '') + intra.toFixed(2) + '%</span></div>' : na) + '</td>';
                 var wtd = r.wtd, ytd = r.ytd;
@@ -998,7 +1015,9 @@
                 }
                 html += '<td style="text-align:right">' + beatCell + '</td>';
                 html += '<td>' + (r.dist_sma50_atr != null ? r.dist_sma50_atr.toFixed(2) : na) + '</td>';
-                html += '<td>' + (r.rs != null ? Math.round(r.rs) + '%' : na) + '</td>';
+                var _rsc = r.rs_composite != null ? Math.round(r.rs_composite) : (r.rs != null ? Math.round(r.rs) : null);
+                var _rscCl = _rsc != null ? (_rsc >= 70 ? 'color:#10b981' : _rsc <= 30 ? 'color:#ef5350' : 'color:#c8d8e8') : '';
+                html += '<td style="' + _rscCl + '">' + (_rsc != null ? _rsc + '%' : na) + '</td>';
                 html += '<td>' + (r.rs_chart ? '<img src="' + r.rs_chart + '" class="rs-chart" alt="RS">' : na) + '</td>';
                 if (!isSummaryGroup) {
                     html += '<td>';
@@ -1204,7 +1223,8 @@
                 var _nt=r.sr.near.type,_nd=r.sr.near.dist_pct,_nc=_nt==='resistance'?'#f59e0b':'#38bdf8';
                 inner += '<td style="white-space:nowrap"><span style="font-size:0.62rem;font-weight:700;padding:2px 4px;border-radius:2px;background:'+_nc+';color:#020810" title="Near '+_nt+' at $'+r.sr.near.price+'">' + (_nt==='resistance'?'R':'S')+' '+(_nd>0?'+':'')+_nd+'%</span></td>';
             } else { inner += '<td></td>'; }
-            inner += '<td>' + (abc?'<span class="abc-rating abc-'+abc.toLowerCase()+'">'+abc+'</span>':'-') + '</td>';
+            var _dstg=r.stage; var _dstgh=_dstg?'<span class="stage-tag stage-'+_dstg+'" title="Stage '+_dstg+'">'+_dstg+'</span>':'';
+            inner += '<td>' + (abc?'<span class="abc-rating abc-'+abc.toLowerCase()+'">'+abc+'</span>':'-') + _dstgh + '</td>';
             inner += '<td class="' + dc + '">' + (r.daily!=null?(r.daily>=0?'+':'')+r.daily.toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + fc + '">' + (r['5d']!=null?(r['5d']>=0?'+':'')+r['5d'].toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + tc + '">' + (r['20d']!=null?(r['20d']>=0?'+':'')+r['20d'].toFixed(2)+'%':'-') + '</td>';
@@ -1314,7 +1334,8 @@
                 var _nt=r.sr.near.type,_nd=r.sr.near.dist_pct,_nc=_nt==='resistance'?'#f59e0b':'#38bdf8';
                 inner += '<td style="white-space:nowrap"><span style="font-size:0.62rem;font-weight:700;padding:2px 4px;border-radius:2px;background:'+_nc+';color:#020810" title="Near '+_nt+' at $'+r.sr.near.price+'">' + (_nt==='resistance'?'R':'S')+' '+(_nd>0?'+':'')+_nd+'%</span></td>';
             } else { inner += '<td></td>'; }
-            inner += '<td>' + (abc?'<span class="abc-rating abc-'+abc.toLowerCase()+'">'+abc+'</span>':'-') + '</td>';
+            var _dstg=r.stage; var _dstgh=_dstg?'<span class="stage-tag stage-'+_dstg+'" title="Stage '+_dstg+'">'+_dstg+'</span>':'';
+            inner += '<td>' + (abc?'<span class="abc-rating abc-'+abc.toLowerCase()+'">'+abc+'</span>':'-') + _dstgh + '</td>';
             inner += '<td class="' + dc + '">' + (r.daily!=null?(r.daily>=0?'+':'')+r.daily.toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + fc + '">' + (r['5d']!=null?(r['5d']>=0?'+':'')+r['5d'].toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + tc + '">' + (r['20d']!=null?(r['20d']>=0?'+':'')+r['20d'].toFixed(2)+'%':'-') + '</td>';
@@ -2297,6 +2318,70 @@
         el.innerHTML = html;
     }
 
+    function renderCorrelation() {
+        var el = document.getElementById('correlation-content');
+        if (!el) return;
+        var c = snapshot && snapshot.correlation;
+        if (!c || !c.tickers || !c.matrix) {
+            el.innerHTML = '<div style="padding:12px;color:#4b5563">No correlation data available.</div>';
+            return;
+        }
+        var tickers = c.tickers, m = c.matrix;
+        var html = '<div style="padding:8px 4px"><div style="font-size:0.6rem;color:#4b5563;margin-bottom:6px">60-day rolling Pearson correlation (daily returns)</div>';
+        html += '<table style="border-collapse:collapse;width:100%;font-size:0.65rem">';
+        html += '<tr><th style="padding:3px"></th>';
+        for (var j = 0; j < tickers.length; j++) {
+            html += '<th style="padding:3px 2px;color:#7ab8d8;font-weight:600;text-align:center">' + tickers[j] + '</th>';
+        }
+        html += '</tr>';
+        for (var i = 0; i < tickers.length; i++) {
+            html += '<tr><td style="font-weight:700;color:#7ab8d8;padding:3px 4px;white-space:nowrap">' + tickers[i] + '</td>';
+            for (var j = 0; j < tickers.length; j++) {
+                var v = m[i][j];
+                var bg, fg;
+                if (i === j) { bg = 'rgba(56,189,248,0.15)'; fg = '#4b5563'; }
+                else if (v == null) { bg = 'transparent'; fg = '#333'; }
+                else if (v > 0) { bg = 'rgba(16,185,129,' + (v * 0.45) + ')'; fg = v > 0.5 ? '#fff' : '#c8d8e8'; }
+                else { bg = 'rgba(239,83,80,' + (Math.abs(v) * 0.45) + ')'; fg = Math.abs(v) > 0.5 ? '#fff' : '#c8d8e8'; }
+                html += '<td style="text-align:center;padding:3px 2px;background:' + bg + ';color:' + fg + '">' + (v != null ? v.toFixed(2) : '-') + '</td>';
+            }
+            html += '</tr>';
+        }
+        html += '</table></div>';
+        el.innerHTML = html;
+    }
+
+    function renderFactorRegime() {
+        var el = document.getElementById('factor-regime-content');
+        if (!el) return;
+        var fr = snapshot && snapshot.factor_regime;
+        if (!fr || Object.keys(fr).length === 0) {
+            el.innerHTML = '<div style="padding:12px;color:#4b5563">No factor regime data available.</div>';
+            return;
+        }
+        var order = ['VLUE','MTUM','QUAL','SIZE','IWF'];
+        var html = '<div style="padding:4px 0">';
+        order.forEach(function(ftk) {
+            var f = fr[ftk];
+            if (!f) return;
+            var isBull = f.regime === 'BULL';
+            var regimeColor = isBull ? '#10b981' : '#ef5350';
+            var barPct = Math.min(Math.abs(f.zscore) / 2 * 100, 100);
+            html += '<div style="padding:8px 12px;border-bottom:1px solid #0a1e35">';
+            html += '<div style="display:flex;justify-content:space-between;align-items:center">';
+            html += '<span style="color:#c8d8e8;font-weight:600;font-size:0.8rem">' + f.name + ' <span style="color:#4b5563;font-weight:400">(' + ftk + ')</span></span>';
+            html += '<span style="color:' + regimeColor + ';font-weight:700;font-size:0.8rem">' + f.regime + ' ' + (f.zscore >= 0 ? '+' : '') + f.zscore.toFixed(2) + '</span>';
+            html += '</div>';
+            html += '<div style="margin-top:4px;height:6px;background:#0a1e35;border-radius:3px;overflow:hidden">';
+            html += '<div style="height:100%;width:' + barPct + '%;background:' + regimeColor + ';border-radius:3px"></div>';
+            html += '</div>';
+            html += '<div style="font-size:0.65rem;color:#6b7a8d;margin-top:2px">' + f.days_in_regime + ' days in regime</div>';
+            html += '</div>';
+        });
+        html += '</div>';
+        el.innerHTML = html;
+    }
+
     var polyData = null;
     var rotationData = null;
     var emYesterday = {};
@@ -2787,7 +2872,7 @@
         state.sortBy = sortBy;
         if (state.count === 2) state.direction *= -1; else state.direction = 1;
 
-        /* Ticker,Grade,Daily,Intra,WTD,5D,20D,YTD,Vol%,VolChart,ATR%,ATRx,1M-VARS,VARS,LETF */
+        /* Ticker,Grade,Daily,Intra,WTD,5D,20D,YTD,Hlth,Vol%,VolChart,ATR%,ATRx,RS,VARS */
         var colMap = { symbol: 0, abc: 1, daily: 2, intra: 3, wtd: 4, '5d': 5, '20d': 6, ytd: 7, vol_ratio: 9,
             atr_pct: 11, dist_sma50_atr: 12, rs: 13 };
         var hi = colMap[sortBy];
