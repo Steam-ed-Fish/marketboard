@@ -627,6 +627,8 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
             three_month_return = round((yearly['Close'].iloc[-1] / yearly['Close'].iloc[-64] - 1) * 100, 2)
 
         sma50 = calculate_sma(daily)
+        sma20 = calculate_sma(daily, 20)
+        sma200 = calculate_sma(all_hist, 200) if len(all_hist) >= 200 else None
         atr = calculate_atr(daily)
         current_close = daily['Close'].iloc[-1]
         atr_pct = (atr / current_close) * 100 if atr and current_close else None
@@ -721,6 +723,9 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
             "abc": abc_rating,
             "gaps": gaps,
             "sr": sr_levels,
+            "above_sma20": bool(current_close > sma20) if sma20 else None,
+            "above_sma50": bool(current_close > sma50) if sma50 else None,
+            "above_sma200": bool(current_close > sma200) if sma200 else None,
         }
     except Exception as e:
         print("Error", ticker_symbol, e)
@@ -1897,6 +1902,10 @@ def main():
             safe_gname = re.sub(r'[^a-zA-Z0-9]', '_', gname)
             rs_chart_path = create_rs_chart_png(rs_df, "Glance_" + safe_gname, charts_dir)
 
+        above_20_count = sum(1 for r in rows if r.get("above_sma20") is True)
+        above_50_count = sum(1 for r in rows if r.get("above_sma50") is True)
+        above_200_count = sum(1 for r in rows if r.get("above_sma200") is True)
+
         summary_rows.append({
             "ticker": gname,
             "daily": _avg_round("daily"),
@@ -1914,6 +1923,12 @@ def main():
             "long": [],
             "short": [],
             "abc": abc_majority,
+            "breadth": {
+                "above_20": above_20_count,
+                "above_50": above_50_count,
+                "above_200": above_200_count,
+                "total": len(rows),
+            },
         })
 
     spy_3m = None

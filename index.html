@@ -740,6 +740,11 @@
             html += cell(t['5d'], -10, 10);
             html += cell(t['20d'], -20, 20);
             html += cell(t.ytd, -30, 30);
+            var _s20=t.above_sma20,_s50=t.above_sma50,_s200=t.above_sma200;
+            html += '<td style="text-align:center;font-size:0.7rem;letter-spacing:1px" title="20 / 50 / 200 MA">'
+                + '<span style="color:'+(_s20===true?'#10b981':_s20===false?'#ef5350':'#333')+'">●</span>'
+                + '<span style="color:'+(_s50===true?'#10b981':_s50===false?'#ef5350':'#333')+'">●</span>'
+                + '<span style="color:'+(_s200===true?'#10b981':_s200===false?'#ef5350':'#333')+'">●</span></td>';
             html += '<td>' + (t.vol_ratio != null ? t.vol_ratio.toFixed(2) + 'x' : 'N/A') + '</td>';
             html += '<td>' + (t.vol_chart ? '<img src="' + t.vol_chart + '" class="rs-chart" alt="Vol">' : '-') + '</td>';
             html += '<td>' + (t.atr_pct != null ? t.atr_pct.toFixed(1) + '%' : 'N/A') + '</td>';
@@ -804,6 +809,7 @@
             html += th('5d', '5D', '5-day % change');
             html += th('20d', '20D', '20-day % change');
             html += th('ytd', 'YTD', 'Year-to-date % change');
+            html += '<th title="MA Health: tickers above 20/50/200-day MA" style="cursor:help">Hlth</th>';
             html += th('vol_ratio', 'Vol%', 'Today\'s volume vs 20-day average volume');
             html += '<th title="Volume trend: last 20 days vs 20-day average. Red bars = 2× avg or higher.">Vol Chart</th>';
             html += th('atr_pct', 'ATR%', '14-period Average True Range as % of price (daily volatility measure)');
@@ -813,7 +819,6 @@
             html += th('rs', '1M-VARS', 'Volatility Adjusted Relative Strength vs SPY over last 21 days (0–100%)');
             html += th('rs', 'VARS', 'Volatility Adjusted Relative Strength vs SPY (raw score)');
             if (!_isGlance) {
-                html += th('letf', 'LETF', 'Leveraged ETF exists for this ticker (long/short)');
                 html += '<th title="Full candle gap in last 5 trading days.\nGreen = entire candle above previous candle.\nRed = entire candle below previous candle.">Gap</th>';
             }
             html += '</tr></thead><tbody id="' + safeId + '-body">';
@@ -882,6 +887,8 @@
                     html += _secVizCell(_sFive,   ranges['5d'][0],  ranges['5d'][1]);
                     html += _secVizCell(_sTwenty, ranges['20d'][0], ranges['20d'][1]);
                     html += _secVizCell(_sYtd,    -30, 30);
+                    // Hlth — sector avg (blank for sector divider)
+                    html += '<td style="padding:3px 4px;color:#4b5563;text-align:center">-</td>';
                     // Col 10: avg vol ratio (plain)
                     var _volCl = _sVol != null && _sVol >= 2 ? 'price-down' : '';
                     html += '<td class="' + _volCl + '" style="padding:3px 4px;font-size:0.72rem;color:#9ca3af">' + (_sVol != null ? _sVol.toFixed(1) + 'x' : '-') + '</td>';
@@ -897,7 +904,6 @@
                     // Col 15: VARS — EW averaged RS sparkline PNG from snapshot
                     var _secRsChart = snapshot.industries_sector_rs_charts && snapshot.industries_sector_rs_charts[r.sector];
                     html += '<td style="padding:2px 4px">' + (_secRsChart ? '<img src="' + _secRsChart + '" class="rs-chart" alt="RS">' : '-') + '</td>';
-                    html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // letf
                     html += '<td style="padding:3px 4px;color:#4b5563">-</td>'; // gap
                     html += '</tr>';
                 }
@@ -911,7 +917,6 @@
                 var intraCl = intra != null ? (intra > 0 ? 'price-up' : (intra < 0 ? 'price-down' : '')) : '';
                 var fiveCl = five != null ? (five > 0 ? 'price-up' : (five < 0 ? 'price-down' : '')) : '';
                 var twentyCl = twenty != null ? (twenty > 0 ? 'price-up' : (twenty < 0 ? 'price-down' : '')) : '';
-                var letf = (r.long && r.long.length) || (r.short && r.short.length) ? '1' : '0';
                 var abc = r.abc || '';
                 var rs = r.rs != null ? r.rs : 0;
                 var atrPct = r.atr_pct != null ? r.atr_pct : 0;
@@ -924,7 +929,7 @@
                 var _isIndustriesRow = (groupName === 'Industries' && r.sector);
                 var _indSecId = _isIndustriesRow ? r.sector.replace(/\s+/g,'_') : '';
                 var _indHidden = _isIndustriesRow && !_cardOpen('sec_' + _indSecId);
-                html += '<tr class="ticker-row" onclick="' + rowOnclick + '" data-symbol="' + r.ticker + '" data-group="' + groupName.replace(/"/g, '&quot;') + '" data-daily="' + (daily != null ? daily : 0) + '" data-intra="' + (intra != null ? intra : 0) + '" data-wtd="' + wtdV + '" data-5d="' + (five != null ? five : 0) + '" data-20d="' + (twenty != null ? twenty : 0) + '" data-ytd="' + ytdV + '" data-vol_ratio="' + volR + '" data-atr_pct="' + atrPct + '" data-dist_sma50_atr="' + dist + '" data-rs="' + rs + '" data-abc="' + abc + '" data-letf="' + letf + '" data-index="' + i + '"' + (isRrgRow ? ' data-rrg-chart="' + (r.rrg_chart || '') + '"' : '') + (_isIndustriesRow ? ' data-sector="' + r.sector.replace(/"/g,'&quot;') + '"' : '') + (_indHidden ? ' style="display:none"' : '') + '>';
+                html += '<tr class="ticker-row" onclick="' + rowOnclick + '" data-symbol="' + r.ticker + '" data-group="' + groupName.replace(/"/g, '&quot;') + '" data-daily="' + (daily != null ? daily : 0) + '" data-intra="' + (intra != null ? intra : 0) + '" data-wtd="' + wtdV + '" data-5d="' + (five != null ? five : 0) + '" data-20d="' + (twenty != null ? twenty : 0) + '" data-ytd="' + ytdV + '" data-vol_ratio="' + volR + '" data-atr_pct="' + atrPct + '" data-dist_sma50_atr="' + dist + '" data-rs="' + rs + '" data-abc="' + abc + '" data-index="' + i + '"' + (isRrgRow ? ' data-rrg-chart="' + (r.rrg_chart || '') + '"' : '') + (_isIndustriesRow ? ' data-sector="' + r.sector.replace(/"/g,'&quot;') + '"' : '') + (_indHidden ? ' style="display:none"' : '') + '>';
                 html += '<td><span class="ticker-label ' + labelClass + '">' + r.ticker + '</span></td>';
                 if (r.sr && r.sr.near) {
                     var _nt = r.sr.near.type, _nd = r.sr.near.dist_pct;
@@ -956,6 +961,18 @@
                 html += '<td class="' + fiveCl + '">' + (five != null ? '<div class="value-visualization"><div class="value-bar ' + (five >= 0 ? 'positive' : 'negative') + '" style="width:' + fiveW + '%"></div><span class="value-text">' + (five >= 0 ? '+' : '') + five.toFixed(2) + '%</span></div>' : na) + '</td>';
                 html += '<td class="' + twentyCl + '">' + (twenty != null ? '<div class="value-visualization"><div class="value-bar ' + (twenty >= 0 ? 'positive' : 'negative') + '" style="width:' + twentyW + '%"></div><span class="value-text">' + (twenty >= 0 ? '+' : '') + twenty.toFixed(2) + '%</span></div>' : na) + '</td>';
                 html += '<td class="' + ytdCl + '">' + (ytd != null ? '<div class="value-visualization"><div class="value-bar ' + (ytd >= 0 ? 'positive' : 'negative') + '" style="width:' + ytdW + '%"></div><span class="value-text">' + (ytd >= 0 ? '+' : '') + ytd.toFixed(2) + '%</span></div>' : na) + '</td>';
+                // Hlth column — breadth health
+                if (isSummaryGroup && r.breadth) {
+                    var _b = r.breadth, _br = _b.above_50 / _b.total;
+                    var _bc = _br >= 0.7 ? '#10b981' : _br >= 0.4 ? '#f59e0b' : '#ef5350';
+                    html += '<td style="text-align:center;color:' + _bc + ';font-weight:600;font-size:0.78rem">' + _b.above_50 + '/' + _b.total + '</td>';
+                } else {
+                    var _d20 = r.above_sma20, _d50 = r.above_sma50, _d200 = r.above_sma200;
+                    var _dots = '<span style="color:' + (_d20 === true ? '#10b981' : _d20 === false ? '#ef5350' : '#333') + '">●</span>'
+                              + '<span style="color:' + (_d50 === true ? '#10b981' : _d50 === false ? '#ef5350' : '#333') + '">●</span>'
+                              + '<span style="color:' + (_d200 === true ? '#10b981' : _d200 === false ? '#ef5350' : '#333') + '">●</span>';
+                    html += '<td style="text-align:center;font-size:0.7rem;letter-spacing:1px" title="20 / 50 / 200 MA">' + _dots + '</td>';
+                }
                 var volRatio = r.vol_ratio;
                 var volCl = volRatio != null && volRatio >= 2 ? 'price-down' : '';
                 html += '<td class="' + volCl + '">' + (volRatio != null ? volRatio.toFixed(2) + 'x' : na) + '</td>';
@@ -984,11 +1001,6 @@
                 html += '<td>' + (r.rs != null ? Math.round(r.rs) + '%' : na) + '</td>';
                 html += '<td>' + (r.rs_chart ? '<img src="' + r.rs_chart + '" class="rs-chart" alt="RS">' : na) + '</td>';
                 if (!isSummaryGroup) {
-                    html += '<td class="etf-list">';
-                    if (r.long && r.long.length) html += r.long.map(function(etf){ return '<span class="long-etf" onclick="event.stopPropagation();updateChart(\'' + etf + '\')">' + etf + '</span>'; }).join(', ');
-                    if (r.short && r.short.length) { if (r.long && r.long.length) html += '<br>'; html += r.short.map(function(etf){ return '<span class="short-etf" onclick="event.stopPropagation();updateChart(\'' + etf + '\')">' + etf + '</span>'; }).join(', '); }
-                    if (!(r.long && r.long.length) && !(r.short && r.short.length)) html += '-';
-                    html += '</td>';
                     html += '<td>';
                     if (r.gaps && r.gaps.length) {
                         html += '<div class="gap-bar">';
@@ -1174,9 +1186,9 @@
             '<span class="sdh-stats">' + green + '/' + grpRows.length + ' green &middot; ' + avgStr + ' avg</span></div>';
         // Table with fixed col widths
         inner += '<div style="overflow-x:auto"><table class="ticker-table"><colgroup>';
-        inner += '<col style="width:72px"><col style="width:56px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px">';
+        inner += '<col style="width:72px"><col style="width:56px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:48px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px">';
         inner += '</colgroup><thead><tr>';
-        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
+        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th title="20/50/200 MA">Hlth</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
         inner += '</tr></thead><tbody>';
         grpRows.forEach(function(r) {
             var dc = (r.daily||0)>0?'price-up':((r.daily||0)<0?'price-down':'');
@@ -1197,6 +1209,11 @@
             inner += '<td class="' + fc + '">' + (r['5d']!=null?(r['5d']>=0?'+':'')+r['5d'].toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + tc + '">' + (r['20d']!=null?(r['20d']>=0?'+':'')+r['20d'].toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + yc + '">' + (r.ytd!=null?(r.ytd>=0?'+':'')+r.ytd.toFixed(2)+'%':'-') + '</td>';
+            var _h20=r.above_sma20,_h50=r.above_sma50,_h200=r.above_sma200;
+            inner += '<td style="text-align:center;font-size:0.7rem;letter-spacing:1px" title="20 / 50 / 200 MA">'
+                + '<span style="color:'+(_h20===true?'#10b981':_h20===false?'#ef5350':'#333')+'">●</span>'
+                + '<span style="color:'+(_h50===true?'#10b981':_h50===false?'#ef5350':'#333')+'">●</span>'
+                + '<span style="color:'+(_h200===true?'#10b981':_h200===false?'#ef5350':'#333')+'">●</span></td>';
             inner += '<td class="' + vc + '">' + (r.vol_ratio!=null?r.vol_ratio.toFixed(2)+'x':'-') + '</td>';
             inner += '<td>' + (r.vol_chart?'<img src="'+r.vol_chart+'" class="rs-chart" alt="Vol">':'-') + '</td>';
             inner += '<td>' + (r.atr_pct!=null?r.atr_pct.toFixed(1)+'%':'-') + '</td>';
@@ -1279,9 +1296,9 @@
         var inner = '<div class="seven-detail-header">' + sector +
             '<span class="sdh-stats">' + green + '/' + indRows.length + ' green &middot; ' + avgStr + ' avg</span></div>';
         inner += '<div style="overflow-x:auto"><table class="ticker-table"><colgroup>';
-        inner += '<col style="width:72px"><col style="width:56px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px"><col style="width:60px">';
+        inner += '<col style="width:72px"><col style="width:56px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:48px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px">';
         inner += '</colgroup><thead><tr>';
-        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th><th>LETF</th>';
+        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th title="20/50/200 MA">Hlth</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
         inner += '</tr></thead><tbody>';
         indRows.forEach(function(r) {
             var dc = (r.daily||0)>0?'price-up':((r.daily||0)<0?'price-down':'');
@@ -1302,6 +1319,11 @@
             inner += '<td class="' + fc + '">' + (r['5d']!=null?(r['5d']>=0?'+':'')+r['5d'].toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + tc + '">' + (r['20d']!=null?(r['20d']>=0?'+':'')+r['20d'].toFixed(2)+'%':'-') + '</td>';
             inner += '<td class="' + yc + '">' + (r.ytd!=null?(r.ytd>=0?'+':'')+r.ytd.toFixed(2)+'%':'-') + '</td>';
+            var _ih20=r.above_sma20,_ih50=r.above_sma50,_ih200=r.above_sma200;
+            inner += '<td style="text-align:center;font-size:0.7rem;letter-spacing:1px" title="20 / 50 / 200 MA">'
+                + '<span style="color:'+(_ih20===true?'#10b981':_ih20===false?'#ef5350':'#333')+'">●</span>'
+                + '<span style="color:'+(_ih50===true?'#10b981':_ih50===false?'#ef5350':'#333')+'">●</span>'
+                + '<span style="color:'+(_ih200===true?'#10b981':_ih200===false?'#ef5350':'#333')+'">●</span></td>';
             inner += '<td class="' + vc + '">' + (r.vol_ratio!=null?r.vol_ratio.toFixed(2)+'x':'-') + '</td>';
             inner += '<td>' + (r.vol_chart?'<img src="'+r.vol_chart+'" class="rs-chart" alt="Vol">':'-') + '</td>';
             inner += '<td>' + (r.atr_pct!=null?r.atr_pct.toFixed(1)+'%':'-') + '</td>';
@@ -1314,9 +1336,6 @@
                 }
                 inner += '</div></td>';
             } else { inner += '<td>-</td>'; }
-            var longStr = (r.long||[]).join('/') || '', shortStr = (r.short||[]).join('/') || '';
-            var letfStr = [longStr ? '\u2191'+longStr : '', shortStr ? '\u2193'+shortStr : ''].filter(Boolean).join(' ') || '-';
-            inner += '<td style="font-size:0.65rem;white-space:nowrap">' + letfStr + '</td>';
             inner += '</tr>';
         });
         inner += '</tbody></table></div>';
@@ -2769,8 +2788,8 @@
         if (state.count === 2) state.direction *= -1; else state.direction = 1;
 
         /* Ticker,Grade,Daily,Intra,WTD,5D,20D,YTD,Vol%,VolChart,ATR%,ATRx,1M-VARS,VARS,LETF */
-        var colMap = { symbol: 0, abc: 1, daily: 2, intra: 3, wtd: 4, '5d': 5, '20d': 6, ytd: 7, vol_ratio: 8,
-            atr_pct: 10, dist_sma50_atr: 11, rs: 12, letf: 14 };
+        var colMap = { symbol: 0, abc: 1, daily: 2, intra: 3, wtd: 4, '5d': 5, '20d': 6, ytd: 7, vol_ratio: 9,
+            atr_pct: 11, dist_sma50_atr: 12, rs: 13 };
         var hi = colMap[sortBy];
         if (hi === undefined) hi = 9;
         var headerIndices = (sortBy === 'rs') ? [12, 13] : [hi];
@@ -2799,8 +2818,6 @@
                 return (a.getAttribute('data-symbol').toLowerCase().localeCompare(b.getAttribute('data-symbol').toLowerCase())) * state.direction;
             } else if (sortBy === 'abc') {
                 return ((a.getAttribute('data-abc') || '').localeCompare(b.getAttribute('data-abc') || '')) * state.direction;
-            } else if (sortBy === 'letf') {
-                return (parseInt(a.getAttribute('data-letf') || '0') - parseInt(b.getAttribute('data-letf') || '0')) * state.direction;
             } else {
                 var ak = 'data-' + sortBy, av = parseFloat(a.getAttribute(ak) || '0'), bv = parseFloat(b.getAttribute(ak) || '0');
                 if (sortBy === 'vol_chart') return 0;
