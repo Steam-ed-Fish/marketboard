@@ -137,6 +137,16 @@
         .briefing-toggle { font-size: 0.62rem; color: #2d6080; cursor: pointer; padding: 2px 7px; border: 1px solid #0d2540; border-radius: 3px; background: transparent; flex-shrink: 0; }
         .briefing-toggle:hover { color: #38bdf8; border-color: rgba(56,189,248,0.3); }
         .briefing-divider { padding: 5px 12px; font-size: 0.65rem; font-weight: 700; color: #2d6080; letter-spacing: 0.06em; border-top: 1px solid #0a1e35; margin-top: 2px; }
+        .news-card { padding: 8px 12px; border-bottom: 1px solid #0a1e35; background: #060d1c; }
+        .news-card:hover { background: #071e38; }
+        .news-card:last-child { border-bottom: none; }
+        .news-title { color: #c8d8e8; font-size: 0.78rem; font-weight: 600; text-decoration: none; display: block; line-height: 1.4; }
+        .news-title:hover { color: #38bdf8; }
+        .news-meta { display: flex; align-items: center; gap: 8px; margin-top: 3px; }
+        .news-source { font-size: 0.65rem; color: #38bdf8; background: rgba(56,189,248,0.1); padding: 1px 6px; border-radius: 3px; white-space: nowrap; }
+        .news-ticker-tag { font-size: 0.65rem; color: #10b981; background: rgba(16,185,129,0.1); padding: 1px 6px; border-radius: 3px; font-weight: 700; }
+        .news-snippet { font-size: 0.7rem; color: #6b7a8d; margin-top: 3px; line-height: 1.4; }
+        .news-group-label { padding: 5px 12px; font-size: 0.65rem; font-weight: 700; color: #2d6080; letter-spacing: 0.06em; border-top: 1px solid #0a1e35; margin-top: 2px; text-transform: uppercase; }
         .loading-msg { padding: 20px; text-align: center; color: #9ca3af; }
         .seven-detail-row > td { padding: 0 !important; border-top: 2px solid #38bdf8; border-bottom: 2px solid #38bdf8; }
         .seven-detail-panel { background: #040c1a; }
@@ -285,6 +295,12 @@
             <div id="events-tab-macro" style="overflow-y:auto;max-height:560px">
                 <div id="events-modal-content"></div>
             </div>
+        </div>
+        <div style="margin-bottom:0">
+            <button class="events-button fg-toggle-btn" id="news-toggle-btn" type="button" onclick="toggleNewsSection()">📰 MARKET NEWS</button>
+        </div>
+        <div id="news-inline-panel" class="fg-inline-panel" style="flex-direction:column">
+            <div id="news-panel-content" style="overflow-y:auto;max-height:560px"></div>
         </div>
         <div style="margin-bottom:0">
             <button class="events-button fg-toggle-btn" id="macro-toggle-btn" type="button" onclick="toggleMacroSection()">📊 MACRO</button>
@@ -456,6 +472,82 @@
         body.style.display = collapsed ? '' : 'none';
         if (btn) btn.innerHTML = collapsed ? '&#9660; collapse' : '&#9658; expand';
     };
+    window.toggleNewsSection = function() {
+        var panel = document.getElementById('news-inline-panel');
+        var btn   = document.getElementById('news-toggle-btn');
+        var isOpen = panel.classList.contains('open');
+        if (isOpen) { panel.classList.remove('open'); btn.classList.remove('active'); }
+        else        { panel.classList.add('open');    btn.classList.add('active'); }
+    };
+
+    var newsData = null;
+
+    function renderNews(data) {
+        var el = document.getElementById('news-panel-content');
+        if (!el) return;
+        if (!data || (!data.market.length && !Object.keys(data.movers || {}).length && !Object.keys(data.sectors || {}).length)) {
+            el.innerHTML = '<div class="event-item" style="color:#6b7a8d">No news data available.</div>';
+            return;
+        }
+        var html = '';
+
+        // Market headlines
+        if (data.market && data.market.length) {
+            html += '<div class="news-group-label">Headlines</div>';
+            data.market.forEach(function(h) {
+                var snippet = (h.snippet || '').length > 140 ? h.snippet.substring(0, 140) + '...' : (h.snippet || '');
+                html += '<div class="news-card">';
+                html += '<a href="' + (h.url || '#') + '" target="_blank" rel="noopener" class="news-title">' + (h.title || 'Untitled') + '</a>';
+                html += '<div class="news-meta">';
+                if (h.source) html += '<span class="news-source">' + h.source + '</span>';
+                if (h.category) html += '<span class="news-source" style="color:#f59e0b;background:rgba(245,158,11,0.1)">' + h.category + '</span>';
+                html += '</div>';
+                if (snippet) html += '<div class="news-snippet">' + snippet + '</div>';
+                html += '</div>';
+            });
+        }
+
+        // Mover headlines
+        var moverTickers = Object.keys(data.movers || {});
+        if (moverTickers.length) {
+            html += '<div class="news-group-label">Mover News</div>';
+            moverTickers.forEach(function(ticker) {
+                (data.movers[ticker] || []).forEach(function(h) {
+                    var snippet = (h.snippet || '').length > 120 ? h.snippet.substring(0, 120) + '...' : (h.snippet || '');
+                    html += '<div class="news-card">';
+                    html += '<a href="' + (h.url || '#') + '" target="_blank" rel="noopener" class="news-title">' + (h.title || 'Untitled') + '</a>';
+                    html += '<div class="news-meta">';
+                    html += '<span class="news-ticker-tag">' + ticker + '</span>';
+                    if (h.source) html += '<span class="news-source">' + h.source + '</span>';
+                    html += '</div>';
+                    if (snippet) html += '<div class="news-snippet">' + snippet + '</div>';
+                    html += '</div>';
+                });
+            });
+        }
+
+        // Sector headlines
+        var sectorTickers = Object.keys(data.sectors || {});
+        if (sectorTickers.length) {
+            html += '<div class="news-group-label">Sector News</div>';
+            sectorTickers.forEach(function(ticker) {
+                (data.sectors[ticker] || []).forEach(function(h) {
+                    var snippet = (h.snippet || '').length > 120 ? h.snippet.substring(0, 120) + '...' : (h.snippet || '');
+                    html += '<div class="news-card">';
+                    html += '<a href="' + (h.url || '#') + '" target="_blank" rel="noopener" class="news-title">' + (h.title || 'Untitled') + '</a>';
+                    html += '<div class="news-meta">';
+                    html += '<span class="news-ticker-tag">' + ticker + '</span>';
+                    if (h.source) html += '<span class="news-source">' + h.source + '</span>';
+                    html += '</div>';
+                    if (snippet) html += '<div class="news-snippet">' + snippet + '</div>';
+                    html += '</div>';
+                });
+            });
+        }
+
+        el.innerHTML = html;
+    }
+
     window.toggleEventsSection = function() {
         var panel = document.getElementById('events-inline-panel');
         var btn   = document.getElementById('events-toggle-btn');
@@ -2774,11 +2866,13 @@
             fetch('data/events.json').then(function(res) { return res.ok ? res.json() : []; }).catch(function() { return []; }),
             fetch('data/meta.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; }),
             fetch('data/polymarket.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; }),
-            fetch('data/rotation_history.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; })
+            fetch('data/rotation_history.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; }),
+            fetch('data/news.json').then(function(res) { return res.ok ? res.json() : null; }).catch(function() { return null; })
         ]).then(function(results) {
             snapshot = results[0];
             polyData = results[3];
             rotationData = results[4];
+            newsData = results[5];
             // Build emYesterday lookup from second-to-last snapshot
             emYesterday = {};
             if (rotationData && rotationData.snapshots && rotationData.snapshots.length >= 2) {
@@ -2793,6 +2887,7 @@
             var events = results[1];
             meta = results[2];
             renderEvents(events);
+            renderNews(newsData);
             renderGroups();
         }).catch(function(err) {
             document.getElementById('groups-container').innerHTML = '<div class="loading-msg">LOADING DATA... (Run scripts/build_data.py or wait for GitHub Actions)<br><span style="font-size:0.7rem;color:#ef4444;margin-top:8px;display:block">Error: ' + (err && err.message ? err.message : String(err)) + '</span></div>';

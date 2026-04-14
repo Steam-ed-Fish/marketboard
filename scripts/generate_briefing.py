@@ -55,7 +55,7 @@ def fetch_perplexity_context(api_key):
 # Context builder
 # ---------------------------------------------------------------------------
 
-def build_context(snapshot, news_context=None, fedwatch=None):
+def build_context(snapshot, news_context=None, fedwatch=None, tavily_news=None):
     lines = []
     built_at = snapshot.get("built_at", "unknown")
     lines.append("DATA TIMESTAMP: {}\n".format(built_at))
@@ -65,6 +65,26 @@ def build_context(snapshot, news_context=None, fedwatch=None):
         lines.append("TODAY'S MARKET CONTEXT (use to explain WHY sectors moved, keep brief):")
         lines.append("  {}".format(news_context))
         lines.append("")
+
+    # Tavily news headlines (grounded search results)
+    if tavily_news:
+        market_headlines = tavily_news.get("market") or []
+        movers_headlines = tavily_news.get("movers") or {}
+        sectors_headlines = tavily_news.get("sectors") or {}
+        if market_headlines or movers_headlines or sectors_headlines:
+            lines.append("NEWS HEADLINES (use to explain movers and add context):")
+            for h in market_headlines[:5]:
+                lines.append("  MARKET: {} — {} ({})".format(
+                    h.get("title", ""), h.get("snippet", "")[:150], h.get("source", "")))
+            for ticker, articles in movers_headlines.items():
+                for h in articles[:2]:
+                    lines.append("  MOVER {}: {} — {}".format(
+                        ticker, h.get("title", ""), h.get("snippet", "")[:120]))
+            for ticker, articles in sectors_headlines.items():
+                for h in articles[:2]:
+                    lines.append("  SECTOR {}: {} — {}".format(
+                        ticker, h.get("title", ""), h.get("snippet", "")[:120]))
+            lines.append("")
 
     # Fear & Greed
     fg = snapshot.get("fear_greed") or {}
@@ -261,8 +281,8 @@ SYSTEM_PROMPT = (
 )
 
 
-def generate_briefing(snapshot, api_key, news_context=None, fedwatch=None):
-    context = build_context(snapshot, news_context, fedwatch)
+def generate_briefing(snapshot, api_key, news_context=None, fedwatch=None, tavily_news=None):
+    context = build_context(snapshot, news_context, fedwatch, tavily_news)
     client = anthropic.Anthropic(api_key=api_key)
     message = client.messages.create(
         model="claude-sonnet-4-6",
@@ -318,9 +338,22 @@ def main():
         if news_context:
             print("  Context: {}".format(news_context[:120]))
 
+    # Load Tavily news context if available
+    tavily_news = None
+    news_path = os.path.join(args.out_dir, "news.json")
+    if os.path.exists(news_path):
+        try:
+            with open(news_path, encoding="utf-8") as f:
+                tavily_news = json.load(f)
+            mkt_count = len(tavily_news.get("market") or [])
+            mov_count = len(tavily_news.get("movers") or {})
+            print("Loaded Tavily news ({} headlines, {} movers)".format(mkt_count, mov_count))
+        except Exception as e:
+            print("Tavily news load failed: {}".format(e))
+
     print("Generating intelligence briefing via Claude API...")
     try:
-        text = generate_briefing(snapshot, anthropic_key, news_context, fedwatch)
+        text = generate_briefing(snapshot, anthropic_key, news_context, fedwatch, tavily_news)
     except Exception as e:
         print("Briefing generation failed: {}".format(e))
         return
