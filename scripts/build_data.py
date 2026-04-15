@@ -2348,7 +2348,7 @@ def main():
                 with open(ohlc_path) as f:
                     ohlc = json.load(f)
                 closes = [bar["c"] for bar in ohlc.get("ohlc", [])]
-                if len(closes) > 60:
+                if len(closes) >= 60:
                     returns = [(closes[i] / closes[i - 1] - 1) for i in range(1, len(closes))]
                     corr_data_map[_ct] = returns[-60:]
             except Exception:
