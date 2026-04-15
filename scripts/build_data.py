@@ -287,7 +287,7 @@ def get_expected_move(ticker_sym, weekly=False):
 
 
 # ── Options Intelligence helpers ─────────────────────────────────────────────
-OPTIONS_INTEL_TICKERS = ["SPY", "QQQ", "IWM", "DIA"]
+OPTIONS_INTEL_TICKERS = ["SPY", "QQQ", "IWM", "DIA", "RSP", "IJH", "IJR", "GLD", "SLV"]
 
 
 def _find_atm_strike(calls, puts, spot):
