@@ -227,9 +227,10 @@ def calculate_atr(hist_data, period=14):
         return None
 
 
-def get_expected_move(ticker_sym):
-    """Fetch ATM straddle EM% from nearest next-day options expiry via yfinance.
-    Skips today's expiry (0DTE at close = nearly worthless).
+def get_expected_move(ticker_sym, weekly=False):
+    """Fetch ATM straddle EM% via yfinance.
+    weekly=False (indices): nearest next trading day expiry (1-day EM).
+    weekly=True  (others):  nearest Friday expiry (week-end EM).
     Returns (em_pct, days_to_expiry) or (None, None) on failure.
     """
     try:
@@ -237,22 +238,41 @@ def get_expected_move(ticker_sym):
         expirations = t.options
         if not expirations:
             return None, None
-        today = datetime.utcnow().date()
-        # Skip same-day expiry — take first expiry strictly after today
-        nearest = next(
-            (e for e in expirations if datetime.strptime(e, '%Y-%m-%d').date() > today),
-            expirations[0]  # fallback if all are today (e.g. weekend run)
-        )
-        days = max((datetime.strptime(nearest, '%Y-%m-%d').date() - today).days, 1)
+        # Use US Eastern date (market timezone) to avoid UTC date-ahead issues
+        from datetime import timezone as _tz, timedelta as _td
+        _et = _tz(_td(hours=-4))  # EDT; close enough for date calc
+        today = datetime.now(_tz.utc).astimezone(_et).date()
+        exp_dates = [datetime.strptime(e, '%Y-%m-%d').date() for e in expirations]
+        future = [d for d in exp_dates if d > today]
+        if not future:
+            return None, None
+
+        if weekly:
+            # Pick nearest Friday expiry
+            fridays = [d for d in future if d.weekday() == 4]
+            nearest_date = fridays[0] if fridays else future[0]
+        else:
+            # Pick nearest next-day expiry
+            nearest_date = future[0]
+
+        nearest = nearest_date.strftime('%Y-%m-%d')
+        days = max((nearest_date - today).days, 1)
         chain = t.option_chain(nearest)
         calls, puts = chain.calls, chain.puts
         if calls.empty or puts.empty:
             return None, None
-        price = (t.fast_info.get('last_price') or t.fast_info.get('previousClose'))
+        # Use actual last close from history — fast_info.previousClose is stale (prior day)
+        hist = t.history(period='5d')
+        price = hist['Close'].iloc[-1] if not hist.empty else None
+        if not price:
+            price = t.fast_info.get('last_price') or t.fast_info.get('previousClose')
         if not price:
             return None, None
-        strikes = calls['strike'].values
-        atm = strikes[np.argmin(np.abs(strikes - price))]
+        # Find ATM from strikes common to both chains
+        common_strikes = np.intersect1d(calls['strike'].values, puts['strike'].values)
+        if len(common_strikes) == 0:
+            return None, None
+        atm = common_strikes[np.argmin(np.abs(common_strikes - price))]
         call_row = calls[calls['strike'] == atm]
         put_row  = puts[puts['strike']  == atm]
         if call_row.empty or put_row.empty:
@@ -2173,21 +2193,26 @@ def main():
             em_groups.append(gname)
     print(f"Fetching options expected move for {len(em_groups)} groups...")
     em_tickers = []
+    em_ticker_weekly = {}  # ticker -> True if weekly (non-index), False if daily (index)
     seen = set()
     for g in em_groups:
+        is_weekly = (g != 'Indices')
         for r in groups_data.get(g, []):
             t = r.get('ticker')
             if t and t not in seen:
                 em_tickers.append(t)
+                em_ticker_weekly[t] = is_weekly
                 seen.add(t)
     em_data = {}
     for sym in em_tickers:
-        em_pct, em_days = get_expected_move(sym)
+        weekly = em_ticker_weekly.get(sym, True)
+        em_pct, em_days = get_expected_move(sym, weekly=weekly)
         em_data[sym] = {'em_pct': em_pct, 'em_days': em_days}
+        mode = "weekly" if weekly else "daily"
         if em_pct is not None:
-            print(f"  {sym}: ±{em_pct}% ({em_days}d)")
+            print(f"  {sym}: ±{em_pct}% ({em_days}d) [{mode}]")
         else:
-            print(f"  {sym}: no options data")
+            print(f"  {sym}: no options data [{mode}]")
         time.sleep(0.3)
     for gname, rows in groups_data.items():
         for r in rows:
