@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-04-15T02:19:56.690361Z",
+  "built_at": "2026-04-15T03:07:59.932185Z",
   "groups": {
     "Indices": [
       {
@@ -54,7 +54,7 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.89,
+        "em_pct": 0.91,
         "em_days": 1,
         "rs_composite": 43.0
       },
@@ -96,9 +96,9 @@
               "dist_pct": -4.1
             },
             {
-              "price": 442.41,
-              "score": 41,
-              "dist_pct": -8.9
+              "price": 440.14,
+              "score": 45,
+              "dist_pct": -9.3
             }
           ],
           "resistance": [
@@ -122,8 +122,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.36,
-        "em_days": 2,
+        "em_pct": 1.12,
+        "em_days": 3,
         "rs_composite": 42.0
       },
       {
@@ -185,7 +185,7 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.45,
+        "em_pct": 0.53,
         "em_days": 1,
         "rs_composite": 43.0
       },
@@ -222,14 +222,14 @@
               "dist_pct": -0.3
             },
             {
-              "price": 188.86,
-              "score": 69,
-              "dist_pct": -5.4
+              "price": 189.5,
+              "score": 64,
+              "dist_pct": -5.1
             },
             {
-              "price": 183.49,
-              "score": 55,
-              "dist_pct": -8.1
+              "price": 185.19,
+              "score": 80,
+              "dist_pct": -7.2
             }
           ],
           "resistance": [
@@ -248,8 +248,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.45,
-        "em_days": 2,
+        "em_pct": 1.29,
+        "em_days": 3,
         "rs_composite": 46.0
       },
       {
@@ -316,8 +316,8 @@
         "above_sma50": true,
         "above_sma200": true,
         "sector": "Broad Market",
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 0.82,
+        "em_days": 1,
         "rs_composite": 55.0
       },
       {
@@ -379,8 +379,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.51,
-        "em_days": 2,
+        "em_pct": 4.11,
+        "em_days": 3,
         "rs_composite": 56.0
       },
       {
@@ -442,8 +442,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 5.01,
+        "em_days": 3,
         "rs_composite": 63.0
       },
       {
@@ -515,8 +515,8 @@
         "above_sma50": false,
         "above_sma200": true,
         "sector": "Commodities",
-        "em_pct": 2.57,
-        "em_days": 2,
+        "em_pct": 1.07,
+        "em_days": 1,
         "rs_composite": 58.0
       },
       {
@@ -588,8 +588,8 @@
         "above_sma50": true,
         "above_sma200": true,
         "sector": "Commodities",
-        "em_pct": 6.54,
-        "em_days": 2,
+        "em_pct": 2.55,
+        "em_days": 1,
         "rs_composite": 78.0
       }
     ],
@@ -641,7 +641,7 @@
           "above_200": 4,
           "total": 7
         },
-        "em_pct": 3.66,
+        "em_pct": 2.46,
         "em_days": null,
         "rs_composite": 27.0
       },
@@ -669,7 +669,7 @@
           "above_200": 2,
           "total": 7
         },
-        "em_pct": 4.21,
+        "em_pct": 3.25,
         "em_days": null,
         "rs_composite": 27.0
       },
@@ -697,7 +697,7 @@
           "above_200": 0,
           "total": 7
         },
-        "em_pct": 4.31,
+        "em_pct": 4.04,
         "em_days": null,
         "rs_composite": 28.0
       },
@@ -717,7 +717,7 @@
         "rs_chart": "data/charts/Glance_The_New_Staples_7.png",
         "long": [],
         "short": [],
-        "abc": "A",
+        "abc": "B",
         "stage": 3,
         "breadth": {
           "above_20": 7,
@@ -725,7 +725,7 @@
           "above_200": 3,
           "total": 7
         },
-        "em_pct": 4.06,
+        "em_pct": 3.22,
         "em_days": null,
         "rs_composite": 28.0
       },
@@ -753,7 +753,7 @@
           "above_200": 4,
           "total": 7
         },
-        "em_pct": 2.31,
+        "em_pct": 2.27,
         "em_days": null,
         "rs_composite": 28.0
       },
@@ -781,7 +781,7 @@
           "above_200": 1,
           "total": 7
         },
-        "em_pct": 2.42,
+        "em_pct": 2.27,
         "em_days": null,
         "rs_composite": 29.0
       },
@@ -809,7 +809,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 3.54,
+        "em_pct": 2.74,
         "em_days": null,
         "rs_composite": 29.0
       },
@@ -837,7 +837,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 2.44,
+        "em_pct": 2.32,
         "em_days": null,
         "rs_composite": 29.0
       },
@@ -865,7 +865,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 2.89,
+        "em_pct": 2.4,
         "em_days": null,
         "rs_composite": 30.0
       },
@@ -893,7 +893,7 @@
           "above_200": 6,
           "total": 7
         },
-        "em_pct": 4.23,
+        "em_pct": 3.67,
         "em_days": null,
         "rs_composite": 30.0
       },
@@ -921,7 +921,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 5.93,
+        "em_pct": 5.32,
         "em_days": null,
         "rs_composite": 30.0
       },
@@ -949,7 +949,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 3.89,
+        "em_pct": 3.59,
         "em_days": null,
         "rs_composite": 31.0
       },
@@ -977,7 +977,7 @@
           "above_200": 3,
           "total": 7
         },
-        "em_pct": 2.59,
+        "em_pct": 2.55,
         "em_days": null,
         "rs_composite": 31.0
       },
@@ -1005,7 +1005,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 3.77,
+        "em_pct": 3.62,
         "em_days": null,
         "rs_composite": 31.0
       },
@@ -1025,7 +1025,7 @@
         "rs_chart": "data/charts/Glance_The_New_Metals_7.png",
         "long": [],
         "short": [],
-        "abc": "A",
+        "abc": "B",
         "stage": 2,
         "breadth": {
           "above_20": 7,
@@ -1033,7 +1033,7 @@
           "above_200": 6,
           "total": 7
         },
-        "em_pct": 4.55,
+        "em_pct": 4.41,
         "em_days": null,
         "rs_composite": 32.0
       },
@@ -1061,7 +1061,7 @@
           "above_200": 5,
           "total": 7
         },
-        "em_pct": 3.51,
+        "em_pct": 2.58,
         "em_days": null,
         "rs_composite": 32.0
       },
@@ -1089,7 +1089,7 @@
           "above_200": 6,
           "total": 7
         },
-        "em_pct": 2.38,
+        "em_pct": 2.17,
         "em_days": null,
         "rs_composite": 32.0
       },
@@ -1117,7 +1117,7 @@
           "above_200": 1,
           "total": 7
         },
-        "em_pct": 2.91,
+        "em_pct": 2.58,
         "em_days": null,
         "rs_composite": 33.0
       },
@@ -1145,7 +1145,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 2.7,
+        "em_pct": 2.62,
         "em_days": null,
         "rs_composite": 33.0
       },
@@ -1173,7 +1173,7 @@
           "above_200": 2,
           "total": 6
         },
-        "em_pct": 2.45,
+        "em_pct": 2.36,
         "em_days": null,
         "rs_composite": 33.0
       },
@@ -1201,7 +1201,7 @@
           "above_200": 5,
           "total": 7
         },
-        "em_pct": 2.65,
+        "em_pct": 2.46,
         "em_days": null,
         "rs_composite": 34.0
       }
@@ -1265,8 +1265,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.19,
-        "em_days": 2,
+        "em_pct": 1.76,
+        "em_days": 3,
         "rs_composite": 45.0
       },
       {
@@ -1325,8 +1325,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.03,
-        "em_days": 2,
+        "em_pct": 3.02,
+        "em_days": 3,
         "rs_composite": 64.0
       },
       {
@@ -1395,8 +1395,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.85,
-        "em_days": 2,
+        "em_pct": 4.12,
+        "em_days": 3,
         "rs_composite": 39.0
       },
       {
@@ -1472,8 +1472,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 1.57,
-        "em_days": 2,
+        "em_pct": 1.51,
+        "em_days": 3,
         "rs_composite": 23.0
       },
       {
@@ -1506,9 +1506,9 @@
         "sr": {
           "support": [
             {
-              "price": 44.49,
-              "score": 40,
-              "dist_pct": -4.3
+              "price": 44.4,
+              "score": 45,
+              "dist_pct": -4.4
             },
             {
               "price": 43.15,
@@ -1534,7 +1534,7 @@
         "above_sma200": true,
         "sector": "Broad Market",
         "em_pct": 1.43,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 48.0
       },
       {
@@ -1610,8 +1610,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.66,
-        "em_days": 2,
+        "em_pct": 1.76,
+        "em_days": 3,
         "rs_composite": 22.0
       },
       {
@@ -1677,8 +1677,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.51,
-        "em_days": 2,
+        "em_pct": 1.5,
+        "em_days": 3,
         "rs_composite": 55.0
       },
       {
@@ -1749,8 +1749,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 3.75,
-        "em_days": 2,
+        "em_pct": 3.76,
+        "em_days": 3,
         "rs_composite": 40.0
       },
       {
@@ -1811,8 +1811,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.34,
-        "em_days": 2,
+        "em_pct": 3.35,
+        "em_days": 3,
         "rs_composite": 70.0
       },
       {
@@ -1888,8 +1888,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.65,
-        "em_days": 2,
+        "em_pct": 2.22,
+        "em_days": 3,
         "rs_composite": 83.0
       },
       {
@@ -1963,8 +1963,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 3.4,
-        "em_days": 2,
+        "em_pct": 1.13,
+        "em_days": 3,
         "rs_composite": 34.0
       }
     ],
@@ -2033,8 +2033,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 7.8,
+        "em_days": 3,
         "rs_composite": 63.0
       },
       {
@@ -2096,8 +2096,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 5.01,
+        "em_days": 3,
         "rs_composite": 63.0
       },
       {
@@ -2148,8 +2148,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 7.59,
-        "em_days": 2,
+        "em_pct": 7.53,
+        "em_days": 3,
         "rs_composite": 64.0
       },
       {
@@ -2279,8 +2279,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.51,
-        "em_days": 2,
+        "em_pct": 4.11,
+        "em_days": 3,
         "rs_composite": 56.0
       },
       {
@@ -2363,19 +2363,19 @@
         "sr": {
           "support": [
             {
-              "price": 216.84,
-              "score": 53,
-              "dist_pct": -0.3
+              "price": 215.49,
+              "score": 51,
+              "dist_pct": -0.9
             },
             {
-              "price": 211.98,
-              "score": 63,
-              "dist_pct": -2.6
+              "price": 208.83,
+              "score": 49,
+              "dist_pct": -4.0
             },
             {
-              "price": 206.83,
-              "score": 52,
-              "dist_pct": -4.9
+              "price": 201.92,
+              "score": 43,
+              "dist_pct": -7.2
             }
           ],
           "resistance": [
@@ -2394,8 +2394,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.67,
-        "em_days": 2,
+        "em_pct": 1.74,
+        "em_days": 3,
         "rs_composite": 44.0
       },
       {
@@ -2451,8 +2451,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.65,
-        "em_days": 2,
+        "em_pct": 3.04,
+        "em_days": 3,
         "rs_composite": 43.0
       },
       {
@@ -2514,8 +2514,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 5.87,
+        "em_days": 3,
         "rs_composite": 42.0
       }
     ],
@@ -2824,14 +2824,14 @@
               "dist_pct": -0.3
             },
             {
-              "price": 188.86,
-              "score": 69,
-              "dist_pct": -5.4
+              "price": 189.5,
+              "score": 64,
+              "dist_pct": -5.1
             },
             {
-              "price": 183.49,
-              "score": 55,
-              "dist_pct": -8.1
+              "price": 185.19,
+              "score": 80,
+              "dist_pct": -7.2
             }
           ],
           "resistance": [
@@ -2850,8 +2850,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.45,
-        "em_days": 2,
+        "em_pct": 1.29,
+        "em_days": 3,
         "rs_composite": 46.0
       },
       {
@@ -3239,8 +3239,8 @@
           ],
           "resistance": [
             {
-              "price": 29.87,
-              "score": 56,
+              "price": 29.88,
+              "score": 54,
               "dist_pct": 2.1
             },
             {
@@ -5067,9 +5067,9 @@
         "sr": {
           "support": [
             {
-              "price": 104.77,
-              "score": 50,
-              "dist_pct": -1.0
+              "price": 105.01,
+              "score": 48,
+              "dist_pct": -0.7
             },
             {
               "price": 102.03,
@@ -5084,9 +5084,9 @@
           ],
           "resistance": [
             {
-              "price": 107.28,
-              "score": 50,
-              "dist_pct": 1.4
+              "price": 107.46,
+              "score": 45,
+              "dist_pct": 1.6
             },
             {
               "price": 110.52,
@@ -5101,8 +5101,8 @@
           ],
           "near": {
             "type": "resistance",
-            "price": 107.28,
-            "dist_pct": 1.4
+            "price": 107.46,
+            "dist_pct": 1.6
           }
         },
         "above_sma20": true,
@@ -5634,9 +5634,9 @@
               "dist_pct": -1.6
             },
             {
-              "price": 59.4,
-              "score": 57,
-              "dist_pct": -6.2
+              "price": 59.46,
+              "score": 58,
+              "dist_pct": -6.1
             },
             {
               "price": 57.51,
@@ -6531,9 +6531,9 @@
               "dist_pct": -6.5
             },
             {
-              "price": 20.97,
-              "score": 142,
-              "dist_pct": -8.4
+              "price": 20.98,
+              "score": 141,
+              "dist_pct": -8.3
             },
             {
               "price": 20.39,
@@ -6822,8 +6822,8 @@
         "above_sma50": false,
         "above_sma200": true,
         "sector": "Commodities",
-        "em_pct": 2.57,
-        "em_days": 2,
+        "em_pct": 1.07,
+        "em_days": 1,
         "rs_composite": 58.0
       },
       {
@@ -6959,8 +6959,8 @@
         "above_sma50": true,
         "above_sma200": true,
         "sector": "Commodities",
-        "em_pct": 6.54,
-        "em_days": 2,
+        "em_pct": 2.55,
+        "em_days": 1,
         "rs_composite": 78.0
       },
       {
@@ -7870,9 +7870,9 @@
         "sr": {
           "support": [
             {
-              "price": 44.49,
-              "score": 40,
-              "dist_pct": -4.3
+              "price": 44.4,
+              "score": 45,
+              "dist_pct": -4.4
             },
             {
               "price": 43.15,
@@ -7898,7 +7898,7 @@
         "above_sma200": true,
         "sector": "Broad Market",
         "em_pct": 1.43,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 48.0
       },
       {
@@ -7965,8 +7965,8 @@
         "above_sma50": true,
         "above_sma200": true,
         "sector": "Broad Market",
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 0.82,
+        "em_days": 1,
         "rs_composite": 55.0
       },
       {
@@ -8360,9 +8360,9 @@
               "dist_pct": 9.4
             },
             {
-              "price": 18.39,
-              "score": 41,
-              "dist_pct": 11.9
+              "price": 18.4,
+              "score": 39,
+              "dist_pct": 12.0
             }
           ],
           "near": {
@@ -10187,8 +10187,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.96,
-        "em_days": 2,
+        "em_pct": 1.97,
+        "em_days": 3,
         "rs_composite": 41.0
       },
       {
@@ -10255,8 +10255,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.63,
-        "em_days": 2,
+        "em_pct": 2.25,
+        "em_days": 3,
         "rs_composite": 6.0
       },
       {
@@ -10323,8 +10323,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.83,
-        "em_days": 2,
+        "em_pct": 2.22,
+        "em_days": 3,
         "rs_composite": 78.0
       },
       {
@@ -10381,8 +10381,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.25,
-        "em_days": 2,
+        "em_pct": 2.5,
+        "em_days": 3,
         "rs_composite": 67.0
       },
       {
@@ -10454,8 +10454,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 4.39,
-        "em_days": 2,
+        "em_pct": 2.52,
+        "em_days": 3,
         "rs_composite": 36.0
       },
       {
@@ -10522,8 +10522,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.13,
-        "em_days": 2,
+        "em_pct": 2.6,
+        "em_days": 3,
         "rs_composite": 53.0
       },
       {
@@ -10590,8 +10590,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 4.43,
-        "em_days": 2,
+        "em_pct": 3.16,
+        "em_days": 3,
         "rs_composite": 7.0
       }
     ],
@@ -10660,8 +10660,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.63,
-        "em_days": 2,
+        "em_pct": 2.25,
+        "em_days": 3,
         "rs_composite": 6.0
       },
       {
@@ -10718,8 +10718,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.25,
-        "em_days": 2,
+        "em_pct": 2.5,
+        "em_days": 3,
         "rs_composite": 67.0
       },
       {
@@ -10786,8 +10786,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.83,
-        "em_days": 2,
+        "em_pct": 2.22,
+        "em_days": 3,
         "rs_composite": 78.0
       },
       {
@@ -10859,8 +10859,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 5.01,
-        "em_days": 2,
+        "em_pct": 4.65,
+        "em_days": 3,
         "rs_composite": 2.0
       },
       {
@@ -10932,8 +10932,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.09,
-        "em_days": 2,
+        "em_pct": 2.8,
+        "em_days": 3,
         "rs_composite": 8.0
       },
       {
@@ -11005,8 +11005,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 4.39,
-        "em_days": 2,
+        "em_pct": 2.52,
+        "em_days": 3,
         "rs_composite": 36.0
       },
       {
@@ -11078,8 +11078,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 6.24,
-        "em_days": 2,
+        "em_pct": 5.78,
+        "em_days": 3,
         "rs_composite": 9.0
       }
     ],
@@ -11148,8 +11148,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 4.15,
-        "em_days": 2,
+        "em_pct": 3.43,
+        "em_days": 3,
         "rs_composite": 2.0
       },
       {
@@ -11216,8 +11216,8 @@
         "above_sma20": false,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 3.63,
-        "em_days": 2,
+        "em_pct": 3.68,
+        "em_days": 3,
         "rs_composite": 7.0
       },
       {
@@ -11289,8 +11289,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 4.43,
-        "em_days": 2,
+        "em_pct": 3.96,
+        "em_days": 3,
         "rs_composite": 3.0
       },
       {
@@ -11352,8 +11352,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 4.28,
-        "em_days": 2,
+        "em_pct": 3.97,
+        "em_days": 3,
         "rs_composite": 1.0
       },
       {
@@ -11410,8 +11410,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.52,
-        "em_days": 2,
+        "em_pct": 3.57,
+        "em_days": 3,
         "rs_composite": 1.0
       },
       {
@@ -11468,8 +11468,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 4.83,
-        "em_days": 2,
+        "em_pct": 4.73,
+        "em_days": 3,
         "rs_composite": 0.0
       },
       {
@@ -11526,8 +11526,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 5.31,
-        "em_days": 2,
+        "em_pct": 4.92,
+        "em_days": 3,
         "rs_composite": 0.0
       }
     ],
@@ -11601,8 +11601,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.96,
-        "em_days": 2,
+        "em_pct": 1.97,
+        "em_days": 3,
         "rs_composite": 41.0
       },
       {
@@ -11659,8 +11659,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.25,
-        "em_days": 2,
+        "em_pct": 2.5,
+        "em_days": 3,
         "rs_composite": 67.0
       },
       {
@@ -11732,8 +11732,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 4.39,
-        "em_days": 2,
+        "em_pct": 2.52,
+        "em_days": 3,
         "rs_composite": 36.0
       },
       {
@@ -11800,8 +11800,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 7.3,
-        "em_days": 2,
+        "em_pct": 6.85,
+        "em_days": 3,
         "rs_composite": 48.0
       },
       {
@@ -11868,8 +11868,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.83,
-        "em_days": 2,
+        "em_pct": 2.22,
+        "em_days": 3,
         "rs_composite": 78.0
       },
       {
@@ -11941,8 +11941,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 3.59,
-        "em_days": 2,
+        "em_pct": 3.37,
+        "em_days": 3,
         "rs_composite": 10.0
       },
       {
@@ -12014,8 +12014,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.1,
-        "em_days": 2,
+        "em_pct": 3.09,
+        "em_days": 3,
         "rs_composite": 8.0
       }
     ],
@@ -12084,8 +12084,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 1.65,
-        "em_days": 2,
+        "em_pct": 1.64,
+        "em_days": 3,
         "rs_composite": 23.0
       },
       {
@@ -12152,8 +12152,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.62,
-        "em_days": 2,
+        "em_pct": 1.63,
+        "em_days": 3,
         "rs_composite": 59.0
       },
       {
@@ -12225,8 +12225,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 4.27,
-        "em_days": 2,
+        "em_pct": 4.28,
+        "em_days": 3,
         "rs_composite": 52.0
       },
       {
@@ -12298,8 +12298,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.46,
-        "em_days": 2,
+        "em_pct": 2.24,
+        "em_days": 3,
         "rs_composite": 19.0
       },
       {
@@ -12371,8 +12371,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.88,
-        "em_days": 2,
+        "em_pct": 1.87,
+        "em_days": 3,
         "rs_composite": 45.0
       },
       {
@@ -12444,8 +12444,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.25,
-        "em_days": 2,
+        "em_pct": 2.2,
+        "em_days": 3,
         "rs_composite": 41.0
       },
       {
@@ -12518,7 +12518,7 @@
         "above_sma50": false,
         "above_sma200": true,
         "em_pct": 2.04,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 68.0
       }
     ],
@@ -12582,8 +12582,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.04,
-        "em_days": 2,
+        "em_pct": 1.9,
+        "em_days": 3,
         "rs_composite": 13.0
       },
       {
@@ -12655,8 +12655,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.2,
-        "em_days": 2,
+        "em_pct": 2.03,
+        "em_days": 3,
         "rs_composite": 15.0
       },
       {
@@ -12723,8 +12723,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 3.22,
-        "em_days": 2,
+        "em_pct": 3.1,
+        "em_days": 3,
         "rs_composite": 6.0
       },
       {
@@ -12796,8 +12796,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.98,
-        "em_days": 2,
+        "em_pct": 1.93,
+        "em_days": 3,
         "rs_composite": 62.0
       },
       {
@@ -12869,8 +12869,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.56,
-        "em_days": 2,
+        "em_pct": 2.05,
+        "em_days": 3,
         "rs_composite": 37.0
       },
       {
@@ -12942,8 +12942,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.42,
-        "em_days": 2,
+        "em_pct": 2.36,
+        "em_days": 3,
         "rs_composite": 10.0
       },
       {
@@ -13015,8 +13015,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.51,
-        "em_days": 2,
+        "em_pct": 2.55,
+        "em_days": 3,
         "rs_composite": 19.0
       }
     ],
@@ -13090,8 +13090,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 3.03,
-        "em_days": 2,
+        "em_pct": 2.48,
+        "em_days": 3,
         "rs_composite": 84.0
       },
       {
@@ -13158,8 +13158,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 3.44,
-        "em_days": 2,
+        "em_pct": 2.25,
+        "em_days": 3,
         "rs_composite": 76.0
       },
       {
@@ -13226,8 +13226,8 @@
         "above_sma20": false,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.1,
-        "em_days": 2,
+        "em_pct": 2.69,
+        "em_days": 3,
         "rs_composite": 88.0
       },
       {
@@ -13299,8 +13299,8 @@
         "above_sma20": false,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.73,
-        "em_days": 2,
+        "em_pct": 2.83,
+        "em_days": 3,
         "rs_composite": 83.0
       },
       {
@@ -13367,8 +13367,8 @@
         "above_sma20": false,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.34,
-        "em_days": 2,
+        "em_pct": 3.03,
+        "em_days": 3,
         "rs_composite": 89.0
       },
       {
@@ -13435,8 +13435,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 4.14,
-        "em_days": 2,
+        "em_pct": 2.85,
+        "em_days": 3,
         "rs_composite": 91.0
       },
       {
@@ -13508,8 +13508,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.98,
-        "em_days": 2,
+        "em_pct": 3.04,
+        "em_days": 3,
         "rs_composite": 94.0
       }
     ],
@@ -13578,8 +13578,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.3,
-        "em_days": 2,
+        "em_pct": 2.19,
+        "em_days": 3,
         "rs_composite": 70.0
       },
       {
@@ -13651,8 +13651,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.17,
-        "em_days": 2,
+        "em_pct": 2.15,
+        "em_days": 3,
         "rs_composite": 71.0
       },
       {
@@ -13720,7 +13720,7 @@
         "above_sma50": false,
         "above_sma200": true,
         "em_pct": 2.27,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 49.0
       },
       {
@@ -13788,7 +13788,7 @@
         "above_sma50": false,
         "above_sma200": true,
         "em_pct": 1.85,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 20.0
       },
       {
@@ -13860,8 +13860,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.61,
-        "em_days": 2,
+        "em_pct": 2.52,
+        "em_days": 3,
         "rs_composite": 36.0
       },
       {
@@ -13933,8 +13933,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.44,
-        "em_days": 2,
+        "em_pct": 2.28,
+        "em_days": 3,
         "rs_composite": 66.0
       },
       {
@@ -14006,8 +14006,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 3.47,
-        "em_days": 2,
+        "em_pct": 3.01,
+        "em_days": 3,
         "rs_composite": 74.0
       }
     ],
@@ -14060,8 +14060,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.66,
-        "em_days": 2,
+        "em_pct": 2.65,
+        "em_days": 3,
         "rs_composite": 95.0
       },
       {
@@ -14133,8 +14133,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.28,
-        "em_days": 2,
+        "em_pct": 2.46,
+        "em_days": 3,
         "rs_composite": 89.0
       },
       {
@@ -14202,7 +14202,7 @@
         "above_sma50": false,
         "above_sma200": true,
         "em_pct": 1.93,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 73.0
       },
       {
@@ -14274,8 +14274,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.66,
-        "em_days": 2,
+        "em_pct": 2.44,
+        "em_days": 3,
         "rs_composite": 81.0
       },
       {
@@ -14342,8 +14342,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.72,
-        "em_days": 2,
+        "em_pct": 2.87,
+        "em_days": 3,
         "rs_composite": 56.0
       },
       {
@@ -14410,8 +14410,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.99,
-        "em_days": 2,
+        "em_pct": 2.46,
+        "em_days": 3,
         "rs_composite": 44.0
       },
       {
@@ -14473,8 +14473,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.01,
-        "em_days": 2,
+        "em_pct": 2.02,
+        "em_days": 3,
         "rs_composite": 78.0
       }
     ],
@@ -14543,8 +14543,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.13,
-        "em_days": 2,
+        "em_pct": 2.6,
+        "em_days": 3,
         "rs_composite": 53.0
       },
       {
@@ -14616,8 +14616,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.41,
-        "em_days": 2,
+        "em_pct": 3.4,
+        "em_days": 3,
         "rs_composite": 68.0
       },
       {
@@ -14679,8 +14679,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.92,
-        "em_days": 2,
+        "em_pct": 4.0,
+        "em_days": 3,
         "rs_composite": 90.0
       },
       {
@@ -14752,8 +14752,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.78,
-        "em_days": 2,
+        "em_pct": 2.62,
+        "em_days": 3,
         "rs_composite": 8.0
       },
       {
@@ -14810,8 +14810,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.86,
-        "em_days": 2,
+        "em_pct": 5.12,
+        "em_days": 3,
         "rs_composite": 98.0
       },
       {
@@ -14873,8 +14873,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.76,
-        "em_days": 2,
+        "em_pct": 2.62,
+        "em_days": 3,
         "rs_composite": 84.0
       },
       {
@@ -14925,8 +14925,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.77,
-        "em_days": 2,
+        "em_pct": 5.3,
+        "em_days": 3,
         "rs_composite": 99.0
       }
     ],
@@ -14990,8 +14990,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 6.39,
-        "em_days": 2,
+        "em_pct": 6.32,
+        "em_days": 3,
         "rs_composite": 92.0
       },
       {
@@ -15048,8 +15048,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.65,
-        "em_days": 2,
+        "em_pct": 4.8,
+        "em_days": 3,
         "rs_composite": 96.0
       },
       {
@@ -15100,8 +15100,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.68,
-        "em_days": 2,
+        "em_pct": 5.51,
+        "em_days": 3,
         "rs_composite": 98.0
       },
       {
@@ -15152,8 +15152,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.78,
-        "em_days": 2,
+        "em_pct": 4.59,
+        "em_days": 3,
         "rs_composite": 96.0
       },
       {
@@ -15210,8 +15210,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.05,
-        "em_days": 2,
+        "em_pct": 4.74,
+        "em_days": 3,
         "rs_composite": 81.0
       },
       {
@@ -15273,8 +15273,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 9.48,
-        "em_days": 2,
+        "em_pct": 5.8,
+        "em_days": 3,
         "rs_composite": 100.0
       },
       {
@@ -15332,7 +15332,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "em_pct": 5.49,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 100.0
       }
     ],
@@ -15401,8 +15401,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.36,
-        "em_days": 2,
+        "em_pct": 4.16,
+        "em_days": 3,
         "rs_composite": 77.0
       },
       {
@@ -15453,8 +15453,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.25,
-        "em_days": 2,
+        "em_pct": 4.76,
+        "em_days": 3,
         "rs_composite": 99.0
       },
       {
@@ -15516,8 +15516,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.82,
-        "em_days": 2,
+        "em_pct": 3.53,
+        "em_days": 3,
         "rs_composite": 69.0
       },
       {
@@ -15568,8 +15568,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.22,
-        "em_days": 2,
+        "em_pct": 3.28,
+        "em_days": 3,
         "rs_composite": 92.0
       },
       {
@@ -15636,8 +15636,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.83,
-        "em_days": 2,
+        "em_pct": 2.82,
+        "em_days": 3,
         "rs_composite": 84.0
       },
       {
@@ -15694,8 +15694,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.82,
-        "em_days": 2,
+        "em_pct": 3.79,
+        "em_days": 3,
         "rs_composite": 97.0
       },
       {
@@ -15757,8 +15757,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.91,
-        "em_days": 2,
+        "em_pct": 2.82,
+        "em_days": 3,
         "rs_composite": 76.0
       }
     ],
@@ -15832,8 +15832,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.23,
-        "em_days": 2,
+        "em_pct": 2.98,
+        "em_days": 3,
         "rs_composite": 18.0
       },
       {
@@ -15895,8 +15895,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 4.03,
-        "em_days": 2,
+        "em_pct": 3.97,
+        "em_days": 3,
         "rs_composite": 3.0
       },
       {
@@ -15969,7 +15969,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "em_pct": 2.06,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 37.0
       },
       {
@@ -16041,8 +16041,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.97,
-        "em_days": 2,
+        "em_pct": 2.01,
+        "em_days": 3,
         "rs_composite": 26.0
       },
       {
@@ -16115,7 +16115,7 @@
         "above_sma50": false,
         "above_sma200": false,
         "em_pct": 2.38,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 23.0
       },
       {
@@ -16187,8 +16187,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.24,
-        "em_days": 2,
+        "em_pct": 2.23,
+        "em_days": 3,
         "rs_composite": 14.0
       },
       {
@@ -16260,8 +16260,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.23,
-        "em_days": 2,
+        "em_pct": 2.22,
+        "em_days": 3,
         "rs_composite": 37.0
       }
     ],
@@ -16335,8 +16335,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.13,
-        "em_days": 2,
+        "em_pct": 3.79,
+        "em_days": 3,
         "rs_composite": 80.0
       },
       {
@@ -16403,8 +16403,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 4.36,
-        "em_days": 2,
+        "em_pct": 4.32,
+        "em_days": 3,
         "rs_composite": 91.0
       },
       {
@@ -16476,8 +16476,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.59,
-        "em_days": 2,
+        "em_pct": 3.3,
+        "em_days": 3,
         "rs_composite": 80.0
       },
       {
@@ -16544,8 +16544,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.64,
-        "em_days": 2,
+        "em_pct": 3.42,
+        "em_days": 3,
         "rs_composite": 85.0
       },
       {
@@ -16617,8 +16617,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.23,
-        "em_days": 2,
+        "em_pct": 3.27,
+        "em_days": 3,
         "rs_composite": 73.0
       },
       {
@@ -16690,8 +16690,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.39,
-        "em_days": 2,
+        "em_pct": 3.31,
+        "em_days": 3,
         "rs_composite": 82.0
       },
       {
@@ -16763,8 +16763,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.06,
-        "em_days": 2,
+        "em_pct": 3.95,
+        "em_days": 3,
         "rs_composite": 88.0
       }
     ],
@@ -16828,8 +16828,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.69,
-        "em_days": 2,
+        "em_pct": 3.68,
+        "em_days": 3,
         "rs_composite": 95.0
       },
       {
@@ -16896,8 +16896,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.36,
-        "em_days": 2,
+        "em_pct": 4.45,
+        "em_days": 3,
         "rs_composite": 91.0
       },
       {
@@ -16969,8 +16969,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.26,
-        "em_days": 2,
+        "em_pct": 4.27,
+        "em_days": 3,
         "rs_composite": 74.0
       },
       {
@@ -17032,8 +17032,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.99,
-        "em_days": 2,
+        "em_pct": 4.37,
+        "em_days": 3,
         "rs_composite": 97.0
       },
       {
@@ -17084,8 +17084,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.6,
-        "em_days": 2,
+        "em_pct": 4.55,
+        "em_days": 3,
         "rs_composite": 98.0
       },
       {
@@ -17152,8 +17152,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 5.0,
-        "em_days": 2,
+        "em_pct": 4.97,
+        "em_days": 3,
         "rs_composite": 4.0
       },
       {
@@ -17225,8 +17225,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.97,
-        "em_days": 2,
+        "em_pct": 4.6,
+        "em_days": 3,
         "rs_composite": 82.0
       }
     ],
@@ -17300,8 +17300,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.89,
-        "em_days": 2,
+        "em_pct": 1.93,
+        "em_days": 3,
         "rs_composite": 40.0
       },
       {
@@ -17373,8 +17373,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.24,
-        "em_days": 2,
+        "em_pct": 2.49,
+        "em_days": 3,
         "rs_composite": 61.0
       },
       {
@@ -17446,8 +17446,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.39,
-        "em_days": 2,
+        "em_pct": 3.36,
+        "em_days": 3,
         "rs_composite": 69.0
       },
       {
@@ -17520,7 +17520,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "em_pct": 3.15,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 54.0
       },
       {
@@ -17592,8 +17592,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 5.8,
-        "em_days": 2,
+        "em_pct": 2.38,
+        "em_days": 3,
         "rs_composite": 24.0
       },
       {
@@ -17665,8 +17665,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 3.49,
-        "em_days": 2,
+        "em_pct": 2.32,
+        "em_days": 3,
         "rs_composite": 26.0
       },
       {
@@ -17717,8 +17717,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.63,
-        "em_days": 2,
+        "em_pct": 2.41,
+        "em_days": 3,
         "rs_composite": 90.0
       }
     ],
@@ -17787,8 +17787,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.32,
-        "em_days": 2,
+        "em_pct": 2.22,
+        "em_days": 3,
         "rs_composite": 18.0
       },
       {
@@ -17855,8 +17855,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.76,
-        "em_days": 2,
+        "em_pct": 2.86,
+        "em_days": 3,
         "rs_composite": 19.0
       },
       {
@@ -17923,8 +17923,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.06,
-        "em_days": 2,
+        "em_pct": 2.17,
+        "em_days": 3,
         "rs_composite": 15.0
       },
       {
@@ -17991,8 +17991,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.12,
-        "em_days": 2,
+        "em_pct": 1.85,
+        "em_days": 3,
         "rs_composite": 77.0
       },
       {
@@ -18054,8 +18054,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.16,
-        "em_days": 2,
+        "em_pct": 1.92,
+        "em_days": 3,
         "rs_composite": 61.0
       },
       {
@@ -18123,7 +18123,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "em_pct": 2.0,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 86.0
       },
       {
@@ -18195,8 +18195,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.22,
-        "em_days": 2,
+        "em_pct": 2.2,
+        "em_days": 3,
         "rs_composite": 71.0
       }
     ],
@@ -18270,8 +18270,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.81,
-        "em_days": 2,
+        "em_pct": 2.42,
+        "em_days": 3,
         "rs_composite": 17.0
       },
       {
@@ -18338,8 +18338,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.16,
-        "em_days": 2,
+        "em_pct": 2.3,
+        "em_days": 3,
         "rs_composite": 20.0
       },
       {
@@ -18401,8 +18401,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 4.25,
-        "em_days": 2,
+        "em_pct": 4.23,
+        "em_days": 3,
         "rs_composite": 5.0
       },
       {
@@ -18470,7 +18470,7 @@
         "above_sma50": false,
         "above_sma200": false,
         "em_pct": 1.67,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 16.0
       },
       {
@@ -18532,8 +18532,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.22,
-        "em_days": 2,
+        "em_pct": 2.23,
+        "em_days": 3,
         "rs_composite": 18.0
       },
       {
@@ -18600,8 +18600,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.37,
-        "em_days": 2,
+        "em_pct": 2.9,
+        "em_days": 3,
         "rs_composite": 1.0
       },
       {
@@ -18673,8 +18673,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.92,
-        "em_days": 2,
+        "em_pct": 2.33,
+        "em_days": 3,
         "rs_composite": 14.0
       }
     ],
@@ -18749,7 +18749,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "em_pct": 1.8,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 65.0
       },
       {
@@ -18812,7 +18812,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "em_pct": 2.12,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 81.0
       },
       {
@@ -18874,8 +18874,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.59,
-        "em_days": 2,
+        "em_pct": 2.39,
+        "em_days": 3,
         "rs_composite": 93.0
       },
       {
@@ -18947,8 +18947,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.68,
-        "em_days": 2,
+        "em_pct": 2.39,
+        "em_days": 3,
         "rs_composite": 68.0
       },
       {
@@ -19016,7 +19016,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "em_pct": 2.76,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 94.0
       },
       {
@@ -19073,8 +19073,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.6,
-        "em_days": 2,
+        "em_pct": 5.57,
+        "em_days": 3,
         "rs_composite": 94.0
       },
       {
@@ -19136,8 +19136,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.35,
-        "em_days": 2,
+        "em_pct": 1.34,
+        "em_days": 3,
         "rs_composite": 46.0
       }
     ],
@@ -19201,8 +19201,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.81,
-        "em_days": 2,
+        "em_pct": 3.66,
+        "em_days": 3,
         "rs_composite": 11.0
       },
       {
@@ -19274,8 +19274,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.0,
-        "em_days": 2,
+        "em_pct": 2.01,
+        "em_days": 3,
         "rs_composite": 58.0
       },
       {
@@ -19337,8 +19337,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.9,
-        "em_days": 2,
+        "em_pct": 2.59,
+        "em_days": 3,
         "rs_composite": 14.0
       },
       {
@@ -19410,8 +19410,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 1.91,
-        "em_days": 2,
+        "em_pct": 2.01,
+        "em_days": 3,
         "rs_composite": 34.0
       },
       {
@@ -19478,8 +19478,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.43,
-        "em_days": 2,
+        "em_pct": 2.4,
+        "em_days": 3,
         "rs_composite": 35.0
       },
       {
@@ -19541,8 +19541,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.66,
-        "em_days": 2,
+        "em_pct": 1.5,
+        "em_days": 3,
         "rs_composite": 42.0
       }
     ],
@@ -19611,8 +19611,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.08,
-        "em_days": 2,
+        "em_pct": 1.9,
+        "em_days": 3,
         "rs_composite": 58.0
       },
       {
@@ -19669,8 +19669,8 @@
         "above_sma20": false,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.49,
-        "em_days": 2,
+        "em_pct": 1.48,
+        "em_days": 3,
         "rs_composite": 44.0
       },
       {
@@ -19728,7 +19728,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "em_pct": 1.33,
-        "em_days": 2,
+        "em_days": 3,
         "rs_composite": 51.0
       },
       {
@@ -19800,8 +19800,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 4.27,
-        "em_days": 2,
+        "em_pct": 3.93,
+        "em_days": 3,
         "rs_composite": 9.0
       },
       {
@@ -19873,8 +19873,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 5.09,
-        "em_days": 2,
+        "em_pct": 4.31,
+        "em_days": 3,
         "rs_composite": 11.0
       },
       {
@@ -19936,8 +19936,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.69,
-        "em_days": 2,
+        "em_pct": 1.68,
+        "em_days": 3,
         "rs_composite": 74.0
       },
       {
@@ -20004,8 +20004,8 @@
         "above_sma20": false,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.58,
-        "em_days": 2,
+        "em_pct": 2.6,
+        "em_days": 3,
         "rs_composite": 54.0
       }
     ]
@@ -20559,15 +20559,15 @@
         "000660.KS",
         "005930.KS"
       ],
-      "daily": 4.29,
-      "intra": 1.57,
-      "wtd": 8.52,
-      "5d": 16.9,
-      "20d": 19.03,
-      "ytd": 101.69,
-      "vol_ratio": 0.73,
+      "daily": 4.3,
+      "intra": 1.58,
+      "wtd": 8.54,
+      "5d": 16.91,
+      "20d": 19.04,
+      "ytd": 101.71,
+      "vol_ratio": 0.75,
       "atr_pct": 5.7,
-      "dist_sma50_atr": 4.35,
+      "dist_sma50_atr": 4.36,
       "rs": 7.5,
       "vol_chart": "data/charts/vol_Theme_Memory.png",
       "constituent_daily": {
@@ -20575,8 +20575,8 @@
         "WDC": 4.59,
         "SNDK": -0.84,
         "STX": 3.93,
-        "000660.KS": 4.99,
-        "005930.KS": 3.87
+        "000660.KS": 5.17,
+        "005930.KS": 3.75
       }
     },
     {
@@ -22603,36 +22603,36 @@
           "role": "St. Louis Fed President",
           "voter": true,
           "date": "2026-04-01",
-          "summary": "Supported holding the policy rate at 3.5%-3.75%, views it as appropriately balanced for the dual mandate amid risks of persistent above-target inflation due to geopolitical developments and tariffs.",
+          "summary": "Supported holding the policy rate at 3.5%-3.75%, stating it balances dual mandate risks and will likely remain appropriate amid risks of persistent above-target inflation from geopolitical developments.",
           "score": 1
         },
         {
-          "name": "Michael S. Barr",
-          "role": "Fed Governor",
+          "name": "Lorie Logan",
+          "role": "Dallas Fed President",
           "voter": true,
-          "date": "2026-03-26",
-          "summary": "Supported FOMC's decision to maintain current policy setting, emphasizing vigilance against inflation persistence from economic shocks and heightened uncertainty.",
-          "score": 1
-        },
-        {
-          "name": "Jerome H. Powell",
-          "role": "Fed Chair",
-          "voter": true,
-          "date": "2026-03-18",
-          "summary": "Announced FOMC decision to hold federal funds rate at 3.5%-3.75%, with SEP median forecast for one rate cut in 2026, reaffirming commitment to dual mandate amid ongoing risks.",
+          "date": "2026-04-02",
+          "summary": "Discussed the banking system and demand for reserves at the Eleventh District Banking Conference, with related comments on options for reducing the Fed’s balance sheet.",
           "score": 0
         },
         {
           "name": "Susan M. Collins",
-          "role": "Boston Fed President",
+          "role": "Boston Fed President & CEO",
           "voter": true,
           "date": "2026-03-06",
-          "summary": "Delivered observations on the economic outlook and small businesses in Springfield, Massachusetts.",
+          "summary": "Provided observations on the economic outlook and small businesses at Outlook 2026 hosted by the Springfield Regional Chamber of Commerce.",
           "score": 0
+        },
+        {
+          "name": "Michael S. Barr",
+          "role": "Fed Governor",
+          "voter": false,
+          "date": "2026-03-26",
+          "summary": "Supported the FOMC's decision to maintain current monetary policy, emphasizing vigilance against inflation persistence due to recent shocks complicating the return to 2% inflation.",
+          "score": 1
         }
       ],
-      "hawk_dove_score": 5,
-      "market_implied_cuts": 1
+      "hawk_dove_score": 15,
+      "market_implied_cuts": 75
     }
   },
   "vol_signals": {
@@ -27379,35 +27379,35 @@
     }
   },
   "industries_sector_charts": {
-    "Materials": "data/charts/vol_IndSec_Materials.png",
-    "Energy": "data/charts/vol_IndSec_Energy.png",
-    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
-    "Commodities": "data/charts/vol_IndSec_Commodities.png",
-    "Industrials": "data/charts/vol_IndSec_Industrials.png",
     "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
-    "Utilities": "data/charts/vol_IndSec_Utilities.png",
-    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
-    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
-    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
+    "Industrials": "data/charts/vol_IndSec_Industrials.png",
     "Financials": "data/charts/vol_IndSec_Financials.png",
+    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
+    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
+    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
+    "Materials": "data/charts/vol_IndSec_Materials.png",
+    "Utilities": "data/charts/vol_IndSec_Utilities.png",
     "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
+    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
     "Health Care": "data/charts/vol_IndSec_Health_Care.png",
-    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png"
+    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
+    "Energy": "data/charts/vol_IndSec_Energy.png",
+    "Commodities": "data/charts/vol_IndSec_Commodities.png"
   },
   "industries_sector_rs_charts": {
-    "Materials": "data/charts/IndSecRS_Materials.png",
-    "Energy": "data/charts/IndSecRS_Energy.png",
-    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
-    "Commodities": "data/charts/IndSecRS_Commodities.png",
-    "Industrials": "data/charts/IndSecRS_Industrials.png",
     "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
-    "Utilities": "data/charts/IndSecRS_Utilities.png",
-    "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
-    "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
-    "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
+    "Industrials": "data/charts/IndSecRS_Industrials.png",
     "Financials": "data/charts/IndSecRS_Financials.png",
+    "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
+    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
+    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
+    "Materials": "data/charts/IndSecRS_Materials.png",
+    "Utilities": "data/charts/IndSecRS_Utilities.png",
     "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
+    "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
     "Health Care": "data/charts/IndSecRS_Health_Care.png",
-    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png"
+    "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
+    "Energy": "data/charts/IndSecRS_Energy.png",
+    "Commodities": "data/charts/IndSecRS_Commodities.png"
   }
 }
