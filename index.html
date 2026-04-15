@@ -2686,7 +2686,7 @@
                     title: 'MaxPain $' + optsData.max_pain.strike });
             }
             if (optsData.gex && optsData.gex.gamma_flip != null) {
-                candles.createPriceLine({ price: optsData.gex.gamma_flip, color: '#06b6d4', lineWidth: 1,
+                candles.createPriceLine({ price: optsData.gex.gamma_flip, color: '#f43f5e', lineWidth: 1,
                     lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: true,
                     title: 'GEX Flip' });
             }
@@ -2893,7 +2893,7 @@
         if (d.gex && d.gex.gamma_flip != null) {
             var flipC = d.gex.gamma_flip_dist_pct >= 0 ? '#10b981' : '#ef4444';
             h += '<span style="color:#0d2035">\u2502</span>';
-            h += '<span style="color:#06b6d4">Flip <b>$' + d.gex.gamma_flip.toFixed(0) + '</b> <span style="color:' + flipC + '">(' + (d.gex.gamma_flip_dist_pct >= 0 ? '+' : '') + d.gex.gamma_flip_dist_pct.toFixed(1) + '%)</span></span>';
+            h += '<span style="color:#f43f5e">Flip <b>$' + d.gex.gamma_flip.toFixed(0) + '</b> <span style="color:' + flipC + '">(' + (d.gex.gamma_flip_dist_pct >= 0 ? '+' : '') + d.gex.gamma_flip_dist_pct.toFixed(1) + '%)</span></span>';
         }
 
         h += '</div>';
