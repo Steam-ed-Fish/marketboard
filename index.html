@@ -307,6 +307,7 @@
                 <button type="button" class="events-tab" id="macro-tab-fred" onclick="switchMacroTab('fred')">📊 Data</button>
                 <button type="button" class="events-tab" id="macro-tab-corr" onclick="switchMacroTab('corr')">🔗 Corr</button>
                 <button type="button" class="events-tab" id="macro-tab-factor" onclick="switchMacroTab('factor')">⚡ Factor</button>
+                <button type="button" class="events-tab" id="macro-tab-opts" onclick="switchMacroTab('opts')">📈 Options</button>
             </div>
             <div id="macro-tab-content-liq" style="overflow-y:auto;max-height:560px">
                 <div id="usd-liquidity-content"></div>
@@ -322,6 +323,9 @@
             </div>
             <div id="macro-tab-content-factor" style="display:none;overflow-y:auto;max-height:560px">
                 <div id="factor-regime-content"></div>
+            </div>
+            <div id="macro-tab-content-opts" style="display:none;overflow-y:auto;max-height:560px">
+                <div id="options-intel-content"></div>
             </div>
         </div>
         <div style="margin-bottom:0">
@@ -573,7 +577,7 @@
         }
     };
     window.switchMacroTab = function(tab) {
-        ['liq','fed','fred','corr','factor'].forEach(function(t) {
+        ['liq','fed','fred','corr','factor','opts'].forEach(function(t) {
             document.getElementById('macro-tab-content-'+t).style.display = tab === t ? '' : 'none';
             document.getElementById('macro-tab-'+t).classList.toggle('active', tab === t);
         });
@@ -582,6 +586,7 @@
         if (tab === 'fred')   renderMacroFred();
         if (tab === 'corr')   renderCorrelation();
         if (tab === 'factor') renderFactorRegime();
+        if (tab === 'opts')   renderOptionsIntel();
     };
 
     window.toggleFGSection = function() {
@@ -2369,6 +2374,131 @@
             html += '</div>';
         });
         html += '</div>';
+        el.innerHTML = html;
+    }
+
+    // ── Options Intelligence ────────────────────────────────────────────────
+    function renderOptionsIntel() {
+        var el = document.getElementById('options-intel-content');
+        if (!el) return;
+        var oi = snapshot && snapshot.options_intel;
+        if (!oi || Object.keys(oi).length === 0) {
+            el.innerHTML = '<div style="padding:16px;color:#4b5563">No options intelligence data available.</div>';
+            return;
+        }
+
+        var tickers = ['SPY', 'QQQ', 'IWM', 'DIA'];
+        var html = '<div style="padding:6px 8px">';
+
+        // Guide header
+        html += '<div style="padding:4px 8px;color:#6b7a8d;font-size:0.62rem;border-bottom:1px solid #0a1e35;margin-bottom:8px">';
+        html += 'Options-derived positioning for index ETFs. PCR >1 = bearish, GEX >0 = dealers pin price, Skew >0 = put hedging demand.';
+        html += '</div>';
+
+        // 2x2 grid
+        html += '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">';
+
+        tickers.forEach(function(sym) {
+            var d = oi[sym];
+            if (!d) return;
+            html += '<div style="background:#060d1c;border:1px solid #0a1e35;border-radius:6px;padding:10px">';
+
+            // Header: ticker + spot + expiry
+            html += '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">';
+            html += '<span style="color:#c8d8e8;font-weight:700;font-size:0.85rem">' + sym + ' <span style="color:#94a3b8;font-weight:400">$' + d.spot.toFixed(2) + '</span></span>';
+            html += '<span style="color:#4b5563;font-size:0.6rem">' + d.expiry_used + ' (' + d.days_to_expiry + 'd)</span>';
+            html += '</div>';
+
+            // ATM IV
+            var ivColor = '#10b981';
+            if (d.atm_iv > 40) ivColor = '#ef4444';
+            else if (d.atm_iv > 30) ivColor = '#f97316';
+            else if (d.atm_iv > 20) ivColor = '#eab308';
+            var ivBarPct = Math.min(d.atm_iv / 60 * 100, 100);
+            html += '<div style="margin-bottom:6px">';
+            html += '<div style="display:flex;justify-content:space-between;font-size:0.7rem">';
+            html += '<span style="color:#6b7a8d">ATM IV</span>';
+            html += '<span style="color:' + ivColor + ';font-weight:600">' + (d.atm_iv != null ? d.atm_iv.toFixed(1) + '%' : '\u2014') + '</span>';
+            html += '</div>';
+            html += '<div style="height:4px;background:#0a1e35;border-radius:2px;margin-top:2px">';
+            html += '<div style="height:100%;width:' + ivBarPct + '%;background:' + ivColor + ';border-radius:2px"></div>';
+            html += '</div></div>';
+
+            // PCR
+            var pcr = d.pcr || {};
+            var pcrVal = pcr.oi != null ? pcr.oi : pcr.vol;
+            var pcrLabel = pcr.oi != null ? 'OI' : 'Vol';
+            var pcrColor = '#eab308';
+            var pcrTag = 'Neutral';
+            if (pcrVal != null) {
+                if (pcrVal > 1.2) { pcrColor = '#ef4444'; pcrTag = 'Bearish'; }
+                else if (pcrVal < 0.8) { pcrColor = '#10b981'; pcrTag = 'Bullish'; }
+            }
+            html += '<div style="margin-bottom:6px;font-size:0.7rem">';
+            html += '<div style="display:flex;justify-content:space-between">';
+            html += '<span style="color:#6b7a8d">PCR (' + pcrLabel + ')</span>';
+            html += '<span style="color:' + pcrColor + ';font-weight:600">' + (pcrVal != null ? pcrVal.toFixed(2) : '\u2014') + '</span>';
+            html += '</div>';
+            if (pcr.vol != null && pcr.oi != null) {
+                html += '<div style="color:#4b5563;font-size:0.6rem">Vol: ' + pcr.vol.toFixed(2) + '</div>';
+            }
+            html += '<div style="color:' + pcrColor + ';font-size:0.6rem;font-style:italic">' + pcrTag + ' positioning</div>';
+            html += '</div>';
+
+            // Max Pain
+            var mp = d.max_pain;
+            if (mp) {
+                var mpDistColor = mp.dist_pct >= 0 ? '#10b981' : '#ef4444';
+                html += '<div style="margin-bottom:6px;font-size:0.7rem">';
+                html += '<div style="display:flex;justify-content:space-between">';
+                html += '<span style="color:#6b7a8d">Max Pain</span>';
+                html += '<span style="color:#c8d8e8;font-weight:600">$' + mp.strike.toFixed(0) + ' <span style="color:' + mpDistColor + ';font-size:0.6rem">(' + (mp.dist_pct >= 0 ? '+' : '') + mp.dist_pct.toFixed(1) + '%)</span></span>';
+                html += '</div>';
+                if (mp.source === 'volume') {
+                    html += '<div style="color:#4b5563;font-size:0.55rem">based on volume (OI not yet available)</div>';
+                }
+                html += '</div>';
+            }
+
+            // GEX
+            var gex = d.gex;
+            if (gex) {
+                var gexColor = gex.net_gex >= 0 ? '#10b981' : '#ef4444';
+                var gexTag = gex.net_gex >= 0 ? 'Pin mode' : 'Volatile';
+                html += '<div style="margin-bottom:6px;font-size:0.7rem">';
+                html += '<div style="display:flex;justify-content:space-between">';
+                html += '<span style="color:#6b7a8d">Net GEX</span>';
+                html += '<span style="color:' + gexColor + ';font-weight:600">' + (gex.net_gex >= 0 ? '+' : '') + gex.net_gex.toFixed(2) + '</span>';
+                html += '</div>';
+                html += '<div style="color:' + gexColor + ';font-size:0.6rem;font-style:italic">' + gexTag + '</div>';
+                if (gex.gamma_flip != null) {
+                    var flipColor = gex.gamma_flip_dist_pct >= 0 ? '#10b981' : '#ef4444';
+                    html += '<div style="color:#4b5563;font-size:0.6rem">Flip: $' + gex.gamma_flip.toFixed(0) + ' <span style="color:' + flipColor + '">(' + (gex.gamma_flip_dist_pct >= 0 ? '+' : '') + gex.gamma_flip_dist_pct.toFixed(1) + '%)</span></div>';
+                }
+                html += '</div>';
+            }
+
+            // IV Skew
+            var sk = d.iv_skew;
+            if (sk) {
+                var skColor = '#10b981';
+                var skTag = 'Normal';
+                if (sk.skew > 6) { skColor = '#ef4444'; skTag = 'Fear premium'; }
+                else if (sk.skew > 3) { skColor = '#eab308'; skTag = 'Elevated hedging'; }
+                html += '<div style="font-size:0.7rem">';
+                html += '<div style="display:flex;justify-content:space-between">';
+                html += '<span style="color:#6b7a8d">IV Skew</span>';
+                html += '<span style="color:' + skColor + ';font-weight:600">' + (sk.skew >= 0 ? '+' : '') + sk.skew.toFixed(1) + '</span>';
+                html += '</div>';
+                html += '<div style="color:#4b5563;font-size:0.6rem">Put ' + sk.put_iv.toFixed(1) + '% / Call ' + sk.call_iv.toFixed(1) + '%</div>';
+                html += '<div style="color:' + skColor + ';font-size:0.6rem;font-style:italic">' + skTag + '</div>';
+                html += '</div>';
+            }
+
+            html += '</div>'; // end card
+        });
+
+        html += '</div></div>';
         el.innerHTML = html;
     }
 

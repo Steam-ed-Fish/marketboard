@@ -286,6 +286,330 @@ def get_expected_move(ticker_sym, weekly=False):
         return None, None
 
 
+# ── Options Intelligence helpers ─────────────────────────────────────────────
+OPTIONS_INTEL_TICKERS = ["SPY", "QQQ", "IWM", "DIA"]
+
+
+def _find_atm_strike(calls, puts, spot):
+    """Find ATM strike from intersection of call/put strike grids."""
+    common = np.intersect1d(calls['strike'].values, puts['strike'].values)
+    if len(common) == 0:
+        return None
+    return common[np.argmin(np.abs(common - spot))]
+
+
+def _bs_call_price(S, K, T, r, sigma):
+    """Black-Scholes call price."""
+    from scipy.stats import norm
+    d1 = (math.log(S / K) + (r + sigma ** 2 / 2) * T) / (sigma * math.sqrt(T))
+    d2 = d1 - sigma * math.sqrt(T)
+    return S * norm.cdf(d1) - K * math.exp(-r * T) * norm.cdf(d2)
+
+
+def _bs_put_price(S, K, T, r, sigma):
+    """Black-Scholes put price."""
+    from scipy.stats import norm
+    d1 = (math.log(S / K) + (r + sigma ** 2 / 2) * T) / (sigma * math.sqrt(T))
+    d2 = d1 - sigma * math.sqrt(T)
+    return K * math.exp(-r * T) * norm.cdf(-d2) - S * norm.cdf(-d1)
+
+
+def _implied_vol(price, S, K, T, r, is_call=True):
+    """Solve for IV from option price using bisection. Returns decimal (e.g. 0.18)."""
+    if price <= 0 or T <= 0 or S <= 0 or K <= 0:
+        return None
+    bs_fn = _bs_call_price if is_call else _bs_put_price
+    lo, hi = 0.01, 5.0
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        try:
+            model_price = bs_fn(S, K, T, r, mid)
+        except (ValueError, ZeroDivisionError):
+            return None
+        if model_price > price:
+            hi = mid
+        else:
+            lo = mid
+        if hi - lo < 0.0001:
+            break
+    result = (lo + hi) / 2
+    return result if 0.01 < result < 4.99 else None
+
+
+def _compute_atm_iv(calls, puts, spot, days_to_expiry):
+    """Return ATM implied volatility as a percentage (e.g. 14.2).
+    Tries yfinance IV first; falls back to computing from lastPrice.
+    """
+    atm = _find_atm_strike(calls, puts, spot)
+    if atm is None:
+        return None
+    cr = calls[calls['strike'] == atm]
+    pr = puts[puts['strike'] == atm]
+
+    T = max(days_to_expiry, 1) / 365.0
+    r = 0.05
+
+    # Prefer computing from lastPrice (more reliable after hours)
+    for row, is_call in [(cr, True), (pr, False)]:
+        if not row.empty:
+            lp = row['lastPrice'].values[0]
+            if lp and lp > 0:
+                iv = _implied_vol(lp, spot, atm, T, r, is_call)
+                if iv and iv > 0.02:
+                    return round(iv * 100, 1)
+
+    # Fall back to yfinance IV (only if clearly real, not placeholder)
+    for row in [cr, pr]:
+        if not row.empty:
+            iv = row['impliedVolatility'].values[0]
+            if iv and iv > 0.05:
+                return round(iv * 100, 1)
+    return None
+
+
+def _compute_pcr(calls, puts):
+    """Compute put-call ratios by OI and volume."""
+    call_oi = calls['openInterest'].fillna(0).sum()
+    put_oi = puts['openInterest'].fillna(0).sum()
+    call_vol = calls['volume'].fillna(0).sum()
+    put_vol = puts['volume'].fillna(0).sum()
+    return {
+        "oi": round(put_oi / call_oi, 2) if call_oi > 0 else None,
+        "vol": round(put_vol / call_vol, 2) if call_vol > 0 else None,
+        "call_oi": int(call_oi), "put_oi": int(put_oi),
+        "call_vol": int(call_vol), "put_vol": int(put_vol),
+    }
+
+
+def _compute_max_pain(calls, puts, spot):
+    """Find max pain strike (minimizes total option payout).
+    Uses OI if available; falls back to volume as a proxy.
+    """
+    # Decide which weight column to use
+    call_oi_sum = calls['openInterest'].fillna(0).sum()
+    put_oi_sum = puts['openInterest'].fillna(0).sum()
+    weight_col = 'openInterest' if (call_oi_sum + put_oi_sum) > 0 else 'volume'
+
+    call_data = calls[['strike', weight_col]].copy()
+    put_data = puts[['strike', weight_col]].copy()
+    call_data[weight_col] = call_data[weight_col].fillna(0)
+    put_data[weight_col] = put_data[weight_col].fillna(0)
+
+    # Filter to strikes within 10% of spot (avoid junk far-OTM)
+    lo, hi = spot * 0.90, spot * 1.10
+    call_data = call_data[(call_data['strike'] >= lo) & (call_data['strike'] <= hi)]
+    put_data = put_data[(put_data['strike'] >= lo) & (put_data['strike'] <= hi)]
+
+    all_strikes = sorted(set(call_data['strike'].values) | set(put_data['strike'].values))
+    if not all_strikes:
+        return None
+
+    call_w = dict(zip(call_data['strike'], call_data[weight_col]))
+    put_w = dict(zip(put_data['strike'], put_data[weight_col]))
+
+    min_pain = float('inf')
+    mp_strike = all_strikes[0]
+    for K in all_strikes:
+        total = 0
+        for s, w in call_w.items():
+            if K > s:
+                total += w * (K - s) * 100
+        for s, w in put_w.items():
+            if K < s:
+                total += w * (s - K) * 100
+        if total < min_pain:
+            min_pain = total
+            mp_strike = K
+    return {
+        "strike": mp_strike,
+        "dist_pct": round((mp_strike - spot) / spot * 100, 2),
+        "source": "OI" if weight_col == 'openInterest' else "volume",
+    }
+
+
+def _compute_gex(calls, puts, spot, days_to_expiry):
+    """Estimate dealer Gamma Exposure per strike using Black-Scholes gamma.
+    Uses OI for weighting; falls back to volume if OI is all zeros.
+    Computes IV from lastPrice if yfinance IV is stale.
+    """
+    T = max(days_to_expiry, 1) / 365.0
+    r = 0.05
+    sqrt_T = math.sqrt(T)
+    two_pi_sqrt = math.sqrt(2 * math.pi)
+
+    # Decide weight column
+    total_oi = calls['openInterest'].fillna(0).sum() + puts['openInterest'].fillna(0).sum()
+    weight_col = 'openInterest' if total_oi > 0 else 'volume'
+
+    gex_by_strike = {}
+    for side, df, sign in [('call', calls, 1), ('put', puts, -1)]:
+        is_call = (side == 'call')
+        for _, row in df.iterrows():
+            K = row['strike']
+            w = row.get(weight_col) or 0
+            if w <= 0 or K <= 0:
+                continue
+            # Filter to ±15% of spot
+            if K < spot * 0.85 or K > spot * 1.15:
+                continue
+            # Compute IV from lastPrice (more reliable after hours)
+            iv = 0
+            lp = row.get('lastPrice') or 0
+            if lp > 0:
+                iv = _implied_vol(lp, spot, K, T, r, is_call) or 0
+            if iv < 0.02:
+                iv = row.get('impliedVolatility') or 0
+            if iv < 0.01:
+                continue
+            try:
+                d1 = (math.log(spot / K) + (r + iv * iv / 2) * T) / (iv * sqrt_T)
+                gamma = math.exp(-d1 * d1 / 2) / (two_pi_sqrt * spot * iv * sqrt_T)
+                gex_val = sign * gamma * w * 100 * spot / 1e7
+                gex_by_strike[K] = gex_by_strike.get(K, 0) + gex_val
+            except (ValueError, ZeroDivisionError):
+                continue
+
+    if not gex_by_strike:
+        return None
+
+    # Filter NaN values
+    gex_by_strike = {k: v for k, v in gex_by_strike.items() if not math.isnan(v)}
+    if not gex_by_strike:
+        return None
+
+    net_gex = round(sum(gex_by_strike.values()), 2)
+
+    # Max gamma strike
+    max_k = max(gex_by_strike, key=lambda k: abs(gex_by_strike[k]))
+
+    # Gamma flip: where cumulative GEX crosses zero (scan from low to high strike)
+    sorted_strikes = sorted(gex_by_strike.keys())
+    cum = 0
+    gamma_flip = None
+    for k in sorted_strikes:
+        prev_cum = cum
+        cum += gex_by_strike[k]
+        if prev_cum * cum < 0:  # sign changed
+            gamma_flip = k
+            break
+
+    return {
+        "net_gex": net_gex,
+        "max_gamma_strike": max_k,
+        "gamma_flip": gamma_flip,
+        "gamma_flip_dist_pct": round((gamma_flip - spot) / spot * 100, 2) if gamma_flip else None,
+    }
+
+
+def _compute_iv_skew(calls, puts, spot, days_to_expiry):
+    """Compare IV of 5% OTM puts vs 5% OTM calls.
+    Computes IV from lastPrice if yfinance IV is stale.
+    """
+    put_target = spot * 0.95
+    call_target = spot * 1.05
+    T = max(days_to_expiry, 1) / 365.0
+    r = 0.05
+
+    def get_iv_at_strike(df, target_strike, is_call):
+        if df.empty:
+            return None
+        idx = (df['strike'] - target_strike).abs().idxmin()
+        row = df.loc[idx]
+        # Always try computing from lastPrice first (more reliable after hours)
+        lp = row.get('lastPrice') or 0
+        K = row['strike']
+        if lp > 0 and K > 0:
+            computed = _implied_vol(lp, spot, K, T, r, is_call)
+            if computed and computed > 0.02:
+                return computed * 100
+        # Fall back to yfinance IV
+        iv = row.get('impliedVolatility') or 0
+        if iv > 0.05:
+            return iv * 100
+        return None
+
+    put_iv = get_iv_at_strike(puts, put_target, False)
+    call_iv = get_iv_at_strike(calls, call_target, True)
+    if put_iv is None or call_iv is None:
+        return None
+
+    return {
+        "skew": round(put_iv - call_iv, 1),
+        "put_iv": round(put_iv, 1),
+        "call_iv": round(call_iv, 1),
+    }
+
+
+def build_options_intel(tickers=None):
+    """Compute options intelligence metrics for index ETFs."""
+    if tickers is None:
+        tickers = OPTIONS_INTEL_TICKERS
+
+    from datetime import timezone as _tz, timedelta as _td
+    _et = _tz(_td(hours=-4))
+    today = datetime.now(_tz.utc).astimezone(_et).date()
+
+    result = {}
+    for sym in tickers:
+        try:
+            t = yf.Ticker(sym)
+            expirations = t.options
+            if not expirations:
+                print(f"  {sym}: no options expirations")
+                continue
+
+            exp_dates = [datetime.strptime(e, '%Y-%m-%d').date() for e in expirations]
+            future = [d for d in exp_dates if d > today]
+            if not future:
+                continue
+
+            # Prefer an expiry 3-14 days out for better OI/IV data
+            # Fall back to nearest if nothing in that range
+            preferred = [d for d in future if 3 <= (d - today).days <= 14]
+            nearest_date = preferred[0] if preferred else future[0]
+            nearest = nearest_date.strftime('%Y-%m-%d')
+            days = max((nearest_date - today).days, 1)
+
+            chain = t.option_chain(nearest)
+            calls, puts = chain.calls, chain.puts
+            if calls.empty or puts.empty:
+                continue
+
+            # Spot price from history (same fix as get_expected_move)
+            hist = t.history(period='5d')
+            spot = hist['Close'].iloc[-1] if not hist.empty else None
+            if not spot:
+                spot = t.fast_info.get('last_price') or t.fast_info.get('previousClose')
+            if not spot:
+                continue
+
+            atm_iv = _compute_atm_iv(calls, puts, spot, days)
+            pcr = _compute_pcr(calls, puts)
+            max_pain = _compute_max_pain(calls, puts, spot)
+            gex = _compute_gex(calls, puts, spot, days)
+            iv_skew = _compute_iv_skew(calls, puts, spot, days)
+
+            result[sym] = {
+                "spot": round(float(spot), 2),
+                "expiry_used": nearest,
+                "days_to_expiry": days,
+                "atm_iv": atm_iv,
+                "pcr": pcr,
+                "max_pain": max_pain,
+                "gex": gex,
+                "iv_skew": iv_skew,
+            }
+            iv_str = f"IV={atm_iv}%" if atm_iv else "IV=n/a"
+            pcr_str = f"PCR(OI)={pcr.get('oi','n/a')}" if pcr else "PCR=n/a"
+            mp_str = f"MaxPain=${max_pain['strike']}" if max_pain else "MaxPain=n/a"
+            print(f"  {sym}: {iv_str}, {pcr_str}, {mp_str}")
+        except Exception as e:
+            print(f"  {sym}: options intel failed: {e}")
+        time.sleep(0.3)
+
+    return result
+
+
 def calculate_rrs(stock_data, spy_data, atr_length=14, length_rolling=50, length_sma=20, atr_multiplier=1.0):
     try:
         merged = pd.merge(
@@ -2336,6 +2660,10 @@ def main():
                 "vol_ratio": _r.get("vol_ratio"),
             }
 
+    # ── Options Intelligence ─────────────────────────────────────────────────
+    print("Computing options intelligence...")
+    options_intel = build_options_intel(OPTIONS_INTEL_TICKERS)
+
     # ── Correlation Matrix ────────────────────────────────────────────────────
     CORR_TICKERS = ["SPY", "QQQ", "IWM", "TLT", "GLD", "USO", "UUP", "HYG", "VIXY"]
     print("Computing correlation matrix...")
@@ -2426,6 +2754,7 @@ def main():
         "cross_asset": cross_asset,
         "correlation": correlation,
         "factor_regime": factor_regime if factor_regime else None,
+        "options_intel": options_intel if options_intel else None,
         "industries_sector_charts": industries_sector_charts,
         "industries_sector_rs_charts": industries_sector_rs_charts,
     }
