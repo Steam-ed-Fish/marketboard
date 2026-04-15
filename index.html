@@ -812,7 +812,7 @@
             html += th('vol_ratio', 'Vol%', 'Today\'s volume vs 20-day average volume');
             html += '<th title="Volume trend: last 20 days vs 20-day average. Red bars = 2× avg or higher.">Vol Chart</th>';
             html += th('atr_pct', 'ATR%', '14-period Average True Range as % of price (daily volatility measure)');
-            html += th('em_pct', 'EM(t+1)', "Tomorrow's expected move (forward-looking).\nFormula: (nearest next-day ATM call mid + put mid) ÷ price.\nPriced at market close — tells you what the options market expects overnight.\nIndices group only; — for all others.");
+            html += th('em_pct', 'Fwd EM', "Forward expected move — options-implied.\nIndices: next trading day expiry (1d EM).\nAll others: nearest Friday expiry (week-end EM).\nFormula: ATM straddle mid ÷ price.\nThe Nd tag shows days to that expiry.");
             html += th('em_beat', 'Beat?', "Did today's actual daily move exceed yesterday's straddle expectation?\n✓ = stayed within expected range (ratio < 1).\n✗ = overshot — actual move was larger than expected.\nRatio: 1.4× means actual was 40% larger than the straddle priced in.");
             html += th('dist_sma50_atr', 'ATRx', 'Distance from SMA50 measured in 14-period ATR units.\nPositive = above SMA50, negative = below.');
             html += th('rs', 'RS', 'RS Composite — multi-timeframe relative strength percentile (0–100%)\n\nHow it works:\n1. Compute active return vs SPY for 1M, 3M, 6M, 12M\n2. Weighted blend: 1M (20%) + 3M (30%) + 6M (30%) + 12M (20%)\n3. Rank all tickers by weighted score → convert to percentile\n\nReading:\n>70% (green) = outperforming most tickers vs SPY\n<30% (red) = underperforming most tickers\n30–70% = middle of the pack');
@@ -1177,7 +1177,7 @@
         inner += '<div style="overflow-x:auto"><table class="ticker-table"><colgroup>';
         inner += '<col style="width:72px"><col style="width:56px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px">';
         inner += '</colgroup><thead><tr>';
-        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>EM(t+1)</th><th>Beat?</th><th>Gap</th>';
+        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Fwd EM</th><th>Beat?</th><th>Gap</th>';
         inner += '</tr></thead><tbody>';
         grpRows.forEach(function(r) {
             var dc = (r.daily||0)>0?'price-up':((r.daily||0)<0?'price-down':'');
