@@ -1,17 +1,17 @@
 {
-  "built_at": "2026-04-15T03:36:00.438224Z",
+  "built_at": "2026-04-15T08:12:14.852704Z",
   "groups": {
     "Indices": [
       {
         "ticker": "QQQ",
         "daily": 1.82,
-        "intra": 1.34,
+        "intra": 1.35,
         "5d": 6.8,
         "20d": 4.83,
         "wtd": 2.87,
         "ytd": 2.65,
         "stage": 2,
-        "vol_ratio": 0.78,
+        "vol_ratio": 0.8,
         "vol_chart": "data/charts/vol_QQQ.png",
         "atr_pct": 1.8,
         "dist_sma50_atr": 2.61,
@@ -54,7 +54,7 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 0.91,
+        "em_pct": 1.1,
         "em_days": 1,
         "rs_composite": 43.0
       },
@@ -67,7 +67,7 @@
         "wtd": 1.3,
         "ytd": 0.76,
         "stage": 2,
-        "vol_ratio": 0.6,
+        "vol_ratio": 0.63,
         "vol_chart": "data/charts/vol_DIA.png",
         "atr_pct": 1.4,
         "dist_sma50_atr": 0.95,
@@ -96,9 +96,9 @@
               "dist_pct": -4.1
             },
             {
-              "price": 442.41,
-              "score": 41,
-              "dist_pct": -8.9
+              "price": 440.14,
+              "score": 45,
+              "dist_pct": -9.3
             }
           ],
           "resistance": [
@@ -122,8 +122,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.12,
-        "em_days": 3,
+        "em_pct": 1.11,
+        "em_days": 2,
         "rs_composite": 42.0
       },
       {
@@ -135,7 +135,7 @@
         "wtd": 2.21,
         "ytd": 1.93,
         "stage": 2,
-        "vol_ratio": 0.66,
+        "vol_ratio": 0.69,
         "vol_chart": "data/charts/vol_SPY.png",
         "atr_pct": 1.4,
         "dist_sma50_atr": 2.28,
@@ -185,7 +185,7 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 0.53,
+        "em_pct": 0.78,
         "em_days": 1,
         "rs_composite": 43.0
       },
@@ -248,8 +248,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.29,
-        "em_days": 3,
+        "em_pct": 1.19,
+        "em_days": 2,
         "rs_composite": 46.0
       },
       {
@@ -261,7 +261,7 @@
         "wtd": 2.84,
         "ytd": 8.21,
         "stage": 2,
-        "vol_ratio": 0.52,
+        "vol_ratio": 0.54,
         "vol_chart": "data/charts/vol_IWM.png",
         "atr_pct": 2.0,
         "dist_sma50_atr": 2.39,
@@ -316,7 +316,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "sector": "Broad Market",
-        "em_pct": 0.82,
+        "em_pct": 1.17,
         "em_days": 1,
         "rs_composite": 55.0
       },
@@ -379,8 +379,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.11,
-        "em_days": 3,
+        "em_pct": 4.15,
+        "em_days": 2,
         "rs_composite": 56.0
       },
       {
@@ -442,8 +442,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.01,
-        "em_days": 3,
+        "em_pct": 5.02,
+        "em_days": 2,
         "rs_composite": 63.0
       },
       {
@@ -455,7 +455,7 @@
         "wtd": 1.82,
         "ytd": 11.75,
         "stage": 2,
-        "vol_ratio": 0.57,
+        "vol_ratio": 0.6,
         "vol_chart": "data/charts/vol_GLD.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": -0.44,
@@ -515,8 +515,8 @@
         "above_sma50": false,
         "above_sma200": true,
         "sector": "Commodities",
-        "em_pct": 1.07,
-        "em_days": 1,
+        "em_pct": 1.92,
+        "em_days": 2,
         "rs_composite": 58.0
       },
       {
@@ -528,7 +528,7 @@
         "wtd": 4.28,
         "ytd": 9.57,
         "stage": 2,
-        "vol_ratio": 0.77,
+        "vol_ratio": 0.78,
         "vol_chart": "data/charts/vol_SLV.png",
         "atr_pct": 4.7,
         "dist_sma50_atr": 0.11,
@@ -588,8 +588,8 @@
         "above_sma50": true,
         "above_sma200": true,
         "sector": "Commodities",
-        "em_pct": 2.55,
-        "em_days": 1,
+        "em_pct": 4.53,
+        "em_days": 2,
         "rs_composite": 78.0
       }
     ],
@@ -620,12 +620,12 @@
       {
         "ticker": "The Mag 7",
         "daily": 3.01,
-        "intra": 2.09,
+        "intra": 2.07,
         "5d": 9.11,
         "20d": 4.59,
         "wtd": 4.07,
         "ytd": -2.33,
-        "vol_ratio": 1.06,
+        "vol_ratio": 1.11,
         "vol_chart": "data/charts/vol_Glance_The_Mag_7.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 1.65,
@@ -641,7 +641,7 @@
           "above_200": 4,
           "total": 7
         },
-        "em_pct": 2.46,
+        "em_pct": 2.47,
         "em_days": null,
         "rs_composite": 27.0
       },
@@ -653,7 +653,7 @@
         "20d": 2.55,
         "wtd": 7.1,
         "ytd": -5.89,
-        "vol_ratio": 1.26,
+        "vol_ratio": 1.3,
         "vol_chart": "data/charts/vol_Glance_The_Cloud_7.png",
         "atr_pct": 3.8,
         "dist_sma50_atr": 1.43,
@@ -669,19 +669,19 @@
           "above_200": 2,
           "total": 7
         },
-        "em_pct": 3.25,
+        "em_pct": 3.26,
         "em_days": null,
         "rs_composite": 27.0
       },
       {
         "ticker": "The Software 7",
         "daily": -0.66,
-        "intra": -1.55,
+        "intra": -1.59,
         "5d": -7.57,
         "20d": -12.64,
         "wtd": 4.75,
         "ytd": -30.75,
-        "vol_ratio": 0.98,
+        "vol_ratio": 0.99,
         "vol_chart": "data/charts/vol_Glance_The_Software_7.png",
         "atr_pct": 5.2,
         "dist_sma50_atr": -1.81,
@@ -697,21 +697,21 @@
           "above_200": 0,
           "total": 7
         },
-        "em_pct": 4.04,
+        "em_pct": 4.19,
         "em_days": null,
         "rs_composite": 28.0
       },
       {
         "ticker": "The New Staples 7",
         "daily": 2.42,
-        "intra": 1.66,
+        "intra": 1.65,
         "5d": 8.26,
         "20d": 5.92,
         "wtd": 4.0,
         "ytd": 0.99,
-        "vol_ratio": 1.03,
+        "vol_ratio": 1.09,
         "vol_chart": "data/charts/vol_Glance_The_New_Staples_7.png",
-        "atr_pct": 2.9,
+        "atr_pct": 3.0,
         "dist_sma50_atr": 2.56,
         "rs": 42.0,
         "rs_chart": "data/charts/Glance_The_New_Staples_7.png",
@@ -725,7 +725,7 @@
           "above_200": 3,
           "total": 7
         },
-        "em_pct": 3.22,
+        "em_pct": 3.19,
         "em_days": null,
         "rs_composite": 28.0
       },
@@ -737,7 +737,7 @@
         "20d": -3.15,
         "wtd": -1.08,
         "ytd": 7.54,
-        "vol_ratio": 0.81,
+        "vol_ratio": 0.85,
         "vol_chart": "data/charts/vol_Glance_The_Old_Staples_7.png",
         "atr_pct": 2.1,
         "dist_sma50_atr": -1.69,
@@ -753,19 +753,19 @@
           "above_200": 4,
           "total": 7
         },
-        "em_pct": 2.27,
+        "em_pct": 2.26,
         "em_days": null,
         "rs_composite": 28.0
       },
       {
         "ticker": "The Toll Road 7",
         "daily": -0.35,
-        "intra": -0.36,
+        "intra": -0.28,
         "5d": 0.67,
         "20d": 0.19,
         "wtd": 2.4,
         "ytd": -5.9,
-        "vol_ratio": 0.76,
+        "vol_ratio": 0.94,
         "vol_chart": "data/charts/vol_Glance_The_Toll_Road_7.png",
         "atr_pct": 2.5,
         "dist_sma50_atr": 0.19,
@@ -781,7 +781,7 @@
           "above_200": 1,
           "total": 7
         },
-        "em_pct": 2.27,
+        "em_pct": 2.21,
         "em_days": null,
         "rs_composite": 29.0
       },
@@ -793,7 +793,7 @@
         "20d": 0.14,
         "wtd": -2.14,
         "ytd": 23.61,
-        "vol_ratio": 0.77,
+        "vol_ratio": 0.79,
         "vol_chart": "data/charts/vol_Glance_The_Energy_7.png",
         "atr_pct": 3.5,
         "dist_sma50_atr": 0.13,
@@ -809,7 +809,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 2.74,
+        "em_pct": 2.75,
         "em_days": null,
         "rs_composite": 29.0
       },
@@ -821,7 +821,7 @@
         "20d": -2.94,
         "wtd": 0.99,
         "ytd": 11.18,
-        "vol_ratio": 0.63,
+        "vol_ratio": 0.71,
         "vol_chart": "data/charts/vol_Glance_The_Defense_7.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": -0.63,
@@ -837,7 +837,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 2.32,
+        "em_pct": 2.34,
         "em_days": null,
         "rs_composite": 29.0
       },
@@ -849,7 +849,7 @@
         "20d": 7.48,
         "wtd": 0.43,
         "ytd": 16.54,
-        "vol_ratio": 0.71,
+        "vol_ratio": 0.76,
         "vol_chart": "data/charts/vol_Glance_The_Industrial_7.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 1.12,
@@ -865,19 +865,19 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 2.4,
+        "em_pct": 2.34,
         "em_days": null,
         "rs_composite": 30.0
       },
       {
         "ticker": "The Semi 7",
         "daily": 1.35,
-        "intra": 0.49,
+        "intra": 0.48,
         "5d": 14.17,
         "20d": 22.21,
         "wtd": 3.27,
         "ytd": 20.19,
-        "vol_ratio": 0.92,
+        "vol_ratio": 0.94,
         "vol_chart": "data/charts/vol_Glance_The_Semi_7.png",
         "atr_pct": 3.5,
         "dist_sma50_atr": 4.64,
@@ -893,19 +893,19 @@
           "above_200": 6,
           "total": 7
         },
-        "em_pct": 3.67,
+        "em_pct": 3.68,
         "em_days": null,
         "rs_composite": 30.0
       },
       {
         "ticker": "The Fab 7",
         "daily": 2.19,
-        "intra": 0.86,
+        "intra": 0.87,
         "5d": 16.09,
         "20d": 16.24,
         "wtd": 3.0,
         "ytd": 44.21,
-        "vol_ratio": 0.87,
+        "vol_ratio": 0.92,
         "vol_chart": "data/charts/vol_Glance_The_Fab_7.png",
         "atr_pct": 4.2,
         "dist_sma50_atr": 3.48,
@@ -921,7 +921,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 5.32,
+        "em_pct": 5.29,
         "em_days": null,
         "rs_composite": 30.0
       },
@@ -933,7 +933,7 @@
         "20d": 12.38,
         "wtd": 2.57,
         "ytd": 32.93,
-        "vol_ratio": 0.73,
+        "vol_ratio": 0.82,
         "vol_chart": "data/charts/vol_Glance_The_Buildout_7.png",
         "atr_pct": 3.8,
         "dist_sma50_atr": 3.26,
@@ -949,7 +949,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 3.59,
+        "em_pct": 3.6,
         "em_days": null,
         "rs_composite": 31.0
       },
@@ -961,7 +961,7 @@
         "20d": 2.89,
         "wtd": 0.66,
         "ytd": -1.49,
-        "vol_ratio": 0.46,
+        "vol_ratio": 0.64,
         "vol_chart": "data/charts/vol_Glance_The_Housing_7.png",
         "atr_pct": 3.0,
         "dist_sma50_atr": -0.84,
@@ -977,21 +977,21 @@
           "above_200": 3,
           "total": 7
         },
-        "em_pct": 2.55,
+        "em_pct": 2.57,
         "em_days": null,
         "rs_composite": 31.0
       },
       {
         "ticker": "The Old Metals 7",
         "daily": 1.38,
-        "intra": 0.28,
+        "intra": 0.24,
         "5d": 3.93,
         "20d": 4.26,
         "wtd": 0.45,
         "ytd": 25.0,
-        "vol_ratio": 0.61,
+        "vol_ratio": 0.71,
         "vol_chart": "data/charts/vol_Glance_The_Old_Metals_7.png",
-        "atr_pct": 4.2,
+        "atr_pct": 4.3,
         "dist_sma50_atr": 0.49,
         "rs": 29.0,
         "rs_chart": "data/charts/Glance_The_Old_Metals_7.png",
@@ -1017,7 +1017,7 @@
         "20d": 9.35,
         "wtd": 3.35,
         "ytd": 22.79,
-        "vol_ratio": 0.8,
+        "vol_ratio": 0.85,
         "vol_chart": "data/charts/vol_Glance_The_New_Metals_7.png",
         "atr_pct": 4.8,
         "dist_sma50_atr": 1.44,
@@ -1033,7 +1033,7 @@
           "above_200": 6,
           "total": 7
         },
-        "em_pct": 4.41,
+        "em_pct": 4.55,
         "em_days": null,
         "rs_composite": 32.0
       },
@@ -1045,7 +1045,7 @@
         "20d": 13.6,
         "wtd": 1.53,
         "ytd": -1.79,
-        "vol_ratio": 1.27,
+        "vol_ratio": 1.39,
         "vol_chart": "data/charts/vol_Glance_The_Bank_7.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 2.03,
@@ -1061,7 +1061,7 @@
           "above_200": 5,
           "total": 7
         },
-        "em_pct": 2.58,
+        "em_pct": 2.62,
         "em_days": null,
         "rs_composite": 32.0
       },
@@ -1073,7 +1073,7 @@
         "20d": -0.07,
         "wtd": 0.54,
         "ytd": 3.95,
-        "vol_ratio": 0.8,
+        "vol_ratio": 0.95,
         "vol_chart": "data/charts/vol_Glance_The_Health_7.png",
         "atr_pct": 2.5,
         "dist_sma50_atr": -0.08,
@@ -1089,7 +1089,7 @@
           "above_200": 6,
           "total": 7
         },
-        "em_pct": 2.17,
+        "em_pct": 2.19,
         "em_days": null,
         "rs_composite": 32.0
       },
@@ -1101,7 +1101,7 @@
         "20d": -0.56,
         "wtd": 3.11,
         "ytd": -14.31,
-        "vol_ratio": 0.97,
+        "vol_ratio": 1.0,
         "vol_chart": "data/charts/vol_Glance_The_Medtech_7.png",
         "atr_pct": 2.5,
         "dist_sma50_atr": -1.41,
@@ -1117,7 +1117,7 @@
           "above_200": 1,
           "total": 7
         },
-        "em_pct": 2.58,
+        "em_pct": 4.16,
         "em_days": null,
         "rs_composite": 33.0
       },
@@ -1129,9 +1129,9 @@
         "20d": 7.66,
         "wtd": 0.71,
         "ytd": 15.87,
-        "vol_ratio": 0.62,
+        "vol_ratio": 0.78,
         "vol_chart": "data/charts/vol_Glance_The_Freight_7.png",
-        "atr_pct": 2.3,
+        "atr_pct": 2.4,
         "dist_sma50_atr": 0.87,
         "rs": 15.0,
         "rs_chart": "data/charts/Glance_The_Freight_7.png",
@@ -1145,7 +1145,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 2.62,
+        "em_pct": 3.04,
         "em_days": null,
         "rs_composite": 33.0
       },
@@ -1157,7 +1157,7 @@
         "20d": 1.13,
         "wtd": 1.36,
         "ytd": -3.12,
-        "vol_ratio": 0.78,
+        "vol_ratio": 0.92,
         "vol_chart": "data/charts/vol_Glance_The_Insurance_7.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": -0.04,
@@ -1173,7 +1173,7 @@
           "above_200": 2,
           "total": 6
         },
-        "em_pct": 2.36,
+        "em_pct": 2.61,
         "em_days": null,
         "rs_composite": 33.0
       },
@@ -1185,7 +1185,7 @@
         "20d": -1.03,
         "wtd": 0.07,
         "ytd": 6.04,
-        "vol_ratio": 0.87,
+        "vol_ratio": 0.93,
         "vol_chart": "data/charts/vol_Glance_The_Power_7.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": 0.77,
@@ -1201,7 +1201,7 @@
           "above_200": 5,
           "total": 7
         },
-        "em_pct": 2.46,
+        "em_pct": 2.47,
         "em_days": null,
         "rs_composite": 34.0
       }
@@ -1216,7 +1216,7 @@
         "wtd": 3.73,
         "ytd": 2.65,
         "stage": 2,
-        "vol_ratio": 0.67,
+        "vol_ratio": 0.68,
         "vol_chart": "data/charts/vol_XLK.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": 2.98,
@@ -1265,8 +1265,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.76,
-        "em_days": 3,
+        "em_pct": 1.79,
+        "em_days": 2,
         "rs_composite": 45.0
       },
       {
@@ -1325,8 +1325,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.02,
-        "em_days": 3,
+        "em_pct": 1.45,
+        "em_days": 2,
         "rs_composite": 64.0
       },
       {
@@ -1395,8 +1395,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.12,
-        "em_days": 3,
+        "em_pct": 1.32,
+        "em_days": 2,
         "rs_composite": 39.0
       },
       {
@@ -1408,7 +1408,7 @@
         "wtd": 1.99,
         "ytd": -5.25,
         "stage": 1,
-        "vol_ratio": 0.69,
+        "vol_ratio": 0.72,
         "vol_chart": "data/charts/vol_XLF.png",
         "atr_pct": 1.7,
         "dist_sma50_atr": 1.17,
@@ -1472,8 +1472,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 1.51,
-        "em_days": 3,
+        "em_pct": 1.39,
+        "em_days": 2,
         "rs_composite": 23.0
       },
       {
@@ -1506,9 +1506,9 @@
         "sr": {
           "support": [
             {
-              "price": 44.49,
-              "score": 40,
-              "dist_pct": -4.3
+              "price": 44.4,
+              "score": 45,
+              "dist_pct": -4.4
             },
             {
               "price": 43.15,
@@ -1533,8 +1533,8 @@
         "above_sma50": true,
         "above_sma200": true,
         "sector": "Broad Market",
-        "em_pct": 1.43,
-        "em_days": 3,
+        "em_pct": 1.59,
+        "em_days": 2,
         "rs_composite": 48.0
       },
       {
@@ -1546,7 +1546,7 @@
         "wtd": 3.14,
         "ytd": -1.42,
         "stage": 1,
-        "vol_ratio": 0.78,
+        "vol_ratio": 0.79,
         "vol_chart": "data/charts/vol_XLY.png",
         "atr_pct": 2.1,
         "dist_sma50_atr": 1.18,
@@ -1610,8 +1610,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.76,
-        "em_days": 3,
+        "em_pct": 1.85,
+        "em_days": 2,
         "rs_composite": 22.0
       },
       {
@@ -1623,7 +1623,7 @@
         "wtd": 1.42,
         "ytd": 8.28,
         "stage": 2,
-        "vol_ratio": 0.54,
+        "vol_ratio": 0.55,
         "vol_chart": "data/charts/vol_XLRE.png",
         "atr_pct": 1.5,
         "dist_sma50_atr": 2.1,
@@ -1677,8 +1677,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.5,
-        "em_days": 3,
+        "em_pct": 1.27,
+        "em_days": 2,
         "rs_composite": 55.0
       },
       {
@@ -1690,7 +1690,7 @@
         "wtd": -1.09,
         "ytd": 5.46,
         "stage": 2,
-        "vol_ratio": 0.69,
+        "vol_ratio": 0.7,
         "vol_chart": "data/charts/vol_XLP.png",
         "atr_pct": 1.5,
         "dist_sma50_atr": -2.56,
@@ -1749,8 +1749,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 3.76,
-        "em_days": 3,
+        "em_pct": 1.23,
+        "em_days": 2,
         "rs_composite": 40.0
       },
       {
@@ -1811,8 +1811,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.35,
-        "em_days": 3,
+        "em_pct": 1.62,
+        "em_days": 2,
         "rs_composite": 70.0
       },
       {
@@ -1888,8 +1888,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.22,
-        "em_days": 3,
+        "em_pct": 2.23,
+        "em_days": 2,
         "rs_composite": 83.0
       },
       {
@@ -1963,8 +1963,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.13,
-        "em_days": 3,
+        "em_pct": 1.11,
+        "em_days": 2,
         "rs_composite": 34.0
       }
     ],
@@ -2033,8 +2033,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 7.8,
-        "em_days": 3,
+        "em_pct": 6.8,
+        "em_days": 2,
         "rs_composite": 63.0
       },
       {
@@ -2096,8 +2096,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.01,
-        "em_days": 3,
+        "em_pct": 5.02,
+        "em_days": 2,
         "rs_composite": 63.0
       },
       {
@@ -2148,8 +2148,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 7.53,
-        "em_days": 3,
+        "em_pct": 4.24,
+        "em_days": 2,
         "rs_composite": 64.0
       },
       {
@@ -2279,8 +2279,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.11,
-        "em_days": 3,
+        "em_pct": 4.15,
+        "em_days": 2,
         "rs_composite": 56.0
       },
       {
@@ -2344,7 +2344,7 @@
         "wtd": 0.99,
         "ytd": 2.62,
         "stage": 2,
-        "vol_ratio": 0.93,
+        "vol_ratio": 1.25,
         "vol_chart": "data/charts/vol_IVE.png",
         "atr_pct": 1.1,
         "dist_sma50_atr": 0.72,
@@ -2363,19 +2363,19 @@
         "sr": {
           "support": [
             {
-              "price": 216.84,
-              "score": 53,
-              "dist_pct": -0.3
+              "price": 215.49,
+              "score": 51,
+              "dist_pct": -0.9
             },
             {
-              "price": 211.98,
-              "score": 63,
-              "dist_pct": -2.6
+              "price": 208.83,
+              "score": 49,
+              "dist_pct": -4.0
             },
             {
-              "price": 206.83,
-              "score": 52,
-              "dist_pct": -4.9
+              "price": 201.92,
+              "score": 43,
+              "dist_pct": -7.2
             }
           ],
           "resistance": [
@@ -2394,8 +2394,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.74,
-        "em_days": 3,
+        "em_pct": 1.72,
+        "em_days": 2,
         "rs_composite": 44.0
       },
       {
@@ -2407,7 +2407,7 @@
         "wtd": 2.21,
         "ytd": 1.95,
         "stage": 2,
-        "vol_ratio": 0.29,
+        "vol_ratio": 0.35,
         "vol_chart": "data/charts/vol_IVV.png",
         "atr_pct": 1.4,
         "dist_sma50_atr": 2.29,
@@ -2451,8 +2451,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.04,
-        "em_days": 3,
+        "em_pct": 3.09,
+        "em_days": 2,
         "rs_composite": 43.0
       },
       {
@@ -2514,8 +2514,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.87,
-        "em_days": 3,
+        "em_pct": 6.14,
+        "em_days": 2,
         "rs_composite": 42.0
       }
     ],
@@ -2575,11 +2575,11 @@
       {
         "ticker": "RSPC",
         "daily": 1.08,
-        "intra": 0.74,
+        "intra": 0.73,
         "5d": 1.78,
         "20d": 1.08,
-        "wtd": 1.92,
-        "ytd": -2.87,
+        "wtd": 1.91,
+        "ytd": -2.88,
         "stage": 1,
         "vol_ratio": 0.51,
         "vol_chart": "data/charts/vol_RSPC.png",
@@ -2730,14 +2730,14 @@
         "vol_ratio": 0.7,
         "vol_chart": "data/charts/vol_RSPF.png",
         "atr_pct": 1.5,
-        "dist_sma50_atr": 1.39,
+        "dist_sma50_atr": 1.38,
         "rs": 60.0,
         "rs_chart": "data/charts/RSPF.png",
         "long": [],
         "short": [],
         "abc": "B",
         "gaps": [
-          "up",
+          null,
           null,
           "down",
           null,
@@ -2850,8 +2850,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.29,
-        "em_days": 3,
+        "em_pct": 1.19,
+        "em_days": 2,
         "rs_composite": 46.0
       },
       {
@@ -2999,7 +2999,7 @@
         "wtd": 1.66,
         "ytd": 5.19,
         "stage": 3,
-        "vol_ratio": 0.93,
+        "vol_ratio": 0.94,
         "vol_chart": "data/charts/vol_RSPR.png",
         "atr_pct": 1.3,
         "dist_sma50_atr": 1.66,
@@ -3072,7 +3072,7 @@
         "short": [],
         "abc": "C",
         "gaps": [
-          "up",
+          null,
           null,
           null,
           null,
@@ -3135,10 +3135,10 @@
         "wtd": 0.3,
         "ytd": 15.12,
         "stage": 2,
-        "vol_ratio": 5.37,
+        "vol_ratio": 5.38,
         "vol_chart": "data/charts/vol_RSPM.png",
         "atr_pct": 1.5,
-        "dist_sma50_atr": 1.45,
+        "dist_sma50_atr": 1.42,
         "rs": 5.0,
         "rs_chart": "data/charts/RSPM.png",
         "long": [],
@@ -3300,13 +3300,13 @@
               "dist_pct": -20.9
             },
             {
-              "price": 75.12,
+              "price": 75.14,
               "score": 40,
               "dist_pct": -25.3
             },
             {
-              "price": 72.49,
-              "score": 35,
+              "price": 72.47,
+              "score": 37,
               "dist_pct": -28.0
             }
           ],
@@ -3340,13 +3340,13 @@
       {
         "ticker": "SMH",
         "daily": 1.95,
-        "intra": 0.77,
+        "intra": 0.89,
         "5d": 13.03,
         "20d": 14.74,
         "wtd": 3.46,
         "ytd": 21.08,
         "stage": 2,
-        "vol_ratio": 0.7,
+        "vol_ratio": 0.71,
         "vol_chart": "data/charts/vol_SMH.png",
         "atr_pct": 2.7,
         "dist_sma50_atr": 4.56,
@@ -3397,7 +3397,7 @@
       {
         "ticker": "CIBR",
         "daily": -0.63,
-        "intra": -1.13,
+        "intra": -1.06,
         "5d": -3.77,
         "20d": -2.48,
         "wtd": 3.38,
@@ -3472,7 +3472,7 @@
         "wtd": 6.44,
         "ytd": -22.55,
         "stage": 4,
-        "vol_ratio": 1.25,
+        "vol_ratio": 1.27,
         "vol_chart": "data/charts/vol_IGV.png",
         "atr_pct": 3.4,
         "dist_sma50_atr": -1.0,
@@ -3665,7 +3665,7 @@
       {
         "ticker": "AIQ",
         "daily": 2.47,
-        "intra": 1.29,
+        "intra": 1.28,
         "5d": 8.32,
         "20d": 5.05,
         "wtd": 4.98,
@@ -3814,7 +3814,7 @@
         "wtd": 8.0,
         "ytd": -4.44,
         "stage": 4,
-        "vol_ratio": 1.12,
+        "vol_ratio": 1.13,
         "vol_chart": "data/charts/vol_ARKK.png",
         "atr_pct": 3.5,
         "dist_sma50_atr": 1.59,
@@ -3892,7 +3892,7 @@
         "wtd": 12.66,
         "ytd": 13.03,
         "stage": 2,
-        "vol_ratio": 1.12,
+        "vol_ratio": 1.13,
         "vol_chart": "data/charts/vol_WGMI.png",
         "atr_pct": 5.8,
         "dist_sma50_atr": 3.41,
@@ -4027,7 +4027,7 @@
         "wtd": 2.52,
         "ytd": 6.11,
         "stage": 2,
-        "vol_ratio": 0.61,
+        "vol_ratio": 0.63,
         "vol_chart": "data/charts/vol_ITA.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": 0.48,
@@ -4098,7 +4098,7 @@
         "wtd": 0.64,
         "ytd": 12.59,
         "stage": 2,
-        "vol_ratio": 1.59,
+        "vol_ratio": 1.61,
         "vol_chart": "data/charts/vol_PAVE.png",
         "atr_pct": 2.1,
         "dist_sma50_atr": 1.87,
@@ -4176,14 +4176,14 @@
         "sr": {
           "support": [
             {
-              "price": 31.34,
-              "score": 51,
-              "dist_pct": -23.5
+              "price": 31.43,
+              "score": 45,
+              "dist_pct": -23.2
             },
             {
-              "price": 30.53,
+              "price": 30.67,
               "score": 27,
-              "dist_pct": -25.4
+              "dist_pct": -25.1
             },
             {
               "price": 28.15,
@@ -4276,7 +4276,7 @@
         "wtd": 2.33,
         "ytd": -17.57,
         "stage": 4,
-        "vol_ratio": 1.42,
+        "vol_ratio": 1.49,
         "vol_chart": "data/charts/vol_KWEB.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": -1.86,
@@ -4416,7 +4416,7 @@
         "wtd": 1.77,
         "ytd": -7.36,
         "stage": 4,
-        "vol_ratio": 0.93,
+        "vol_ratio": 1.01,
         "vol_chart": "data/charts/vol_FXI.png",
         "atr_pct": 1.6,
         "dist_sma50_atr": -0.16,
@@ -4489,7 +4489,7 @@
         "wtd": 3.76,
         "ytd": -10.83,
         "stage": 4,
-        "vol_ratio": 0.22,
+        "vol_ratio": 0.67,
         "vol_chart": "data/charts/vol_IBUY.png",
         "atr_pct": 2.1,
         "dist_sma50_atr": 1.29,
@@ -4509,7 +4509,7 @@
           "support": [
             {
               "price": 66.25,
-              "score": 25,
+              "score": 24,
               "dist_pct": -0.2
             },
             {
@@ -4841,7 +4841,7 @@
         "wtd": 3.82,
         "ytd": 12.38,
         "stage": 2,
-        "vol_ratio": 2.25,
+        "vol_ratio": 2.26,
         "vol_chart": "data/charts/vol_DRIV.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": 3.43,
@@ -4972,7 +4972,7 @@
         "wtd": 1.86,
         "ytd": 2.57,
         "stage": 3,
-        "vol_ratio": 0.89,
+        "vol_ratio": 0.87,
         "vol_chart": "data/charts/vol_EATZ.png",
         "atr_pct": 1.2,
         "dist_sma50_atr": 0.82,
@@ -5046,7 +5046,7 @@
         "wtd": 1.87,
         "ytd": 1.48,
         "stage": 4,
-        "vol_ratio": 0.59,
+        "vol_ratio": 0.67,
         "vol_chart": "data/charts/vol_XHB.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": -0.58,
@@ -5151,9 +5151,9 @@
               "dist_pct": -3.1
             },
             {
-              "price": 127.03,
-              "score": 25,
-              "dist_pct": -27.8
+              "price": 165.46,
+              "score": 24,
+              "dist_pct": -5.9
             }
           ],
           "resistance": [
@@ -5186,7 +5186,7 @@
         "wtd": 2.08,
         "ytd": -12.11,
         "stage": 4,
-        "vol_ratio": 0.76,
+        "vol_ratio": 0.77,
         "vol_chart": "data/charts/vol_IHI.png",
         "atr_pct": 1.8,
         "dist_sma50_atr": -2.13,
@@ -5423,7 +5423,7 @@
           "resistance": [
             {
               "price": 29.69,
-              "score": 26,
+              "score": 27,
               "dist_pct": 1.3
             },
             {
@@ -5556,7 +5556,7 @@
           "support": [
             {
               "price": 149.07,
-              "score": 66,
+              "score": 65,
               "dist_pct": -0.4
             },
             {
@@ -5634,9 +5634,9 @@
               "dist_pct": -1.6
             },
             {
-              "price": 59.46,
-              "score": 58,
-              "dist_pct": -6.1
+              "price": 59.4,
+              "score": 57,
+              "dist_pct": -6.2
             },
             {
               "price": 57.51,
@@ -5901,7 +5901,7 @@
         "vol_ratio": 0.74,
         "vol_chart": "data/charts/vol_TAN.png",
         "atr_pct": 3.0,
-        "dist_sma50_atr": -0.63,
+        "dist_sma50_atr": -0.62,
         "rs": 10.0,
         "rs_chart": "data/charts/TAN.png",
         "long": [],
@@ -6044,7 +6044,7 @@
       {
         "ticker": "ICLN",
         "daily": 4.01,
-        "intra": 1.44,
+        "intra": 1.54,
         "5d": 10.53,
         "20d": 6.53,
         "wtd": 4.28,
@@ -6092,7 +6092,7 @@
         "sector": "Energy",
         "em_pct": null,
         "em_days": null,
-        "rs_composite": 77.0
+        "rs_composite": 76.0
       },
       {
         "ticker": "FCG",
@@ -6236,7 +6236,7 @@
         "wtd": -1.7,
         "ytd": 36.09,
         "stage": 2,
-        "vol_ratio": 0.9,
+        "vol_ratio": 0.94,
         "vol_chart": "data/charts/vol_OIH.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 1.34,
@@ -6382,7 +6382,7 @@
         "vol_ratio": 1.21,
         "vol_chart": "data/charts/vol_IYZ.png",
         "atr_pct": 1.9,
-        "dist_sma50_atr": 2.36,
+        "dist_sma50_atr": 2.32,
         "rs": 0.0,
         "rs_chart": "data/charts/IYZ.png",
         "long": [],
@@ -6435,7 +6435,7 @@
         "intra": 1.14,
         "5d": 6.34,
         "20d": -2.89,
-        "wtd": 4.15,
+        "wtd": 4.14,
         "ytd": -18.99,
         "stage": 4,
         "vol_ratio": 0.54,
@@ -6501,16 +6501,16 @@
       {
         "ticker": "SCHH",
         "daily": 0.97,
-        "intra": 1.22,
+        "intra": 1.19,
         "5d": 4.23,
         "20d": 2.6,
         "wtd": 1.19,
         "ytd": 10.06,
         "stage": 2,
-        "vol_ratio": 0.44,
+        "vol_ratio": 0.45,
         "vol_chart": "data/charts/vol_SCHH.png",
         "atr_pct": 1.5,
-        "dist_sma50_atr": 2.26,
+        "dist_sma50_atr": 2.25,
         "rs": 15.0,
         "rs_chart": "data/charts/SCHH.png",
         "long": [],
@@ -6571,7 +6571,7 @@
         "wtd": 1.33,
         "ytd": 7.58,
         "stage": 2,
-        "vol_ratio": 0.42,
+        "vol_ratio": 0.46,
         "vol_chart": "data/charts/vol_VNQ.png",
         "atr_pct": 1.4,
         "dist_sma50_atr": 1.96,
@@ -6638,7 +6638,7 @@
         "vol_ratio": 0.91,
         "vol_chart": "data/charts/vol_REZ.png",
         "atr_pct": 1.4,
-        "dist_sma50_atr": 1.12,
+        "dist_sma50_atr": 1.11,
         "rs": 20.0,
         "rs_chart": "data/charts/REZ.png",
         "long": [],
@@ -6762,7 +6762,7 @@
         "wtd": 1.82,
         "ytd": 11.75,
         "stage": 2,
-        "vol_ratio": 0.57,
+        "vol_ratio": 0.6,
         "vol_chart": "data/charts/vol_GLD.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": -0.44,
@@ -6822,8 +6822,8 @@
         "above_sma50": false,
         "above_sma200": true,
         "sector": "Commodities",
-        "em_pct": 1.07,
-        "em_days": 1,
+        "em_pct": 1.92,
+        "em_days": 2,
         "rs_composite": 58.0
       },
       {
@@ -6899,7 +6899,7 @@
         "wtd": 4.28,
         "ytd": 9.57,
         "stage": 2,
-        "vol_ratio": 0.77,
+        "vol_ratio": 0.78,
         "vol_chart": "data/charts/vol_SLV.png",
         "atr_pct": 4.7,
         "dist_sma50_atr": 0.11,
@@ -6959,8 +6959,8 @@
         "above_sma50": true,
         "above_sma200": true,
         "sector": "Commodities",
-        "em_pct": 2.55,
-        "em_days": 1,
+        "em_pct": 4.53,
+        "em_days": 2,
         "rs_composite": 78.0
       },
       {
@@ -7048,7 +7048,7 @@
         "vol_ratio": 0.5,
         "vol_chart": "data/charts/vol_DBC.png",
         "atr_pct": 2.1,
-        "dist_sma50_atr": 3.64,
+        "dist_sma50_atr": 3.63,
         "rs": 5.0,
         "rs_chart": "data/charts/DBC.png",
         "long": [],
@@ -7104,7 +7104,7 @@
         "wtd": 3.88,
         "ytd": 6.52,
         "stage": 2,
-        "vol_ratio": 0.84,
+        "vol_ratio": 0.86,
         "vol_chart": "data/charts/vol_CPER.png",
         "atr_pct": 2.1,
         "dist_sma50_atr": 2.62,
@@ -7222,7 +7222,7 @@
         "wtd": 1.5,
         "ytd": 7.26,
         "stage": 2,
-        "vol_ratio": 1.38,
+        "vol_ratio": 1.54,
         "vol_chart": "data/charts/vol_XME.png",
         "atr_pct": 3.4,
         "dist_sma50_atr": 0.32,
@@ -7450,10 +7450,10 @@
         "wtd": 3.4,
         "ytd": 21.55,
         "stage": 2,
-        "vol_ratio": 1.38,
+        "vol_ratio": 1.4,
         "vol_chart": "data/charts/vol_LIT.png",
         "atr_pct": 2.6,
-        "dist_sma50_atr": 4.23,
+        "dist_sma50_atr": 4.22,
         "rs": 50.0,
         "rs_chart": "data/charts/LIT.png",
         "long": [],
@@ -7503,7 +7503,7 @@
         "wtd": 4.55,
         "ytd": 28.68,
         "stage": 2,
-        "vol_ratio": 0.79,
+        "vol_ratio": 0.81,
         "vol_chart": "data/charts/vol_REMX.png",
         "atr_pct": 3.8,
         "dist_sma50_atr": 2.36,
@@ -7572,7 +7572,7 @@
         "wtd": 1.1,
         "ytd": 3.38,
         "stage": 2,
-        "vol_ratio": 1.19,
+        "vol_ratio": 1.2,
         "vol_chart": "data/charts/vol_UTES.png",
         "atr_pct": 1.8,
         "dist_sma50_atr": 1.4,
@@ -7639,7 +7639,7 @@
       },
       {
         "ticker": "PBJ",
-        "daily": -0.35,
+        "daily": -0.34,
         "intra": -0.08,
         "5d": -0.94,
         "20d": 1.41,
@@ -7648,7 +7648,7 @@
         "stage": 2,
         "vol_ratio": 1.51,
         "vol_chart": "data/charts/vol_PBJ.png",
-        "atr_pct": 1.2,
+        "atr_pct": 1.3,
         "dist_sma50_atr": 0.17,
         "rs": 0.0,
         "rs_chart": "data/charts/PBJ.png",
@@ -7768,7 +7768,7 @@
       {
         "ticker": "IBIT",
         "daily": 1.3,
-        "intra": -0.3,
+        "intra": -0.28,
         "5d": 7.75,
         "20d": 0.45,
         "wtd": 1.37,
@@ -7870,9 +7870,9 @@
         "sr": {
           "support": [
             {
-              "price": 44.49,
-              "score": 40,
-              "dist_pct": -4.3
+              "price": 44.4,
+              "score": 45,
+              "dist_pct": -4.4
             },
             {
               "price": 43.15,
@@ -7897,8 +7897,8 @@
         "above_sma50": true,
         "above_sma200": true,
         "sector": "Broad Market",
-        "em_pct": 1.43,
-        "em_days": 3,
+        "em_pct": 1.59,
+        "em_days": 2,
         "rs_composite": 48.0
       },
       {
@@ -7910,7 +7910,7 @@
         "wtd": 2.84,
         "ytd": 8.21,
         "stage": 2,
-        "vol_ratio": 0.52,
+        "vol_ratio": 0.54,
         "vol_chart": "data/charts/vol_IWM.png",
         "atr_pct": 2.0,
         "dist_sma50_atr": 2.39,
@@ -7965,7 +7965,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "sector": "Broad Market",
-        "em_pct": 0.82,
+        "em_pct": 1.17,
         "em_days": 1,
         "rs_composite": 55.0
       },
@@ -7978,7 +7978,7 @@
         "wtd": 4.58,
         "ytd": 0.6,
         "stage": 3,
-        "vol_ratio": 1.71,
+        "vol_ratio": 1.73,
         "vol_chart": "data/charts/vol_FNGS.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": 3.48,
@@ -8002,7 +8002,7 @@
           "support": [
             {
               "price": 65.56,
-              "score": 49,
+              "score": 50,
               "dist_pct": -2.8
             },
             {
@@ -8058,7 +8058,7 @@
         "wtd": 2.09,
         "ytd": 6.12,
         "stage": 2,
-        "vol_ratio": 0.28,
+        "vol_ratio": 0.29,
         "vol_chart": "data/charts/vol_EZA.png",
         "atr_pct": 3.1,
         "dist_sma50_atr": 0.81,
@@ -8334,7 +8334,7 @@
           "support": [
             {
               "price": 16.38,
-              "score": 12,
+              "score": 11,
               "dist_pct": -0.3
             },
             {
@@ -8795,7 +8795,7 @@
         "wtd": 5.73,
         "ytd": 43.49,
         "stage": 2,
-        "vol_ratio": 0.75,
+        "vol_ratio": 0.77,
         "vol_chart": "data/charts/vol_EWY.png",
         "atr_pct": 4.4,
         "dist_sma50_atr": 2.58,
@@ -8858,7 +8858,7 @@
         "vol_ratio": 0.29,
         "vol_chart": "data/charts/vol_IEUR.png",
         "atr_pct": 1.8,
-        "dist_sma50_atr": 1.87,
+        "dist_sma50_atr": 1.86,
         "rs": 10.0,
         "rs_chart": "data/charts/IEUR.png",
         "long": [],
@@ -8923,7 +8923,7 @@
         "wtd": 1.43,
         "ytd": 6.8,
         "stage": 2,
-        "vol_ratio": 0.71,
+        "vol_ratio": 0.72,
         "vol_chart": "data/charts/vol_EFA.png",
         "atr_pct": 1.8,
         "dist_sma50_atr": 1.78,
@@ -8980,13 +8980,13 @@
       {
         "ticker": "ACWI",
         "daily": 1.16,
-        "intra": 0.79,
+        "intra": 0.86,
         "5d": 5.64,
         "20d": 4.69,
         "wtd": 2.12,
         "ytd": 3.94,
         "stage": 2,
-        "vol_ratio": 0.32,
+        "vol_ratio": 0.33,
         "vol_chart": "data/charts/vol_ACWI.png",
         "atr_pct": 1.6,
         "dist_sma50_atr": 2.19,
@@ -9179,7 +9179,7 @@
         "vol_ratio": 0.52,
         "vol_chart": "data/charts/vol_EWI.png",
         "atr_pct": 1.9,
-        "dist_sma50_atr": 3.12,
+        "dist_sma50_atr": 3.11,
         "rs": 35.0,
         "rs_chart": "data/charts/EWI.png",
         "long": [],
@@ -9228,7 +9228,7 @@
         "wtd": 1.45,
         "ytd": 9.93,
         "stage": 2,
-        "vol_ratio": 0.91,
+        "vol_ratio": 0.93,
         "vol_chart": "data/charts/vol_EWJ.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": 0.97,
@@ -9303,7 +9303,7 @@
         "wtd": -0.96,
         "ytd": 13.05,
         "stage": 2,
-        "vol_ratio": 0.71,
+        "vol_ratio": 0.72,
         "vol_chart": "data/charts/vol_EWW.png",
         "atr_pct": 2.5,
         "dist_sma50_atr": 1.06,
@@ -9383,7 +9383,7 @@
         "short": [],
         "abc": "B",
         "gaps": [
-          "up",
+          null,
           null,
           null,
           null,
@@ -9571,7 +9571,7 @@
         "vol_ratio": 0.42,
         "vol_chart": "data/charts/vol_EWS.png",
         "atr_pct": 1.5,
-        "dist_sma50_atr": 2.28,
+        "dist_sma50_atr": 2.27,
         "rs": 30.0,
         "rs_chart": "data/charts/EWS.png",
         "long": [],
@@ -9620,10 +9620,10 @@
         "wtd": 1.54,
         "ytd": 9.6,
         "stage": 2,
-        "vol_ratio": 0.3,
+        "vol_ratio": 0.39,
         "vol_chart": "data/charts/vol_KSA.png",
         "atr_pct": 1.4,
-        "dist_sma50_atr": 3.19,
+        "dist_sma50_atr": 3.18,
         "rs": 0.0,
         "rs_chart": "data/charts/KSA.png",
         "long": [],
@@ -9820,7 +9820,7 @@
         "wtd": 0.97,
         "ytd": 29.6,
         "stage": 2,
-        "vol_ratio": 0.67,
+        "vol_ratio": 0.68,
         "vol_chart": "data/charts/vol_EWZ.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": 4.32,
@@ -9877,7 +9877,7 @@
         "vol_ratio": 0.68,
         "vol_chart": "data/charts/vol_TUR.png",
         "atr_pct": 1.8,
-        "dist_sma50_atr": 3.34,
+        "dist_sma50_atr": 3.33,
         "rs": 0.0,
         "rs_chart": "data/charts/TUR.png",
         "long": [],
@@ -10052,7 +10052,7 @@
         "wtd": 1.47,
         "ytd": -6.78,
         "stage": 4,
-        "vol_ratio": 0.85,
+        "vol_ratio": 0.97,
         "vol_chart": "data/charts/vol_MCHI.png",
         "atr_pct": 1.6,
         "dist_sma50_atr": -0.32,
@@ -10121,13 +10121,13 @@
       {
         "ticker": "AAPL",
         "daily": -0.14,
-        "intra": -0.1,
+        "intra": -0.16,
         "5d": 2.1,
         "20d": 2.38,
         "wtd": -0.63,
         "ytd": -4.4,
         "stage": 1,
-        "vol_ratio": 0.97,
+        "vol_ratio": 1.18,
         "vol_chart": "data/charts/vol_AAPL.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": -0.35,
@@ -10188,19 +10188,19 @@
         "above_sma50": false,
         "above_sma200": true,
         "em_pct": 1.97,
-        "em_days": 3,
+        "em_days": 2,
         "rs_composite": 41.0
       },
       {
         "ticker": "MSFT",
         "daily": 2.27,
-        "intra": 1.36,
+        "intra": 1.34,
         "5d": 5.59,
         "20d": -1.71,
         "wtd": 6.0,
         "ytd": -16.69,
         "stage": 4,
-        "vol_ratio": 1.15,
+        "vol_ratio": 1.16,
         "vol_chart": "data/charts/vol_MSFT.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": 0.13,
@@ -10255,20 +10255,20 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.25,
-        "em_days": 3,
+        "em_pct": 2.26,
+        "em_days": 2,
         "rs_composite": 6.0
       },
       {
         "ticker": "GOOGL",
         "daily": 3.61,
-        "intra": 2.48,
+        "intra": 2.5,
         "5d": 8.99,
         "20d": 8.95,
         "wtd": 4.94,
         "ytd": 5.71,
         "stage": 2,
-        "vol_ratio": 0.92,
+        "vol_ratio": 0.95,
         "vol_chart": "data/charts/vol_GOOGL.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": 3.14,
@@ -10323,8 +10323,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.22,
-        "em_days": 3,
+        "em_pct": 2.24,
+        "em_days": 2,
         "rs_composite": 78.0
       },
       {
@@ -10336,7 +10336,7 @@
         "wtd": 4.46,
         "ytd": 9.94,
         "stage": 3,
-        "vol_ratio": 1.56,
+        "vol_ratio": 1.62,
         "vol_chart": "data/charts/vol_AMZN.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 5.99,
@@ -10381,14 +10381,14 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.5,
-        "em_days": 3,
+        "em_pct": 2.51,
+        "em_days": 2,
         "rs_composite": 67.0
       },
       {
         "ticker": "META",
         "daily": 4.41,
-        "intra": 3.03,
+        "intra": 3.0,
         "5d": 15.21,
         "20d": 5.58,
         "wtd": 5.18,
@@ -10454,14 +10454,14 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.52,
-        "em_days": 3,
+        "em_pct": 2.55,
+        "em_days": 2,
         "rs_composite": 36.0
       },
       {
         "ticker": "NVDA",
         "daily": 3.8,
-        "intra": 2.98,
+        "intra": 2.97,
         "5d": 10.34,
         "20d": 7.25,
         "wtd": 4.18,
@@ -10522,20 +10522,20 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.6,
-        "em_days": 3,
+        "em_pct": 2.63,
+        "em_days": 2,
         "rs_composite": 53.0
       },
       {
         "ticker": "TSLA",
         "daily": 3.34,
-        "intra": 1.92,
+        "intra": 1.83,
         "5d": 5.06,
         "20d": -7.93,
         "wtd": 4.37,
         "ytd": -16.86,
         "stage": 1,
-        "vol_ratio": 0.87,
+        "vol_ratio": 0.93,
         "vol_chart": "data/charts/vol_TSLA.png",
         "atr_pct": 3.9,
         "dist_sma50_atr": -1.79,
@@ -10590,8 +10590,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.16,
-        "em_days": 3,
+        "em_pct": 3.12,
+        "em_days": 2,
         "rs_composite": 7.0
       }
     ],
@@ -10599,13 +10599,13 @@
       {
         "ticker": "MSFT",
         "daily": 2.27,
-        "intra": 1.36,
+        "intra": 1.34,
         "5d": 5.59,
         "20d": -1.71,
         "wtd": 6.0,
         "ytd": -16.69,
         "stage": 4,
-        "vol_ratio": 1.15,
+        "vol_ratio": 1.16,
         "vol_chart": "data/charts/vol_MSFT.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": 0.13,
@@ -10660,8 +10660,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.25,
-        "em_days": 3,
+        "em_pct": 2.26,
+        "em_days": 2,
         "rs_composite": 6.0
       },
       {
@@ -10673,7 +10673,7 @@
         "wtd": 4.46,
         "ytd": 9.94,
         "stage": 3,
-        "vol_ratio": 1.56,
+        "vol_ratio": 1.62,
         "vol_chart": "data/charts/vol_AMZN.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 5.99,
@@ -10718,20 +10718,20 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.5,
-        "em_days": 3,
+        "em_pct": 2.51,
+        "em_days": 2,
         "rs_composite": 67.0
       },
       {
         "ticker": "GOOGL",
         "daily": 3.61,
-        "intra": 2.48,
+        "intra": 2.5,
         "5d": 8.99,
         "20d": 8.95,
         "wtd": 4.94,
         "ytd": 5.71,
         "stage": 2,
-        "vol_ratio": 0.92,
+        "vol_ratio": 0.95,
         "vol_chart": "data/charts/vol_GOOGL.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": 3.14,
@@ -10786,8 +10786,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.22,
-        "em_days": 3,
+        "em_pct": 2.24,
+        "em_days": 2,
         "rs_composite": 78.0
       },
       {
@@ -10799,7 +10799,7 @@
         "wtd": 18.04,
         "ytd": -16.2,
         "stage": 4,
-        "vol_ratio": 2.51,
+        "vol_ratio": 2.57,
         "vol_chart": "data/charts/vol_ORCL.png",
         "atr_pct": 4.8,
         "dist_sma50_atr": 1.83,
@@ -10859,8 +10859,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 4.65,
-        "em_days": 3,
+        "em_pct": 4.66,
+        "em_days": 2,
         "rs_composite": 2.0
       },
       {
@@ -10932,14 +10932,14 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.8,
-        "em_days": 3,
+        "em_pct": 2.84,
+        "em_days": 2,
         "rs_composite": 8.0
       },
       {
         "ticker": "META",
         "daily": 4.41,
-        "intra": 3.03,
+        "intra": 3.0,
         "5d": 15.21,
         "20d": 5.58,
         "wtd": 5.18,
@@ -11005,8 +11005,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.52,
-        "em_days": 3,
+        "em_pct": 2.55,
+        "em_days": 2,
         "rs_composite": 36.0
       },
       {
@@ -11018,7 +11018,7 @@
         "wtd": 6.98,
         "ytd": -8.86,
         "stage": 4,
-        "vol_ratio": 0.94,
+        "vol_ratio": 1.04,
         "vol_chart": "data/charts/vol_NET.png",
         "atr_pct": 7.8,
         "dist_sma50_atr": -0.99,
@@ -11078,8 +11078,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 5.78,
-        "em_days": 3,
+        "em_pct": 5.79,
+        "em_days": 2,
         "rs_composite": 9.0
       }
     ],
@@ -11093,7 +11093,7 @@
         "wtd": 4.6,
         "ytd": -29.28,
         "stage": 4,
-        "vol_ratio": 1.13,
+        "vol_ratio": 1.14,
         "vol_chart": "data/charts/vol_ADBE.png",
         "atr_pct": 3.9,
         "dist_sma50_atr": -2.04,
@@ -11148,20 +11148,20 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.43,
-        "em_days": 3,
+        "em_pct": 3.45,
+        "em_days": 2,
         "rs_composite": 2.0
       },
       {
         "ticker": "PANW",
         "daily": -0.57,
-        "intra": -0.98,
+        "intra": -1.09,
         "5d": -4.87,
         "20d": -3.5,
         "wtd": 3.76,
         "ytd": -9.91,
         "stage": 4,
-        "vol_ratio": 0.86,
+        "vol_ratio": 0.87,
         "vol_chart": "data/charts/vol_PANW.png",
         "atr_pct": 4.8,
         "dist_sma50_atr": 0.14,
@@ -11216,8 +11216,8 @@
         "above_sma20": false,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 3.68,
-        "em_days": 3,
+        "em_pct": 4.29,
+        "em_days": 2,
         "rs_composite": 7.0
       },
       {
@@ -11229,7 +11229,7 @@
         "wtd": 5.97,
         "ytd": -19.16,
         "stage": 4,
-        "vol_ratio": 1.09,
+        "vol_ratio": 1.1,
         "vol_chart": "data/charts/vol_PLTR.png",
         "atr_pct": 5.7,
         "dist_sma50_atr": -0.98,
@@ -11289,14 +11289,14 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.96,
-        "em_days": 3,
+        "em_pct": 3.97,
+        "em_days": 2,
         "rs_composite": 3.0
       },
       {
         "ticker": "INTU",
         "daily": -0.71,
-        "intra": -1.66,
+        "intra": -1.83,
         "5d": -10.31,
         "20d": -18.65,
         "wtd": 4.52,
@@ -11352,8 +11352,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.97,
-        "em_days": 3,
+        "em_pct": 4.56,
+        "em_days": 2,
         "rs_composite": 1.0
       },
       {
@@ -11365,7 +11365,7 @@
         "wtd": 3.85,
         "ytd": -32.29,
         "stage": 4,
-        "vol_ratio": 0.97,
+        "vol_ratio": 0.98,
         "vol_chart": "data/charts/vol_CRM.png",
         "atr_pct": 4.4,
         "dist_sma50_atr": -2.12,
@@ -11410,8 +11410,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.57,
-        "em_days": 3,
+        "em_pct": 3.58,
+        "em_days": 2,
         "rs_composite": 1.0
       },
       {
@@ -11468,8 +11468,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 4.73,
-        "em_days": 3,
+        "em_pct": 4.66,
+        "em_days": 2,
         "rs_composite": 0.0
       },
       {
@@ -11481,7 +11481,7 @@
         "wtd": 4.76,
         "ytd": -42.73,
         "stage": 4,
-        "vol_ratio": 0.74,
+        "vol_ratio": 0.77,
         "vol_chart": "data/charts/vol_WDAY.png",
         "atr_pct": 5.5,
         "dist_sma50_atr": -2.6,
@@ -11526,8 +11526,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 4.92,
-        "em_days": 3,
+        "em_pct": 4.84,
+        "em_days": 2,
         "rs_composite": 0.0
       }
     ],
@@ -11535,13 +11535,13 @@
       {
         "ticker": "AAPL",
         "daily": -0.14,
-        "intra": -0.1,
+        "intra": -0.16,
         "5d": 2.1,
         "20d": 2.38,
         "wtd": -0.63,
         "ytd": -4.4,
         "stage": 1,
-        "vol_ratio": 0.97,
+        "vol_ratio": 1.18,
         "vol_chart": "data/charts/vol_AAPL.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": -0.35,
@@ -11602,7 +11602,7 @@
         "above_sma50": false,
         "above_sma200": true,
         "em_pct": 1.97,
-        "em_days": 3,
+        "em_days": 2,
         "rs_composite": 41.0
       },
       {
@@ -11614,7 +11614,7 @@
         "wtd": 4.46,
         "ytd": 9.94,
         "stage": 3,
-        "vol_ratio": 1.56,
+        "vol_ratio": 1.62,
         "vol_chart": "data/charts/vol_AMZN.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 5.99,
@@ -11659,14 +11659,14 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.5,
-        "em_days": 3,
+        "em_pct": 2.51,
+        "em_days": 2,
         "rs_composite": 67.0
       },
       {
         "ticker": "META",
         "daily": 4.41,
-        "intra": 3.03,
+        "intra": 3.0,
         "5d": 15.21,
         "20d": 5.58,
         "wtd": 5.18,
@@ -11732,20 +11732,20 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.52,
-        "em_days": 3,
+        "em_pct": 2.55,
+        "em_days": 2,
         "rs_composite": 36.0
       },
       {
         "ticker": "NFLX",
         "daily": 3.02,
-        "intra": 3.02,
+        "intra": 3.06,
         "5d": 7.55,
         "20d": 11.64,
         "wtd": 3.17,
         "ytd": 16.8,
         "stage": 3,
-        "vol_ratio": 1.11,
+        "vol_ratio": 1.12,
         "vol_chart": "data/charts/vol_NFLX.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": 6.63,
@@ -11800,20 +11800,20 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 6.85,
-        "em_days": 3,
+        "em_pct": 6.79,
+        "em_days": 2,
         "rs_composite": 48.0
       },
       {
         "ticker": "GOOGL",
         "daily": 3.61,
-        "intra": 2.48,
+        "intra": 2.5,
         "5d": 8.99,
         "20d": 8.95,
         "wtd": 4.94,
         "ytd": 5.71,
         "stage": 2,
-        "vol_ratio": 0.92,
+        "vol_ratio": 0.95,
         "vol_chart": "data/charts/vol_GOOGL.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": 3.14,
@@ -11868,8 +11868,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.22,
-        "em_days": 3,
+        "em_pct": 2.24,
+        "em_days": 2,
         "rs_composite": 78.0
       },
       {
@@ -11881,7 +11881,7 @@
         "wtd": 7.43,
         "ytd": -11.07,
         "stage": 4,
-        "vol_ratio": 0.58,
+        "vol_ratio": 0.7,
         "vol_chart": "data/charts/vol_SPOT.png",
         "atr_pct": 3.9,
         "dist_sma50_atr": 1.18,
@@ -11941,8 +11941,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 3.37,
-        "em_days": 3,
+        "em_pct": 3.35,
+        "em_days": 2,
         "rs_composite": 10.0
       },
       {
@@ -11954,10 +11954,10 @@
         "wtd": 3.45,
         "ytd": -12.01,
         "stage": 4,
-        "vol_ratio": 1.09,
+        "vol_ratio": 1.11,
         "vol_chart": "data/charts/vol_UBER.png",
-        "atr_pct": 3.2,
-        "dist_sma50_atr": -0.23,
+        "atr_pct": 3.3,
+        "dist_sma50_atr": -0.22,
         "rs": 5.0,
         "rs_chart": "data/charts/UBER.png",
         "long": [],
@@ -12014,8 +12014,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.09,
-        "em_days": 3,
+        "em_pct": 2.95,
+        "em_days": 2,
         "rs_composite": 8.0
       }
     ],
@@ -12029,7 +12029,7 @@
         "wtd": -0.54,
         "ytd": 2.55,
         "stage": 4,
-        "vol_ratio": 0.37,
+        "vol_ratio": 0.59,
         "vol_chart": "data/charts/vol_PG.png",
         "atr_pct": 1.8,
         "dist_sma50_atr": -3.01,
@@ -12085,7 +12085,7 @@
         "above_sma50": false,
         "above_sma200": false,
         "em_pct": 1.64,
-        "em_days": 3,
+        "em_days": 2,
         "rs_composite": 23.0
       },
       {
@@ -12097,7 +12097,7 @@
         "wtd": -2.03,
         "ytd": 10.56,
         "stage": 2,
-        "vol_ratio": 0.82,
+        "vol_ratio": 0.83,
         "vol_chart": "data/charts/vol_KO.png",
         "atr_pct": 1.7,
         "dist_sma50_atr": -1.05,
@@ -12152,8 +12152,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.63,
-        "em_days": 3,
+        "em_pct": 1.92,
+        "em_days": 2,
         "rs_composite": 59.0
       },
       {
@@ -12194,9 +12194,9 @@
               "dist_pct": -9.1
             },
             {
-              "price": 137.51,
-              "score": 44,
-              "dist_pct": -11.7
+              "price": 137.37,
+              "score": 40,
+              "dist_pct": -11.8
             }
           ],
           "resistance": [
@@ -12225,8 +12225,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 4.28,
-        "em_days": 3,
+        "em_pct": 4.17,
+        "em_days": 2,
         "rs_composite": 52.0
       },
       {
@@ -12275,7 +12275,7 @@
           "resistance": [
             {
               "price": 162.22,
-              "score": 42,
+              "score": 43,
               "dist_pct": 1.7
             },
             {
@@ -12298,8 +12298,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.24,
-        "em_days": 3,
+        "em_pct": 2.15,
+        "em_days": 2,
         "rs_composite": 19.0
       },
       {
@@ -12311,7 +12311,7 @@
         "wtd": -0.21,
         "ytd": 8.99,
         "stage": 3,
-        "vol_ratio": 1.24,
+        "vol_ratio": 1.27,
         "vol_chart": "data/charts/vol_CL.png",
         "atr_pct": 2.1,
         "dist_sma50_atr": -3.37,
@@ -12371,8 +12371,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.87,
-        "em_days": 3,
+        "em_pct": 1.94,
+        "em_days": 2,
         "rs_composite": 45.0
       },
       {
@@ -12384,7 +12384,7 @@
         "wtd": -1.97,
         "ytd": 8.74,
         "stage": 3,
-        "vol_ratio": 0.61,
+        "vol_ratio": 0.65,
         "vol_chart": "data/charts/vol_MDLZ.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": -0.27,
@@ -12444,20 +12444,20 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.2,
-        "em_days": 3,
+        "em_pct": 1.99,
+        "em_days": 2,
         "rs_composite": 41.0
       },
       {
         "ticker": "WMT",
         "daily": 0.39,
-        "intra": 1.57,
+        "intra": 1.54,
         "5d": 2.09,
         "20d": -0.54,
         "wtd": -1.36,
         "ytd": 11.13,
         "stage": 2,
-        "vol_ratio": 0.79,
+        "vol_ratio": 0.8,
         "vol_chart": "data/charts/vol_WMT.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": -0.15,
@@ -12517,8 +12517,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.04,
-        "em_days": 3,
+        "em_pct": 2.02,
+        "em_days": 2,
         "rs_composite": 68.0
       }
     ],
@@ -12582,8 +12582,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 1.9,
-        "em_days": 3,
+        "em_pct": 1.88,
+        "em_days": 2,
         "rs_composite": 13.0
       },
       {
@@ -12595,7 +12595,7 @@
         "wtd": 2.91,
         "ytd": -8.58,
         "stage": 4,
-        "vol_ratio": 0.65,
+        "vol_ratio": 0.79,
         "vol_chart": "data/charts/vol_MA.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": 0.02,
@@ -12655,20 +12655,20 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.03,
-        "em_days": 3,
+        "em_pct": 2.19,
+        "em_days": 2,
         "rs_composite": 15.0
       },
       {
         "ticker": "PYPL",
         "daily": 0.97,
-        "intra": 0.0,
+        "intra": 0.06,
         "5d": 6.91,
         "20d": 5.61,
         "wtd": 6.03,
         "ytd": -17.24,
         "stage": 4,
-        "vol_ratio": 0.62,
+        "vol_ratio": 0.66,
         "vol_chart": "data/charts/vol_PYPL.png",
         "atr_pct": 3.1,
         "dist_sma50_atr": 2.54,
@@ -12723,20 +12723,20 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 3.1,
-        "em_days": 3,
+        "em_pct": 3.09,
+        "em_days": 2,
         "rs_composite": 6.0
       },
       {
         "ticker": "CME",
         "daily": -1.18,
-        "intra": -0.84,
+        "intra": -0.39,
         "5d": -4.36,
         "20d": -5.35,
         "wtd": 0.59,
         "ytd": 12.77,
         "stage": 2,
-        "vol_ratio": 0.76,
+        "vol_ratio": 1.06,
         "vol_chart": "data/charts/vol_CME.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": -0.84,
@@ -12796,8 +12796,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.93,
-        "em_days": 3,
+        "em_pct": 1.65,
+        "em_days": 2,
         "rs_composite": 62.0
       },
       {
@@ -12809,7 +12809,7 @@
         "wtd": 0.9,
         "ytd": 1.61,
         "stage": 3,
-        "vol_ratio": 0.6,
+        "vol_ratio": 0.87,
         "vol_chart": "data/charts/vol_ICE.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": 0.47,
@@ -12869,8 +12869,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.05,
-        "em_days": 3,
+        "em_pct": 1.89,
+        "em_days": 2,
         "rs_composite": 37.0
       },
       {
@@ -12882,7 +12882,7 @@
         "wtd": 2.36,
         "ytd": -16.86,
         "stage": 4,
-        "vol_ratio": 0.98,
+        "vol_ratio": 1.26,
         "vol_chart": "data/charts/vol_SPGI.png",
         "atr_pct": 2.9,
         "dist_sma50_atr": -0.31,
@@ -12942,8 +12942,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.36,
-        "em_days": 3,
+        "em_pct": 2.4,
+        "em_days": 2,
         "rs_composite": 10.0
       },
       {
@@ -12955,7 +12955,7 @@
         "wtd": 1.72,
         "ytd": -3.08,
         "stage": 1,
-        "vol_ratio": 0.91,
+        "vol_ratio": 1.2,
         "vol_chart": "data/charts/vol_MSCI.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": -0.28,
@@ -13015,8 +13015,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.55,
-        "em_days": 3,
+        "em_pct": 2.39,
+        "em_days": 2,
         "rs_composite": 19.0
       }
     ],
@@ -13090,8 +13090,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.48,
-        "em_days": 3,
+        "em_pct": 2.45,
+        "em_days": 2,
         "rs_composite": 84.0
       },
       {
@@ -13103,7 +13103,7 @@
         "wtd": -0.81,
         "ytd": 21.14,
         "stage": 2,
-        "vol_ratio": 0.82,
+        "vol_ratio": 0.83,
         "vol_chart": "data/charts/vol_CVX.png",
         "atr_pct": 3.1,
         "dist_sma50_atr": -0.68,
@@ -13158,8 +13158,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.25,
-        "em_days": 3,
+        "em_pct": 2.23,
+        "em_days": 2,
         "rs_composite": 76.0
       },
       {
@@ -13171,7 +13171,7 @@
         "wtd": -3.07,
         "ytd": 23.8,
         "stage": 2,
-        "vol_ratio": 0.91,
+        "vol_ratio": 0.94,
         "vol_chart": "data/charts/vol_COP.png",
         "atr_pct": 3.5,
         "dist_sma50_atr": 0.12,
@@ -13226,8 +13226,8 @@
         "above_sma20": false,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.69,
-        "em_days": 3,
+        "em_pct": 2.8,
+        "em_days": 2,
         "rs_composite": 88.0
       },
       {
@@ -13276,7 +13276,7 @@
           "resistance": [
             {
               "price": 135.72,
-              "score": 8,
+              "score": 9,
               "dist_pct": 1.6
             },
             {
@@ -13299,8 +13299,8 @@
         "above_sma20": false,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.83,
-        "em_days": 3,
+        "em_pct": 2.6,
+        "em_days": 2,
         "rs_composite": 83.0
       },
       {
@@ -13368,7 +13368,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "em_pct": 3.03,
-        "em_days": 3,
+        "em_days": 2,
         "rs_composite": 89.0
       },
       {
@@ -13380,7 +13380,7 @@
         "wtd": -5.31,
         "ytd": 20.11,
         "stage": 2,
-        "vol_ratio": 0.59,
+        "vol_ratio": 0.69,
         "vol_chart": "data/charts/vol_DVN.png",
         "atr_pct": 3.9,
         "dist_sma50_atr": -0.36,
@@ -13435,8 +13435,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.85,
-        "em_days": 3,
+        "em_pct": 2.94,
+        "em_days": 2,
         "rs_composite": 91.0
       },
       {
@@ -13451,7 +13451,7 @@
         "vol_ratio": 0.56,
         "vol_chart": "data/charts/vol_SLB.png",
         "atr_pct": 3.5,
-        "dist_sma50_atr": 1.0,
+        "dist_sma50_atr": 0.99,
         "rs": 0.0,
         "rs_chart": "data/charts/SLB.png",
         "long": [],
@@ -13508,8 +13508,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.04,
-        "em_days": 3,
+        "em_pct": 3.17,
+        "em_days": 2,
         "rs_composite": 94.0
       }
     ],
@@ -13578,8 +13578,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.19,
-        "em_days": 3,
+        "em_pct": 2.13,
+        "em_days": 2,
         "rs_composite": 70.0
       },
       {
@@ -13591,7 +13591,7 @@
         "wtd": 0.62,
         "ytd": 8.67,
         "stage": 2,
-        "vol_ratio": 0.54,
+        "vol_ratio": 0.76,
         "vol_chart": "data/charts/vol_RTX.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": 0.53,
@@ -13651,8 +13651,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.15,
-        "em_days": 3,
+        "em_pct": 2.35,
+        "em_days": 2,
         "rs_composite": 71.0
       },
       {
@@ -13664,7 +13664,7 @@
         "wtd": 0.95,
         "ytd": 16.5,
         "stage": 2,
-        "vol_ratio": 0.53,
+        "vol_ratio": 0.7,
         "vol_chart": "data/charts/vol_NOC.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": -1.67,
@@ -13720,7 +13720,7 @@
         "above_sma50": false,
         "above_sma200": true,
         "em_pct": 2.27,
-        "em_days": 3,
+        "em_days": 2,
         "rs_composite": 49.0
       },
       {
@@ -13732,10 +13732,10 @@
         "wtd": 1.41,
         "ytd": -0.16,
         "stage": 1,
-        "vol_ratio": 0.83,
+        "vol_ratio": 0.84,
         "vol_chart": "data/charts/vol_GD.png",
         "atr_pct": 2.2,
-        "dist_sma50_atr": -1.31,
+        "dist_sma50_atr": -1.3,
         "rs": 0.0,
         "rs_chart": "data/charts/GD.png",
         "long": [],
@@ -13761,9 +13761,9 @@
               "dist_pct": -8.8
             },
             {
-              "price": 272.26,
+              "price": 272.44,
               "score": 34,
-              "dist_pct": -19.9
+              "dist_pct": -19.8
             }
           ],
           "resistance": [
@@ -13787,8 +13787,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.85,
-        "em_days": 3,
+        "em_pct": 1.81,
+        "em_days": 2,
         "rs_composite": 20.0
       },
       {
@@ -13860,8 +13860,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.52,
-        "em_days": 3,
+        "em_pct": 2.54,
+        "em_days": 2,
         "rs_composite": 36.0
       },
       {
@@ -13873,7 +13873,7 @@
         "wtd": 0.56,
         "ytd": 17.18,
         "stage": 2,
-        "vol_ratio": 0.71,
+        "vol_ratio": 0.72,
         "vol_chart": "data/charts/vol_LHX.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": 0.14,
@@ -13933,8 +13933,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.28,
-        "em_days": 3,
+        "em_pct": 1.97,
+        "em_days": 2,
         "rs_composite": 66.0
       },
       {
@@ -13946,7 +13946,7 @@
         "wtd": 0.93,
         "ytd": 14.17,
         "stage": 2,
-        "vol_ratio": 0.43,
+        "vol_ratio": 0.57,
         "vol_chart": "data/charts/vol_HII.png",
         "atr_pct": 3.4,
         "dist_sma50_atr": -1.07,
@@ -13970,9 +13970,9 @@
               "dist_pct": -30.7
             },
             {
-              "price": 267.61,
-              "score": 28,
-              "dist_pct": -32.8
+              "price": 267.21,
+              "score": 25,
+              "dist_pct": -32.9
             },
             {
               "price": 226.3,
@@ -14006,8 +14006,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 3.01,
-        "em_days": 3,
+        "em_pct": 3.29,
+        "em_days": 2,
         "rs_composite": 74.0
       }
     ],
@@ -14021,7 +14021,7 @@
         "wtd": 0.45,
         "ytd": 33.04,
         "stage": 2,
-        "vol_ratio": 0.78,
+        "vol_ratio": 0.8,
         "vol_chart": "data/charts/vol_CAT.png",
         "atr_pct": 3.1,
         "dist_sma50_atr": 2.94,
@@ -14060,8 +14060,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.65,
-        "em_days": 3,
+        "em_pct": 2.61,
+        "em_days": 2,
         "rs_composite": 95.0
       },
       {
@@ -14133,8 +14133,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.46,
-        "em_days": 3,
+        "em_pct": 2.18,
+        "em_days": 2,
         "rs_composite": 89.0
       },
       {
@@ -14201,8 +14201,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.93,
-        "em_days": 3,
+        "em_pct": 1.7,
+        "em_days": 2,
         "rs_composite": 73.0
       },
       {
@@ -14274,8 +14274,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.44,
-        "em_days": 3,
+        "em_pct": 2.17,
+        "em_days": 2,
         "rs_composite": 81.0
       },
       {
@@ -14287,7 +14287,7 @@
         "wtd": 0.55,
         "ytd": 6.84,
         "stage": 2,
-        "vol_ratio": 0.45,
+        "vol_ratio": 0.64,
         "vol_chart": "data/charts/vol_EMR.png",
         "atr_pct": 2.9,
         "dist_sma50_atr": 0.66,
@@ -14342,8 +14342,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.87,
-        "em_days": 3,
+        "em_pct": 2.94,
+        "em_days": 2,
         "rs_composite": 56.0
       },
       {
@@ -14355,7 +14355,7 @@
         "wtd": 3.13,
         "ytd": -0.71,
         "stage": 2,
-        "vol_ratio": 0.46,
+        "vol_ratio": 0.61,
         "vol_chart": "data/charts/vol_GE.png",
         "atr_pct": 3.4,
         "dist_sma50_atr": 0.55,
@@ -14410,8 +14410,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.46,
-        "em_days": 3,
+        "em_pct": 2.58,
+        "em_days": 2,
         "rs_composite": 44.0
       },
       {
@@ -14425,8 +14425,8 @@
         "stage": 2,
         "vol_ratio": 1.01,
         "vol_chart": "data/charts/vol_TT.png",
-        "atr_pct": 2.6,
-        "dist_sma50_atr": 2.49,
+        "atr_pct": 2.7,
+        "dist_sma50_atr": 2.48,
         "rs": 10.0,
         "rs_chart": "data/charts/TT.png",
         "long": [],
@@ -14473,8 +14473,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.02,
-        "em_days": 3,
+        "em_pct": 2.22,
+        "em_days": 2,
         "rs_composite": 78.0
       }
     ],
@@ -14482,7 +14482,7 @@
       {
         "ticker": "NVDA",
         "daily": 3.8,
-        "intra": 2.98,
+        "intra": 2.97,
         "5d": 10.34,
         "20d": 7.25,
         "wtd": 4.18,
@@ -14543,8 +14543,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.6,
-        "em_days": 3,
+        "em_pct": 2.63,
+        "em_days": 2,
         "rs_composite": 53.0
       },
       {
@@ -14556,7 +14556,7 @@
         "wtd": 2.48,
         "ytd": 9.77,
         "stage": 2,
-        "vol_ratio": 0.9,
+        "vol_ratio": 0.94,
         "vol_chart": "data/charts/vol_AVGO.png",
         "atr_pct": 3.3,
         "dist_sma50_atr": 4.81,
@@ -14616,20 +14616,20 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.4,
-        "em_days": 3,
+        "em_pct": 3.39,
+        "em_days": 2,
         "rs_composite": 68.0
       },
       {
         "ticker": "AMD",
         "daily": 3.34,
-        "intra": 2.04,
+        "intra": 2.11,
         "5d": 15.14,
         "20d": 29.75,
         "wtd": 4.09,
         "ytd": 14.14,
         "stage": 2,
-        "vol_ratio": 0.73,
+        "vol_ratio": 0.75,
         "vol_chart": "data/charts/vol_AMD.png",
         "atr_pct": 3.8,
         "dist_sma50_atr": 5.63,
@@ -14680,7 +14680,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "em_pct": 4.0,
-        "em_days": 3,
+        "em_days": 2,
         "rs_composite": 90.0
       },
       {
@@ -14692,7 +14692,7 @@
         "wtd": 3.73,
         "ytd": -22.71,
         "stage": 4,
-        "vol_ratio": 0.53,
+        "vol_ratio": 0.57,
         "vol_chart": "data/charts/vol_QCOM.png",
         "atr_pct": 2.7,
         "dist_sma50_atr": -0.62,
@@ -14752,8 +14752,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.62,
-        "em_days": 3,
+        "em_pct": 2.81,
+        "em_days": 2,
         "rs_composite": 8.0
       },
       {
@@ -14765,7 +14765,7 @@
         "wtd": 2.29,
         "ytd": 62.04,
         "stage": 2,
-        "vol_ratio": 1.06,
+        "vol_ratio": 1.07,
         "vol_chart": "data/charts/vol_INTC.png",
         "atr_pct": 4.9,
         "dist_sma50_atr": 6.79,
@@ -14810,8 +14810,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.12,
-        "em_days": 3,
+        "em_pct": 5.09,
+        "em_days": 2,
         "rs_composite": 98.0
       },
       {
@@ -14873,23 +14873,23 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.62,
-        "em_days": 3,
+        "em_pct": 2.6,
+        "em_days": 2,
         "rs_composite": 84.0
       },
       {
         "ticker": "MRVL",
         "daily": 1.93,
-        "intra": -1.55,
+        "intra": -1.68,
         "5d": 22.41,
         "20d": 46.21,
         "wtd": 4.16,
         "ytd": 49.9,
         "stage": 2,
-        "vol_ratio": 1.34,
+        "vol_ratio": 1.36,
         "vol_chart": "data/charts/vol_MRVL.png",
         "atr_pct": 4.5,
-        "dist_sma50_atr": 10.74,
+        "dist_sma50_atr": 10.75,
         "rs": 95.0,
         "rs_chart": "data/charts/MRVL.png",
         "long": [],
@@ -14925,8 +14925,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.3,
-        "em_days": 3,
+        "em_pct": 5.26,
+        "em_days": 2,
         "rs_composite": 99.0
       }
     ],
@@ -14934,13 +14934,13 @@
       {
         "ticker": "ASML",
         "daily": 1.21,
-        "intra": -0.65,
+        "intra": -0.53,
         "5d": 16.22,
         "20d": 10.38,
         "wtd": 2.71,
         "ytd": 30.63,
         "stage": 2,
-        "vol_ratio": 1.0,
+        "vol_ratio": 1.02,
         "vol_chart": "data/charts/vol_ASML.png",
         "atr_pct": 3.6,
         "dist_sma50_atr": 2.44,
@@ -14990,8 +14990,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 6.32,
-        "em_days": 3,
+        "em_pct": 6.36,
+        "em_days": 2,
         "rs_composite": 92.0
       },
       {
@@ -15003,7 +15003,7 @@
         "wtd": -0.96,
         "ytd": 47.33,
         "stage": 2,
-        "vol_ratio": 0.78,
+        "vol_ratio": 0.83,
         "vol_chart": "data/charts/vol_AMAT.png",
         "atr_pct": 4.0,
         "dist_sma50_atr": 2.98,
@@ -15049,7 +15049,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "em_pct": 4.8,
-        "em_days": 3,
+        "em_days": 2,
         "rs_composite": 96.0
       },
       {
@@ -15061,7 +15061,7 @@
         "wtd": 3.32,
         "ytd": 47.38,
         "stage": 2,
-        "vol_ratio": 0.81,
+        "vol_ratio": 0.82,
         "vol_chart": "data/charts/vol_LRCX.png",
         "atr_pct": 4.3,
         "dist_sma50_atr": 4.34,
@@ -15100,8 +15100,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.51,
-        "em_days": 3,
+        "em_pct": 5.33,
+        "em_days": 2,
         "rs_composite": 98.0
       },
       {
@@ -15113,10 +15113,10 @@
         "wtd": 3.37,
         "ytd": 41.1,
         "stage": 2,
-        "vol_ratio": 0.76,
+        "vol_ratio": 0.94,
         "vol_chart": "data/charts/vol_KLAC.png",
         "atr_pct": 3.6,
-        "dist_sma50_atr": 5.63,
+        "dist_sma50_atr": 5.62,
         "rs": 50.0,
         "rs_chart": "data/charts/KLAC.png",
         "long": [],
@@ -15152,8 +15152,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.59,
-        "em_days": 3,
+        "em_pct": 4.68,
+        "em_days": 2,
         "rs_composite": 96.0
       },
       {
@@ -15165,7 +15165,7 @@
         "wtd": 2.51,
         "ytd": 19.2,
         "stage": 2,
-        "vol_ratio": 1.0,
+        "vol_ratio": 1.01,
         "vol_chart": "data/charts/vol_TSM.png",
         "atr_pct": 3.3,
         "dist_sma50_atr": 2.43,
@@ -15210,20 +15210,20 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.74,
-        "em_days": 3,
+        "em_pct": 4.7,
+        "em_days": 2,
         "rs_composite": 81.0
       },
       {
         "ticker": "MU",
         "daily": 9.17,
-        "intra": 7.22,
+        "intra": 7.21,
         "5d": 23.33,
         "20d": 5.44,
         "wtd": 10.72,
         "ytd": 47.69,
         "stage": 2,
-        "vol_ratio": 0.95,
+        "vol_ratio": 0.98,
         "vol_chart": "data/charts/vol_MU.png",
         "atr_pct": 5.7,
         "dist_sma50_atr": 2.68,
@@ -15273,8 +15273,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.8,
-        "em_days": 3,
+        "em_pct": 5.78,
+        "em_days": 2,
         "rs_composite": 100.0
       },
       {
@@ -15286,7 +15286,7 @@
         "wtd": -0.67,
         "ytd": 76.17,
         "stage": 2,
-        "vol_ratio": 0.82,
+        "vol_ratio": 0.84,
         "vol_chart": "data/charts/vol_TER.png",
         "atr_pct": 4.6,
         "dist_sma50_atr": 3.85,
@@ -15331,8 +15331,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.49,
-        "em_days": 3,
+        "em_pct": 5.38,
+        "em_days": 2,
         "rs_composite": 100.0
       }
     ],
@@ -15346,7 +15346,7 @@
         "wtd": 4.76,
         "ytd": 15.55,
         "stage": 2,
-        "vol_ratio": 0.87,
+        "vol_ratio": 1.05,
         "vol_chart": "data/charts/vol_ANET.png",
         "atr_pct": 4.1,
         "dist_sma50_atr": 3.59,
@@ -15401,8 +15401,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.16,
-        "em_days": 3,
+        "em_pct": 4.04,
+        "em_days": 2,
         "rs_composite": 77.0
       },
       {
@@ -15414,7 +15414,7 @@
         "wtd": 5.22,
         "ytd": 76.86,
         "stage": 2,
-        "vol_ratio": 0.5,
+        "vol_ratio": 0.51,
         "vol_chart": "data/charts/vol_VRT.png",
         "atr_pct": 4.5,
         "dist_sma50_atr": 5.39,
@@ -15453,8 +15453,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.76,
-        "em_days": 3,
+        "em_pct": 4.73,
+        "em_days": 2,
         "rs_composite": 99.0
       },
       {
@@ -15466,7 +15466,7 @@
         "wtd": 5.66,
         "ytd": 6.66,
         "stage": 2,
-        "vol_ratio": 0.77,
+        "vol_ratio": 0.95,
         "vol_chart": "data/charts/vol_APH.png",
         "atr_pct": 3.9,
         "dist_sma50_atr": 2.27,
@@ -15516,8 +15516,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.53,
-        "em_days": 3,
+        "em_pct": 3.75,
+        "em_days": 2,
         "rs_composite": 69.0
       },
       {
@@ -15529,7 +15529,7 @@
         "wtd": 1.54,
         "ytd": 35.22,
         "stage": 2,
-        "vol_ratio": 0.61,
+        "vol_ratio": 0.73,
         "vol_chart": "data/charts/vol_PWR.png",
         "atr_pct": 3.4,
         "dist_sma50_atr": 2.41,
@@ -15568,8 +15568,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.28,
-        "em_days": 3,
+        "em_pct": 3.24,
+        "em_days": 2,
         "rs_composite": 92.0
       },
       {
@@ -15636,8 +15636,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.82,
-        "em_days": 3,
+        "em_pct": 2.95,
+        "em_days": 2,
         "rs_composite": 84.0
       },
       {
@@ -15649,7 +15649,7 @@
         "wtd": -0.39,
         "ytd": 45.51,
         "stage": 2,
-        "vol_ratio": 0.68,
+        "vol_ratio": 0.81,
         "vol_chart": "data/charts/vol_GEV.png",
         "atr_pct": 3.9,
         "dist_sma50_atr": 4.04,
@@ -15694,8 +15694,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.79,
-        "em_days": 3,
+        "em_pct": 3.53,
+        "em_days": 2,
         "rs_composite": 97.0
       },
       {
@@ -15726,19 +15726,19 @@
         "sr": {
           "support": [
             {
-              "price": 360.39,
-              "score": 48,
-              "dist_pct": -10.3
-            },
-            {
-              "price": 350.13,
+              "price": 368.11,
               "score": 36,
-              "dist_pct": -12.9
+              "dist_pct": -8.4
             },
             {
-              "price": 321.09,
-              "score": 40,
-              "dist_pct": -20.1
+              "price": 359.59,
+              "score": 46,
+              "dist_pct": -10.5
+            },
+            {
+              "price": 349.59,
+              "score": 37,
+              "dist_pct": -13.0
             }
           ],
           "resistance": [
@@ -15757,9 +15757,9 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.82,
-        "em_days": 3,
-        "rs_composite": 76.0
+        "em_pct": 2.97,
+        "em_days": 2,
+        "rs_composite": 77.0
       }
     ],
     "The Housing 7": [
@@ -15772,7 +15772,7 @@
         "wtd": 1.83,
         "ytd": -0.04,
         "stage": 4,
-        "vol_ratio": 0.5,
+        "vol_ratio": 0.61,
         "vol_chart": "data/charts/vol_DHI.png",
         "atr_pct": 3.3,
         "dist_sma50_atr": -0.75,
@@ -15832,8 +15832,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.98,
-        "em_days": 3,
+        "em_pct": 2.93,
+        "em_days": 2,
         "rs_composite": 18.0
       },
       {
@@ -15845,7 +15845,7 @@
         "wtd": -0.16,
         "ytd": -14.39,
         "stage": 4,
-        "vol_ratio": 0.56,
+        "vol_ratio": 0.76,
         "vol_chart": "data/charts/vol_LEN.png",
         "atr_pct": 4.0,
         "dist_sma50_atr": -3.29,
@@ -15895,8 +15895,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.97,
-        "em_days": 3,
+        "em_pct": 3.2,
+        "em_days": 2,
         "rs_composite": 3.0
       },
       {
@@ -15908,7 +15908,7 @@
         "wtd": 0.47,
         "ytd": 1.63,
         "stage": 3,
-        "vol_ratio": 0.33,
+        "vol_ratio": 0.44,
         "vol_chart": "data/charts/vol_VMC.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": 0.89,
@@ -15968,8 +15968,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.06,
-        "em_days": 3,
+        "em_pct": 3.08,
+        "em_days": 2,
         "rs_composite": 37.0
       },
       {
@@ -15981,9 +15981,9 @@
         "wtd": -0.12,
         "ytd": -0.45,
         "stage": 3,
-        "vol_ratio": 0.43,
+        "vol_ratio": 0.59,
         "vol_chart": "data/charts/vol_MLM.png",
-        "atr_pct": 2.6,
+        "atr_pct": 2.7,
         "dist_sma50_atr": 0.04,
         "rs": 10.0,
         "rs_chart": "data/charts/MLM.png",
@@ -16041,8 +16041,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.01,
-        "em_days": 3,
+        "em_pct": 1.55,
+        "em_days": 2,
         "rs_composite": 26.0
       },
       {
@@ -16054,7 +16054,7 @@
         "wtd": -0.75,
         "ytd": 1.98,
         "stage": 4,
-        "vol_ratio": 0.39,
+        "vol_ratio": 0.67,
         "vol_chart": "data/charts/vol_SHW.png",
         "atr_pct": 2.7,
         "dist_sma50_atr": -0.63,
@@ -16114,8 +16114,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.38,
-        "em_days": 3,
+        "em_pct": null,
+        "em_days": null,
         "rs_composite": 23.0
       },
       {
@@ -16127,7 +16127,7 @@
         "wtd": 1.59,
         "ytd": -0.24,
         "stage": 4,
-        "vol_ratio": 0.48,
+        "vol_ratio": 0.68,
         "vol_chart": "data/charts/vol_HD.png",
         "atr_pct": 2.7,
         "dist_sma50_atr": -1.26,
@@ -16187,8 +16187,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.23,
-        "em_days": 3,
+        "em_pct": 2.42,
+        "em_days": 2,
         "rs_composite": 14.0
       },
       {
@@ -16200,7 +16200,7 @@
         "wtd": 1.73,
         "ytd": 1.08,
         "stage": 4,
-        "vol_ratio": 0.52,
+        "vol_ratio": 0.75,
         "vol_chart": "data/charts/vol_LOW.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": -0.9,
@@ -16260,8 +16260,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.22,
-        "em_days": 3,
+        "em_pct": 2.25,
+        "em_days": 2,
         "rs_composite": 37.0
       }
     ],
@@ -16275,7 +16275,7 @@
         "wtd": -1.32,
         "ytd": 18.1,
         "stage": 2,
-        "vol_ratio": 0.49,
+        "vol_ratio": 0.6,
         "vol_chart": "data/charts/vol_NEM.png",
         "atr_pct": 4.1,
         "dist_sma50_atr": 0.88,
@@ -16335,8 +16335,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.79,
-        "em_days": 3,
+        "em_pct": 3.5,
+        "em_days": 2,
         "rs_composite": 80.0
       },
       {
@@ -16348,10 +16348,10 @@
         "wtd": 1.21,
         "ytd": 28.45,
         "stage": 2,
-        "vol_ratio": 0.63,
+        "vol_ratio": 0.73,
         "vol_chart": "data/charts/vol_GOLD.png",
-        "atr_pct": 5.3,
-        "dist_sma50_atr": -2.15,
+        "atr_pct": 5.4,
+        "dist_sma50_atr": -2.14,
         "rs": 0.0,
         "rs_chart": "data/charts/GOLD.png",
         "long": [],
@@ -16403,8 +16403,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 4.32,
-        "em_days": 3,
+        "em_pct": 3.66,
+        "em_days": 2,
         "rs_composite": 91.0
       },
       {
@@ -16416,7 +16416,7 @@
         "wtd": 0.54,
         "ytd": 29.27,
         "stage": 2,
-        "vol_ratio": 0.58,
+        "vol_ratio": 0.62,
         "vol_chart": "data/charts/vol_AEM.png",
         "atr_pct": 4.0,
         "dist_sma50_atr": 0.84,
@@ -16476,8 +16476,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.3,
-        "em_days": 3,
+        "em_pct": 3.11,
+        "em_days": 2,
         "rs_composite": 80.0
       },
       {
@@ -16489,7 +16489,7 @@
         "wtd": 1.97,
         "ytd": 25.5,
         "stage": 2,
-        "vol_ratio": 0.79,
+        "vol_ratio": 0.84,
         "vol_chart": "data/charts/vol_WPM.png",
         "atr_pct": 4.1,
         "dist_sma50_atr": 1.23,
@@ -16544,8 +16544,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.42,
-        "em_days": 3,
+        "em_pct": 3.6,
+        "em_days": 2,
         "rs_composite": 85.0
       },
       {
@@ -16557,7 +16557,7 @@
         "wtd": -1.63,
         "ytd": 23.56,
         "stage": 2,
-        "vol_ratio": 0.7,
+        "vol_ratio": 1.01,
         "vol_chart": "data/charts/vol_FNV.png",
         "atr_pct": 3.8,
         "dist_sma50_atr": 0.54,
@@ -16617,20 +16617,20 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.27,
-        "em_days": 3,
+        "em_pct": 3.34,
+        "em_days": 2,
         "rs_composite": 73.0
       },
       {
         "ticker": "RGLD",
         "daily": 2.67,
-        "intra": 1.62,
+        "intra": 1.34,
         "5d": 4.09,
         "20d": 8.69,
         "wtd": 1.76,
         "ytd": 23.01,
         "stage": 2,
-        "vol_ratio": 0.52,
+        "vol_ratio": 0.58,
         "vol_chart": "data/charts/vol_RGLD.png",
         "atr_pct": 3.8,
         "dist_sma50_atr": 0.6,
@@ -16690,8 +16690,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.31,
-        "em_days": 3,
+        "em_pct": 3.65,
+        "em_days": 2,
         "rs_composite": 82.0
       },
       {
@@ -16703,7 +16703,7 @@
         "wtd": 0.62,
         "ytd": 27.1,
         "stage": 2,
-        "vol_ratio": 0.53,
+        "vol_ratio": 0.57,
         "vol_chart": "data/charts/vol_AGI.png",
         "atr_pct": 4.6,
         "dist_sma50_atr": 1.48,
@@ -16763,8 +16763,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.95,
-        "em_days": 3,
+        "em_pct": 4.51,
+        "em_days": 2,
         "rs_composite": 88.0
       }
     ],
@@ -16778,7 +16778,7 @@
         "wtd": 0.69,
         "ytd": 31.79,
         "stage": 2,
-        "vol_ratio": 0.57,
+        "vol_ratio": 0.71,
         "vol_chart": "data/charts/vol_FCX.png",
         "atr_pct": 3.9,
         "dist_sma50_atr": 2.71,
@@ -16828,8 +16828,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.68,
-        "em_days": 3,
+        "em_pct": 3.71,
+        "em_days": 2,
         "rs_composite": 95.0
       },
       {
@@ -16841,7 +16841,7 @@
         "wtd": 0.42,
         "ytd": 31.72,
         "stage": 2,
-        "vol_ratio": 0.7,
+        "vol_ratio": 0.81,
         "vol_chart": "data/charts/vol_SCCO.png",
         "atr_pct": 4.7,
         "dist_sma50_atr": 0.6,
@@ -16896,8 +16896,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.45,
-        "em_days": 3,
+        "em_pct": 4.4,
+        "em_days": 2,
         "rs_composite": 91.0
       },
       {
@@ -16909,7 +16909,7 @@
         "wtd": 0.02,
         "ytd": 17.76,
         "stage": 2,
-        "vol_ratio": 1.14,
+        "vol_ratio": 1.17,
         "vol_chart": "data/charts/vol_CCJ.png",
         "atr_pct": 4.7,
         "dist_sma50_atr": 0.36,
@@ -16969,8 +16969,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.27,
-        "em_days": 3,
+        "em_pct": 4.2,
+        "em_days": 2,
         "rs_composite": 74.0
       },
       {
@@ -17032,8 +17032,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.37,
-        "em_days": 3,
+        "em_pct": 5.27,
+        "em_days": 2,
         "rs_composite": 97.0
       },
       {
@@ -17045,7 +17045,7 @@
         "wtd": 8.29,
         "ytd": 27.53,
         "stage": 2,
-        "vol_ratio": 1.11,
+        "vol_ratio": 1.16,
         "vol_chart": "data/charts/vol_SQM.png",
         "atr_pct": 4.4,
         "dist_sma50_atr": 3.74,
@@ -17084,8 +17084,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.55,
-        "em_days": 3,
+        "em_pct": 4.67,
+        "em_days": 2,
         "rs_composite": 98.0
       },
       {
@@ -17152,8 +17152,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 4.97,
-        "em_days": 3,
+        "em_pct": 5.21,
+        "em_days": 2,
         "rs_composite": 4.0
       },
       {
@@ -17165,7 +17165,7 @@
         "wtd": 0.83,
         "ytd": 14.17,
         "stage": 2,
-        "vol_ratio": 0.46,
+        "vol_ratio": 0.5,
         "vol_chart": "data/charts/vol_PAAS.png",
         "atr_pct": 4.8,
         "dist_sma50_atr": 0.26,
@@ -17225,8 +17225,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 4.6,
-        "em_days": 3,
+        "em_pct": 4.4,
+        "em_days": 2,
         "rs_composite": 82.0
       }
     ],
@@ -17240,7 +17240,7 @@
         "wtd": 0.4,
         "ytd": -3.49,
         "stage": 2,
-        "vol_ratio": 0.82,
+        "vol_ratio": 1.13,
         "vol_chart": "data/charts/vol_JPM.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": 1.92,
@@ -17300,8 +17300,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.93,
-        "em_days": 3,
+        "em_pct": 1.97,
+        "em_days": 2,
         "rs_composite": 40.0
       },
       {
@@ -17313,7 +17313,7 @@
         "wtd": 0.2,
         "ytd": 0.01,
         "stage": 2,
-        "vol_ratio": 1.14,
+        "vol_ratio": 1.35,
         "vol_chart": "data/charts/vol_GS.png",
         "atr_pct": 3.1,
         "dist_sma50_atr": 1.52,
@@ -17373,8 +17373,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.49,
-        "em_days": 3,
+        "em_pct": 2.4,
+        "em_days": 2,
         "rs_composite": 61.0
       },
       {
@@ -17446,8 +17446,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 3.36,
-        "em_days": 3,
+        "em_pct": 3.43,
+        "em_days": 2,
         "rs_composite": 69.0
       },
       {
@@ -17520,7 +17520,7 @@
         "above_sma50": true,
         "above_sma200": true,
         "em_pct": 3.15,
-        "em_days": 3,
+        "em_days": 2,
         "rs_composite": 54.0
       },
       {
@@ -17532,7 +17532,7 @@
         "wtd": -4.33,
         "ytd": -13.76,
         "stage": 1,
-        "vol_ratio": 2.07,
+        "vol_ratio": 2.11,
         "vol_chart": "data/charts/vol_WFC.png",
         "atr_pct": 3.0,
         "dist_sma50_atr": -0.62,
@@ -17592,8 +17592,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.38,
-        "em_days": 3,
+        "em_pct": 2.41,
+        "em_days": 2,
         "rs_composite": 24.0
       },
       {
@@ -17605,7 +17605,7 @@
         "wtd": 5.53,
         "ytd": -2.27,
         "stage": 4,
-        "vol_ratio": 1.38,
+        "vol_ratio": 1.61,
         "vol_chart": "data/charts/vol_BLK.png",
         "atr_pct": 2.9,
         "dist_sma50_atr": 1.39,
@@ -17665,8 +17665,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.32,
-        "em_days": 3,
+        "em_pct": 2.39,
+        "em_days": 2,
         "rs_composite": 26.0
       },
       {
@@ -17678,7 +17678,7 @@
         "wtd": 4.17,
         "ytd": 9.73,
         "stage": 2,
-        "vol_ratio": 1.13,
+        "vol_ratio": 1.16,
         "vol_chart": "data/charts/vol_C.png",
         "atr_pct": 2.9,
         "dist_sma50_atr": 4.65,
@@ -17717,8 +17717,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.41,
-        "em_days": 3,
+        "em_pct": 2.62,
+        "em_days": 2,
         "rs_composite": 90.0
       }
     ],
@@ -17732,7 +17732,7 @@
         "wtd": 3.24,
         "ytd": -5.88,
         "stage": 1,
-        "vol_ratio": 0.48,
+        "vol_ratio": 0.62,
         "vol_chart": "data/charts/vol_UNH.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 3.95,
@@ -17787,8 +17787,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.22,
-        "em_days": 3,
+        "em_pct": 2.24,
+        "em_days": 2,
         "rs_composite": 18.0
       },
       {
@@ -17800,7 +17800,7 @@
         "wtd": -1.81,
         "ytd": -14.47,
         "stage": 1,
-        "vol_ratio": 0.62,
+        "vol_ratio": 0.79,
         "vol_chart": "data/charts/vol_LLY.png",
         "atr_pct": 3.0,
         "dist_sma50_atr": -2.01,
@@ -17855,8 +17855,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.86,
-        "em_days": 3,
+        "em_pct": 2.97,
+        "em_days": 2,
         "rs_composite": 19.0
       },
       {
@@ -17868,7 +17868,7 @@
         "wtd": 1.12,
         "ytd": -7.57,
         "stage": 1,
-        "vol_ratio": 0.65,
+        "vol_ratio": 0.85,
         "vol_chart": "data/charts/vol_ABBV.png",
         "atr_pct": 2.7,
         "dist_sma50_atr": -1.62,
@@ -17923,8 +17923,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.17,
-        "em_days": 3,
+        "em_pct": 2.15,
+        "em_days": 2,
         "rs_composite": 15.0
       },
       {
@@ -17936,7 +17936,7 @@
         "wtd": 0.69,
         "ytd": 16.41,
         "stage": 2,
-        "vol_ratio": 1.34,
+        "vol_ratio": 1.37,
         "vol_chart": "data/charts/vol_JNJ.png",
         "atr_pct": 1.9,
         "dist_sma50_atr": -0.14,
@@ -17991,8 +17991,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.85,
-        "em_days": 3,
+        "em_pct": 1.84,
+        "em_days": 2,
         "rs_composite": 77.0
       },
       {
@@ -18004,7 +18004,7 @@
         "wtd": 0.71,
         "ytd": 9.47,
         "stage": 2,
-        "vol_ratio": 0.6,
+        "vol_ratio": 0.62,
         "vol_chart": "data/charts/vol_PFE.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": -0.1,
@@ -18054,8 +18054,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.92,
-        "em_days": 3,
+        "em_pct": 2.03,
+        "em_days": 2,
         "rs_composite": 61.0
       },
       {
@@ -18067,7 +18067,7 @@
         "wtd": -1.2,
         "ytd": 13.53,
         "stage": 2,
-        "vol_ratio": 0.86,
+        "vol_ratio": 1.28,
         "vol_chart": "data/charts/vol_MRK.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": 0.52,
@@ -18122,8 +18122,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.0,
-        "em_days": 3,
+        "em_pct": 1.95,
+        "em_days": 2,
         "rs_composite": 86.0
       },
       {
@@ -18135,7 +18135,7 @@
         "wtd": 1.05,
         "ytd": 16.16,
         "stage": 2,
-        "vol_ratio": 1.08,
+        "vol_ratio": 1.09,
         "vol_chart": "data/charts/vol_GILD.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": -1.18,
@@ -18195,8 +18195,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.2,
-        "em_days": 3,
+        "em_pct": 2.14,
+        "em_days": 2,
         "rs_composite": 71.0
       }
     ],
@@ -18204,13 +18204,13 @@
       {
         "ticker": "ISRG",
         "daily": 1.8,
-        "intra": 1.57,
+        "intra": 1.59,
         "5d": 3.15,
         "20d": -3.36,
         "wtd": 3.68,
         "ytd": -16.86,
         "stage": 1,
-        "vol_ratio": 1.21,
+        "vol_ratio": 1.22,
         "vol_chart": "data/charts/vol_ISRG.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": -1.12,
@@ -18270,8 +18270,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.42,
-        "em_days": 3,
+        "em_pct": 2.6,
+        "em_days": 2,
         "rs_composite": 17.0
       },
       {
@@ -18338,8 +18338,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.3,
-        "em_days": 3,
+        "em_pct": 12.2,
+        "em_days": 2,
         "rs_composite": 20.0
       },
       {
@@ -18401,8 +18401,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 4.23,
-        "em_days": 3,
+        "em_pct": 4.5,
+        "em_days": 2,
         "rs_composite": 5.0
       },
       {
@@ -18414,7 +18414,7 @@
         "wtd": 1.04,
         "ytd": -7.51,
         "stage": 1,
-        "vol_ratio": 0.7,
+        "vol_ratio": 0.71,
         "vol_chart": "data/charts/vol_MDT.png",
         "atr_pct": 1.9,
         "dist_sma50_atr": -2.33,
@@ -18469,8 +18469,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 1.67,
-        "em_days": 3,
+        "em_pct": 1.66,
+        "em_days": 2,
         "rs_composite": 16.0
       },
       {
@@ -18482,7 +18482,7 @@
         "wtd": 1.98,
         "ytd": -0.39,
         "stage": 4,
-        "vol_ratio": 1.09,
+        "vol_ratio": 1.1,
         "vol_chart": "data/charts/vol_SYK.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": -0.95,
@@ -18532,8 +18532,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.23,
-        "em_days": 3,
+        "em_pct": 1.94,
+        "em_days": 2,
         "rs_composite": 18.0
       },
       {
@@ -18545,7 +18545,7 @@
         "wtd": 3.29,
         "ytd": -32.62,
         "stage": 4,
-        "vol_ratio": 0.62,
+        "vol_ratio": 0.78,
         "vol_chart": "data/charts/vol_BSX.png",
         "atr_pct": 3.1,
         "dist_sma50_atr": -3.37,
@@ -18600,8 +18600,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.9,
-        "em_days": 3,
+        "em_pct": 2.87,
+        "em_days": 2,
         "rs_composite": 1.0
       },
       {
@@ -18673,8 +18673,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.33,
-        "em_days": 3,
+        "em_pct": 3.38,
+        "em_days": 2,
         "rs_composite": 14.0
       }
     ],
@@ -18688,7 +18688,7 @@
         "wtd": 0.61,
         "ytd": 9.25,
         "stage": 2,
-        "vol_ratio": 0.58,
+        "vol_ratio": 0.82,
         "vol_chart": "data/charts/vol_UNP.png",
         "atr_pct": 1.8,
         "dist_sma50_atr": 0.24,
@@ -18712,9 +18712,9 @@
               "dist_pct": -8.0
             },
             {
-              "price": 225.98,
+              "price": 225.94,
               "score": 51,
-              "dist_pct": -10.3
+              "dist_pct": -10.4
             },
             {
               "price": 220.45,
@@ -18748,14 +18748,14 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.8,
-        "em_days": 3,
+        "em_pct": 2.38,
+        "em_days": 2,
         "rs_composite": 65.0
       },
       {
         "ticker": "CSX",
         "daily": 0.38,
-        "intra": 0.41,
+        "intra": 0.4,
         "5d": 2.63,
         "20d": 6.86,
         "wtd": 0.64,
@@ -18811,8 +18811,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.12,
-        "em_days": 3,
+        "em_pct": 2.35,
+        "em_days": 2,
         "rs_composite": 81.0
       },
       {
@@ -18824,7 +18824,7 @@
         "wtd": -1.05,
         "ytd": 26.78,
         "stage": 2,
-        "vol_ratio": 0.75,
+        "vol_ratio": 1.07,
         "vol_chart": "data/charts/vol_FDX.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": 0.52,
@@ -18874,8 +18874,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.39,
-        "em_days": 3,
+        "em_pct": 2.25,
+        "em_days": 2,
         "rs_composite": 93.0
       },
       {
@@ -18887,7 +18887,7 @@
         "wtd": 1.49,
         "ytd": 3.6,
         "stage": 2,
-        "vol_ratio": 0.56,
+        "vol_ratio": 0.73,
         "vol_chart": "data/charts/vol_UPS.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": -1.05,
@@ -18947,8 +18947,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.39,
-        "em_days": 3,
+        "em_pct": 2.76,
+        "em_days": 2,
         "rs_composite": 68.0
       },
       {
@@ -18960,10 +18960,10 @@
         "wtd": 0.99,
         "ytd": 32.36,
         "stage": 2,
-        "vol_ratio": 0.53,
+        "vol_ratio": 0.56,
         "vol_chart": "data/charts/vol_ODFL.png",
-        "atr_pct": 3.2,
-        "dist_sma50_atr": 2.37,
+        "atr_pct": 3.3,
+        "dist_sma50_atr": 2.36,
         "rs": 0.0,
         "rs_chart": "data/charts/ODFL.png",
         "long": [],
@@ -19015,8 +19015,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.76,
-        "em_days": 3,
+        "em_pct": 3.53,
+        "em_days": 2,
         "rs_composite": 94.0
       },
       {
@@ -19028,7 +19028,7 @@
         "wtd": 1.13,
         "ytd": 16.92,
         "stage": 2,
-        "vol_ratio": 0.78,
+        "vol_ratio": 0.81,
         "vol_chart": "data/charts/vol_JBHT.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 1.9,
@@ -19073,8 +19073,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 5.57,
-        "em_days": 3,
+        "em_pct": 5.62,
+        "em_days": 2,
         "rs_composite": 94.0
       },
       {
@@ -19086,7 +19086,7 @@
         "wtd": 1.15,
         "ytd": 4.59,
         "stage": 2,
-        "vol_ratio": 0.44,
+        "vol_ratio": 0.76,
         "vol_chart": "data/charts/vol_NSC.png",
         "atr_pct": 1.7,
         "dist_sma50_atr": -0.06,
@@ -19136,8 +19136,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.34,
-        "em_days": 3,
+        "em_pct": 2.42,
+        "em_days": 2,
         "rs_composite": 46.0
       }
     ],
@@ -19151,7 +19151,7 @@
         "wtd": 1.27,
         "ytd": -7.27,
         "stage": 4,
-        "vol_ratio": 1.05,
+        "vol_ratio": 1.09,
         "vol_chart": "data/charts/vol_PGR.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": -1.46,
@@ -19201,8 +19201,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 3.66,
-        "em_days": 3,
+        "em_pct": 3.65,
+        "em_days": 2,
         "rs_composite": 11.0
       },
       {
@@ -19214,7 +19214,7 @@
         "wtd": -0.66,
         "ytd": 5.37,
         "stage": 2,
-        "vol_ratio": 0.8,
+        "vol_ratio": 0.85,
         "vol_chart": "data/charts/vol_CB.png",
         "atr_pct": 1.8,
         "dist_sma50_atr": -0.4,
@@ -19274,8 +19274,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 2.01,
-        "em_days": 3,
+        "em_pct": 1.92,
+        "em_days": 2,
         "rs_composite": 58.0
       },
       {
@@ -19287,7 +19287,7 @@
         "wtd": 3.34,
         "ytd": -6.17,
         "stage": 4,
-        "vol_ratio": 0.92,
+        "vol_ratio": 0.94,
         "vol_chart": "data/charts/vol_AON.png",
         "atr_pct": 2.7,
         "dist_sma50_atr": -0.36,
@@ -19337,8 +19337,8 @@
         "above_sma20": true,
         "above_sma50": false,
         "above_sma200": false,
-        "em_pct": 2.59,
-        "em_days": 3,
+        "em_pct": 2.6,
+        "em_days": 2,
         "rs_composite": 14.0
       },
       {
@@ -19350,7 +19350,7 @@
         "wtd": 0.2,
         "ytd": -8.06,
         "stage": 1,
-        "vol_ratio": 0.78,
+        "vol_ratio": 0.99,
         "vol_chart": "data/charts/vol_AIG.png",
         "atr_pct": 2.0,
         "dist_sma50_atr": 0.13,
@@ -19410,8 +19410,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.01,
-        "em_days": 3,
+        "em_pct": 2.58,
+        "em_days": 2,
         "rs_composite": 34.0
       },
       {
@@ -19423,7 +19423,7 @@
         "wtd": 2.92,
         "ytd": -4.65,
         "stage": 4,
-        "vol_ratio": 0.7,
+        "vol_ratio": 0.97,
         "vol_chart": "data/charts/vol_MET.png",
         "atr_pct": 2.5,
         "dist_sma50_atr": 1.51,
@@ -19478,8 +19478,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 2.4,
-        "em_days": 3,
+        "em_pct": 2.56,
+        "em_days": 2,
         "rs_composite": 35.0
       },
       {
@@ -19491,7 +19491,7 @@
         "wtd": 1.12,
         "ytd": 2.08,
         "stage": 2,
-        "vol_ratio": 0.46,
+        "vol_ratio": 0.69,
         "vol_chart": "data/charts/vol_AFL.png",
         "atr_pct": 1.9,
         "dist_sma50_atr": 0.31,
@@ -19541,8 +19541,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.5,
-        "em_days": 3,
+        "em_pct": 2.34,
+        "em_days": 2,
         "rs_composite": 42.0
       }
     ],
@@ -19556,7 +19556,7 @@
         "wtd": -2.94,
         "ytd": 13.6,
         "stage": 2,
-        "vol_ratio": 0.84,
+        "vol_ratio": 1.08,
         "vol_chart": "data/charts/vol_NEE.png",
         "atr_pct": 2.0,
         "dist_sma50_atr": -0.21,
@@ -19611,8 +19611,8 @@
         "above_sma20": false,
         "above_sma50": false,
         "above_sma200": true,
-        "em_pct": 1.9,
-        "em_days": 3,
+        "em_pct": 1.63,
+        "em_days": 2,
         "rs_composite": 58.0
       },
       {
@@ -19669,8 +19669,8 @@
         "above_sma20": false,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.48,
-        "em_days": 3,
+        "em_pct": 1.3,
+        "em_days": 2,
         "rs_composite": 44.0
       },
       {
@@ -19682,7 +19682,7 @@
         "wtd": -1.53,
         "ytd": 11.45,
         "stage": 2,
-        "vol_ratio": 0.47,
+        "vol_ratio": 0.61,
         "vol_chart": "data/charts/vol_DUK.png",
         "atr_pct": 1.7,
         "dist_sma50_atr": 0.53,
@@ -19727,8 +19727,8 @@
         "above_sma20": false,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.33,
-        "em_days": 3,
+        "em_pct": 1.46,
+        "em_days": 2,
         "rs_composite": 51.0
       },
       {
@@ -19740,7 +19740,7 @@
         "wtd": 3.53,
         "ytd": -18.91,
         "stage": 4,
-        "vol_ratio": 0.71,
+        "vol_ratio": 0.75,
         "vol_chart": "data/charts/vol_CEG.png",
         "atr_pct": 4.5,
         "dist_sma50_atr": 0.13,
@@ -19800,8 +19800,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 3.93,
-        "em_days": 3,
+        "em_pct": 4.28,
+        "em_days": 2,
         "rs_composite": 9.0
       },
       {
@@ -19873,8 +19873,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": false,
-        "em_pct": 4.31,
-        "em_days": 3,
+        "em_pct": 4.43,
+        "em_days": 2,
         "rs_composite": 11.0
       },
       {
@@ -19886,7 +19886,7 @@
         "wtd": -0.62,
         "ytd": 17.89,
         "stage": 2,
-        "vol_ratio": 0.94,
+        "vol_ratio": 0.95,
         "vol_chart": "data/charts/vol_AEP.png",
         "atr_pct": 1.8,
         "dist_sma50_atr": 2.44,
@@ -19936,8 +19936,8 @@
         "above_sma20": true,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 1.68,
-        "em_days": 3,
+        "em_pct": 1.55,
+        "em_days": 2,
         "rs_composite": 74.0
       },
       {
@@ -19949,7 +19949,7 @@
         "wtd": -2.69,
         "ytd": 7.94,
         "stage": 2,
-        "vol_ratio": 1.11,
+        "vol_ratio": 1.14,
         "vol_chart": "data/charts/vol_SRE.png",
         "atr_pct": 2.1,
         "dist_sma50_atr": 1.28,
@@ -20004,8 +20004,8 @@
         "above_sma20": false,
         "above_sma50": true,
         "above_sma200": true,
-        "em_pct": 2.6,
-        "em_days": 3,
+        "em_pct": 2.65,
+        "em_days": 2,
         "rs_composite": 54.0
       }
     ]
@@ -20035,8 +20035,8 @@
         3.01
       ],
       "intra": [
-        -1.55,
-        2.09
+        -1.59,
+        2.07
       ],
       "5d": [
         -7.57,
@@ -20143,8 +20143,8 @@
         4.41
       ],
       "intra": [
-        -0.1,
-        3.03
+        -0.16,
+        3.0
       ],
       "5d": [
         2.1,
@@ -20162,7 +20162,7 @@
       ],
       "intra": [
         -3.36,
-        3.03
+        3.0
       ],
       "5d": [
         -17.4,
@@ -20198,7 +20198,7 @@
       ],
       "intra": [
         -0.35,
-        3.03
+        3.06
       ],
       "5d": [
         1.65,
@@ -20216,7 +20216,7 @@
       ],
       "intra": [
         -0.43,
-        1.57
+        1.54
       ],
       "5d": [
         -0.01,
@@ -20306,7 +20306,7 @@
       ],
       "intra": [
         -2.07,
-        2.98
+        2.97
       ],
       "5d": [
         7.07,
@@ -20324,7 +20324,7 @@
       ],
       "intra": [
         -1.09,
-        7.22
+        7.21
       ],
       "5d": [
         10.01,
@@ -20378,7 +20378,7 @@
       ],
       "intra": [
         -2.22,
-        1.62
+        1.34
       ],
       "5d": [
         -1.51,
@@ -20529,12 +20529,12 @@
         "TSLA"
       ],
       "daily": 3.01,
-      "intra": 2.09,
+      "intra": 2.07,
       "wtd": 4.07,
       "5d": 9.11,
       "20d": 4.59,
       "ytd": -2.33,
-      "vol_ratio": 1.06,
+      "vol_ratio": 1.11,
       "atr_pct": 2.8,
       "dist_sma50_atr": 1.65,
       "rs": 37.14,
@@ -20559,15 +20559,15 @@
         "000660.KS",
         "005930.KS"
       ],
-      "daily": 4.36,
-      "intra": 1.64,
-      "wtd": 8.61,
-      "5d": 16.98,
-      "20d": 19.11,
-      "ytd": 101.82,
-      "vol_ratio": 0.76,
+      "daily": 3.67,
+      "intra": 0.91,
+      "wtd": 7.88,
+      "5d": 16.27,
+      "20d": 18.4,
+      "ytd": 100.7,
+      "vol_ratio": 0.94,
       "atr_pct": 5.7,
-      "dist_sma50_atr": 4.37,
+      "dist_sma50_atr": 4.21,
       "rs": 7.5,
       "vol_chart": "data/charts/vol_Theme_Memory.png",
       "constituent_daily": {
@@ -20575,8 +20575,8 @@
         "WDC": 4.59,
         "SNDK": -0.84,
         "STX": 3.93,
-        "000660.KS": 5.44,
-        "005930.KS": 3.87
+        "000660.KS": 2.99,
+        "005930.KS": 2.18
       }
     },
     {
@@ -20591,12 +20591,12 @@
         "GLW"
       ],
       "daily": -0.61,
-      "intra": -2.23,
+      "intra": -2.24,
       "wtd": 0.39,
       "5d": 19.18,
       "20d": 38.92,
       "ytd": 149.27,
-      "vol_ratio": 0.67,
+      "vol_ratio": 0.69,
       "atr_pct": 8.0,
       "dist_sma50_atr": 4.94,
       "rs": 10.0,
@@ -20613,13 +20613,13 @@
     }
   ],
   "fear_greed": {
-    "score": 60.6,
+    "score": 60.8,
     "sentiment": "Greed",
     "components": {
       "volatility": {
-        "score": 76.0,
+        "score": 77.4,
         "label": "VIX Volatility",
-        "detail": "VIX 18.4 (52wk: 13.5–33.8)"
+        "detail": "VIX 18.1 (52wk: 13.5–33.8)"
       },
       "trend": {
         "score": 68.2,
@@ -22597,9 +22597,50 @@
       "target_upper": 3.75,
       "next_fomc_date": "2026-05-06",
       "next_fomc_days": 21,
-      "speeches": [],
-      "hawk_dove_score": null,
-      "market_implied_cuts": null
+      "speeches": [
+        {
+          "name": "Michael S. Barr",
+          "role": "Governor",
+          "voter": false,
+          "date": "2026-04-14",
+          "summary": "Governor Barr spoke on rural economic development at the 'Strengthening America's Economy through Rural Investment' event.[5]",
+          "score": 0
+        },
+        {
+          "name": "Philip N. Jefferson",
+          "role": "Vice Chair",
+          "voter": false,
+          "date": "2026-04-07",
+          "summary": "Vice Chair Jefferson discussed the economic outlook and the labor market.[5]",
+          "score": 0
+        },
+        {
+          "name": "Tom Barkin",
+          "role": "President",
+          "voter": true,
+          "date": "2026-03-27",
+          "summary": "President Barkin considered the economic landscape amid renewed uncertainty in 'Driving Through Economic Fog (Still)'.[2]",
+          "score": 0
+        },
+        {
+          "name": "Michelle W. Bowman",
+          "role": "Vice Chair for Supervision",
+          "voter": false,
+          "date": "2026-03-31",
+          "summary": "Vice Chair Bowman spoke on small business.[5]",
+          "score": 0
+        },
+        {
+          "name": "Lisa D. Cook",
+          "role": "Governor",
+          "voter": false,
+          "date": "2026-03-26",
+          "summary": "Governor Cook reflected on financial stability.[5]",
+          "score": 0
+        }
+      ],
+      "hawk_dove_score": 0,
+      "market_implied_cuts": 75
     }
   },
   "vol_signals": {
@@ -22607,17 +22648,13 @@
       {
         "name": "VIX",
         "desc": "S&P 500",
-        "current": 18.36,
-        "ma20": 24.33,
-        "vs_ma": -24.6,
+        "current": 18.06,
+        "ma20": 24.12,
+        "vs_ma": -25.1,
         "hi52": 33.82,
         "lo52": 13.47,
-        "pct52": 24.0,
+        "pct52": 22.6,
         "history": [
-          {
-            "t": "2025-12-03",
-            "v": 16.08
-          },
           {
             "t": "2025-12-04",
             "v": 15.78
@@ -22973,13 +23010,13 @@
           {
             "t": "2026-04-14",
             "v": 18.36
+          },
+          {
+            "t": "2026-04-15",
+            "v": 18.06
           }
         ],
         "ma_history": [
-          {
-            "t": "2025-12-03",
-            "v": 19.6
-          },
           {
             "t": "2025-12-04",
             "v": 19.48
@@ -23335,6 +23372,10 @@
           {
             "t": "2026-04-14",
             "v": 24.33
+          },
+          {
+            "t": "2026-04-15",
+            "v": 24.12
           }
         ]
       },
@@ -27255,13 +27296,13 @@
       "daily": 0.3,
       "5d": 0.98,
       "20d": 1.81,
-      "vol_ratio": 0.65
+      "vol_ratio": 0.67
     },
     "LQD": {
       "daily": 0.33,
       "5d": 0.83,
       "20d": 1.6,
-      "vol_ratio": 0.59
+      "vol_ratio": 0.64
     },
     "IEF": {
       "daily": 0.32,
@@ -27285,13 +27326,13 @@
       "daily": 2.23,
       "5d": 3.08,
       "20d": -3.33,
-      "vol_ratio": 0.57
+      "vol_ratio": 0.6
     },
     "SLV": {
       "daily": 5.51,
       "5d": 9.25,
       "20d": -1.61,
-      "vol_ratio": 0.77
+      "vol_ratio": 0.78
     },
     "USO": {
       "daily": -3.6,
@@ -27459,36 +27500,308 @@
       "days_in_regime": 61
     }
   },
+  "options_intel": {
+    "SPY": {
+      "spot": 694.46,
+      "expiry_used": "2026-04-20",
+      "days_to_expiry": 5,
+      "atm_iv": 14.2,
+      "pcr": {
+        "oi": null,
+        "vol": 1.03,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 104189,
+        "put_vol": 107314
+      },
+      "max_pain": {
+        "strike": 686.0,
+        "dist_pct": -1.22,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 5.71,
+        "max_gamma_strike": 695.0,
+        "gamma_flip": 695.0,
+        "gamma_flip_dist_pct": 0.08
+      },
+      "iv_skew": {
+        "skew": 9.5,
+        "put_iv": 25.7,
+        "call_iv": 16.2
+      }
+    },
+    "QQQ": {
+      "spot": 628.6,
+      "expiry_used": "2026-04-20",
+      "days_to_expiry": 5,
+      "atm_iv": 18.0,
+      "pcr": {
+        "oi": null,
+        "vol": 1.19,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 38674,
+        "put_vol": 46153
+      },
+      "max_pain": {
+        "strike": 621.0,
+        "dist_pct": -1.21,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 2.13,
+        "max_gamma_strike": 635.0,
+        "gamma_flip": 630.0,
+        "gamma_flip_dist_pct": 0.22
+      },
+      "iv_skew": {
+        "skew": 8.6,
+        "put_iv": 27.3,
+        "call_iv": 18.7
+      }
+    },
+    "IWM": {
+      "spot": 268.72,
+      "expiry_used": "2026-04-20",
+      "days_to_expiry": 5,
+      "atm_iv": 20.7,
+      "pcr": {
+        "oi": null,
+        "vol": 1.43,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 9766,
+        "put_vol": 13956
+      },
+      "max_pain": {
+        "strike": 265.0,
+        "dist_pct": -1.38,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 0.18,
+        "max_gamma_strike": 270.0,
+        "gamma_flip": 273.0,
+        "gamma_flip_dist_pct": 1.59
+      },
+      "iv_skew": {
+        "skew": 8.8,
+        "put_iv": 29.2,
+        "call_iv": 20.3
+      }
+    },
+    "DIA": {
+      "spot": 485.49,
+      "expiry_used": "2026-04-24",
+      "days_to_expiry": 9,
+      "atm_iv": 15.8,
+      "pcr": {
+        "oi": null,
+        "vol": 2.77,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 1391,
+        "put_vol": 3848
+      },
+      "max_pain": {
+        "strike": 483.0,
+        "dist_pct": -0.51,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": -0.01,
+        "max_gamma_strike": 475.0,
+        "gamma_flip": null,
+        "gamma_flip_dist_pct": null
+      },
+      "iv_skew": {
+        "skew": 10.0,
+        "put_iv": 24.8,
+        "call_iv": 14.7
+      }
+    },
+    "RSP": {
+      "spot": 199.66,
+      "expiry_used": "2026-04-24",
+      "days_to_expiry": 9,
+      "atm_iv": 16.4,
+      "pcr": {
+        "oi": null,
+        "vol": 0.34,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 5647,
+        "put_vol": 1925
+      },
+      "max_pain": {
+        "strike": 196.0,
+        "dist_pct": -1.83,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 0.36,
+        "max_gamma_strike": 205.0,
+        "gamma_flip": 205.0,
+        "gamma_flip_dist_pct": 2.67
+      },
+      "iv_skew": {
+        "skew": 13.2,
+        "put_iv": 26.8,
+        "call_iv": 13.6
+      }
+    },
+    "IJH": {
+      "spot": 71.57,
+      "expiry_used": "2026-04-17",
+      "days_to_expiry": 2,
+      "atm_iv": 25.0,
+      "pcr": {
+        "oi": null,
+        "vol": 0.21,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 86,
+        "put_vol": 18
+      },
+      "max_pain": {
+        "strike": 69.0,
+        "dist_pct": -3.59,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 0.0,
+        "max_gamma_strike": 74.0,
+        "gamma_flip": 74.0,
+        "gamma_flip_dist_pct": 3.4
+      },
+      "iv_skew": {
+        "skew": 116.2,
+        "put_iv": 202.1,
+        "call_iv": 85.9
+      }
+    },
+    "IJR": {
+      "spot": 132.43,
+      "expiry_used": "2026-04-17",
+      "days_to_expiry": 2,
+      "atm_iv": 27.5,
+      "pcr": {
+        "oi": null,
+        "vol": 0.59,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 96,
+        "put_vol": 57
+      },
+      "max_pain": {
+        "strike": 126.0,
+        "dist_pct": -4.86,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 0.01,
+        "max_gamma_strike": 131.0,
+        "gamma_flip": 131.0,
+        "gamma_flip_dist_pct": -1.08
+      },
+      "iv_skew": {
+        "skew": 158.4,
+        "put_iv": 196.6,
+        "call_iv": 38.2
+      }
+    },
+    "GLD": {
+      "spot": 445.09,
+      "expiry_used": "2026-04-20",
+      "days_to_expiry": 5,
+      "atm_iv": 27.7,
+      "pcr": {
+        "oi": null,
+        "vol": 0.34,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 7406,
+        "put_vol": 2550
+      },
+      "max_pain": {
+        "strike": 441.0,
+        "dist_pct": -0.92,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 0.59,
+        "max_gamma_strike": 450.0,
+        "gamma_flip": 449.0,
+        "gamma_flip_dist_pct": 0.88
+      },
+      "iv_skew": {
+        "skew": 3.6,
+        "put_iv": 33.2,
+        "call_iv": 29.5
+      }
+    },
+    "SLV": {
+      "spot": 72.04,
+      "expiry_used": "2026-04-20",
+      "days_to_expiry": 5,
+      "atm_iv": 59.1,
+      "pcr": {
+        "oi": null,
+        "vol": 0.67,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 13259,
+        "put_vol": 8871
+      },
+      "max_pain": {
+        "strike": 70.0,
+        "dist_pct": -2.83,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 0.25,
+        "max_gamma_strike": 75.0,
+        "gamma_flip": 73.0,
+        "gamma_flip_dist_pct": 1.33
+      },
+      "iv_skew": {
+        "skew": -3.2,
+        "put_iv": 59.9,
+        "call_iv": 63.1
+      }
+    }
+  },
   "industries_sector_charts": {
-    "Industrials": "data/charts/vol_IndSec_Industrials.png",
-    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
-    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
-    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
-    "Utilities": "data/charts/vol_IndSec_Utilities.png",
     "Materials": "data/charts/vol_IndSec_Materials.png",
     "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
-    "Financials": "data/charts/vol_IndSec_Financials.png",
+    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
     "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
     "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
     "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
+    "Utilities": "data/charts/vol_IndSec_Utilities.png",
+    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
     "Commodities": "data/charts/vol_IndSec_Commodities.png",
     "Energy": "data/charts/vol_IndSec_Energy.png",
-    "Health Care": "data/charts/vol_IndSec_Health_Care.png"
+    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
+    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
+    "Industrials": "data/charts/vol_IndSec_Industrials.png",
+    "Financials": "data/charts/vol_IndSec_Financials.png"
   },
   "industries_sector_rs_charts": {
-    "Industrials": "data/charts/IndSecRS_Industrials.png",
-    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
-    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
-    "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
-    "Utilities": "data/charts/IndSecRS_Utilities.png",
     "Materials": "data/charts/IndSecRS_Materials.png",
     "Consumer Staples": "data/charts/IndSecRS_Consumer_Staples.png",
-    "Financials": "data/charts/IndSecRS_Financials.png",
+    "Consumer Discretionary": "data/charts/IndSecRS_Consumer_Discretionary.png",
     "Real Estate": "data/charts/IndSecRS_Real_Estate.png",
     "Broad Market": "data/charts/IndSecRS_Broad_Market.png",
     "Information Technology": "data/charts/IndSecRS_Information_Technology.png",
+    "Utilities": "data/charts/IndSecRS_Utilities.png",
+    "Health Care": "data/charts/IndSecRS_Health_Care.png",
     "Commodities": "data/charts/IndSecRS_Commodities.png",
     "Energy": "data/charts/IndSecRS_Energy.png",
-    "Health Care": "data/charts/IndSecRS_Health_Care.png"
+    "Communication Services": "data/charts/IndSecRS_Communication_Services.png",
+    "Emerging Markets": "data/charts/IndSecRS_Emerging_Markets.png",
+    "Industrials": "data/charts/IndSecRS_Industrials.png",
+    "Financials": "data/charts/IndSecRS_Financials.png"
   }
 }
