@@ -2677,6 +2677,30 @@
             });
         }
 
+        // Previous Day / Previous Week High-Low (ZCT-style tactical levels)
+        var ohlc = data.ohlc;
+        if (ohlc.length >= 2) {
+            var prevDay = ohlc[ohlc.length - 2]; // second-to-last bar = previous completed day
+            candles.createPriceLine({ price: prevDay.h, color: '#a3e635', lineWidth: 1,
+                lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true,
+                title: 'PDH' });
+            candles.createPriceLine({ price: prevDay.l, color: '#a3e635', lineWidth: 1,
+                lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true,
+                title: 'PDL' });
+        }
+        if (ohlc.length >= 6) {
+            // Previous week = 5 trading days before the last bar
+            var pwSlice = ohlc.slice(-6, -1); // 5 bars ending before the current day
+            var pwHigh = -Infinity, pwLow = Infinity;
+            pwSlice.forEach(function(d) { if (d.h > pwHigh) pwHigh = d.h; if (d.l < pwLow) pwLow = d.l; });
+            candles.createPriceLine({ price: pwHigh, color: '#14b8a6', lineWidth: 1,
+                lineStyle: LightweightCharts.LineStyle.LargeDashed, axisLabelVisible: true,
+                title: 'PWH' });
+            candles.createPriceLine({ price: pwLow, color: '#14b8a6', lineWidth: 1,
+                lineStyle: LightweightCharts.LineStyle.LargeDashed, axisLabelVisible: true,
+                title: 'PWL' });
+        }
+
         // Options levels overlay (SPY, QQQ, IWM, DIA)
         var optsData = snapshot && snapshot.options_intel && snapshot.options_intel[symbol];
         if (optsData) {
@@ -2825,19 +2849,47 @@
                 rows.forEach(function(r) { if (r.ticker === symbol && r.sr) srData = r.sr; });
             });
         }
-        if (!srData || (!srData.support.length && !srData.resistance.length)) { el.style.display = 'none'; return; }
+        var hasSR = srData && (srData.support.length || srData.resistance.length);
+        var safe = symbol.replace(/[^a-zA-Z0-9]/g, '_');
+        var ohlc = ohlcCache[safe] && ohlcCache[safe].ohlc;
+        var hasOHLC = ohlc && ohlc.length >= 2;
+        if (!hasSR && !hasOHLC) { el.style.display = 'none'; return; }
         el.style.display = 'block';
         var h = '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">';
-        h += '<span style="color:#2d6080;font-weight:700;font-size:0.62rem;letter-spacing:0.06em">S/R</span>';
-        srData.resistance.forEach(function(lvl) {
-            var scored = lvl.score >= 5 ? ' ★' : '';
-            h += '<span style="color:#f59e0b" title="Resistance · touched ' + lvl.score + 'x">R&nbsp;<b>$' + lvl.price + '</b>&nbsp;<span style="color:#3d7090">(+' + lvl.dist_pct + '%' + scored + ')</span></span>';
-        });
-        h += '<span style="color:#0d2035">│</span>';
-        srData.support.forEach(function(lvl) {
-            var scored = lvl.score >= 5 ? ' ★' : '';
-            h += '<span style="color:#38bdf8" title="Support · touched ' + lvl.score + 'x">S&nbsp;<b>$' + lvl.price + '</b>&nbsp;<span style="color:#3d7090">(' + lvl.dist_pct + '%' + scored + ')</span></span>';
-        });
+        if (hasSR) {
+            h += '<span style="color:#2d6080;font-weight:700;font-size:0.62rem;letter-spacing:0.06em">S/R</span>';
+            srData.resistance.forEach(function(lvl) {
+                var scored = lvl.score >= 5 ? ' ★' : '';
+                h += '<span style="color:#f59e0b" title="Resistance · touched ' + lvl.score + 'x">R&nbsp;<b>$' + lvl.price + '</b>&nbsp;<span style="color:#3d7090">(+' + lvl.dist_pct + '%' + scored + ')</span></span>';
+            });
+            h += '<span style="color:#0d2035">│</span>';
+            srData.support.forEach(function(lvl) {
+                var scored = lvl.score >= 5 ? ' ★' : '';
+                h += '<span style="color:#38bdf8" title="Support · touched ' + lvl.score + 'x">S&nbsp;<b>$' + lvl.price + '</b>&nbsp;<span style="color:#3d7090">(' + lvl.dist_pct + '%' + scored + ')</span></span>';
+            });
+        }
+        // Append PDH/PDL/PWH/PWL from OHLC cache
+        if (ohlc && ohlc.length >= 2) {
+            var pd = ohlc[ohlc.length - 2];
+            var lastC = ohlc[ohlc.length - 1].c;
+            var pdhPct = ((pd.h - lastC) / lastC * 100).toFixed(1);
+            var pdlPct = ((pd.l - lastC) / lastC * 100).toFixed(1);
+            h += '<span style="color:#0d2035">│</span>';
+            h += '<span style="color:#a3e635" title="Previous Day High">PDH&nbsp;<b>$' + pd.h.toFixed(2) + '</b>&nbsp;<span style="color:#3d7090">(' + (pdhPct > 0 ? '+' : '') + pdhPct + '%)</span></span>';
+            h += '<span style="color:#a3e635" title="Previous Day Low">PDL&nbsp;<b>$' + pd.l.toFixed(2) + '</b>&nbsp;<span style="color:#3d7090">(' + (pdlPct > 0 ? '+' : '') + pdlPct + '%)</span></span>';
+        }
+        if (ohlc && ohlc.length >= 6) {
+            var pw = ohlc.slice(-6, -1);
+            var pwH = -Infinity, pwL = Infinity;
+            pw.forEach(function(d) { if (d.h > pwH) pwH = d.h; if (d.l < pwL) pwL = d.l; });
+            var lastC2 = ohlc[ohlc.length - 1].c;
+            var pwhPct = ((pwH - lastC2) / lastC2 * 100).toFixed(1);
+            var pwlPct = ((pwL - lastC2) / lastC2 * 100).toFixed(1);
+            h += '<span style="color:#0d2035">│</span>';
+            h += '<span style="color:#14b8a6" title="Previous Week High (5d)">PWH&nbsp;<b>$' + pwH.toFixed(2) + '</b>&nbsp;<span style="color:#3d7090">(' + (pwhPct > 0 ? '+' : '') + pwhPct + '%)</span></span>';
+            h += '<span style="color:#14b8a6" title="Previous Week Low (5d)">PWL&nbsp;<b>$' + pwL.toFixed(2) + '</b>&nbsp;<span style="color:#3d7090">(' + (pwlPct > 0 ? '+' : '') + pwlPct + '%)</span></span>';
+        }
+
         h += '</div>';
         el.innerHTML = h;
     }
