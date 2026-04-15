@@ -2339,7 +2339,17 @@
             return;
         }
         var order = ['VLUE','MTUM','QUAL','SIZE','IWF'];
+        var factorGuide = {
+            VLUE: 'If BULL, market favors cheap stocks (low P/E, P/B) over expensive ones.',
+            MTUM: 'If BULL, recent winners keep winning — trend-following is working.',
+            QUAL: 'If BULL, high-profit, low-debt companies are outperforming.',
+            SIZE: 'If BULL, small caps are leading large caps — breadth is healthy.',
+            IWF: 'If BULL, high-growth / high-valuation stocks are leading the market.'
+        };
         var html = '<div style="padding:4px 0">';
+        html += '<div style="padding:6px 12px;color:#6b7a8d;font-size:0.65rem;border-bottom:1px solid #0a1e35">';
+        html += 'Each factor is tracked vs SPY. BULL = outperforming, BEAR = underperforming. Z-score shows strength (\u00b10.3 mild, \u00b11.0+ strong).';
+        html += '</div>';
         order.forEach(function(ftk) {
             var f = fr[ftk];
             if (!f) return;
@@ -2355,6 +2365,7 @@
             html += '<div style="height:100%;width:' + barPct + '%;background:' + regimeColor + ';border-radius:3px"></div>';
             html += '</div>';
             html += '<div style="font-size:0.65rem;color:#6b7a8d;margin-top:2px">' + f.days_in_regime + ' days in regime</div>';
+            html += '<div style="font-size:0.6rem;color:#4b5563;margin-top:1px;font-style:italic">' + (factorGuide[ftk] || '') + '</div>';
             html += '</div>';
         });
         html += '</div>';
