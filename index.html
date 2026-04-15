@@ -1177,7 +1177,7 @@
         inner += '<div style="overflow-x:auto"><table class="ticker-table"><colgroup>';
         inner += '<col style="width:72px"><col style="width:56px"><col style="width:52px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:78px"><col style="width:52px"><col style="width:80px"><col style="width:52px"><col style="width:58px"><col style="width:62px">';
         inner += '</colgroup><thead><tr>';
-        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>Gap</th>';
+        inner += '<th>Ticker</th><th title="Nearest support/resistance within 2% of price">S/R</th><th>Grade</th><th>Daily</th><th>5D</th><th>20D</th><th>YTD</th><th>Vol%</th><th>Vol Chart</th><th>ATR%</th><th>ATRx</th><th>EM(t+1)</th><th>Beat?</th><th>Gap</th>';
         inner += '</tr></thead><tbody>';
         grpRows.forEach(function(r) {
             var dc = (r.daily||0)>0?'price-up':((r.daily||0)<0?'price-down':'');
@@ -1203,6 +1203,25 @@
             inner += '<td>' + (r.vol_chart?'<img src="'+r.vol_chart+'" class="rs-chart" alt="Vol">':'-') + '</td>';
             inner += '<td>' + (r.atr_pct!=null?r.atr_pct.toFixed(1)+'%':'-') + '</td>';
             inner += '<td>' + (r.dist_sma50_atr!=null?r.dist_sma50_atr.toFixed(2):'-') + '</td>';
+            // EM(t+1)
+            var _7emCell = r.em_pct != null
+                ? '<span style="color:#94a3b8">\u00b1' + r.em_pct.toFixed(1) + '%</span>'
+                  + (r.em_days != null ? '<span style="font-size:0.6rem;color:#2d6080"> ' + r.em_days + 'd</span>' : '')
+                : '-';
+            inner += '<td style="text-align:right;white-space:nowrap">' + _7emCell + '</td>';
+            // Beat?
+            var _7beatCell = '-';
+            if (r.em_pct != null && r.daily != null && emYesterday[r.ticker] != null) {
+                var _7actual = Math.abs(r.daily);
+                var _7exp = emYesterday[r.ticker];
+                var _7ratio = _7actual / _7exp;
+                if (_7actual > _7exp) {
+                    _7beatCell = '<span style="color:#ef4444">\u2717 ' + _7ratio.toFixed(1) + '\u00d7</span>';
+                } else {
+                    _7beatCell = '<span style="color:#10b981">\u2713 ' + _7ratio.toFixed(1) + '\u00d7</span>';
+                }
+            }
+            inner += '<td style="text-align:right">' + _7beatCell + '</td>';
             inner += '<td>';
             if (r.gaps && r.gaps.length) {
                 inner += '<div class="gap-bar">';
@@ -1219,7 +1238,7 @@
         detailTr.className = 'seven-detail-row';
         detailTr.setAttribute('data-for', groupName);
         var td = document.createElement('td');
-        td.colSpan = 15;
+        td.colSpan = 20;
         td.innerHTML = '<div class="seven-detail-panel">' + inner + '</div>';
         detailTr.appendChild(td);
         rowEl.insertAdjacentElement('afterend', detailTr);
@@ -2935,14 +2954,18 @@
             polyData = results[3];
             rotationData = results[4];
             newsData = results[5];
-            // Build emYesterday lookup from second-to-last snapshot
+            // Build emYesterday lookup from second-to-last snapshot (all groups)
             emYesterday = {};
             if (rotationData && rotationData.snapshots && rotationData.snapshots.length >= 2) {
                 var prevSnap = rotationData.snapshots[rotationData.snapshots.length - 2];
-                var indGrp = prevSnap.groups && prevSnap.groups['Indices'];
-                if (indGrp) {
-                    Object.keys(indGrp).forEach(function(tk) {
-                        if (indGrp[tk].em_pct != null) emYesterday[tk] = indGrp[tk].em_pct;
+                if (prevSnap.groups) {
+                    Object.keys(prevSnap.groups).forEach(function(gn) {
+                        var grp = prevSnap.groups[gn];
+                        Object.keys(grp).forEach(function(tk) {
+                            if (grp[tk].em_pct != null && emYesterday[tk] == null) {
+                                emYesterday[tk] = grp[tk].em_pct;
+                            }
+                        });
                     });
                 }
             }

@@ -2166,9 +2166,12 @@ def main():
                 if _rpath:
                     industries_sector_rs_charts[_sec_name] = _rpath
 
-    # ── Expected Move (ATM straddle) for Indices group ───────────────────────────
-    print("Fetching options expected move for Indices, Sel Sectors, S&P Style ETFs...")
+    # ── Expected Move (ATM straddle) ─────────────────────────────────────────────
     em_groups = ['Indices', 'Sel Sectors', 'S&P Style ETFs']
+    for gname in groups_data:
+        if gname.startswith('The ') and gname.endswith(' 7'):
+            em_groups.append(gname)
+    print(f"Fetching options expected move for {len(em_groups)} groups...")
     em_tickers = []
     seen = set()
     for g in em_groups:
@@ -2191,6 +2194,14 @@ def main():
             ed = em_data.get(r.get('ticker'), {})
             r['em_pct']  = ed.get('em_pct')
             r['em_days'] = ed.get('em_days')
+
+    # Backfill averaged EM into 7s summary rows
+    for sr in groups_data.get("The 7s at a Glance", []):
+        gname = sr.get("ticker")
+        if gname and gname in groups_data:
+            constituent_rows = groups_data[gname]
+            em_vals = [r.get("em_pct") for r in constituent_rows if r.get("em_pct") is not None]
+            sr["em_pct"] = round(sum(em_vals) / len(em_vals), 2) if em_vals else None
 
     # ── RS Composite Ranking ──────────────────────────────────────────────────
     print("Computing RS composite ranking...")
@@ -2403,6 +2414,9 @@ def main():
 
     # ── Rotation history snapshot ────────────────────────────────────────────────
     ROTATION_GROUPS = ["Indices", "The 7s at a Glance", "Industries", "Sel Sectors", "Countries", "S&P Style ETFs"]
+    for gname in groups_data:
+        if gname.startswith('The ') and gname.endswith(' 7') and gname not in ROTATION_GROUPS:
+            ROTATION_GROUPS.append(gname)
     rot_path = os.path.join(out_dir, "rotation_history.json")
     rot_history = []
     if os.path.exists(rot_path):
