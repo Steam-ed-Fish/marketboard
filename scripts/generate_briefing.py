@@ -14,7 +14,6 @@ import os
 import requests
 from datetime import datetime, timezone
 
-import anthropic
 
 
 # ---------------------------------------------------------------------------
@@ -283,14 +282,21 @@ SYSTEM_PROMPT = (
 
 def generate_briefing(snapshot, api_key, news_context=None, fedwatch=None, tavily_news=None):
     context = build_context(snapshot, news_context, fedwatch, tavily_news)
-    client = anthropic.Anthropic(api_key=api_key)
-    message = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=1000,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": context}],
+    resp = requests.post(
+        "https://api.perplexity.ai/chat/completions",
+        headers={"Authorization": "Bearer {}".format(api_key), "Content-Type": "application/json"},
+        json={
+            "model": "sonar-pro",
+            "messages": [
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": context},
+            ],
+            "max_tokens": 1000,
+        },
+        timeout=60,
     )
-    return message.content[0].text.strip()
+    resp.raise_for_status()
+    return resp.json()["choices"][0]["message"]["content"].strip()
 
 
 # ---------------------------------------------------------------------------
@@ -302,12 +308,10 @@ def main():
     parser.add_argument("--out-dir", default="data")
     args = parser.parse_args()
 
-    anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
-    if not anthropic_key:
-        print("No ANTHROPIC_API_KEY set — skipping briefing generation")
-        return
-
     perplexity_key = os.environ.get("PERPLEXITY_API_KEY", "")
+    if not perplexity_key:
+        print("No PERPLEXITY_API_KEY set — skipping briefing generation")
+        return
 
     snapshot_path  = os.path.join(args.out_dir, "snapshot.json")
     events_path    = os.path.join(args.out_dir, "events.json")
@@ -351,9 +355,9 @@ def main():
         except Exception as e:
             print("Tavily news load failed: {}".format(e))
 
-    print("Generating intelligence briefing via Claude API...")
+    print("Generating intelligence briefing via Perplexity API...")
     try:
-        text = generate_briefing(snapshot, anthropic_key, news_context, fedwatch, tavily_news)
+        text = generate_briefing(snapshot, perplexity_key, news_context, fedwatch, tavily_news)
     except Exception as e:
         print("Briefing generation failed: {}".format(e))
         return
