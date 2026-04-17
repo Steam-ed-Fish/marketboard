@@ -738,7 +738,8 @@
             var cdArr = t.tickers.map(function(tk) { return {t: tk, d: cd[tk] != null ? cd[tk] : null}; });
             var dataJson = JSON.stringify(cdArr).replace(/"/g, '&quot;');
             html += '<tr class="ticker-row">';
-            html += '<td><span class="ticker-label" style="background:#2d3748;font-size:0.85em">' + t.name + '</span></td>';
+            var etfBadge = t.etf ? ' <span style="color:#6b7a8d;font-size:0.75em">(' + t.etf + ')</span>' : '';
+            html += '<td><span class="ticker-label" style="background:#2d3748;font-size:0.85em">' + t.name + '</span>' + etfBadge + '</td>';
             var _thcls = t.daily > 0 ? 'hcol-btn-up' : (t.daily < 0 ? 'hcol-btn-down' : 'hcol-btn-flat');
             html += '<td style="padding:3px 4px"><button type="button" class="hcol-btn ' + _thcls + '" onmouseenter="showThemeTooltip(event,this.dataset.cd)" onmouseleave="hideThemeTooltip()" data-cd="' + dataJson + '" onclick="event.stopPropagation()" title="Hover for constituent performance">h</button></td>';
             html += '<td>-</td>';

@@ -79,7 +79,7 @@ STOCK_GROUPS = {
     "The Power 7": ["NEE", "SO", "DUK", "CEG", "VST", "AEP", "SRE"],
     "Industries": [
         "TAN", "KCE", "IBUY", "QQQE", "JETS", "IBB", "SMH", "CIBR", "UTES", "ROBO", "IGV", "WCLD", "ITA", "PAVE", "BLOK", "AIQ", "IYZ", "PEJ", "FDN", "KBE",
-        "UNG", "BOAT", "KWEB", "KRE", "IBIT", "XRT", "IHI", "DRIV", "MSOS", "SOCL", "XLU", "ARKF", "SLX", "ARKK", "XTN", "XME", "KIE", "GLD", "GXC", "SCHH", "MAGS", "SOXX",
+        "UNG", "BOAT", "KWEB", "KRE", "IBIT", "XRT", "IHI", "DRIV", "MSOS", "SOCL", "XLU", "ARKF", "SLX", "ARKK", "XTN", "XME", "KIE", "GLD", "GXC", "SCHH", "MAGS", "SOXX", "DRAM",
         "GDX", "IPAY", "IWM", "XOP", "VNQ", "EATZ", "FXI", "DBA", "ICLN", "SILJ", "REZ", "LIT", "SLV", "XHB", "XHE", "PBJ", "USO", "DBC", "FCG", "XBI",
         "ARKG", "CPER", "XES", "OIH", "PPH", "FNGS", "URA", "WGMI", "REMX"
     ],
@@ -95,6 +95,11 @@ AI_THEMES = {
     "Mag 7":        ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA"],
     "Memory":       ["MU", "WDC", "SNDK", "STX", "000660.KS", "005930.KS"],
     "Optical Comms": ["COHR", "LITE", "AAOI", "VIAV", "TSEM", "AXTI", "GLW"],
+}
+
+# ETF proxy for a theme — use the ETF's actual returns instead of equal-weighted avg
+THEME_ETF_PROXY = {
+    "Memory": "DRAM",
 }
 
 LEVERAGED_ETFS = {
@@ -2231,19 +2236,28 @@ def main():
             avg_vol = np.mean(vol_histories, axis=0).tolist()
             safe_name = re.sub(r'[^a-zA-Z0-9]', '_', theme_name)
             vol_chart_path = create_vol_chart_png(avg_vol, "Theme_" + safe_name, charts_dir)
+        # Use ETF proxy data if available (e.g. DRAM for Memory)
+        proxy_ticker = THEME_ETF_PROXY.get(theme_name)
+        proxy = all_ticker_data.get(proxy_ticker) if proxy_ticker else None
+        def _val(key, ndec=2):
+            if proxy and proxy.get(key) is not None:
+                return round(proxy[key], ndec)
+            return _theme_avg(key, ndec)
+
         themes_data.append({
             "name": theme_name,
             "tickers": tickers,
-            "daily": _theme_avg("daily"),
-            "intra": _theme_avg("intra"),
-            "wtd": _theme_avg("wtd"),
-            "5d": _theme_avg("5d"),
-            "20d": _theme_avg("20d"),
-            "ytd": _theme_avg("ytd"),
-            "vol_ratio": _theme_avg("vol_ratio"),
-            "atr_pct": _theme_avg("atr_pct", 1),
-            "dist_sma50_atr": _theme_avg("dist_sma50_atr"),
-            "rs": _theme_avg("rs"),
+            "etf": proxy_ticker if proxy else None,
+            "daily": _val("daily"),
+            "intra": _val("intra"),
+            "wtd": _val("wtd"),
+            "5d": _val("5d"),
+            "20d": _val("20d"),
+            "ytd": _val("ytd"),
+            "vol_ratio": _val("vol_ratio"),
+            "atr_pct": _val("atr_pct", 1),
+            "dist_sma50_atr": _val("dist_sma50_atr"),
+            "rs": _val("rs"),
             "vol_chart": vol_chart_path,
             "constituent_daily": {t: all_ticker_data[t].get("daily") for t in tickers if t in all_ticker_data},
         })
