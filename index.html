@@ -2685,10 +2685,10 @@
         var ohlc = data.ohlc;
         if (ohlc.length >= 2) {
             var prevDay = ohlc[ohlc.length - 2]; // second-to-last bar = previous completed day
-            candles.createPriceLine({ price: prevDay.h, color: 'rgba(163,230,53,0.18)', lineWidth: 1,
+            candles.createPriceLine({ price: prevDay.h, color: 'rgba(163,230,53,0.10)', lineWidth: 1,
                 lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: false,
                 title: '' });
-            candles.createPriceLine({ price: prevDay.l, color: 'rgba(163,230,53,0.18)', lineWidth: 1,
+            candles.createPriceLine({ price: prevDay.l, color: 'rgba(163,230,53,0.10)', lineWidth: 1,
                 lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: false,
                 title: '' });
         }
@@ -2697,10 +2697,10 @@
             var pwSlice = ohlc.slice(-6, -1); // 5 bars ending before the current day
             var pwHigh = -Infinity, pwLow = Infinity;
             pwSlice.forEach(function(d) { if (d.h > pwHigh) pwHigh = d.h; if (d.l < pwLow) pwLow = d.l; });
-            candles.createPriceLine({ price: pwHigh, color: 'rgba(20,184,166,0.18)', lineWidth: 1,
+            candles.createPriceLine({ price: pwHigh, color: 'rgba(20,184,166,0.15)', lineWidth: 1,
                 lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: false,
                 title: '' });
-            candles.createPriceLine({ price: pwLow, color: 'rgba(20,184,166,0.18)', lineWidth: 1,
+            candles.createPriceLine({ price: pwLow, color: 'rgba(20,184,166,0.15)', lineWidth: 1,
                 lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: false,
                 title: '' });
         }
