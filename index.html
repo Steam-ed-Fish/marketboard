@@ -2685,12 +2685,12 @@
         var ohlc = data.ohlc;
         if (ohlc.length >= 2) {
             var prevDay = ohlc[ohlc.length - 2]; // second-to-last bar = previous completed day
-            candles.createPriceLine({ price: prevDay.h, color: '#a3e635', lineWidth: 1,
-                lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true,
-                title: 'PDH' });
-            candles.createPriceLine({ price: prevDay.l, color: '#a3e635', lineWidth: 1,
-                lineStyle: LightweightCharts.LineStyle.Dashed, axisLabelVisible: true,
-                title: 'PDL' });
+            candles.createPriceLine({ price: prevDay.h, color: 'rgba(163,230,53,0.35)', lineWidth: 1,
+                lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: false,
+                title: '' });
+            candles.createPriceLine({ price: prevDay.l, color: 'rgba(163,230,53,0.35)', lineWidth: 1,
+                lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: false,
+                title: '' });
         }
         if (ohlc.length >= 6) {
             // Previous week = 5 trading days before the last bar
