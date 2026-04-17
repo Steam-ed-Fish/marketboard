@@ -735,7 +735,8 @@
         html += '</tr></thead><tbody>';
         snapshot.themes.forEach(function(t) {
             var cd = t.constituent_daily || {};
-            var cdArr = t.tickers.map(function(tk) { return {t: tk, d: cd[tk] != null ? cd[tk] : null}; });
+            var _dn = {'005930.KS':'Samsung','000660.KS':'SK Hynix'};
+            var cdArr = t.tickers.map(function(tk) { return {t: _dn[tk] || tk, d: cd[tk] != null ? cd[tk] : null}; });
             var dataJson = JSON.stringify(cdArr).replace(/"/g, '&quot;');
             html += '<tr class="ticker-row">';
             var etfBadge = t.etf ? ' <span style="color:#6b7a8d;font-size:0.75em">(' + t.etf + ')</span>' : '';
