@@ -2316,10 +2316,26 @@ def main():
         print("SPY cache fetch failed:", e)
         _spy_cache = None
 
+    # Load previous snapshot for fallback on rate-limited tickers
+    prev_ticker_data = {}
+    snapshot_path = os.path.join(out_dir, "snapshot.json")
+    if os.path.exists(snapshot_path):
+        try:
+            with open(snapshot_path, encoding="utf-8") as f:
+                prev_snap = json.load(f)
+            for grp in prev_snap.get("groups", {}).values():
+                for row in grp:
+                    if row.get("ticker"):
+                        prev_ticker_data[row["ticker"]] = row
+            print(f"Loaded previous snapshot: {len(prev_ticker_data)} tickers available as fallback")
+        except Exception as e:
+            print(f"Could not load previous snapshot: {e}")
+
     print("Fetching stock data (no Liquid Stocks)...")
     groups_data = {}
     all_ticker_data = {}
     failed_tickers = []
+    fallback_tickers = []
     for group_name, tickers in STOCK_GROUPS.items():
         rows = []
         for i, ticker in enumerate(tickers):
@@ -2332,10 +2348,19 @@ def main():
             if row:
                 rows.append(row)
                 all_ticker_data[ticker] = row
+            elif ticker in prev_ticker_data:
+                # Rate-limited or failed — use previous data
+                rows.append(prev_ticker_data[ticker])
+                all_ticker_data[ticker] = prev_ticker_data[ticker]
+                fallback_tickers.append(ticker)
+                print(f"    -> using previous data for {ticker}")
             else:
                 failed_tickers.append(ticker)
             time.sleep(0.15)
         groups_data[group_name] = rows
+
+    if fallback_tickers:
+        print(f"Used previous data for {len(fallback_tickers)} rate-limited tickers")
 
     # Fetch any AI_THEMES tickers + Fear & Greed tickers + cross-asset tickers not already fetched
     theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers) | {"HYG", "TLT", "VIXY", "USO", "UNG", "UUP", "LQD", "IEF", "SHY"}
@@ -2344,6 +2369,10 @@ def main():
         row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache, ohlc_dir=ohlc_dir)
         if row:
             all_ticker_data[ticker] = row
+        elif ticker in prev_ticker_data:
+            all_ticker_data[ticker] = prev_ticker_data[ticker]
+            fallback_tickers.append(ticker)
+            print(f"    -> using previous data for {ticker}")
         else:
             failed_tickers.append(ticker)
         time.sleep(0.15)
