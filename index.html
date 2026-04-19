@@ -284,7 +284,7 @@
 <body>
     <div class="ticker-list">
         <div style="margin-bottom:0">
-            <button class="events-button fg-toggle-btn" id="events-toggle-btn" type="button" onclick="toggleEventsSection()">📋 QUICK RECAP</button>
+            <button class="events-button fg-toggle-btn" id="events-toggle-btn" type="button" onclick="toggleEventsSection()">📋 QUICK RECAP</button><span id="briefing-meta" class="briefing-meta"></span>
         </div>
         <div id="events-inline-panel" class="fg-inline-panel" style="flex-direction:column">
             <div id="events-tab-macro" style="overflow-y:auto;max-height:560px">
@@ -451,6 +451,14 @@
         if (calEvents.length > 0 && calEvents[0].type === 'briefing') {
             var b = calEvents[0];
             calEvents = calEvents.slice(1);
+            // Show last updated + generation time next to button
+            var metaEl = document.getElementById('briefing-meta');
+            if (metaEl) {
+                var parts = [];
+                if (b.date && b.time) parts.push('updated ' + b.date + ' ' + b.time + ' UTC');
+                if (b.duration_s != null) parts.push(b.duration_s + 's');
+                metaEl.textContent = parts.length ? parts.join(' · ') : '';
+            }
             var rawText = (b.text || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
             var fmtText = rawText.replace(/^([A-Z][A-Z &]+—)/gm, '<span class="b-section">$1</span>');
             html += '<div class="briefing-body" style="padding:10px 14px">' + fmtText + '</div>';

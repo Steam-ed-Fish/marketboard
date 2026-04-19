@@ -463,11 +463,13 @@ def main():
             print("Tavily news load failed: {}".format(e))
 
     print("Generating intelligence briefing via Perplexity API...")
+    t0 = datetime.now(timezone.utc)
     try:
         text = generate_briefing(snapshot, perplexity_key, news_context, fedwatch, tavily_news)
     except Exception as e:
         print("Briefing generation failed: {}".format(e))
         return
+    duration_s = (datetime.now(timezone.utc) - t0).total_seconds()
 
     # Load existing events.json, drop old briefing, prepend new one
     events = []
@@ -487,6 +489,8 @@ def main():
         "time": now.strftime("%H:%M"),
         "event": "Daily Intelligence Briefing",
         "text": text,
+        "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "duration_s": round(duration_s, 1),
     })
 
     with open(events_path, "w", encoding="utf-8") as f:
