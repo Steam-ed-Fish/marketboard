@@ -2704,13 +2704,15 @@ def main():
             print(f"  {sym}: ±{em_pct}% ({em_days}d) [fri]")
         else:
             print(f"  {sym}: no options data [fri]")
-        # Also fetch 0DTE for index tickers
+        # Also fetch 0DTE for index tickers (skip if same expiry as Friday)
         if sym in index_tickers:
             em0_pct, em0_days = get_expected_move(sym, weekly=False)
-            em_data[sym]['em_pct_0d'] = em0_pct
-            em_data[sym]['em_days_0d'] = em0_days
-            if em0_pct is not None:
+            if em0_pct is not None and em0_days != em_days:
+                em_data[sym]['em_pct_0d'] = em0_pct
+                em_data[sym]['em_days_0d'] = em0_days
                 print(f"    0d: ±{em0_pct}% ({em0_days}d)")
+            elif em0_pct is not None:
+                print(f"    0d: same expiry as fri ({em0_days}d) — skipping")
             time.sleep(0.15)
         time.sleep(0.3)
     for gname, rows in groups_data.items():
