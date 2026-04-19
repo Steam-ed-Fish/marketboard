@@ -939,6 +939,121 @@ def create_rrg_chart_png(rrg_points, charts_dir, trails=None):
         return None
 
 
+def compute_trendlines(highs, lows, closes, dates, lookback=90):
+    """Find 1 rising support + 1 falling resistance trendline from pivot points."""
+    n = min(lookback, len(highs))
+    if n < 15:
+        return None
+    h = np.array(highs[-n:], dtype=float)
+    l = np.array(lows[-n:], dtype=float)
+    c = np.array(closes[-n:], dtype=float)
+    d = list(dates[-n:])
+
+    # Find pivot lows (local minima with 2-bar window for more candidates)
+    pivot_lows = []
+    for i in range(2, n - 2):
+        if l[i] <= min(l[i-2:i]) and l[i] <= min(l[i+1:i+3]):
+            pivot_lows.append((i, l[i]))
+
+    # Find pivot highs (local maxima with 2-bar window)
+    pivot_highs = []
+    for i in range(2, n - 2):
+        if h[i] >= max(h[i-2:i]) and h[i] >= max(h[i+1:i+3]):
+            pivot_highs.append((i, h[i]))
+
+    result = {}
+
+    # Support: best line through pivot lows (any slope)
+    best_support = None
+    best_support_score = -1
+    for a in range(len(pivot_lows)):
+        for b in range(a + 1, len(pivot_lows)):
+            i1, p1 = pivot_lows[a]
+            i2, p2 = pivot_lows[b]
+            if i2 - i1 < 3:
+                continue
+            slope = (p2 - p1) / (i2 - i1)
+            # Allow violations — count how many bars close below line
+            violations = 0
+            touches = 0
+            for k in range(i1, n):
+                line_val = p1 + slope * (k - i1)
+                if line_val <= 0:
+                    continue
+                if c[k] < line_val * 0.99:
+                    violations += 1
+                if abs(l[k] - line_val) / line_val < 0.015:
+                    touches += 1
+            # Allow up to 15% of bars as violations
+            max_violations = max(2, int((n - i1) * 0.15))
+            if violations <= max_violations and touches >= 2:
+                score = touches * 2 - violations + (i2 / n) + (i2 - i1) / n
+                if score > best_support_score:
+                    best_support_score = score
+                    p_end = p1 + slope * (n - 1 - i1)
+                    best_support = {"t1": d[i1], "p1": round(p1, 2), "t2": d[n-1], "p2": round(p_end, 2)}
+
+    # Resistance: best line through pivot highs (any slope)
+    best_resist = None
+    best_resist_score = -1
+    for a in range(len(pivot_highs)):
+        for b in range(a + 1, len(pivot_highs)):
+            i1, p1 = pivot_highs[a]
+            i2, p2 = pivot_highs[b]
+            if i2 - i1 < 3:
+                continue
+            slope = (p2 - p1) / (i2 - i1)
+            violations = 0
+            touches = 0
+            for k in range(i1, n):
+                line_val = p1 + slope * (k - i1)
+                if line_val <= 0:
+                    continue
+                if c[k] > line_val * 1.01:
+                    violations += 1
+                if abs(h[k] - line_val) / line_val < 0.015:
+                    touches += 1
+            max_violations = max(2, int((n - i1) * 0.15))
+            if violations <= max_violations and touches >= 2:
+                score = touches * 2 - violations + (i2 / n) + (i2 - i1) / n
+                if score > best_resist_score:
+                    best_resist_score = score
+                    p_end = p1 + slope * (n - 1 - i1)
+                    best_resist = {"t1": d[i1], "p1": round(p1, 2), "t2": d[n-1], "p2": round(p_end, 2)}
+
+    if best_support:
+        result["support"] = best_support
+    if best_resist:
+        result["resistance"] = best_resist
+    return result if result else None
+
+
+def detect_consolidation(highs, lows, closes, lookback=50):
+    """Detect if ticker is currently in a low-volatility consolidation (squeeze)."""
+    n = min(lookback, len(highs))
+    if n < 30:
+        return None
+    h = np.array(highs[-n:], dtype=float)
+    l = np.array(lows[-n:], dtype=float)
+    c = np.array(closes[-n:], dtype=float)
+
+    # Compute ATR
+    tr = np.maximum(h[1:] - l[1:], np.maximum(np.abs(h[1:] - c[:-1]), np.abs(l[1:] - c[:-1])))
+    if len(tr) < 20:
+        return None
+    atr_20 = np.mean(tr[-20:])
+    atr_50 = np.mean(tr) if len(tr) >= 40 else np.mean(tr)
+
+    # Squeeze: current ATR < 60% of longer-term average
+    if atr_50 == 0 or atr_20 / atr_50 >= 0.60:
+        return None
+
+    # Box bounds: last 20 bars
+    box_high = round(float(np.max(h[-20:])), 2)
+    box_low = round(float(np.min(l[-20:])), 2)
+    return {"high": box_high, "low": box_low}
+
+
 def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
     try:
         stock = yf.Ticker(ticker_symbol)
@@ -1078,6 +1193,14 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
             pass
         while len(gaps) < 5:
             gaps.append(None)
+        # Trendlines + consolidation detection
+        _tl_dates = [idx.date().isoformat() for idx in all_hist.index]
+        _tl_highs = all_hist['High'].values
+        _tl_lows = all_hist['Low'].values
+        _tl_closes = all_hist['Close'].values
+        trendlines = compute_trendlines(_tl_highs, _tl_lows, _tl_closes, _tl_dates)
+        consolidation = detect_consolidation(_tl_highs, _tl_lows, _tl_closes)
+
         # Keep last 20 rolling RRS for equal-weighted summary charts (The 7s at a Glance)
         rolling_rrs = None
         if rrs_data is not None and len(rrs_data) >= 20:
@@ -1112,6 +1235,8 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
             "above_sma20": bool(current_close > sma20) if sma20 else None,
             "above_sma50": bool(current_close > sma50) if sma50 else None,
             "above_sma200": bool(current_close > sma200) if sma200 else None,
+            "trendlines": trendlines,
+            "consolidation": consolidation,
         }
     except Exception as e:
         print("Error", ticker_symbol, e)

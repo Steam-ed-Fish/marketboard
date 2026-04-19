@@ -2705,6 +2705,52 @@
                 title: '' });
         }
 
+        // Trendlines (diagonal) from snapshot
+        var _tlData = null;
+        if (snapshot && snapshot.groups) {
+            Object.values(snapshot.groups).forEach(function(rows) {
+                rows.forEach(function(r) { if (r.ticker === symbol && r.trendlines) _tlData = r.trendlines; });
+            });
+        }
+        if (_tlData) {
+            if (_tlData.support) {
+                var _slLine = chart.addLineSeries({
+                    color: 'rgba(34,211,238,0.20)', lineWidth: 1,
+                    lineStyle: LightweightCharts.LineStyle.Dotted,
+                    priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false
+                });
+                _slLine.setData([
+                    { time: _tlData.support.t1, value: _tlData.support.p1 },
+                    { time: _tlData.support.t2, value: _tlData.support.p2 }
+                ]);
+            }
+            if (_tlData.resistance) {
+                var _rlLine = chart.addLineSeries({
+                    color: 'rgba(251,146,60,0.20)', lineWidth: 1,
+                    lineStyle: LightweightCharts.LineStyle.Dotted,
+                    priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false
+                });
+                _rlLine.setData([
+                    { time: _tlData.resistance.t1, value: _tlData.resistance.p1 },
+                    { time: _tlData.resistance.t2, value: _tlData.resistance.p2 }
+                ]);
+            }
+        }
+
+        // Consolidation box (horizontal lines at box high/low)
+        var _consData = null;
+        if (snapshot && snapshot.groups) {
+            Object.values(snapshot.groups).forEach(function(rows) {
+                rows.forEach(function(r) { if (r.ticker === symbol && r.consolidation) _consData = r.consolidation; });
+            });
+        }
+        if (_consData) {
+            candles.createPriceLine({ price: _consData.high, color: 'rgba(255,255,255,0.12)', lineWidth: 1,
+                lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: false, title: '' });
+            candles.createPriceLine({ price: _consData.low, color: 'rgba(255,255,255,0.12)', lineWidth: 1,
+                lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: false, title: '' });
+        }
+
         // Options levels overlay (SPY, QQQ, IWM, DIA)
         var optsData = snapshot && snapshot.options_intel && snapshot.options_intel[symbol];
         if (optsData) {
