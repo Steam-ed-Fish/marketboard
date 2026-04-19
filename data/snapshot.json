@@ -9345,8 +9345,310 @@
     ],
     "window": 60
   },
-  "factor_regime": null,
-  "options_intel": null,
+  "factor_regime": {
+    "VLUE": {
+      "name": "Value",
+      "regime": "BULL",
+      "zscore": 1.43,
+      "days_in_regime": 312
+    },
+    "MTUM": {
+      "name": "Momentum",
+      "regime": "BULL",
+      "zscore": 0.13,
+      "days_in_regime": 497
+    },
+    "QUAL": {
+      "name": "Quality",
+      "regime": "BULL",
+      "zscore": 0.5,
+      "days_in_regime": 61
+    },
+    "SIZE": {
+      "name": "Size",
+      "regime": "BULL",
+      "zscore": 0.25,
+      "days_in_regime": 41
+    },
+    "IWF": {
+      "name": "Growth",
+      "regime": "BEAR",
+      "zscore": -0.5,
+      "days_in_regime": 56
+    }
+  },
+  "options_intel": {
+    "SPY": {
+      "spot": 699.94,
+      "expiry_used": "2026-04-20",
+      "days_to_expiry": 4,
+      "atm_iv": 12.5,
+      "pcr": {
+        "oi": null,
+        "vol": 1.29,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 89006,
+        "put_vol": 114592
+      },
+      "max_pain": {
+        "strike": 692.0,
+        "dist_pct": -1.13,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 3.32,
+        "max_gamma_strike": 705.0,
+        "gamma_flip": 700.0,
+        "gamma_flip_dist_pct": 0.01
+      },
+      "iv_skew": {
+        "skew": 7.7,
+        "put_iv": 25.5,
+        "call_iv": 17.8
+      }
+    },
+    "QQQ": {
+      "spot": 637.4,
+      "expiry_used": "2026-04-20",
+      "days_to_expiry": 4,
+      "atm_iv": 17.1,
+      "pcr": {
+        "oi": null,
+        "vol": 1.2,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 62030,
+        "put_vol": 74513
+      },
+      "max_pain": {
+        "strike": 630.0,
+        "dist_pct": -1.16,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 3.66,
+        "max_gamma_strike": 640.0,
+        "gamma_flip": 640.0,
+        "gamma_flip_dist_pct": 0.41
+      },
+      "iv_skew": {
+        "skew": 4.2,
+        "put_iv": 27.3,
+        "call_iv": 23.1
+      }
+    },
+    "IWM": {
+      "spot": 269.39,
+      "expiry_used": "2026-04-20",
+      "days_to_expiry": 4,
+      "atm_iv": 19.3,
+      "pcr": {
+        "oi": null,
+        "vol": 0.62,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 11028,
+        "put_vol": 6804
+      },
+      "max_pain": {
+        "strike": 264.0,
+        "dist_pct": -2.0,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 0.99,
+        "max_gamma_strike": 275.0,
+        "gamma_flip": 270.0,
+        "gamma_flip_dist_pct": 0.23
+      },
+      "iv_skew": {
+        "skew": 5.0,
+        "put_iv": 28.7,
+        "call_iv": 23.8
+      }
+    },
+    "DIA": {
+      "spot": 484.72,
+      "expiry_used": "2026-04-24",
+      "days_to_expiry": 8,
+      "atm_iv": 14.5,
+      "pcr": {
+        "oi": null,
+        "vol": 0.3,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 10122,
+        "put_vol": 3009
+      },
+      "max_pain": {
+        "strike": 484.0,
+        "dist_pct": -0.15,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 0.9,
+        "max_gamma_strike": 497.0,
+        "gamma_flip": 494.0,
+        "gamma_flip_dist_pct": 1.91
+      },
+      "iv_skew": {
+        "skew": 9.8,
+        "put_iv": 23.9,
+        "call_iv": 14.1
+      }
+    },
+    "RSP": {
+      "spot": 199.73,
+      "expiry_used": "2026-04-24",
+      "days_to_expiry": 8,
+      "atm_iv": 16.7,
+      "pcr": {
+        "oi": null,
+        "vol": 5.69,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 137,
+        "put_vol": 779
+      },
+      "max_pain": {
+        "strike": 196.0,
+        "dist_pct": -1.87,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": -0.04,
+        "max_gamma_strike": 193.0,
+        "gamma_flip": null,
+        "gamma_flip_dist_pct": null
+      },
+      "iv_skew": {
+        "skew": 12.6,
+        "put_iv": 24.4,
+        "call_iv": 11.8
+      }
+    },
+    "IJH": {
+      "spot": 71.36,
+      "expiry_used": "2026-04-17",
+      "days_to_expiry": 1,
+      "atm_iv": 26.1,
+      "pcr": {
+        "oi": null,
+        "vol": 0.33,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 54,
+        "put_vol": 18
+      },
+      "max_pain": {
+        "strike": 69.0,
+        "dist_pct": -3.31,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 0.01,
+        "max_gamma_strike": 71.0,
+        "gamma_flip": 69.0,
+        "gamma_flip_dist_pct": -3.31
+      },
+      "iv_skew": {
+        "skew": 154.4,
+        "put_iv": 280.4,
+        "call_iv": 126.0
+      }
+    },
+    "IJR": {
+      "spot": 132.26,
+      "expiry_used": "2026-04-17",
+      "days_to_expiry": 1,
+      "atm_iv": 31.5,
+      "pcr": {
+        "oi": null,
+        "vol": 0.87,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 55,
+        "put_vol": 48
+      },
+      "max_pain": {
+        "strike": 126.0,
+        "dist_pct": -4.73,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 0.0,
+        "max_gamma_strike": 131.0,
+        "gamma_flip": 131.0,
+        "gamma_flip_dist_pct": -0.95
+      },
+      "iv_skew": {
+        "skew": 220.1,
+        "put_iv": 275.5,
+        "call_iv": 55.4
+      }
+    },
+    "GLD": {
+      "spot": 440.46,
+      "expiry_used": "2026-04-20",
+      "days_to_expiry": 4,
+      "atm_iv": 24.0,
+      "pcr": {
+        "oi": null,
+        "vol": 2.21,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 3093,
+        "put_vol": 6826
+      },
+      "max_pain": {
+        "strike": 445.0,
+        "dist_pct": 1.03,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": -0.07,
+        "max_gamma_strike": 450.0,
+        "gamma_flip": null,
+        "gamma_flip_dist_pct": null
+      },
+      "iv_skew": {
+        "skew": 4.0,
+        "put_iv": 30.5,
+        "call_iv": 26.5
+      }
+    },
+    "SLV": {
+      "spot": 71.84,
+      "expiry_used": "2026-04-20",
+      "days_to_expiry": 4,
+      "atm_iv": 51.9,
+      "pcr": {
+        "oi": null,
+        "vol": 0.62,
+        "call_oi": 0,
+        "put_oi": 0,
+        "call_vol": 11609,
+        "put_vol": 7220
+      },
+      "max_pain": {
+        "strike": 72.0,
+        "dist_pct": 0.22,
+        "source": "volume"
+      },
+      "gex": {
+        "net_gex": 0.01,
+        "max_gamma_strike": 73.0,
+        "gamma_flip": 82.0,
+        "gamma_flip_dist_pct": 14.14
+      },
+      "iv_skew": {
+        "skew": 1.2,
+        "put_iv": 53.4,
+        "call_iv": 52.1
+      }
+    }
+  },
   "industries_sector_charts": {
     "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
     "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
