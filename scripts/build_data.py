@@ -2679,38 +2679,47 @@ def main():
                     industries_sector_rs_charts[_sec_name] = _rpath
 
     # ── Expected Move (ATM straddle) ─────────────────────────────────────────────
+    # All tickers use nearest Friday expiry (GS methodology).
+    # Index tickers also get a 0DTE expected move (em_pct_0d).
     em_groups = ['Indices', 'Sel Sectors', 'S&P Style ETFs']
     for gname in groups_data:
         if gname.startswith('The ') and gname.endswith(' 7'):
             em_groups.append(gname)
     print(f"Fetching options expected move for {len(em_groups)} groups...")
+    index_tickers = set(r.get('ticker') for r in groups_data.get('Indices', []) if r.get('ticker'))
     em_tickers = []
-    em_ticker_weekly = {}  # ticker -> True if weekly (non-index), False if daily (index)
     seen = set()
     for g in em_groups:
-        is_weekly = (g != 'Indices')
         for r in groups_data.get(g, []):
             t = r.get('ticker')
             if t and t not in seen:
                 em_tickers.append(t)
-                em_ticker_weekly[t] = is_weekly
                 seen.add(t)
     em_data = {}
     for sym in em_tickers:
-        weekly = em_ticker_weekly.get(sym, True)
-        em_pct, em_days = get_expected_move(sym, weekly=weekly)
+        # Friday expiry for all tickers
+        em_pct, em_days = get_expected_move(sym, weekly=True)
         em_data[sym] = {'em_pct': em_pct, 'em_days': em_days}
-        mode = "weekly" if weekly else "daily"
         if em_pct is not None:
-            print(f"  {sym}: ±{em_pct}% ({em_days}d) [{mode}]")
+            print(f"  {sym}: ±{em_pct}% ({em_days}d) [fri]")
         else:
-            print(f"  {sym}: no options data [{mode}]")
+            print(f"  {sym}: no options data [fri]")
+        # Also fetch 0DTE for index tickers
+        if sym in index_tickers:
+            em0_pct, em0_days = get_expected_move(sym, weekly=False)
+            em_data[sym]['em_pct_0d'] = em0_pct
+            em_data[sym]['em_days_0d'] = em0_days
+            if em0_pct is not None:
+                print(f"    0d: ±{em0_pct}% ({em0_days}d)")
+            time.sleep(0.15)
         time.sleep(0.3)
     for gname, rows in groups_data.items():
         for r in rows:
             ed = em_data.get(r.get('ticker'), {})
             r['em_pct']  = ed.get('em_pct')
             r['em_days'] = ed.get('em_days')
+            r['em_pct_0d'] = ed.get('em_pct_0d')
+            r['em_days_0d'] = ed.get('em_days_0d')
 
     # Backfill averaged EM into 7s summary rows
     for sr in groups_data.get("The 7s at a Glance", []):

@@ -817,7 +817,7 @@
             html += th('vol_ratio', 'Vol%', 'Today\'s volume vs 20-day average volume');
             html += '<th title="Volume trend: last 20 days vs 20-day average. Red bars = 2× avg or higher.">Vol Chart</th>';
             html += th('atr_pct', 'ATR%', '14-period Average True Range as % of price (daily volatility measure)');
-            html += th('em_pct', 'Fwd EM', "Forward expected move — options-implied.\nIndices: next trading day expiry (1d EM).\nAll others: nearest Friday expiry (week-end EM).\nFormula: ATM straddle mid ÷ price.\nThe Nd tag shows days to that expiry.");
+            html += th('em_pct', 'Fwd EM', "Forward expected move — options-implied.\nAll tickers: nearest Friday expiry (GS methodology).\nFormula: ATM straddle mid ÷ spot price.\nIndices also show 0DTE (next trading day) EM below.\nThe Nd tag shows days to that expiry.");
             html += th('em_beat', 'Beat?', "Did today's actual daily move exceed yesterday's straddle expectation?\n✓ = stayed within expected range (ratio < 1).\n✗ = overshot — actual move was larger than expected.\nRatio: 1.4× means actual was 40% larger than the straddle priced in.");
             html += th('dist_sma50_atr', 'ATRx', 'Distance from SMA50 measured in 14-period ATR units.\nPositive = above SMA50, negative = below.');
             html += th('rs', 'RS', 'RS Composite — multi-timeframe relative strength percentile (0–100%)\n\nHow it works:\n1. Compute active return vs SPY for 1M, 3M, 6M, 12M\n2. Weighted blend: 1M (20%) + 3M (30%) + 6M (30%) + 12M (20%)\n3. Rank all tickers by weighted score → convert to percentile\n\nReading:\n>70% (green) = outperforming most tickers vs SPY\n<30% (red) = underperforming most tickers\n30–70% = middle of the pack');
@@ -970,11 +970,15 @@
                 html += '<td class="' + volCl + '">' + (volRatio != null ? volRatio.toFixed(2) + 'x' : na) + '</td>';
                 html += '<td>' + (r.vol_chart ? '<img src="' + r.vol_chart + '" class="rs-chart" alt="Vol">' : na) + '</td>';
                 html += '<td>' + (r.atr_pct != null ? r.atr_pct.toFixed(1) + '%' : na) + '</td>';
-                // EM% — tonight's expected move (ATM straddle, next expiry)
+                // EM% — forward expected move (ATM straddle, nearest Friday expiry)
                 var emCell = r.em_pct != null
-                    ? '<span style="color:#94a3b8">±' + r.em_pct.toFixed(1) + '%</span>'
+                    ? '<span style="color:#94a3b8">\u00b1' + r.em_pct.toFixed(1) + '%</span>'
                       + (r.em_days != null ? '<span style="font-size:0.6rem;color:#2d6080"> ' + r.em_days + 'd</span>' : '')
                     : na;
+                // Show 0DTE EM below Friday EM for index tickers
+                if (groupName === 'Indices' && r.em_pct_0d != null) {
+                    emCell += '<br><span style="font-size:0.65rem;color:#6b7a8d">\u00b10d ' + r.em_pct_0d.toFixed(2) + '%</span>';
+                }
                 html += '<td style="text-align:right;white-space:nowrap">' + emCell + '</td>';
                 // Beat? — did today's actual move exceed yesterday's EM?
                 var beatCell = na;
@@ -2764,19 +2768,32 @@
                     lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: true,
                     title: 'GEX Flip' });
             }
-            if (optsData.atm_iv != null) {
-                // Use current close from OHLC (not stale spot) for expected move
+            // ±EM lines — use straddle-based em_pct (0DTE for indices, Friday for others)
+            var _emRow = null;
+            if (snapshot && snapshot.groups) {
+                for (var _gn in snapshot.groups) {
+                    var _gr = snapshot.groups[_gn];
+                    for (var _ri = 0; _ri < _gr.length; _ri++) {
+                        if (_gr[_ri].ticker === symbol) { _emRow = _gr[_ri]; break; }
+                    }
+                    if (_emRow) break;
+                }
+            }
+            var _isIdx = snapshot && snapshot.groups && snapshot.groups['Indices'] &&
+                snapshot.groups['Indices'].some(function(r) { return r.ticker === symbol; });
+            var _chartEm = _emRow && _isIdx && _emRow.em_pct_0d != null ? _emRow.em_pct_0d
+                         : _emRow && _emRow.em_pct != null ? _emRow.em_pct : null;
+            if (_chartEm != null) {
                 var _lastClose = data.ohlc.length ? data.ohlc[data.ohlc.length - 1].c : optsData.spot;
-                var dailySigma = optsData.atm_iv / 100 / Math.sqrt(252);
-                var emUp = _lastClose * (1 + dailySigma);
-                var emDn = _lastClose * (1 - dailySigma);
-                var emPct = (dailySigma * 100).toFixed(1);
+                var emUp = _lastClose * (1 + _chartEm / 100);
+                var emDn = _lastClose * (1 - _chartEm / 100);
+                var _emLabel = _isIdx && _emRow.em_pct_0d != null ? '0d' : 'fri';
                 candles.createPriceLine({ price: emUp, color: '#6366f1', lineWidth: 1,
                     lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: true,
-                    title: '+' + emPct + '%' });
+                    title: '+' + _chartEm.toFixed(1) + '% ' + _emLabel });
                 candles.createPriceLine({ price: emDn, color: '#6366f1', lineWidth: 1,
                     lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: true,
-                    title: '-' + emPct + '%' });
+                    title: '-' + _chartEm.toFixed(1) + '% ' + _emLabel });
             }
         }
 
