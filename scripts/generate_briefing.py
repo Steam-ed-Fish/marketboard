@@ -182,6 +182,23 @@ def build_context(snapshot, news_context=None, fedwatch=None, tavily_news=None):
         diff = rsp_20d - spy_20d
         lines.append("  BREADTH: RSP {:+.2f}% vs SPY {:+.2f}% (20d) — RSP {} SPY by {:.2f}pp".format(
             rsp_20d, spy_20d, "OUTPERFORMING" if diff > 0 else "UNDERPERFORMING", abs(diff)))
+        # Style divergence — small vs large cap daily
+        small = max((idx_lookup.get("IWM") or {}).get("daily") or 0,
+                    (idx_lookup.get("IJR") or {}).get("daily") or 0)
+        large = max((idx_lookup.get("QQQ") or {}).get("daily") or 0,
+                    (idx_lookup.get("SPY") or {}).get("daily") or 0)
+        style_spread = small - large
+        style_label = "SMALL > LARGE" if style_spread > 0 else "LARGE > SMALL"
+        lines.append("  STYLE: {} by {:.2f}pp (small={:+.2f}% large={:+.2f}%)".format(
+            style_label, abs(style_spread), small, large))
+        # 200-day MA positioning
+        sma_notes = []
+        for t in ["SPY", "QQQ"]:
+            row = idx_lookup.get(t) or {}
+            if row.get("above_sma200") is False:
+                sma_notes.append("{} BELOW 200d MA".format(t))
+        if sma_notes:
+            lines.append("  SMA200: {}".format(", ".join(sma_notes)))
         lines.append("")
 
     # Cross-asset — daily moves
@@ -227,7 +244,7 @@ def build_context(snapshot, news_context=None, fedwatch=None, tavily_news=None):
                 r.get("20d") or 0, r.get("ytd") or 0))
         lines.append("")
 
-    # Volume spikes
+    # Volume spikes — enhanced with group name
     vol_spikes = []
     for gname, rows in groups.items():
         if gname in {"The 7s at a Glance"}:
@@ -235,12 +252,75 @@ def build_context(snapshot, news_context=None, fedwatch=None, tavily_news=None):
         for r in rows:
             vr = r.get("vol_ratio") or 0
             if vr > 2.0:
-                vol_spikes.append((vr, r.get("ticker", ""), r.get("daily") or 0))
+                vol_spikes.append((vr, r.get("ticker", ""), r.get("daily") or 0, gname))
     vol_spikes.sort(reverse=True)
     if vol_spikes:
         lines.append("VOL SPIKES (>2x avg):")
-        for vr, t, d in vol_spikes[:8]:
-            lines.append("  {}: {:.1f}x  1d={:+.2f}%".format(t, vr, d))
+        for vr, t, d, g in vol_spikes[:8]:
+            lines.append("  {}: {:.1f}x  1d={:+.2f}%  [{}]".format(t, vr, d, g))
+        lines.append("")
+
+    # Volume breadth — avg vol_ratio per group, top/bottom tickers
+    for gname in ["Indices", "Sel Sectors", "Industries"]:
+        rows = groups.get(gname) or []
+        vr_rows = [(r.get("ticker", "?"), r.get("vol_ratio") or 0, r.get("daily") or 0)
+                    for r in rows if r.get("vol_ratio")]
+        if not vr_rows:
+            continue
+        avg_vr = sum(vr for _, vr, _ in vr_rows) / len(vr_rows)
+        vr_sorted = sorted(vr_rows, key=lambda x: x[1], reverse=True)
+        top3 = vr_sorted[:3]
+        bot3 = vr_sorted[-3:]
+        if gname == "Indices" and not any(True for _ in lines if "VOLUME BREADTH" in _):
+            lines.append("VOLUME BREADTH:")
+        lines.append("  {} (avg {:.2f}x):".format(gname, avg_vr))
+        lines.append("    gaining: " + "  ".join(
+            "{} {:.1f}x".format(t, vr) for t, vr, _ in top3))
+        lines.append("    losing:  " + "  ".join(
+            "{} {:.1f}x".format(t, vr) for t, vr, _ in bot3))
+    lines.append("")
+
+    # Options intel
+    opts = snapshot.get("options_intel") or {}
+    if opts:
+        lines.append("OPTIONS INTEL:")
+        for ticker in ["SPY", "QQQ", "IWM", "GLD", "SLV"]:
+            o = opts.get(ticker)
+            if not o:
+                continue
+            pcr = o.get("pcr") or {}
+            gex = o.get("gex") or {}
+            skew = o.get("iv_skew") or {}
+            mp = o.get("max_pain") or {}
+            lines.append("  {}: ATM_IV={:.1f}% PCR_vol={:.2f} skew={:+.1f}% GEX_flip={} maxpain={}".format(
+                ticker,
+                o.get("atm_iv") or 0,
+                pcr.get("vol") or 0,
+                skew.get("skew") or 0,
+                gex.get("gamma_flip") or "?",
+                mp.get("strike") or "?"))
+        lines.append("")
+
+    # Volatility signals
+    vol_sigs = snapshot.get("vol_signals") or {}
+    if vol_sigs:
+        lines.append("VOL SIGNALS:")
+        for category in ["Equities", "Rates", "Commodities"]:
+            for sig in vol_sigs.get(category) or []:
+                lines.append("  {} ({}): {:.1f} (ma20={:.1f}, 52w {:.1f}-{:.1f})".format(
+                    sig.get("name", "?"), sig.get("desc", ""),
+                    sig.get("current") or 0, sig.get("ma20") or 0,
+                    sig.get("lo52") or 0, sig.get("hi52") or 0))
+        lines.append("")
+
+    # Factor regime
+    factors = snapshot.get("factor_regime") or {}
+    if factors:
+        lines.append("FACTOR REGIME:")
+        for fid, fd in factors.items():
+            lines.append("  {} ({}): {} zscore={:+.2f} days={}".format(
+                fid, fd.get("name", ""), fd.get("regime", "?"),
+                fd.get("zscore") or 0, fd.get("days_in_regime") or 0))
         lines.append("")
 
     return "\n".join(lines)
@@ -253,30 +333,56 @@ def build_context(snapshot, news_context=None, fedwatch=None, tavily_news=None):
 SYSTEM_PROMPT = (
     "You are writing a daily end-of-day market recap for a professional trader. "
     "Tone: direct, specific, zero filler. Every sentence must cite a number or a name.\n\n"
-    "Write exactly seven sections in this order:\n\n"
+    "Write exactly twelve sections in this order:\n\n"
+    "BOTTOM LINE — 2-3 sentences synthesizing the entire day into one takeaway. "
+    "What is the single most important thing a trader needs to know from today's session? "
+    "Weave together price action, positioning, flows, and catalysts into one coherent conclusion. "
+    "This is NOT a summary of the sections below — it is your verdict on what today meant.\n\n"
     "REGIME — One sentence, max 10 words, capturing the day's tape character. "
     "e.g. 'Risk-on, small caps led, energy faded, breadth expanding.' No numbers needed.\n\n"
     "INDICES — VIX level and direction. Rank SPY/QQQ/IWM/DIA by today's return best to worst with exact %s. "
-    "State small vs large cap outcome. One sentence on the most notable cross-asset move "
-    "(bonds, dollar, gold, oil, or VIX futures) with exact %.\n\n"
+    "State small vs large cap outcome using the STYLE line (e.g. 'Small > large by 0.95pp'). "
+    "Name the most notable cross-asset move (bonds, dollar, gold, oil) with exact %. "
+    "If SPY or QQQ is below the 200-day MA, flag it — this is a CTA sell trigger.\n\n"
     "SECTORS — Rank all 11 sectors by today's return best to worst with exact %s. "
     "One sentence naming top 2 and bottom 2 Industries ETFs with %s.\n\n"
-    "THE 7s — Rank all baskets by today's return best to worst with exact %s. "
+    "THE 7s — List only the top 5 and bottom 5 baskets by today's return with exact %s (skip the middle). "
     "Drop 'The' and '7' — write 'Energy +0.08%' not 'The Energy 7 +0.08%'. "
-    "Name the single strongest ticker in the top basket and weakest in the bottom basket.\n\n"
+    "Name strongest AND weakest ticker in both the top and bottom basket. "
+    "If a basket shows clear internal divergence (e.g. storage split), call it out.\n\n"
     "FED & LIQUIDITY — If Fed policy data is provided: next FOMC date, CME rate probabilities (hold/cut/hike %), "
     "and hawk/dove/neutral count in one sentence. If USD liquidity stress data is provided: composite score, "
     "label, and name the single most-stressed component (highest percentile) with its percentile. "
     "If TED spread or ON-RRP is notable, mention it. Keep to 2-3 sentences max. "
     "Skip this section entirely if no Fed or liquidity data is available.\n\n"
+    "POSITIONING — Options market read from OPTIONS INTEL data. "
+    "SPY/QQQ put-call ratio: elevated (>1.0) = protection demand, low (<0.7) = complacency. "
+    "IV skew: positive = put premium = fear. GEX flip level vs spot — if price is near or below gamma flip, "
+    "dealer hedging amplifies moves. VIX vs its 20-day MA: above = elevated fear, below = complacency. "
+    "If MOVE index is notably elevated, mention bond vol stress. 2-3 sentences max. "
+    "Skip this section if no options data is available.\n\n"
+    "CROSS-ASSET — Name the 1-2 most notable divergences or transmission chains across asset classes today. "
+    "Examples: 'Oil +5% dragging airlines -4%', 'Dollar strength pressuring gold and EM', "
+    "'Gold falling despite risk-off — unusual'. Connect the WHY. 1-2 sentences. "
+    "Skip if nothing notable.\n\n"
+    "STYLE & FACTOR — From the FACTOR REGIME data: which factor is dominant (value, momentum, growth, size, quality), "
+    "its regime (BULL/BEAR), and how many days it has persisted. One sentence. "
+    "Skip if no clear signal.\n\n"
+    "VOLUME — From VOLUME BREADTH data: which indices or sectors are seeing elevated volume (gaining attention) "
+    "vs declining volume (being ignored). Interpret direction: vol up + price up = accumulation, "
+    "vol up + price down = distribution, vol down + price up = low-conviction rally. 2-3 sentences.\n\n"
     "SIGNALS — Fear & Greed score in one phrase. "
     "Top 3 individual movers across all groups today (name, %, group). "
     "20d momentum: best and worst sector + best and worst basket. "
-    "If news context provided, one sentence tying the biggest move to its catalyst — market-focused only.\n\n"
+    "If any vol spike tickers exist, name the top 1-2 with their group and interpret "
+    "(accumulation if vol+price up, distribution if vol+price down). "
+    "If news context provided, one sentence tying the biggest move to its catalyst.\n\n"
     "WATCH — 2-3 tickers worth closer attention tomorrow. For each: name, today's %, and one specific reason "
-    "from the data (vol spike, trend divergence, cross-asset signal, momentum break). "
+    "from the data (vol spike, trend divergence, cross-asset signal, momentum break, gamma flip proximity). "
     "Flag what deserves a closer look — don't just repeat what already moved.\n\n"
-    "Total: strictly under 320 words. Plain text. Section labels ALL CAPS + em-dash. No markdown."
+    "CRITICAL: Total output MUST be under 400 words. Be extremely concise — no redundancy, no citations like [1][2], "
+    "no full sector names after the ticker (write 'XLY +2.36%' not 'XLY Discretionary +2.36%'). "
+    "Each section: 1-3 sentences max. Plain text. Section labels ALL CAPS + em-dash. No markdown."
 )
 
 
@@ -291,7 +397,7 @@ def generate_briefing(snapshot, api_key, news_context=None, fedwatch=None, tavil
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": context},
             ],
-            "max_tokens": 1000,
+            "max_tokens": 2000,
         },
         timeout=60,
     )
