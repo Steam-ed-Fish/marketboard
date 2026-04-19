@@ -2764,16 +2764,19 @@
                     lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: true,
                     title: 'GEX Flip' });
             }
-            if (optsData.atm_iv != null && optsData.spot) {
+            if (optsData.atm_iv != null) {
+                // Use current close from OHLC (not stale spot) for expected move
+                var _lastClose = data.ohlc.length ? data.ohlc[data.ohlc.length - 1].c : optsData.spot;
                 var dailySigma = optsData.atm_iv / 100 / Math.sqrt(252);
-                var emUp = optsData.spot * (1 + dailySigma);
-                var emDn = optsData.spot * (1 - dailySigma);
+                var emUp = _lastClose * (1 + dailySigma);
+                var emDn = _lastClose * (1 - dailySigma);
+                var emPct = (dailySigma * 100).toFixed(1);
                 candles.createPriceLine({ price: emUp, color: '#6366f1', lineWidth: 1,
-                    lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: false,
-                    title: '+1\u03c3' });
+                    lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: true,
+                    title: '+' + emPct + '%' });
                 candles.createPriceLine({ price: emDn, color: '#6366f1', lineWidth: 1,
-                    lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: false,
-                    title: '-1\u03c3' });
+                    lineStyle: LightweightCharts.LineStyle.Dotted, axisLabelVisible: true,
+                    title: '-' + emPct + '%' });
             }
         }
 
