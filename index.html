@@ -455,7 +455,18 @@
             var metaEl = document.getElementById('briefing-meta');
             if (metaEl) {
                 var parts = [];
-                if (b.date && b.time) parts.push('updated ' + b.date + ' ' + b.time + ' UTC');
+                if (b.generated_at) {
+                    var d = new Date(b.generated_at);
+                    var hkt = new Date(d.getTime() + 8 * 3600000);
+                    var dd = String(hkt.getUTCDate()).padStart(2,'0');
+                    var mm = String(hkt.getUTCMonth()+1).padStart(2,'0');
+                    var yy = hkt.getUTCFullYear();
+                    var hh = String(hkt.getUTCHours()).padStart(2,'0');
+                    var mn = String(hkt.getUTCMinutes()).padStart(2,'0');
+                    parts.push('updated ' + dd + '/' + mm + '/' + yy + ' ' + hh + ':' + mn + ' HKT');
+                } else if (b.date && b.time) {
+                    parts.push('updated ' + b.date + ' ' + b.time);
+                }
                 if (b.duration_s != null) parts.push(b.duration_s + 's');
                 metaEl.textContent = parts.length ? parts.join(' · ') : '';
             }
