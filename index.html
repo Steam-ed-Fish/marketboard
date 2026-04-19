@@ -972,12 +972,11 @@
                 html += '<td>' + (r.atr_pct != null ? r.atr_pct.toFixed(1) + '%' : na) + '</td>';
                 // EM% — forward expected move (ATM straddle, nearest Friday expiry)
                 var emCell = r.em_pct != null
-                    ? '<span style="color:#94a3b8">\u00b1' + r.em_pct.toFixed(1) + '%</span>'
-                      + (r.em_days != null ? '<span style="font-size:0.6rem;color:#2d6080"> ' + r.em_days + 'd</span>' : '')
+                    ? '<span style="color:#94a3b8">' + r.em_days + 'd \u00b1' + r.em_pct.toFixed(1) + '%</span>'
                     : na;
                 // Show 0DTE EM below Friday EM for index tickers
                 if (groupName === 'Indices' && r.em_pct_0d != null) {
-                    emCell += '<br><span style="font-size:0.65rem;color:#6b7a8d">\u00b10d ' + r.em_pct_0d.toFixed(2) + '%</span>';
+                    emCell += '<br><span style="font-size:0.65rem;color:#6b7a8d">0d \u00b1' + r.em_pct_0d.toFixed(2) + '%</span>';
                 }
                 html += '<td style="text-align:right;white-space:nowrap">' + emCell + '</td>';
                 // Beat? — did today's actual move exceed yesterday's EM?
