@@ -3,32 +3,32 @@
     {
       "title": "Yahoo Finance - Stock Market Live, Quotes, Business & Finance News",
       "url": "https://finance.yahoo.com/",
-      "snippet": "Stock market today: Dow climbs 1,000 points, S&P 500 and Nasdaq surge as ... Critical Metals Corp. EquityNGM. U.S. markets close in 2h 8m. US Europe Asia",
+      "snippet": "Stock market today: S&P 500, Nasdaq, Dow fall as US-Iran tensions flare up again, shuttering Hormuz.",
       "source": "finance.yahoo.com"
+    },
+    {
+      "title": "Stock market today: Live updates - CNBC",
+      "url": "https://www.cnbc.com/2026/04/19/stock-market-today-live-updates.html",
+      "snippet": "The Dow Jones Industrial Average slipped on Monday even after tensions between the U.S. and Iran escalated over the weekend, with traders",
+      "source": "cnbc.com"
     },
     {
       "title": "United States Stock Market Index - Quote - Chart - Trading Economics",
       "url": "https://tradingeconomics.com/united-states/stock-market",
-      "snippet": "The Dow Jones Index is up by 707 points or 1.45 percent on Friday. Top gainers are Boeing (4.28%), Sherwin-Williams (3.45%) and Home Depot (2.99%). 2026-04-17.",
+      "snippet": "The S&P 500 and Nasdaq 100 dropped around 0.5% each, while the Dow fell around 0.3%. President Trump signaled that the current ceasefire with Iran will not be",
       "source": "tradingeconomics.com"
-    },
-    {
-      "title": "U.S. Stock Market Headlines | Breaking Stock Market News - Reuters",
-      "url": "https://www.reuters.com/markets/us/",
-      "snippet": "Top U.S. Markets ; 24,473.58, +370.88, +1.54%Positive ; 7,133.94, +92.66, +1.32%Positive",
-      "source": "reuters.com"
-    },
-    {
-      "title": "S&P 500 Index (SP500) Analysis, News, And Chart Today",
-      "url": "https://seekingalpha.com/symbol/SP500",
-      "snippet": "A high-level overview of the S&P 500 Index (SP500). Get the latest S&P 500 chart, news, and analysis, including analyst predictions and forecasts for today.",
-      "source": "seekingalpha.com"
     },
     {
       "title": "S&P 500 (^GSPC) Latest Stock News & Headlines - Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/%5EGSPC/news/",
-      "snippet": "SNP - Free Realtime Quote • USD. S&P 500 (^GSPC). 7,124.88 +83.60 (+1.19%). As of 1:37:44 PM EDT. Market Open. All News · Markets eye 3rd week of gains as",
+      "snippet": "SNP - Free Realtime Quote • USD. S&P 500 (^GSPC). 7,103.31 -22.75 (-0.32%). As of 1:47:51 PM EDT. Market Open. All News · Stock market today: S&P 500,",
       "source": "finance.yahoo.com"
+    },
+    {
+      "title": "S&P 500 Index (SP500) Analysis, News, And Chart Today",
+      "url": "https://seekingalpha.com/symbol/SP500",
+      "snippet": "SP500 Latest Headlines · The Market's All-Time High Is A Warning Sign · S&P 500 Earnings: Forward Estimated Growth Is Really Remarkable, Revenue Growth Too · AM",
+      "source": "seekingalpha.com"
     },
     {
       "title": "S&P 500 INDEX TODAY | INX LIVE TICKER - Markets Insider",
@@ -37,10 +37,10 @@
       "source": "markets.businessinsider.com"
     },
     {
-      "title": "News & Events - Federal Reserve Board",
-      "url": "https://www.federalreserve.gov/newsevents.htm",
-      "snippet": "*   [Structure of the Federal Reserve System](https://www.federalreserve.gov/aboutthefed/fedexplained/who-we-are.htm). *   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Federal Reserve Act](https://www.federalreserve.gov/aboutthefed/fract.htm). ",
-      "source": "federalreserve.gov"
+      "title": "Federal Reserve | Financial Times",
+      "url": "https://www.ft.com/federal-reserve",
+      "snippet": "The latest news from the Federal Reserve. Extensive coverage and analysis of the Fed's monetary policy decisions and reports, including updates on US",
+      "source": "ft.com"
     },
     {
       "title": "U.S. Federal Reserve News | Today's Latest Stories | Reuters",
@@ -49,95 +49,154 @@
       "source": "reuters.com"
     },
     {
-      "title": "Federal Reserve - CNBC",
-      "url": "https://www.cnbc.com/federal-reserve/",
-      "snippet": "[Fed nominee Warsh filings detail vast wealth, far exceeding past chairs](https://www.cnbc.com/2026/04/14/federal-reserve-warsh-wealth.html). [Cramer says this is the real reason why stocks are shrugging off Iran war fears](https://www.cnbc.com/2026/04/13/jim-cramer-stocks-rallying-despite-iran-war-",
-      "source": "cnbc.com"
+      "title": "Federal Reserve",
+      "url": "https://www.foxbusiness.com/category/the-fed",
+      "snippet": "Fed official says interest rate hike possible as gas prices, inflation remain elevated. ### Fed official says interest rate hike possible as gas prices, inflation remain elevated. Fed's Beth Hammack warns interest rates could rise if inflation stays elevated, citing uncertainty over the Iran war's i",
+      "source": "foxbusiness.com"
     },
     {
-      "title": "What is the geopolitical risk and how it impacts markets | StoneX EN",
-      "url": "https://www.stonex.com/en/business/financial-glossary/geopolitical-risk/",
-      "snippet": "Geopolitical risk refers to the potential impact of political events, instability, or conflicts on financial markets, institutions and the global economy. Geopolitical risk refers to the potential for political events, conflicts, or policy changes to disrupt markets, economies, and supply chains on ",
-      "source": "stonex.com",
+      "title": "Top Geopolitical Risks of 2025 - S&P Global",
+      "url": "https://www.spglobal.com/en/research-insights/market-insights/geopolitical-risk",
+      "snippet": "Geopolitical risks have the potential to impact the global economic outlook, influencing growth, inflation, financial markets, and supply chains.",
+      "source": "spglobal.com",
       "category": "geopolitical"
     },
     {
-      "title": "Geopolitical risk and stock market development - ScienceDirect",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1042443123001154",
-      "snippet": "While previous literature has documented adverse impacts on financial markets in the days following individual acts of terrorism or conflict-related events, we consider the more general, ongoing uncertainty those events contribute to: geopolitical risk (GPR). We build on that work by considering one",
+      "title": "Geopolitical risk and stock market volatility: A global perspective",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1544612322007966",
+      "snippet": "## Article preview. # Geopolitical risk and stock market volatility: A global perspective. Governments, investors, and academics are more concerned about the impact of GPR on financial markets. Based on the GARCH-MIDAS approach, Ndako et al. By contrast, this paper differs from them in three key dim",
       "source": "sciencedirect.com",
       "category": "geopolitical"
     },
     {
-      "title": "Top Geopolitical Risks of 2025",
-      "url": "https://www.spglobal.com/en/research-insights/market-insights/geopolitical-risk",
-      "snippet": "Geopolitical risks have the potential to impact the global economic outlook, influencing growth, inflation, financial markets, and supply chains. Conflicts",
-      "source": "spglobal.com",
+      "title": "Geopolitical Risk and Financial Markets: Emerging Trends, Research Gaps, and Implications for International Trade: Business & Management Book Chapter | IGI Global Scientific Publishing",
+      "url": "https://www.igi-global.com/chapter/geopolitical-risk-and-financial-markets/393949",
+      "snippet": "## **OnDemand** **$37.50**. ##### MLA. ##### APA. ##### Chicago. ##### Export Reference. Geopolitical Risk and Financial Markets: Emerging Trends, Research Gaps, and Implications for International Trade. # Geopolitical Risk and Financial Markets: Emerging Trends, Research Gaps, and Implications for ",
+      "source": "igi-global.com",
       "category": "geopolitical"
     }
   ],
   "movers": {
-    "MRVL": [
+    "NFLX": [
       {
-        "title": "Marvell Technology (MRVL) Stock price today - quote & chart - Kraken",
-        "url": "https://www.kraken.com/stocks/mrvl",
-        "snippet": "Common Stock (MRVL) stock price today is $137.79, reflecting a +3.36% move since the market opened. The company's market capitalization stands at $120.32B, with",
-        "source": "kraken.com"
+        "title": "Netflix, Inc. (NFLX) Latest Stock News & Headlines - Yahoo Finance",
+        "url": "https://finance.yahoo.com/quote/NFLX/news/",
+        "snippet": "News headlines Netflix recently faced a 9.7% drop in stock value to $97.31 following mixed earnings results and a significant leadership change. Despite these",
+        "source": "finance.yahoo.com"
       },
       {
-        "title": "MRVL Stock Price Quote & News - Marvell Technology - Robinhood",
-        "url": "https://robinhood.com/stocks/MRVL",
-        "snippet": "As of 2026-04-16, Marvell Technology(MRVL) stock has fluctuated between $133.04 and $139.90. The current price stands at $131.87, placing the stock -0.9% above",
+        "title": "Netflix: NFLX Stock Price Quote & News - Robinhood",
+        "url": "https://robinhood.com/stocks/NFLX",
+        "snippet": "On 2026-04-19, Netflix(NFLX) stock traded between a low of $93.54 and a high of $97.60. Shares are currently priced at $97.29, which is +4.0% above the low and",
         "source": "robinhood.com"
       },
       {
-        "title": "Marvell Technology, Inc. (MRVL) Latest Stock News & Headlines",
-        "url": "https://finance.yahoo.com/quote/MRVL/news/",
-        "snippet": "News headlines Marvell Technology is experiencing significant growth, driven by a strong demand for AI-related technologies and strategic partnerships,",
-        "source": "finance.yahoo.com"
-      }
-    ],
-    "DHI": [
-      {
-        "title": "DHI Stock Price Quote & News - D. R. Horton - Robinhood",
-        "url": "https://robinhood.com/stocks/DHI",
-        "snippet": "Horton(DHI) shares reached a daily high of $145.74 and a low of $142.79. At a current price of $143.35, the stock is +0.4% higher than the low and still -1.6%",
-        "source": "robinhood.com"
-      },
-      {
-        "title": "D.R. Horton, Inc. (DHI) Latest Stock News & Headlines",
-        "url": "https://finance.yahoo.com/quote/DHI/news/",
-        "snippet": "D.R. Horton (DHI) is set to report its fiscal Q2 results on April 21, 2026, with expected EPS of $2.15, reflecting a 16.7% year-over-year decline.",
+        "title": "Netflix, Inc. (NFLX) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/NFLX/",
+        "snippet": "News headlines Netflix's recent stock decline follows a mixed Q1 earnings report, with revenue growth but disappointing guidance. Key strategies, including",
         "source": "finance.yahoo.com"
       },
       {
-        "title": "D.R. Horton, Inc. (DHI) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/DHI/",
-        "snippet": "D.R. Horton (DHI) surged 5.63% as investors anticipated strong demand in the upcoming Q2 earnings report despite concerns over mortgage rates and",
-        "source": "finance.yahoo.com"
-      }
-    ],
-    "VRT": [
+        "title": "These S&P500 stocks have an unusual volume in today's session",
+        "url": "https://www.chartmill.com/news/ARE/Chartmill-38528-These-SP500-stocks-have-an-unusual-volume-in-todays-session",
+        "snippet": "NETFLIX INC (NASDAQ:NFLX) has an unusual volume of 30.62M shares today. The price decline of 5.22% reflects a downward movement in NFLX shares.",
+        "source": "chartmill.com"
+      },
       {
-        "title": "Vertiv Holdings Co (VRT) Latest Stock News & Headlines",
-        "url": "https://finance.yahoo.com/quote/VRT/news/",
-        "snippet": "Vertiv Holdings Co. (VRT) has shown strong performance recently, with a 9.3% increase in share price over the past month. Analysts project robust earnings",
+        "title": "Netflix, Inc. (NFLX) Stock Price, News, Quote & History - Yahoo Finance",
+        "url": "https://finance.yahoo.com/quote/NFLX/",
+        "snippet": "### [Finance](https://finance.yahoo.com/). *   [News](https://finance.yahoo.com/news/). *   [More Topics](https://finance.yahoo.com/news/). *   [Markets](https://finance.yahoo.com/markets/). *   [Stocks](https://finance.yahoo.com/markets/stocks/). *   [Most active](https://finance.yahoo.com/markets/",
         "source": "finance.yahoo.com"
       },
       {
-        "title": "Vertiv: VRT Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/stocks/VRT",
-        "snippet": "Shares are currently priced at $306.78, which is +4.0% above the low and -0.1% below the high. Vertiv(VRT) shares are trading with a volume of 1.49M, against a",
-        "source": "robinhood.com"
-      },
-      {
-        "title": "VRT News Today | Why did Vertiv stock go up today? - MarketBeat",
-        "url": "https://www.marketbeat.com/stocks/NYSE/VRT/news/",
-        "snippet": "VRT Latest News ... Vertiv (NYSE:VRT) Trading Down 2.4% - What's Next? ... Vertiv (NYSE:VRT) Shares Down 3.1% - What's Next? ... Vertiv Holdings Co. $VRT Shares Sold",
+        "title": "Netflix Sees Unusually Large Options Volume (NASDAQ:NFLX)",
+        "url": "https://www.marketbeat.com/instant-alerts/netflix-sees-unusually-large-options-volume-nasdaqnflx-2026-04-14/",
+        "snippet": "Image 7: MarketBeat - Stock Market News and Research Tools. %20%24NFLX%20%23NFLX%20https://www.marketbeat.com/instant-alerts/netflix-sees-unusually-large-options-volume-nasdaqnflx-2026-04-14/ \"Share on Twitter\")%20https://www.marketbeat.com/instant-alerts/netflix-sees-unusually-large-options-volume-",
         "source": "marketbeat.com"
+      }
+    ],
+    "ALB": [
+      {
+        "title": "Albemarle Corporation (ALB) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/ALB/",
+        "snippet": "Albemarle (ALB) experienced significant stock fluctuations recently, with a 16.3% surge followed by an 8.29% decline.",
+        "source": "finance.yahoo.com"
+      },
+      {
+        "title": "Albemarle (ALB) Stock Price, News & Analysis - MarketBeat",
+        "url": "https://www.marketbeat.com/stocks/NYSE/ALB/",
+        "snippet": "Albemarle has a consensus price target of $172.60, representing about 11.8% downside from its current price of $195.76. Amount of Analyst Coverage. Albemarle",
+        "source": "marketbeat.com"
+      },
+      {
+        "title": "Albemarle Stock Price Today | NYSE: ALB Live - Investing.com",
+        "url": "https://www.investing.com/equities/albemarle",
+        "snippet": "What Is the Albemarle (ALB) Stock Price Today? The Albemarle stock price today is 196.53 USD. What Stock Exchange Does Albemarle Trade On?",
+        "source": "investing.com"
+      }
+    ],
+    "SQM": [
+      {
+        "title": "Sociedad Quimica y Minera (SQM) News Today - MarketBeat",
+        "url": "https://www.marketbeat.com/stocks/NYSE/SQM/news/",
+        "snippet": "Sociedad Química y Minera de Chile (SQM) Is Down 6.9% After Swing Back To Profitability And Record Lithium Volumes – Has The Bull Case Changed? March 9, 2026 |",
+        "source": "marketbeat.com"
+      },
+      {
+        "title": "Sociedad Química y Minera de Chile S.A. (SQM) Latest Stock News ...",
+        "url": "https://finance.yahoo.com/quote/SQM/news/",
+        "snippet": "Sociedad Química y Minera de Chile (SQM) Is Down 6.9% After Swing Back To Profitability And Record Lithium",
+        "source": "finance.yahoo.com"
+      },
+      {
+        "title": "Sociedad Quimica y Minera De Chile S.A. ADR - SQM - MarketWatch",
+        "url": "https://www.marketwatch.com/investing/stock/sqm",
+        "snippet": "... (SQM) Shares Up 6.89% on Mar 30. Mar. 30, 2026 at 2:04 p.m. ET on GuruFocus.com. SQM Analyst Rating Update: B of A Securities Adjusts Price Target | SQM Stock",
+        "source": "marketwatch.com"
       }
     ]
   },
-  "sectors": {},
-  "built_at": "2026-04-17T20:40:42Z"
+  "sectors": {
+    "XLE": [
+      {
+        "title": "Energy Select Sector SPDR Fund (XLE) News Today - MarketBeat",
+        "url": "https://www.marketbeat.com/stocks/NYSEARCA/XLE/news/",
+        "snippet": "Energy stocks are on track to hit fresh highs as high oil prices drive higher margins and cash flow, underpinning capital returns. Institutions are buying it.",
+        "source": "marketbeat.com"
+      },
+      {
+        "title": "State Street Energy Selec…: XLE Stock Price Quote & News",
+        "url": "https://robinhood.com/stocks/XLE",
+        "snippet": "During the trading session on 2026-04-19, State Street Energy Select Sector SPDR ETF(XLE) shares reached a daily high of $56.33 and a low of $53.41. At a",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "(XLE) News Headlines - Nasdaq",
+        "url": "https://www.nasdaq.com/market-activity/etf/xle/news-headlines",
+        "snippet": "Latest XLE News · Markets. 2028 Shockwave? · Technology. Risks Aren't Fading in the Energy Markets: ETFs to Gain · Markets. XLE, PLOO: Big ETF Outflows · Technology.",
+        "source": "nasdaq.com"
+      }
+    ],
+    "XLY": [
+      {
+        "title": "State Street Consumer Dis…: XLY Stock Price Quote & News",
+        "url": "https://robinhood.com/us/en/stocks/XLY/",
+        "snippet": "During the trading session on 2026-04-19, State Street Consumer Discretionary Select Sector SPDR ETF(XLY) shares reached a daily high of $121.85 and a low of",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "State Street Consumer Discretionary Select Sector SPDR ETF (XLY)",
+        "url": "https://finance.yahoo.com/quote/XLY/news/",
+        "snippet": "Get the latest State Street Consumer Discretionary Select Sector SPDR ETF (XLY) stock news and headlines to help you in your trading and investing",
+        "source": "finance.yahoo.com"
+      },
+      {
+        "title": "State Street Consumer Discretionary Select Sector SPDR ETF XLY ...",
+        "url": "https://www.wsj.com/market-data/quotes/etf/XLY",
+        "snippet": "View the latest State Street Consumer Discretionary Select Sector SPDR ETF (XLY) stock price and news, and other vital information for better exchange",
+        "source": "wsj.com"
+      }
+    ]
+  },
+  "built_at": "2026-04-20T20:44:34Z"
 }
