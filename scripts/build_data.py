@@ -2336,6 +2336,16 @@ def main():
     all_ticker_data = {}
     failed_tickers = []
     fallback_tickers = []
+    _fetch_count = 0
+    def _rate_sleep():
+        nonlocal _fetch_count
+        _fetch_count += 1
+        time.sleep(0.35)
+        # Longer pause every 40 tickers to avoid Yahoo rate-limit
+        if _fetch_count % 40 == 0:
+            print(f"    [rate-limit pause after {_fetch_count} fetches]")
+            time.sleep(3)
+
     for group_name, tickers in STOCK_GROUPS.items():
         rows = []
         for i, ticker in enumerate(tickers):
@@ -2356,11 +2366,34 @@ def main():
                 print(f"    -> using previous data for {ticker}")
             else:
                 failed_tickers.append(ticker)
-            time.sleep(0.15)
+            _rate_sleep()
         groups_data[group_name] = rows
 
     if fallback_tickers:
         print(f"Used previous data for {len(fallback_tickers)} rate-limited tickers")
+
+    # Retry failed/fallback tickers once after a cooldown
+    retry_candidates = list(set(fallback_tickers + failed_tickers))
+    if retry_candidates:
+        print(f"\nRetrying {len(retry_candidates)} failed/fallback tickers after cooldown...")
+        time.sleep(5)
+        retried_ok = 0
+        for ticker in retry_candidates:
+            row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache, ohlc_dir=ohlc_dir)
+            if row:
+                all_ticker_data[ticker] = row
+                # Update in groups_data too
+                for gname, grow in groups_data.items():
+                    for j, r in enumerate(grow):
+                        if r.get("ticker") == ticker:
+                            grow[j] = row
+                if ticker in fallback_tickers:
+                    fallback_tickers.remove(ticker)
+                if ticker in failed_tickers:
+                    failed_tickers.remove(ticker)
+                retried_ok += 1
+            _rate_sleep()
+        print(f"Retry recovered {retried_ok}/{len(retry_candidates)} tickers")
 
     # Fetch any AI_THEMES tickers + Fear & Greed tickers + cross-asset tickers not already fetched
     theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers) | {"HYG", "TLT", "VIXY", "USO", "UNG", "UUP", "LQD", "IEF", "SHY"}
@@ -2375,7 +2408,7 @@ def main():
             print(f"    -> using previous data for {ticker}")
         else:
             failed_tickers.append(ticker)
-        time.sleep(0.15)
+        _rate_sleep()
 
     # Build AI themes summary (equal-weighted averages)
     themes_data = []
@@ -2535,7 +2568,9 @@ def main():
                     pass
                 if (i + 1) % 20 == 0:
                     print("  RRG history {}/{}".format(i + 1, len(seven_tickers)))
-                time.sleep(0.08)
+                time.sleep(0.35)
+                if (i + 1) % 40 == 0:
+                    time.sleep(3)
         except Exception as e:
             print("RRG long history:", e)
 
@@ -2713,8 +2748,10 @@ def main():
                 print(f"    0d: ±{em0_pct}% ({em0_days}d)")
             elif em0_pct is not None:
                 print(f"    0d: same expiry as fri ({em0_days}d) — skipping")
-            time.sleep(0.15)
-        time.sleep(0.3)
+            time.sleep(0.35)
+        time.sleep(0.35)
+        if len(em_data) % 40 == 0:
+            time.sleep(3)
     for gname, rows in groups_data.items():
         for r in rows:
             ed = em_data.get(r.get('ticker'), {})
