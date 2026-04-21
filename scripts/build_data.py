@@ -1725,13 +1725,15 @@ def fetch_vol_signals():
                     "lo52": round(lo52, 2), "pct52": pct52,
                     "history": history, "ma_history": ma_history,
                 })
-            except Exception:
+            except Exception as e:
+                print(f"  vol_signals {item['name']}: {e}")
                 result[category].append({
                     "name": item["name"], "desc": item["desc"],
                     "current": None, "ma20": None,
                     "vs_ma": None, "hi52": None,
                     "lo52": None, "pct52": None,
                 })
+            time.sleep(0.5)
     return result
 
 
@@ -2318,6 +2320,7 @@ def main():
 
     # Load previous snapshot for fallback on rate-limited tickers
     prev_ticker_data = {}
+    prev_snap = {}
     snapshot_path = os.path.join(out_dir, "snapshot.json")
     if os.path.exists(snapshot_path):
         try:
@@ -2845,13 +2848,26 @@ def main():
     )
 
     print("Fetching volatility signals...")
+    time.sleep(3)  # cooldown before vol signals
     vol_signals = fetch_vol_signals()
-    for cat, items in vol_signals.items():
-        for item in items:
-            if item['current'] is not None:
-                print(f"  {item['name']}: {item['current']:.2f} (vs MA20: {item['vs_ma']:+.1f}%)")
-            else:
-                print(f"  {item['name']}: no data")
+    # Count how many succeeded
+    _vs_ok = sum(1 for cat in vol_signals.values() for item in cat if item.get('current') is not None)
+    _vs_total = sum(len(cat) for cat in vol_signals.values())
+    if _vs_ok == 0 and _vs_total > 0:
+        # All failed — likely rate-limited, fall back to previous snapshot
+        prev_vs = prev_snap.get("vol_signals")
+        if prev_vs:
+            vol_signals = prev_vs
+            print(f"  vol_signals: all {_vs_total} failed — using previous snapshot data")
+        else:
+            print(f"  vol_signals: all {_vs_total} failed — no fallback available")
+    else:
+        for cat, items in vol_signals.items():
+            for item in items:
+                if item['current'] is not None:
+                    print(f"  {item['name']}: {item['current']:.2f} (vs MA20: {item['vs_ma']:+.1f}%)")
+                else:
+                    print(f"  {item['name']}: no data")
     macro_fred = {}
     if fred_api_key:
         print("Fetching FRED macro data...")
@@ -2878,7 +2894,15 @@ def main():
 
     # ── Options Intelligence ─────────────────────────────────────────────────
     print("Computing options intelligence...")
+    time.sleep(3)  # cooldown before options intel
     options_intel = build_options_intel(OPTIONS_INTEL_TICKERS)
+    if not options_intel:
+        prev_oi = prev_snap.get("options_intel")
+        if prev_oi:
+            options_intel = prev_oi
+            print("  options_intel: all failed — using previous snapshot data")
+        else:
+            print("  options_intel: all failed — no fallback available")
 
     # ── Correlation Matrix ────────────────────────────────────────────────────
     CORR_TICKERS = ["SPY", "QQQ", "IWM", "TLT", "GLD", "USO", "UUP", "HYG", "VIXY"]
