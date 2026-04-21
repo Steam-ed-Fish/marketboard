@@ -27,6 +27,12 @@ try:
 except ImportError:
     investpy = None
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 import math
 
 def sanitize_for_json(obj):
@@ -2946,13 +2952,16 @@ def main():
     # ── Factor Regime ──────────────────────────────────────────────────────────
     FACTOR_ETFS = {"VLUE": "Value", "MTUM": "Momentum", "QUAL": "Quality", "SIZE": "Size", "IWF": "Growth"}
     print("Computing factor regime...")
+    time.sleep(3)  # cooldown before factor regime
     factor_regime = {}
     try:
         spy_2y = yf.Ticker("SPY").history(period="2y")
+        time.sleep(0.5)
         spy_2y_returns = spy_2y['Close'].pct_change().dropna()
         for fticker, fname in FACTOR_ETFS.items():
             try:
                 fhist = yf.Ticker(fticker).history(period="2y")
+                time.sleep(0.5)
                 if len(fhist) < 200:
                     print(f"  {fticker}: insufficient data ({len(fhist)} bars)")
                     continue
@@ -2981,6 +2990,13 @@ def main():
                 print(f"  Factor {fticker} error: {e}")
     except Exception as e:
         print(f"  SPY 2y fetch error: {e}")
+    if not factor_regime:
+        prev_fr = prev_snap.get("factor_regime")
+        if prev_fr:
+            factor_regime = prev_fr
+            print("  factor_regime: all failed — using previous snapshot data")
+        else:
+            print("  factor_regime: all failed — no fallback available")
 
     snapshot = {
         "built_at": datetime.utcnow().isoformat() + "Z",
