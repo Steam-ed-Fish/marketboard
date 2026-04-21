@@ -2340,6 +2340,88 @@ def main():
         except Exception as e:
             print(f"Could not load previous snapshot: {e}")
 
+    # ── Early fetches (low call count, run before main loop while rate limit is fresh) ──
+
+    print("Fetching volatility signals...")
+    vol_signals = fetch_vol_signals()
+    _vs_ok = sum(1 for cat in vol_signals.values() for item in cat if item.get('current') is not None)
+    _vs_total = sum(len(cat) for cat in vol_signals.values())
+    if _vs_ok == 0 and _vs_total > 0:
+        prev_vs = prev_snap.get("vol_signals")
+        if prev_vs:
+            vol_signals = prev_vs
+            print(f"  vol_signals: all {_vs_total} failed — using previous snapshot data")
+        else:
+            print(f"  vol_signals: all {_vs_total} failed — no fallback available")
+    else:
+        for cat, items in vol_signals.items():
+            for item in items:
+                if item['current'] is not None:
+                    print(f"  {item['name']}: {item['current']:.2f} (vs MA20: {item['vs_ma']:+.1f}%)")
+                else:
+                    print(f"  {item['name']}: no data")
+
+    time.sleep(2)
+    print("Computing options intelligence...")
+    options_intel = build_options_intel(OPTIONS_INTEL_TICKERS)
+    if not options_intel:
+        prev_oi = prev_snap.get("options_intel")
+        if prev_oi:
+            options_intel = prev_oi
+            print("  options_intel: all failed — using previous snapshot data")
+        else:
+            print("  options_intel: all failed — no fallback available")
+
+    time.sleep(2)
+    FACTOR_ETFS = {"VLUE": "Value", "MTUM": "Momentum", "QUAL": "Quality", "SIZE": "Size", "IWF": "Growth"}
+    print("Computing factor regime...")
+    factor_regime = {}
+    try:
+        spy_2y = yf.Ticker("SPY").history(period="2y")
+        time.sleep(0.5)
+        spy_2y_returns = spy_2y['Close'].pct_change().dropna()
+        for fticker, fname in FACTOR_ETFS.items():
+            try:
+                fhist = yf.Ticker(fticker).history(period="2y")
+                time.sleep(0.5)
+                if len(fhist) < 200:
+                    print(f"  {fticker}: insufficient data ({len(fhist)} bars)")
+                    continue
+                freturns = fhist['Close'].pct_change().dropna()
+                common = freturns.index.intersection(spy_2y_returns.index)
+                if len(common) < 200:
+                    continue
+                active = freturns[common] - spy_2y_returns[common]
+                ewma = active.ewm(halflife=90).mean()
+                exp_mean = ewma.expanding().mean()
+                exp_std = ewma.expanding().std()
+                zscore = ((ewma - exp_mean) / exp_std).ewm(halflife=30).mean()
+                latest_z = float(zscore.iloc[-1])
+                regime = "BULL" if latest_z >= 0 else "BEAR"
+                signs = (zscore >= 0).astype(int)
+                changes = signs.diff().abs()
+                last_change_idx = changes[changes == 1].index
+                last_change = last_change_idx[-1] if len(last_change_idx) > 0 else zscore.index[0]
+                days_in = len(zscore[zscore.index >= last_change])
+                factor_regime[fticker] = {
+                    "name": fname, "regime": regime,
+                    "zscore": round(latest_z, 2), "days_in_regime": days_in,
+                }
+                print(f"  {fticker} ({fname}): {regime} z={latest_z:.2f} ({days_in}d)")
+            except Exception as e:
+                print(f"  Factor {fticker} error: {e}")
+    except Exception as e:
+        print(f"  SPY 2y fetch error: {e}")
+    if not factor_regime:
+        prev_fr = prev_snap.get("factor_regime")
+        if prev_fr:
+            factor_regime = prev_fr
+            print("  factor_regime: all failed — using previous snapshot data")
+        else:
+            print("  factor_regime: all failed — no fallback available")
+
+    # ── Cooldown before main ticker loop ──
+    time.sleep(5)
     print("Fetching stock data (no Liquid Stocks)...")
     groups_data = {}
     all_ticker_data = {}
@@ -2564,6 +2646,7 @@ def main():
                     seven_tickers.append(t)
         long_hist = {}
         try:
+            time.sleep(5)  # cooldown before RRG history batch
             print("Fetching long history for RRG trails...")
             spy_long = _spy_cache
             if spy_long is not None and len(spy_long) >= 320:
@@ -2724,6 +2807,7 @@ def main():
 
     # ── Expected Move (ATM straddle) ─────────────────────────────────────────────
     # All tickers use nearest Friday expiry (GS methodology).
+    time.sleep(5)  # cooldown before expected move batch
     # Index tickers also get a 0DTE expected move (em_pct_0d).
     em_groups = ['Indices', 'Sel Sectors', 'S&P Style ETFs']
     for gname in groups_data:
@@ -2853,27 +2937,6 @@ def main():
         perplexity_api_key if perplexity_api_key else None,
     )
 
-    print("Fetching volatility signals...")
-    time.sleep(3)  # cooldown before vol signals
-    vol_signals = fetch_vol_signals()
-    # Count how many succeeded
-    _vs_ok = sum(1 for cat in vol_signals.values() for item in cat if item.get('current') is not None)
-    _vs_total = sum(len(cat) for cat in vol_signals.values())
-    if _vs_ok == 0 and _vs_total > 0:
-        # All failed — likely rate-limited, fall back to previous snapshot
-        prev_vs = prev_snap.get("vol_signals")
-        if prev_vs:
-            vol_signals = prev_vs
-            print(f"  vol_signals: all {_vs_total} failed — using previous snapshot data")
-        else:
-            print(f"  vol_signals: all {_vs_total} failed — no fallback available")
-    else:
-        for cat, items in vol_signals.items():
-            for item in items:
-                if item['current'] is not None:
-                    print(f"  {item['name']}: {item['current']:.2f} (vs MA20: {item['vs_ma']:+.1f}%)")
-                else:
-                    print(f"  {item['name']}: no data")
     macro_fred = {}
     if fred_api_key:
         print("Fetching FRED macro data...")
@@ -2897,18 +2960,6 @@ def main():
                 "20d": _r.get("20d"),
                 "vol_ratio": _r.get("vol_ratio"),
             }
-
-    # ── Options Intelligence ─────────────────────────────────────────────────
-    print("Computing options intelligence...")
-    time.sleep(3)  # cooldown before options intel
-    options_intel = build_options_intel(OPTIONS_INTEL_TICKERS)
-    if not options_intel:
-        prev_oi = prev_snap.get("options_intel")
-        if prev_oi:
-            options_intel = prev_oi
-            print("  options_intel: all failed — using previous snapshot data")
-        else:
-            print("  options_intel: all failed — no fallback available")
 
     # ── Correlation Matrix ────────────────────────────────────────────────────
     CORR_TICKERS = ["SPY", "QQQ", "IWM", "TLT", "GLD", "USO", "UUP", "HYG", "VIXY"]
@@ -2948,55 +2999,6 @@ def main():
         print(f"  Correlation: {n_corr}x{n_corr} matrix")
     else:
         print("  Correlation: insufficient OHLC data")
-
-    # ── Factor Regime ──────────────────────────────────────────────────────────
-    FACTOR_ETFS = {"VLUE": "Value", "MTUM": "Momentum", "QUAL": "Quality", "SIZE": "Size", "IWF": "Growth"}
-    print("Computing factor regime...")
-    time.sleep(3)  # cooldown before factor regime
-    factor_regime = {}
-    try:
-        spy_2y = yf.Ticker("SPY").history(period="2y")
-        time.sleep(0.5)
-        spy_2y_returns = spy_2y['Close'].pct_change().dropna()
-        for fticker, fname in FACTOR_ETFS.items():
-            try:
-                fhist = yf.Ticker(fticker).history(period="2y")
-                time.sleep(0.5)
-                if len(fhist) < 200:
-                    print(f"  {fticker}: insufficient data ({len(fhist)} bars)")
-                    continue
-                freturns = fhist['Close'].pct_change().dropna()
-                common = freturns.index.intersection(spy_2y_returns.index)
-                if len(common) < 200:
-                    continue
-                active = freturns[common] - spy_2y_returns[common]
-                ewma = active.ewm(halflife=90).mean()
-                exp_mean = ewma.expanding().mean()
-                exp_std = ewma.expanding().std()
-                zscore = ((ewma - exp_mean) / exp_std).ewm(halflife=30).mean()
-                latest_z = float(zscore.iloc[-1])
-                regime = "BULL" if latest_z >= 0 else "BEAR"
-                signs = (zscore >= 0).astype(int)
-                changes = signs.diff().abs()
-                last_change_idx = changes[changes == 1].index
-                last_change = last_change_idx[-1] if len(last_change_idx) > 0 else zscore.index[0]
-                days_in = len(zscore[zscore.index >= last_change])
-                factor_regime[fticker] = {
-                    "name": fname, "regime": regime,
-                    "zscore": round(latest_z, 2), "days_in_regime": days_in,
-                }
-                print(f"  {fticker} ({fname}): {regime} z={latest_z:.2f} ({days_in}d)")
-            except Exception as e:
-                print(f"  Factor {fticker} error: {e}")
-    except Exception as e:
-        print(f"  SPY 2y fetch error: {e}")
-    if not factor_regime:
-        prev_fr = prev_snap.get("factor_regime")
-        if prev_fr:
-            factor_regime = prev_fr
-            print("  factor_regime: all failed — using previous snapshot data")
-        else:
-            print("  factor_regime: all failed — no fallback available")
 
     snapshot = {
         "built_at": datetime.utcnow().isoformat() + "Z",
