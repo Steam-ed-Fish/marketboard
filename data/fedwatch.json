@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-21",
+  "last_updated": "2026-04-24",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -18,9 +18,9 @@
     "cpi_month": "March 2026",
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
-    "bls_cpi_updated": "2026-04-15",
-    "cme_updated": "2026-04-17",
-    "bls_unemp_updated": "2026-04-15"
+    "bls_cpi_updated": "2026-04-23",
+    "cme_updated": "2026-04-24",
+    "bls_unemp_updated": "2026-04-23"
   },
   "members": [
     {
@@ -398,6 +398,13 @@
       "photo_url": "data/fedwatch_photos/waller.jpg",
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/waller.htm",
       "speeches": [
+        {
+          "date": "2026-04-21",
+          "event": "Waller, Modernizing Federal Reserve Operations in the 21st Century",
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260421a.htm",
+          "brief_summary": "Speech At The Brookings Institution, Washington, D.C.",
+          "detailed_summary": ""
+        },
         {
           "date": "2026-04-17",
           "event": "Waller, One Transitory Shock After Another",
