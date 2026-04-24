@@ -279,6 +279,50 @@
         .fred-card-unit { font-size:0.7rem; font-weight:400; color:#3d7090; margin-left:1px; }
         .fred-card-change { font-size:0.65rem; margin-top:1px; }
         .fred-sparkline { width:100%; height:26px; object-fit:contain; margin-top:4px; display:block; }
+
+        /* ── Mobile card layout ── */
+        .mobile-cards { display: none; flex-direction: column; gap: 6px; padding: 4px 0; }
+        .mobile-card {
+            background: #0a1828; border: 1px solid #0d2035; border-radius: 6px;
+            padding: 8px 10px; cursor: pointer; transition: background 0.15s;
+        }
+        .mobile-card:active { background: #0e2240; }
+        .mobile-card-top { display: flex; justify-content: space-between; align-items: center; }
+        .mobile-card-left { display: flex; align-items: center; gap: 6px; }
+        .mobile-card-ticker { font-weight: bold; font-size: 0.95em; }
+        .mobile-card-daily { font-size: 1.0em; font-weight: bold; }
+        .mobile-card-metrics { display: flex; gap: 10px; margin-top: 4px; font-size: 0.72em; color: #7ab8d8; flex-wrap: wrap; }
+        .mobile-card-metrics span { white-space: nowrap; }
+        .mobile-card-detail {
+            display: none; margin-top: 6px; padding-top: 6px;
+            border-top: 1px solid #0d2035; font-size: 0.72em;
+        }
+        .mobile-card-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; }
+        .mobile-card-detail-item { display: flex; justify-content: space-between; background: #060d1c; padding: 3px 8px; border-radius: 4px; }
+        .mobile-card-detail-item .mcd-label { color: #3d7090; font-size: 0.95em; }
+        .mobile-card-detail-item .mcd-value { color: #d4e4f4; font-weight: 600; }
+        .mobile-card.expanded .mobile-card-detail { display: block; }
+        .mobile-card .gap-bar { display: inline-flex; }
+        .mobile-card-volchart { margin-top: 5px; }
+        .mobile-card-volchart img { width: 100%; height: 24px; object-fit: contain; display: block; }
+        .mobile-const-row { padding: 4px 0; border-bottom: 1px solid #070f1c; }
+        .mobile-const-row:last-child { border-bottom: none; }
+        .mobile-const-head { display: flex; justify-content: space-between; font-size: 0.78em; }
+        .mobile-const-ticker { color: #c8dce8; font-weight: 600; }
+        .mobile-const-metrics { display: flex; gap: 8px; margin-top: 2px; font-size: 0.68em; color: #7ab8d8; flex-wrap: wrap; }
+        .mobile-const-metrics span { white-space: nowrap; }
+        .mobile-const-volchart { margin-top: 2px; }
+        .mobile-const-volchart img { width: 100%; height: 18px; object-fit: contain; display: block; }
+
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            .chart-container { display: none !important; }
+            .ticker-list { width: 100% !important; border-right: none; height: auto; }
+            .ticker-table { display: none !important; }
+            .mobile-cards { display: flex !important; }
+            .group-header { font-size: 0.85em; padding: 8px 10px; }
+            .key-hint { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -656,6 +700,10 @@
         _cardSave(id, !nowOpen);
     };
 
+    window.toggleMobileCard = function(el) {
+        el.classList.toggle('expanded');
+    };
+
     function renderRelativePerf() {
         var pairs = [
             ["Tangibles vs. Intangibles",   "DBC",  "IGV"],
@@ -776,7 +824,56 @@
             html += '<td>' + (t.rs != null ? Math.round(t.rs) + '%' : 'N/A') + '</td>';
             html += '</tr>';
         });
-        html += '</tbody></table></div></div>';
+        html += '</tbody></table>';
+
+        // Mobile cards for Themes
+        html += '<div class="mobile-cards">';
+        snapshot.themes.forEach(function(t) {
+            var td = t.daily, tFive = t['5d'], tTwenty = t['20d'], tWtd = t.wtd, tYtd = t.ytd;
+            var tDailyCl = td > 0 ? '#10b981' : (td < 0 ? '#ef4444' : '#d4e4f4');
+            var tDailyStr = td != null ? (td >= 0 ? '+' : '') + td.toFixed(2) + '%' : '—';
+            var tFmt = function(v) { return v != null ? (v >= 0 ? '+' : '') + v.toFixed(1) + '%' : '—'; };
+            var tCl = function(v) { return v > 0 ? '#10b981' : (v < 0 ? '#ef4444' : '#7ab8d8'); };
+            var tRow2 = '';
+            tRow2 += '<span>5D <b style="color:' + tCl(tFive) + '">' + tFmt(tFive) + '</b></span>';
+            tRow2 += '<span>20D <b style="color:' + tCl(tTwenty) + '">' + tFmt(tTwenty) + '</b></span>';
+            tRow2 += '<span>WTD <b style="color:' + tCl(tWtd) + '">' + tFmt(tWtd) + '</b></span>';
+            if (t.rs != null) tRow2 += '<span>RS <b style="color:' + (t.rs >= 70 ? '#10b981' : t.rs <= 30 ? '#ef5350' : '#c8d8e8') + '">' + Math.round(t.rs) + '%</b></span>';
+            var tdi = function(label, value, color) {
+                return '<div class="mobile-card-detail-item"><span class="mcd-label">' + label + '</span><span class="mcd-value"' + (color ? ' style="color:' + color + '"' : '') + '>' + value + '</span></div>';
+            };
+            var tDetail = '';
+            tDetail += tdi('Intra', tFmt(t.intra), tCl(t.intra));
+            tDetail += tdi('YTD', tFmt(tYtd), tCl(tYtd));
+            tDetail += tdi('Vol', t.vol_ratio != null ? t.vol_ratio.toFixed(1) + 'x' : '—');
+            tDetail += tdi('ATR%', t.atr_pct != null ? t.atr_pct.toFixed(1) + '%' : '—');
+            tDetail += tdi('ATRx', t.dist_sma50_atr != null ? t.dist_sma50_atr.toFixed(2) : '—');
+            var tVolChartRow = '';
+            if (t.vol_chart) tVolChartRow = '<div class="mobile-card-volchart"><img src="' + t.vol_chart + '" alt="Vol"></div>';
+            // Constituents
+            var cd = t.constituent_daily || {};
+            var _dn = {'005930.KS':'Samsung','000660.KS':'SK Hynix'};
+            var tConst = '<div style="margin-top:6px;padding-top:6px;border-top:1px solid #0d2035">';
+            tConst += '<div style="font-size:0.7em;color:#38bdf8;margin-bottom:4px;font-weight:bold">Constituents</div>';
+            t.tickers.forEach(function(tk) {
+                var _cv = cd[tk], _cn = _dn[tk] || tk;
+                var _cc = _cv > 0 ? '#10b981' : (_cv < 0 ? '#ef4444' : '#9ca3af');
+                var _cs = _cv != null ? (_cv >= 0 ? '+' : '') + _cv.toFixed(2) + '%' : '—';
+                tConst += '<div style="display:flex;justify-content:space-between;padding:1px 0;font-size:0.72em"><span style="color:#9ca3af">' + _cn + '</span><span style="color:' + _cc + ';font-weight:600">' + _cs + '</span></div>';
+            });
+            tConst += '</div>';
+            var etfBadge = t.etf ? ' <span style="color:#6b7a8d;font-size:0.7em">(' + t.etf + ')</span>' : '';
+            html += '<div class="mobile-card" onclick="toggleMobileCard(this)">';
+            html += '<div class="mobile-card-top"><div class="mobile-card-left"><span class="mobile-card-ticker">' + t.name + '</span>' + etfBadge + '</div>';
+            html += '<span class="mobile-card-daily" style="color:' + tDailyCl + '">' + tDailyStr + '</span></div>';
+            html += '<div class="mobile-card-metrics">' + tRow2 + '</div>';
+            html += tVolChartRow;
+            html += '<div class="mobile-card-detail"><div class="mobile-card-detail-grid">' + tDetail + '</div>' + tConst + '</div>';
+            html += '</div>';
+        });
+        html += '</div>';
+
+        html += '</div></div>';
         return html;
     }
 
@@ -1043,7 +1140,110 @@
                 }
                 html += '</tr>';
             }
-            html += '</tbody></table></div></div>';
+            html += '</tbody></table>';
+
+            // ── Mobile card layout (hidden on desktop, shown via @media) ──
+            html += '<div class="mobile-cards">';
+            for (var mi = 0; mi < rows.length; mi++) {
+                var mr = rows[mi];
+                if (mr.is_rrg_row) continue;
+                var mDaily = mr.daily, mFive = mr['5d'], mTwenty = mr['20d'], mWtd = mr.wtd, mYtd = mr.ytd;
+                var mIntra = mr.intra, mVolR = mr.vol_ratio, mAtrPct = mr.atr_pct;
+                var mRs = mr.rs_composite != null ? Math.round(mr.rs_composite) : (mr.rs != null ? Math.round(mr.rs) : null);
+                var mDailyCl = mDaily > 0 ? '#10b981' : (mDaily < 0 ? '#ef4444' : '#d4e4f4');
+                var mDailyStr = mDaily != null ? (mDaily >= 0 ? '+' : '') + mDaily.toFixed(2) + '%' : '—';
+                var mAbc = mr.abc || '';
+                var mStage = mr.stage || '';
+                // Grade HTML
+                var mGradeHtml = mAbc ? '<span class="abc-rating abc-' + mAbc.toLowerCase() + '" style="font-size:0.7em">' + mAbc + '</span>' : '';
+                if (mStage) mGradeHtml += '<span class="stage-tag stage-' + mStage + '" style="font-size:0.6em">' + mStage + '</span>';
+                // S/R badge
+                var mSrHtml = '';
+                if (mr.sr && mr.sr.near) {
+                    var _mt = mr.sr.near.type, _md = mr.sr.near.dist_pct;
+                    var _mc = _mt === 'resistance' ? '#f59e0b' : '#38bdf8';
+                    mSrHtml = '<span style="font-size:0.6rem;font-weight:700;padding:1px 3px;border-radius:2px;background:' + _mc + ';color:#020810">' + (_mt === 'resistance' ? 'R' : 'S') + ' ' + (_md > 0 ? '+' : '') + _md + '%</span>';
+                }
+                // Metric helper
+                var mFmt = function(v) { return v != null ? (v >= 0 ? '+' : '') + v.toFixed(1) + '%' : '—'; };
+                var mCl = function(v) { return v > 0 ? '#10b981' : (v < 0 ? '#ef4444' : '#7ab8d8'); };
+                // Row 2 metrics
+                var mRow2 = '';
+                mRow2 += '<span>5D <b style="color:' + mCl(mFive) + '">' + mFmt(mFive) + '</b></span>';
+                mRow2 += '<span>20D <b style="color:' + mCl(mTwenty) + '">' + mFmt(mTwenty) + '</b></span>';
+                mRow2 += '<span>WTD <b style="color:' + mCl(mWtd) + '">' + mFmt(mWtd) + '</b></span>';
+                if (mRs != null) {
+                    var mRsCl = mRs >= 70 ? '#10b981' : (mRs <= 30 ? '#ef5350' : '#c8d8e8');
+                    mRow2 += '<span>RS <b style="color:' + mRsCl + '">' + mRs + '%</b></span>';
+                }
+                // Detail grid items — each item is a self-contained label+value pill
+                var mdi = function(label, value, color) {
+                    return '<div class="mobile-card-detail-item"><span class="mcd-label">' + label + '</span><span class="mcd-value"' + (color ? ' style="color:' + color + '"' : '') + '>' + value + '</span></div>';
+                };
+                var mDetailItems = '';
+                mDetailItems += mdi('Intra', mFmt(mIntra), mCl(mIntra));
+                mDetailItems += mdi('YTD', mFmt(mYtd), mCl(mYtd));
+                mDetailItems += mdi('Vol', mVolR != null ? mVolR.toFixed(1) + 'x' : '—');
+                mDetailItems += mdi('ATR%', mAtrPct != null ? mAtrPct.toFixed(1) + '%' : '—');
+                var mEmStr = '—';
+                if (mr.em_pct != null) mEmStr = (mr.em_days != null ? mr.em_days + 'd ' : '') + '\u00b1' + mr.em_pct.toFixed(1) + '%';
+                mDetailItems += mdi('Fwd EM', mEmStr);
+                mDetailItems += mdi('ATRx', mr.dist_sma50_atr != null ? mr.dist_sma50_atr.toFixed(2) : '—');
+                // Gap dots
+                var mGapHtml = '';
+                if (mr.gaps && mr.gaps.length) {
+                    mGapHtml = '<div class="gap-bar">';
+                    for (var mgi = mr.gaps.length - 1; mgi >= 0; mgi--) {
+                        var mgv = mr.gaps[mgi];
+                        var mgcls = mgv === 'up' ? 'gap-dot-up' : (mgv === 'down' ? 'gap-dot-down' : 'gap-dot-none');
+                        mGapHtml += '<div class="gap-dot ' + mgcls + '"></div>';
+                    }
+                    mGapHtml += '</div>';
+                }
+                if (mGapHtml) mDetailItems += mdi('Gap', mGapHtml);
+                // Vol chart image — shown in the row (always visible)
+                var mVolChartRowHtml = '';
+                if (mr.vol_chart) mVolChartRowHtml = '<div class="mobile-card-volchart"><img src="' + mr.vol_chart + '" alt="Vol"></div>';
+                // Constituents for The 7s at a Glance
+                var mConstHtml = '';
+                if (_isGlance && snapshot.groups && snapshot.groups[mr.ticker]) {
+                    var _cRows = snapshot.groups[mr.ticker];
+                    mConstHtml = '<div style="margin-top:6px;padding-top:6px;border-top:1px solid #0d2035">';
+                    mConstHtml += '<div style="font-size:0.7em;color:#38bdf8;margin-bottom:4px;font-weight:bold">Constituents</div>';
+                    _cRows.forEach(function(cr) {
+                        var _cd = cr.daily;
+                        var _cc = _cd > 0 ? '#10b981' : (_cd < 0 ? '#ef4444' : '#9ca3af');
+                        var _cs = _cd != null ? (_cd >= 0 ? '+' : '') + _cd.toFixed(2) + '%' : '—';
+                        var _cFmt = function(v) { return v != null ? (v >= 0 ? '+' : '') + v.toFixed(1) + '%' : '—'; };
+                        var _cCl = function(v) { return v > 0 ? '#10b981' : (v < 0 ? '#ef4444' : '#7ab8d8'); };
+                        var _c5 = cr['5d'], _c20 = cr['20d'], _cy = cr.ytd, _cvr = cr.vol_ratio;
+                        mConstHtml += '<div class="mobile-const-row">';
+                        mConstHtml += '<div class="mobile-const-head"><span class="mobile-const-ticker">' + cr.ticker + '</span><span style="color:' + _cc + ';font-weight:600">' + _cs + '</span></div>';
+                        mConstHtml += '<div class="mobile-const-metrics">';
+                        mConstHtml += '<span>5D <b style="color:' + _cCl(_c5) + '">' + _cFmt(_c5) + '</b></span>';
+                        mConstHtml += '<span>20D <b style="color:' + _cCl(_c20) + '">' + _cFmt(_c20) + '</b></span>';
+                        mConstHtml += '<span>YTD <b style="color:' + _cCl(_cy) + '">' + _cFmt(_cy) + '</b></span>';
+                        mConstHtml += '<span>Vol <b>' + (_cvr != null ? _cvr.toFixed(1) + 'x' : '—') + '</b></span>';
+                        mConstHtml += '</div>';
+                        if (cr.vol_chart) mConstHtml += '<div class="mobile-const-volchart"><img src="' + cr.vol_chart + '" alt="Vol"></div>';
+                        mConstHtml += '</div>';
+                    });
+                    mConstHtml += '</div>';
+                }
+
+                html += '<div class="mobile-card" onclick="toggleMobileCard(this)" data-symbol="' + mr.ticker + '">';
+                html += '<div class="mobile-card-top">';
+                html += '<div class="mobile-card-left"><span class="mobile-card-ticker ' + (mr.ticker_color ? 'ticker-label-' + mr.ticker : '') + '">' + mr.ticker + '</span> ' + mGradeHtml + ' ' + mSrHtml + '</div>';
+                html += '<span class="mobile-card-daily" style="color:' + mDailyCl + '">' + mDailyStr + '</span>';
+                html += '</div>';
+                html += '<div class="mobile-card-metrics">' + mRow2 + '</div>';
+                html += mVolChartRowHtml;
+                html += '<div class="mobile-card-detail"><div class="mobile-card-detail-grid">' + mDetailItems + '</div>' + mConstHtml + '</div>';
+                html += '</div>';
+            }
+            html += '</div>';
+
+            html += '</div></div>';
         }
         document.getElementById('groups-container').innerHTML = html;
 

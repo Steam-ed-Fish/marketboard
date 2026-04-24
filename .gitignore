@@ -27,3 +27,6 @@ Thumbs.db
 # Local secrets & logs
 .env
 logs/
+
+# Deploy staging directory
+_deploy/

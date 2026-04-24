@@ -19,6 +19,13 @@ import argparse
 import os
 from datetime import datetime, timezone, timedelta
 
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 # ── Venues ────────────────────────────────────────────────────────────────────
 VENUES = [
     {

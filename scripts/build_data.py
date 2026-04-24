@@ -1214,6 +1214,7 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
 
         return {
             "ticker": ticker_symbol,
+            "data_date": today.isoformat(),
             "daily": round(daily_change, 2) if daily_change is not None else None,
             "intra": round(intraday_change, 2) if intraday_change is not None else None,
             "5d": round(five_day_change, 2) if five_day_change is not None else None,
@@ -2324,6 +2325,11 @@ def main():
         print("SPY cache fetch failed:", e)
         _spy_cache = None
 
+    spy_ref_date = None
+    if _spy_cache is not None and len(_spy_cache) >= 1:
+        spy_ref_date = _spy_cache.index[-1].date()
+        print(f"SPY reference date: {spy_ref_date}")
+
     # Load previous snapshot for fallback on rate-limited tickers
     prev_ticker_data = {}
     prev_snap = {}
@@ -2500,6 +2506,38 @@ def main():
         else:
             failed_tickers.append(ticker)
         _rate_sleep()
+
+    # Detect stale tickers by comparing data_date against SPY's reference date
+    stale_tickers = []
+    if spy_ref_date:
+        for ticker, row in all_ticker_data.items():
+            ticker_date = row.get("data_date")
+            if ticker_date and ticker_date != spy_ref_date.isoformat():
+                stale_tickers.append(ticker)
+        if stale_tickers:
+            print(f"\nDetected {len(stale_tickers)} stale tickers (date != {spy_ref_date}):")
+            for t in stale_tickers:
+                print(f"  {t}: data_date={all_ticker_data[t].get('data_date')}")
+            print(f"Re-fetching {len(stale_tickers)} stale tickers after cooldown...")
+            time.sleep(5)
+            stale_recovered = 0
+            for ticker in stale_tickers:
+                row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache, ohlc_dir=ohlc_dir)
+                if row and row.get("data_date") == spy_ref_date.isoformat():
+                    all_ticker_data[ticker] = row
+                    for gname, grow in groups_data.items():
+                        for j, r in enumerate(grow):
+                            if r.get("ticker") == ticker:
+                                grow[j] = row
+                    stale_recovered += 1
+                _rate_sleep()
+            print(f"Stale recovery: {stale_recovered}/{len(stale_tickers)} tickers updated")
+            still_stale = [t for t in stale_tickers
+                           if all_ticker_data[t].get("data_date") != spy_ref_date.isoformat()]
+            if still_stale:
+                print(f"WARNING: {len(still_stale)} tickers still stale after retry: {still_stale}")
+        else:
+            print("No stale tickers detected — all dates match SPY reference date")
 
     # Build AI themes summary (equal-weighted averages)
     themes_data = []
@@ -2907,6 +2945,7 @@ def main():
             r.pop("3m_return", None)
             r.pop("6m_return", None)
             r.pop("12m_return", None)
+            r.pop("data_date", None)
 
     print("Computing column ranges...")
     column_ranges = {}
