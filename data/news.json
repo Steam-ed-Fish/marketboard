@@ -1,28 +1,34 @@
 {
   "market": [
     {
-      "title": "U.S. Stock Markets Today - Fox Business",
-      "url": "https://www.foxbusiness.com/stocks",
-      "snippet": "Discover the U.S. markets today with Fox Business. See the trending stocks in the USA stock market and today's stock market results.",
-      "source": "foxbusiness.com"
-    },
-    {
-      "title": "United States Stock Market Index - Quote - Chart - Trading Economics",
-      "url": "https://tradingeconomics.com/united-states/stock-market",
-      "snippet": "The S&P 500 rose 0.1% to close at a record 7173.9, while the Nasdaq gained 0.2% to reach a fresh high of 24887 on Monday. The Dow Jones however,",
-      "source": "tradingeconomics.com"
+      "title": "Yahoo Finance - Stock Market Live, Quotes, Business & Finance News",
+      "url": "https://finance.yahoo.com/",
+      "snippet": "Stock market today: Dow, S&P 500 and Nasdaq slip as OpenAI-linked stocks falter.",
+      "source": "finance.yahoo.com"
     },
     {
       "title": "U.S. Stock Market Headlines | Breaking Stock Market News - Reuters",
       "url": "https://www.reuters.com/markets/us/",
-      "snippet": "S&P 500, Nasdaq notch record closing highs on tech, Iran hopes · Market Talk: 'Quieter' Fed under Warsh could be a 'double-edged sword' · Market Talk: Earnings",
+      "snippet": "S&P 500, Nasdaq rise slightly in start to a heavy earnings week · Transparency concerns grow as Warsh nears Fed role, strategist says · Big Tech earnings 'less",
       "source": "reuters.com"
+    },
+    {
+      "title": "U.S Financial Markets - Investing.com",
+      "url": "https://www.investing.com/markets/united-states",
+      "snippet": "Dow Jones. 49,108.79. 15:41:45 | NYSE ; S&P 500. 7,139.67 · 15:42:28 | NYSE ; Nasdaq 100. 27,049.35. 15:42:03 | NASDAQ ; Nasdaq. 24,678.62. | NASDAQ ; NYSE Composite.",
+      "source": "investing.com"
     },
     {
       "title": "S&P 500 (^GSPC) Latest Stock News & Headlines - Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/%5EGSPC/news/",
-      "snippet": "Stock market today: Dow, S&P 500, Nasdaq slip to start pivotal week as markets weigh Iran peace odds. Yahoo Finance • 45m ago ; Intel's 26-year comeback is a",
+      "snippet": "SNP - Free Realtime Quote • USD. S&P 500 (^GSPC). 7,126.71 -47.20 (-0.66%). As of 12:31:21 PM EDT. Market Open. All News",
       "source": "finance.yahoo.com"
+    },
+    {
+      "title": "S&P 500 Index (SP500) Analysis, News, And Chart Today",
+      "url": "https://seekingalpha.com/symbol/SP500",
+      "snippet": "A high-level overview of the S&P 500 Index (SP500). Get the latest S&P 500 chart, news, and analysis, including analyst predictions and forecasts for today.",
+      "source": "seekingalpha.com"
     },
     {
       "title": "S&P 500 INDEX TODAY | INX LIVE TICKER - Markets Insider",
@@ -31,28 +37,29 @@
       "source": "markets.businessinsider.com"
     },
     {
-      "title": "S&P 500 Index (SPX) - Investing.com",
-      "url": "https://www.investing.com/indices/us-spx-500",
-      "snippet": "Today, the S&P 500 opened at 7,152.72. What is the trading volume for S&P 500? The current volume for S&P 500 is 0.",
-      "source": "investing.com"
+      "title": "U.S. Federal Reserve News | Today's Latest Stories | Reuters",
+      "url": "https://www.reuters.com/markets/us/federal-reserve/",
+      "snippet": "Stay updated with the latest news on the U.S. Federal Reserve. Get comprehensive coverage and analysis of the Fed's monetary policy decisions and reports.",
+      "source": "reuters.com"
     },
     {
       "title": "News & Events - Federal Reserve Board",
       "url": "https://www.federalreserve.gov/newsevents.htm",
-      "snippet": "*   [Structure of the Federal Reserve System](https://www.federalreserve.gov/aboutthefed/fedexplained/who-we-are.htm). *   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Federal Reserve Act](https://www.federalreserve.gov/aboutthefed/fract.htm). ",
+      "snippet": "*   [Structure of the Federal Reserve System](https://www.federalreserve.gov/aboutthefed/fedexplained/who-we-are.htm). *   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Federal Reserve Bank and Branch Directors](https://www.federalreserve.gov/ab",
       "source": "federalreserve.gov"
     },
     {
-      "title": "Federal Reserve Board - Home",
-      "url": "https://www.federalreserve.gov/",
-      "snippet": "*   [Structure of the Federal Reserve System](https://www.federalreserve.gov/aboutthefed/fedexplained/who-we-are.htm). *   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Federal Reserve Act](https://www.federalreserve.gov/aboutthefed/fract.htm). ",
+      "title": "Monetary Policy - Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/monetarypolicy.htm",
+      "snippet": "[Skip to main content](https://www.federalreserve.gov/monetarypolicy.htm#content). *   [Recent Postings](https://www.federalreserve.gov/recentpostings.htm). *   [Publications](https://www.federalreserve.gov/publications.htm). *   [FAQs](https://www.federalreserve.gov/faqs.htm). *   [Videos](https://",
       "source": "federalreserve.gov"
     },
     {
-      "title": "U.S. Federal Reserve News | Today's Latest Stories",
-      "url": "https://www.reuters.com/markets/us/federal-reserve/",
-      "snippet": "Stay updated with the latest news on the U.S. Federal Reserve. Get comprehensive coverage and analysis of the Fed's monetary policy decisions and reports.",
-      "source": "reuters.com"
+      "title": "Geopolitical risk and stock market development - ScienceDirect",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1042443123001154",
+      "snippet": "# Geopolitical risk and stock market development. We show a significant, negative relationship between GPR and stock market development. We show that impact of GPR is distinct from other macro risks such as economic policy uncertainty. While previous literature has documented adverse impacts on fina",
+      "source": "sciencedirect.com",
+      "category": "geopolitical"
     },
     {
       "title": "Top Geopolitical Risks of 2025 - S&P Global",
@@ -62,62 +69,61 @@
       "category": "geopolitical"
     },
     {
-      "title": "Geopolitical risk and stock market volatility: A global perspective",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1544612322007966",
-      "snippet": "This paper investigates the relationship between geopolitical risk (GPR) and stock market volatility from a global perspective. We use dynamic panel data",
-      "source": "sciencedirect.com",
-      "category": "geopolitical"
-    },
-    {
-      "title": "Geopolitical Risk and Financial Markets: Emerging Trends, Research Gaps, and Implications for International Trade: Business & Management Book Chapter | IGI Global Scientific Publishing",
-      "url": "https://www.igi-global.com/chapter/geopolitical-risk-and-financial-markets/393949",
-      "snippet": "## **OnDemand** **$37.50**. ##### MLA. ##### APA. ##### Chicago. ##### Export Reference. Geopolitical Risk and Financial Markets: Emerging Trends, Research Gaps, and Implications for International Trade. # Geopolitical Risk and Financial Markets: Emerging Trends, Research Gaps, and Implications for ",
-      "source": "igi-global.com",
+      "title": "Geopolitical Risk is Evolving: What You Should Know",
+      "url": "https://www.schwab.com/learn/story/geopolitical-risk-is-evolving-what-you-should-know",
+      "snippet": "In the past, sudden shocks or the anticipation of geopolitical risk escalation such as armed conflicts have created short-term market volatility. Also, while U.S. investors have added to foreign stock investments, they also continue to invest in U.S. equities over the past year according to data fro",
+      "source": "schwab.com",
       "category": "geopolitical"
     }
   ],
   "movers": {
     "MP": [
       {
+        "title": "MP Materials (MP) Stock price today - quote & chart - Kraken",
+        "url": "https://www.kraken.com/stocks/mp",
+        "snippet": "The MP Materials Corp. (MP) stock after-hours price today is $64.92, reflecting a +6.93% after-hours move since the market last closed. The company's market",
+        "source": "kraken.com"
+      },
+      {
+        "title": "MP Materials Corp. (MP) Latest Stock News & Headlines",
+        "url": "https://finance.yahoo.com/quote/MP/news/",
+        "snippet": "MP Materials Corp. (MP). Trade MP on Coinbase Trading disclosure. 61.70 -3.22 (-4.96%). At close: 4:00:02 PM EDT. 61.93 +0.23 (+0.37%).",
+        "source": "finance.yahoo.com"
+      },
+      {
         "title": "MP Materials: MP Stock Price Quote & News - Robinhood",
         "url": "https://robinhood.com/stocks/MP",
-        "snippet": "As of 2026-04-26, MP Materials(MP) stock has fluctuated between $60.01 and $64.58. The current price stands at $60.91, placing the stock +1.5% above today's low",
+        "snippet": "As of 2026-04-27, MP Materials(MP) stock has fluctuated between $60.46 and $63.98. The current price stands at $64.20, placing the stock +6.2% above today's low",
         "source": "robinhood.com"
-      },
-      {
-        "title": "Latest MP News - MP Materials Announces Date for First Quarter...",
-        "url": "https://www.stocktitan.net/news/MP/",
-        "snippet": "The current stock price of Mp Materials Corporation (MP) is $60.73 as of April 24, 2026. What is the market cap of Mp Materials Corporation (MP)?. The market",
-        "source": "stocktitan.net"
-      },
-      {
-        "title": "MP Stock Price and Chart — NYSE:MP - TradingView",
-        "url": "https://www.tradingview.com/symbols/NYSE-MP/",
-        "snippet": "What is MP Materials Corp. stock price today? The current price of MP is 62.90 USD — it has decreased by −4.09% in the past 24 hours. Watch MP Materials Corp.",
-        "source": "tradingview.com"
       }
     ],
     "ALB": [
       {
         "title": "Albemarle: ALB Stock Price Quote & News - Robinhood",
         "url": "https://robinhood.com/stocks/ALB",
-        "snippet": "As of 2026-04-26, Albemarle(ALB) stock has fluctuated between $184.51 and $192.24. The current price stands at $186.91, placing the stock +1.3% above today's",
+        "snippet": "As of 2026-04-27, Albemarle(ALB) stock has fluctuated between $184.65 and $200.40. The current price stands at $187.35, placing the stock +1.5% above today's",
         "source": "robinhood.com"
       },
       {
-        "title": "Albemarle Corporation (ALB) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/ALB/",
-        "snippet": "Albemarle Corporation (ALB) continues to gain momentum, with shares up 232% over the past year amid strong demand for lithium. The upcoming Q1 earnings",
-        "source": "finance.yahoo.com"
+        "title": "ALB Stock Quote Price and Forecast - CNN",
+        "url": "https://www.cnn.com/markets/stocks/ALB",
+        "snippet": "The price of ALB shares has increased $11.20 since the market last closed. This is a 5.95% rise. Last closed at $199.53. The stock has since dropped $3.52 in",
+        "source": "cnn.com"
       },
       {
-        "title": "ALB Stock Price and Chart — NYSE:ALB - TradingView",
-        "url": "https://www.tradingview.com/symbols/NYSE-ALB/",
-        "snippet": "The current price of ALB is 194.41 USD — it has increased by 0.09% in the past 24 hours. Watch Albemarle Corporation stock price performance more closely on the",
-        "source": "tradingview.com"
+        "title": "Albemarle Corp (ALB) Stock Price & News - Google Finance",
+        "url": "https://www.google.com/finance/beta/quote/ALB:NYSE",
+        "snippet": "News stories. From sources across the web. Yahoo Finance ... Albemarle (ALB) Stock Draws Conflicting Calls As Lithium Debate Heats Up.",
+        "source": "google.com"
       }
     ],
     "MU": [
+      {
+        "title": "Micron Technology, Inc. (MU) Latest Stock News & Headlines",
+        "url": "https://finance.yahoo.com/quote/MU/news/",
+        "snippet": "Micron Technology is gaining attention with a new Buy rating and a $1,000 price target from DA Davidson, highlighting AI-driven demand as a key growth",
+        "source": "finance.yahoo.com"
+      },
       {
         "title": "MU Stock Price Quote & News - Micron Technology - Robinhood",
         "url": "https://robinhood.com/stocks/MU",
@@ -125,30 +131,24 @@
         "source": "robinhood.com"
       },
       {
-        "title": "Micron Technology, Inc. (MU) Latest Stock News & Headlines",
-        "url": "https://finance.yahoo.com/quote/MU/news/",
-        "snippet": "News headlines Micron Technology (MU) continues to gain traction in the semiconductor market, with a 39.1% increase in shares over the past month,",
-        "source": "finance.yahoo.com"
-      },
-      {
-        "title": "Micron Technology, Inc. (MU) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/MU/",
-        "snippet": "News headlines Micron Technology (MU) is experiencing strong demand driven by AI and memory needs, with a significant 39.1% increase in shares over the past",
-        "source": "finance.yahoo.com"
+        "title": "MU Stock Price Quote & News - Micron Technology - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/MU/",
+        "snippet": "On 2026-04-27, Micron Technology(MU) stock traded between a low of $488.24 and a high of $518.83. Shares are currently priced at $494.32, which is +1.2% above",
+        "source": "robinhood.com"
       }
     ],
     "QCOM": [
       {
-        "title": "These S&P500 stocks have an unusual volume in today's session",
-        "url": "https://www.chartmill.com/news/SHW/Chartmill-36124-These-SP500-stocks-have-an-unusual-volume-in-todays-session",
-        "snippet": "14.32M shares of QUALCOMM INC (NASDAQ:QCOM) have been traded so far today. The price of QCOM is experiencing a downturn, with a decrease of 2.97",
-        "source": "chartmill.com"
+        "title": "Unusual Options Volume In QCOM, INTC, And PG Draws Attention To Key Strike Levels",
+        "url": "https://www.stockoptionschannel.com/article/202604/unusual-options-volume-in-qcom-intc-and-pg-draws-attention-to-key-strike-levels-PG04242026note.htm/",
+        "snippet": "Friday's options flow in Qualcomm, Intel, and Procter & Gamble stands out against normal trading patterns, with contract volume in each name highlighting specific strike prices and expiration dates that traders are using to express directional views, hedge exposure, or reposition around future catal",
+        "source": "stockoptionschannel.com"
       },
       {
-        "title": "Unusual Options Activity and Flow in Qualcomm (QCOM) - Nasdaq",
-        "url": "https://www.nasdaq.com/articles/unusual-options-activity-and-flow-in-qualcomm-qcom",
-        "snippet": "... Unusual Whales saw unusual or noteworthy options trading volume and activity in Qualcomm (QCOM) 6/30 C $118.00. The following screenshot from",
-        "source": "nasdaq.com"
+        "title": "Unusual Volume Stocks: US companies with ... - Yahoo Finance",
+        "url": "https://finance.yahoo.com/markets/stocks/unusual-volume-stocks/",
+        "snippet": "Yahoo Finance's list of the unusual volume stocks includes price changes ... QCOM QUALCOMM Incorporated 148.85 +14.90 (+11.12%) · POET POET Technologies",
+        "source": "finance.yahoo.com"
       },
       {
         "title": "QUALCOMM Incorporated (QCOM) Stock Price, News, Quote & History",
@@ -159,46 +159,46 @@
     ]
   },
   "sectors": {
-    "XLP": [
+    "XLK": [
       {
-        "title": "Consumer Staples Select Sector SPDR Fund (XLP) News Today",
-        "url": "https://www.marketbeat.com/stocks/NYSEARCA/XLP/news/",
-        "snippet": "Consumer staples are emerging as a clear defensive leader as high-beta technology stocks, software, and crypto drag the broader market lower. February 8, 2026 |",
+        "title": "Technology Select Sector SPDR Fund (XLK) Price, Holdings, & News",
+        "url": "https://www.marketbeat.com/stocks/NYSEARCA/XLK/",
+        "snippet": "Key Stats ; Today's Range: $158.81 · $160.62 ; 50-Day Range: $127.50 · $160.57 ; 52-Week Range: $101.90 · $160.62.",
         "source": "marketbeat.com"
       },
       {
-        "title": "State Street Consumer Sta…: XLP Stock Price Quote & News",
-        "url": "https://robinhood.com/us/en/stocks/XLP/",
-        "snippet": "As of today, State Street Consumer Staples Select Sector SPDR ETF(XLP) shares are valued at $82.92. The company's market cap stands at 14.7B, with a P/E",
+        "title": "State Street Technology S…: XLK Stock Price Quote & News",
+        "url": "https://robinhood.com/stocks/XLK",
+        "snippet": "On 2026-04-27, State Street Technology Select Sector SPDR ETF(XLK) stock moved within a range of $156.57 to $158.68. With shares now at $160.90,",
         "source": "robinhood.com"
       },
       {
-        "title": "META_TITLE_QUOTE - Yahoo Finance",
-        "url": "https://finance.yahoo.com/quote/XLP/news/",
-        "snippet": "State Street Consumer Staples Select Sector SPDR ETF (XLP) ; Sector Update: Consumer Stocks Mixed Late Afternoon · MT Newswires • 1d ago ; Sector Update: Consumer",
-        "source": "finance.yahoo.com"
+        "title": "The Technology Select Sector SPDR® Fund XLK - 富途牛牛",
+        "url": "https://www.futunn.com/en/etfs/XLK-US",
+        "snippet": "The Technology Select Sector SPDR® Fund (XLK) News. Preview for the week | Earnings season kicks off with seven giants set to release their financial",
+        "source": "futunn.com"
       }
     ],
-    "XLRE": [
+    "XLE": [
       {
-        "title": "Latest News The Real Estate Select Sector SPDR Fund ETF ( XLRE )",
-        "url": "https://stockinvest.us/news/XLRE",
-        "snippet": "XLRE Trails the S&P 500 by 5% Despite Lower Interest Rates That Were Supposed To Help. 03:16pm, Tuesday, 17'th Feb 2026. Real estate ETFs promise two things:",
-        "source": "stockinvest.us"
+        "title": "State Street Energy Select Sector SPDR ETF (XLE) Latest Stock ...",
+        "url": "https://finance.yahoo.com/quote/XLE/news/",
+        "snippet": "State Street Energy Select Sector SPDR ETF (XLE) ; Sector Update: Energy Stocks Rise Tuesday Afternoon · MT Newswires • 1h ago · BP · SHEL ; Sector Update: Energy.",
+        "source": "finance.yahoo.com"
       },
       {
-        "title": "Real Estate Select Sector SPDR Fund (XLRE) News Today",
-        "url": "https://www.marketbeat.com/stocks/NYSEARCA/XLRE/news/",
-        "snippet": "What's going on at Real Estate Select Sector SPDR Fund (NYSEARCA:XLRE)? Read today's XLRE news from trusted media outlets at MarketBeat.",
-        "source": "marketbeat.com"
+        "title": "State Street Energy Select Sector SPDR ETF (XLE) Latest Stock News",
+        "url": "https://seekingalpha.com/symbol/XLE/news",
+        "snippet": "XLE News · Weekly ETF flows: Four of 11 sectors record outflows; technology sector leads inflows · WTI crude tops $100 as Trump unhappy with Iran's proposal to",
+        "source": "seekingalpha.com"
       },
       {
-        "title": "Real Estate Select Sector SPDR Fund (XLRE) News ... - Stocktwits",
-        "url": "https://stocktwits.com/symbol/XLRE/news",
-        "snippet": "The company announced an agreement to be acquired in an all-cash deal by a consortium led by Chairman and CEO William McMorrow and Fairfax Financial.",
-        "source": "stocktwits.com"
+        "title": "State Street Energy Selec…: XLE Stock Price Quote & News",
+        "url": "https://robinhood.com/stocks/XLE",
+        "snippet": "During the trading session on 2026-04-27, State Street Energy Select Sector SPDR ETF(XLE) shares reached a daily high of $58.05 and a low of $57.38. At a",
+        "source": "robinhood.com"
       }
     ]
   },
-  "built_at": "2026-04-27T22:23:08Z"
+  "built_at": "2026-04-28T22:20:18Z"
 }
