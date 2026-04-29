@@ -1,46 +1,40 @@
 {
   "market": [
     {
-      "title": "Yahoo Finance - Stock Market Live, Quotes, Business & Finance News",
-      "url": "https://finance.yahoo.com/",
-      "snippet": "Stock market today: Dow, S&P 500 and Nasdaq slip as OpenAI-linked stocks falter.",
-      "source": "finance.yahoo.com"
-    },
-    {
       "title": "U.S. Stock Market Headlines | Breaking Stock Market News - Reuters",
       "url": "https://www.reuters.com/markets/us/",
-      "snippet": "S&P 500, Nasdaq rise slightly in start to a heavy earnings week · Transparency concerns grow as Warsh nears Fed role, strategist says · Big Tech earnings 'less",
+      "snippet": "U.S. stocks closed lower on Tuesday, backing away from record closing highs as renewed concerns over the artificial intelligence boom weighed on technology",
       "source": "reuters.com"
     },
     {
-      "title": "U.S Financial Markets - Investing.com",
-      "url": "https://www.investing.com/markets/united-states",
-      "snippet": "Dow Jones. 49,108.79. 15:41:45 | NYSE ; S&P 500. 7,139.67 · 15:42:28 | NYSE ; Nasdaq 100. 27,049.35. 15:42:03 | NASDAQ ; Nasdaq. 24,678.62. | NASDAQ ; NYSE Composite.",
-      "source": "investing.com"
+      "title": "United States Stock Market Index - Quote - Chart - Trading Economics",
+      "url": "https://tradingeconomics.com/united-states/stock-market",
+      "snippet": "The S&P 500 closed 0.4% lower and the Nasdaq dropped 1% on Tuesday pressured by a report signaling weakness at OpenAI and higher oil prices.",
+      "source": "tradingeconomics.com"
     },
     {
-      "title": "S&P 500 (^GSPC) Latest Stock News & Headlines - Yahoo Finance",
-      "url": "https://finance.yahoo.com/quote/%5EGSPC/news/",
-      "snippet": "SNP - Free Realtime Quote • USD. S&P 500 (^GSPC). 7,126.71 -47.20 (-0.66%). As of 12:31:21 PM EDT. Market Open. All News",
+      "title": "Yahoo Finance - Stock Market Live, Quotes, Business & Finance News",
+      "url": "https://finance.yahoo.com/",
+      "snippet": "Stock market today: Dow, S&P 500, Nasdaq drop as chip stocks sink on OpenAI report, oil rises.",
       "source": "finance.yahoo.com"
     },
     {
-      "title": "S&P 500 Index (SP500) Analysis, News, And Chart Today",
-      "url": "https://seekingalpha.com/symbol/SP500",
-      "snippet": "A high-level overview of the S&P 500 Index (SP500). Get the latest S&P 500 chart, news, and analysis, including analyst predictions and forecasts for today.",
-      "source": "seekingalpha.com"
+      "title": "S&P 500 (^GSPC) Charts, Data & News - Yahoo Finance",
+      "url": "https://finance.yahoo.com/quote/%5EGSPC/",
+      "snippet": "SNP - Delayed Quote • USD. S&P 500 (^GSPC). 7,138.80 -35.11 (-0.49%). At close: 4:38:08 PM EDT. Chart Range Bar. 1D. 5D. 1.06%. 1M. 12.09%. 6M. 3.60%.",
+      "source": "finance.yahoo.com"
     },
     {
-      "title": "S&P 500 INDEX TODAY | INX LIVE TICKER - Markets Insider",
-      "url": "https://markets.businessinsider.com/index/s&p_500",
-      "snippet": "S&P 500 Today: Get all information on the S&P 500 Index including historical chart, news and constituents.",
-      "source": "markets.businessinsider.com"
+      "title": "S&P 500 Index Overview - SPX - MarketWatch",
+      "url": "https://www.marketwatch.com/investing/index/spx?eafs_enabled=false",
+      "snippet": "SPX | A complete S&P 500 Index index overview by MarketWatch. View stock market news, stock market data and trading information.",
+      "source": "marketwatch.com"
     },
     {
-      "title": "U.S. Federal Reserve News | Today's Latest Stories | Reuters",
-      "url": "https://www.reuters.com/markets/us/federal-reserve/",
-      "snippet": "Stay updated with the latest news on the U.S. Federal Reserve. Get comprehensive coverage and analysis of the Fed's monetary policy decisions and reports.",
-      "source": "reuters.com"
+      "title": "S&P 500 (INX) Stock, Price, News, Quotes, Forecast and Insights",
+      "url": "https://www.msn.com/en-us/money/markets",
+      "snippet": "Benzinga · in 13 hr. Dow futures gain, S&P 500 drops as Trump floats 'new' Iran proposal | Stock market today · INX -0.49%DJI -0.05%. Dow futures gain, S&P 500",
+      "source": "msn.com"
     },
     {
       "title": "News & Events - Federal Reserve Board",
@@ -49,9 +43,15 @@
       "source": "federalreserve.gov"
     },
     {
-      "title": "Monetary Policy - Federal Reserve Board",
-      "url": "https://www.federalreserve.gov/monetarypolicy.htm",
-      "snippet": "[Skip to main content](https://www.federalreserve.gov/monetarypolicy.htm#content). *   [Recent Postings](https://www.federalreserve.gov/recentpostings.htm). *   [Publications](https://www.federalreserve.gov/publications.htm). *   [FAQs](https://www.federalreserve.gov/faqs.htm). *   [Videos](https://",
+      "title": "Federal Reserve - CNBC",
+      "url": "https://www.cnbc.com/federal-reserve/",
+      "snippet": "[Markets](https://www.cnbc.com/markets/). *   [Currencies](https://www.cnbc.com/currencies/). *   [Cryptocurrency](https://www.cnbc.com/cryptocurrency/). *   [Bonds](https://www.cnbc.com/bonds/). [Business](https://www.cnbc.com/business/). *   [Economy](https://www.cnbc.com/economy/). *   [Finance](",
+      "source": "cnbc.com"
+    },
+    {
+      "title": "Federal Reserve Board - Home",
+      "url": "https://www.federalreserve.gov/",
+      "snippet": "*   [Structure of the Federal Reserve System](https://www.federalreserve.gov/aboutthefed/fedexplained/who-we-are.htm). *   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Federal Reserve Act](https://www.federalreserve.gov/aboutthefed/fract.htm). ",
       "source": "federalreserve.gov"
     },
     {
@@ -69,32 +69,50 @@
       "category": "geopolitical"
     },
     {
-      "title": "Geopolitical Risk is Evolving: What You Should Know",
-      "url": "https://www.schwab.com/learn/story/geopolitical-risk-is-evolving-what-you-should-know",
-      "snippet": "In the past, sudden shocks or the anticipation of geopolitical risk escalation such as armed conflicts have created short-term market volatility. Also, while U.S. investors have added to foreign stock investments, they also continue to invest in U.S. equities over the past year according to data fro",
-      "source": "schwab.com",
+      "title": "How Rising Geopolitical Risks Weigh on Asset Prices",
+      "url": "https://www.imf.org/en/blogs/articles/2025/04/14/how-rising-geopolitical-risks-weigh-on-asset-prices",
+      "snippet": "This can hurt asset prices, affect financial institutions, and curtail lending to the private sector, weighing on economic activity and posing a threat to financial stability. As we show in a chapter of the latest Global Financial Stability Report, stock prices tend to decline significantly during m",
+      "source": "imf.org",
       "category": "geopolitical"
     }
   ],
   "movers": {
-    "MP": [
+    "SPOT": [
       {
-        "title": "MP Materials (MP) Stock price today - quote & chart - Kraken",
-        "url": "https://www.kraken.com/stocks/mp",
-        "snippet": "The MP Materials Corp. (MP) stock after-hours price today is $64.92, reflecting a +6.93% after-hours move since the market last closed. The company's market",
-        "source": "kraken.com"
+        "title": "Spotify: SPOT Stock Price Quote & News",
+        "url": "https://robinhood.com/us/en/stocks/SPOT/",
+        "snippet": "As of 2026-04-27, Spotify(SPOT) stock has fluctuated between $420.53 and $458.00. The current price stands at $499.39, placing the stock +18.8% above today's",
+        "source": "robinhood.com"
       },
       {
-        "title": "MP Materials Corp. (MP) Latest Stock News & Headlines",
-        "url": "https://finance.yahoo.com/quote/MP/news/",
-        "snippet": "MP Materials Corp. (MP). Trade MP on Coinbase Trading disclosure. 61.70 -3.22 (-4.96%). At close: 4:00:02 PM EDT. 61.93 +0.23 (+0.37%).",
+        "title": "Spotify Technology S.A. (SPOT) Stock Price, News, Quote ...",
+        "url": "https://finance.yahoo.com/quote/SPOT/",
+        "snippet": "Spotify (SPOT) plunged 12.3% after disappointing subscriber growth and cautious Q2 guidance, significantly underperforming the broader market decline of 0.4%.",
         "source": "finance.yahoo.com"
       },
       {
-        "title": "MP Materials: MP Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/stocks/MP",
-        "snippet": "As of 2026-04-27, MP Materials(MP) stock has fluctuated between $60.46 and $63.98. The current price stands at $64.20, placing the stock +6.2% above today's low",
-        "source": "robinhood.com"
+        "title": "Spotify Technology SA (SPOT)",
+        "url": "https://finance.yahoo.com/quote/SPOT/news/",
+        "snippet": "Spotify Stock Slumps 13% Despite Earnings Beat. Price Hikes Are a Problem. Barrons.com •",
+        "source": "finance.yahoo.com"
+      },
+      {
+        "title": "Which S&P500 stocks have an unusual volume on Tuesday?",
+        "url": "https://www.chartmill.com/news/BEN/Chartmill-46117-Which-SP500-stocks-have-an-unusual-volume-on-Tuesday",
+        "snippet": "Unusual volume stocks ; ALLE, -8.32%, Today, ALLEGION PLC (NYSE:ALLE) stands out with a high volume of 1.24M shares. Leading to a price decrease",
+        "source": "chartmill.com"
+      },
+      {
+        "title": "Stocks with Unusual Volume - MarketBeat",
+        "url": "https://www.marketbeat.com/market-data/unusual-volume-stocks/",
+        "snippet": "Unusual volume usually pertains to stocks experiencing a surge in trading volume resulting in a rapid price rise or price collapse. The volume",
+        "source": "marketbeat.com"
+      },
+      {
+        "title": "Unusual Volume Stocks: US companies with unusually high or low trading volume - Yahoo Finance",
+        "url": "https://finance.yahoo.com/research-hub/screener/unusual-volume-stocks/",
+        "snippet": "### [Finance](https://finance.yahoo.com/). * [My Portfolio](https://finance.yahoo.com/portfolios/). + [Currencies](https://finance.yahoo.com/markets/currencies/ ). * [Watch Now](https://finance.yahoo.com/live/). * [Show all](https://sports.yahoo.com/). - [Space](https://tech.yahoo.com/science/space/",
+        "source": "finance.yahoo.com"
       }
     ],
     "ALB": [
@@ -105,92 +123,72 @@
         "source": "robinhood.com"
       },
       {
+        "title": "Albemarle Corporation (ALB) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/ALB/",
+        "snippet": "Albemarle Corporation (ALB) is gaining investor interest with a 12.6% rise over the past month and a 694.44% increase in Q1 EPS forecasts.",
+        "source": "finance.yahoo.com"
+      },
+      {
         "title": "ALB Stock Quote Price and Forecast - CNN",
         "url": "https://www.cnn.com/markets/stocks/ALB",
         "snippet": "The price of ALB shares has increased $11.20 since the market last closed. This is a 5.95% rise. Last closed at $199.53. The stock has since dropped $3.52 in",
         "source": "cnn.com"
-      },
-      {
-        "title": "Albemarle Corp (ALB) Stock Price & News - Google Finance",
-        "url": "https://www.google.com/finance/beta/quote/ALB:NYSE",
-        "snippet": "News stories. From sources across the web. Yahoo Finance ... Albemarle (ALB) Stock Draws Conflicting Calls As Lithium Debate Heats Up.",
-        "source": "google.com"
       }
     ],
-    "MU": [
+    "AMAT": [
       {
-        "title": "Micron Technology, Inc. (MU) Latest Stock News & Headlines",
-        "url": "https://finance.yahoo.com/quote/MU/news/",
-        "snippet": "Micron Technology is gaining attention with a new Buy rating and a $1,000 price target from DA Davidson, highlighting AI-driven demand as a key growth",
+        "title": "Applied Materials, Inc. (AMAT) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/AMAT/",
+        "snippet": "Applied Materials (AMAT) dropped 5.32% as a semiconductor sell-off intensified, driven by geopolitical tensions and negative news from major players like OpenAI",
         "source": "finance.yahoo.com"
       },
       {
-        "title": "MU Stock Price Quote & News - Micron Technology - Robinhood",
-        "url": "https://robinhood.com/stocks/MU",
-        "snippet": "On 2026-04-25, Micron Technology(MU) stock traded between a low of $488.50 and a high of $506.99. Shares are currently priced at $494.32, which is +1.2% above",
+        "title": "AMAT Stock Price Quote & News - Applied Materials - Robinhood",
+        "url": "https://robinhood.com/stocks/AMAT",
+        "snippet": "On 2026-04-27, Applied Materials(AMAT) stock traded between a low of $381.00 and a high of $405.87. Shares are currently priced at $405.80, which is +6.5% above",
         "source": "robinhood.com"
       },
       {
-        "title": "MU Stock Price Quote & News - Micron Technology - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/MU/",
-        "snippet": "On 2026-04-27, Micron Technology(MU) stock traded between a low of $488.24 and a high of $518.83. Shares are currently priced at $494.32, which is +1.2% above",
-        "source": "robinhood.com"
-      }
-    ],
-    "QCOM": [
-      {
-        "title": "Unusual Options Volume In QCOM, INTC, And PG Draws Attention To Key Strike Levels",
-        "url": "https://www.stockoptionschannel.com/article/202604/unusual-options-volume-in-qcom-intc-and-pg-draws-attention-to-key-strike-levels-PG04242026note.htm/",
-        "snippet": "Friday's options flow in Qualcomm, Intel, and Procter & Gamble stands out against normal trading patterns, with contract volume in each name highlighting specific strike prices and expiration dates that traders are using to express directional views, hedge exposure, or reposition around future catal",
-        "source": "stockoptionschannel.com"
-      },
-      {
-        "title": "Unusual Volume Stocks: US companies with ... - Yahoo Finance",
-        "url": "https://finance.yahoo.com/markets/stocks/unusual-volume-stocks/",
-        "snippet": "Yahoo Finance's list of the unusual volume stocks includes price changes ... QCOM QUALCOMM Incorporated 148.85 +14.90 (+11.12%) · POET POET Technologies",
-        "source": "finance.yahoo.com"
-      },
-      {
-        "title": "QUALCOMM Incorporated (QCOM) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/QCOM/",
-        "snippet": "QUALCOMM Incorporated (QCOM) Stock Price, News, Quote & History - Yahoo Finance. ### [News](https://www.yahoo.com/). * [US](https://www.yahoo.com/news/us/). + [Tech](https://shopping.yahoo.com/tech/). ### [Finance](https://finance.yahoo.com/). * [My Portfolio](https://finance.yahoo.com/portfolios/).",
-        "source": "finance.yahoo.com"
+        "title": "AMAT: Applied Materials Inc - Stock Price, Quote and News - CNBC",
+        "url": "https://www.cnbc.com/quotes/AMAT",
+        "snippet": "Applied Materials Inc AMAT:NASDAQ · Open386.00 · Day High390.07 · Day Low377.80 · Prev Close404.86 · 52 Week High420.50 · 52 Week High Date04/24",
+        "source": "cnbc.com"
       }
     ]
   },
   "sectors": {
     "XLK": [
       {
-        "title": "Technology Select Sector SPDR Fund (XLK) Price, Holdings, & News",
-        "url": "https://www.marketbeat.com/stocks/NYSEARCA/XLK/",
-        "snippet": "Key Stats ; Today's Range: $158.81 · $160.62 ; 50-Day Range: $127.50 · $160.57 ; 52-Week Range: $101.90 · $160.62.",
-        "source": "marketbeat.com"
+        "title": "State Street Technology Select Sector SPDR ETF (XLK)",
+        "url": "https://finance.yahoo.com/quote/XLK/",
+        "snippet": "Find the latest State Street Technology Select Sector SPDR ETF (XLK) stock quote, history, news and other vital information to help you with your stock",
+        "source": "finance.yahoo.com"
       },
       {
-        "title": "State Street Technology S…: XLK Stock Price Quote & News",
-        "url": "https://robinhood.com/stocks/XLK",
-        "snippet": "On 2026-04-27, State Street Technology Select Sector SPDR ETF(XLK) stock moved within a range of $156.57 to $158.68. With shares now at $160.90,",
-        "source": "robinhood.com"
+        "title": "State Street Technology Select Sector SPDR ETF (XLK)",
+        "url": "https://finance.yahoo.com/quote/XLK/news/",
+        "snippet": "Get the latest State Street Technology Select Sector SPDR ETF (XLK) stock news and headlines to help you in your trading and investing decisions.",
+        "source": "finance.yahoo.com"
       },
       {
-        "title": "The Technology Select Sector SPDR® Fund XLK - 富途牛牛",
-        "url": "https://www.futunn.com/en/etfs/XLK-US",
-        "snippet": "The Technology Select Sector SPDR® Fund (XLK) News. Preview for the week | Earnings season kicks off with seven giants set to release their financial",
-        "source": "futunn.com"
+        "title": "State Street Technology Select Sector SPDR ETF - XLK - MarketWatch",
+        "url": "https://www.marketwatch.com/investing/fund/xlk",
+        "snippet": "XLK | A complete State Street Technology Select Sector SPDR ETF exchange traded fund overview by MarketWatch. View the latest ETF prices and news for better ETF",
+        "source": "marketwatch.com"
       }
     ],
     "XLE": [
       {
-        "title": "State Street Energy Select Sector SPDR ETF (XLE) Latest Stock ...",
-        "url": "https://finance.yahoo.com/quote/XLE/news/",
-        "snippet": "State Street Energy Select Sector SPDR ETF (XLE) ; Sector Update: Energy Stocks Rise Tuesday Afternoon · MT Newswires • 1h ago · BP · SHEL ; Sector Update: Energy.",
-        "source": "finance.yahoo.com"
-      },
-      {
         "title": "State Street Energy Select Sector SPDR ETF (XLE) Latest Stock News",
         "url": "https://seekingalpha.com/symbol/XLE/news",
-        "snippet": "XLE News · Weekly ETF flows: Four of 11 sectors record outflows; technology sector leads inflows · WTI crude tops $100 as Trump unhappy with Iran's proposal to",
+        "snippet": "XLE News · U.S. oil sanctions swings add uncertainty for markets, global trade · U.S. shale industry reluctant to boost oil production in response to Iran war '",
         "source": "seekingalpha.com"
+      },
+      {
+        "title": "Latest News XLE ETF ( XLE ) - StockInvest.us",
+        "url": "https://stockinvest.us/news/XLE",
+        "snippet": "Energy ETFs gain appeal as oil prices are expected stay above pre-conflict levels, with supply shocks, stalled Iran talks & tight markets indicating sustained",
+        "source": "stockinvest.us"
       },
       {
         "title": "State Street Energy Selec…: XLE Stock Price Quote & News",
@@ -200,5 +198,5 @@
       }
     ]
   },
-  "built_at": "2026-04-28T22:20:18Z"
+  "built_at": "2026-04-29T01:01:35Z"
 }
