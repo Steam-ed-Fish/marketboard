@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-05",
+  "last_updated": "2026-05-06",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
     "bls_cpi_updated": "2026-04-23",
-    "cme_updated": "2026-05-05",
+    "cme_updated": "2026-05-06",
     "bls_unemp_updated": "2026-04-23"
   },
   "members": [
@@ -136,6 +136,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
         {
+          "date": "2026-05-05",
+          "event": "Bowman, A Coordinated Approach to Consumer Fraud Protection",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260505a.htm",
+          "brief_summary": "Speech At the 2026 Women in Housing and Finance Symposium, Washington, D.C.",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-05-01",
           "event": "Bowman, Artificial Intelligence in the Financial System",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260501a.htm",
@@ -162,13 +169,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260312a.htm",
           "brief_summary": "Bowman argued that excessive Basel III capital requirements constrain bank lending and hamper broader economic growth.",
           "detailed_summary": "Bowman contended that unduly high capital buffers reduce banks' capacity to lend to businesses and households, creating a drag on economic activity that can work at cross-purposes with the Fed's maximum employment mandate. She advocated for a recalibration of capital rules that preserves systemic resilience without imposing unnecessary costs on credit availability. Her remarks reflected a dovish impulse: tighter capital requirements slow the economy similarly to tighter monetary policy, compounding the restrictive impact."
-        },
-        {
-          "date": "2026-03-03",
-          "event": "Roundtable on Liquidity and Lender of Last Resort, Committee on Capital Markets Regulation, Washington D.C. — 'Liquidity Resiliency, Financial Stability, and the Role of the Federal Reserve'",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260303a.htm",
-          "brief_summary": "Bowman called current bank liquidity requirements pro-cyclical and advocated for discount window reform to reduce reserve demand.",
-          "detailed_summary": "Bowman argued that LCR and NSFR liquidity requirements incentivize banks to hoard reserves in normal times, paradoxically amplifying funding stress when runs occur. She called for fundamental reform of the Fed's discount window — reducing stigma and fragmentation across Reserve Banks — which she argued would lower the aggregate demand for excess reserves and allow the Fed to maintain a smaller balance sheet while supporting adequate market liquidity. These views align with her preference for a leaner, more operationally efficient Federal Reserve."
         }
       ]
     },
