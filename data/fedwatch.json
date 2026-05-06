@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-06",
+  "last_updated": "2026-05-07",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
     "bls_cpi_updated": "2026-04-23",
-    "cme_updated": "2026-05-06",
+    "cme_updated": "2026-05-07",
     "bls_unemp_updated": "2026-04-23"
   },
   "members": [
@@ -100,8 +100,8 @@
           "date": "2026-04-14",
           "event": "Barr, Rural Communities: Worth the Investment",
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260414a.htm",
-          "brief_summary": "Speech At Strengthening America’s Economy through Rural Investment: A Working Forum, Washington, D.C.",
-          "detailed_summary": ""
+          "brief_summary": "Governor Barr discusses rural economic development challenges and opportunities, emphasizing diverse community needs, intrinsic constraints like population decline, and innovative local solutions.",
+          "detailed_summary": "This speech addresses rural community economic development rather than monetary policy. Barr highlights structural challenges facing rural America including population aging, migration dependence, institutional losses, and housing affordability. He emphasizes that rural communities are diverse with distinct needs requiring flexible, localized solutions. The speech draws on Barr's travel experiences visiting rural regions to showcase examples of innovation, such as CDFIs preserving banking access and philanthropic partnerships addressing infrastructure gaps. While not setting monetary policy stance, the address underscores the Federal Reserve's commitment to understanding and supporting rural economic resilience."
         },
         {
           "date": "2026-03-31",
@@ -139,22 +139,22 @@
           "date": "2026-05-05",
           "event": "Bowman, A Coordinated Approach to Consumer Fraud Protection",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260505a.htm",
-          "brief_summary": "Speech At the 2026 Women in Housing and Finance Symposium, Washington, D.C.",
-          "detailed_summary": ""
+          "brief_summary": "Vice Chair Bowman discusses consumer fraud as critical financial stability threat, citing Federal Reserve data showing one in five Americans experienced fraud in 2024 with $63 billion in net losses.",
+          "detailed_summary": "This speech addresses consumer fraud protection rather than monetary policy. Bowman emphasizes fraud's systemic risk to banking integrity, payments systems, and household financial security. She presents 2025 Survey of Household Economics and Decisionmaking (SHED) data showing 21% of adults experienced financial fraud in 2024, with $84 billion in total non-credit card fraud losses and only $21 billion recovered. The median loss of $500 disproportionately harms vulnerable populations unable to cover emergency expenses, and fraud affects consumers across all demographic groups equally, underscoring the need for coordinated protective measures."
         },
         {
           "date": "2026-05-01",
           "event": "Bowman, Artificial Intelligence in the Financial System",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260501a.htm",
-          "brief_summary": "Speech At the Financial Stability Oversight Council Artificial Intelligence Series Roundtable on Cybersecurity and Risk Management, Washington, D.C.",
-          "detailed_summary": ""
+          "brief_summary": "Vice Chair Bowman discusses Federal Reserve supervisory approach to artificial intelligence adoption in banking, emphasizing balanced risk management and innovation support.",
+          "detailed_summary": "Bowman addresses AI's integration into financial institutions, noting nearly a decade of supervisory engagement with banks on AI use. The Fed recently amended model risk management guidance to exclude generative and agentic AI, recognizing these novel technologies require different supervisory approaches than traditional models. She emphasizes tailored supervision based on materiality of AI deployment, acknowledging smaller banks need innovation access without undue regulatory burden. The speech highlights cybersecurity implications of advanced AI tools like Anthropic's Mythos, which can both identify vulnerabilities defensively and potentially exploit them maliciously, requiring coordinated government and interagency responses."
         },
         {
           "date": "2026-02-19",
           "event": "Bowman, Opening Remarks",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260219a.htm",
-          "brief_summary": "Speech At the Federal Reserve Bank of Atlanta 2026 Banking Outlook Conference: The Next Horizon in Banking, Atlanta, Georgia (via pre-recorded video)",
-          "detailed_summary": ""
+          "brief_summary": "Vice Chair Bowman outlines supervisory priorities emphasizing risk-based tailoring for community banks and modernizing capital frameworks for large banks.",
+          "detailed_summary": "Bowman's speech focuses on banking supervision and regulation rather than monetary policy. Key themes include tailoring regulatory approaches by bank size and complexity, streamlining community bank processes, and modernizing large bank capital frameworks across stress testing, leverage ratios, Basel III implementation, and G-SIB surcharges. She introduces supervisory operating principles published in October that redirect examiners toward material financial risks and forward-looking assessments rather than documentation compliance, aiming for supervision that better predicts institutional failure and protects financial stability."
         },
         {
           "date": "2026-03-31",
@@ -409,15 +409,15 @@
           "date": "2026-04-21",
           "event": "Waller, Modernizing Federal Reserve Operations in the 21st Century",
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260421a.htm",
-          "brief_summary": "Speech At The Brookings Institution, Washington, D.C.",
-          "detailed_summary": ""
+          "brief_summary": "Governor Waller discusses modernizing Federal Reserve operational structure across 12 regional banks, emphasizing cost reduction, risk management, and taxpayer value in the 21st century.",
+          "detailed_summary": "This speech addresses Federal Reserve operations rather than monetary policy. Waller outlines the Fed's decentralized structure, established in 1913, which created 12 regional Reserve Banks serving local districts. He explains how operations have evolved from purely local functions (check processing, currency distribution) to increasingly national coordination, and argues the Fed must modernize by distinguishing between intrinsically local activities and system-wide functions that benefit from specialization and economies of scale. Waller emphasizes his role leading Reserve Bank oversight to reduce costs and enhance efficiency while maintaining the system's core responsibilities."
         },
         {
           "date": "2026-04-17",
           "event": "Waller, One Transitory Shock After Another",
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260417a.htm",
-          "brief_summary": "Speech At the David Kaserman Memorial Lecture, Department of Economics, Auburn University, Auburn, Alabama",
-          "detailed_summary": ""
+          "brief_summary": "Fed faces dual shocks from Middle East conflict and tariffs amid unprecedented labor supply constraints from low immigration, complicating rate decision.",
+          "detailed_summary": "Governor Waller discusses the economic outlook with two major disruptions: the Iran conflict raising energy prices and tariffs boosting inflation above the 2% target, while unprecedented low net immigration (near zero in 2026 versus 2.3 million in 2024) has collapsed labor force growth to approximately zero. This fundamentally changes employment dynamics—job creation needs are now near zero rather than 50,000-150,000 monthly—making traditional labor market indicators unreliable guides. The FOMC must assess whether series of price shocks could produce lasting inflation similar to pandemic-era patterns, while monitoring whether the ceasefire holds and supply disruptions persist."
         },
         {
           "date": "2026-02-24",

@@ -1,0 +1,542 @@
+{
+  "last_updated": "2026-05-06",
+  "sources": {
+    "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+    "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
+    "bls_cpi": "https://www.bls.gov/news.release/cpi.nr0.htm",
+    "fed_speeches": "https://www.federalreserve.gov/feeds/speeches.xml",
+    "fed_hawks_doves": "https://www.sahmcapital.com/news/content/fed-hawks-doves-what-us-central-bankers-are-saying-2026-04-02"
+  },
+  "market": {
+    "next_fomc_date": "2026-06-17",
+    "next_fomc_label": "Jun 17, 2026",
+    "rate_hold_pct": 100.0,
+    "rate_cut_pct": 0.0,
+    "rate_hike_pct": 0.0,
+    "current_rate": "3.50%–3.75%",
+    "cpi": 3.3,
+    "cpi_month": "March 2026",
+    "unemployment": 4.3,
+    "unemployment_month": "March 2026",
+    "bls_cpi_updated": "2026-04-23",
+    "cme_updated": "2026-05-06",
+    "bls_unemp_updated": "2026-04-23"
+  },
+  "members": [
+    {
+      "name": "Jerome H. Powell",
+      "title": "Chair, Board of Governors",
+      "institution": "Federal Reserve Board",
+      "is_voter": true,
+      "stance": "Neutral",
+      "photo_url": "data/fedwatch_photos/powell.jpg",
+      "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/powell.htm",
+      "speeches": [
+        {
+          "date": "2026-03-21",
+          "event": "Paul A. Volcker Public Integrity Award Ceremony, ASPA Annual Conference (pre-recorded video)",
+          "url": "https://www.federalreserve.gov/newsevents/speech/powell20260321a.htm",
+          "brief_summary": "Powell accepted the Volcker Award via video, honoring Volcker's integrity in fighting inflation and defending central bank independence.",
+          "detailed_summary": "Powell drew parallels between Paul Volcker's willingness to make unpopular decisions to fight inflation and the Federal Reserve's enduring commitment to serve the long-term public interest. Although the speech did not contain explicit current rate guidance, it emphasized that central bank independence — the ability to resist short-term political pressure — is foundational to achieving price stability. The remarks functioned as an implicit defense of the Fed's institutional autonomy at a politically charged moment."
+        },
+        {
+          "date": "2026-03-18",
+          "event": "FOMC Press Conference, Federal Reserve Board, Washington D.C.",
+          "url": "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20260318.pdf",
+          "brief_summary": "Powell held rates steady and revised up inflation projections amid Middle East uncertainty.",
+          "detailed_summary": "The FOMC maintained the federal funds rate at 3.50–3.75%, with the median Summary of Economic Projections raising 2026 total PCE inflation to 2.7%, up from the December projection. Powell noted that the Iran conflict creates simultaneous downside risks to labor and upside risks to inflation, placing the Fed in a challenging wait-and-see posture. He emphasized that policy is 'well positioned' and that future adjustments will be data-dependent, meeting by meeting, based on incoming data, the evolving outlook, and the balance of risks."
+        },
+        {
+          "date": "2026-01-28",
+          "event": "FOMC Press Conference, Federal Reserve Board, Washington D.C.",
+          "url": "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20260128.pdf",
+          "brief_summary": "Powell announced the FOMC's pause after three consecutive rate cuts, citing inflation above 2% and a broadly balanced labor market.",
+          "detailed_summary": "With core PCE running at approximately 3.0% and labor market data broadly stabilized, the FOMC voted to hold the funds rate at 3.50–3.75%. Powell described policy as 'within a range of plausible estimates of neutral' and noted the 175 basis points of cuts over the prior 18 months were appropriate given the evolving risk balance. He signaled no urgency to cut further and emphasized a data-dependent, meeting-by-meeting framework for future decisions."
+        }
+      ]
+    },
+    {
+      "name": "John C. Williams",
+      "title": "Vice Chair (NY Fed President)",
+      "institution": "Federal Reserve Bank of New York",
+      "is_voter": true,
+      "stance": "Neutral",
+      "photo_url": "data/fedwatch_photos/williams.jpg",
+      "bio_url": "https://www.newyorkfed.org/aboutthefed/orgchart/williams",
+      "speeches": [
+        {
+          "date": "2026-04-07",
+          "event": "Bloomberg Surveillance TV Interview, New York",
+          "url": "https://www.newyorkfed.org/newsevents/speeches/2026/wil260407",
+          "brief_summary": "Williams adopted a 'wait and see' stance on rates amid the Iran war oil shock, projecting inflation around 2.75% for 2026.",
+          "detailed_summary": "Williams said monetary policy is 'really well positioned' to handle the dual threats of energy-driven inflation and a potentially cooling labor market. He projected 2026 GDP growth at 2–2.5% and full-year inflation at approximately 2.75%, while noting that core inflation near 2.5% remains manageable. He emphasized that the Iran conflict's impact on monetary policy depends heavily on its duration, and that the Fed has the flexibility to respond to either deterioration in the labor market or further inflationary persistence."
+        },
+        {
+          "date": "2026-03-30",
+          "event": "Staten Island Economic Development Corporation, Staten Island, NY — 'Ferrying Through the Crosscurrents'",
+          "url": "https://www.newyorkfed.org/newsevents/speeches/2026/wil260330",
+          "brief_summary": "Williams called the economic situation 'unusual' and defended holding rates steady amid crosscurrents from the Middle East.",
+          "detailed_summary": "Williams projected 2026 GDP at approximately 2.5%, unemployment edging down, and headline inflation near 2.75% before returning to 2% in 2027. He called the current situation 'unusual' because risks to both sides of the dual mandate are elevated simultaneously due to the Iran conflict raising energy prices and potentially dampening growth. The FOMC held the funds rate at 3.50–3.75% and Williams signaled comfort with that stance while monitoring incoming data carefully."
+        },
+        {
+          "date": "2026-03-03",
+          "event": "America's Credit Unions Conference, Washington D.C. — 'Two Sides of a Coin'",
+          "url": "https://www.newyorkfed.org/newsevents/speeches/2026/wil260303",
+          "brief_summary": "Williams said rate cuts remain possible if inflation eases as expected, while the Iran conflict complicates the near-term outlook.",
+          "detailed_summary": "Williams projected 2026 GDP at 2.5%, with unemployment edging down and inflation at 2.5% for the year before reaching 2% in 2027. He emphasized that monetary policy is 'well positioned to support stabilization of the labor market' but that future rate cuts depend on inflation continuing its expected downward path. Williams acknowledged the Iran conflict introduces new uncertainty to both the inflation and employment outlooks, reinforcing the case for patience before any additional adjustment."
+        }
+      ]
+    },
+    {
+      "name": "Michael S. Barr",
+      "title": "Governor",
+      "institution": "Federal Reserve Board",
+      "is_voter": true,
+      "stance": "Neutral",
+      "photo_url": "data/fedwatch_photos/barr.jpg",
+      "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
+      "speeches": [
+        {
+          "date": "2026-04-14",
+          "event": "Barr, Rural Communities: Worth the Investment",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260414a.htm",
+          "brief_summary": "Speech At Strengthening America’s Economy through Rural Investment: A Working Forum, Washington, D.C.",
+          "detailed_summary": ""
+        },
+        {
+          "date": "2026-03-31",
+          "event": "The Federalist Society, Washington D.C. — 'The GENIUS Act in Practice: Key Questions for Stablecoin Regulation'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260331a.htm",
+          "brief_summary": "Barr analyzed the GENIUS Act's stablecoin regulation framework, focusing on reserve requirements and run risks.",
+          "detailed_summary": "Barr outlined how the GENIUS Act requires stablecoin issuers to hold high-quality liquid assets and comply with federal supervision standards, arguing that reserve asset quality is the critical variable in stress scenarios. While the speech focused on financial stability and regulatory policy rather than monetary policy stance, Barr implicitly tied stablecoin soundness to the broader financial system's ability to transmit monetary policy effectively. He warned that insufficient reserve standards could create systemic run risks similar to those seen in uninsured bank deposits."
+        },
+        {
+          "date": "2026-03-26",
+          "event": "Brookings Institution, Washington D.C. — 'Brief Remarks on the Economic Outlook and Monetary Policy'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260326a.htm",
+          "brief_summary": "Barr cited simultaneous shocks from the Iran war, tariffs, and slowing labor force growth, and supported holding rates steady.",
+          "detailed_summary": "Barr identified three concurrent headwinds: the Middle East conflict driving energy prices higher, tariffs imposing an effective rate of approximately 10%, and near-zero labor force growth from lower immigration. With core inflation still near 3%, he supported the FOMC's March decision to hold the federal funds rate at 3.50–3.75% and emphasized that assessing incoming data, the evolving forecast, and the balance of risks will determine the extent and timing of any future adjustments."
+        },
+        {
+          "date": "2026-03-24",
+          "event": "2026 National Community Investment Conference, Phoenix, AZ — 'Developing Communities through Public-private Partnerships'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260324a.htm",
+          "brief_summary": "Barr said he may need to keep rates steady 'for some time' while monitoring elevated inflation and energy price shocks.",
+          "detailed_summary": "Barr stated that the FOMC held rates for a second consecutive meeting and that he may need to maintain that stance 'for some time' to properly assess economic conditions, as inflation remains notably above 2% with broad-based pressures. He highlighted that rising energy costs from the Middle East conflict are particularly painful for low- and moderate-income families, amplifying the urgency of the Fed's price stability mandate for vulnerable communities."
+        }
+      ]
+    },
+    {
+      "name": "Michelle W. Bowman",
+      "title": "Vice Chair for Supervision",
+      "institution": "Federal Reserve Board",
+      "is_voter": true,
+      "stance": "Dove",
+      "photo_url": "data/fedwatch_photos/bowman.jpg",
+      "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
+      "speeches": [
+        {
+          "date": "2026-05-05",
+          "event": "Bowman, A Coordinated Approach to Consumer Fraud Protection",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260505a.htm",
+          "brief_summary": "Speech At the 2026 Women in Housing and Finance Symposium, Washington, D.C.",
+          "detailed_summary": ""
+        },
+        {
+          "date": "2026-05-01",
+          "event": "Bowman, Artificial Intelligence in the Financial System",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260501a.htm",
+          "brief_summary": "Speech At the Financial Stability Oversight Council Artificial Intelligence Series Roundtable on Cybersecurity and Risk Management, Washington, D.C.",
+          "detailed_summary": ""
+        },
+        {
+          "date": "2026-02-19",
+          "event": "Bowman, Opening Remarks",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260219a.htm",
+          "brief_summary": "Speech At the Federal Reserve Bank of Atlanta 2026 Banking Outlook Conference: The Next Horizon in Banking, Atlanta, Georgia (via pre-recorded video)",
+          "detailed_summary": ""
+        },
+        {
+          "date": "2026-03-31",
+          "event": "CBA LIVE 26, Consumer Bankers Association, San Diego, CA — 'Supporting Small Businesses'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260331a.htm",
+          "brief_summary": "Bowman emphasized the critical role of bank lending in supporting small businesses amid a shifting regulatory environment.",
+          "detailed_summary": "Bowman addressed how bank lending remains the primary capital source for small businesses and that regulatory recalibration should preserve lending capacity rather than constrain it. She argued that lending conditions are tightly linked to monetary policy transmission, with small businesses particularly sensitive to credit availability and interest rate levels. Her remarks reinforced her longstanding view that overly restrictive banking regulation undermines the Fed's ability to support maximum employment."
+        },
+        {
+          "date": "2026-03-12",
+          "event": "Cato Institute Policy Forum: Basel III and Bank Capital Rules, Washington D.C. — 'Capital Rules for the Real Economy'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260312a.htm",
+          "brief_summary": "Bowman argued that excessive Basel III capital requirements constrain bank lending and hamper broader economic growth.",
+          "detailed_summary": "Bowman contended that unduly high capital buffers reduce banks' capacity to lend to businesses and households, creating a drag on economic activity that can work at cross-purposes with the Fed's maximum employment mandate. She advocated for a recalibration of capital rules that preserves systemic resilience without imposing unnecessary costs on credit availability. Her remarks reflected a dovish impulse: tighter capital requirements slow the economy similarly to tighter monetary policy, compounding the restrictive impact."
+        }
+      ]
+    },
+    {
+      "name": "Lisa D. Cook",
+      "title": "Governor",
+      "institution": "Federal Reserve Board",
+      "is_voter": true,
+      "stance": "Hawk",
+      "photo_url": "data/fedwatch_photos/cook.jpg",
+      "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/cook.htm",
+      "speeches": [
+        {
+          "date": "2026-03-26",
+          "event": "Yale Program on Financial Stability, School of Management, Yale University, New Haven, CT — 'Reflections on Financial Stability'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260326a.htm",
+          "brief_summary": "Cook described the Fed's financial stability monitoring and stressed that AI investment could amplify both growth and financial vulnerability.",
+          "detailed_summary": "Cook discussed how the Fed's financial stability committee tracks asset valuations, leverage, and funding vulnerabilities through scenario analysis and stress testing. She highlighted that AI investments, while potentially boosting productivity and raising the neutral rate, could also create new systemic risks if AI-related asset valuations become disconnected from fundamentals. No explicit rate stance was expressed; the speech focused on macroprudential frameworks and the importance of monitoring rapidly evolving risk sources."
+        },
+        {
+          "date": "2026-02-24",
+          "event": "42nd Annual NABE Economic Policy Conference, Washington D.C. — 'Opening Remarks for the AI and Productivity across the Economy Panel'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260224a.htm",
+          "brief_summary": "Cook argued AI's potential to raise the neutral rate and displace labor creates new monetary policy tradeoffs that standard tools may not resolve.",
+          "detailed_summary": "Cook noted that significant AI capital investment may have already raised the neutral rate of interest in the near term, implying the current federal funds rate is less restrictive than it appears on a nominal basis. She also warned that AI-driven labor displacement could generate simultaneous increases in unemployment and goods price pressure, creating a dual-mandate dilemma that conventional interest rate policy cannot cleanly address. These views support her relatively hawkish orientation — the neutral rate may be higher than consensus estimates, meaning current policy is closer to easy than it seems."
+        },
+        {
+          "date": "2026-01-16",
+          "event": "Economic Club of Miami, Miami, FL — 'Economic Outlook'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260116a.htm",
+          "brief_summary": "Cook presented an economic outlook noting solid growth, a stabilizing labor market, and inflation still above the 2% target.",
+          "detailed_summary": "Cook projected the U.S. economy would continue to grow near its 2025 pace, with the labor market broadly balanced and inflation remaining above the 2% objective. She highlighted tariff pass-through as a near-term upside inflation risk while expressing cautious optimism that disinflation would resume over the course of 2026. Her remarks were consistent with supporting a patient hold on rates while conditions are assessed."
+        }
+      ]
+    },
+    {
+      "name": "Beth M. Hammack",
+      "title": "President & CEO, Federal Reserve Bank of Cleveland",
+      "institution": "Federal Reserve Bank of Cleveland",
+      "is_voter": true,
+      "stance": "Hawk",
+      "photo_url": "data/fedwatch_photos/hammack.png",
+      "bio_url": "https://www.clevelandfed.org/people/hammack-beth-m",
+      "speeches": [
+        {
+          "date": "2026-03-06",
+          "event": "2026 US Monetary Policy Forum, Kent A. Clark Center, University of Chicago Booth School of Business, New York — 'Remarks for the Panel: On the Safe-Haven Status of the Dollar'",
+          "url": "https://www.clevelandfed.org/collections/speeches/2026/sp-20260306-on-the-safe-haven-status-of-the-dollar",
+          "brief_summary": "Hammack said policy should be on hold 'for quite some time' and argued the dollar's safe-haven status depends on Fed independence and the rule of law.",
+          "detailed_summary": "Under her base case, Hammack said 'policy should be on hold for quite some time as we see evidence that inflation is coming down and the labor market stabilizes further,' while acknowledging she sees two-sided risks — meaning she could envision scenarios where rates rise or fall. She argued that the dollar's global reserve status rests on preserving the rule of law, deep capital markets, and an independent central bank, framing these as indistinguishable from sound monetary policy over the long run."
+        },
+        {
+          "date": "2026-02-10",
+          "event": "Ohio Bankers League 2026 Economic Summit, Columbus, OH — 'Recipe for a Thriving US Economy: Strong Banks, Patient Policy, and an Independent yet Accountable Central Bank'",
+          "url": "https://www.clevelandfed.org/collections/speeches/2026/sp-20260210-recipe-for-a-thriving-us-economy",
+          "brief_summary": "Hammack said rates could remain on hold 'for quite some time' with monetary policy near neutral and inflation still too high.",
+          "detailed_summary": "Hammack stated 'based on my forecast, we could be on hold for quite some time,' noting that the federal funds rate is now 'in the vicinity of neutral,' meaning policy is not meaningfully restraining the economy. She said that if both sides of the dual mandate show progress, the current rate is already at the right level and should be held there. She also warned against loosening bank capital regulations too much, arguing that a resilient banking system is essential for effective monetary policy transmission."
+        },
+        {
+          "date": "2026-01-28",
+          "event": "FOMC Meeting — Dissent Statement (Statement by President Beth M. Hammack)",
+          "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260128.htm",
+          "brief_summary": "Hammack's January FOMC statement reinforced her hawkish preference for holding rates steady amid still-elevated inflation.",
+          "detailed_summary": "Hammack voted in support of the January 2026 FOMC decision to hold the federal funds rate steady at 3.50–3.75%, consistent with her view that policy was near neutral and that inflation remained too high at approximately 2.8% PCE. Her public commentary around this period emphasized that rate reductions are not warranted until there is clear evidence that inflation is sustainably returning to the 2% target, and that the labor market's apparent stability does not justify a more accommodative stance."
+        }
+      ]
+    },
+    {
+      "name": "Philip N. Jefferson",
+      "title": "Vice Chair, Board of Governors",
+      "institution": "Federal Reserve Board",
+      "is_voter": true,
+      "stance": "Neutral",
+      "photo_url": "data/fedwatch_photos/jefferson.jpg",
+      "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/jefferson.htm",
+      "speeches": [
+        {
+          "date": "2026-04-07",
+          "event": "College of Business Administration, University of Detroit Mercy, Detroit, MI — 'Economic Outlook and the Labor Market'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260407a.htm",
+          "brief_summary": "Jefferson described the labor market as fragile and supported holding rates steady as energy price shocks add near-term inflation uncertainty.",
+          "detailed_summary": "Jefferson noted core PCE at 3.0% and unemployment at 4.3% in March 2026, describing the labor market as 'roughly in balance but susceptible to adverse shocks.' He supported keeping the federal funds rate steady within the neutral range — following 175 basis points of cuts over the prior 18 months — while energy prices from the Middle East conflict add upside inflation pressure in the near term. He emphasized the current policy stance is 'well positioned to respond to a range of outcomes,' consistent with his balanced, meeting-by-meeting approach."
+        },
+        {
+          "date": "2026-03-26",
+          "event": "Global Perspectives Speaker Series, Federal Reserve Bank of Dallas, TX — 'Economic Outlook and Energy Effects'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260326a.htm",
+          "brief_summary": "Jefferson analyzed the Iran conflict's energy price impact on inflation and consumer spending, and supported the March decision to hold rates.",
+          "detailed_summary": "Jefferson explained that a sustained energy price shock from the Iran conflict would add upside inflation pressure in the short run while weighing on consumer spending — particularly for lower-income households facing gasoline prices approximately $1 per gallon above pre-conflict levels. He supported the FOMC's March decision to hold rates steady, noting that 175 basis points of cuts have placed the federal funds rate broadly in the neutral range, providing a flexible starting point to address either mandate deterioration."
+        },
+        {
+          "date": "2026-02-06",
+          "event": "Brookings Institution, Washington D.C. — 'Economic Outlook and Supply-Side (Dis)Inflation Dynamics'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260206a.htm",
+          "brief_summary": "Jefferson expressed cautious optimism and supported the January hold, arguing AI-driven productivity gains could help bring inflation to 2%.",
+          "detailed_summary": "Jefferson stated he supported the FOMC's January 2026 decision to hold rates steady, noting that cumulative 175bp of cuts have brought the federal funds rate broadly to neutral. He highlighted that disinflation has stalled primarily due to tariff pass-through on goods, but expressed cautious optimism that the process would resume once tariff effects run their course — and that AI-related productivity improvements could provide an additional disinflationary tailwind. He maintained a balanced dual-mandate view with risks on both sides."
+        }
+      ]
+    },
+    {
+      "name": "Neel Kashkari",
+      "title": "President & CEO, Federal Reserve Bank of Minneapolis",
+      "institution": "Federal Reserve Bank of Minneapolis",
+      "is_voter": true,
+      "stance": "Hawk",
+      "photo_url": "data/fedwatch_photos/kashkari.jpg",
+      "bio_url": "https://www.minneapolisfed.org/people/neel-kashkari",
+      "speeches": [
+        {
+          "date": "2026-03-05",
+          "event": "Bloomberg Invest Conference, New York — Q&A on Monetary Policy",
+          "url": "https://www.minneapolisfed.org/speeches/2026/neel-kashkari-at-bloomberg-invest",
+          "brief_summary": "Kashkari said the Iran war creates new uncertainty for his single expected 2026 rate cut and requires 'a lot more data' before acting.",
+          "detailed_summary": "Kashkari noted he came into 2026 expecting one rate cut given waning inflation, but the Iran conflict's oil shock has obscured the path forward and requires substantially more data before any policy adjustment. He posed the key question as whether this episode resembles the Russia-Ukraine commodity shock — which proved more persistent — or the more contained Hamas conflict. He pointed to mixed inflation dynamics: housing inflation declining, core goods rising from tariffs, services slowly falling — all factors informing his cautious posture."
+        },
+        {
+          "date": "2026-02-19",
+          "event": "2026 Midwest Economic Outlook Summit, Fargo-Moorhead West Fargo Chamber of Commerce, Fargo, ND",
+          "url": "https://www.minneapolisfed.org/speeches/2026/neel-kashkari-at-the-midwest-economic-outlook-summit",
+          "brief_summary": "Kashkari said the Fed is 'pretty close to neutral' and highlighted uncertainty about whether additional cuts would be appropriate.",
+          "detailed_summary": "Kashkari stated 'we're pretty close to neutral with our monetary policy,' while noting the neutral rate may be higher than pre-pandemic estimates due to AI-driven capital demand. He described the labor market as 'softer but pretty good' nationwide and said future moves depend on whether inflation continues declining to 2% or whether the unemployment rate rises materially. His net hawkish lean reflected concern that inflation remains above target and that prematurely loosening would risk re-anchoring expectations at a higher level."
+        },
+        {
+          "date": "2026-01-04",
+          "event": "2026 ASSA Session: 'Lessons from Bill Spriggs' Contributions to Economics and Economic Policy,' Philadelphia",
+          "url": "https://www.minneapolisfed.org/speeches/2026/neel-kashkari-participates-in-2026-assa-session-lessons-from-bill-spriggs-contributions-to-economics-and-economic-policy",
+          "brief_summary": "Kashkari said the Fed is 'quite close' to a neutral rate with inflation still too high, signaling the rate-cutting cycle is nearly complete.",
+          "detailed_summary": "Kashkari said 'I suspect we're quite close to a neutral position,' with core inflation still above target and unemployment edging higher toward 4.6%. He framed the key question as which mandate concern should dominate the near-term policy stance: the risk of entrenched above-target inflation or the risk of a materially weakening labor market. His remarks signaled he expected little further easing absent a significant deterioration in employment conditions."
+        }
+      ]
+    },
+    {
+      "name": "Lorie K. Logan",
+      "title": "President & CEO, Federal Reserve Bank of Dallas",
+      "institution": "Federal Reserve Bank of Dallas",
+      "is_voter": true,
+      "stance": "Hawk",
+      "photo_url": "data/fedwatch_photos/logan.jpg",
+      "bio_url": "https://www.dallasfed.org/fed/leadership/logan",
+      "speeches": [
+        {
+          "date": "2026-04-02",
+          "event": "Eleventh District Banking Conference, Federal Reserve Bank of Dallas — 'The Banking System and the Demand for Reserves'",
+          "url": "https://www.dallasfed.org/news/speeches/logan/2026/lkl260402",
+          "brief_summary": "Logan argued the Fed can shrink its balance sheet by reducing bank demand for reserves through regulatory reform, independent of monetary policy tightening.",
+          "detailed_summary": "Logan said the Fed can reduce reserve supply without raising rates by easing liquidity coverage ratio requirements and destigmatizing the discount window and standing repo facility, which currently inflate banks' precautionary demand for reserves. She argued these structural reforms would allow the balance sheet to shrink to a smaller, more efficient size while maintaining ample reserves for rate control. She also noted the Iran conflict raises both inflation and labor market risks simultaneously, reinforcing her existing view that holding rates steady is appropriate while conditions are assessed."
+        },
+        {
+          "date": "2026-02-10",
+          "event": "FIA-SIFMA Asset Management Derivatives Forum, Austin, TX — 'Outlook for the Economy and Monetary Policy'",
+          "url": "https://www.dallasfed.org/news/speeches/logan/2026/lkl260210",
+          "brief_summary": "Logan said the January rate hold was appropriate, with policy near neutral, and expressed more worry about sticky inflation than labor market cooling.",
+          "detailed_summary": "Logan supported the January 2026 decision to hold the funds rate at 3.50–3.75%, noting the real fed funds rate is now within model estimates of the neutral real rate (approximately 1.08–2.09%). She was 'more worried about stubbornly high inflation than labor market cooling,' citing headline PCE at 2.8% for nearly five years above target and risks from tariff pass-through still filtering through. She also discussed balance sheet operations, noting the Fed had ended QT in December 2025 and initiated reserve management purchases to maintain ample reserves as liabilities grew."
+        },
+        {
+          "date": "2026-01-29",
+          "event": "SMU Science and Technology Law Review Symposium: 'Payments of the Future: Law, Innovation, and Access in a Digital Economy,' Dallas — Introduction of FDIC Chairman Travis Hill",
+          "url": "https://www.dallasfed.org/news/speeches/logan/2026/lkl260129",
+          "brief_summary": "Logan introduced FDIC Chairman Travis Hill and highlighted the Fed's work balancing digital payment innovation with safety and consumer access.",
+          "detailed_summary": "Logan outlined the Dallas Fed's partnership with Southern Methodist University in convening scholars and practitioners on the future of digital payments. She emphasized the Federal Reserve's ongoing exploration of tokenization and smart contracts while maintaining a strong focus on payment system safety. She introduced newly confirmed FDIC Chairman Travis Hill, who had overseen regulatory and policy initiatives as vice chairman, and highlighted the symposium's agenda addressing stablecoin regulation, financial privacy, and payment innovation for financial inclusion. This was a formal introductory speech rather than a monetary policy address."
+        }
+      ]
+    },
+    {
+      "name": "Stephen I. Miran",
+      "title": "Governor",
+      "institution": "Federal Reserve Board",
+      "is_voter": true,
+      "stance": "Dove",
+      "photo_url": "data/fedwatch_photos/miran.jpg",
+      "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/miran.htm",
+      "speeches": [
+        {
+          "date": "2026-03-26",
+          "event": "Economic Club of Miami, Miami, FL — 'Prospects for Shrinking the Fed's Balance Sheet'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/miran20260326a.htm",
+          "brief_summary": "Miran outlined the conditions and tools for further reducing the Fed's balance sheet after the conclusion of QT in December 2025.",
+          "detailed_summary": "Miran analyzed how the Fed can continue reducing excess reserves toward a leaner balance sheet through a combination of regulatory reform (LCR recalibration, discount window destigmatization) and ongoing reserve management purchases. He argued that a smaller balance sheet is achievable without disrupting money market rates if reserve demand is reduced through structural changes to bank liquidity regulation. His broader monetary policy views favor easing, consistent with his dovish stance on rate policy as deregulation lifts the supply side of the economy."
+        },
+        {
+          "date": "2026-01-14",
+          "event": "Delphi Economic Forum, National Gallery – Alexandros Soutsos Museum, Athens, Greece — 'Regulations, the Supply Side, and Monetary Policy'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/miran20260114a.htm",
+          "brief_summary": "Miran argued that sweeping U.S. deregulation boosts productivity and growth without raising inflation, supporting a more accommodative monetary policy.",
+          "detailed_summary": "Miran contended that the deregulation underway in the U.S. constitutes a large positive productivity shock that will expand potential output and put downward pressure on prices, thereby supporting further rate cuts. He argued that ignoring these supply-side effects would leave monetary policy needlessly contractionary — and that in recent quarters, policy had been tighter than warranted given the productivity-enhancing impact of deregulation. Looking forward, he said the ambitious deregulation agenda would allow faster growth without generating inflation, making further easing appropriate."
+        },
+        {
+          "date": "2026-01-28",
+          "event": "FOMC Meeting — Statement by Governor Stephen I. Miran (supporting January hold)",
+          "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260128.htm",
+          "brief_summary": "Miran supported the FOMC's January hold while advocating that deregulation should inform a more accommodative policy path going forward.",
+          "detailed_summary": "Miran voted in favor of holding rates at the January 2026 FOMC meeting consistent with the committee consensus, but his public speeches around this period made clear his view that deregulation-driven productivity gains warrant further rate reductions over 2026. He believes the current rate, while near neutral, remains slightly tighter than optimal given the supply-side improvements from regulatory reform — and that the Fed should front-run the expected disinflation from productivity gains rather than react to it ex post."
+        }
+      ]
+    },
+    {
+      "name": "Anna Paulson",
+      "title": "President & CEO, Federal Reserve Bank of Philadelphia",
+      "institution": "Federal Reserve Bank of Philadelphia",
+      "is_voter": true,
+      "stance": "Neutral",
+      "photo_url": "data/fedwatch_photos/paulson.jpg",
+      "bio_url": "https://www.philadelphiafed.org/our-people/anna-paulson",
+      "speeches": [
+        {
+          "date": "2026-03-27",
+          "event": "2026 Macroeconomics and Monetary Policy Conference, Federal Reserve Bank of San Francisco, CA — 'Monetary Policy and Productivity'",
+          "url": "https://www.philadelphiafed.org/-/media/FRBP/Assets/Institutional/speeches/paulson/2026/260327-macroeconomics-and-monetary-policy-conf.pdf",
+          "brief_summary": "Paulson outlined three AI productivity scenarios and argued that with inflation above 2%, the Fed must be more cautious about holding rates steady through any growth surge.",
+          "detailed_summary": "Paulson presented three plausible scenarios for AI-driven productivity growth — low (reverting to pre-pandemic trend), medium (modest structural improvement), and high (transformative shift) — and showed each implies a materially different long-run neutral rate and hence different appropriate rate paths. She drew lessons from the late 1990s Greenspan era, noting that today's Fed faces the same risk management dilemma but from a less credible starting position: inflation is at 2.8%, not 2%, making it harder to be patient if growth surges. She concluded that progress toward the 2% inflation target is the highest monetary policy priority regardless of the productivity scenario."
+        },
+        {
+          "date": "2026-03-06",
+          "event": "2026 US Monetary Policy Forum, University of Chicago Booth School of Business, New York — Discussion of 'Private Canaries: The Value of Private-Sector Data For U.S. Monetary Policy Making'",
+          "url": "https://www.philadelphiafed.org/the-economy/monetary-policy/260306-2026-us-monetary-policy-forum",
+          "brief_summary": "Paulson discussed how private-sector data can sharpen the Fed's real-time understanding of economic conditions and support better-calibrated policy decisions.",
+          "detailed_summary": "Paulson shared her perspectives on the 2026 Monetary Policy Forum report, which evaluated the value of private-sector datasets — payroll processors, credit card data, job postings — as leading indicators for monetary policymaking. She argued that private data can complement lagged official statistics, particularly during periods like the government shutdown when official data was disrupted. Better real-time information helps policymakers distinguish cyclical from structural developments and calibrate the appropriate timing and magnitude of rate adjustments."
+        },
+        {
+          "date": "2026-01-14",
+          "event": "Chamber of Commerce for Greater Philadelphia, Philadelphia, PA",
+          "url": "https://www.philadelphiafed.org/-/media/FRBP/Assets/Institutional/speeches/paulson/2026/260114-chamber-of-commerce.pdf",
+          "brief_summary": "Paulson signaled cautious optimism on inflation and said 'modest further adjustments' to the funds rate could be appropriate later in 2026.",
+          "detailed_summary": "Paulson said she sees 'a decent chance we will end the year with inflation that is close to 2% on a run-rate basis,' citing declining goods inflation pass-through from tariffs and continued easing in housing services. She stated the current funds rate remains 'still a little restrictive,' which will help guide inflation the rest of the way down. She said if her benign baseline holds — inflation moderating, the labor market stabilizing, and growth near 2% — then modest further rate adjustments would likely be appropriate later in the year."
+        }
+      ]
+    },
+    {
+      "name": "Christopher J. Waller",
+      "title": "Governor",
+      "institution": "Federal Reserve Board",
+      "is_voter": true,
+      "stance": "Dove",
+      "photo_url": "data/fedwatch_photos/waller.jpg",
+      "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/waller.htm",
+      "speeches": [
+        {
+          "date": "2026-04-21",
+          "event": "Waller, Modernizing Federal Reserve Operations in the 21st Century",
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260421a.htm",
+          "brief_summary": "Speech At The Brookings Institution, Washington, D.C.",
+          "detailed_summary": ""
+        },
+        {
+          "date": "2026-04-17",
+          "event": "Waller, One Transitory Shock After Another",
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260417a.htm",
+          "brief_summary": "Speech At the David Kaserman Memorial Lecture, Department of Economics, Auburn University, Auburn, Alabama",
+          "detailed_summary": ""
+        },
+        {
+          "date": "2026-02-24",
+          "event": "Federal Reserve Bank of Boston, Boston, MA — 'Operationalizing AI at the Federal Reserve'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260224a.htm",
+          "brief_summary": "Waller detailed the Fed's internal AI deployment initiatives and their implications for productivity, efficiency, and institutional data quality.",
+          "detailed_summary": "Waller outlined how the Federal Reserve is deploying AI tools internally for supervisory analysis, economic research, payment system monitoring, and operational efficiency. He argued that successful AI adoption at the Fed would improve the timeliness and accuracy of economic data the institution uses to calibrate monetary policy, potentially reducing forecast errors and improving communication. While not a direct monetary policy speech, the remarks reflected his broader view that supply-side and technological improvements can sustainably reduce inflationary pressures, supporting his dovish preference for rate cuts."
+        },
+        {
+          "date": "2026-02-23",
+          "event": "42nd Annual NABE Economic Policy Conference, Washington D.C. — 'Labor Market Data: Signal or Noise?'",
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260223a.htm",
+          "brief_summary": "Waller analyzed distortions in labor market data from the government shutdown and immigration, arguing underlying job market strength may be understated.",
+          "detailed_summary": "Waller argued that recent payroll data is heavily distorted by the federal government shutdown, reduced immigration suppressing labor supply counts, and residual seasonal adjustment issues from the pandemic — making the labor market appear softer than underlying fundamentals suggest. He contended that once these distortions are corrected, the true employment picture may be stronger, which would give the Fed more confidence to proceed with further gradual rate reductions. His data-cleaning analysis directly supported his dovish case for continued easing."
+        },
+        {
+          "date": "2026-01-16",
+          "event": "Lessons for the Fed's Balance Sheet and Monetary Policy Implementation, Washington D.C. — Remarks on Balance Sheet and Rate Policy",
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260116a.htm",
+          "brief_summary": "Waller argued for further rate cuts in 2026, citing falling inflation expectations and a labor market that is softening but not breaking.",
+          "detailed_summary": "Waller expressed his view that the Fed is not yet done cutting rates and that 2026 should include additional reductions as tariff-induced price pressures prove temporary and inflation resumes its path toward 2%. He characterized the labor market as 'bending but not breaking' — with job growth slowing but not collapsing — and said inflation expectations remain well-anchored, providing room for the Fed to ease further. His remarks placed him firmly in the dovish camp among 2026 voters, favoring a more activist easing path."
+        }
+      ]
+    },
+    {
+      "name": "Thomas I. Barkin",
+      "title": "President & CEO, Federal Reserve Bank of Richmond",
+      "institution": "Federal Reserve Bank of Richmond",
+      "is_voter": false,
+      "stance": "Hawk",
+      "photo_url": "data/fedwatch_photos/barkin.jpg",
+      "bio_url": "https://www.richmondfed.org/about_us/our_leadership/tom_barkin",
+      "speeches": [
+        {
+          "date": "2026-03-27",
+          "event": "East Tennessee State University, Johnson City, TN — 'Driving Through Economic Fog (Still)'",
+          "url": "https://www.richmondfed.org/press_room/speeches/thomas_barkin/2026/barkin_speech_20260327",
+          "brief_summary": "Barkin said the economy is navigating 'thick fog' from the Iran war and tariffs, and the Fed must drive slowly until visibility improves.",
+          "detailed_summary": "Barkin used the metaphor of driving in fog to describe the Fed's position: multiple simultaneous uncertainties — the Iran conflict, tariff trajectories, and AI's labor market effects — mean prudence demands moving slowly and watching the data carefully before committing to any rate path. He noted that both inflation (above 2%) and labor market stability are at risk, and that the appropriate policy response depends heavily on how each of these forces resolves. He supported the current hold while emphasizing readiness to act in either direction."
+        },
+        {
+          "date": "2026-02-03",
+          "event": "SC First Steps Annual Conference, South Carolina — 'U.S. Economy: The Road Ahead'",
+          "url": "https://www.richmondfed.org/press_room/speeches/thomas_barkin/2026/barkin_speech_20260203",
+          "brief_summary": "Barkin described a resilient but uncertain economy and argued for patience in calibrating any further rate adjustments.",
+          "detailed_summary": "Barkin presented his economic outlook as resilient overall — solid consumer spending, a broadly balanced labor market, and an easing inflation trend — but with significant uncertainty from tariff policy and geopolitical developments. He argued that the Fed should remain patient rather than anticipate the outcome of these uncertainties, adjusting policy only as clearer signals emerge. His balanced tone reflected his view that both rate cuts and rate hikes could become appropriate depending on how events unfold."
+        },
+        {
+          "date": "2026-01-06",
+          "event": "Raleigh Chamber of Commerce, Raleigh, NC — 'Tuning In: 2026 Outlook'",
+          "url": "https://www.richmondfed.org/press_room/speeches/thomas_barkin/2026/barkin_speech_20260106",
+          "brief_summary": "Barkin opened 2026 with an outlook calling for monitoring economic signals carefully before adjusting policy amid a landscape of known unknowns.",
+          "detailed_summary": "Barkin framed 2026 as a year of 'tuning in' — carefully monitoring competing economic signals rather than committing prematurely to a rate path. He highlighted the three major uncertainties the Fed must navigate: tariff policy and their ultimate inflationary impact, immigration's effect on both labor supply and consumer demand, and the trajectory of the Iran conflict's commodity price effects. He said the Fed's current neutral stance allows it maximum flexibility to respond to data as it arrives, reinforcing his preference for patient, data-driven decision-making."
+        }
+      ]
+    },
+    {
+      "name": "Mary C. Daly",
+      "title": "President & CEO, Federal Reserve Bank of San Francisco",
+      "institution": "Federal Reserve Bank of San Francisco",
+      "is_voter": false,
+      "stance": "Dove",
+      "photo_url": "data/fedwatch_photos/daly.jpg",
+      "bio_url": "https://www.frbsf.org/about-sf-fed/our-people/mary-daly/",
+      "speeches": [
+        {
+          "date": "2026-02-19",
+          "event": "San Francisco Economic Forum — Fireside Chat with Rob Kaplan (Goldman Sachs)",
+          "url": "https://www.frbsf.org/news-and-media/speeches/mary-c-daly/2026/february/fireside-chat-february-2026/",
+          "brief_summary": "Daly described the economy as 'bending but not breaking' and signaled patience on further rate cuts pending resolution of tariff and geopolitical uncertainty.",
+          "detailed_summary": "Daly said the labor market and growth remain resilient despite slowing — 'bending but not breaking' — but cautioned that momentum is not strong, with February payrolls weak and oil prices elevated from the Iran war. She said the impact of the geopolitical conflict on inflation and growth depends on duration, and that the price-setting and wage-setting behavior she observes from businesses does not currently point toward sustained inflation. She advocated for patience and data-dependence before any further rate adjustments."
+        },
+        {
+          "date": "2026-02-17",
+          "event": "Silicon Valley Leadership Group / San Jose State University, San Jose, CA — 'AI Moment? Possibilities, Productivity, and Policy'",
+          "url": "https://www.frbsf.org/news-and-media/speeches/mary-c-daly/2026/february/ai-moment-possibilities-productivity-and-policy/",
+          "brief_summary": "Daly argued AI's productivity potential could lower the neutral rate of interest and allow faster growth without generating inflation.",
+          "detailed_summary": "Daly explored how AI-driven productivity gains, if sustained, could increase the economy's non-inflationary speed limit — meaning GDP can grow faster without creating inflationary pressure. She noted that historically, productivity booms have been associated with lower inflation and higher real wages, and that the Fed must remain open to revising its estimate of the neutral rate upward if AI investment genuinely raises the productive capacity of the economy. However, she cautioned that distinguishing cyclical from structural productivity gains takes time, counseling patience in updating policy frameworks."
+        },
+        {
+          "date": "2026-01-05",
+          "event": "2026 Allied Social Science Associations Annual Meeting, Philadelphia, PA — 'Modern Central Banking: Monetary Policy Implementation and Communication'",
+          "url": "https://www.frbsf.org/news-and-media/speeches/mary-c-daly/2026/january/modern-central-banking-monetary-policy-implementation/",
+          "brief_summary": "Daly argued that modern central banking requires clearer communication about the reaction function and greater flexibility in the framework for implementing monetary policy.",
+          "detailed_summary": "Daly advocated for strengthening the Fed's communication of its reaction function — how incoming data maps to policy decisions — to reduce uncertainty and improve market functioning. She argued that the ample-reserves operating framework has proven effective but requires ongoing adaptation as balance sheet composition and reserve demand evolve. Her broader message supported a dovish trajectory: by improving communication and operational flexibility, the Fed can cut rates further without destabilizing inflation expectations."
+        }
+      ]
+    },
+    {
+      "name": "Austan D. Goolsbee",
+      "title": "President & CEO, Federal Reserve Bank of Chicago",
+      "institution": "Federal Reserve Bank of Chicago",
+      "is_voter": false,
+      "stance": "Hawk",
+      "photo_url": "data/fedwatch_photos/goolsbee.jpg",
+      "bio_url": "https://www.chicagofed.org/utilities/about-us/office-of-the-president",
+      "speeches": [
+        {
+          "date": "2026-04-07",
+          "event": "Detroit Economic Club, Detroit, MI",
+          "url": "https://www.chicagofed.org/news-and-events/speeches/2026/goolsbee-20260407",
+          "brief_summary": "Goolsbee warned that the Iran war creates stagflationary risks and urged the Fed not to over-tighten in response to a supply shock.",
+          "detailed_summary": "Goolsbee argued that the Iran war is a supply shock — raising energy prices and dampening growth simultaneously — and that the Fed's appropriate response differs from demand-driven inflation. He cautioned against reflexive rate hikes in response to energy-driven CPI increases, noting the labor market is already slowing and that over-tightening could needlessly push unemployment higher without addressing the root cause. He expressed concern about the cumulative impact of geopolitical and tariff shocks on the real economy and suggested the dovish case for rate cuts remains alive depending on how employment evolves."
+        },
+        {
+          "date": "2026-03-31",
+          "event": "Economic Mobility Project Annual Event — Opening Remarks",
+          "url": "https://www.chicagofed.org/news-and-events/speeches/2026/goolsbee-20260331",
+          "brief_summary": "Goolsbee stressed the importance of economic mobility and labor market dynamism as prerequisites for the Fed's maximum employment mandate.",
+          "detailed_summary": "Goolsbee linked the Fed's maximum employment mandate to the broader concept of economic mobility — the ability of workers to move between jobs, industries, and geographies in response to economic change. He noted that AI and trade-related disruptions could impede this dynamism, reducing labor market efficiency and complicating the Fed's assessment of full employment. His remarks reinforced his dovish lean: by prioritizing maximum employment broadly defined, he places significant weight on avoiding unnecessary labor market weakness."
+        },
+        {
+          "date": "2026-03-06",
+          "event": "Foreign Policy Association Annual Dinner, New York — Keynote Remarks",
+          "url": "https://www.chicagofed.org/news-and-events/speeches/2026/goolsbee-20260306",
+          "brief_summary": "Goolsbee argued that geopolitical fragmentation and tariffs represent persistent supply-side headwinds that should inform a more dovish monetary policy path.",
+          "detailed_summary": "Goolsbee discussed how the ongoing fragmentation of global supply chains — driven by tariffs, geopolitical rivalry, and 'friend-shoring' — represents a structural shift that raises costs in the near term but could stabilize over a multi-year horizon. He argued that responding to this transition period with sustained tight monetary policy risks compounding the supply-side disruption with unnecessary demand destruction, particularly for U.S. workers in manufacturing and export-oriented sectors. He favored a gradual easing path provided inflation expectations remain anchored."
+        }
+      ]
+    }
+  ]
+}
