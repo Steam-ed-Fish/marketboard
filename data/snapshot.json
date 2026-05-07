@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-05-06T22:19:02.628587Z",
+  "built_at": "2026-05-07T22:27:37.655662Z",
   "groups": {
     "Indices": [
       {
@@ -69,11 +69,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.26,
-        "em_days": 2,
-        "em_pct_0d": 0.89,
-        "em_days_0d": 1,
-        "rs_composite": 76.0
+        "em_pct": null,
+        "em_days": null,
+        "em_pct_0d": null,
+        "em_days_0d": null,
+        "rs_composite": 0.0
       },
       {
         "ticker": "DIA",
@@ -149,11 +149,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 0.85,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 44.0
+        "rs_composite": 0.0
       },
       {
         "ticker": "SPY",
@@ -224,11 +224,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 0.81,
-        "em_days": 2,
-        "em_pct_0d": 0.5,
-        "em_days_0d": 1,
-        "rs_composite": 60.0
+        "em_pct": null,
+        "em_days": null,
+        "em_pct_0d": null,
+        "em_days_0d": null,
+        "rs_composite": 1.0
       },
       {
         "ticker": "RSP",
@@ -293,11 +293,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.33,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 50.0
+        "rs_composite": 1.0
       },
       {
         "ticker": "IWM",
@@ -367,11 +367,11 @@
         },
         "consolidation": null,
         "sector": "Broad Market",
-        "em_pct": 1.32,
-        "em_days": 2,
-        "em_pct_0d": 0.82,
-        "em_days_0d": 1,
-        "rs_composite": 73.0
+        "em_pct": null,
+        "em_days": null,
+        "em_pct_0d": null,
+        "em_days_0d": null,
+        "rs_composite": 1.0
       },
       {
         "ticker": "IJH",
@@ -436,11 +436,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 6.11,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 66.0
+        "rs_composite": 2.0
       },
       {
         "ticker": "IJR",
@@ -505,11 +505,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.59,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 69.0
+        "rs_composite": 2.0
       },
       {
         "ticker": "GLD",
@@ -595,11 +595,11 @@
         },
         "consolidation": null,
         "sector": "Commodities",
-        "em_pct": 1.56,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 47.0
+        "rs_composite": 2.0
       },
       {
         "ticker": "SLV",
@@ -690,11 +690,11 @@
         },
         "consolidation": null,
         "sector": "Commodities",
-        "em_pct": 3.25,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 85.0
+        "rs_composite": 3.0
       }
     ],
     "The 7s at a Glance": [
@@ -715,13 +715,13 @@
         "long": [],
         "short": [],
         "abc": null,
-        "rrg_chart": "data/charts/seven_rrg.png",
+        "rrg_chart": null,
         "is_rrg_row": true,
         "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 22.0
+        "rs_composite": 3.0
       },
       {
         "ticker": "The Mag 7",
@@ -732,7 +732,7 @@
         "wtd": 2.24,
         "ytd": 5.23,
         "vol_ratio": 1.05,
-        "vol_chart": "data/charts/vol_Glance_The_Mag_7.png",
+        "vol_chart": null,
         "atr_pct": 2.9,
         "dist_sma50_atr": 3.85,
         "rs": null,
@@ -747,11 +747,11 @@
           "above_200": 4,
           "total": 7
         },
-        "em_pct": 2.08,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 23.0
+        "rs_composite": 3.0
       },
       {
         "ticker": "The Cloud 7",
@@ -762,7 +762,7 @@
         "wtd": 4.39,
         "ytd": 4.7,
         "vol_ratio": 0.98,
-        "vol_chart": "data/charts/vol_Glance_The_Cloud_7.png",
+        "vol_chart": null,
         "atr_pct": 3.4,
         "dist_sma50_atr": 3.61,
         "rs": null,
@@ -777,11 +777,11 @@
           "above_200": 3,
           "total": 7
         },
-        "em_pct": 3.7,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 23.0
+        "rs_composite": 4.0
       },
       {
         "ticker": "The Software 7",
@@ -792,7 +792,7 @@
         "wtd": -2.24,
         "ytd": -27.1,
         "vol_ratio": 0.75,
-        "vol_chart": "data/charts/vol_Glance_The_Software_7.png",
+        "vol_chart": null,
         "atr_pct": 4.6,
         "dist_sma50_atr": -0.6,
         "rs": null,
@@ -807,11 +807,11 @@
           "above_200": 0,
           "total": 7
         },
-        "em_pct": 3.66,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 23.0
+        "rs_composite": 4.0
       },
       {
         "ticker": "The New Staples 7",
@@ -822,7 +822,7 @@
         "wtd": 0.94,
         "ytd": 2.08,
         "vol_ratio": 1.27,
-        "vol_chart": "data/charts/vol_Glance_The_New_Staples_7.png",
+        "vol_chart": null,
         "atr_pct": 3.2,
         "dist_sma50_atr": 2.54,
         "rs": null,
@@ -837,11 +837,11 @@
           "above_200": 3,
           "total": 7
         },
-        "em_pct": 2.21,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 24.0
+        "rs_composite": 4.0
       },
       {
         "ticker": "The Old Staples 7",
@@ -852,7 +852,7 @@
         "wtd": 0.5,
         "ytd": 11.3,
         "vol_ratio": 0.82,
-        "vol_chart": "data/charts/vol_Glance_The_Old_Staples_7.png",
+        "vol_chart": null,
         "atr_pct": 2.1,
         "dist_sma50_atr": 1.0,
         "rs": null,
@@ -867,11 +867,11 @@
           "above_200": 6,
           "total": 7
         },
-        "em_pct": 1.61,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 24.0
+        "rs_composite": 5.0
       },
       {
         "ticker": "The Toll Road 7",
@@ -882,7 +882,7 @@
         "wtd": -2.11,
         "ytd": -7.52,
         "vol_ratio": 0.94,
-        "vol_chart": "data/charts/vol_Glance_The_Toll_Road_7.png",
+        "vol_chart": null,
         "atr_pct": 2.7,
         "dist_sma50_atr": -0.48,
         "rs": null,
@@ -897,11 +897,11 @@
           "above_200": 2,
           "total": 7
         },
-        "em_pct": 2.27,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 24.0
+        "rs_composite": 5.0
       },
       {
         "ticker": "The Energy 7",
@@ -912,7 +912,7 @@
         "wtd": -4.15,
         "ytd": 25.26,
         "vol_ratio": 1.19,
-        "vol_chart": "data/charts/vol_Glance_The_Energy_7.png",
+        "vol_chart": null,
         "atr_pct": 3.3,
         "dist_sma50_atr": -0.16,
         "rs": null,
@@ -927,11 +927,11 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 2.76,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 25.0
+        "rs_composite": 5.0
       },
       {
         "ticker": "The Defense 7",
@@ -942,7 +942,7 @@
         "wtd": -1.86,
         "ytd": -1.99,
         "vol_ratio": 1.08,
-        "vol_chart": "data/charts/vol_Glance_The_Defense_7.png",
+        "vol_chart": null,
         "atr_pct": 3.1,
         "dist_sma50_atr": -2.98,
         "rs": null,
@@ -957,11 +957,11 @@
           "above_200": 2,
           "total": 7
         },
-        "em_pct": 2.83,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 25.0
+        "rs_composite": 6.0
       },
       {
         "ticker": "The Industrial 7",
@@ -972,7 +972,7 @@
         "wtd": 3.69,
         "ytd": 17.18,
         "vol_ratio": 1.28,
-        "vol_chart": "data/charts/vol_Glance_The_Industrial_7.png",
+        "vol_chart": null,
         "atr_pct": 2.9,
         "dist_sma50_atr": 1.5,
         "rs": null,
@@ -987,11 +987,11 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 2.8,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 25.0
+        "rs_composite": 6.0
       },
       {
         "ticker": "The Semi 7",
@@ -1002,7 +1002,7 @@
         "wtd": 7.46,
         "ytd": 67.85,
         "vol_ratio": 1.27,
-        "vol_chart": "data/charts/vol_Glance_The_Semi_7.png",
+        "vol_chart": null,
         "atr_pct": 4.1,
         "dist_sma50_atr": 10.22,
         "rs": null,
@@ -1017,11 +1017,11 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 4.05,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 26.0
+        "rs_composite": 6.0
       },
       {
         "ticker": "The Fab 7",
@@ -1032,7 +1032,7 @@
         "wtd": 11.22,
         "ytd": 60.3,
         "vol_ratio": 1.28,
-        "vol_chart": "data/charts/vol_Glance_The_Fab_7.png",
+        "vol_chart": null,
         "atr_pct": 4.4,
         "dist_sma50_atr": 4.75,
         "rs": null,
@@ -1047,11 +1047,11 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 4.48,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 26.0
+        "rs_composite": 7.0
       },
       {
         "ticker": "The Buildout 7",
@@ -1062,7 +1062,7 @@
         "wtd": 0.9,
         "ytd": 47.62,
         "vol_ratio": 1.58,
-        "vol_chart": "data/charts/vol_Glance_The_Buildout_7.png",
+        "vol_chart": null,
         "atr_pct": 4.0,
         "dist_sma50_atr": 4.46,
         "rs": null,
@@ -1077,11 +1077,11 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 4.42,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 26.0
+        "rs_composite": 7.0
       },
       {
         "ticker": "The Housing 7",
@@ -1092,7 +1092,7 @@
         "wtd": 0.42,
         "ytd": -3.72,
         "vol_ratio": 1.1,
-        "vol_chart": "data/charts/vol_Glance_The_Housing_7.png",
+        "vol_chart": null,
         "atr_pct": 3.0,
         "dist_sma50_atr": -0.31,
         "rs": null,
@@ -1107,11 +1107,11 @@
           "above_200": 1,
           "total": 7
         },
-        "em_pct": 2.94,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 27.0
+        "rs_composite": 7.0
       },
       {
         "ticker": "The Old Metals 7",
@@ -1122,7 +1122,7 @@
         "wtd": 4.32,
         "ytd": 13.16,
         "vol_ratio": 1.3,
-        "vol_chart": "data/charts/vol_Glance_The_Old_Metals_7.png",
+        "vol_chart": null,
         "atr_pct": 4.1,
         "dist_sma50_atr": -1.37,
         "rs": null,
@@ -1137,11 +1137,11 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 6.23,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 27.0
+        "rs_composite": 8.0
       },
       {
         "ticker": "The New Metals 7",
@@ -1152,7 +1152,7 @@
         "wtd": 5.17,
         "ytd": 25.48,
         "vol_ratio": 1.22,
-        "vol_chart": "data/charts/vol_Glance_The_New_Metals_7.png",
+        "vol_chart": null,
         "atr_pct": 4.8,
         "dist_sma50_atr": 1.53,
         "rs": null,
@@ -1167,11 +1167,11 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 5.22,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 27.0
+        "rs_composite": 8.0
       },
       {
         "ticker": "The Bank 7",
@@ -1182,7 +1182,7 @@
         "wtd": 0.77,
         "ytd": -1.1,
         "vol_ratio": 0.93,
-        "vol_chart": "data/charts/vol_Glance_The_Bank_7.png",
+        "vol_chart": null,
         "atr_pct": 2.4,
         "dist_sma50_atr": 2.68,
         "rs": null,
@@ -1197,11 +1197,11 @@
           "above_200": 5,
           "total": 7
         },
-        "em_pct": 2.1,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 28.0
+        "rs_composite": 8.0
       },
       {
         "ticker": "The Health 7",
@@ -1212,7 +1212,7 @@
         "wtd": 0.81,
         "ytd": 3.2,
         "vol_ratio": 0.89,
-        "vol_chart": "data/charts/vol_Glance_The_Health_7.png",
+        "vol_chart": null,
         "atr_pct": 2.4,
         "dist_sma50_atr": 0.28,
         "rs": null,
@@ -1227,11 +1227,11 @@
           "above_200": 6,
           "total": 7
         },
-        "em_pct": 2.33,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 28.0
+        "rs_composite": 9.0
       },
       {
         "ticker": "The Medtech 7",
@@ -1242,7 +1242,7 @@
         "wtd": -1.27,
         "ytd": -24.36,
         "vol_ratio": 0.98,
-        "vol_chart": "data/charts/vol_Glance_The_Medtech_7.png",
+        "vol_chart": null,
         "atr_pct": 2.9,
         "dist_sma50_atr": -3.61,
         "rs": null,
@@ -1257,11 +1257,11 @@
           "above_200": 0,
           "total": 7
         },
-        "em_pct": 2.29,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 28.0
+        "rs_composite": 9.0
       },
       {
         "ticker": "The Freight 7",
@@ -1272,7 +1272,7 @@
         "wtd": -1.81,
         "ytd": 18.61,
         "vol_ratio": 0.93,
-        "vol_chart": "data/charts/vol_Glance_The_Freight_7.png",
+        "vol_chart": null,
         "atr_pct": 2.8,
         "dist_sma50_atr": 1.89,
         "rs": null,
@@ -1287,11 +1287,11 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 3.01,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 29.0
+        "rs_composite": 9.0
       },
       {
         "ticker": "The Insurance 7",
@@ -1302,7 +1302,7 @@
         "wtd": -0.77,
         "ytd": -3.17,
         "vol_ratio": 0.79,
-        "vol_chart": "data/charts/vol_Glance_The_Insurance_7.png",
+        "vol_chart": null,
         "atr_pct": 2.2,
         "dist_sma50_atr": 0.25,
         "rs": null,
@@ -1317,11 +1317,11 @@
           "above_200": 3,
           "total": 6
         },
-        "em_pct": 2.68,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 29.0
+        "rs_composite": 10.0
       },
       {
         "ticker": "The Power 7",
@@ -1332,14 +1332,14 @@
         "wtd": -0.68,
         "ytd": 4.98,
         "vol_ratio": 1.25,
-        "vol_chart": "data/charts/vol_Glance_The_Power_7.png",
+        "vol_chart": null,
         "atr_pct": 2.6,
         "dist_sma50_atr": -0.2,
         "rs": null,
         "rs_chart": null,
         "long": [],
         "short": [],
-        "abc": "C",
+        "abc": "A",
         "stage": 2,
         "breadth": {
           "above_20": 2,
@@ -1347,11 +1347,11 @@
           "above_200": 5,
           "total": 7
         },
-        "em_pct": 3.52,
+        "em_pct": null,
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 29.0
+        "rs_composite": 10.0
       }
     ],
     "Sel Sectors": [
@@ -1422,11 +1422,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.69,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 83.0
+        "rs_composite": 10.0
       },
       {
         "ticker": "XLI",
@@ -1504,11 +1504,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.78,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 62.0
+        "rs_composite": 11.0
       },
       {
         "ticker": "XLC",
@@ -1586,11 +1586,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.88,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 40.0
+        "rs_composite": 11.0
       },
       {
         "ticker": "XLF",
@@ -1680,11 +1680,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.05,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 19.0
+        "rs_composite": 11.0
       },
       {
         "ticker": "XLU",
@@ -1768,11 +1768,11 @@
         },
         "consolidation": null,
         "sector": "Broad Market",
-        "em_pct": 1.17,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 41.0
+        "rs_composite": 12.0
       },
       {
         "ticker": "XLY",
@@ -1857,11 +1857,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.13,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 40.0
+        "rs_composite": 12.0
       },
       {
         "ticker": "XLRE",
@@ -1930,11 +1930,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 6.82,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 59.0
+        "rs_composite": 12.0
       },
       {
         "ticker": "XLP",
@@ -2019,11 +2019,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.57,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 42.0
+        "rs_composite": 13.0
       },
       {
         "ticker": "XLB",
@@ -2103,11 +2103,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 7.02,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 66.0
+        "rs_composite": 13.0
       },
       {
         "ticker": "XLE",
@@ -2197,11 +2197,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.95,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 72.0
+        "rs_composite": 14.0
       },
       {
         "ticker": "XLV",
@@ -2289,11 +2289,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.71,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 15.0
+        "rs_composite": 14.0
       }
     ],
     "S&P Style ETFs": [
@@ -2360,11 +2360,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 10.18,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 67.0
+        "rs_composite": 14.0
       },
       {
         "ticker": "IJR",
@@ -2429,11 +2429,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.59,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 69.0
+        "rs_composite": 2.0
       },
       {
         "ticker": "IJT",
@@ -2502,7 +2502,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 72.0
+        "rs_composite": 15.0
       },
       {
         "ticker": "IJJ",
@@ -2582,7 +2582,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 52.0
+        "rs_composite": 15.0
       },
       {
         "ticker": "IJH",
@@ -2647,11 +2647,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 6.11,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 66.0
+        "rs_composite": 2.0
       },
       {
         "ticker": "IJK",
@@ -2720,7 +2720,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 74.0
+        "rs_composite": 15.0
       },
       {
         "ticker": "IVE",
@@ -2789,7 +2789,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 47.0
+        "rs_composite": 16.0
       },
       {
         "ticker": "IVV",
@@ -2854,11 +2854,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.7,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 60.0
+        "rs_composite": 16.0
       },
       {
         "ticker": "IVW",
@@ -2923,11 +2923,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.97,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 68.0
+        "rs_composite": 16.0
       }
     ],
     "EW Sectors": [
@@ -2998,7 +2998,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 87.0
+        "rs_composite": 17.0
       },
       {
         "ticker": "RSPC",
@@ -3083,7 +3083,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 33.0
+        "rs_composite": 17.0
       },
       {
         "ticker": "RSPN",
@@ -3158,7 +3158,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 49.0
+        "rs_composite": 17.0
       },
       {
         "ticker": "RSPF",
@@ -3248,7 +3248,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 34.0
+        "rs_composite": 18.0
       },
       {
         "ticker": "RSP",
@@ -3313,11 +3313,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.33,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 50.0
+        "rs_composite": 1.0
       },
       {
         "ticker": "RSPD",
@@ -3497,7 +3497,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 38.0
+        "rs_composite": 18.0
       },
       {
         "ticker": "RSPR",
@@ -3571,7 +3571,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 52.0
+        "rs_composite": 19.0
       },
       {
         "ticker": "RSPH",
@@ -3656,7 +3656,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 18.0
+        "rs_composite": 19.0
       },
       {
         "ticker": "RSPM",
@@ -3731,7 +3731,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 70.0
+        "rs_composite": 19.0
       },
       {
         "ticker": "RSPS",
@@ -3816,7 +3816,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 21.0
+        "rs_composite": 20.0
       },
       {
         "ticker": "RSPG",
@@ -3896,7 +3896,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 80.0
+        "rs_composite": 20.0
       }
     ],
     "Industries": [
@@ -3972,7 +3972,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 95.0
+        "rs_composite": 20.0
       },
       {
         "ticker": "CIBR",
@@ -4058,7 +4058,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 35.0
+        "rs_composite": 21.0
       },
       {
         "ticker": "IGV",
@@ -4149,7 +4149,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 12.0
+        "rs_composite": 21.0
       },
       {
         "ticker": "WCLD",
@@ -4237,7 +4237,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 13.0
+        "rs_composite": 21.0
       },
       {
         "ticker": "BLOK",
@@ -4323,7 +4323,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 76.0
+        "rs_composite": 22.0
       },
       {
         "ticker": "AIQ",
@@ -4393,7 +4393,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 84.0
+        "rs_composite": 22.0
       },
       {
         "ticker": "ARKF",
@@ -4479,7 +4479,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 18.0
+        "rs_composite": 22.0
       },
       {
         "ticker": "ARKK",
@@ -4574,7 +4574,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 55.0
+        "rs_composite": 23.0
       },
       {
         "ticker": "WGMI",
@@ -4655,7 +4655,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 93.0
+        "rs_composite": 23.0
       },
       {
         "ticker": "ROBO",
@@ -4727,7 +4727,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 84.0
+        "rs_composite": 23.0
       },
       {
         "ticker": "ITA",
@@ -4820,7 +4820,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 35.0
+        "rs_composite": 24.0
       },
       {
         "ticker": "PAVE",
@@ -4890,7 +4890,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 77.0
+        "rs_composite": 24.0
       },
       {
         "ticker": "BOAT",
@@ -4971,7 +4971,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 85.0
+        "rs_composite": 24.0
       },
       {
         "ticker": "XTN",
@@ -5054,7 +5054,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 67.0
+        "rs_composite": 25.0
       },
       {
         "ticker": "KWEB",
@@ -5142,7 +5142,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 7.0
+        "rs_composite": 25.0
       },
       {
         "ticker": "GXC",
@@ -5233,7 +5233,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 32.0
+        "rs_composite": 25.0
       },
       {
         "ticker": "FXI",
@@ -5323,7 +5323,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 19.0
+        "rs_composite": 26.0
       },
       {
         "ticker": "IBUY",
@@ -5414,7 +5414,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 19.0
+        "rs_composite": 26.0
       },
       {
         "ticker": "JETS",
@@ -5500,7 +5500,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 43.0
+        "rs_composite": 26.0
       },
       {
         "ticker": "PEJ",
@@ -5588,7 +5588,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 45.0
+        "rs_composite": 27.0
       },
       {
         "ticker": "FDN",
@@ -5683,7 +5683,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 43.0
+        "rs_composite": 27.0
       },
       {
         "ticker": "XRT",
@@ -5776,7 +5776,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 37.0
+        "rs_composite": 27.0
       },
       {
         "ticker": "DRIV",
@@ -5848,7 +5848,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 89.0
+        "rs_composite": 28.0
       },
       {
         "ticker": "MSOS",
@@ -5936,7 +5936,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 89.0
+        "rs_composite": 28.0
       },
       {
         "ticker": "EATZ",
@@ -6027,7 +6027,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 39.0
+        "rs_composite": 28.0
       },
       {
         "ticker": "XHB",
@@ -6120,7 +6120,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 22.0
+        "rs_composite": 29.0
       },
       {
         "ticker": "IBB",
@@ -6206,7 +6206,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 46.0
+        "rs_composite": 29.0
       },
       {
         "ticker": "IHI",
@@ -6276,7 +6276,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 5.0
+        "rs_composite": 29.0
       },
       {
         "ticker": "XHE",
@@ -6352,7 +6352,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 15.0
+        "rs_composite": 30.0
       },
       {
         "ticker": "XBI",
@@ -6437,7 +6437,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 78.0
+        "rs_composite": 30.0
       },
       {
         "ticker": "ARKG",
@@ -6528,7 +6528,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 59.0
+        "rs_composite": 30.0
       },
       {
         "ticker": "PPH",
@@ -6621,7 +6621,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 36.0
+        "rs_composite": 31.0
       },
       {
         "ticker": "KCE",
@@ -6712,7 +6712,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 46.0
+        "rs_composite": 31.0
       },
       {
         "ticker": "KBE",
@@ -6803,7 +6803,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 49.0
+        "rs_composite": 31.0
       },
       {
         "ticker": "KRE",
@@ -6896,7 +6896,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 56.0
+        "rs_composite": 32.0
       },
       {
         "ticker": "KIE",
@@ -6982,7 +6982,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 17.0
+        "rs_composite": 32.0
       },
       {
         "ticker": "IPAY",
@@ -7073,7 +7073,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 17.0
+        "rs_composite": 32.0
       },
       {
         "ticker": "TAN",
@@ -7154,7 +7154,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 75.0
+        "rs_composite": 33.0
       },
       {
         "ticker": "XOP",
@@ -7244,7 +7244,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 81.0
+        "rs_composite": 33.0
       },
       {
         "ticker": "ICLN",
@@ -7314,7 +7314,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 83.0
+        "rs_composite": 33.0
       },
       {
         "ticker": "FCG",
@@ -7400,7 +7400,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 78.0
+        "rs_composite": 34.0
       },
       {
         "ticker": "XES",
@@ -7486,7 +7486,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 92.0
+        "rs_composite": 34.0
       },
       {
         "ticker": "OIH",
@@ -7572,7 +7572,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 90.0
+        "rs_composite": 34.0
       },
       {
         "ticker": "URA",
@@ -7663,7 +7663,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 79.0
+        "rs_composite": 35.0
       },
       {
         "ticker": "IYZ",
@@ -7749,7 +7749,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 81.0
+        "rs_composite": 35.0
       },
       {
         "ticker": "SOCL",
@@ -7840,7 +7840,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 9.0
+        "rs_composite": 35.0
       },
       {
         "ticker": "SCHH",
@@ -7910,7 +7910,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 64.0
+        "rs_composite": 36.0
       },
       {
         "ticker": "VNQ",
@@ -7980,7 +7980,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 57.0
+        "rs_composite": 36.0
       },
       {
         "ticker": "REZ",
@@ -8050,7 +8050,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 61.0
+        "rs_composite": 36.0
       },
       {
         "ticker": "UNG",
@@ -8145,7 +8145,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 2.0
+        "rs_composite": 37.0
       },
       {
         "ticker": "GLD",
@@ -8231,11 +8231,11 @@
         },
         "consolidation": null,
         "sector": "Commodities",
-        "em_pct": 1.56,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 47.0
+        "rs_composite": 2.0
       },
       {
         "ticker": "DBA",
@@ -8316,7 +8316,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 50.0
+        "rs_composite": 37.0
       },
       {
         "ticker": "SLV",
@@ -8407,11 +8407,11 @@
         },
         "consolidation": null,
         "sector": "Commodities",
-        "em_pct": 3.25,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 85.0
+        "rs_composite": 3.0
       },
       {
         "ticker": "USO",
@@ -8501,7 +8501,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 97.0
+        "rs_composite": 38.0
       },
       {
         "ticker": "DBC",
@@ -8587,7 +8587,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 86.0
+        "rs_composite": 38.0
       },
       {
         "ticker": "CPER",
@@ -8663,7 +8663,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 70.0
+        "rs_composite": 38.0
       },
       {
         "ticker": "SLX",
@@ -8733,7 +8733,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 88.0
+        "rs_composite": 39.0
       },
       {
         "ticker": "XME",
@@ -8819,7 +8819,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 82.0
+        "rs_composite": 39.0
       },
       {
         "ticker": "GDX",
@@ -8911,7 +8911,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 65.0
+        "rs_composite": 39.0
       },
       {
         "ticker": "SILJ",
@@ -8997,7 +8997,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 79.0
+        "rs_composite": 40.0
       },
       {
         "ticker": "LIT",
@@ -9067,7 +9067,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 93.0
+        "rs_composite": 40.0
       },
       {
         "ticker": "REMX",
@@ -9137,7 +9137,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 94.0
+        "rs_composite": 40.0
       },
       {
         "ticker": "UTES",
@@ -9218,7 +9218,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 48.0
+        "rs_composite": 41.0
       },
       {
         "ticker": "PBJ",
@@ -9304,7 +9304,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 48.0
+        "rs_composite": 41.0
       },
       {
         "ticker": "QQQE",
@@ -9374,7 +9374,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 67.0
+        "rs_composite": 41.0
       },
       {
         "ticker": "IBIT",
@@ -9466,7 +9466,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 36.0
+        "rs_composite": 42.0
       },
       {
         "ticker": "XLU",
@@ -9550,11 +9550,11 @@
         },
         "consolidation": null,
         "sector": "Broad Market",
-        "em_pct": 1.17,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 41.0
+        "rs_composite": 12.0
       },
       {
         "ticker": "MAGS",
@@ -9635,7 +9635,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 58.0
+        "rs_composite": 42.0
       },
       {
         "ticker": "SOXX",
@@ -9705,7 +9705,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 97.0
+        "rs_composite": 42.0
       },
       {
         "ticker": "DRAM",
@@ -9719,7 +9719,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 30.0
+        "rs_composite": 43.0
       },
       {
         "ticker": "IWM",
@@ -9789,11 +9789,11 @@
         },
         "consolidation": null,
         "sector": "Broad Market",
-        "em_pct": 1.32,
-        "em_days": 2,
-        "em_pct_0d": 0.82,
-        "em_days_0d": 1,
-        "rs_composite": 73.0
+        "em_pct": null,
+        "em_days": null,
+        "em_pct_0d": null,
+        "em_days_0d": null,
+        "rs_composite": 1.0
       },
       {
         "ticker": "FNGS",
@@ -9873,7 +9873,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 65.0
+        "rs_composite": 43.0
       }
     ],
     "Countries": [
@@ -9965,7 +9965,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 51.0
+        "rs_composite": 43.0
       },
       {
         "ticker": "ARGT",
@@ -10050,7 +10050,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 30.0
+        "rs_composite": 44.0
       },
       {
         "ticker": "EWA",
@@ -10130,7 +10130,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 61.0
+        "rs_composite": 44.0
       },
       {
         "ticker": "THD",
@@ -10215,7 +10215,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 75.0
+        "rs_composite": 44.0
       },
       {
         "ticker": "EIDO",
@@ -10300,7 +10300,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 6.0
+        "rs_composite": 45.0
       },
       {
         "ticker": "EWC",
@@ -10380,7 +10380,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 63.0
+        "rs_composite": 45.0
       },
       {
         "ticker": "GREK",
@@ -10470,7 +10470,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 54.0
+        "rs_composite": 45.0
       },
       {
         "ticker": "EWP",
@@ -10550,7 +10550,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 58.0
+        "rs_composite": 46.0
       },
       {
         "ticker": "EWG",
@@ -10630,7 +10630,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 47.0
+        "rs_composite": 46.0
       },
       {
         "ticker": "EWL",
@@ -10720,7 +10720,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 51.0
+        "rs_composite": 46.0
       },
       {
         "ticker": "EUFN",
@@ -10800,7 +10800,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 56.0
+        "rs_composite": 47.0
       },
       {
         "ticker": "EWY",
@@ -10871,7 +10871,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 98.0
+        "rs_composite": 47.0
       },
       {
         "ticker": "IEUR",
@@ -10951,7 +10951,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 54.0
+        "rs_composite": 47.0
       },
       {
         "ticker": "EFA",
@@ -11031,7 +11031,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 54.0
+        "rs_composite": 48.0
       },
       {
         "ticker": "ACWI",
@@ -11100,7 +11100,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 62.0
+        "rs_composite": 48.0
       },
       {
         "ticker": "IEV",
@@ -11182,7 +11182,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 53.0
+        "rs_composite": 48.0
       },
       {
         "ticker": "EWQ",
@@ -11267,7 +11267,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 45.0
+        "rs_composite": 49.0
       },
       {
         "ticker": "EWI",
@@ -11336,7 +11336,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 64.0
+        "rs_composite": 49.0
       },
       {
         "ticker": "EWJ",
@@ -11423,7 +11423,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 57.0
+        "rs_composite": 49.0
       },
       {
         "ticker": "EWW",
@@ -11505,7 +11505,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 65.0
+        "rs_composite": 50.0
       },
       {
         "ticker": "ECH",
@@ -11590,7 +11590,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 52.0
+        "rs_composite": 50.0
       },
       {
         "ticker": "EWD",
@@ -11751,7 +11751,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 63.0
+        "rs_composite": 51.0
       },
       {
         "ticker": "EWS",
@@ -11831,7 +11831,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 41.0
+        "rs_composite": 51.0
       },
       {
         "ticker": "KSA",
@@ -11916,7 +11916,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 15.0
+        "rs_composite": 51.0
       },
       {
         "ticker": "INDA",
@@ -12008,7 +12008,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 14.0
+        "rs_composite": 52.0
       },
       {
         "ticker": "EEM",
@@ -12081,7 +12081,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 82.0
+        "rs_composite": 52.0
       },
       {
         "ticker": "EWZ",
@@ -12158,7 +12158,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 74.0
+        "rs_composite": 52.0
       },
       {
         "ticker": "TUR",
@@ -12227,7 +12227,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 78.0
+        "rs_composite": 53.0
       },
       {
         "ticker": "EWH",
@@ -12365,7 +12365,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 94.0
+        "rs_composite": 53.0
       },
       {
         "ticker": "MCHI",
@@ -12455,7 +12455,7 @@
         "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 17.0
+        "rs_composite": 54.0
       }
     ],
     "The Mag 7": [
@@ -12522,11 +12522,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.53,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 55.0
+        "rs_composite": 54.0
       },
       {
         "ticker": "MSFT",
@@ -12612,11 +12612,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.87,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 12.0
+        "rs_composite": 54.0
       },
       {
         "ticker": "GOOGL",
@@ -12681,11 +12681,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.93,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 91.0
+        "rs_composite": 55.0
       },
       {
         "ticker": "AMZN",
@@ -12761,11 +12761,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.84,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 81.0
+        "rs_composite": 55.0
       },
       {
         "ticker": "META",
@@ -12851,11 +12851,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.96,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 16.0
+        "rs_composite": 55.0
       },
       {
         "ticker": "NVDA",
@@ -12931,11 +12931,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.6,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 71.0
+        "rs_composite": 56.0
       },
       {
         "ticker": "TSLA",
@@ -13021,11 +13021,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.8,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 20.0
+        "rs_composite": 56.0
       }
     ],
     "The Cloud 7": [
@@ -13113,11 +13113,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.87,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 12.0
+        "rs_composite": 54.0
       },
       {
         "ticker": "AMZN",
@@ -13193,11 +13193,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.84,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 81.0
+        "rs_composite": 55.0
       },
       {
         "ticker": "GOOGL",
@@ -13262,11 +13262,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.93,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 91.0
+        "rs_composite": 55.0
       },
       {
         "ticker": "ORCL",
@@ -13347,11 +13347,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.54,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 70.0
+        "rs_composite": 56.0
       },
       {
         "ticker": "IBM",
@@ -13432,11 +13432,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.52,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 2.0
+        "rs_composite": 57.0
       },
       {
         "ticker": "META",
@@ -13522,11 +13522,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.96,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 16.0
+        "rs_composite": 55.0
       },
       {
         "ticker": "NET",
@@ -13597,11 +13597,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 11.26,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 88.0
+        "rs_composite": 57.0
       }
     ],
     "The Software 7": [
@@ -13689,11 +13689,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.05,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 6.0
+        "rs_composite": 57.0
       },
       {
         "ticker": "PANW",
@@ -13779,11 +13779,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.83,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 32.0
+        "rs_composite": 58.0
       },
       {
         "ticker": "PLTR",
@@ -13864,11 +13864,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.34,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 4.0
+        "rs_composite": 58.0
       },
       {
         "ticker": "INTU",
@@ -13949,11 +13949,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.73,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 1.0
+        "rs_composite": 58.0
       },
       {
         "ticker": "CRM",
@@ -14039,11 +14039,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.56,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 4.0
+        "rs_composite": 59.0
       },
       {
         "ticker": "NOW",
@@ -14124,11 +14124,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.82,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 0.0
+        "rs_composite": 59.0
       },
       {
         "ticker": "WDAY",
@@ -14214,11 +14214,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.32,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 0.0
+        "rs_composite": 59.0
       }
     ],
     "The New Staples 7": [
@@ -14285,11 +14285,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.53,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 55.0
+        "rs_composite": 54.0
       },
       {
         "ticker": "AMZN",
@@ -14365,11 +14365,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.84,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 81.0
+        "rs_composite": 55.0
       },
       {
         "ticker": "META",
@@ -14455,11 +14455,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.96,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 16.0
+        "rs_composite": 55.0
       },
       {
         "ticker": "NFLX",
@@ -14540,11 +14540,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.07,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 11.0
+        "rs_composite": 60.0
       },
       {
         "ticker": "GOOGL",
@@ -14609,11 +14609,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.93,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 91.0
+        "rs_composite": 55.0
       },
       {
         "ticker": "SPOT",
@@ -14694,11 +14694,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.14,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 3.0
+        "rs_composite": 60.0
       },
       {
         "ticker": "UBER",
@@ -14779,11 +14779,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.01,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 20.0
+        "rs_composite": 60.0
       }
     ],
     "The Old Staples 7": [
@@ -14871,11 +14871,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.45,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 20.0
+        "rs_composite": 61.0
       },
       {
         "ticker": "KO",
@@ -14956,11 +14956,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.26,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 58.0
+        "rs_composite": 61.0
       },
       {
         "ticker": "PEP",
@@ -15041,11 +15041,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.8,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 36.0
+        "rs_composite": 61.0
       },
       {
         "ticker": "PM",
@@ -15131,11 +15131,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.11,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 49.0
+        "rs_composite": 62.0
       },
       {
         "ticker": "CL",
@@ -15221,11 +15221,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.73,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 45.0
+        "rs_composite": 62.0
       },
       {
         "ticker": "MDLZ",
@@ -15306,11 +15306,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.29,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 55.0
+        "rs_composite": 62.0
       },
       {
         "ticker": "WMT",
@@ -15391,11 +15391,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.6,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 69.0
+        "rs_composite": 63.0
       }
     ],
     "The Toll Road 7": [
@@ -15483,11 +15483,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.57,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 16.0
+        "rs_composite": 63.0
       },
       {
         "ticker": "MA",
@@ -15563,11 +15563,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.65,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 8.0
+        "rs_composite": 64.0
       },
       {
         "ticker": "PYPL",
@@ -15648,11 +15648,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.37,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 11.0
+        "rs_composite": 64.0
       },
       {
         "ticker": "CME",
@@ -15738,11 +15738,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.53,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 31.0
+        "rs_composite": 64.0
       },
       {
         "ticker": "ICE",
@@ -15823,11 +15823,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.86,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 14.0
+        "rs_composite": 65.0
       },
       {
         "ticker": "SPGI",
@@ -15913,11 +15913,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.66,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 8.0
+        "rs_composite": 65.0
       },
       {
         "ticker": "MSCI",
@@ -16003,11 +16003,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.23,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 39.0
+        "rs_composite": 65.0
       }
     ],
     "The Energy 7": [
@@ -16095,11 +16095,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.24,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 62.0
+        "rs_composite": 66.0
       },
       {
         "ticker": "CVX",
@@ -16185,11 +16185,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.05,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 51.0
+        "rs_composite": 66.0
       },
       {
         "ticker": "COP",
@@ -16270,11 +16270,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.4,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 75.0
+        "rs_composite": 66.0
       },
       {
         "ticker": "EOG",
@@ -16360,11 +16360,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.39,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 77.0
+        "rs_composite": 67.0
       },
       {
         "ticker": "FANG",
@@ -16445,11 +16445,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.69,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 84.0
+        "rs_composite": 67.0
       },
       {
         "ticker": "DVN",
@@ -16530,11 +16530,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.92,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 80.0
+        "rs_composite": 67.0
       },
       {
         "ticker": "SLB",
@@ -16605,11 +16605,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.66,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 88.0
+        "rs_composite": 68.0
       }
     ],
     "The Defense 7": [
@@ -16697,11 +16697,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.08,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 9.0
+        "rs_composite": 68.0
       },
       {
         "ticker": "RTX",
@@ -16782,11 +16782,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.2,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 10.0
+        "rs_composite": 68.0
       },
       {
         "ticker": "NOC",
@@ -16872,11 +16872,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.74,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 6.0
+        "rs_composite": 69.0
       },
       {
         "ticker": "GD",
@@ -16962,11 +16962,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.63,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 21.0
+        "rs_composite": 69.0
       },
       {
         "ticker": "BA",
@@ -17052,11 +17052,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.17,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 56.0
+        "rs_composite": 69.0
       },
       {
         "ticker": "LHX",
@@ -17137,11 +17137,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.3,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 10.0
+        "rs_composite": 70.0
       },
       {
         "ticker": "HII",
@@ -17222,11 +17222,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 5.68,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 5.0
+        "rs_composite": 70.0
       }
     ],
     "The Industrial 7": [
@@ -17293,11 +17293,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.51,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 94.0
+        "rs_composite": 70.0
       },
       {
         "ticker": "DE",
@@ -17383,11 +17383,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.1,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 69.0
+        "rs_composite": 71.0
       },
       {
         "ticker": "HON",
@@ -17473,11 +17473,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.81,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 31.0
+        "rs_composite": 71.0
       },
       {
         "ticker": "PH",
@@ -17563,11 +17563,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.16,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 42.0
+        "rs_composite": 71.0
       },
       {
         "ticker": "EMR",
@@ -17653,11 +17653,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.21,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 40.0
+        "rs_composite": 72.0
       },
       {
         "ticker": "GE",
@@ -17743,11 +17743,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.98,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 35.0
+        "rs_composite": 72.0
       },
       {
         "ticker": "TT",
@@ -17828,11 +17828,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.86,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 68.0
+        "rs_composite": 72.0
       }
     ],
     "The Semi 7": [
@@ -17910,11 +17910,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.6,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 71.0
+        "rs_composite": 56.0
       },
       {
         "ticker": "AVGO",
@@ -17990,11 +17990,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.08,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 90.0
+        "rs_composite": 73.0
       },
       {
         "ticker": "AMD",
@@ -18059,11 +18059,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.84,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 99.0
+        "rs_composite": 73.0
       },
       {
         "ticker": "QCOM",
@@ -18134,11 +18134,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.19,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 91.0
+        "rs_composite": 73.0
       },
       {
         "ticker": "INTC",
@@ -18203,11 +18203,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 6.24,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 100.0
+        "rs_composite": 74.0
       },
       {
         "ticker": "TXN",
@@ -18272,11 +18272,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.73,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 95.0
+        "rs_composite": 74.0
       },
       {
         "ticker": "MRVL",
@@ -18341,11 +18341,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.68,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 99.0
+        "rs_composite": 74.0
       }
     ],
     "The Fab 7": [
@@ -18412,11 +18412,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.41,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 90.0
+        "rs_composite": 75.0
       },
       {
         "ticker": "AMAT",
@@ -18481,11 +18481,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.63,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 96.0
+        "rs_composite": 75.0
       },
       {
         "ticker": "LRCX",
@@ -18550,11 +18550,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.37,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 96.0
+        "rs_composite": 75.0
       },
       {
         "ticker": "KLAC",
@@ -18625,11 +18625,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 6.75,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 93.0
+        "rs_composite": 76.0
       },
       {
         "ticker": "TSM",
@@ -18694,11 +18694,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.12,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 92.0
+        "rs_composite": 76.0
       },
       {
         "ticker": "MU",
@@ -18763,11 +18763,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 5.33,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 100.0
+        "rs_composite": 76.0
       },
       {
         "ticker": "TER",
@@ -18838,11 +18838,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.73,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 98.0
+        "rs_composite": 77.0
       }
     ],
     "The Buildout 7": [
@@ -18925,11 +18925,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.11,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 48.0
+        "rs_composite": 77.0
       },
       {
         "ticker": "VRT",
@@ -18994,11 +18994,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.24,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 99.0
+        "rs_composite": 77.0
       },
       {
         "ticker": "APH",
@@ -19084,11 +19084,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 6.03,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 46.0
+        "rs_composite": 78.0
       },
       {
         "ticker": "PWR",
@@ -19153,11 +19153,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 5.6,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 98.0
+        "rs_composite": 78.0
       },
       {
         "ticker": "EME",
@@ -19222,11 +19222,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.98,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 92.0
+        "rs_composite": 78.0
       },
       {
         "ticker": "GEV",
@@ -19297,11 +19297,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.37,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 97.0
+        "rs_composite": 79.0
       },
       {
         "ticker": "ETN",
@@ -19372,11 +19372,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.59,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 72.0
+        "rs_composite": 79.0
       }
     ],
     "The Housing 7": [
@@ -19464,11 +19464,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.35,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 34.0
+        "rs_composite": 79.0
       },
       {
         "ticker": "LEN",
@@ -19554,11 +19554,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.01,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 4.0
+        "rs_composite": 80.0
       },
       {
         "ticker": "VMC",
@@ -19644,11 +19644,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.75,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 30.0
+        "rs_composite": 80.0
       },
       {
         "ticker": "MLM",
@@ -19734,11 +19734,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.83,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 14.0
+        "rs_composite": 80.0
       },
       {
         "ticker": "SHW",
@@ -19824,11 +19824,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.66,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 11.0
+        "rs_composite": 81.0
       },
       {
         "ticker": "HD",
@@ -19914,11 +19914,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.0,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 7.0
+        "rs_composite": 81.0
       },
       {
         "ticker": "LOW",
@@ -20004,11 +20004,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.98,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 10.0
+        "rs_composite": 81.0
       }
     ],
     "The Old Metals 7": [
@@ -20096,11 +20096,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.08,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 80.0
+        "rs_composite": 82.0
       },
       {
         "ticker": "GOLD",
@@ -20186,11 +20186,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 13.81,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 86.0
+        "rs_composite": 82.0
       },
       {
         "ticker": "AEM",
@@ -20271,11 +20271,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.19,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 43.0
+        "rs_composite": 82.0
       },
       {
         "ticker": "WPM",
@@ -20356,11 +20356,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.4,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 73.0
+        "rs_composite": 83.0
       },
       {
         "ticker": "FNV",
@@ -20441,11 +20441,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 5.76,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 53.0
+        "rs_composite": 83.0
       },
       {
         "ticker": "RGLD",
@@ -20526,11 +20526,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 6.61,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 60.0
+        "rs_composite": 83.0
       },
       {
         "ticker": "AGI",
@@ -20611,11 +20611,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 6.79,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 73.0
+        "rs_composite": 84.0
       }
     ],
     "The New Metals 7": [
@@ -20698,11 +20698,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.37,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 83.0
+        "rs_composite": 84.0
       },
       {
         "ticker": "SCCO",
@@ -20783,11 +20783,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.75,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 77.0
+        "rs_composite": 84.0
       },
       {
         "ticker": "CCJ",
@@ -20873,11 +20873,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.91,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 79.0
+        "rs_composite": 85.0
       },
       {
         "ticker": "ALB",
@@ -20963,11 +20963,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 6.74,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 95.0
+        "rs_composite": 85.0
       },
       {
         "ticker": "SQM",
@@ -21038,11 +21038,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 7.49,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 96.0
+        "rs_composite": 85.0
       },
       {
         "ticker": "MP",
@@ -21123,11 +21123,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 7.23,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 91.0
+        "rs_composite": 86.0
       },
       {
         "ticker": "PAAS",
@@ -21213,11 +21213,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.02,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 89.0
+        "rs_composite": 86.0
       }
     ],
     "The Bank 7": [
@@ -21305,11 +21305,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.7,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 37.0
+        "rs_composite": 86.0
       },
       {
         "ticker": "GS",
@@ -21395,11 +21395,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.82,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 64.0
+        "rs_composite": 87.0
       },
       {
         "ticker": "MS",
@@ -21464,11 +21464,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.97,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 71.0
+        "rs_composite": 87.0
       },
       {
         "ticker": "BAC",
@@ -21554,11 +21554,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.87,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 32.0
+        "rs_composite": 88.0
       },
       {
         "ticker": "WFC",
@@ -21644,11 +21644,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.89,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 8.0
+        "rs_composite": 88.0
       },
       {
         "ticker": "BLK",
@@ -21734,11 +21734,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.87,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 41.0
+        "rs_composite": 88.0
       },
       {
         "ticker": "C",
@@ -21824,11 +21824,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.59,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 76.0
+        "rs_composite": 89.0
       }
     ],
     "The Health 7": [
@@ -21916,11 +21916,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.75,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 85.0
+        "rs_composite": 89.0
       },
       {
         "ticker": "LLY",
@@ -22001,11 +22001,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.24,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 33.0
+        "rs_composite": 89.0
       },
       {
         "ticker": "ABBV",
@@ -22086,11 +22086,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.87,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 12.0
+        "rs_composite": 90.0
       },
       {
         "ticker": "JNJ",
@@ -22171,11 +22171,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.46,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 44.0
+        "rs_composite": 90.0
       },
       {
         "ticker": "PFE",
@@ -22256,11 +22256,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.36,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 39.0
+        "rs_composite": 90.0
       },
       {
         "ticker": "MRK",
@@ -22341,11 +22341,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.84,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 66.0
+        "rs_composite": 91.0
       },
       {
         "ticker": "GILD",
@@ -22431,11 +22431,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.79,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 34.0
+        "rs_composite": 91.0
       }
     ],
     "The Medtech 7": [
@@ -22523,11 +22523,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.89,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 9.0
+        "rs_composite": 91.0
       },
       {
         "ticker": "TMO",
@@ -22613,11 +22613,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.09,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 5.0
+        "rs_composite": 92.0
       },
       {
         "ticker": "ABT",
@@ -22682,11 +22682,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.85,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 1.0
+        "rs_composite": 92.0
       },
       {
         "ticker": "MDT",
@@ -22751,11 +22751,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.32,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 3.0
+        "rs_composite": 92.0
       },
       {
         "ticker": "SYK",
@@ -22820,11 +22820,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.44,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 2.0
+        "rs_composite": 93.0
       },
       {
         "ticker": "BSX",
@@ -22889,11 +22889,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.41,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 1.0
+        "rs_composite": 93.0
       },
       {
         "ticker": "DHR",
@@ -22969,11 +22969,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.04,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 3.0
+        "rs_composite": 93.0
       }
     ],
     "The Freight 7": [
@@ -23046,11 +23046,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.62,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 71.0
+        "rs_composite": 94.0
       },
       {
         "ticker": "CSX",
@@ -23121,11 +23121,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.81,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 82.0
+        "rs_composite": 94.0
       },
       {
         "ticker": "FDX",
@@ -23211,11 +23211,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.44,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 86.0
+        "rs_composite": 94.0
       },
       {
         "ticker": "UPS",
@@ -23301,11 +23301,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.07,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 16.0
+        "rs_composite": 95.0
       },
       {
         "ticker": "ODFL",
@@ -23391,11 +23391,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 5.46,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 74.0
+        "rs_composite": 95.0
       },
       {
         "ticker": "JBHT",
@@ -23466,11 +23466,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.76,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 87.0
+        "rs_composite": 95.0
       },
       {
         "ticker": "NSC",
@@ -23546,11 +23546,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.88,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 59.0
+        "rs_composite": 96.0
       }
     ],
     "The Insurance 7": [
@@ -23623,11 +23623,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.59,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 13.0
+        "rs_composite": 96.0
       },
       {
         "ticker": "CB",
@@ -23703,11 +23703,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.89,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 42.0
+        "rs_composite": 96.0
       },
       {
         "ticker": "AON",
@@ -23783,11 +23783,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.78,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 7.0
+        "rs_composite": 97.0
       },
       {
         "ticker": "AIG",
@@ -23868,11 +23868,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.61,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 22.0
+        "rs_composite": 97.0
       },
       {
         "ticker": "MET",
@@ -23958,11 +23958,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 4.74,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 44.0
+        "rs_composite": 97.0
       },
       {
         "ticker": "AFL",
@@ -24043,11 +24043,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.48,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 38.0
+        "rs_composite": 98.0
       }
     ],
     "The Power 7": [
@@ -24130,11 +24130,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.97,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 61.0
+        "rs_composite": 98.0
       },
       {
         "ticker": "SO",
@@ -24220,11 +24220,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 1.44,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 33.0
+        "rs_composite": 98.0
       },
       {
         "ticker": "DUK",
@@ -24300,11 +24300,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.75,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 31.0
+        "rs_composite": 99.0
       },
       {
         "ticker": "CEG",
@@ -24385,11 +24385,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.89,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 68.0
+        "rs_composite": 99.0
       },
       {
         "ticker": "VST",
@@ -24475,11 +24475,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 6.35,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 21.0
+        "rs_composite": 99.0
       },
       {
         "ticker": "AEP",
@@ -24560,11 +24560,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.24,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 57.0
+        "rs_composite": 100.0
       },
       {
         "ticker": "SRE",
@@ -24645,11 +24645,11 @@
           }
         },
         "consolidation": null,
-        "em_pct": 5.02,
-        "em_days": 9,
+        "em_pct": null,
+        "em_days": null,
         "em_pct_0d": null,
         "em_days_0d": null,
-        "rs_composite": 38.0
+        "rs_composite": 100.0
       }
     ]
   },
@@ -25182,7 +25182,7 @@
       "atr_pct": 2.9,
       "dist_sma50_atr": 3.85,
       "rs": null,
-      "vol_chart": "data/charts/vol_Theme_Mag_7.png",
+      "vol_chart": null,
       "constituent_daily": {
         "AAPL": 1.17,
         "MSFT": 0.63,
@@ -25205,23 +25205,18 @@
       ],
       "etf": "DRAM",
       "daily": 1.57,
-      "intra": 1.54,
-      "wtd": 19.01,
+      "intra": 0.93,
+      "wtd": 22.94,
       "5d": 9.74,
-      "20d": 60.66,
+      "20d": 63.89,
       "ytd": 28.21,
-      "vol_ratio": 1.46,
-      "atr_pct": 4.9,
-      "dist_sma50_atr": 10.87,
+      "vol_ratio": 1.29,
+      "atr_pct": 5.0,
+      "dist_sma50_atr": 10.39,
       "rs": null,
-      "vol_chart": "data/charts/vol_Theme_Memory.png",
+      "vol_chart": null,
       "constituent_daily": {
-        "MU": 4.12,
-        "WDC": 3.85,
-        "SNDK": 0.26,
-        "STX": 2.0,
-        "000660.KS": 10.64,
-        "005930.KS": 14.41
+        "MU": 4.12
       }
     },
     {
@@ -25236,36 +25231,28 @@
         "GLW"
       ],
       "etf": null,
-      "daily": 0.05,
-      "intra": -4.11,
-      "wtd": 2.93,
-      "5d": 18.88,
-      "20d": 29.12,
-      "ytd": 209.81,
-      "vol_ratio": 1.47,
-      "atr_pct": 7.8,
-      "dist_sma50_atr": 4.31,
+      "daily": null,
+      "intra": null,
+      "wtd": null,
+      "5d": null,
+      "20d": null,
+      "ytd": null,
+      "vol_ratio": null,
+      "atr_pct": null,
+      "dist_sma50_atr": null,
       "rs": null,
-      "vol_chart": "data/charts/vol_Theme_Optical_Comms.png",
-      "constituent_daily": {
-        "COHR": 2.66,
-        "LITE": -5.06,
-        "AAOI": -1.12,
-        "VIAV": -1.8,
-        "TSEM": -3.84,
-        "AXTI": -2.53,
-        "GLW": 12.01
-      }
+      "vol_chart": null,
+      "constituent_daily": {}
     }
   ],
   "fear_greed": {
-    "score": 59.7,
+    "score": 54.1,
     "sentiment": "Neutral",
     "components": {
       "volatility": {
-        "score": 77.7,
+        "score": 50.0,
         "label": "VIX Volatility",
-        "detail": "VIX 17.4 (52wk: 13.5–31.0)"
+        "detail": "N/A"
       },
       "trend": {
         "score": 89.2,
@@ -25278,9 +25265,9 @@
         "detail": "8/11 sectors positive 20d"
       },
       "credit": {
-        "score": 54.6,
+        "score": 50.0,
         "label": "HYG/TLT Credit",
-        "detail": "HYG -0.0%, TLT -1.0%"
+        "detail": "HYG +0.0%, TLT +0.0%"
       },
       "breadth": {
         "score": 0.0,
@@ -25288,9 +25275,9 @@
         "detail": "RSP +3.5%, SPY +8.6%"
       },
       "cross_asset": {
-        "score": 56.0,
+        "score": 52.7,
         "label": "GLD/TLT Cross-Asset",
-        "detail": "GLD -0.8%, TLT -1.0%"
+        "detail": "GLD -0.8%, TLT +0.0%"
       }
     },
     "weights": {
@@ -25304,20 +25291,20 @@
   },
   "macro": {
     "usd_liquidity": {
-      "score": 38,
+      "score": 35,
       "score_label": "Normal",
       "components": [
         {
           "id": "sofr_dispersion",
           "label": "SOFR Dispersion",
           "formula": "SOFR99 − SOFR1",
-          "value": 0.13,
+          "value": 0.14,
           "unit": "%",
-          "percentile": 24,
+          "percentile": 44,
           "weight": 0.25,
-          "contribution": 6.0,
+          "contribution": 11.0,
           "direction": "up",
-          "prev_value": 0.12,
+          "prev_value": 0.13,
           "min_1y": 0.09,
           "max_1y": 0.32,
           "fred_ids": [
@@ -25325,10 +25312,6 @@
             "SOFR1"
           ],
           "history": [
-            {
-              "t": "2025-12-24",
-              "v": 0.13
-            },
             {
               "t": "2025-12-26",
               "v": 0.21
@@ -25684,6 +25667,10 @@
             {
               "t": "2026-05-05",
               "v": 0.13
+            },
+            {
+              "t": "2026-05-06",
+              "v": 0.14
             }
           ]
         },
@@ -25691,13 +25678,13 @@
           "id": "sofr_tbill",
           "label": "SOFR vs T-Bill",
           "formula": "SOFR − DTB3",
-          "value": 0.01,
+          "value": 0.0,
           "unit": "%",
-          "percentile": 7,
+          "percentile": 3,
           "weight": 0.2,
-          "contribution": 1.4,
+          "contribution": 0.6,
           "direction": "down",
-          "prev_value": 0.02,
+          "prev_value": 0.01,
           "min_1y": -0.03,
           "max_1y": 0.6,
           "fred_ids": [
@@ -25705,10 +25692,6 @@
             "DTB3"
           ],
           "history": [
-            {
-              "t": "2025-12-24",
-              "v": 0.06
-            },
             {
               "t": "2025-12-26",
               "v": 0.2
@@ -26064,6 +26047,10 @@
             {
               "t": "2026-05-05",
               "v": 0.01
+            },
+            {
+              "t": "2026-05-06",
+              "v": 0.0
             }
           ]
         },
@@ -26071,13 +26058,13 @@
           "id": "cp_tbill",
           "label": "CP−Tbill Spread",
           "formula": "DCPF3M − DTB3",
-          "value": 0.12,
+          "value": 0.08,
           "unit": "%",
-          "percentile": 71,
+          "percentile": 44,
           "weight": 0.2,
-          "contribution": 14.2,
+          "contribution": 8.8,
           "direction": "down",
-          "prev_value": 0.16,
+          "prev_value": 0.12,
           "min_1y": -0.07,
           "max_1y": 0.29,
           "fred_ids": [
@@ -26085,10 +26072,6 @@
             "DTB3"
           ],
           "history": [
-            {
-              "t": "2025-08-13",
-              "v": 0.07
-            },
             {
               "t": "2025-08-14",
               "v": 0.1
@@ -26444,6 +26427,10 @@
             {
               "t": "2026-05-04",
               "v": 0.12
+            },
+            {
+              "t": "2026-05-06",
+              "v": 0.08
             }
           ]
         },
@@ -26451,23 +26438,19 @@
           "id": "hy_oas",
           "label": "HY Credit OAS",
           "formula": "BAMLH0A0HYM2",
-          "value": 2.77,
+          "value": 2.75,
           "unit": "%",
-          "percentile": 11,
+          "percentile": 8,
           "weight": 0.2,
-          "contribution": 2.2,
+          "contribution": 1.6,
           "direction": "down",
-          "prev_value": 2.78,
+          "prev_value": 2.77,
           "min_1y": 2.64,
           "max_1y": 3.46,
           "fred_ids": [
             "BAMLH0A0HYM2"
           ],
           "history": [
-            {
-              "t": "2026-01-02",
-              "v": 2.83
-            },
             {
               "t": "2026-01-05",
               "v": 2.81
@@ -26823,6 +26806,10 @@
             {
               "t": "2026-05-05",
               "v": 2.77
+            },
+            {
+              "t": "2026-05-06",
+              "v": 2.75
             }
           ]
         },
@@ -26830,23 +26817,19 @@
           "id": "reserve_scarcity",
           "label": "Reserve Scarcity",
           "formula": "−WRESBAL (inverted)",
-          "value": 2918599.0,
+          "value": 3032588.0,
           "unit": "B",
-          "percentile": 96,
+          "percentile": 85,
           "weight": 0.15,
-          "contribution": 14.4,
+          "contribution": 12.8,
           "direction": "up",
-          "prev_value": 2901825.0,
+          "prev_value": 2918599.0,
           "min_1y": 2830144.0,
           "max_1y": 4275806.0,
           "fred_ids": [
             "WRESBAL"
           ],
           "history": [
-            {
-              "t": "2024-08-14",
-              "v": 3346138.0
-            },
             {
               "t": "2024-08-21",
               "v": 3355586.0
@@ -27202,25 +27185,29 @@
             {
               "t": "2026-04-29",
               "v": 2918599.0
+            },
+            {
+              "t": "2026-05-06",
+              "v": 3032588.0
             }
           ]
         }
       ],
       "raw": {
-        "sofr": 3.62,
-        "sofr1": 3.58,
+        "sofr": 3.61,
+        "sofr1": 3.57,
         "sofr99": 3.71,
         "dtb3": 3.61,
         "effr": 3.64,
-        "dcpf3m": 3.73,
-        "rrp": 1.633,
-        "rrp_chg": 0.5,
-        "tga": 981929.0,
-        "tga_chg": -24039.0,
-        "wresbal": 2918599.0,
+        "dcpf3m": 3.69,
+        "rrp": 0.773,
+        "rrp_chg": -0.9,
+        "tga": 877761.0,
+        "tga_chg": -104168.0,
+        "wresbal": 3032588.0,
         "tedrate": 0.09,
-        "hy_oas": 2.77,
-        "ig_oas": 0.79
+        "hy_oas": 2.75,
+        "ig_oas": 0.78
       },
       "fred_links": {
         "SOFR": "https://fred.stlouisfed.org/series/SOFR",
@@ -27241,44 +27228,52 @@
       "ffr": 3.64,
       "target_lower": 3.5,
       "target_upper": 3.75,
-      "next_fomc_date": "2026-05-06",
-      "next_fomc_days": 0,
+      "next_fomc_date": "2026-06-17",
+      "next_fomc_days": 41,
       "speeches": [
         {
-          "name": "Jerome Powell",
-          "role": "Federal Reserve Chair",
+          "name": "Jeff Schmid",
+          "role": "President, Federal Reserve Bank of Kansas City",
           "voter": true,
-          "date": "2026-04-29",
-          "summary": "Powell maintained the federal funds rate at 3.5-3.75% and signaled policy flexibility, stating the Fed is 'well positioned' to adjust rates based on incoming data with no preset course.",
+          "date": "2026-05-05",
+          "summary": "Jeff Schmid delivered remarks on the economic outlook and monetary policy to the Rotary Club of Oklahoma City.",
           "score": 0
         },
         {
-          "name": "Lorie Logan",
-          "role": "Dallas Federal Reserve President",
-          "voter": true,
+          "name": "Unknown",
+          "role": "Federal Reserve Official",
+          "voter": false,
           "date": "2026-05-01",
-          "summary": "Logan issued a statement on FOMC dissent following the April 28-29 meeting, indicating disagreement with the committee's decision.",
+          "summary": "Testimony provided on Artificial Intelligence in the Financial System.",
+          "score": 0
+        },
+        {
+          "name": "Jerome Powell",
+          "role": "Chair, Federal Reserve Board",
+          "voter": true,
+          "date": "2026-04-29",
+          "summary": "Jerome Powell held an FOMC press conference following the Federal Open Market Committee meeting.",
           "score": -1
         },
         {
-          "name": "Federal Reserve Official",
-          "role": "Unspecified",
-          "voter": null,
-          "date": "2026-05-01",
-          "summary": "Testimony on artificial intelligence in the financial system was delivered before Congress.",
+          "name": "Unknown",
+          "role": "Federal Reserve Official",
+          "voter": false,
+          "date": "2026-04-21",
+          "summary": "Remarks given on Modernizing Federal Reserve Operations in the 21st Century.",
           "score": 0
         },
         {
-          "name": "Federal Reserve Official",
-          "role": "Unspecified",
-          "voter": null,
-          "date": "2026-04-21",
-          "summary": "Speech on modernizing Federal Reserve operations in the 21st century was delivered.",
+          "name": "Nate Kauffman",
+          "role": "President, Federal Reserve Bank of Kansas City",
+          "voter": true,
+          "date": "2026-04-15",
+          "summary": "Nate Kauffman updated on the U.S. farm economy at Bloomberg's Farm, Food & Fuel Summit.",
           "score": 0
         }
       ],
-      "hawk_dove_score": 5,
-      "market_implied_cuts": 2
+      "hawk_dove_score": -15,
+      "market_implied_cuts": 75
     }
   },
   "vol_signals": {
@@ -31864,24 +31859,24 @@
         "signal": "neutral",
         "chart": "data/charts/fred_DFF.png",
         "category": "Interest Rates",
-        "last_date": "2026-05-05",
-        "release_date": "2026-05-06",
-        "next_release": "2026-05-06",
+        "last_date": "2026-05-06",
+        "release_date": "2026-05-07",
+        "next_release": "2026-05-07",
         "forecast": null,
         "next_forecast": null
       },
       "T10Y2Y": {
         "label": "Yield Curve",
         "value": 0.49,
-        "prev": 0.5,
-        "change": -0.01,
+        "prev": 0.49,
+        "change": 0.0,
         "unit": "%",
         "signal": "neutral",
         "chart": "data/charts/fred_T10Y2Y.png",
         "category": "Interest Rates",
-        "last_date": "2026-05-06",
-        "release_date": "2026-05-06",
-        "next_release": "2026-05-06",
+        "last_date": "2026-05-07",
+        "release_date": "2026-05-07",
+        "next_release": "2026-05-07",
         "forecast": null,
         "next_forecast": null
       }
@@ -31924,42 +31919,6 @@
     }
   },
   "cross_asset": {
-    "TLT": {
-      "daily": 0.76,
-      "5d": 0.44,
-      "20d": -0.97,
-      "vol_ratio": 1.11
-    },
-    "HYG": {
-      "daily": 0.3,
-      "5d": 0.04,
-      "20d": -0.04,
-      "vol_ratio": 0.87
-    },
-    "LQD": {
-      "daily": 0.5,
-      "5d": 0.42,
-      "20d": -0.27,
-      "vol_ratio": 0.94
-    },
-    "IEF": {
-      "daily": 0.5,
-      "5d": 0.21,
-      "20d": -0.48,
-      "vol_ratio": 1.38
-    },
-    "SHY": {
-      "daily": 0.13,
-      "5d": -0.11,
-      "20d": -0.15,
-      "vol_ratio": 0.61
-    },
-    "UUP": {
-      "daily": -0.55,
-      "5d": -0.94,
-      "20d": -0.65,
-      "vol_ratio": 0.74
-    },
     "GLD": {
       "daily": 3.03,
       "5d": 3.25,
@@ -31983,12 +31942,6 @@
       "5d": 2.96,
       "20d": -5.69,
       "vol_ratio": 1.2
-    },
-    "VIXY": {
-      "daily": -2.2,
-      "5d": -3.28,
-      "20d": -11.21,
-      "vol_ratio": 0.98
     }
   },
   "correlation": {
@@ -32410,21 +32363,6 @@
       }
     }
   },
-  "industries_sector_charts": {
-    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
-    "Industrials": "data/charts/vol_IndSec_Industrials.png",
-    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
-    "Materials": "data/charts/vol_IndSec_Materials.png",
-    "Commodities": "data/charts/vol_IndSec_Commodities.png",
-    "Consumer Staples": "data/charts/vol_IndSec_Consumer_Staples.png",
-    "Communication Services": "data/charts/vol_IndSec_Communication_Services.png",
-    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
-    "Energy": "data/charts/vol_IndSec_Energy.png",
-    "Utilities": "data/charts/vol_IndSec_Utilities.png",
-    "Financials": "data/charts/vol_IndSec_Financials.png",
-    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
-    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
-    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png"
-  },
+  "industries_sector_charts": {},
   "industries_sector_rs_charts": {}
 }
