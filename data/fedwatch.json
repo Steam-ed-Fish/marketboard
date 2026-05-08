@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-08",
+  "last_updated": "2026-05-09",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
     "bls_cpi_updated": "2026-04-23",
-    "cme_updated": "2026-05-07",
+    "cme_updated": "2026-05-09",
     "bls_unemp_updated": "2026-04-23"
   },
   "members": [
@@ -181,6 +181,13 @@
       "photo_url": "data/fedwatch_photos/cook.jpg",
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/cook.htm",
       "speeches": [
+        {
+          "date": "2026-05-08",
+          "event": "Cook, Perspectives on Tokenization and Implications for the Financial System",
+          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260508a.htm",
+          "brief_summary": "Speech At the Central Bank of West African States (BCEAO) Conference on Digital Assets, Dakar, Senegal",
+          "detailed_summary": ""
+        },
         {
           "date": "2026-03-26",
           "event": "Yale Program on Financial Stability, School of Management, Yale University, New Haven, CT — 'Reflections on Financial Stability'",
