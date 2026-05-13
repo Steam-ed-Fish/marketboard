@@ -1,40 +1,40 @@
 {
   "market": [
     {
-      "title": "NYSE: The New York Stock Exchange",
-      "url": "https://www.nyse.com/index",
-      "snippet": "Today's Stock Market ... US equities ended yesterday modestly higher but off their best levels, with the Russell 2000 outperforming the S&P 500. Semis, memory,",
-      "source": "nyse.com"
+      "title": "U.S. Stock Market Headlines | Breaking Stock Market News - Reuters",
+      "url": "https://www.reuters.com/markets/us/",
+      "snippet": "Top U.S. Markets ; 49,621.14, -139.42, -0.28%Negative ; 26,415.53, +327.33, +1.25%Positive.",
+      "source": "reuters.com"
     },
     {
-      "title": "Yahoo Finance - Stock Market Live, Quotes, Business & Finance News",
-      "url": "https://finance.yahoo.com/",
-      "snippet": "Stock market today: Dow rises, S&P 500 and Nasdaq retreat on hot inflation",
-      "source": "finance.yahoo.com"
+      "title": "United States Stock Market Index - Quote - Chart - Trading Economics",
+      "url": "https://tradingeconomics.com/united-states/stock-market",
+      "snippet": "The main stock market index of United States, the US500, rose to 7455 points on May 13, 2026, gaining 0.73% from the previous session. Over the past month,",
+      "source": "tradingeconomics.com"
     },
     {
-      "title": "U.S Financial Markets - Investing.com",
+      "title": "U.S Stock Market | U.S Financial Markets - Investing.com",
       "url": "https://www.investing.com/markets/united-states",
-      "snippet": "United States Stocks ; Intel. 120.00. 15:47:32 | NASDAQ ; NVIDIA. 220.79. 15:47:24 | NASDAQ ; Micron. 760.45. 15:47:29 | NASDAQ ; Tesla. 434.31. 15:47:28 | NASDAQ.",
+      "snippet": "Current data on the financial markets for United States, including major and sector indices and their components, leading stocks, gainers and losers.",
       "source": "investing.com"
-    },
-    {
-      "title": "S&P 500 News | Latest News - NewsNow",
-      "url": "https://www.newsnow.com/us/Business/Stock+Markets/S&P+500",
-      "snippet": "Stock Market Today: S&P 500, Dow futures advance as Trump pauses 'Project Freedom'—Super Micro Computer, AMD, Intel in focus Benzinga 5d. Benzinga 5d. Article",
-      "source": "newsnow.com"
-    },
-    {
-      "title": "S&P 500 (INX) Stock, Price, News, Quotes, Forecast and Insights",
-      "url": "https://www.msn.com/en-us/money/markets",
-      "snippet": "Energy leads S&P 500 to another new high: Stock market today · INX -0.15%. Energy leads S&P 500 to another new high: Stock market today - Kiplinger.",
-      "source": "msn.com"
     },
     {
       "title": "S&P 500 (^GSPC) Latest Stock News & Headlines - Yahoo Finance",
       "url": "https://finance.yahoo.com/quote/%5EGSPC/news/",
-      "snippet": "Stock market today: Nasdaq, S&P 500 fall as CPI inflation rises, chip stocks drop. Yahoo Finance • 40m ago. ^IXIC ; What makes today's market 'completely",
+      "snippet": "Stock market today: Dow slides, S&P 500 and Nasdaq rise as PPI inflation data comes in hot. Yahoo Finance • 14m ago. ^IXIC ; Micron stock in focus as Wall Street",
       "source": "finance.yahoo.com"
+    },
+    {
+      "title": "S&P 500 (INX) Stock, Price, News, Quotes, Forecast and Insights",
+      "url": "https://www.msn.com/en-us/money/markets",
+      "snippet": "Energy leads S&P 500 to another new high: Stock market today · INX +0.73%. Energy leads S&P 500 to another new high: Stock market today - Kiplinger.",
+      "source": "msn.com"
+    },
+    {
+      "title": "S&P 500 News (SPX) - Investing.com",
+      "url": "https://www.investing.com/indices/us-spx-500-news",
+      "snippet": "Analysis-Sizzling semiconductor trade at risk of cooling - and stalling US stocks rally. By Lewis Krauskopf NEW YORK, May 13 (Reuters) - A stunning run-up",
+      "source": "investing.com"
     },
     {
       "title": "News & Events - Federal Reserve Board",
@@ -49,17 +49,10 @@
       "source": "reuters.com"
     },
     {
-      "title": "Federal Reserve Monetary Policy | U.S. Bank",
-      "url": "https://www.usbank.com/investing/financial-perspectives/market-news/federal-reserve-tapering-asset-purchases.html",
-      "snippet": "The Federal Reserve (Fed) influences borrowing costs, savings returns, and overall financial conditions across the [economy](https://www.usbank.com/investing/financial-perspectives/market-news/economic-recovery-status.html). At its [April 29 meeting](https://www.usbank.com/investing/financial-perspe",
-      "source": "usbank.com"
-    },
-    {
-      "title": "What is the geopolitical risk and how it impacts markets | StoneX EN",
-      "url": "https://www.stonex.com/en/business/financial-glossary/geopolitical-risk/",
-      "snippet": "# Geopolitical risk. Geopolitical risk refers to the potential impact of political events, instability, or conflicts on financial markets, institutions and the global economy. Geopolitical risk refers to the potential for political events, conflicts, or policy changes to disrupt markets, economies, ",
-      "source": "stonex.com",
-      "category": "geopolitical"
+      "title": "Federal Reserve Board - Home",
+      "url": "https://www.federalreserve.gov/",
+      "snippet": "*   [Structure of the Federal Reserve System](https://www.federalreserve.gov/aboutthefed/fedexplained/who-we-are.htm). *   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Federal Reserve Act](https://www.federalreserve.gov/aboutthefed/fract.htm). ",
+      "source": "federalreserve.gov"
     },
     {
       "title": "Geopolitical risk and stock market development - ScienceDirect",
@@ -69,116 +62,123 @@
       "category": "geopolitical"
     },
     {
-      "title": "SUERF - The European Money and Finance Forum",
-      "url": "https://www.suerf.org/publications/suerf-policy-notes-and-briefs/geopolitical-risks-and-their-impact-on-global-macro-financial-stability-literature-and-measurements/",
-      "snippet": "# Geopolitical Risks and Their Impact on Global Macro-Financial Stability: Literature and Measurements. A. Ngo (2024): Geopolitical Risks and Their Impact on Global Macro-Financial Stability: Literature and Measurements. (2024), where we review the literature on how geopolitical risks (GPR) affect m",
-      "source": "suerf.org",
+      "title": "Geopolitical Risks and Global Stock Market Dynamics: A Quantile-Based Approach",
+      "url": "https://www.mdpi.com/2227-7072/14/4/85",
+      "snippet": "The Integration-Contagion Paradox: Global Linkages and Crisis Transmission in South Asian Stock Markets. The aim is to provide a snapshot of some of the most exciting work published in the various research areas of the journal. This study investigates the impact of geopolitical risk measures (aggreg",
+      "source": "mdpi.com",
+      "category": "geopolitical"
+    },
+    {
+      "title": "How Rising Geopolitical Risks Weigh on Asset Prices",
+      "url": "https://www.imf.org/en/blogs/articles/2025/04/14/how-rising-geopolitical-risks-weigh-on-asset-prices",
+      "snippet": "This can hurt asset prices, affect financial institutions, and curtail lending to the private sector, weighing on economic activity and posing a threat to financial stability. As we show in a chapter of the latest Global Financial Stability Report, stock prices tend to decline significantly during m",
+      "source": "imf.org",
       "category": "geopolitical"
     }
   ],
   "movers": {
     "QCOM": [
       {
-        "title": "QCOM News Today | Why did Qualcomm stock drop today?",
-        "url": "https://www.marketbeat.com/stocks/NASDAQ/QCOM/news/",
-        "snippet": "In short, QCOM is down today because the semiconductor trade is cooling after a huge AI-fueled run, even though analysts still point to strong long-term",
-        "source": "marketbeat.com"
-      },
-      {
         "title": "Qualcomm: QCOM Stock Price Quote & News - Robinhood",
         "url": "https://robinhood.com/us/en/stocks/QCOM/",
-        "snippet": "The current price stands at $207.97, placing the stock +3.0% above today's low and -10.7% off the high. Qualcomm(QCOM) shares are trading with a volume of 30.6M",
+        "snippet": "As of 2026-05-12, Qualcomm(QCOM) stock has fluctuated between $207.15 and $221.39. The current price stands at $217.18, placing the stock +4.8% above today's",
         "source": "robinhood.com"
       },
       {
         "title": "QUALCOMM Incorporated (QCOM) Latest Stock News & Headlines",
         "url": "https://finance.yahoo.com/quote/QCOM/news/",
-        "snippet": "Qualcomm continues to gain attention amid a significant AI rally, with analysts noting a 70% increase in stock value over the past month.",
+        "snippet": "QCOM announced a cash dividend of $0.92 with an ex-date of Jun. 4, 2026. All News Earnings Calls Press Releases SEC Filings",
         "source": "finance.yahoo.com"
+      },
+      {
+        "title": "Qualcomm Inc (QCOM) Stock Price & News - Google Finance",
+        "url": "https://www.google.com/finance/beta/quote/QCOM:NASDAQ",
+        "snippet": "Open. $216.62. High. $219.49. Low. $207.15 ; Dividend. 1.72%. Quarterly dividend. $0.92. Ex dividend date. Jun 4, 2026 ; EPS. $9.19.",
+        "source": "google.com"
       }
     ],
     "INTC": [
       {
-        "title": "Intel Corporation (INTC) Latest Stock News & Headlines",
-        "url": "https://finance.yahoo.com/quote/INTC/news/",
-        "snippet": "News headlines Intel has faced a significant 10% decline amid a broader tech sell-off, despite a year-to-date surge of 218%.",
-        "source": "finance.yahoo.com"
-      },
-      {
-        "title": "Intel: INTC Stock Price Quote & News - Robinhood",
+        "title": "Intel: INTC Stock Price Quote & News",
         "url": "https://robinhood.com/stocks/INTC",
-        "snippet": "Intel(INTC) stock is priced at $126.00, giving the company a market capitalization of 606.11B. It carries a P/E multiple of -206.67. On 2026-05-11, Intel",
+        "snippet": "On 2026-05-12, Intel(INTC) stock moved within a range of $116.41 to $125.75. With shares now at $126.00, the stock is trading +8.2% above its intraday low and +",
         "source": "robinhood.com"
       },
       {
         "title": "Intel Corporation (INTC) Stock Price, News, Quote & History",
         "url": "https://finance.yahoo.com/quote/INTC/",
-        "snippet": "Why is INTC moving today? Intel (INTC) fell 8.05% as investors reacted to a tech sell-off and profit-taking after a massive rally, underperforming the sector's",
+        "snippet": "News headlines Intel's stock has surged 442% in the past year, trading near $122, but concerns arise due to high valuations and ongoing losses. Analysts suggest",
         "source": "finance.yahoo.com"
+      },
+      {
+        "title": "INTC: Intel Corp - Stock Price, Quote and News",
+        "url": "https://www.cnbc.com/quotes/INTC",
+        "snippet": "Intel Corp INTC:NASDAQ · Open124.10 · Day High125.00 · Day Low116.41 · Prev Close120.61 · 52 Week High132.75 · 52 Week High Date05/11/26 · 52 Week Low18.97 · 52",
+        "source": "cnbc.com"
       }
     ],
     "HII": [
       {
         "title": "HII Stock Price Quote & News - Huntington Ingalls - Robinhood",
         "url": "https://robinhood.com/us/en/stocks/HII/",
-        "snippet": "At a current price of $323.66, the stock is +2.7% higher than the low and still -1.4% under the high. Trading volume for Huntington Ingalls(HII) stock has",
+        "snippet": "During the trading session on 2026-05-12, Huntington Ingalls(HII) shares reached a daily high of $333.98 and a low of $324.33. At a current price of $331.59,",
         "source": "robinhood.com"
       },
       {
         "title": "Huntington Ingalls Industries, Inc. (HII) Stock Price, News, Quote ...",
         "url": "https://finance.yahoo.com/quote/HII/",
-        "snippet": "Huntington Ingalls Industries (HII) reported strong Q1 earnings with $3.1 billion in revenue and $3.79 EPS, while launching new initiatives to expand",
+        "snippet": "News headlines Huntington Ingalls Industries (HII) reported strong Q1 earnings with $3.1 billion in revenue and $3.79 EPS, exceeding estimates. The company",
         "source": "finance.yahoo.com"
       },
       {
-        "title": "Huntington Ingalls Industries Inc. Stock Quote (U.S. - HII - MarketWatch",
-        "url": "https://www.marketwatch.com/investing/stock/hii",
-        "snippet": "News From Dow Jones. Read full story · Huntington Ingalls Industries Inc. stock underperforms Thursday when compared to competitors. May. 7, 2026 at 5:14 p.m.",
-        "source": "marketwatch.com"
+        "title": "HII Stock Quote Price and Forecast | CNN",
+        "url": "https://www.cnn.com/markets/stocks/HII",
+        "snippet": "The price of HII shares has increased $15.81 since the market last closed. This is a 4.98% rise. Closed at $333.56. The stock has since risen $0.04 in after",
+        "source": "cnn.com"
       }
     ]
   },
   "sectors": {
     "XLV": [
       {
-        "title": "State Street Health Care Select Sector SPDR ETF - XLV - MarketWatch",
-        "url": "https://www.marketwatch.com/investing/fund/xlv",
-        "snippet": "News From Dow Jones ; Eli Lilly, GLP-1 Troubles Are Dragging Down This Healthcare ETF. May. 11, 2026 at 3:33 p.m. ET by Barron's ; 7 ETFs to Play a Healthcare",
-        "source": "marketwatch.com"
-      },
-      {
         "title": "(XLV) News Headlines - Nasdaq",
         "url": "https://www.nasdaq.com/market-activity/etf/xlv/news-headlines",
-        "snippet": "Latest XLV News ; Look Under The Hood: SSUS Has 12% Upside. 6 days ago ; XLV Crosses Below Key Moving Average Level. Apr 21, 2026 ; 1 No-Brainer Healthcare",
+        "snippet": "Latest XLV News ; Look Under The Hood: SSUS Has 12% Upside. May 1, 2026 ; XLV Crosses Below Key Moving Average Level. Apr 21, 2026 ; 1 No-Brainer Healthcare",
         "source": "nasdaq.com"
       },
       {
-        "title": "(XLV) | Stock Price & Latest News - Reuters",
-        "url": "https://www.reuters.com/markets/quote/XLV/",
-        "snippet": "XLV. State Street Health Care Select Sector SPDR ETF. Last Price 143.50. USD price change -1.22 percent change -0.85%. Delayed quote as of May 8, 2026 3:58 PM",
-        "source": "reuters.com"
+        "title": "State Street Health Care Select Sector SPDR ETF - XLV - MarketWatch",
+        "url": "https://www.marketwatch.com/investing/fund/xlv",
+        "snippet": "Health Care Select Sector SPDR: Pivot points. May. 8, 2026 at 1:36 p.m. ET on TipRanks.com. Nasdaq Tops 29,000 Records, Micron Soars 13%: Stock Market Today.",
+        "source": "marketwatch.com"
+      },
+      {
+        "title": "Health Care Select Sector SPDR Fund (XLV) News ... - Stocktwits",
+        "url": "https://stocktwits.com/symbol/XLV/news",
+        "snippet": "Find Health Care Select Sector SPDR Fund (XLV) news, corporate events, press releases, latest company updates and headlines.",
+        "source": "stocktwits.com"
       }
     ],
     "XLK": [
       {
-        "title": "SPDR Technology Sector ETF (XLK) Stock Price Today & Analysis",
-        "url": "https://www.heygotrade.com/en/us-stock/xlk/",
-        "snippet": "The Technology Select Sector SPDR® Fund (XLK) seeks to provide precise exposure to companies from technology hardware, storage, and peripherals; software;",
-        "source": "heygotrade.com"
+        "title": "XLK Latest News & Stock Updates - Page 1",
+        "url": "https://public.com/stocks/xlk/news",
+        "snippet": "XLK Charges One Penny Less Than VGT Per $100 Invested. Here Is Why That Is Not the Reason to Choose It. 24/7 Wall Street • 04/25/26.",
+        "source": "public.com"
+      },
+      {
+        "title": "(XLK.P) | Stock Price & Latest News - Reuters",
+        "url": "https://www.reuters.com/markets/quote/XLK.P/profile",
+        "snippet": "XLK.P. State Street Technology Select Sector SPDR ETF. Last Price 175.52. USD price change +5.83 percent change +3.44%. Delayed quote as of May 8, 2026 8:00 PM",
+        "source": "reuters.com"
       },
       {
         "title": "(XLK) News Headlines - Nasdaq",
         "url": "https://www.nasdaq.com/market-activity/etf/xlk/news-headlines",
-        "snippet": "Latest XLK News ; Which Is the Better Tech ETF, Fidelity's FTEC or State Street's XLK? 1 day ago ; \"Sell in May\" Is Losing Its Edge: 5 ETFs to Buy. 1 day ago ; The",
+        "snippet": "Latest XLK News ; Which Is the Better Tech ETF, Fidelity's FTEC or State Street's XLK? 3 days ago ; \"Sell in May\" Is Losing Its Edge: 5 ETFs to Buy. 3 days ago",
         "source": "nasdaq.com"
-      },
-      {
-        "title": "Technology Select Sector SPDR ETF - XLK Stock Price - Investing.com",
-        "url": "https://www.investing.com/etfs/spdr-select-sector---technology",
-        "snippet": "The XLK stock price today is 175.24. Does XLK Pay Dividends? What's The Current Dividend Yield? The Technology Select Sector SPDR dividend yield is 0.38",
-        "source": "investing.com"
       }
     ]
   },
-  "built_at": "2026-05-12T22:29:54Z"
+  "built_at": "2026-05-13T22:45:00Z"
 }
