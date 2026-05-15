@@ -1,22 +1,22 @@
 {
   "market": [
     {
-      "title": "Yahoo Finance - Stock Market Live, Quotes, Business & Finance News",
-      "url": "https://finance.yahoo.com/",
-      "snippet": "Stock market today: Dow retakes 50,000 level, S&P 500 and Nasdaq surge to fresh records as AI trade roars back ... When",
-      "source": "finance.yahoo.com"
-    },
-    {
       "title": "U.S. Stock Market Headlines | Breaking Stock Market News - Reuters",
       "url": "https://www.reuters.com/markets/us/",
-      "snippet": "S&P 500, Nasdaq boosted by chips to record closing highs · Strategist expects broader stock market gains through rest of 2026 · Strategist asks how long higher",
+      "snippet": "Top U.S. Markets ; 26,423.88, -211.34, -0.79%Negative ; 7,448.40, -52.84, -0.70%Negative",
       "source": "reuters.com"
     },
     {
       "title": "Stock Market Data - US Markets, World Markets, and Stock Quotes",
       "url": "https://www.cnn.com/markets",
-      "snippet": "World markets ; Dow. United States. 49,693.20 ; S&P 500. United States. 7,444.25 ; NASDAQ. United States. 26,402.34 ; VIX. United States. 17.87 ; Russell 2000.",
+      "snippet": "World markets ; Dow. United States. 50,063.46 ; S&P 500. United States. 7,501.24 ; NASDAQ. United States. 26,635.22 ; VIX. United States. 17.26 ; Russell 2000.",
       "source": "cnn.com"
+    },
+    {
+      "title": "U.S Financial Markets - Investing.com",
+      "url": "https://www.investing.com/markets/united-states",
+      "snippet": "United States Indices ; Dow Jones. 49,526.11. 15:59:59 | NYSE ; S&P 500. 7,408.50 · 15:59:57 | NYSE ; Nasdaq 100. 29,125.20. 15:59:59 | NASDAQ ; Nasdaq. 26,225.15.",
+      "source": "investing.com"
     },
     {
       "title": "S&P 500 Index (SP500) Analysis, News, And Chart Today",
@@ -25,22 +25,16 @@
       "source": "seekingalpha.com"
     },
     {
-      "title": "S&P 500 News (SPX) - Investing.com",
-      "url": "https://www.investing.com/indices/us-spx-500-news",
-      "snippet": "Why is Precigen stock surging today? · S&P 500, Nasdaq futures rise to new highs as Nvidia jumps · Trump calls talks with Xi \"extremely positive\" amid high-stakes",
-      "source": "investing.com"
-    },
-    {
       "title": "S&P 500 INDEX TODAY | INX LIVE TICKER - Markets Insider",
       "url": "https://markets.businessinsider.com/index/s&p_500",
       "snippet": "S&P 500 Today: Get all information on the S&P 500 Index including historical chart, news and constituents.",
       "source": "markets.businessinsider.com"
     },
     {
-      "title": "Federal Reserve to conclude two-day policy meeting - YouTube",
-      "url": "https://www.youtube.com/watch?v=GmH-fO8upn8",
-      "snippet": "CBS News Business Analyst Jill Schlesinger has a breakdown of what the Fed is expected to do, and what it could mean for borrowers and",
-      "source": "youtube.com"
+      "title": "S&P 500 Index (SPX) - Investing.com",
+      "url": "https://www.investing.com/indices/us-spx-500",
+      "snippet": "What was the opening value for S&P 500 today? Today, the S&P 500 opened at 7,445.11. What is the trading volume for S&P 500? The current volume for S&P 500 is 0",
+      "source": "investing.com"
     },
     {
       "title": "Federal Reserve Monetary Policy | U.S. Bank",
@@ -49,16 +43,29 @@
       "source": "usbank.com"
     },
     {
-      "title": "Federal Reserve (The Fed) - The New York Times",
-      "url": "https://www.nytimes.com/topic/organization/federal-reserve-the-fed",
-      "snippet": "[Federal Reserve (The Fed)](https://www.nytimes.com/topic/organization/federal-reserve-the-fed). # Federal Reserve (The Fed). 4. [### Fed Turns Focus to Inflation as Job Market Stabilizes](/2026/05/08/business/economy/jobs-report-inflation-federal-reserve.html). Prosecutor Says Inquiry Into Fed Chai",
-      "source": "nytimes.com"
+      "title": "News & Events - Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "snippet": "[Skip to main content](https://www.federalreserve.gov/newsevents.htm#content). *   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Federal Reserve Act](https://www.federalreserve.gov/aboutthefed/fract.htm). *   [Press Releases](https://www.federal",
+      "source": "federalreserve.gov"
     },
     {
-      "title": "SUERF - The European Money and Finance Forum",
-      "url": "https://www.suerf.org/publications/suerf-policy-notes-and-briefs/geopolitical-risks-and-their-impact-on-global-macro-financial-stability-literature-and-measurements/",
-      "snippet": "# Geopolitical Risks and Their Impact on Global Macro-Financial Stability: Literature and Measurements. A. Ngo (2024): Geopolitical Risks and Their Impact on Global Macro-Financial Stability: Literature and Measurements. (2024), where we review the literature on how geopolitical risks (GPR) affect m",
-      "source": "suerf.org",
+      "title": "Federal Reserve Board - Home",
+      "url": "https://www.federalreserve.gov/",
+      "snippet": "*   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Federal Reserve Act](https://www.federalreserve.gov/aboutthefed/fract.htm). *   [Press Releases](https://www.federalreserve.gov/newsevents/pressreleases.htm). *   [Calendar](https://www.federalre",
+      "source": "federalreserve.gov"
+    },
+    {
+      "title": "Top Geopolitical Risks of 2025 - S&P Global",
+      "url": "https://www.spglobal.com/en/research-insights/market-insights/geopolitical-risk",
+      "snippet": "Geopolitical risks have the potential to impact the global economic outlook, influencing growth, inflation, financial markets, and supply chains.",
+      "source": "spglobal.com",
+      "category": "geopolitical"
+    },
+    {
+      "title": "Geopolitical risk and stock market volatility: A global perspective - ScienceDirect",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1544612322007966",
+      "snippet": "# Geopolitical risk and stock market volatility: A global perspective. Impact of geopolitical risk (GPR) on volatility from a global angle is tested. GPR has a significant positive effect on stock market volatility. This paper investigates the relationship between geopolitical risk (GPR) and stock m",
+      "source": "sciencedirect.com",
       "category": "geopolitical"
     },
     {
@@ -67,118 +74,111 @@
       "snippet": "The Integration-Contagion Paradox: Global Linkages and Crisis Transmission in South Asian Stock Markets. The aim is to provide a snapshot of some of the most exciting work published in the various research areas of the journal. This study investigates the impact of geopolitical risk measures (aggreg",
       "source": "mdpi.com",
       "category": "geopolitical"
-    },
-    {
-      "title": "How Rising Geopolitical Risks Weigh on Asset Prices",
-      "url": "https://www.imf.org/en/blogs/articles/2025/04/14/how-rising-geopolitical-risks-weigh-on-asset-prices",
-      "snippet": "This can hurt asset prices, affect financial institutions, and curtail lending to the private sector, weighing on economic activity and posing a threat to financial stability. As we show in a chapter of the latest Global Financial Stability Report, stock prices tend to decline significantly during m",
-      "source": "imf.org",
-      "category": "geopolitical"
     }
   ],
   "movers": {
-    "JBHT": [
+    "SLV": [
       {
-        "title": "J.B. Hunt: JBHT Stock Price Quote & News | Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/JBHT/",
-        "snippet": "As of 2026-05-14, J.B. Hunt(JBHT) stock has fluctuated between $235.19 and $257.16. The current price stands at $254.06, placing the stock +8.0% above today's low and -1.2% off the high .",
+        "title": "SLV: iShares Silver Stock Price Today, News, Analysis ... - Stocktwits",
+        "url": "https://stocktwits.com/symbol/SLV",
+        "snippet": "SLV. iShares Silver Trust. 61,321. $69.87. $5.64. (7.47%). Today. Updated: 02:15 PM EDT. Volume. 36.4M. 52W High. $109.83. 52W Low. $29.10. 50D MA.",
+        "source": "stocktwits.com"
+      },
+      {
+        "title": "SLV Stock Price Quote & News - iShares Silver Trust - Robinhood",
+        "url": "https://robinhood.com/stocks/SLV",
+        "snippet": "As of 2026-05-14, iShares Silver Trust(SLV) stock has fluctuated between $68.55 and $71.52. The current price stands at $69.26, placing the stock +1.0% above",
         "source": "robinhood.com"
       },
       {
-        "title": "J.B. Hunt Transport Services (JBHT) Stock Price & Overview",
-        "url": "https://stockanalysis.com/stocks/jbht/",
-        "snippet": "LOWELL, Ark.--(BUSINESS WIRE)--J.B. Hunt Transport Services, Inc. (NASDAQ:JBHT) announced today that its Board of Directors has declared a regular quarterly dividend on its common stock of $ 0.45 (for",
-        "source": "stockanalysis.com"
-      },
-      {
-        "title": "JBHT Stock Quote Price and Forecast | CNN",
-        "url": "https://www.cnn.com/markets/stocks/JBHT",
-        "snippet": "June 26, 2023 - The price of JBHT shares has increased $14.60 since the market last closed . This is a 6.14% rise. Opened at $239.48. The stock opened $1.68 higher than its previous close.",
-        "source": "cnn.com"
+        "title": "AMEX:SLV — TradingView - iShares Silver Trust",
+        "url": "https://www.tradingview.com/symbols/AMEX-SLV/",
+        "snippet": "SLV trades at 69.41 USD today, its price has fallen −4.84% in the past 24 hours. Track more dynamics on SLV price chart. ... SLV price has risen by 7.36% over the",
+        "source": "tradingview.com"
       }
     ],
-    "QCOM": [
+    "PAAS": [
       {
-        "title": "QUALCOMM Incorporated (QCOM) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/QCOM/",
-        "snippet": "News headlines Qualcomm's recent performance shows strong momentum with a 7.6% stock increase following better-than-expected fiscal results. The company is also",
-        "source": "finance.yahoo.com"
+        "title": "Pan American Silver (PAAS) Stock price today - quote & chart - Kraken",
+        "url": "https://www.kraken.com/stocks/paas",
+        "snippet": "The Pan American Silver Corp. (PAAS) stock pre-market price today is $58.37, reflecting a -4.45% pre-market move since the market last closed. The company's",
+        "source": "kraken.com"
       },
       {
-        "title": "QUALCOMM Incorporated (QCOM) Latest Stock News & Headlines",
-        "url": "https://finance.yahoo.com/quote/QCOM/news/",
-        "snippet": "QCOM announced a cash dividend of $0.92 with an ex-date of Jun. 4, 2026. All News Earnings Calls Press Releases SEC Filings",
-        "source": "finance.yahoo.com"
+        "title": "Pan Amern Silver (PAAS) Stock News & Updates | StockTitan",
+        "url": "https://www.stocktitan.net/news/PAAS/",
+        "snippet": "The current stock price of Pan Amern Silver (PAAS) is $63.66 as of May 13, 2026. What is the market cap of Pan Amern Silver (PAAS)?. The market",
+        "source": "stocktitan.net"
       },
       {
-        "title": "QCOM News Today | Why did Qualcomm stock drop today?",
-        "url": "https://www.marketbeat.com/stocks/NASDAQ/QCOM/news/",
-        "snippet": "Qualcomm Incorporated (NASDAQ: QCOM) is seeing its stock move higher overall, driven by a strong earnings beat, upbeat analyst reactions, and renewed",
-        "source": "marketbeat.com"
-      }
-    ],
-    "AVGO": [
-      {
-        "title": "Broadcom Inc. (AVGO) Latest Stock News & Headlines",
-        "url": "https://finance.yahoo.com/quote/AVGO/news/",
-        "snippet": "Broadcom (AVGO) has recently seen positive analyst sentiment, with Wells Fargo raising its price target to $545 due to robust AI semiconductor revenue",
-        "source": "finance.yahoo.com"
-      },
-      {
-        "title": "AVGO News Today | Why did Broadcom stock go up today?",
-        "url": "https://www.marketbeat.com/stocks/NASDAQ/AVGO/news/",
-        "snippet": "Overall, AVGO appears to be rising because investors are leaning into stronger AI-related revenue expectations and higher price targets from major Wall Street",
-        "source": "marketbeat.com"
-      },
-      {
-        "title": "Broadcom: AVGO Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/AVGO/",
-        "snippet": "At a current price of $440.92, the stock is +6.6% higher than the low and still +0.0% under the high. Trading activity shows a volume of 13.43M, compared to an",
+        "title": "PAAS Stock Price Quote & News - Pan American Silver - Robinhood",
+        "url": "https://robinhood.com/stocks/PAAS",
+        "snippet": "... (PAAS) stock has fluctuated between $57.92 and $59.10. The current price stands at $58.46, placing the stock +0.9% above today's low and -1.1% off the high.",
         "source": "robinhood.com"
+      }
+    ],
+    "AGI": [
+      {
+        "title": "AGI Stock Price Quote & News - Alamos Gold - Robinhood",
+        "url": "https://robinhood.com/stocks/AGI",
+        "snippet": "On 2026-05-15, Alamos Gold(AGI) stock moved within a range of $39.60 to $42.38. With shares now at $40.39, the stock is trading +2.0% above its intraday low",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "Alamos Gold (AGI) Stock News & Updates | StockTitan",
+        "url": "https://www.stocktitan.net/news/AGI/",
+        "snippet": "The current stock price of Alamos Gold (AGI) is $43.51 as of May 14, 2026. What is the market cap of Alamos Gold (AGI)?. The market cap of",
+        "source": "stocktitan.net"
+      },
+      {
+        "title": "Alamos Gold (AGI) Stock price today - quote & chart - Kraken",
+        "url": "https://www.kraken.com/stocks/agi",
+        "snippet": "The Alamos Gold Inc. Class A Common Shares (AGI) stock price today is $43.03, reflecting a -1.49% move since the market opened. The company's market",
+        "source": "kraken.com"
       }
     ]
   },
   "sectors": {
-    "XLK": [
+    "XLB": [
       {
-        "title": "XLK Technology Select Sector SPDR Fund - Stocktwits",
-        "url": "https://stocktwits.com/symbol/XLK/news",
-        "snippet": "XLK hits a fresh 52-week high as AI momentum, Big Tech spending and strong corporate earnings boost the technology sector. Zacks·in 16h. Share to Feed.",
+        "title": "XLB State Street Materials Select Sector SPDR ETF Latest News",
+        "url": "https://seekingalpha.com/symbol/XLB/news",
+        "snippet": "XLB News ; Weekly ETFs: Seven of 11 sectors record outflows; technology sector leads inflows · Today, 11:09 AM ; The materials sector's highest-flying stocks right",
+        "source": "seekingalpha.com"
+      },
+      {
+        "title": "Materials Select Sector SPDR Fund (XLB) News Today - MarketBeat",
+        "url": "https://www.marketbeat.com/stocks/NYSEARCA/XLB/news/",
+        "snippet": "XLB Latest News · Most and least shorted materials stocks over $2B market cap, featuring MP Materials · Japan PM Takaichi set for talks with Australia's",
+        "source": "marketbeat.com"
+      },
+      {
+        "title": "XLB Materials Select Sector SPDR Fund - Stocktwits",
+        "url": "https://stocktwits.com/symbol/XLB",
+        "snippet": "Get real-time Materials Select Sector SPDR Fund (XLB) stock price, news, financials, community insights, and trading ideas ... Today. Updated: 12:31 PM EDT.",
         "source": "stocktwits.com"
-      },
-      {
-        "title": "(XLK) News Headlines - Nasdaq",
-        "url": "https://www.nasdaq.com/market-activity/etf/xlk/news-headlines",
-        "snippet": "Find the latest news headlines about State Street Technology Select Sector SPDR ETF (XLK) at Nasdaq.com.",
-        "source": "nasdaq.com"
-      },
-      {
-        "title": "The Technology Select Sector SPDR® Fund (XLK) News - Moomoo",
-        "url": "https://www.moomoo.com/etfs/XLK-US/news?chain_id=Name1K9-3FXPhg.1kvico0&global_content=%7B%22promote_id%22%3A13764,%22sub_promote_id%22%3A57,%22f%22%3A%22www.moomoo.com%2Fstock%2FRCA-US%22%7D",
-        "snippet": "Top market news, company earnings, real-time market data and in-depth market analysis from moomoo.",
-        "source": "moomoo.com"
       }
     ],
     "XLE": [
       {
-        "title": "Energy Select Sector SPDR Fund (XLE) News Today - MarketBeat",
+        "title": "State Street Energy Selec…: XLE Stock Price Quote & News",
+        "url": "https://robinhood.com/stocks/XLE",
+        "snippet": "On 2026-05-14, State Street Energy Select Sector SPDR ETF(XLE) stock traded between a low of $58.29 and a high of $59.16. Shares are currently priced at $58.12,",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "SPDR Energy Select ETF (XLE) Stock Price Today & Analysis",
+        "url": "https://www.heygotrade.com/en/us-stock/xle/",
+        "snippet": "The Energy Select Sector SPDR® Fund (XLE) tracks a market-cap-weighted index of US energy companies in the S&P 500. XLE seeks to provide precise exposure to",
+        "source": "heygotrade.com"
+      },
+      {
+        "title": "Energy Select Sector SPDR Fund (XLE) News Today",
         "url": "https://www.marketbeat.com/stocks/NYSEARCA/XLE/news/",
-        "snippet": "Recent market pullbacks in the energy sector and in Chevron's stock price may present a compelling entry point for investors seeking long-term value. April 29,",
+        "snippet": "XLE Latest News · Exchange-Traded Funds Move Higher as US Equities Advance After Midday · Top Strategist at $1.8 Trillion Fund Warns The World's Favorite",
         "source": "marketbeat.com"
-      },
-      {
-        "title": "State Street Energy Select Sector SPDR ETF (XLE) - Yahoo Finance",
-        "url": "https://finance.yahoo.com/quote/XLE/news/",
-        "snippet": "State Street Energy Select Sector SPDR ETF (XLE) ; Sector Update: Energy Stocks Higher Thursday Afternoon · MT Newswires • 1h ago. CEG ; Exchange-Traded Funds Move",
-        "source": "finance.yahoo.com"
-      },
-      {
-        "title": "Latest News XLE ETF ( XLE ) - StockInvest.us",
-        "url": "https://stockinvest.us/news/XLE",
-        "snippet": "XLE has attracted $6 billion in inflows over three months as investors seek energy exposu ... Among sector ETFs, the Energy Select Sector SPDR ETF is easily one",
-        "source": "stockinvest.us"
       }
     ]
   },
-  "built_at": "2026-05-14T22:27:21Z"
+  "built_at": "2026-05-15T22:39:30Z"
 }

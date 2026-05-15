@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-15",
+  "last_updated": "2026-05-16",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -96,6 +96,13 @@
       "photo_url": "data/fedwatch_photos/barr.jpg",
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
       "speeches": [
+        {
+          "date": "2026-05-14",
+          "event": "Barr, Efficient and Effective Central Banking: Beyond the Balance Sheet",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260514a.htm",
+          "brief_summary": "Speech At the Money Marketeers of New York University, New York, New York",
+          "detailed_summary": ""
+        },
         {
           "date": "2026-04-14",
           "event": "Barr, Rural Communities: Worth the Investment",
