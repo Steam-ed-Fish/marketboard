@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-19",
+  "last_updated": "2026-05-20",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
     "bls_cpi_updated": "2026-04-23",
-    "cme_updated": "2026-05-13",
+    "cme_updated": "2026-05-20",
     "bls_unemp_updated": "2026-04-23"
   },
   "members": [
@@ -100,8 +100,8 @@
           "date": "2026-05-14",
           "event": "Barr, Efficient and Effective Central Banking: Beyond the Balance Sheet",
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260514a.htm",
-          "brief_summary": "Speech At the Money Marketeers of New York University, New York, New York",
-          "detailed_summary": ""
+          "brief_summary": "Governor Barr argues that reducing the Fed's balance sheet size is the wrong objective, as adequate reserves are essential for banking system resilience, payment system efficiency, and financial stability.",
+          "detailed_summary": "Barr contends that the Fed's balance sheet size is a misconceived measure of its footprint in financial markets, which encompasses monetary policy implementation, bank supervision, payment system operations, and fiscal agency functions. He emphasizes that the current ample-reserves regime efficiently controls the federal funds rate through administered rates rather than reserve quantity adjustments, and that the $3 trillion in reserves supports banking system safety, liquidity management, and financial stability. Barr argues many balance sheet reduction proposals would paradoxically increase Fed market intervention frequency and raise financial stability risks, while creating reserves is costless to taxpayers since the Fed remits excess earnings."
         },
         {
           "date": "2026-04-14",
@@ -146,22 +146,22 @@
           "date": "2026-03-31",
           "event": "Bowman, Supporting Small Businesses",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260331a.htm",
-          "brief_summary": "Speech At CBA LIVE 26, Consumer Bankers Association, San Diego, California",
-          "detailed_summary": ""
+          "brief_summary": "Vice Chair Bowman discusses Federal Reserve efforts to support small business lending through proposed capital rule changes that would reduce risk weights on small business loans.",
+          "detailed_summary": "Bowman emphasizes small businesses' critical role in the economy, employing 59 million Americans and generating $16 trillion in revenue annually. She highlights that credit conditions remain tight despite banks holding $600 billion in small business loans, with 9 percent of banks tightening C&I lending standards as of Q3 2025 due to economic uncertainty. The Fed's Basel III and standardized approach capital proposals aim to encourage lending by reducing risk weights on small business loans over $1 million from 100 percent to 65 percent and loans under $1 million from 100 percent to 75 percent, freeing capital for expanded credit availability."
         },
         {
           "date": "2026-05-14",
           "event": "Bowman, Opening Remarks",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260514a.htm",
-          "brief_summary": "Speech At the Federal Reserve Bank of Kansas City 2026 Future of Banking Conference: Powering Progress, Protecting Trust, Kansas City, Missouri (via pre-recorded video)",
-          "detailed_summary": ""
+          "brief_summary": "Vice Chair Bowman advocates tailored regulation for community banks, criticizing one-size-fits-all supervisory approaches that burden smaller institutions disproportionately.",
+          "detailed_summary": "Bowman's speech addresses supervision and regulation rather than monetary policy. She critiques how post-financial crisis regulations designed for large institutions have been applied to community banks, creating compliance burdens without commensurate benefits. She specifically highlights CECL accounting requirements and Regulation O as examples where excessive supervisory strictness has discouraged banks from serving their own officers and directors. Bowman emphasizes the Fed's new tailored approach focusing supervisory attention on material financial risks rather than procedural compliance, positioning this as essential to supporting community banking's future."
         },
         {
           "date": "2026-05-08",
           "event": "Bowman, When Regulation Reshapes Markets: The Migration of Corporate Lending",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260508a.htm",
-          "brief_summary": "Speech At the Hoover Institution Annual Monetary Policy Conference, Stanford, California",
-          "detailed_summary": ""
+          "brief_summary": "Vice Chair Bowman discusses regulatory-driven migration of corporate lending from banks to nonbanks, proposing Basel III capital reforms to restore bank competitiveness.",
+          "detailed_summary": "Bowman addresses how post-2008 financial crisis regulations, while necessary for safety and soundness, created perverse incentives causing banks to exit corporate lending markets. Bank share of corporate lending fell from 48% (2015) to 29% (2025), with private credit funds now managing $1.4 trillion. She proposes three-part regulatory response including Basel III changes reducing risk weights on investment-grade corporate loans from 100% to 65%, better aligning capital requirements with actual risk and enabling banks to compete with nonbanks while maintaining strong capital standards."
         },
         {
           "date": "2026-05-05",
@@ -192,8 +192,8 @@
           "date": "2026-05-08",
           "event": "Cook, Perspectives on Tokenization and Implications for the Financial System",
           "url": "https://www.federalreserve.gov/newsevents/speech/cook20260508a.htm",
-          "brief_summary": "Speech At the Central Bank of West African States (BCEAO) Conference on Digital Assets, Dakar, Senegal",
-          "detailed_summary": ""
+          "brief_summary": "Governor Cook discusses tokenization's opportunities and financial-stability risks, emphasizing careful innovation monitoring across digital asset markets.",
+          "detailed_summary": "This speech addresses tokenization in financial markets rather than monetary policy rate decisions. Cook explores tokenization's potential benefits—faster cross-border payments, improved settlement times, enhanced automation—particularly for emerging economies like those in West Africa. She frames analysis across two dimensions: infrastructure (distributed ledger technology, smart contracts) and assets themselves. While noting tokenized U.S. financial assets doubled to ~$25 billion, with growth in government bonds, credit funds, and money market funds, Cook emphasizes her dual responsibility to support innovation while carefully monitoring financial-stability implications through her roles at the Federal Reserve and Financial Stability Board."
         },
         {
           "date": "2026-03-26",
@@ -423,8 +423,8 @@
           "date": "2026-05-08",
           "event": "Waller, Update On Federal Reserve Bank Operations",
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260508a.htm",
-          "brief_summary": "Speech At the Hoover Institution Annual Monetary Policy Conference, Stanford, California",
-          "detailed_summary": ""
+          "brief_summary": "Governor Waller discusses centralizing Federal Reserve back-office operations while preserving regional independence and monetary policy decision-making across the 12 Reserve Banks.",
+          "detailed_summary": "This speech addresses Federal Reserve Bank operations rather than monetary policy stance. Waller proposes standardizing and centralizing non-monetary functions like IT, human resources, and financial management across the 12 Reserve Banks while maintaining district-level control over monetary policy voting, research, supervision, and community development. He emphasizes this operational restructuring preserves the Federal Reserve's federated design and independence by distinguishing between functions unique to districts (which should remain locally controlled) and generic back-office services (which benefit from System-wide standardization). Waller stresses the need for a cultural shift toward \"System first, Bank second\" governance and collective decision-making to achieve operational efficiency and cost savings."
         },
         {
           "date": "2026-04-21",
