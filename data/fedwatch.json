@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-20",
+  "last_updated": "2026-05-21",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
     "bls_cpi_updated": "2026-04-23",
-    "cme_updated": "2026-05-20",
+    "cme_updated": "2026-05-21",
     "bls_unemp_updated": "2026-04-23"
   },
   "members": [
@@ -97,6 +97,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
       "speeches": [
         {
+          "date": "2026-05-20",
+          "event": "Barr, Measuring Financial Health",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260520a.htm",
+          "brief_summary": "Speech At EMERGE Financial Health 2026 Scaling Progress, Shaping the Future, Atlanta, Georgia",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-05-14",
           "event": "Barr, Efficient and Effective Central Banking: Beyond the Balance Sheet",
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260514a.htm",
@@ -123,13 +130,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260326a.htm",
           "brief_summary": "Barr cited simultaneous shocks from the Iran war, tariffs, and slowing labor force growth, and supported holding rates steady.",
           "detailed_summary": "Barr identified three concurrent headwinds: the Middle East conflict driving energy prices higher, tariffs imposing an effective rate of approximately 10%, and near-zero labor force growth from lower immigration. With core inflation still near 3%, he supported the FOMC's March decision to hold the federal funds rate at 3.50–3.75% and emphasized that assessing incoming data, the evolving forecast, and the balance of risks will determine the extent and timing of any future adjustments."
-        },
-        {
-          "date": "2026-03-24",
-          "event": "2026 National Community Investment Conference, Phoenix, AZ — 'Developing Communities through Public-private Partnerships'",
-          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260324a.htm",
-          "brief_summary": "Barr said he may need to keep rates steady 'for some time' while monitoring elevated inflation and energy price shocks.",
-          "detailed_summary": "Barr stated that the FOMC held rates for a second consecutive meeting and that he may need to maintain that stance 'for some time' to properly assess economic conditions, as inflation remains notably above 2% with broad-based pressures. He highlighted that rising energy costs from the Middle East conflict are particularly painful for low- and moderate-income families, amplifying the urgency of the Fed's price stability mandate for vulnerable communities."
         }
       ]
     },
