@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-22",
+  "last_updated": "2026-05-23",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
     "bls_cpi_updated": "2026-04-23",
-    "cme_updated": "2026-05-22",
+    "cme_updated": "2026-05-23",
     "bls_unemp_updated": "2026-04-23"
   },
   "members": [
@@ -420,6 +420,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/waller.htm",
       "speeches": [
         {
+          "date": "2026-05-22",
+          "event": "Waller, Policy Risks Have Changed",
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260522a.htm",
+          "brief_summary": "Speech At The Centre for Central Banking Guest Lecture, Frankfurt, Germany",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-05-08",
           "event": "Waller, Update On Federal Reserve Bank Operations",
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260508a.htm",
@@ -446,13 +453,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260224a.htm",
           "brief_summary": "Waller detailed the Fed's internal AI deployment initiatives and their implications for productivity, efficiency, and institutional data quality.",
           "detailed_summary": "Waller outlined how the Federal Reserve is deploying AI tools internally for supervisory analysis, economic research, payment system monitoring, and operational efficiency. He argued that successful AI adoption at the Fed would improve the timeliness and accuracy of economic data the institution uses to calibrate monetary policy, potentially reducing forecast errors and improving communication. While not a direct monetary policy speech, the remarks reflected his broader view that supply-side and technological improvements can sustainably reduce inflationary pressures, supporting his dovish preference for rate cuts."
-        },
-        {
-          "date": "2026-02-23",
-          "event": "42nd Annual NABE Economic Policy Conference, Washington D.C. — 'Labor Market Data: Signal or Noise?'",
-          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260223a.htm",
-          "brief_summary": "Waller analyzed distortions in labor market data from the government shutdown and immigration, arguing underlying job market strength may be understated.",
-          "detailed_summary": "Waller argued that recent payroll data is heavily distorted by the federal government shutdown, reduced immigration suppressing labor supply counts, and residual seasonal adjustment issues from the pandemic — making the labor market appear softer than underlying fundamentals suggest. He contended that once these distortions are corrected, the true employment picture may be stronger, which would give the Fed more confidence to proceed with further gradual rate reductions. His data-cleaning analysis directly supported his dovish case for continued easing."
         }
       ]
     },
