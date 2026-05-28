@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-28",
+  "last_updated": "2026-05-29",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
     "bls_cpi_updated": "2026-04-23",
-    "cme_updated": "2026-05-28",
+    "cme_updated": "2026-05-29",
     "bls_unemp_updated": "2026-04-23"
   },
   "members": [
@@ -266,6 +266,13 @@
       "photo_url": "data/fedwatch_photos/jefferson.jpg",
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/jefferson.htm",
       "speeches": [
+        {
+          "date": "2026-05-28",
+          "event": "Jefferson, Global Economic Developments and the U.S. Economy",
+          "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260527a.htm",
+          "brief_summary": "Speech At the 2026 Bank of Japan-Institute for Monetary and Economic Studies Conference, Tokyo, Japan",
+          "detailed_summary": ""
+        },
         {
           "date": "2026-04-07",
           "event": "College of Business Administration, University of Detroit Mercy, Detroit, MI — 'Economic Outlook and the Labor Market'",
