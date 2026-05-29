@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-29",
+  "last_updated": "2026-05-30",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
     "bls_cpi_updated": "2026-04-23",
-    "cme_updated": "2026-05-29",
+    "cme_updated": "2026-05-30",
     "bls_unemp_updated": "2026-04-23"
   },
   "members": [
@@ -143,6 +143,20 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
         {
+          "date": "2026-05-01",
+          "event": "Bowman, Artificial Intelligence in the Financial System",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260501a.htm",
+          "brief_summary": "Speech At the Financial Stability Oversight Council Artificial Intelligence Series Roundtable on Cybersecurity and Risk Management, Washington, D.C.",
+          "detailed_summary": ""
+        },
+        {
+          "date": "2026-05-29",
+          "event": "Bowman, A Framework for Practical Monetary Policy Decision Making",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260529a.htm",
+          "brief_summary": "Speech At the Reykjav&iacute;k Economic Conference 2026, Central Bank of Iceland, Reykjav&iacute;k, Iceland",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-03-31",
           "event": "Bowman, Supporting Small Businesses",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260331a.htm",
@@ -162,20 +176,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260508a.htm",
           "brief_summary": "Vice Chair Bowman discusses regulatory-driven migration of corporate lending from banks to nonbanks, proposing Basel III capital reforms to restore bank competitiveness.",
           "detailed_summary": "Bowman addresses how post-2008 financial crisis regulations, while necessary for safety and soundness, created perverse incentives causing banks to exit corporate lending markets. Bank share of corporate lending fell from 48% (2015) to 29% (2025), with private credit funds now managing $1.4 trillion. She proposes three-part regulatory response including Basel III changes reducing risk weights on investment-grade corporate loans from 100% to 65%, better aligning capital requirements with actual risk and enabling banks to compete with nonbanks while maintaining strong capital standards."
-        },
-        {
-          "date": "2026-05-05",
-          "event": "Bowman, A Coordinated Approach to Consumer Fraud Protection",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260505a.htm",
-          "brief_summary": "Vice Chair Bowman discusses consumer fraud as critical financial stability threat, citing Federal Reserve data showing one in five Americans experienced fraud in 2024 with $63 billion in net losses.",
-          "detailed_summary": "This speech addresses consumer fraud protection rather than monetary policy. Bowman emphasizes fraud's systemic risk to banking integrity, payments systems, and household financial security. She presents 2025 Survey of Household Economics and Decisionmaking (SHED) data showing 21% of adults experienced financial fraud in 2024, with $84 billion in total non-credit card fraud losses and only $21 billion recovered. The median loss of $500 disproportionately harms vulnerable populations unable to cover emergency expenses, and fraud affects consumers across all demographic groups equally, underscoring the need for coordinated protective measures."
-        },
-        {
-          "date": "2026-05-01",
-          "event": "Bowman, Artificial Intelligence in the Financial System",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260501a.htm",
-          "brief_summary": "Vice Chair Bowman discusses Federal Reserve supervisory approach to artificial intelligence adoption in banking, emphasizing balanced risk management and innovation support.",
-          "detailed_summary": "Bowman addresses AI's integration into financial institutions, noting nearly a decade of supervisory engagement with banks on AI use. The Fed recently amended model risk management guidance to exclude generative and agentic AI, recognizing these novel technologies require different supervisory approaches than traditional models. She emphasizes tailored supervision based on materiality of AI deployment, acknowledging smaller banks need innovation access without undue regulatory burden. The speech highlights cybersecurity implications of advanced AI tools like Anthropic's Mythos, which can both identify vulnerabilities defensively and potentially exploit them maliciously, requiring coordinated government and interagency responses."
         }
       ]
     },
