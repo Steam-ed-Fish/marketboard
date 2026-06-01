@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-30",
+  "last_updated": "2026-06-02",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
     "bls_cpi_updated": "2026-04-23",
-    "cme_updated": "2026-05-30",
+    "cme_updated": "2026-06-02",
     "bls_unemp_updated": "2026-04-23"
   },
   "members": [
@@ -32,6 +32,13 @@
       "photo_url": "data/fedwatch_photos/powell.jpg",
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/powell.htm",
       "speeches": [
+        {
+          "date": "2026-06-01",
+          "event": "Powell, Acceptance Remarks",
+          "url": "https://www.federalreserve.gov/newsevents/speech/powell20260531a.htm",
+          "brief_summary": "Speech For the 2026 John F. Kennedy Profile in Courage Award, John F. Kennedy Library Foundation, Boston, Massachusetts",
+          "detailed_summary": ""
+        },
         {
           "date": "2026-03-21",
           "event": "Paul A. Volcker Public Integrity Award Ceremony, ASPA Annual Conference (pre-recorded video)",
@@ -143,6 +150,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
         {
+          "date": "2026-05-05",
+          "event": "Bowman, A Coordinated Approach to Consumer Fraud Protection",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260505a.htm",
+          "brief_summary": "Speech At the 2026 Women in Housing and Finance Symposium, Washington, D.C.",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-05-01",
           "event": "Bowman, Artificial Intelligence in the Financial System",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260501a.htm",
@@ -169,13 +183,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260514a.htm",
           "brief_summary": "Vice Chair Bowman advocates tailored regulation for community banks, criticizing one-size-fits-all supervisory approaches that burden smaller institutions disproportionately.",
           "detailed_summary": "Bowman's speech addresses supervision and regulation rather than monetary policy. She critiques how post-financial crisis regulations designed for large institutions have been applied to community banks, creating compliance burdens without commensurate benefits. She specifically highlights CECL accounting requirements and Regulation O as examples where excessive supervisory strictness has discouraged banks from serving their own officers and directors. Bowman emphasizes the Fed's new tailored approach focusing supervisory attention on material financial risks rather than procedural compliance, positioning this as essential to supporting community banking's future."
-        },
-        {
-          "date": "2026-05-08",
-          "event": "Bowman, When Regulation Reshapes Markets: The Migration of Corporate Lending",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260508a.htm",
-          "brief_summary": "Vice Chair Bowman discusses regulatory-driven migration of corporate lending from banks to nonbanks, proposing Basel III capital reforms to restore bank competitiveness.",
-          "detailed_summary": "Bowman addresses how post-2008 financial crisis regulations, while necessary for safety and soundness, created perverse incentives causing banks to exit corporate lending markets. Bank share of corporate lending fell from 48% (2015) to 29% (2025), with private credit funds now managing $1.4 trillion. She proposes three-part regulatory response including Basel III changes reducing risk weights on investment-grade corporate loans from 100% to 65%, better aligning capital requirements with actual risk and enabling banks to compete with nonbanks while maintaining strong capital standards."
         }
       ]
     },
