@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-02",
+  "last_updated": "2026-06-03",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
     "bls_cpi_updated": "2026-04-23",
-    "cme_updated": "2026-06-02",
+    "cme_updated": "2026-06-03",
     "bls_unemp_updated": "2026-04-23"
   },
   "members": [
@@ -150,6 +150,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
         {
+          "date": "2026-05-08",
+          "event": "Bowman, When Regulation Reshapes Markets: The Migration of Corporate Lending",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260508a.htm",
+          "brief_summary": "Speech At the Hoover Institution Annual Monetary Policy Conference, Stanford, California",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-05-05",
           "event": "Bowman, A Coordinated Approach to Consumer Fraud Protection",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260505a.htm",
@@ -176,13 +183,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260331a.htm",
           "brief_summary": "Vice Chair Bowman discusses Federal Reserve efforts to support small business lending through proposed capital rule changes that would reduce risk weights on small business loans.",
           "detailed_summary": "Bowman emphasizes small businesses' critical role in the economy, employing 59 million Americans and generating $16 trillion in revenue annually. She highlights that credit conditions remain tight despite banks holding $600 billion in small business loans, with 9 percent of banks tightening C&I lending standards as of Q3 2025 due to economic uncertainty. The Fed's Basel III and standardized approach capital proposals aim to encourage lending by reducing risk weights on small business loans over $1 million from 100 percent to 65 percent and loans under $1 million from 100 percent to 75 percent, freeing capital for expanded credit availability."
-        },
-        {
-          "date": "2026-05-14",
-          "event": "Bowman, Opening Remarks",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260514a.htm",
-          "brief_summary": "Vice Chair Bowman advocates tailored regulation for community banks, criticizing one-size-fits-all supervisory approaches that burden smaller institutions disproportionately.",
-          "detailed_summary": "Bowman's speech addresses supervision and regulation rather than monetary policy. She critiques how post-financial crisis regulations designed for large institutions have been applied to community banks, creating compliance burdens without commensurate benefits. She specifically highlights CECL accounting requirements and Regulation O as examples where excessive supervisory strictness has discouraged banks from serving their own officers and directors. Bowman emphasizes the Fed's new tailored approach focusing supervisory attention on material financial risks rather than procedural compliance, positioning this as essential to supporting community banking's future."
         }
       ]
     },

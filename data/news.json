@@ -1,22 +1,22 @@
 {
   "market": [
     {
-      "title": "U.S Financial Markets - Investing.com",
-      "url": "https://www.investing.com/markets/united-states",
-      "snippet": "United States Indices ; Dow Jones. 51,078.94. 15:59:59 | NYSE ; S&P 500. 7,600.02 · | NYSE ; Nasdaq 100. 30,513.86. | NASDAQ ; Nasdaq. 27,086.81. 15:59:59 | NASDAQ.",
-      "source": "investing.com"
-    },
-    {
-      "title": "Market Data Center - MarketWatch",
-      "url": "https://www.marketwatch.com/market-data",
-      "snippet": "Dow Jones Industrial Average 50,884.50 -0.29% -147.96. Price Index (XBX) $71,431 -2.75% -2,018 6pm 12am 6am 12pm $86. Real-time last sale data for U.S. stock",
-      "source": "marketwatch.com"
+      "title": "United States Stock Market Index - Quote - Chart - Trading Economics",
+      "url": "https://tradingeconomics.com/united-states/stock-market",
+      "snippet": "US stocks swing higher to new records on Tuesday as more strength from the AI economy offset the ongoing impasse between the US and Iran.",
+      "source": "tradingeconomics.com"
     },
     {
       "title": "U.S. Stock Market Headlines | Breaking Stock Market News - Reuters",
       "url": "https://www.reuters.com/markets/us",
-      "snippet": "After persistent gains, some Wall Street strategists believe U.S. stocks are looking stretched, warning that a summer pullback could be on the horizon. But",
+      "snippet": "Top U.S. Markets ; 51,333.33, +254.45, +0.50%Positive ; 27,047.57, -39.24, -0.14%Negative.",
       "source": "reuters.com"
+    },
+    {
+      "title": "Stock Market Data - US Markets, World Markets, and Stock Quotes",
+      "url": "https://www.cnn.com/markets",
+      "snippet": "Up-to-date stock market data coverage from CNN. Get the latest updates on US markets, world markets, stock quotes, crypto, commodities and currencies.",
+      "source": "cnn.com"
     },
     {
       "title": "S&P 500 Index (SP500) Analysis, News, And Chart Today",
@@ -25,22 +25,16 @@
       "source": "seekingalpha.com"
     },
     {
-      "title": "S&P 500 (INX) Stock, Price, News, Quotes, Forecast and ...",
-      "url": "https://www.msn.com/en-us/money/markets",
-      "snippet": "Benzinga · in 17 hr. S&P 500 halts gains as oil jumps 8% on Iran ceasefire standoff: Stock market today.",
-      "source": "msn.com"
-    },
-    {
       "title": "S&P 500 INDEX TODAY | INX LIVE TICKER - Markets Insider",
       "url": "https://markets.businessinsider.com/index/s&p_500",
       "snippet": "S&P 500 Today: Get all information on the S&P 500 Index including historical chart, news and constituents.",
       "source": "markets.businessinsider.com"
     },
     {
-      "title": "US Federal Reserve - BBC News",
-      "url": "https://www.bbc.com/news/topics/c50znx8v4qet",
-      "snippet": "# US Federal Reserve. ## Trump wants new Fed chair to be 'totally independent'. The US president piled major pressure on Kevin Warsh's predecessor to cut interest rates. ## Trump's Fed chair pick Kevin Warsh confirmed by US Senate. Outgoing Federal Reserve chair Jerome Powell wearing a white shirt a",
-      "source": "bbc.com"
+      "title": "SPX: S&P 500 Index - Stock Price, Quote and News - CNBC",
+      "url": "https://www.cnbc.com/quotes/.SPX",
+      "snippet": "S&P 500 Index. Last | 3:52 PM EDT 7,612.98 quote price arrow up +13.02. Exchange stocks are dropping 4 Hours Ago. Raises S&P 500 Target to 8,000 by Year-End",
+      "source": "cnbc.com"
     },
     {
       "title": "Federal Reserve Monetary Policy | U.S. Bank",
@@ -49,16 +43,22 @@
       "source": "usbank.com"
     },
     {
-      "title": "News & Events - Federal Reserve Board",
+      "title": "U.S. Federal Reserve News | Today's Latest Stories | Reuters",
+      "url": "https://www.reuters.com/markets/us/federal-reserve",
+      "snippet": "[Skip to main content](https://www.reuters.com/markets/us/federal-reserve#main-content). *   [World](https://www.reuters.com/world/). ## [Browse World](https://www.reuters.com/world/). *   [Business](https://www.reuters.com/business/). ## [Browse Business](https://www.reuters.com/business/). *   [Da",
+      "source": "reuters.com"
+    },
+    {
+      "title": "Federal Reserve Board - News & Events",
       "url": "https://www.federalreserve.gov/newsevents.htm",
       "snippet": "*   [Structure of the Federal Reserve System](https://www.federalreserve.gov/aboutthefed/fedexplained/who-we-are.htm). *   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Federal Reserve Act](https://www.federalreserve.gov/aboutthefed/fract.htm). ",
       "source": "federalreserve.gov"
     },
     {
-      "title": "Geopolitical Risk and Financial Markets: Emerging Trends ...",
-      "url": "https://www.igi-global.com/chapter/geopolitical-risk-and-financial-markets/393949",
-      "snippet": "This chapter examines geopolitical risk (GPR) as a critical factor that significantly influences financial markets and, by extension, each of these trade-",
-      "source": "igi-global.com",
+      "title": "What is the geopolitical risk and how it impacts markets",
+      "url": "https://www.stonex.com/en-us/business/financial-glossary/geopolitical-risk",
+      "snippet": "Geopolitical risk refers to the potential impact of political events, instability, or conflicts on financial markets, institutions and the global economy.",
+      "source": "stonex.com",
       "category": "geopolitical"
     },
     {
@@ -69,7 +69,7 @@
       "category": "geopolitical"
     },
     {
-      "title": "SUERF - The European Money and Finance Forum",
+      "title": "Geopolitical Risks and Their Impact on Global Macro-Financial ...",
       "url": "https://www.suerf.org/publications/suerf-policy-notes-and-briefs/geopolitical-risks-and-their-impact-on-global-macro-financial-stability-literature-and-measurements",
       "snippet": "# Geopolitical Risks and Their Impact on Global Macro-Financial Stability: Literature and Measurements. A. Ngo (2024): Geopolitical Risks and Their Impact on Global Macro-Financial Stability: Literature and Measurements. (2024), where we review the literature on how geopolitical risks (GPR) affect m",
       "source": "suerf.org",
@@ -77,84 +77,82 @@
     }
   ],
   "movers": {
-    "FDX": [
+    "MRVL": [
       {
-        "title": "FedEx News Today (FDX) - Investing.com",
-        "url": "https://www.investing.com/equities/fedex-corp-news",
-        "snippet": "Find the latest FedEx news today, including breaking FedEx stock news, key announcements, and market-moving updates. Summarize FDX's latest news.",
-        "source": "investing.com"
-      },
-      {
-        "title": "FedEx Corporation (FDX) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/FDX",
-        "snippet": "Why is FDX moving today? FedEx (FDX) rose 1.93% after completing the spin-off of its freight unit, contrasting with a slight decline in the industrial sector,",
+        "title": "Marvell Technology, Inc. (MRVL) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/MRVL",
+        "snippet": "Marvell Technology (MRVL) surged 29.5% after Nvidia's CEO called it the next trillion-dollar company, significantly outpacing the tech sector's 0.99% gain.",
         "source": "finance.yahoo.com"
       },
       {
-        "title": "FDX News Today | Why did FedEx stock drop today? - MarketBeat",
-        "url": "https://www.marketbeat.com/stocks/NYSE/FDX/news",
-        "snippet": "FedEx Corporation (NYSE: FDX) is down today as investors react to the completion of the FedEx Freight spinoff, which leaves the parent company smaller after",
-        "source": "marketbeat.com"
-      }
-    ],
-    "NET": [
-      {
-        "title": "NET News Today | Why did Cloudflare stock go up today?",
-        "url": "https://www.marketbeat.com/stocks/NYSE/NET/news",
-        "snippet": "Cloudflare (NET) Is Up 6.4% After Anthropic AI Agent Deal Amid ESG Concerns - Has The Bull Case Changed? May 21, 2026 | finance.",
-        "source": "marketbeat.com"
+        "title": "Marvell Technology, Inc. (MRVL) Latest Stock News & Headlines",
+        "url": "https://finance.yahoo.com/quote/MRVL/news",
+        "snippet": "Marvell Technology has seen a significant surge of up to 29% following Nvidia CEO Jensen Huang's endorsement, calling it the next 'trillion-dollar company.",
+        "source": "finance.yahoo.com"
       },
       {
-        "title": "Cloudflare: NET Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/NET",
-        "snippet": "The stock has a price-to-earnings ratio of -973.90. On 2026-05-31, Cloudflare(NET) stock moved within a range of $245.20 to $249.00. With shares now at",
+        "title": "MRVL Stock Price Quote & News - Marvell Technology - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/MRVL",
+        "snippet": "As of 2026-06-01, Marvell Technology(MRVL) stock has fluctuated between $219.98 and $286.37. The current price stands at $220.31, placing the stock +0.2% above",
         "source": "robinhood.com"
       },
       {
-        "title": "Cloudflare, Inc. (NET) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/NET",
-        "snippet": "Why is NET moving today? Cloudflare (NET) surged 11.07% as RBC Capital reiterated a bullish outlook ahead of its Analyst Day, significantly",
+        "title": "Unusual Volume in Marvell Technology Put Options - Is MRVL Stock ...",
+        "url": "https://www.barchart.com/story/news/36932757/unusual-volume-in-marvell-technology-put-options-is-mrvl-stock-undervalued",
+        "snippet": "# Unusual Volume in Marvell Technology Put Options - Is MRVL Stock Undervalued? Today, unusual volume in out-of-the-money (OTM) **Marvell Technology, Inc. (****MRVL****)** put options is focusing attention on MRVL stock. Based on its recent acquisition and strong free cash flow, MRVL stock may be 38",
+        "source": "barchart.com"
+      },
+      {
+        "title": "Unusual Volume in Marvell Technology Put Options - Is MRVL Stock ...",
+        "url": "https://finance.yahoo.com/news/unusual-volume-marvell-technology-put-183002334.html",
+        "snippet": "Today, unusual volume in out-of-the-money (OTM) Marvell Technology, Inc. (MRVL) put options is focusing attention on MRVL stock.",
         "source": "finance.yahoo.com"
+      },
+      {
+        "title": "MRVL Stock Overview: Price, Options Flow, Stats & Analysis",
+        "url": "https://unusualwhales.com/stock/MRVL/overview",
+        "snippet": "Get a comprehensive overview of MRVL stock, including real-time price data, options flow, net flow, performance, daily stats, and active option chains.",
+        "source": "unusualwhales.com"
       }
     ],
-    "ORCL": [
+    "INTU": [
       {
-        "title": "ORCL: Oracle Corp. Latest Stock Price, Analysis, News ... - Stocktwits",
-        "url": "https://stocktwits.com/symbol/ORCL",
-        "snippet": "Get real-time Oracle Corp. (ORCL) stock price, news, financials ... ORCLOracle Corp. $248.90. $22.37. (9.91%). Today. ·Closed $248.15. $0.75. (0.30",
+        "title": "INTU: Intuit Inc Latest Stock Price, Analysis, News and Trading Ideas",
+        "url": "https://stocktwits.com/symbol/INTU",
+        "snippet": "Get real-time Intuit Inc (INTU) stock price, news, financials, community insights, and trading ideas ... INTUIntuit Inc. $323.51. $30.25. (8.55%). Today. Updated:",
         "source": "stocktwits.com"
       },
       {
-        "title": "Stock information - Oracle - Investor Relations",
-        "url": "https://investor.oracle.com/stock-information/default.aspx",
-        "snippet": "NYSE: ORCL$225.78+22.08 (10.84%)Volume41,082,199Today's open$ 209.00Previous close$ 203.70May 29, 2026 4:00 PM. Pricing delayed 20 minutes. Volume. 41,082,199.",
-        "source": "investor.oracle.com"
+        "title": "Intuit: INTU Stock Price Quote & News - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/INTU",
+        "snippet": "At a current price of $331.29, the stock is +4.4% higher than the low and still -3.0% under the high. Trading volume for Intuit(INTU) stock has reached 2.71",
+        "source": "robinhood.com"
       },
       {
-        "title": "Oracle: ORCL Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/ORCL",
-        "snippet": "At a current price of $226.17, the stock is +0.7% higher than the low and still -9.6% under the high. Trading volume for Oracle(ORCL) stock has",
-        "source": "robinhood.com"
+        "title": "Intuit Inc. (INTU) Stock Price, News, Quote & History - Yahoo Finance",
+        "url": "https://finance.yahoo.com/quote/INTU",
+        "snippet": "Why is INTU moving today? Intuit (INTU) dropped 8.73% after Goldman Sachs downgraded the stock to Sell due to rising competition from AI tax services",
+        "source": "finance.yahoo.com"
       }
     ],
-    "IBM": [
+    "The Semi 7": [
       {
-        "title": "International Business Machines Corporation (IBM) - Yahoo Finance",
-        "url": "https://finance.yahoo.com/quote/IBM",
-        "snippet": "### [Finance](https://finance.yahoo.com/). *   [News](https://finance.yahoo.com/news/). *   [More Topics](https://finance.yahoo.com/news/). *   [Markets](https://finance.yahoo.com/markets/). *   [Trending](https://finance.yahoo.com/markets/stocks/trending/). *   [Highest dividend](https://finance.ya",
-        "source": "finance.yahoo.com"
+        "title": "Magnificent 7 Stocks: What You Need to Know",
+        "url": "https://www.investopedia.com/magnificent-seven-stocks-8402262",
+        "snippet": "The Magnificent Seven are high-performing technology stocks. Currently, this group includes Alphabet, Amazon, Apple, Tesla, Meta Platforms, Microsoft,",
+        "source": "investopedia.com"
       },
       {
-        "title": "IBM Stock Price | International Business Machines Corp. Stock ...",
-        "url": "https://www.marketwatch.com/investing/stock/ibm",
-        "snippet": "*   [Stocks](https://www.marketwatch.com/investing/stocks?mod=side_nav). [Advanced Charting](https://www.marketwatch.com/investing/stock/ibm/charts?mod=mw_quote_advanced). *   [Overview](https://www.marketwatch.com/investing/stock/ibm?mod=mw_quote_tab). *   [Profile](https://www.marketwatch.com/inve",
-        "source": "marketwatch.com"
+        "title": "What are the Magnificent 7 stocks?",
+        "url": "https://www.fidelity.com/learning-center/smart-money/magnificent-7-stocks",
+        "snippet": "The Mag 7 stocks are some of the highest-performing stocks of the past decade. Here's what to consider before investing in these 7 tech companies.",
+        "source": "fidelity.com"
       },
       {
-        "title": "Why IBM (IBM) Stock Is Up Today",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/why-ibm-ibm-stock-today-213638134.html",
-        "snippet": "3. Best money market accounts. Shares of technology and consulting giant IBM (NYSE:IBM) jumped 12% in the afternoon session after it announced a $10 billion commitment to quantum computing with CHIPS Act backing, supported by a sector read-through from Dell's blowout Q1 results. Dell shipped $16.1 b",
-        "source": "finance.yahoo.com"
+        "title": "Magnificent 7 Stocks",
+        "url": "https://www.barchart.com/investing-ideas/magnificent-7",
+        "snippet": "The \"Magnificent 7\" stocks are a group of leading technology companies, with Bank of America analyst Michael Hartnett generally credited for the phrase.",
+        "source": "barchart.com"
       }
     ]
   },
@@ -167,10 +165,10 @@
         "source": "seekingalpha.com"
       },
       {
-        "title": "Utilities Select Sector SPDR ETF - XLU Stock Price - Investing.com",
-        "url": "https://www.investing.com/etfs/spdr-select-sector---utilities",
-        "snippet": "The XLU stock price today is 43.35. Does XLU Pay Dividends? What's The Current Dividend Yield? The Utilities Select Sector SPDR dividend yield is 2.79",
-        "source": "investing.com"
+        "title": "Jun 26 Expected Move - Options AI",
+        "url": "https://tools.optionsai.com/companies/XLU/news/bullish-trades",
+        "snippet": "XLU: Power Demand Boom Meets A New Utility Playbook. State Street Utilities Select Sector SPDR ETF is poised for accelerated earnings growth amid surging",
+        "source": "tools.optionsai.com"
       },
       {
         "title": "(XLU) News Headlines - Nasdaq",
@@ -179,26 +177,26 @@
         "source": "nasdaq.com"
       }
     ],
-    "XLK": [
+    "XLC": [
       {
-        "title": "XLK State Street Technology Select Sector SPDR ETF Latest News",
-        "url": "https://seekingalpha.com/symbol/XLK/news",
-        "snippet": "XLK News · Dell earnings blowout sparks fresh focus on high-momentum hardware stocks · AI seen reshaping jobs rather than destroying middle incomes, BCA says.",
-        "source": "seekingalpha.com"
+        "title": "State Street Communicatio…: XLC Stock Price Quote & News",
+        "url": "https://robinhood.com/us/en/stocks/XLC",
+        "snippet": "On 2026-06-01, State Street Communication Services Select Sector SPDR ETF(XLC) stock moved within a range of $114.82 to $116.05. With shares now at $115.70, the",
+        "source": "robinhood.com"
       },
       {
-        "title": "(XLK) News Headlines - Nasdaq",
-        "url": "https://www.nasdaq.com/market-activity/etf/xlk/news-headlines",
-        "snippet": "Find the latest news headlines about State Street Technology Select Sector SPDR ETF (XLK) at Nasdaq.com.",
-        "source": "nasdaq.com"
+        "title": "XLC Stock Price | Communication Services Select Sector SPDR ETF",
+        "url": "https://www.investing.com/etfs/communication-services-select-spdr",
+        "snippet": "The XLC stock price today is 115.61. Does XLC Pay Dividends? What's The Current Dividend Yield? The Communication Services",
+        "source": "investing.com"
       },
       {
-        "title": "XLK Price: Quote, Forecast, Charts & News - Perplexity",
-        "url": "https://www.perplexity.ai/finance/XLK",
-        "snippet": "The Technology Select Sector SPDR ETF rose about 2.25% on Wednesday, outperforming the broader S&P 500 as investors piled into technology stocks ahead of",
-        "source": "perplexity.ai"
+        "title": "XLC Latest News & Stock Updates - Page 1",
+        "url": "https://public.com/stocks/xlc/news",
+        "snippet": "XLC Is Down 8.78% Year to Date and the Catalysts That Matter Most Are Still Ahead. 24/7 Wall Street • 03/31/26. XLC: Further TMT Downside Possible,",
+        "source": "public.com"
       }
     ]
   },
-  "built_at": "2026-06-01T22:15:33Z"
+  "built_at": "2026-06-02T22:11:33Z"
 }
