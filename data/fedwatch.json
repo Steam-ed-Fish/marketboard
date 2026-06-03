@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-03",
+  "last_updated": "2026-06-04",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
     "bls_cpi_updated": "2026-04-23",
-    "cme_updated": "2026-06-03",
+    "cme_updated": "2026-06-04",
     "bls_unemp_updated": "2026-04-23"
   },
   "members": [
@@ -150,6 +150,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
         {
+          "date": "2026-05-14",
+          "event": "Bowman, Opening Remarks",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260514a.htm",
+          "brief_summary": "Speech At the Federal Reserve Bank of Kansas City 2026 Future of Banking Conference: Powering Progress, Protecting Trust, Kansas City, Missouri (via pre-recorded video)",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-05-08",
           "event": "Bowman, When Regulation Reshapes Markets: The Migration of Corporate Lending",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260508a.htm",
@@ -176,13 +183,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260529a.htm",
           "brief_summary": "Speech At the Reykjav&iacute;k Economic Conference 2026, Central Bank of Iceland, Reykjav&iacute;k, Iceland",
           "detailed_summary": ""
-        },
-        {
-          "date": "2026-03-31",
-          "event": "Bowman, Supporting Small Businesses",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260331a.htm",
-          "brief_summary": "Vice Chair Bowman discusses Federal Reserve efforts to support small business lending through proposed capital rule changes that would reduce risk weights on small business loans.",
-          "detailed_summary": "Bowman emphasizes small businesses' critical role in the economy, employing 59 million Americans and generating $16 trillion in revenue annually. She highlights that credit conditions remain tight despite banks holding $600 billion in small business loans, with 9 percent of banks tightening C&I lending standards as of Q3 2025 due to economic uncertainty. The Fed's Basel III and standardized approach capital proposals aim to encourage lending by reducing risk weights on small business loans over $1 million from 100 percent to 65 percent and loans under $1 million from 100 percent to 75 percent, freeing capital for expanded credit availability."
         }
       ]
     },
