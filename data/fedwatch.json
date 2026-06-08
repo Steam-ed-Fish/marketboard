@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-06",
+  "last_updated": "2026-06-09",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -104,6 +104,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
       "speeches": [
         {
+          "date": "2026-06-06",
+          "event": "Barr, Deregulating in a Financial Boom: What Could Go Wrong?",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260606a.htm",
+          "brief_summary": "Speech At American University, Washington, D.C.",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-05-20",
           "event": "Barr, Measuring Financial Health",
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260520a.htm",
@@ -130,13 +137,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260331a.htm",
           "brief_summary": "Barr analyzed the GENIUS Act's stablecoin regulation framework, focusing on reserve requirements and run risks.",
           "detailed_summary": "Barr outlined how the GENIUS Act requires stablecoin issuers to hold high-quality liquid assets and comply with federal supervision standards, arguing that reserve asset quality is the critical variable in stress scenarios. While the speech focused on financial stability and regulatory policy rather than monetary policy stance, Barr implicitly tied stablecoin soundness to the broader financial system's ability to transmit monetary policy effectively. He warned that insufficient reserve standards could create systemic run risks similar to those seen in uninsured bank deposits."
-        },
-        {
-          "date": "2026-03-26",
-          "event": "Brookings Institution, Washington D.C. — 'Brief Remarks on the Economic Outlook and Monetary Policy'",
-          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260326a.htm",
-          "brief_summary": "Barr cited simultaneous shocks from the Iran war, tariffs, and slowing labor force growth, and supported holding rates steady.",
-          "detailed_summary": "Barr identified three concurrent headwinds: the Middle East conflict driving energy prices higher, tariffs imposing an effective rate of approximately 10%, and near-zero labor force growth from lower immigration. With core inflation still near 3%, he supported the FOMC's March decision to hold the federal funds rate at 3.50–3.75% and emphasized that assessing incoming data, the evolving forecast, and the balance of risks will determine the extent and timing of any future adjustments."
         }
       ]
     },
