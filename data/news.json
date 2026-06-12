@@ -1,15 +1,15 @@
 {
   "market": [
     {
-      "title": "United States Stock Market Index - Quote - Chart - Trading Economics",
+      "title": "United States Stock Market Index - Quote - Chart - Historical Data",
       "url": "https://tradingeconomics.com/united-states/stock-market",
-      "snippet": "US stocks closed sharply lower at multi-week lows on Wednesday, with the S&P 500 falling 1.6%, the Nasdaq declining 2%, and the Dow Jones plunging 953",
+      "snippet": "US stocks closed sharply higher on Thursday, with the S&P 500 rising 1.8%, the Nasdaq gaining 2.5%, and the Dow Jones climbing 930 points.",
       "source": "tradingeconomics.com"
     },
     {
       "title": "Yahoo Finance - Stock Market Live, Quotes, Business & Finance News",
       "url": "https://finance.yahoo.com",
-      "snippet": "U.S. markets closed ; S&P Futures. 7,246.50. -32.00 ; Dow Futures. 49,832.00. -158.00 ; Nasdaq Futures. 28,341.75. -212.25 ; Russell 2000 Futures. 2,819.40. -19.40",
+      "snippet": "U.S. markets closed ; S&P 500. 7,394.30. +127.31 ; Dow 30. 50,848.75. +929.97 ; Nasdaq. 25,809.66. +640.16 ; Russell 2000. 2,921.03. +85.57 ; VIX. 19.44. -2.78",
       "source": "finance.yahoo.com"
     },
     {
@@ -17,12 +17,6 @@
       "url": "https://www.cnbc.com/markets/us-markets",
       "snippet": "Up to date market data and stock market news is available online. View US market headlines and market charts. Get the latest economy news, markets in our",
       "source": "cnbc.com"
-    },
-    {
-      "title": "S&P 500 (^GSPC) Latest Stock News & Headlines - Yahoo Finance",
-      "url": "https://finance.yahoo.com/quote/%5EGSPC/news",
-      "snippet": "S&P 500 (^GSPC) ; Stock market today: Dow sinks 950 points, S&P 500, Nasdaq plummet as inflation heats up, US-Iran tensions reignite. Yahoo Finance • 1m ago. ^",
-      "source": "finance.yahoo.com"
     },
     {
       "title": "S&P 500 Index (SP500) Analysis, News, And Chart Today",
@@ -37,22 +31,28 @@
       "source": "markets.businessinsider.com"
     },
     {
+      "title": "S&P 500 Index (SPX) - Investing.com",
+      "url": "https://www.investing.com/indices/us-spx-500",
+      "snippet": "Today, the S&P 500 opened at 7,287.67. What is the trading volume for S&P 500? The current volume for S&P 500 is 0.",
+      "source": "investing.com"
+    },
+    {
       "title": "Federal Reserve Monetary Policy | U.S. Bank",
       "url": "https://www.usbank.com/investing/financial-perspectives/market-news/federal-reserve-tapering-asset-purchases.html",
       "snippet": "[](https://twitter.com/intent/tweet?url=https://www.usbank.com/content/usbank/us/en/investing/financial-perspectives/market-news/federal-reserve-tapering-asset-purchases.html&text=Federal+Reserve+Monetary+Policy+%7C+U.S.+Bank&summary=Learn+from+U.S.+Bank+experts+how+Fed+policy+and+interest+rate+move",
       "source": "usbank.com"
     },
     {
-      "title": "U.S. Federal Reserve News | Today's Latest Stories | Reuters",
-      "url": "https://www.reuters.com/markets/us/federal-reserve",
-      "snippet": "[Skip to main content](https://www.reuters.com/markets/us/federal-reserve#main-content). *   [World](https://www.reuters.com/world/). ## [Browse World](https://www.reuters.com/world/). *   [Business](https://www.reuters.com/business/). ## [Browse Business](https://www.reuters.com/business/). *   [Da",
-      "source": "reuters.com"
-    },
-    {
       "title": "News & Events - Federal Reserve Board",
       "url": "https://www.federalreserve.gov/newsevents.htm",
       "snippet": "*   [Structure of the Federal Reserve System](https://www.federalreserve.gov/aboutthefed/fedexplained/who-we-are.htm). *   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Federal Reserve Act](https://www.federalreserve.gov/aboutthefed/fract.htm). ",
       "source": "federalreserve.gov"
+    },
+    {
+      "title": "U.S. Federal Reserve News | Today's Latest Stories | Reuters",
+      "url": "https://www.reuters.com/markets/us/federal-reserve",
+      "snippet": "[Skip to main content](https://www.reuters.com/markets/us/federal-reserve#main-content). *   [World](https://www.reuters.com/world/). ## [Browse World](https://www.reuters.com/world/). *   [United States](https://www.reuters.com/world/us/). *   [Business](https://www.reuters.com/business/). ## [Brow",
+      "source": "reuters.com"
     },
     {
       "title": "Geopolitical Risk and Financial Markets: Emerging Trends ...",
@@ -62,10 +62,10 @@
       "category": "geopolitical"
     },
     {
-      "title": "Volatility connectedness between geopolitical risk and financial ...",
-      "url": "https://www.sciencedirect.com/science/article/pii/S1059056024007329",
-      "snippet": "Geopolitical risk may have both short- and long-term adverse effects. It tends to create risk contagion that hampers financial market stability (Hoffart et al.,",
-      "source": "sciencedirect.com",
+      "title": "Top Geopolitical Risks of 2025 - S&P Global",
+      "url": "https://www.spglobal.com/en/research-insights/market-insights/geopolitical-risk",
+      "snippet": "Geopolitical risks have the potential to impact the global economic outlook, influencing growth, inflation, financial markets, and supply chains.",
+      "source": "spglobal.com",
       "category": "geopolitical"
     },
     {
@@ -77,106 +77,106 @@
     }
   ],
   "movers": {
-    "CCJ": [
+    "KLAC": [
       {
-        "title": "Cameco: CCJ Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/CCJ",
-        "snippet": "As of 2026-06-10, Cameco(CCJ) stock has fluctuated between $93.85 and $101.58. The current price stands at $94.25, placing the stock +0.4% above today's low and",
-        "source": "robinhood.com"
-      },
-      {
-        "title": "CCJ Stock Quote Price and Forecast - CNN",
-        "url": "https://www.cnn.com/markets/stocks/CCJ",
-        "snippet": "The price of CCJ shares has decreased $7.24 since the market last closed. This is a 7.08% drop. Closed at $95.03. The stock has since dropped $0.78 in after",
-        "source": "cnn.com"
-      },
-      {
-        "title": "Cameco Corporation (CCJ) Stock Price, Quote, News & Analysis",
-        "url": "https://seekingalpha.com/symbol/CCJ",
-        "snippet": "Cameco Corporation's stock symbol is CCJ and currently trades under NYSE. It's current price per share is approximately $103.44. What are your Cameco",
-        "source": "seekingalpha.com"
-      }
-    ],
-    "NET": [
-      {
-        "title": "NET News Today | Why did Cloudflare stock drop today? - MarketBeat",
-        "url": "https://www.marketbeat.com/stocks/NYSE/NET/news",
-        "snippet": "Cloudflare, Inc. (NYSE: NET) is under pressure, even as several fresh analyst updates point to improving fundamentals and upside in the stock.",
+        "title": "KLAC News Today | Why did KLA stock go up today? - MarketBeat",
+        "url": "https://www.marketbeat.com/stocks/NASDAQ/KLAC/news",
+        "snippet": "KLA Corporation (NASDAQ: KLAC) is moving higher today as investors react to a wave of bullish analyst commentary and continued optimism around semiconductor",
         "source": "marketbeat.com"
       },
       {
-        "title": "NET Stock Price Quote & News - Cloudflare - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/NET",
-        "snippet": "The latest trading session saw Cloudflare (NET) ending at $70.73, denoting a -0.73% adjustment from its last day's close. The stock's change was less than the S",
+        "title": "KLA: KLAC Stock Price Quote & News - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/KLAC",
+        "snippet": "With shares now at $2,105.05, the stock is trading -3.9% above its intraday low and -13.4% below the session's peak. Trading activity shows a volume of 1.74M,",
         "source": "robinhood.com"
       },
       {
-        "title": "Cloudflare, Inc. (NET) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/NET",
-        "snippet": "News headlines Cloudflare (NET) is emerging as a key player in the AI-driven market, highlighted by strong growth metrics and strategic adjustments. Recent",
+        "title": "KLA Corporation (KLAC) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/KLAC",
+        "snippet": "Why is KLAC moving today? KLA Corporation (KLAC) surged 13.78% as analysts highlighted strong earnings potential and a rebound in chipmakers lifted sentiment,",
         "source": "finance.yahoo.com"
       }
     ],
-    "QCOM": [
+    "LRCX": [
       {
-        "title": "Qualcomm: QCOM Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/QCOM",
-        "snippet": "At a current price of $203.90, the stock is +7.3% higher than the low and still -0.5% under the high. Trading volume for Qualcomm(QCOM) stock has reached 11.02M",
-        "source": "robinhood.com"
-      },
-      {
-        "title": "QUALCOMM Incorporated (QCOM) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/QCOM",
-        "snippet": "News headlines Qualcomm is facing a challenging environment as semiconductor stocks, including its own, have recently seen significant sell-offs. The company is",
+        "title": "Lam Research Corporation (LRCX) Latest Stock News & Headlines",
+        "url": "https://finance.yahoo.com/quote/LRCX/news",
+        "snippet": "LRCX announced a cash dividend of $0.26 with an ex-date of Jun. 17, 2026. All News Earnings Calls Press Releases SEC Filings",
         "source": "finance.yahoo.com"
       },
       {
-        "title": "Qualcomm Inc (QCOM) Stock Price & News - Google Finance",
-        "url": "https://www.google.com/finance/beta/quote/QCOM:NASDAQ",
-        "snippet": "Qualcomm (NASDAQ:QCOM) Shares Down 6.9% - Here's Why. TIKR.com. ·. 1 hour ago. Qualcomm Fell 7% Today. Here's Where the Stock Could Head in 2026.",
-        "source": "google.com"
+        "title": "Lam Research Corp: LRCX Stock Price Quote & News - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/LRCX",
+        "snippet": "As of 2026-06-10, Lam Research Corp(LRCX) stock has fluctuated between $328.04 and $359.58. The current price stands at $327.32, placing the stock -0.2% above",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "Lam Research Corporation (LRCX) Stock Price, News, Quote ...",
+        "url": "https://finance.yahoo.com/quote/LRCX",
+        "snippet": "Why is LRCX moving today? Lam Research (LRCX) soared 12.64% after strong quarterly results and positive forecasts for AI chip demand, significantly outpacing",
+        "source": "finance.yahoo.com"
       }
     ],
-    "FNV": [
+    "MU": [
       {
-        "title": "Unusual Volume - Stock Screener - News",
-        "url": "https://finviz.com/screener?v=320&s=ta_unusualvolume",
-        "snippet": "(GlobeNewswire) | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- ",
-        "source": "finviz.com"
+        "title": "Micron Technology Inc. (MU) Stock Price Today - WSJ",
+        "url": "https://www.wsj.com/market-data/quotes/MU",
+        "snippet": "Micron Technology Inc.MU (U.S.: Nasdaq) · AFTER HOURS 5:31 PM EDT 06/11/26 · 990.79-5.08-0.51% · AFTER HOURS Vol 2,103,763.",
+        "source": "wsj.com"
       },
       {
-        "title": "FNV Stock Price Quote & News - Franco-Nevada - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/FNV",
-        "snippet": "On 2026-06-09, Franco-Nevada(FNV) stock moved within a range of $205.68 to $211.47. With shares now at $211.19, the stock is trading +2.7% above its intraday",
-        "source": "robinhood.com"
-      },
-      {
-        "title": "Unusual Volume Stocks - Yahoo Finance",
-        "url": "https://finance.yahoo.com/markets/stocks/unusual-volume-stocks",
-        "snippet": "2.   [News • 12 hours ago Broadcom just made megacap history, but not in a good way](https://finance.yahoo.com/markets/stocks/article/broadcoms-sell-off-just-entered-megacap-history-163942663.html?.tsrc=fin-notif). 7.   [News • 21 hours ago Why the SpaceX IPO could be a trap](https://finance.yahoo.c",
+        "title": "Micron Technology, Inc. (MU) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/MU",
+        "snippet": "News headlines Micron Technology (MU) has surged 671% over the past year, driven by strong AI demand and positive earnings forecasts. However, retail investors",
         "source": "finance.yahoo.com"
+      },
+      {
+        "title": "Micron Technology: MU Stock Price Quote & News - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/MU",
+        "snippet": "After two days of dispiriting declines, Micron (MU +11.48%) stock bounced back on Thursday, closing the day up 11.7% and returning its share price to where it w",
+        "source": "robinhood.com"
+      }
+    ],
+    "ADBE": [
+      {
+        "title": "Adobe Inc. (ADBE) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/ADBE",
+        "snippet": "[Latest](https://finance.yahoo.com/topic/latest-news/). 3. [Stock market](https://finance.yahoo.com/topic/stock-market-news/). 5. [Crypto](https://finance.yahoo.com/markets/crypto/). 1. [Economies](https://finance.yahoo.com/topic/economic-news/). 2. [Earnings](https://finance.yahoo.com/topic/earning",
+        "source": "finance.yahoo.com"
+      },
+      {
+        "title": "ADBE: Adobe Inc. Unusual Options | OptionCharts",
+        "url": "https://optioncharts.io/options/ADBE/unusual-options",
+        "snippet": "# ADBE: Adobe Inc. Unusual Options | OptionCharts. # ADBE Unusual Option Activity. The top unusual option activity for **ADBE** options. Unusual Option activity is measured by the ratio of option volume to open interest. - [x] Jul 17, 2026 (37 days) (m). | ADBE | PUT | 190.0 | Jun 12, 2026 (w) | 0.9",
+        "source": "optioncharts.io"
+      },
+      {
+        "title": "ADBE Unusual Options Activity for Adobe Systems Stock - Barchart.com",
+        "url": "https://www.barchart.com/stocks/quotes/ADBE/unusual-activity",
+        "snippet": "#### charts. #### options. #### options strategies. # Adobe Systems Inc (ADBE). # Unusual Options Activity for Adobe Systems Inc. Unusual Options Activity identifies options contracts that are trading at a higher volume relative to the contract's open interest. Unusual Options can provide insight on",
+        "source": "barchart.com"
       }
     ]
   },
   "sectors": {
-    "XLI": [
+    "XLK": [
       {
-        "title": "XLI Industrial Select Sector SPDR Fund - YouTube",
-        "url": "https://www.youtube.com/watch?v=mPdBIKmmcvY",
-        "snippet": "THE INDUSTRIAL SELECT SECTOR SPDR FUND ETF Prediction and Forecast [XLI] THE INDUSTRIAL ... News Today June 7, 2026. Silver ScreenVibes. New. 20K",
-        "source": "youtube.com"
+        "title": "State Street Technology Select Sector SPDR ETF (XLK)",
+        "url": "https://finance.yahoo.com/quote/XLK",
+        "snippet": "State Street Technology Select Sector SPDR ETF (XLK) Stock Price, News, Quote & History 484.87 ( +3.31% ) News Today's news 1.42 Expense Ratio (net)",
+        "source": "finance.yahoo.com"
       },
       {
-        "title": "State Street Industrial Select Sector SPDR ETF (XLI) - Kavout",
-        "url": "https://www.kavout.com/etfs/xli/industrial-select-sector-spdr-fund/news",
-        "snippet": "XLI, are rising due to the \"America First\" agenda, The fund just hit a 52-week high and is up 39.2% from its 52-week low price of $112.75 per share.",
-        "source": "kavout.com"
-      },
-      {
-        "title": "State Street Industrial S…: XLI Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/XLI",
-        "snippet": "Shares are currently priced at $173.29, which is +2.3% above the low and -1.4% below the high. State Street Industrial Select Sector SPDR ETF(XLI) shares are",
+        "title": "State Street Technology S…: XLK Stock Price Quote & News",
+        "url": "https://robinhood.com/us/en/stocks/XLK",
+        "snippet": "State Street Technology Select Sector SPDR ETF(XLK) trades at $181.41. With shares now at $181.41, the stock is trading +2.8% above its intraday low and -1.3%",
         "source": "robinhood.com"
+      },
+      {
+        "title": "(XLK) News Headlines - Nasdaq",
+        "url": "https://www.nasdaq.com/market-activity/etf/xlk/news-headlines",
+        "snippet": "Find the latest news headlines about State Street Technology Select Sector SPDR ETF (XLK) at Nasdaq.com.",
+        "source": "nasdaq.com"
       }
     ],
     "XLB": [
@@ -187,18 +187,18 @@
         "source": "marketbeat.com"
       },
       {
-        "title": "State Street Materials Se…: XLB Stock Price Quote & News",
-        "url": "https://robinhood.com/us/en/stocks/XLB",
-        "snippet": "State Street Materials Select Sector SPDR ETF(XLB) trades at $50.09. The current price stands at $50.09, placing the stock +1.1% above today's low and -1.5%",
-        "source": "robinhood.com"
+        "title": "Latest News Materials Select Sector SPDR Fund ETF ( XLB )",
+        "url": "https://stockinvest.us/news/XLB",
+        "snippet": "Weaker Stock Today XLB ranks #1169 as sell candidate in NYSEARCA. XLB: #1169Stronger Stock. NYSEARCA:XLB. Materials Select Sector Spdr Fund ETF News. Financial",
+        "source": "stockinvest.us"
       },
       {
-        "title": "State Street Materials Select Sector SPDR ETF Stock Price - Perplexity",
-        "url": "https://www.perplexity.ai/finance/XLB",
-        "snippet": "The Materials Select Sector SPDR ETF declined nearly 2% on Friday, pressured by a broader risk-off session driven by a stronger-than-expected May jobs report (",
-        "source": "perplexity.ai"
+        "title": "State Street Materials Se…: XLB Stock Price Quote & News",
+        "url": "https://robinhood.com/us/en/stocks/XLB",
+        "snippet": "The current price stands at $50.23, placing the stock +0.8% above today's low and -2.1% off the high. The State Street Materials Select Sector SPDR ETF(XLB)",
+        "source": "robinhood.com"
       }
     ]
   },
-  "built_at": "2026-06-11T02:15:11Z"
+  "built_at": "2026-06-12T01:17:18Z"
 }
