@@ -1,22 +1,22 @@
 {
   "market": [
     {
-      "title": "NYSE: The New York Stock Exchange",
-      "url": "https://www.nyse.com/index",
-      "snippet": "Today's Stock Market. The S&P 500's 9-week winning streak came to an end last week, -present tech weakness the second half pushed equities higher and those",
-      "source": "nyse.com"
+      "title": "United States Stock Market Index - Quote - Chart - Historical Data",
+      "url": "https://tradingeconomics.com/united-states/stock-market",
+      "snippet": "The United States Stock Market Index is expected to trade at 7344.75 points by the end of this quarter, according to Trading Economics global macro models and",
+      "source": "tradingeconomics.com"
+    },
+    {
+      "title": "U.S. Stock Market Headlines | Breaking Stock Market News - Reuters",
+      "url": "https://www.reuters.com/markets/us",
+      "snippet": "Top U.S. Markets ; 51,202.26, +353.51, +0.70%Positive ; 25,888.84, +79.18, +0.31%Positive.",
+      "source": "reuters.com"
     },
     {
       "title": "Yahoo Finance - Stock Market Live, Quotes, Business & Finance News",
       "url": "https://finance.yahoo.com",
-      "snippet": "U.S. markets close in 20m S&P 500 7,421.17 +26.87 +0.36% Dow 30 51,178.79 +330.04 +0.65% Nasdaq 25,856.85 +47.19 +0.18%",
+      "snippet": "U.S. markets open in 9h 26m ; S&P Futures. 7,520.00. +85.00 ; Dow Futures. 52,050.00. +445.00 ; Nasdaq Futures. 30,193.75. +531.75 ; Russell 2000 Futures. 2,995.80.",
       "source": "finance.yahoo.com"
-    },
-    {
-      "title": "U.S. Stocks - WSJ",
-      "url": "https://www.wsj.com/market-data/stocks",
-      "snippet": "U.S. STOCKS ; Nasdaq Composite, 25678.82, -250.84 ; S&P 500, 7386.65, -19.08 ; DJ Total Stock Market, 73139.17, -137.46 ; Russell 2000, 2867.02, 11.60",
-      "source": "wsj.com"
     },
     {
       "title": "S&P 500 Index (SP500) Analysis, News, And Chart Today",
@@ -27,7 +27,7 @@
     {
       "title": "(.SPX) | Stock Price & Latest News - Reuters",
       "url": "https://www.reuters.com/markets/quote/.SPX",
-      "snippet": "S&P 500 INDEX · Today's Open. 7,350.54 · Previous Close. 7,386.65 · 1M Change. As of Jun 10, 2026. -1.36% · 1Y Change. As of Jun 10, 2026. +20.86%.",
+      "snippet": "S&P 500 INDEX · Today's Open. 7,410.85 · Previous Close. 7,394.30 · 1M Change. As of Jun 12, 2026. +0.41% · 1Y Change. As of Jun 12, 2026. +22.93%.",
       "source": "reuters.com"
     },
     {
@@ -62,10 +62,10 @@
       "category": "geopolitical"
     },
     {
-      "title": "Top Geopolitical Risks of 2025 - S&P Global",
-      "url": "https://www.spglobal.com/en/research-insights/market-insights/geopolitical-risk",
-      "snippet": "Geopolitical risks have the potential to impact the global economic outlook, influencing growth, inflation, financial markets, and supply chains.",
-      "source": "spglobal.com",
+      "title": "Geopolitical risks and financial markets: a 27-year bibliometric study ...",
+      "url": "https://ideas.repec.org/a/ids/ijtrgm/v21y2025i4p462-484.html",
+      "snippet": "The present research conducts a thorough bibliometric examination of the correlation between geopolitical risks and financial markets between 1997 and 2024.",
+      "source": "ideas.repec.org",
       "category": "geopolitical"
     },
     {
@@ -77,126 +77,128 @@
     }
   ],
   "movers": {
+    "ADBE": [
+      {
+        "title": "Adobe: ADBE Stock Price Quote & News - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/ADBE",
+        "snippet": "The current Adobe(ADBE) stock price is $204.22, with a market capitalization of 82.46B. The stock trades at a price-to-earnings (P/E) ratio of 11.67. On",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "Adobe (ADBE) Stock News & Updates | StockTitan",
+        "url": "https://www.stocktitan.net/news/ADBE",
+        "snippet": "Adobe raised its FY2026 revenue target to $26.50–$26.60 billion and non-GAAP EPS to $24.35–$24.45. The company repurchased about 8.5 million shares. CFO Dan",
+        "source": "stocktitan.net"
+      },
+      {
+        "title": "Adobe Inc (ADBE) Stock Price & News - Google Finance",
+        "url": "https://www.google.com/finance/beta/quote/ADBE:NASDAQ",
+        "snippet": "Based on 25 Wall Street analysts offering 12 month price targets for ADBE in the last 3 months. Highest. Current $204.02. $379.00 (+85.77%). Average.",
+        "source": "google.com"
+      }
+    ],
+    "INTC": [
+      {
+        "title": "Intel News Today (INTC) - Investing.com",
+        "url": "https://www.investing.com/equities/intel-corp-news",
+        "snippet": "Find the latest Intel news today, including breaking Intel stock news, key announcements, and market-moving updates. Summarize INTC's latest news.",
+        "source": "investing.com"
+      },
+      {
+        "title": "Investor Relations :: Intel Corporation (INTC)",
+        "url": "https://www.intc.com",
+        "snippet": "Latest News. Jun 2, 2026 • 2:30 AM EDT. Intel Announces New AI Innovations at Computex — Chip to Rackscale AI Solutions Delivered to Customers with the Help of",
+        "source": "intc.com"
+      },
+      {
+        "title": "INTC: Intel Corp - Stock Price, Quote and News - CNBC",
+        "url": "https://www.cnbc.com/quotes/INTC",
+        "snippet": "Intel Corp INTC:NASDAQ · Open117.42 · Day High127.60 · Day Low115.33 · Prev Close116.96 · 52 Week High132.75 · 52 Week High Date05/11/26 · 52 Week Low18.97 · 52",
+        "source": "cnbc.com"
+      }
+    ],
+    "TER": [
+      {
+        "title": "Teradyne: TER Stock Price Quote & News - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/TER",
+        "snippet": "As of today, Teradyne(TER) shares are valued at $406.47. The company's market cap stands at 63.12B, with a P/E ratio of 74.63 and a dividend yield of 12.4%.",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "Teradyne (TER) Stock News & Updates | StockTitan",
+        "url": "https://www.stocktitan.net/news/TER",
+        "snippet": "Teradyne (NASDAQ:TER) reported record Q1 2026 results with revenue $1,282 million, GAAP EPS $2.53 and non-GAAP EPS $2.56. Semiconductor Test contributed $1,111",
+        "source": "stocktitan.net"
+      },
+      {
+        "title": "TER Stock Price and Chart — NASDAQ:TER — TradingView",
+        "url": "https://www.tradingview.com/symbols/NASDAQ-TER",
+        "snippet": "The current price of TER is 403.20 USD — it has increased by 5.72% in the past 24 hours. Watch Teradyne, Inc. stock price performance more closely on the chart.",
+        "source": "tradingview.com"
+      }
+    ],
     "KLAC": [
       {
-        "title": "KLA: KLAC Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/KLAC",
-        "snippet": "On 2026-06-11, KLA(KLAC) stock moved within a range of $238.10 to $241.30. With shares now at $2,405.00, the stock is trading +910.1% above its intraday low and",
-        "source": "robinhood.com"
-      },
-      {
-        "title": "KLA Corporation (KLAC) Latest Stock News & Headlines",
-        "url": "https://finance.yahoo.com/quote/KLAC/news",
-        "snippet": "KLAC. +4.80% · Why KLA Corporation Stock Edged Past the Broader Market Today. Motley Fool • 1d ago. KLAC.",
+        "title": "KLA Corporation (KLAC) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/KLAC",
+        "snippet": "2. Best 0% APR cards. 3. Best balance transfer cards. 2. Best high-yield savings accounts. 3. Best money market accounts. KLA Corporation (KLAC) is witnessing fluctuating stock performance amid a broader semiconductor rally, driven by geopolitical factors and strong demand for AI-related technologie",
         "source": "finance.yahoo.com"
       },
       {
-        "title": "KLA Corp (KLAC) Stock Price & News - Google Finance",
-        "url": "https://www.google.com/finance/beta/quote/KLAC:NASDAQ",
-        "snippet": "Based on 21 Wall Street analysts offering 12 month price targets for KLAC in the last 3 months. Highest. Current $251.94. $2,500.00 (+892.32%). Average.",
-        "source": "google.com"
-      },
-      {
-        "title": "KLA-Tencor Rises On Unusually High Volume (KLAC) - TheStreet",
-        "url": "https://www.thestreet.com/markets/kla-tencor-rises-on-unusually-high-volume-klac-11909974",
-        "snippet": "KLA-Tencor Corporation (Nasdaq:KLAC) is trading at unusually high volume Tuesday with 4.3 million shares changing hands.",
-        "source": "thestreet.com"
-      },
-      {
-        "title": "KLA: KLAC Stock Price Quote & News - Robinhood",
+        "title": "KLA: KLAC Stock Price Quote & News | Robinhood",
         "url": "https://robinhood.com/us/en/stocks/KLAC",
-        "snippet": "On 2026-06-11, KLA(KLAC) stock moved within a range of $238.10 to $241.30. ... Trading activity shows a volume of 57.34K, compared to an average daily volume of",
+        "snippet": "# KLA. ### KLA Corp. engages in the supply of process control and yield management solutions for the semiconductor and related nano-electronics industries. With a market cap of 33.25B, KLA(KLAC) trades at $255.48. The stock has a price-to-earnings ratio of 71.96 and currently yields dividends of 31.",
         "source": "robinhood.com"
       },
       {
-        "title": "KLA (KLAC) Stock price today - quote & chart - Kraken",
-        "url": "https://www.kraken.com/stocks/klac",
-        "snippet": "The KLA Corporation Common Stock (KLAC) stock price today is $2,424.00, reflecting a +0.55% move ization stands at $3.17T, with a daily trading volume of",
-        "source": "kraken.com"
-      }
-    ],
-    "The Fab 7": [
-      {
-        "title": "Magnificent 7 Stocks - Barchart.com",
-        "url": "https://www.barchart.com/investing-ideas/magnificent-7",
-        "snippet": "\"Magnificent 7\" Stocks News ; GOOGL · 361.39 (+1.01%) ; $SPX · 7,428.88 (+0.47%) ; $DOWI · 51,197.88 (+0.69%) ; $IUXX · 29,662.07 (+0.73%) ; AMZN · 236.40 (-2.12%).",
-        "source": "barchart.com"
-      },
-      {
-        "title": "Latest Magnificent 7 Stock News - Seeking Alpha",
-        "url": "https://seekingalpha.com/market-news/magnificent-7-stocks",
-        "snippet": "The Magnificent 7 stocks are Tesla, Alphabet, Meta, Amazon, Microsoft, Apple, and Nvidia. Keep up with the Magnificent 7 stock news here",
-        "source": "seekingalpha.com"
-      },
-      {
-        "title": "Magnificent Seven News | Today's Latest Stories | Reuters",
-        "url": "https://www.reuters.com/technology/magnificent-seven",
-        "snippet": "A line chart titled \"The Magnificent Seven\" that compares the market capitalization of the seven highest-valued stocks over the past year.",
-        "source": "reuters.com"
-      }
-    ],
-    "ALB": [
-      {
-        "title": "Albemarle: ALB Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/ALB",
-        "snippet": "As of 2026-06-11, Albemarle(ALB) stock has fluctuated between $161.67 and $172.26. The current price stands at $171.46, placing the stock +6.1% above today's",
-        "source": "robinhood.com"
-      },
-      {
-        "title": "Albemarle Corporation (ALB) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/ALB",
-        "snippet": "Why is ALB moving today? Albemarle (ALB) surged 7.72% after a strong report highlighted robust lithium demand and project ramp-ups, significantly outpacing the",
-        "source": "finance.yahoo.com"
-      },
-      {
-        "title": "Albemarle Corp (ALB) Stock Price & News - Google Finance",
-        "url": "https://www.google.com/finance/beta/quote/ALB:NYSE",
-        "snippet": "Based on 17 Wall Street analysts offering 12 month price targets for ALB in the last 3 months. Highest. Current $171.01. $264.00 (+54.38%). Average.",
-        "source": "google.com"
+        "title": "KLA (KLAC) Short Interest & Short Float | Updated Jun 2026 $KLAC",
+        "url": "https://www.marketbeat.com/stocks/NASDAQ/KLAC/short-interest",
+        "snippet": "# KLA (KLAC) Short Interest & Short Float | Updated Jun 2026. Intel Is the Market's Most Mispriced AI Hedge. Trump's New Dollar (Ad)Image 1: tc pixel. An Analyst Just Raised Tesla's Price Target by 227%—Here's Why. June 12: $100 Turns Into $100,000? (Ad)Image 2: tc pixel. *   10 Stocks Set to Soar i",
+        "source": "marketbeat.com"
       }
     ]
   },
   "sectors": {
     "XLB": [
       {
-        "title": "Latest News Materials Select Sector SPDR Fund ETF ( XLB )",
-        "url": "https://stockinvest.us/news/XLB",
-        "snippet": "Weaker Stock Today XLB ranks #1169 as sell candidate in NYSEARCA. XLB: #1169Stronger Stock. NYSEARCA:XLB. Materials Select Sector Spdr Fund ETF News. Financial",
-        "source": "stockinvest.us"
+        "title": "Materials Select Sector SPDR Fund (XLB) News Today - MarketBeat",
+        "url": "https://www.marketbeat.com/stocks/NYSEARCA/XLB/news",
+        "snippet": "What's going on at Materials Select Sector SPDR Fund (NYSEARCA:XLB)? Read today's XLB news from trusted media outlets at MarketBeat.",
+        "source": "marketbeat.com"
       },
       {
         "title": "State Street Materials Se…: XLB Stock Price Quote & News",
         "url": "https://robinhood.com/us/en/stocks/XLB",
-        "snippet": "As of 2026-06-11, State Street Materials Select Sector SPDR ETF(XLB) stock has fluctuated between $49.81 and $51.33. The current price stands at $50.23, placing",
+        "snippet": "State Street Materials Select Sector SPDR ETF(XLB) trades at $52.25. The current price stands at $52.25, placing the stock +1.9% above today's low and -0.3%",
         "source": "robinhood.com"
       },
       {
-        "title": "Materials Select Sector SPDR ETF (XLB) Stock News & Articles",
-        "url": "https://247wallst.com/companies/XLB?tpid=1580552",
-        "snippet": "Materials Select Sector SPDR ETF : XLB. Loading stock data... XLB. Stock Data. $49.59. Change down. $1.18 (2.32%). Asset Type. N/A. Exchange. N/A. Currency.",
-        "source": "247wallst.com"
+        "title": "State Street Materials Select Sector SPDR ETF (XLB) - Yahoo Finance",
+        "url": "https://finance.yahoo.com/quote/XLB",
+        "snippet": "State Street Materials Select Sector SPDR ETF (XLB) Stock Price, News, Quote & History +0.72% ) News Today's news. The index includes securities of companies",
+        "source": "finance.yahoo.com"
       }
     ],
     "XLF": [
       {
-        "title": "XLF News Today | Why did Financial Select Sector SPDR Fund go down today?",
-        "url": "https://www.marketbeat.com/stocks/NYSEARCA/XLF/news",
-        "snippet": "XLF News Today | Why did Financial Select Sector SPDR Fund go down today? Financial Select Sector SPDR Fund (XLF) News Today. Financial Select Sector SPDR Fund Sees Unusually Large Options Volume (NYSEARCA:XLF). Despite risks in private credit, the financials sector is largely insulated as the big b",
-        "source": "marketbeat.com"
+        "title": "State Street Financial Select Sector SPDR ETF (XLF) - Yahoo Finance",
+        "url": "https://finance.yahoo.com/quote/XLF/news",
+        "snippet": "Sector Update: Financial Stocks Lean Lower Pre-Bell Wednesday · PREMIUM. MT Newswires • 4d ago. XLF. +1.37%.",
+        "source": "finance.yahoo.com"
       },
       {
-        "title": "XLF: There Is No 'Fear' Discount In Financials Today (NYSEARCA:XLF) | Seeking Alpha",
-        "url": "https://seekingalpha.com/article/4607926-xlf-etf-no-fear-discount-in-financials-today-reiterate-sell",
-        "snippet": "Title: XLF: There Is No 'Fear' Discount In Financials Today (NYSEARCA:XLF) | Seeking Alpha\nEntering text into the input field will update the search result below. Entering text into the input field will update the search result below. Search for Symbols, analysts, keywords. Join the community built ",
+        "title": "XLF State Street Financial Sel Sec SPDR ETF ETF Price & Overview",
+        "url": "https://seekingalpha.com/symbol/XLF",
+        "snippet": "XLF Latest Headlines ; Market pullback is viewed as a healthy pause, Morgan Stanley says · Today, 10:03 AM11 Comments ; Weekly ETFs: Six of 11 sectors record",
         "source": "seekingalpha.com"
       },
       {
-        "title": "XLF news, real time XLF stock news, Financial Select Sector SPDR Fund news today - Webull",
-        "url": "https://www.webull.com/newslist/nysearca-xlf",
-        "snippet": "Title: XLF news, real time XLF stock news, Financial Select Sector SPDR Fund news today - Webull\nTop small-cap financials stocks surging above 200-Day moving average. Wednesday Sector Laggards: Financial, Services. Software Slump Resumes, Bitcoin Plunges To 66,000: What's Moving Markets Wednesday? E",
-        "source": "webull.com"
+        "title": "State Street Financial Se…: XLF Stock Price Quote & News",
+        "url": "https://robinhood.com/us/en/stocks/XLF",
+        "snippet": "State Street Financial Select Sector SPDR ETF(XLF) stock is priced at $52.82, giving the company a market capitalization of 50.54B. It carries a P/E",
+        "source": "robinhood.com"
       }
     ]
   },
-  "built_at": "2026-06-12T22:26:46Z"
+  "built_at": "2026-06-15T06:58:40Z"
 }
