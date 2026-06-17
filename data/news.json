@@ -3,8 +3,14 @@
     {
       "title": "Yahoo Finance - Stock Market Live, Quotes, Business & Finance News",
       "url": "https://finance.yahoo.com",
-      "snippet": "U.S. markets closed ; S&P 500. 7,511.35. -42.94 ; Dow 30. 51,999.67. +328.64 ; Nasdaq. 26,376.34. -307.60 ; Russell 2000. 2,939.19. -25.89 ; VIX. 16.41. +0.21",
+      "snippet": "U.S. markets close in 1h 1m ; S&P 500. 7,478.07. -33.28 ; Dow 30. 51,923.20. -76.47 ; Nasdaq. 26,277.48. -98.86 ; Russell 2000. 2,964.86. +25.67 ; VIX. 16.89. +0.48",
       "source": "finance.yahoo.com"
+    },
+    {
+      "title": "U.S. Stock Market Headlines | Breaking Stock Market News - Reuters",
+      "url": "https://www.reuters.com/markets/us",
+      "snippet": "Top U.S. Markets ; 51,914.58, -85.09, -0.16%Negative ; 26,233.79, -142.56, -0.54%Negative.",
+      "source": "reuters.com"
     },
     {
       "title": "United States Stock Market Index - Quote - Chart - Historical Data",
@@ -13,22 +19,10 @@
       "source": "tradingeconomics.com"
     },
     {
-      "title": "U.S. Stock Market Headlines | Breaking Stock Market News - Reuters",
-      "url": "https://www.reuters.com/markets/us",
-      "snippet": "Wall Street rallies, Dow ends with record on US-Iran deal · CIO expects Fed to do 'nothing for the foreseeable future' · SpaceX triumph signals 'the coast is",
-      "source": "reuters.com"
-    },
-    {
       "title": "S&P 500 Index (SP500) Analysis, News, And Chart Today",
       "url": "https://seekingalpha.com/symbol/SP500",
       "snippet": "A high-level overview of the S&P 500 Index (SP500). Get the latest S&P 500 chart, news, and analysis, including analyst predictions and forecasts for today.",
       "source": "seekingalpha.com"
-    },
-    {
-      "title": "S&P 500 Index (SPX) - Investing.com",
-      "url": "https://www.investing.com/indices/us-spx-500",
-      "snippet": "Today, the S&P 500 opened at 7,548.78. What is the trading volume for S&P 500? The current volume for S&P 500 is 0.",
-      "source": "investing.com"
     },
     {
       "title": "S&P 500 INDEX TODAY | INX LIVE TICKER - Markets Insider",
@@ -37,10 +31,16 @@
       "source": "markets.businessinsider.com"
     },
     {
-      "title": "U.S. Federal Reserve News | Today's Latest Stories | Reuters",
-      "url": "https://www.reuters.com/markets/us/federal-reserve",
-      "snippet": "Fed policy is in 'right place' amid inflation risks, Williams tells Yahoo Finance. New York Federal Reserve President John ‌Williams said on Wednesday he",
+      "title": "(.SPX) | Stock Price & Latest News - Reuters",
+      "url": "https://www.reuters.com/markets/quote/.SPX",
+      "snippet": "Wells Fargo raises year-end S&P 500 target on stronger earnings outlook. Wells Fargo raised its year-end 2026 target for the S&P 500 to 7,950, ​pointing to",
       "source": "reuters.com"
+    },
+    {
+      "title": "News & Events - Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/newsevents.htm",
+      "snippet": "[Skip to main content](https://www.federalreserve.gov/newsevents.htm#content). *   [Press Releases](https://www.federalreserve.gov/newsevents/pressreleases.htm). *   [Calendar](https://www.federalreserve.gov/newsevents/calendar.htm). *   [Videos](https://www.federalreserve.gov/videos.htm). *   [Conf",
+      "source": "federalreserve.gov"
     },
     {
       "title": "Federal Reserve Monetary Policy | U.S. Bank",
@@ -51,7 +51,7 @@
     {
       "title": "Federal Reserve Board - Home",
       "url": "https://www.federalreserve.gov",
-      "snippet": "*   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Press Releases](https://www.federalreserve.gov/newsevents/pressreleases.htm). *   [Calendar](https://www.federalreserve.gov/newsevents/calendar.htm). *   [Videos](https://www.federalreserve.gov/v",
+      "snippet": "*   [Press Releases](https://www.federalreserve.gov/newsevents/pressreleases.htm). *   [Calendar](https://www.federalreserve.gov/newsevents/calendar.htm). *   [Videos](https://www.federalreserve.gov/videos.htm). *   [Federal Reserve's Key Policies for the Provision of Financial Services](https://www",
       "source": "federalreserve.gov"
     },
     {
@@ -77,64 +77,72 @@
     }
   ],
   "movers": {
-    "MRVL": [
+    "GEV": [
       {
-        "title": "MRVL Stock Price Quote & News - Marvell Technology - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/MRVL",
-        "snippet": "The current price stands at $295.28, placing the stock +2.6% above today's low and -6.9% off the high. The Marvell Technology(MRVL)'s current trading volume",
+        "title": "GE Vernova: GEV Stock Price Quote & News - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/GEV",
+        "snippet": "With shares now at $941.01, the stock is trading -4.7% above its intraday low and -5.2% below the session's peak. Trading activity shows a volume of 18.49K,",
         "source": "robinhood.com"
       },
       {
-        "title": "Marvell Technology, Inc. (MRVL) Latest Stock News & Headlines",
-        "url": "https://finance.yahoo.com/quote/MRVL/news",
-        "snippet": "News headlines Marvell Technology's stock faced pressure due to its outgoing CFO's share sale, contributing to a 7% decline amid a broader tech sell-off.",
+        "title": "GE Vernova Inc (GEV) Stock Price & News - Google Finance",
+        "url": "https://www.google.com/finance/beta/quote/GEV:NYSE",
+        "snippet": "Open $888.07 High $920.52 Low $884.74 Mkt. cap 243.67B. Low $884.74 Mkt. Current $906.79. Average $1,252.11 (+38.08%) Lowest $913.00 (+0.68%) Moved Up by 3.81%",
+        "source": "google.com"
+      },
+      {
+        "title": "GEV: GE Vernova Inc - Stock Price, Quote and News - CNBC",
+        "url": "https://www.cnbc.com/quotes/GEV",
+        "snippet": "Last | 4:32 PM EDT 1,052.03 quote price arrow up +3.17 (+0.30%) Volume 119,189 Close 1,048.86 52 week range 479.04 - 1,181.95. Global Business and Financial",
+        "source": "cnbc.com"
+      }
+    ],
+    "MP": [
+      {
+        "title": "Mp Materials Corp (MP) Stock Price & News - Google Finance",
+        "url": "https://www.google.com/finance/beta/quote/MP:NYSE",
+        "snippet": "Mp Materials Corp (MP) Stock Price & News - Open $58.07 High $62.36 Low $57.50 Mkt. cap 11.05B. High $62.36 Low $57.50 Strong Buy Buy 12 Hold 0 Sell 0. Average",
+        "source": "google.com"
+      },
+      {
+        "title": "MP Materials: MP Stock Price Quote & News - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/MP",
+        "snippet": "The current price stands at $57.71, placing the stock +0.3% above today's low and -1.4% off the high. The MP Materials(MP)'s current trading volume is 92.88",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "Buy MP Materials Stock – MP Stock Quote Today & Investment Insights",
+        "url": "https://public.com/stocks/mp",
+        "snippet": "MP Materials (MP) reported Q1 2026 earnings per share (EPS) of $0.03, beating estimates of -$0.04 by 175.00%. In the same quarter last year, MP Materials's",
+        "source": "public.com"
+      }
+    ],
+    "VRT": [
+      {
+        "title": "Vertiv: VRT Stock Price Quote & News - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/VRT",
+        "snippet": "As of today, Vertiv(VRT) shares are valued at $301.00. The company's market cap stands at 118.23B, a dividend yield of 0.07%.",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "Vertiv Holdings Co (VRT) Latest Stock News & Headlines",
+        "url": "https://finance.yahoo.com/quote/VRT/news",
+        "snippet": "Vertiv Holdings Co. (VRT) is experiencing robust growth driven by AI data center demand, with a $15 billion backlog and significant revenue increases.",
         "source": "finance.yahoo.com"
       },
       {
-        "title": "NASDAQ:MRVL - Marvell Technology, Inc. - TradingView",
-        "url": "https://www.tradingview.com/symbols/NASDAQ-MRVL",
-        "snippet": "The current price of MRVL is 278.67 USD — it has increased by 10.43% in the past 24 hours. Watch Marvell Technology, Inc. stock price performance more closely",
-        "source": "tradingview.com"
-      }
-    ],
-    "INTC": [
-      {
-        "title": "Intel: INTC Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/INTC",
-        "snippet": "On 2026-06-15, Intel(INTC) stock traded between a low of $116.70 and a high of $128.68. Shares are currently priced at $125.39, which is +7.4% above the low and",
-        "source": "robinhood.com"
-      },
-      {
-        "title": "Investor Relations :: Intel Corporation (INTC)",
-        "url": "https://www.intc.com",
-        "snippet": "Latest News. Jun 2, 2026 • 2:30 AM EDT. Intel Announces New AI Innovations at Computex — Chip to Rackscale AI Solutions Delivered to Customers with the Help of",
-        "source": "intc.com"
-      },
-      {
-        "title": "INTC: Intel Corp - Stock Price, Quote and News - CNBC",
-        "url": "https://www.cnbc.com/quotes/INTC",
-        "snippet": "Intel Corp INTC:NASDAQ ; Last | 3:50 PM EDT. 118.54 quote price arrow down -9.32 (-7.29%) ; Volume. 102,173,757 ; 52 week range. 18.97 - 132.75.",
-        "source": "cnbc.com"
+        "title": "(VRT) | Stock Price & Latest News - Reuters",
+        "url": "https://www.reuters.com/markets/companies/VRT",
+        "snippet": "VRT:NYQ Vertiv Holdings Co Last Price 321.62 USD price change +22.02 percent change +7.35% Delayed quote as of Jun 17, 2026. Close 299.60 Today's Open 304.72",
+        "source": "reuters.com"
       }
     ],
     "KLAC": [
       {
-        "title": "KLA: KLAC Stock Price Quote & News",
-        "url": "https://robinhood.com/us/en/stocks/KLAC",
-        "snippet": "KLA(KLAC) trades at $2,405.00. With shares now at $2,405.00, the stock is trading +910.1% above its intraday low and +896.7% below the session's peak.",
-        "source": "robinhood.com"
-      },
-      {
-        "title": "KLA Corporation (KLAC) Latest Stock News & Headlines",
-        "url": "https://finance.yahoo.com/quote/KLAC/news",
-        "snippet": "KLA Corporation is gaining attention with recent bullish price target upgrades and strong growth potential driven by AI demand.",
-        "source": "finance.yahoo.com"
-      },
-      {
-        "title": "KLAC News Today | Why did KLA stock drop today?",
-        "url": "https://www.marketbeat.com/stocks/NASDAQ/KLAC/news",
-        "snippet": "KLAC Latest News ... Applied Materials and KLA Are Surging. Why You Should Buy the Stocks, Says This Analyst. ... $ALMU stock is down 9% today. Here's what we see",
-        "source": "marketbeat.com"
+        "title": "Unusual volume S&P500 stocks in Tuesday's session | ChartMill.com",
+        "url": "https://www.chartmill.com/news/SATS/Chartmill-49940-Unusual-volume-SP500-stocks-in-Tuesdays-session",
+        "snippet": "Today's trading session witnessed an unusual volume of 5.37M shares for KLA CORP (NASDAQ:KLAC). Shares are falling by 4.56%. The average volume",
+        "source": "chartmill.com"
       },
       {
         "title": "KLA-Tencor Rises On Unusually High Volume (KLAC)",
@@ -143,60 +151,54 @@
         "source": "thestreet.com"
       },
       {
-        "title": "Which S&P500 stocks have an unusual volume on Monday?",
+        "title": "Which S&P500 stocks have an unusual volume on Monday? | ChartMill.com",
         "url": "https://www.chartmill.com/news/FOXA/Chartmill-49889-Which-SP500-stocks-have-an-unusual-volume-on-Monday",
-        "snippet": "KLA CORP's (NASDAQ:KLAC) traded a high volume of 6.98M shares. KLAC is showing a decline of 0.32% in today's trading. This is 480.0% above the",
+        "snippet": "# Which S&P500 stocks have an unusual volume on Monday? Let's take a closer look at the S&P500 stocks with an unusual volume in today's session on Monday. ## S&P500 unusual volume up stocks. | KLAC | **-0.32%** | **KLA CORP's** (NASDAQ:KLAC) traded a high volume of 6.98M shares. KLAC is showing a de",
         "source": "chartmill.com"
-      },
-      {
-        "title": "KLA Corporation (KLAC) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/KLAC",
-        "snippet": "KLA Corporation (KLAC) Stock Price, News, Quote & History - Yahoo Finance. * [Finance](https://finance.yahoo.com/). + [Finance](https://finance.yahoo.com/). - [My portfolio](https://finance.yahoo.com/portfolios/). - [News](https://finance.yahoo.com/news/). - [Markets](https://finance.yahoo.com/marke",
-        "source": "finance.yahoo.com"
       }
     ]
   },
   "sectors": {
-    "XLK": [
+    "XLC": [
       {
-        "title": "XLK Latest News & Stock Updates - Page 1",
-        "url": "https://public.com/stocks/xlk/news",
-        "snippet": "Technology Select Sector SPDR Fund (XLK) Latest News & Updates. Explore ... $10,000 Invested in XLK on New Year's Eve Is Worth $13,434 Today. 24/7 Wall",
-        "source": "public.com"
-      },
-      {
-        "title": "State Street Technology S…: XLK Stock Price Quote & News",
-        "url": "https://robinhood.com/us/en/stocks/XLK",
-        "snippet": "On 2026-06-11, State Street Technology Select Sector SPDR ETF(XLK) stock moved within a range of $176.50 to $184.17. With shares now at $181.41, the stock is",
+        "title": "State Street Communicatio…: XLC Stock Price Quote & News",
+        "url": "https://robinhood.com/us/en/stocks/XLC",
+        "snippet": "As of today, State Street Communication Services Select Sector SPDR ETF(XLC) shares are valued at $111.62. The company's market cap stands at 23.95B, with a",
         "source": "robinhood.com"
       },
       {
-        "title": "(XLK) News Headlines - Nasdaq",
-        "url": "https://www.nasdaq.com/market-activity/etf/xlk/news-headlines",
-        "snippet": "Latest XLK News · Markets. State Street Technology Select Sector SPDR ETF Experiences Big Inflow · Markets. Semiconductors Power the Digital Economy. · Markets.",
-        "source": "nasdaq.com"
+        "title": "State Street Communication Services Select Sector SPDR ...",
+        "url": "https://www.perplexity.ai/finance/XLC",
+        "snippet": "The Communication Services Select Sector SPDR ETF closed modestly higher, edging up amid a broad market rally sparked by a preliminary U.S.-Iran peace deal",
+        "source": "perplexity.ai"
+      },
+      {
+        "title": "Communication Services Select Sector SPDR Fund (XLC) ...",
+        "url": "https://action.alz.org/first-dry/Communication-Services-Select-Sector-SPDR-Fund-XLC-Leads-US-Sector-Gains-Amid-Broad-Equity-Rally-on-Middle-East-DeEscalation-Optimism-10-471",
+        "snippet": "The Communication Services Select Sector SPDR Fund (XLC) outperformed all 11 S&P 500 broad sectors, surging 4.4% as Key Developments Per",
+        "source": "action.alz.org"
       }
     ],
-    "XLF": [
+    "XLY": [
       {
-        "title": "State Street Financial Se…: XLF Stock Price Quote & News",
-        "url": "https://robinhood.com/us/en/stocks/XLF",
-        "snippet": "On 2026-06-15, State Street Financial Select Sector SPDR ETF(XLF) stock moved within a range of $53.60 to $54.43. With shares now at $53.40, the stock is",
+        "title": "State Street Consumer Dis…: XLY Stock Price Quote ... - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/XLY",
+        "snippet": "As of today, State Street Consumer Discretionary Select Sector SPDR ETF(XLY) shares are valued at $118.90. The company's market cap stands at 22.81B, with a",
         "source": "robinhood.com"
       },
       {
-        "title": "XLF State Street Financial Sel Sec SPDR ETF ETF Price & Overview",
-        "url": "https://seekingalpha.com/symbol/XLF",
-        "snippet": "XLF Latest Headlines ; Market pullback is viewed as a healthy pause, Morgan Stanley says · Today, 10:03 AM11 Comments ; Weekly ETFs: Six of 11 sectors record",
-        "source": "seekingalpha.com"
+        "title": "State Street Consumer Discretionary Select Sector SPDR ETF (XLY)",
+        "url": "https://finance.yahoo.com/quote/XLY",
+        "snippet": "The current bull market, which begins today with the S&P 500 at 7,473, started in October 12, 2022 and is now more than 3.5 years old. In that time, the S&P 500",
+        "source": "finance.yahoo.com"
       },
       {
-        "title": "State Street Financial Select Sector SPDR ETF (XLF) - Yahoo Finance",
-        "url": "https://finance.yahoo.com/quote/XLF/news",
-        "snippet": "Get the latest State Street Financial Select Sector SPDR ETF (XLF) stock news and headlines to help you in your trading and investing decisions.",
-        "source": "finance.yahoo.com"
+        "title": "(XLY) News Headlines - Nasdaq",
+        "url": "https://www.nasdaq.com/market-activity/etf/xly/news-headlines",
+        "snippet": "Find the latest news headlines about State Street Consumer Discretionary Select Sector SPDR ETF (XLY) at Nasdaq.com.",
+        "source": "nasdaq.com"
       }
     ]
   },
-  "built_at": "2026-06-16T22:24:57Z"
+  "built_at": "2026-06-17T22:24:35Z"
 }
