@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-18",
+  "last_updated": "2026-06-19",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,13 +19,31 @@
     "unemployment": 4.3,
     "unemployment_month": "March 2026",
     "bls_cpi_updated": "2026-04-23",
-    "cme_updated": "2026-06-16",
+    "cme_updated": "2026-06-19",
     "bls_unemp_updated": "2026-04-23"
   },
   "members": [
     {
-      "name": "Jerome H. Powell",
+      "name": "Kevin Warsh",
       "title": "Chair, Board of Governors",
+      "institution": "Federal Reserve Board",
+      "is_voter": true,
+      "stance": "Hawk",
+      "photo_url": "data/fedwatch_photos/warsh.jpg",
+      "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/warsh.htm",
+      "speeches": [
+        {
+          "date": "2026-05-22",
+          "event": "Sworn in as Chair, Federal Reserve Board",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20260522a.htm",
+          "brief_summary": "Kevin Warsh took the oath of office as Chair and Board member; FOMC unanimously selected him as Chair. Term as Chair runs through May 21, 2030.",
+          "detailed_summary": "Trump nominated Warsh on March 4, 2026; Senate confirmed him as Board member on May 12 and as Chair on May 13. Warsh previously served on the Board 2006-2011 and was viewed as a hawk on QE and unconventional policy during the GFC. Now returning as Chair, his policy stance is being closely watched by markets pricing the July 29 FOMC."
+        }
+      ]
+    },
+    {
+      "name": "Jerome H. Powell",
+      "title": "Governor",
       "institution": "Federal Reserve Board",
       "is_voter": true,
       "stance": "Neutral",
@@ -36,8 +54,8 @@
           "date": "2026-06-01",
           "event": "Powell, Acceptance Remarks",
           "url": "https://www.federalreserve.gov/newsevents/speech/powell20260531a.htm",
-          "brief_summary": "Speech For the 2026 John F. Kennedy Profile in Courage Award, John F. Kennedy Library Foundation, Boston, Massachusetts",
-          "detailed_summary": ""
+          "brief_summary": "Powell accepts JFK Profile in Courage Award, emphasizing Federal Reserve independence from political pressure and the importance of preserving democratic institutions.",
+          "detailed_summary": "This is a ceremonial acceptance speech, not a monetary policy address. Powell reflects on President Kennedy's legacy and discusses the Federal Reserve's institutional role in maintaining economic and financial stability. He emphasizes that Congress insulated monetary policy from political pressure, noting Fed governors and Reserve Bank presidents have legal protections against removal and serve terms unrelated to election cycles. Powell stresses that the Fed's credibility—built over decades—depends on making decisions based solely on economic analysis without regard to political considerations, warning that compromising this independence would undermine public faith in the central bank."
         },
         {
           "date": "2026-03-21",
@@ -107,15 +125,15 @@
           "date": "2026-06-06",
           "event": "Barr, Deregulating in a Financial Boom: What Could Go Wrong?",
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260606a.htm",
-          "brief_summary": "Speech At American University, Washington, D.C.",
-          "detailed_summary": ""
+          "brief_summary": "Governor Barr warns that recent Federal Reserve deregulation—including capital requirement cuts of 6% for large banks and weakened supervision—risks financial stability despite current economic strength.",
+          "detailed_summary": "This supervision and regulation speech is not about monetary policy rate decisions. Governor Barr expresses concern that the Fed and other banking regulators are simultaneously reducing capital requirements for large banks (particularly the 8 GSIBs holding 60% of banking sector assets), weakening stress tests, eroding leverage ratios, lowering GSIB surcharges, and degrading supervisory oversight through rating system changes and reduced matters-requiring-attention issuances. He argues these deregulatory steps, while appearing beneficial short-term, create long-term financial stability vulnerabilities reminiscent of pre-crisis patterns, and that reducing capital standards by $60 billion leaves the system underinsured against systemic risk."
         },
         {
           "date": "2026-05-20",
           "event": "Barr, Measuring Financial Health",
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260520a.htm",
-          "brief_summary": "Speech At EMERGE Financial Health 2026 Scaling Progress, Shaping the Future, Atlanta, Georgia",
-          "detailed_summary": ""
+          "brief_summary": "Governor Barr discusses evolving financial health measurement beyond banking access, emphasizing data-driven metrics and AI tools to improve consumer outcomes.",
+          "detailed_summary": "This speech addresses consumer financial health measurement rather than monetary policy. Barr notes that while 96% of American adults have bank accounts, only 31% report feeling financially healthy, indicating access alone is insufficient. He discusses the Federal Reserve's contributions to financial health measurement through surveys like the SCF and SHED, highlighting the '$400 test' showing 37% of households lack emergency savings. Barr emphasizes how technological advances in AI and behavioral science enable banks to develop products and services targeting tangible positive financial outcomes for consumers, moving measurement beyond self-reported perceptions to actionable, real-time metrics."
         },
         {
           "date": "2026-05-14",
@@ -153,36 +171,36 @@
           "date": "2026-05-14",
           "event": "Bowman, Opening Remarks",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260514a.htm",
-          "brief_summary": "Speech At the Federal Reserve Bank of Kansas City 2026 Future of Banking Conference: Powering Progress, Protecting Trust, Kansas City, Missouri (via pre-recorded video)",
-          "detailed_summary": ""
+          "brief_summary": "Vice Chair Bowman advocates tailoring regulatory and supervisory approaches to community banks, criticizing one-size-fits-all rules that burden smaller institutions disproportionately.",
+          "detailed_summary": "Bowman's speech addresses regulatory burden on community banks, particularly CECL accounting requirements and Regulation O compliance that impose costs without commensurate safety benefits. She argues supervisory approaches should focus on material financial risks rather than procedural violations, citing examples where minor technical infractions receive excessive enforcement scrutiny. The Federal Reserve has published supervisory operating principles to refocus supervision on genuine threats to bank soundness, clarifying standards for Matters Requiring Attention and supporting community banks' ability to adapt to market changes while serving their communities effectively."
         },
         {
           "date": "2026-05-08",
           "event": "Bowman, When Regulation Reshapes Markets: The Migration of Corporate Lending",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260508a.htm",
-          "brief_summary": "Speech At the Hoover Institution Annual Monetary Policy Conference, Stanford, California",
-          "detailed_summary": ""
+          "brief_summary": "Bowman addresses regulatory-driven migration of corporate lending from banks to nonbanks, proposing Basel III capital framework changes to reduce punitive treatment of traditional bank lending and restore competitive balance.",
+          "detailed_summary": "Vice Chair Bowman discusses how post-2008 financial crisis regulations, while necessary for safety, created unintended consequences that discouraged banks from corporate lending. Bank share of corporate lending fell from 48% (2015) to 29% (2025), with private credit growing to $1.4 trillion. She identifies perverse capital incentives favoring bank lending to private credit funds over direct corporate lending. The Fed's three-part response includes proposed Basel III changes reducing risk weights on investment-grade corporate loans from 100% to 65%, enabling banks to compete more effectively with nonbanks while maintaining strong capital standards and financial stability safeguards."
         },
         {
           "date": "2026-05-05",
           "event": "Bowman, A Coordinated Approach to Consumer Fraud Protection",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260505a.htm",
-          "brief_summary": "Speech At the 2026 Women in Housing and Finance Symposium, Washington, D.C.",
-          "detailed_summary": ""
+          "brief_summary": "Vice Chair Bowman addresses consumer fraud as systemic financial stability risk, citing Federal Reserve data showing one in five Americans experienced fraud in 2024 with $63 billion net losses.",
+          "detailed_summary": "This speech focuses on consumer fraud protection rather than monetary policy. Bowman emphasizes that fraud threatens financial system integrity and banking stability, affecting institutions across all sizes with hundreds of millions in annual losses. She cites 2025 Survey of Household Economics and Decisionmaking data: 21% of adults experienced fraud in 2024, total non-credit card fraud losses reached $84 billion with only $21 billion recovered, and median victim loss was $500. Bowman stresses fraud's disproportionate impact on financially vulnerable households and calls for coordinated protective approaches, noting the threat transcends demographic boundaries."
         },
         {
           "date": "2026-05-01",
           "event": "Bowman, Artificial Intelligence in the Financial System",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260501a.htm",
-          "brief_summary": "Speech At the Financial Stability Oversight Council Artificial Intelligence Series Roundtable on Cybersecurity and Risk Management, Washington, D.C.",
-          "detailed_summary": ""
+          "brief_summary": "Vice Chair Bowman discusses Federal Reserve supervisory approaches to artificial intelligence in banking, emphasizing balanced risk management, innovation support, and updated guidance for generative AI tools.",
+          "detailed_summary": "Bowman addressed AI's integration into financial systems at an FSOC roundtable on cybersecurity and risk management. She outlined the Fed's supervisory approach prioritizing material financial risks while enabling responsible AI innovation across banks of all sizes. The Fed recently amended model risk management guidance to clarify it does not apply to generative or agentic AI, recognizing these novel technologies require different approaches. Bowman highlighted Anthropic's Mythos AI model—which identifies cyber vulnerabilities—as exemplifying both benefits (enhanced cybersecurity) and risks (potential malicious exploitation), emphasizing need for coordinated government oversight and ongoing communication with financial institutions."
         },
         {
           "date": "2026-05-29",
           "event": "Bowman, A Framework for Practical Monetary Policy Decision Making",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260529a.htm",
-          "brief_summary": "Speech At the Reykjav&iacute;k Economic Conference 2026, Central Bank of Iceland, Reykjav&iacute;k, Iceland",
-          "detailed_summary": ""
+          "brief_summary": "Bowman outlines her practical framework for monetary policy decisions, emphasizing analysis of GDP, employment, and inflation indicators to guide federal funds rate adjustments.",
+          "detailed_summary": "Vice Chair Bowman describes her decision-making approach to setting the federal funds rate, examining real GDP growth, private domestic final purchases, unemployment rates, payroll employment, and PCE inflation metrics. She notes the Fed's dual mandate of maximum employment and price stability, with 2 percent PCE inflation as the established goal. Bowman emphasizes the importance of considering labor market slack through multiple indicators—discouraged workers, wage growth, job vacancies—and monitoring core PCE inflation as more predictive than total inflation. She stresses that real-time data interpretation remains challenging due to volatility and revisions, requiring contextual input from business contacts and market participants to inform appropriate policy stance."
         }
       ]
     },
@@ -199,8 +217,8 @@
           "date": "2026-05-27",
           "event": "Cook, The Opportunities and Risks AI Presents for the Economy and Financial System",
           "url": "https://www.federalreserve.gov/newsevents/speech/cook20260527a.htm",
-          "brief_summary": "Speech At the Stanford Institute for Economic Policy Research, Stanford University, Stanford, California",
-          "detailed_summary": ""
+          "brief_summary": "Governor Cook reports inflation rising above target at 3.8% PCE, driven by energy shocks and tariffs, while labor market remains stable but faces downside risks from AI disruption and geopolitical uncertainty.",
+          "detailed_summary": "Cook presents an economic outlook balancing concerns and optimism. Inflation has moved in the wrong direction, reaching 3.8% PCE in April 2026—well above the 2% target—with core PCE at 3.3%, its highest since 2023, primarily driven by gasoline prices from the Iran conflict and tariffs. She notes AI-related investment demand ($1.5 trillion in announced data-center plans) may layer additional price pressures. The unemployment rate remains stable at 4.3%, suggesting balanced labor supply and demand, though she emphasizes elevated downside risks from geopolitical uncertainty and potential AI-driven labor market disruption. She expresses optimism on GDP growth and productivity, viewing AI as transformative for long-term economic potential while cautioning about timing of job displacement versus creation."
         },
         {
           "date": "2026-05-08",
@@ -277,8 +295,8 @@
           "date": "2026-05-28",
           "event": "Jefferson, Global Economic Developments and the U.S. Economy",
           "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260527a.htm",
-          "brief_summary": "Speech At the 2026 Bank of Japan-Institute for Monetary and Economic Studies Conference, Tokyo, Japan",
-          "detailed_summary": ""
+          "brief_summary": "Fed maintains 3.5-3.75% federal funds rate; expects inflation decline later in 2026 as tariffs and energy shocks wane, though upside risks remain.",
+          "detailed_summary": "Vice Chair Jefferson outlined global headwinds including elevated energy prices from Middle East conflict, AI advancement, and trade disruptions affecting U.S. inflation and growth. The FOMC kept rates steady at 3.5-3.75% in late April, with inflation recently elevated due to tariffs and energy costs but expected to moderate. Jefferson emphasized commitment to the 2% inflation target despite downside labor market risks and upside inflation risks, stating the current policy stance enables data-dependent responses at upcoming meetings without prejudging future decisions."
         },
         {
           "date": "2026-04-07",
