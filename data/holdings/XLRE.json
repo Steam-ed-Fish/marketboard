@@ -4,12 +4,12 @@
     {
       "symbol": "WELL",
       "weight": 0.0985717,
-      "daily": 0.32
+      "daily": 0.05
     },
     {
       "symbol": "PLD",
       "weight": 0.0917554,
-      "daily": -1.6
+      "daily": -0.28
     },
     {
       "symbol": "EQIX",
@@ -18,12 +18,13 @@
     },
     {
       "symbol": "AMT",
-      "weight": 0.0602206
+      "weight": 0.0602206,
+      "daily": -2.78
     },
     {
       "symbol": "SPG",
       "weight": 0.0467772,
-      "daily": -0.2
+      "daily": 0.7
     },
     {
       "symbol": "DLR",
@@ -33,19 +34,22 @@
     {
       "symbol": "PSA",
       "weight": 0.043819398,
-      "daily": -0.86
+      "daily": 1.77
     },
     {
       "symbol": "VTR",
-      "weight": 0.0423496
+      "weight": 0.0423496,
+      "daily": -0.67
     },
     {
       "symbol": "CCI",
-      "weight": 0.0420857
+      "weight": 0.0420857,
+      "daily": -4.34
     },
     {
       "symbol": "O",
-      "weight": 0.0409809
+      "weight": 0.0409809,
+      "daily": -0.54
     }
   ]
 }
