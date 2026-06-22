@@ -1,22 +1,28 @@
 {
   "market": [
     {
-      "title": "U.S. Stock Market Headlines | Breaking Stock Market News - Reuters",
-      "url": "https://www.reuters.com/markets/us",
-      "snippet": "Top U.S. Markets ; 51,564.70, +72.15, +0.14%Positive ; 26,517.93, +496.28, +1.91%Positive.",
-      "source": "reuters.com"
-    },
-    {
       "title": "Yahoo Finance - Stock Market Live, Quotes, Business & Finance News",
       "url": "https://finance.yahoo.com",
-      "snippet": "U.S. markets open in 8h 33m ; S&P Futures. 7,533.25. -37.50 ; Dow Futures. 51,827.00. -181.00 ; Nasdaq Futures. 30,568.25. -151.50 ; Russell 2000 Futures. 2,975.90.",
+      "snippet": "U.S. markets close in 28m ; S&P 500. 7,467.65. -32.93 ; Dow 30. 51,634.11. +69.41 ; Nasdaq. 26,167.12. -350.81 ; Russell 2000. 3,002.89. +23.12 ; VIX. 17.46. +0.68",
       "source": "finance.yahoo.com"
     },
     {
       "title": "United States Stock Market Index - Quote - Chart - Trading Economics",
       "url": "https://tradingeconomics.com/united-states/stock-market",
-      "snippet": "US stock futures moved lower on Monday as tensions flared during the first day of talks between the US and Iran, driving oil prices higher.",
+      "snippet": "US stock indexes closed mixed on Monday as losses in megacap tech stocks offset optimism over progress in restoring energy supply from the Middle East.",
       "source": "tradingeconomics.com"
+    },
+    {
+      "title": "U.S. Stocks - WSJ",
+      "url": "https://www.wsj.com/market-data/stocks",
+      "snippet": "U.S. STOCKS ; DJIA, 51747.11, 182.41 ; Nasdaq Composite, 26209.14, -308.79 ; S&P 500, 7473.19, -27.39 ; DJ Total Stock Market, 74130.15, -243.09",
+      "source": "wsj.com"
+    },
+    {
+      "title": "S&P 500 (^GSPC) Charts, Data & News - Yahoo Finance",
+      "url": "https://finance.yahoo.com/quote/%5EGSPC",
+      "snippet": "S&P 500 (^GSPC) 7,472.79 -27.79 (-0.37%) At close: 4:20:01 PM EDT. Stock market today: S&P 500, Nasdaq slide as Big Tech, Micron stock hits an all-time high,",
+      "source": "finance.yahoo.com"
     },
     {
       "title": "S&P 500 Index (SP500) Analysis, News, And Chart Today",
@@ -25,16 +31,10 @@
       "source": "seekingalpha.com"
     },
     {
-      "title": "SPX: S&P 500 Index - Stock Price, Quote and News - CNBC",
-      "url": "https://www.cnbc.com/quotes/.SPX",
-      "snippet": "S&P 500 closes higher, On S&P 500 Index Stock futures fall as investors weigh Iran deal progress and await key reading on inflation. Financial",
-      "source": "cnbc.com"
-    },
-    {
-      "title": "News & Announcements - Media Center | S&P Dow Jones Indices",
-      "url": "https://www.spglobal.com/spdji/en/media-center/news-announcements",
-      "snippet": "S&P 500 Q3 2025 Buybacks Post Modest 6.2% Gain to $249.0 Billion After Declining 20.1% Buybacks Declines 20% Amidst Uncertainty to $235 Billion From Q1 2025's",
-      "source": "spglobal.com"
+      "title": "S&P 500 Index (SPX) - Investing.com",
+      "url": "https://www.investing.com/indices/us-spx-500",
+      "snippet": "Today, the S&P 500 opened at 7,500.44. What is the trading volume for S&P 500? The current volume for S&P 500 is 0.",
+      "source": "investing.com"
     },
     {
       "title": "Federal Reserve Monetary Policy | U.S. Bank",
@@ -49,10 +49,10 @@
       "source": "federalreserve.gov"
     },
     {
-      "title": "Federal Reserve Board - Home",
-      "url": "https://www.federalreserve.gov",
-      "snippet": "*   [Federal Reserve Banks](https://www.federalreserve.gov/aboutthefed/federal-reserve-system.htm). *   [Press Releases](https://www.federalreserve.gov/newsevents/pressreleases.htm). *   [Calendar](https://www.federalreserve.gov/newsevents/calendar.htm). *   [Videos](https://www.federalreserve.gov/v",
-      "source": "federalreserve.gov"
+      "title": "U.S. Federal Reserve News | Today's Latest Stories | Reuters",
+      "url": "https://www.reuters.com/markets/us/federal-reserve",
+      "snippet": "[Skip to main content](https://www.reuters.com/markets/us/federal-reserve/#main-content). *   [World](https://www.reuters.com/world/). ## [Browse World](https://www.reuters.com/world/). *   [Business](https://www.reuters.com/business/). ## [Browse Business](https://www.reuters.com/business/). *   [D",
+      "source": "reuters.com"
     },
     {
       "title": "Top Geopolitical Risks of 2025 - S&P Global",
@@ -77,126 +77,126 @@
     }
   ],
   "movers": {
-    "INTC": [
+    "AGI": [
       {
-        "title": "Intel: INTC Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/INTC",
-        "snippet": "With a market cap of 672.43B, Intel(INTC) trades at $134.16. Shares are currently priced at $134.16, which is +10.5% above the low and -1.0% below the high.",
+        "title": "Alamos Gold (AGI) Stock price today - quote & chart - Kraken",
+        "url": "https://www.kraken.com/stocks/agi",
+        "snippet": "The Alamos Gold Inc. Class A Common Shares (AGI) stock price today is $34.56, reflecting a -4.87% move since the market opened. The company's market",
+        "source": "kraken.com"
+      },
+      {
+        "title": "AGI Stock Price Quote & News - Alamos Gold - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/AGI",
+        "snippet": "The current price stands at $31.07, placing the stock +2.8% above today's low and -9.5% off the high. The Alamos Gold(AGI)'s current trading volume is 6.31M,",
         "source": "robinhood.com"
       },
       {
-        "title": "Intel Corporation (INTC) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/INTC",
-        "snippet": "News headlines Intel (INTC) is experiencing a surge in interest due to a partnership with Apple for U.S.-based chip production, backed by",
-        "source": "finance.yahoo.com"
-      },
-      {
-        "title": "INTC: Intel Corp Latest Stock Price, Analysis, News and Trading Ideas",
-        "url": "https://stocktwits.com/symbol/INTC",
-        "snippet": "Exchange: NASDAQ·Updated. INTCIntel Corp $140.25 $6.26 (4.67%) Overnight Prev Close $133.99 203,427. Low $18.97 PE Ratio -213.94 Avg. INTC Stock Jumping Over 5",
-        "source": "stocktwits.com"
-      }
-    ],
-    "KLAC": [
-      {
-        "title": "Kla (KLAC) Stock News & Updates | StockTitan",
-        "url": "https://www.stocktitan.net/news/KLAC",
-        "snippet": "KLA Corporation (NASDAQ: KLAC) has announced a quarterly cash dividend of $1.90 per share on its common stock. The dividend will be paid on September 3, 2025,",
+        "title": "Alamos Gold (AGI) Stock News & Updates | StockTitan",
+        "url": "https://www.stocktitan.net/news/AGI",
+        "snippet": "Alamos Gold (NYSE:AGI) issued an operational update, cutting Q2 2026 production guidance to 130,000–135,000 ounces, about 12% below prior guidance,",
         "source": "stocktitan.net"
       },
       {
-        "title": "KLA: KLAC Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/KLAC",
-        "snippet": "KLA(KLAC) trades at $261.11. With shares now at $261.11, the stock is trading +5.3% above its intraday low and -1.1% below the session's peak.",
-        "source": "robinhood.com"
-      },
-      {
-        "title": "KLAC Stock Quote Price and Forecast - CNN",
-        "url": "https://www.cnn.com/markets/stocks/KLAC",
-        "snippet": "Today Price at close USD. The price of KLAC shares has increased $20.83 since the market last closed. This is a 8.73% rise. Closed at $259.56. Show more The",
-        "source": "cnn.com"
-      },
-      {
-        "title": "Unusual volume S&P500 stocks in Tuesday's session | ChartMill.com",
-        "url": "https://www.chartmill.com/news/FOX/Chartmill-49940-Unusual-volume-SP500-stocks-in-Tuesdays-session",
-        "snippet": "# Unusual volume S&P500 stocks in Tuesday's session. Discover the S&P500 stocks that are experiencing unusual trading volume in today's session. ## S&P500 unusual volume stocks. | KLAC | **-4.56%** | Today's trading session witnessed an unusual volume of 5.37M shares for **KLA CORP** (NASDAQ:KLAC). ",
+        "title": "Unusual volume stocks are being observed in Monday's session.",
+        "url": "https://www.chartmill.com/news/TRAW/Chartmill-48148-Unusual-volume-stocks-are-being-observed-in-Mondays-session",
+        "snippet": "The trading volume of ROBO.AI INC (NASDAQ:AIIO) today is 15.95M shares, which is considered unusual. The share price of AIIO increased by 23.84%",
         "source": "chartmill.com"
       },
       {
-        "title": "KLA-Tencor Rises On Unusually High Volume (KLAC) - TheStreet",
-        "url": "https://www.thestreet.com/markets/kla-tencor-rises-on-unusually-high-volume-klac-11909974",
-        "snippet": "KLA-Tencor Corporation (Nasdaq:KLAC) is trading at unusually high volume Tuesday with 4.3 million shares changing hands.",
-        "source": "thestreet.com"
+        "title": "Unusual Volume Stocks - Yahoo Finance",
+        "url": "https://finance.yahoo.com/markets/stocks/unusual-volume-stocks",
+        "snippet": "3. Most active penny stocks. 2. Best 0% APR cards. 3. Best money market accounts. | DNMXW | Dynamix Corporation III |  | 8,230 | 0.28  -0.10 (-25.75%) | -0.10 | -25.75% | 82,282 | 7,929 | 0 | -- | -8.89% | 0.26 0.37 |. | GJT Trust For Allstate Corp Securities, Series 2006-3 06-3 ASSET BKD\") | Strats",
+        "source": "finance.yahoo.com"
       },
       {
-        "title": "Abnormal Volume Stocks for Thursday: KLAC, FOXA, CBOE, ROKU, and More",
-        "url": "https://www.theonlineinvestor.com/article/202606/abnormal-volume-stocks-for-thursday-klac-foxa-cboe-roku-and-more-KLAC06182026topvol.htm",
-        "snippet": "In simple terms:   * **Normal volume**: average daily shares traded over the prior three months * **Abnormal volume**: current session volume divided by normal volume * **Why it matters**: unusually heavy trading often points to a catalyst or a meaningful shift in market positioning  Top Abnormal Vo",
-        "source": "theonlineinvestor.com"
+        "title": "Unusual Volume Stocks: US companies with unusually high or low trading volume - Yahoo Finance",
+        "url": "https://finance.yahoo.com/research-hub/screener/unusual-volume-stocks",
+        "snippet": "2. Best 0% APR cards. 3. Best balance transfer cards. 3. Best money market accounts. | 3 | D DNMXW | Dynamix Corporation III |  | 8,230 | 0.28 | -0.10 | -25.75% | 82,282 | 7,929 | 0 | -- | -8.89% | US | Nasdaq GM |  |. | 7 | G GJT Trust For Allstate Corp Securities, Series 2006-3 06-3 ASSET BKD\") | ",
+        "source": "finance.yahoo.com"
       }
     ],
-    "MU": [
+    "VRT": [
       {
-        "title": "MU Stock Price Quote & News - Micron Technology - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/MU",
-        "snippet": "Stock Snapshot. As of today, Micron Technology(MU) shares are valued at $1,151.80. The company's market cap stands at 1.28T, with a P/E ratio of 53.54 and a",
+        "title": "Vertiv: VRT Stock Price Quote & News - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/VRT",
+        "snippet": "Shares are currently priced at $336.60, which is +0.8% above the low and -2.9% below the high. Vertiv(VRT) shares are trading with a volume of 115.25K, against",
         "source": "robinhood.com"
       },
       {
-        "title": "Micron Technology Inc. (MU) Stock Price Today - WSJ",
-        "url": "https://www.wsj.com/market-data/quotes/MU",
-        "snippet": "Micron Technology Inc.MU (U.S.: Nasdaq) · AT CLOSE 4:00 PM EDT 06/18/26 · 1,133.99USD · 90.808.70% · Volume64,642,538",
-        "source": "wsj.com"
+        "title": "Vertiv Holdings Co (VRT) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/VRT",
+        "snippet": "News headlines Vertiv (VRT) continues to gain investor interest with a 103% stock increase over the last six months, driven by strong revenue growth and",
+        "source": "finance.yahoo.com"
       },
       {
-        "title": "Micron News Today (MU) - Investing.com",
-        "url": "https://www.investing.com/equities/micron-tech-news",
-        "snippet": "Find the latest Micron news today, including breaking Micron stock news, key announcements, and market-moving updates. Summarize MU's latest news.",
-        "source": "investing.com"
+        "title": "Vertiv Holdings Co (VRT) Latest Stock News & Headlines",
+        "url": "https://finance.yahoo.com/quote/VRT/news",
+        "snippet": "Vertiv Holdings Co (VRT) Is Up 11.8% After AI-Driven Guidance Hike And ThermoKey Deal - Has The Bull Case Changed?",
+        "source": "finance.yahoo.com"
+      }
+    ],
+    "PLTR": [
+      {
+        "title": "Palantir Technologies Inc. (PLTR) Stock Price, News, Quote & History",
+        "url": "https://finance.yahoo.com/quote/PLTR/latest-news",
+        "snippet": "Palantir Technologies is facing challenges with a 7% decline in stock price following contract loss concerns and high valuation metrics.",
+        "source": "finance.yahoo.com"
+      },
+      {
+        "title": "PLTR Stock Price Quote & News - Palantir Technologies - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/PLTR",
+        "snippet": "With shares now at $120.99, the stock is trading +1.5% above its intraday low and -6.1% below the session's peak. Trading volume for Palantir",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "Palantir Technologies Inc (PLTR) Stock Price & News - Google",
+        "url": "https://www.google.com/finance/beta/quote/PLTR:NASDAQ",
+        "snippet": "Why Palantir Technologies (PLTR) Shares Are Trading Lower Today. Barron's. ·. 1 hour ago. Palantir Stock Falls Below a Key Price Level. How Low It",
+        "source": "google.com"
       }
     ]
   },
   "sectors": {
-    "XLK": [
+    "XLY": [
       {
-        "title": "State Street Technology Select Sector SPDR ETF (XLK) Price & News",
-        "url": "https://www.google.com/finance/beta/quote/XLK:NYSEARCA",
-        "snippet": "State Street Technology Select Sector SPDR ETF. $191.44. arrow_upward. +3.04%. (+5.64) 1D. Jun 18, 8:00:00 PM GMT-4 · USD. area_chartArea.",
-        "source": "google.com"
-      },
-      {
-        "title": "(XLK) News Headlines - Nasdaq",
-        "url": "https://www.nasdaq.com/market-activity/etf/xlk/news-headlines",
-        "snippet": "Find the latest news headlines about State Street Technology Select Sector SPDR ETF (XLK) at Nasdaq.com.",
-        "source": "nasdaq.com"
-      },
-      {
-        "title": "State Street Technology S…: XLK Stock Price Quote & News",
-        "url": "https://robinhood.com/us/en/stocks/XLK",
-        "snippet": "State Street Technology Select Sector SPDR ETF(XLK) trades at $191.35. The stock has a price-to-earnings ratio of 41.77 and currently yields dividends of 0.46%.",
+        "title": "State Street Consumer Dis…: XLY Stock Price Quote ... - Robinhood",
+        "url": "https://robinhood.com/us/en/stocks/XLY",
+        "snippet": "As of today, State Street Consumer Discretionary Select Sector SPDR ETF(XLY) shares are valued at $116.76. The company's market cap stands at 22.53B, with a",
         "source": "robinhood.com"
+      },
+      {
+        "title": "State Street Consumer Discretionary Select Sector SPDR ETF (XLY)",
+        "url": "https://finance.yahoo.com/quote/XLY/news",
+        "snippet": "State Street Consumer Discretionary Select Sector SPDR ETF (XLY) ; Sector Update: Consumer Stocks Decline Late Afternoon · MT Newswires • 27m ago. UBER ; Why",
+        "source": "finance.yahoo.com"
+      },
+      {
+        "title": "XLY | State Street Consumer Discretionary Select Sector SPDR ETF ...",
+        "url": "https://www.marketwatch.com/investing/fund/xly",
+        "snippet": "XLY | A complete State Street Consumer Discretionary Select Sector SPDR ETF exchange traded fund overview by MarketWatch. View the latest ETF prices and news",
+        "source": "marketwatch.com"
       }
     ],
-    "XLE": [
+    "XLP": [
       {
-        "title": "State Street Energy Selec…: XLE Stock Price Quote & News",
-        "url": "https://robinhood.com/us/en/stocks/XLE",
-        "snippet": "As of today, State Street Energy Select Sector SPDR ETF(XLE) shares are valued at $53.85. The company's market cap stands at 36.5B, with a P/E ratio of",
+        "title": "State Street Consumer Sta…: XLP Stock Price Quote & News",
+        "url": "https://robinhood.com/us/en/stocks/XLP",
+        "snippet": "As of today, State Street Consumer Staples Select Sector SPDR ETF(XLP) shares are valued at $82.92. The company's market cap stands at 13.72B, with a P/E",
         "source": "robinhood.com"
       },
       {
-        "title": "(XLE) News Headlines - Nasdaq",
-        "url": "https://www.nasdaq.com/market-activity/etf/xle/news-headlines",
-        "snippet": "Latest XLE News · Technology. Energy ETFs Worth Considering Amid Oil Pullback and Supply Constraints · Markets. Noteworthy ETF Outflows: XLE, COP, SLB, VLO.",
+        "title": "(XLP) News Headlines - Nasdaq",
+        "url": "https://www.nasdaq.com/market-activity/etf/xlp/news-headlines",
+        "snippet": "Consumer Staples Are Back in Focus. VDC and XLP Offer Two Ways to Own Them. May 8, 2026 • The Motley Fool.",
         "source": "nasdaq.com"
       },
       {
-        "title": "Energy Select Sector SPDR ETF - XLE Stock Price - Investing.com",
-        "url": "https://www.investing.com/etfs/spdr-energy-select-sector-fund",
-        "snippet": "The XLE stock price today is 53.77. Does XLE Pay Dividends? What's The Current Dividend Yield? The Energy Select Sector SPDR dividend yield is 2.86",
-        "source": "investing.com"
+        "title": "XLP Latest News and Headlines - TradingView",
+        "url": "https://www.tradingview.com/symbols/AMEX-XLP/news",
+        "snippet": "Find today's State Street Consumer Staples Select Sector SPDR ETF news and updates to make informed decisions when trading XLP.",
+        "source": "tradingview.com"
       }
     ]
   },
-  "built_at": "2026-06-22T08:27:57Z"
+  "built_at": "2026-06-22T22:33:15Z"
 }
