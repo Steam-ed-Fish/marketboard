@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-24",
+  "last_updated": "2026-06-25",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -214,6 +214,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/cook.htm",
       "speeches": [
         {
+          "date": "2026-06-24",
+          "event": "Cook, Welcome Remarks",
+          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260624a.htm",
+          "brief_summary": "Speech At the State of Small Business Symposium hosted by the Federal Reserve Bank of Cleveland (via pre-recorded video)",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-05-27",
           "event": "Cook, The Opportunities and Risks AI Presents for the Economy and Financial System",
           "url": "https://www.federalreserve.gov/newsevents/speech/cook20260527a.htm",
@@ -240,13 +247,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/cook20260224a.htm",
           "brief_summary": "Cook argued AI's potential to raise the neutral rate and displace labor creates new monetary policy tradeoffs that standard tools may not resolve.",
           "detailed_summary": "Cook noted that significant AI capital investment may have already raised the neutral rate of interest in the near term, implying the current federal funds rate is less restrictive than it appears on a nominal basis. She also warned that AI-driven labor displacement could generate simultaneous increases in unemployment and goods price pressure, creating a dual-mandate dilemma that conventional interest rate policy cannot cleanly address. These views support her relatively hawkish orientation — the neutral rate may be higher than consensus estimates, meaning current policy is closer to easy than it seems."
-        },
-        {
-          "date": "2026-01-16",
-          "event": "Economic Club of Miami, Miami, FL — 'Economic Outlook'",
-          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260116a.htm",
-          "brief_summary": "Cook presented an economic outlook noting solid growth, a stabilizing labor market, and inflation still above the 2% target.",
-          "detailed_summary": "Cook projected the U.S. economy would continue to grow near its 2025 pace, with the labor market broadly balanced and inflation remaining above the 2% objective. She highlighted tariff pass-through as a near-term upside inflation risk while expressing cautious optimism that disinflation would resume over the course of 2026. Her remarks were consistent with supporting a patient hold on rates while conditions are assessed."
         }
       ]
     },
