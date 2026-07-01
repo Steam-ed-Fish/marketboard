@@ -1,40 +1,22 @@
 {
   "market": [
     {
-      "title": "Yahoo Finance - Stock Market Live, Quotes, Business & Finance News",
-      "url": "https://finance.yahoo.com",
-      "snippet": "U.S. markets closed ; S&P 500. 7,499.36. +58.93 ; Dow 30. 52,319.20. +136.46 ; Nasdaq. 26,213.72. +393.57 ; Russell 2000. 3,024.37. +13.95 ; VIX. 16.45. -1.20",
-      "source": "finance.yahoo.com"
-    },
-    {
-      "title": "U.S. Stock Market Headlines | Breaking Stock Market News - Reuters",
-      "url": "https://www.reuters.com/markets/us",
-      "snippet": "Top U.S. Markets ; 52,367.97, +185.23, +0.35%Positive ; 26,171.84, +351.70, +1.36%Positive.",
-      "source": "reuters.com"
-    },
-    {
-      "title": "U.S. Stock Markets Today - Fox Business",
-      "url": "https://www.foxbusiness.com/stocks",
-      "snippet": "Discover the U.S. markets today with Fox Business. See the trending stocks in the USA stock market and today's stock market results.",
-      "source": "foxbusiness.com"
-    },
-    {
-      "title": "SPX: S&P 500 Index - Stock Price, Quote and News - CNBC",
-      "url": "https://www.cnbc.com/quotes/.SPX",
-      "snippet": "S&P 500 Index. Last | 4:14 PM EDT 7,499.36 quote price arrow up +58.93 (+0.79%) Latest On S&P 500 Index. Global Business and Financial News, Stock Quotes, and",
-      "source": "cnbc.com"
+      "title": "S&P 500 Price, Real-time Quote & News - Google Finance",
+      "url": "https://www.google.com/finance/beta/quote/.INX:INDEXSP",
+      "snippet": "S&P 500 7,499.36 +0.79% (+58.93) 1D Jun 30, 5:00:03 PM GMT-4. S&P 500: Watsco (NYSE:WSO) Rises After Strong Earnings Beat Phemex. S&P 500 Futures, Nasdaq Ease",
+      "source": "google.com"
     },
     {
       "title": "S&P 500 INDEX TODAY | INX LIVE TICKER - Markets Insider",
       "url": "https://markets.businessinsider.com/index/s&p_500",
-      "snippet": "Index including historical chart, <b>news</b> and constituents. up as much as 17% during Monday's trading session. Realtime Prices for S&P 500 Stocks",
+      "snippet": "S&P 500 Today: Get all information on the S&P 500 Index including historical chart, news and constituents.",
       "source": "markets.businessinsider.com"
     },
     {
-      "title": "S&P 500 (^GSPC) Charts, Data & News - Yahoo Finance",
-      "url": "https://finance.yahoo.com/quote/%5EGSPC",
-      "snippet": "S&P 500 (^GSPC) 7,492.26 +51.83 (+0.70%) As of 2:01:28 PM EDT. Week Range 6,177.97. S&P 500, Nasdaq rise, Dow eyes fresh record to wrap",
-      "source": "finance.yahoo.com"
+      "title": "(.SPX) | Stock Price & Latest News - Reuters",
+      "url": "https://www.reuters.com/markets/quote/.SPX",
+      "snippet": "Price 7,354.02 price change -3.47 percent change -0.05% Today's Open 7,312.74. The S&P 500 and Nasdaq finished June on Tuesday",
+      "source": "reuters.com"
     },
     {
       "title": "News & Events - Federal Reserve Board",
@@ -69,7 +51,7 @@
       "category": "geopolitical"
     },
     {
-      "title": "Geopolitical Risks and Their Impact on Global Macro-Financial Stability: Literature and Measurements - SUERF",
+      "title": "Geopolitical Risks and Their Impact on Global Macro ...",
       "url": "https://www.suerf.org/publications/suerf-policy-notes-and-briefs/geopolitical-risks-and-their-impact-on-global-macro-financial-stability-literature-and-measurements",
       "snippet": "# Geopolitical Risks and Their Impact on Global Macro-Financial Stability: Literature and Measurements. A. Ngo (2024): Geopolitical Risks and Their Impact on Global Macro-Financial Stability: Literature and Measurements. (2024), where we review the literature on how geopolitical risks (GPR) affect m",
       "source": "suerf.org",
@@ -77,67 +59,73 @@
     }
   ],
   "movers": {
-    "KLAC": [
+    "VMC": [
       {
-        "title": "KLAC News Today | Why did KLA stock go up today? - MarketBeat",
-        "url": "https://www.marketbeat.com/stocks/NASDAQ/KLAC/news",
-        "snippet": "Overall, KLAC appears to be moving higher because investors are rewarding its exposure to AI-related chip manufacturing investment, improved guidance, and",
-        "source": "marketbeat.com"
+        "title": "Press Releases",
+        "url": "https://www.vulcanmaterials.com/news-and-events/press-releases",
+        "snippet": "The Board of Directors of Vulcan Materials Company (NYSE: VMC) today declared a quarterly cash dividend of $0.52 per share on its common stock.",
+        "source": "vulcanmaterials.com"
       },
       {
-        "title": "KLA: KLAC Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/KLAC",
-        "snippet": "On 2026-06-29, KLA(KLAC) stock moved within a range of $279.03 to $298.17. With shares now at $295.26, the stock is trading +5.8% above its intraday low and -",
+        "title": "Vulcan: VMC Stock Price Quote & News",
+        "url": "https://robinhood.com/us/en/stocks/VMC",
+        "snippet": "The current Vulcan(VMC) stock price is $311.35, shares reached a daily high of $306.59 and a low of $291.42. At a current price of $311.35, the stock is +6.8%",
         "source": "robinhood.com"
       },
       {
-        "title": "KLA Corporation (KLAC) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/KLAC",
-        "snippet": "Why is KLAC moving today? KLA Corporation (KLAC) surged 8.67% as chip tool stocks rallied on a $1.3 trillion investment pledge from Samsung and SK Hynix,",
+        "title": "Vulcan Materials Company (VMC) Stock Price, News, ...",
+        "url": "https://finance.yahoo.com/quote/VMC",
+        "snippet": "News headlines Vulcan Materials (VMC) has shown solid operational performance, reporting $1.76 billion in revenue for Q1 2026, up 7.4% year-over",
         "source": "finance.yahoo.com"
       }
     ],
-    "AMAT": [
+    "SRE": [
       {
-        "title": "AMAT Stock Price Quote & News - Applied Materials - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/AMAT",
-        "snippet": "Here's Why Applied Materials Stock Is Soaring Today. The stock of Applied Materials (AMAT) is up 7% on June 25 after the company announced a new chipmaking",
+        "title": "Sempra (SRE) Stock Price Today",
+        "url": "https://www.wsj.com/market-data/quotes/SRE",
+        "snippet": "SempraSRE (U.S.: NYSE) · AT CLOSE 4:06 PM EDT 06/26/26 · 94.27USD · 0.840.90% · Volume4,169,463",
+        "source": "wsj.com"
+      },
+      {
+        "title": "(SRE) | Stock Price & Latest News",
+        "url": "https://www.reuters.com/markets/companies/SRE",
+        "snippet": "(P). 91.43 / 300. Ask / Size. (N). 91.46 / 100. Previous Close. 90.25. Today's Open. 90.43. Today's Volume. Below Average. 1.2M. 90-Day Avg Volume. 3.6M. Market",
+        "source": "reuters.com"
+      },
+      {
+        "title": "Sempra - SRE - Stock Price & News",
+        "url": "https://www.fool.com/quote/nyse/sre",
+        "snippet": "Sempra. (NYSE) SRE. Current Price$92.74. Market Cap$60.60B.",
+        "source": "fool.com"
+      }
+    ],
+    "ODFL": [
+      {
+        "title": "Old Dominion Freight Line: ODFL Stock Price Quote & News",
+        "url": "https://robinhood.com/us/en/stocks/ODFL",
+        "snippet": "The current price stands at $216.60, placing the stock +2.0% above today's low and -2.3% off the high. The Old Dominion Freight Line(ODFL)'s current trading",
         "source": "robinhood.com"
       },
       {
-        "title": "AMAT Stock Price | Analyst Target 590.46 & Strong Buy Consensus",
-        "url": "https://www.etoro.com/markets/amat",
-        "snippet": "The Applied Materials Inc share price today is ‎$‎729.70, reflecting a ‎5.05‎% change over the last 24 hours and ‎24.10‎% over the past week.",
-        "source": "etoro.com"
-      },
-      {
-        "title": "Applied Materials, Inc. (AMAT) Stock Price, News, Quote & History",
-        "url": "https://finance.yahoo.com/quote/AMAT",
-        "snippet": "News headlines Applied Materials (AMAT) has seen significant stock movements due to a surge in semiconductor demand driven by AI. Recent analyst reports",
-        "source": "finance.yahoo.com"
-      }
-    ],
-    "LRCX": [
-      {
-        "title": "LRCX News Today | Why did Lam Research stock go up today?",
-        "url": "https://www.marketbeat.com/stocks/NASDAQ/LRCX/news",
-        "snippet": "LRCX Latest News · Lam Research (NASDAQ:LRCX) Trading Up 5.5% - Time to Buy? · Lam Research shares jump as chip-equipment rally builds on AI demand and Samsung",
+        "title": "Old Dominion Freight Line (ODFL) News Today - MarketBeat",
+        "url": "https://www.marketbeat.com/stocks/NASDAQ/ODFL/news",
+        "snippet": "What's going on at Old Dominion Freight Line (NASDAQ:ODFL)? Read today's ODFL news from trusted media outlets at MarketBeat.",
         "source": "marketbeat.com"
       },
       {
-        "title": "Lam Research Corp: LRCX Stock Price Quote & News - Robinhood",
-        "url": "https://robinhood.com/us/en/stocks/LRCX",
-        "snippet": "As of 2026-06-29, Lam Research Corp(LRCX) stock has fluctuated between $411.94 and $435.51. The current price stands at $411.30, placing the stock -0.2% above",
-        "source": "robinhood.com"
-      },
-      {
-        "title": "LRCX Stock Quote Price and Forecast - CNN",
-        "url": "https://www.cnn.com/markets/stocks/LRCX",
-        "snippet": "Latest LRCX news ; Today 7:20am ET Lam Research price target raised to $475 from $385 at Susquehanna ; Yesterday 8:28am ET The Chip Rally Is Far From Over, Says",
-        "source": "cnn.com"
+        "title": "Old Dominion Freight Line, Inc. (ODFL) Latest Stock News ...",
+        "url": "https://finance.yahoo.com/quote/ODFL/news",
+        "snippet": "Old Dominion Freight Line (ODFL) faces a cautious outlook due to declining sales and profitability concerns. Analysts recommend selling the stock,",
+        "source": "finance.yahoo.com"
       }
     ],
-    "PWR": [
+    "IJK": [
+      {
+        "title": "Unusual Volume - Stock Screener - News",
+        "url": "https://finviz.com/screener?v=320&s=ta_unusualvolume",
+        "snippet": "| | | | | | | | | | | | | | | | | | | | | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | | | | | | | | | | | | | | | | | | | | | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | | Overvi",
+        "source": "finviz.com"
+      },
       {
         "title": "Stocks with Unusual Volume - MarketBeat",
         "url": "https://www.marketbeat.com/market-data/unusual-volume-stocks",
@@ -145,60 +133,54 @@
         "source": "marketbeat.com"
       },
       {
-        "title": "Unusual Volume - Stock Screener - News - Finviz",
-        "url": "https://finviz.com/screener?v=320&s=ta_unusualvolume",
-        "snippet": "| | | | | | | | | | | | | | | | | | | | | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | | | | | | | | | | | | | | | | | | | | | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | | Overvi",
-        "source": "finviz.com"
-      },
-      {
-        "title": "Unusual Volume Stocks: US companies with ... - Yahoo Finance",
-        "url": "https://finance.yahoo.com/research-hub/screener/unusual-volume-stocks",
-        "snippet": "| 1 | B BFLX | Ishares Flexible Equity Active ETF |  | 143,102 | 25.45 | +0.12 | +0.49% | 7,402 | 100 | 0 | -- | 0.59% | US | Nasdaq GM |  |. | 3 | F FERAU | Fifth Era Acquisition Corp I |  | 1,676 | 10.75 | 0.00 | 0.00% | 50,320 | 843 | 0 | 68.06 | 3.37% | US | Nasdaq GM |  |. |  | 1,396 | 10.15 | ",
-        "source": "finance.yahoo.com"
+        "title": "Unusual Volume Stocks | US | ChartMill.com",
+        "url": "https://www.chartmill.com/stock/markets/usa/movers/unusual-volume",
+        "snippet": "# Stocks With Unusual Volume in the US. Discover stocks with unusual volume in the US. High trading volume often signals increased attention, news, or upcoming price movements. ## Unusual Volume Today. average volume, Price Above 10. | BBUC | BROOKFIELD BUSINESS CORP-A | 31.19 | -2.56% | -5.74% | -6",
+        "source": "chartmill.com"
       }
     ]
   },
   "sectors": {
-    "XLK": [
+    "XLY": [
       {
-        "title": "(XLK) News Headlines - Nasdaq",
-        "url": "https://www.nasdaq.com/market-activity/etf/xlk/news-headlines",
-        "snippet": "Technology Select Sector SPDR ETF (XLK) Tech ETFs Are Doing Something Unprecedented Right Now. Artificial Intelligence (AI) Semiconductors Power the Digital",
+        "title": "State Street Consumer Dis…: XLY Stock Price Quote & News",
+        "url": "https://robinhood.com/us/en/stocks/XLY",
+        "snippet": "On 2026-06-30, State Street Consumer Discretionary Select Sector SPDR ETF(XLY) stock moved within a range of $116.36 to $117.57. With shares now at $114.77, the",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "Consumer Discretionary Select Sector SPDR Fund(XLY) Stock News",
+        "url": "https://www.itiger.com/stock/XLY/news",
+        "snippet": "Get the market news, company earnings updates, stock data, and in-depth analysis for Consumer Discretionary Select Sector SPDR Fund(XLY) on Tiger Brokers'",
+        "source": "itiger.com"
+      },
+      {
+        "title": "State Street Consumer Discretionary Select Sector SPDR ETF (XLY)",
+        "url": "https://www.kavout.com/etfs/xly/consumer-discretionary-select-sector-spdr-fund",
+        "snippet": "The Consumer Discretionary Select Sector SPDR (XLY) fell 5.9% from its peak, as persistent inflation and record-low consumer confidence dampen discretionary",
+        "source": "kavout.com"
+      }
+    ],
+    "XLV": [
+      {
+        "title": "State Street Health Care…: XLV Stock Price Quote & News",
+        "url": "https://robinhood.com/us/en/stocks/XLV",
+        "snippet": "During the trading session on 2026-06-29, State Street Health Care Select Sector SPDR ETF(XLV) shares reached a daily high of $161.23 and a low of $157.96. At a",
+        "source": "robinhood.com"
+      },
+      {
+        "title": "(XLV) News Headlines - Nasdaq",
+        "url": "https://www.nasdaq.com/market-activity/etf/xlv/news-headlines",
+        "snippet": "Find the latest news headlines about State Street Health Care Select Sector SPDR ETF (XLV) at Nasdaq.com.",
         "source": "nasdaq.com"
       },
       {
-        "title": "State Street Technology Select Sector SPDR ETF (XLK)",
-        "url": "https://finance.yahoo.com/quote/XLK",
-        "snippet": "State Street Technology Select Sector SPDR ETF (XLK) Stock Price, News, Quote & History … +18.76% ) News Today's news. Daily Total Return 29.09% 1.42 Expense",
+        "title": "State Street Health Care Select Sector SPDR ETF (XLV)",
+        "url": "https://finance.yahoo.com/quote/XLV/news",
+        "snippet": "Get the latest State Street Health Care Select Sector SPDR ETF (XLV) stock news and headlines to help you in your trading and investing decisions.",
         "source": "finance.yahoo.com"
-      },
-      {
-        "title": "State Street Technology S…: XLK Stock Price Quote & News",
-        "url": "https://robinhood.com/us/en/stocks/XLK",
-        "snippet": "State Street Technology Select Sector SPDR ETF(XLK) trades at $181.20. currently yields dividends of 0.45%. is trading -2.7% above its intraday low and -2.9%",
-        "source": "robinhood.com"
-      }
-    ],
-    "XLRE": [
-      {
-        "title": "Real Estate Select Sector SPDR Fund (XLRE) News ... - Stocktwits",
-        "url": "https://stocktwits.com/symbol/XLRE/news",
-        "snippet": "The company announced an agreement to be acquired in an all-cash deal by a consortium led by Chairman and CEO William McMorrow and Fairfax Financial.",
-        "source": "stocktwits.com"
-      },
-      {
-        "title": "XLRE Latest News and Headlines - TradingView",
-        "url": "https://www.tradingview.com/symbols/AMEX-XLRE/news",
-        "snippet": "Find today's State Street Real Estate Select Sector SPDR ETF news and updates to make informed decisions when trading XLRE.",
-        "source": "tradingview.com"
-      },
-      {
-        "title": "State Street Real Estate…: XLRE Stock Price Quote & News",
-        "url": "https://robinhood.com/us/en/stocks/XLRE",
-        "snippet": "During the trading day, State Street Real Estate Select Sector SPDR ETF(XLRE) stock saw an opening price of $45.13, a peak of —, and a bottom of —. Trading",
-        "source": "robinhood.com"
       }
     ]
   },
-  "built_at": "2026-06-30T22:29:50Z"
+  "built_at": "2026-07-01T08:28:57Z"
 }
