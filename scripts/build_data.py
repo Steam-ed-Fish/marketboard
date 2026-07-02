@@ -35,6 +35,68 @@ except ImportError:
 
 import math
 
+# ── Batch-download cache + rate-limit circuit breaker ────────────────────────
+# Pre-fills a dict of ticker -> DataFrame using yf.download() in chunks of 50,
+# collapsing ~300 individual HTTP calls into ~6 bulk requests. get_stock_data()
+# reads from this cache first, falling back to yf.Ticker() only when missing.
+# Circuit breaker: if we see 3 consecutive 429s from yfinance, stop calling it
+# for the rest of this run (previous-snapshot fallback takes over).
+_BATCH_CACHE = {}
+_RATE_LIMIT_HITS = 0
+_CIRCUIT_OPEN = False
+_CIRCUIT_THRESHOLD = 3
+
+def _is_rate_limit_error(exc):
+    s = str(exc).lower()
+    return "429" in s or "too many" in s or "rate limit" in s
+
+def _note_yf_result(error=None):
+    global _RATE_LIMIT_HITS, _CIRCUIT_OPEN
+    if error is None:
+        _RATE_LIMIT_HITS = 0
+        return
+    if _is_rate_limit_error(error):
+        _RATE_LIMIT_HITS += 1
+        if _RATE_LIMIT_HITS >= _CIRCUIT_THRESHOLD and not _CIRCUIT_OPEN:
+            _CIRCUIT_OPEN = True
+            print(f"[CIRCUIT-BREAKER] Opened after {_RATE_LIMIT_HITS} consecutive 429s — remaining fetches will fall back to previous snapshot.")
+
+def prefetch_histories(symbols, chunk_size=50, inter_chunk_sleep=6):
+    """Batch-download 1y histories for all symbols; populate _BATCH_CACHE.
+    Treats any chunk-level 429 as partial failure — moves on so the circuit
+    breaker kicks in once enough individual retries also 429."""
+    global _BATCH_CACHE
+    symbols = [s for s in symbols if s]
+    print(f"[prefetch] {len(symbols)} tickers in chunks of {chunk_size} (inter-chunk sleep {inter_chunk_sleep}s)")
+    for i in range(0, len(symbols), chunk_size):
+        chunk = symbols[i:i+chunk_size]
+        try:
+            df = yf.download(chunk, period="1y", group_by="ticker",
+                             progress=False, threads=True, auto_adjust=False)
+            got = 0
+            if hasattr(df.columns, "levels"):  # multi-index (>1 ticker)
+                for sym in chunk:
+                    try:
+                        sub = df[sym].dropna(how="all")
+                        if len(sub) >= 50:
+                            _BATCH_CACHE[sym] = sub
+                            got += 1
+                    except Exception:
+                        pass
+            else:  # single-ticker batch returns flat columns
+                sub = df.dropna(how="all")
+                if len(sub) >= 50:
+                    _BATCH_CACHE[chunk[0]] = sub
+                    got += 1
+            print(f"  [prefetch {i//chunk_size + 1}/{(len(symbols)+chunk_size-1)//chunk_size}] {got}/{len(chunk)} cached")
+            _note_yf_result(error=None)
+        except Exception as e:
+            print(f"  [prefetch chunk {i//chunk_size + 1}] FAILED: {str(e)[:120]}")
+            _note_yf_result(error=e)
+        time.sleep(inter_chunk_sleep)
+    print(f"[prefetch] cache filled: {len(_BATCH_CACHE)}/{len(symbols)} tickers")
+
+
 def sanitize_for_json(obj):
     """Recursively replace NaN/Infinity with None so json.dump produces valid JSON."""
     if isinstance(obj, float):
@@ -60,7 +122,7 @@ KEY_EVENTS = [
 ]
 
 STOCK_GROUPS = {
-    "Indices": ["QQQ", "DIA", "SPY", "RSP", "IWM", "IJH", "IJR", "GLD", "SLV"],
+    "Indices": ["QQQ", "DIA", "SPY", "RSP", "IWM", "IJH", "IJR", "SOXX", "GLD", "SLV"],
     "S&P Style ETFs": ["IJS", "IJR", "IJT", "IJJ", "IJH", "IJK", "IVE", "IVV", "IVW"],
     "The Mag 7": ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA"],
     "The Cloud 7": ["MSFT", "AMZN", "GOOGL", "ORCL", "IBM", "META", "NET"],
@@ -81,31 +143,32 @@ STOCK_GROUPS = {
     "The Health 7": ["UNH", "LLY", "ABBV", "JNJ", "PFE", "MRK", "GILD"],
     "The Medtech 7": ["ISRG", "TMO", "ABT", "MDT", "SYK", "BSX", "DHR"],
     "The Freight 7": ["UNP", "CSX", "FDX", "UPS", "ODFL", "JBHT", "NSC"],
-    "The Insurance 7": ["PGR", "CB", "MMC", "AON", "AIG", "MET", "AFL"],
+    "The Insurance 7": ["PGR", "CB", "AON", "AIG", "MET", "AFL", "TRV"],
     "The Power 7": ["NEE", "SO", "DUK", "CEG", "VST", "AEP", "SRE"],
     "Industries": [
-        "TAN", "KCE", "IBUY", "QQQE", "JETS", "IBB", "SMH", "CIBR", "UTES", "ROBO", "IGV", "WCLD", "ITA", "PAVE", "BLOK", "AIQ", "IYZ", "PEJ", "FDN", "KBE",
-        "UNG", "BOAT", "KWEB", "KRE", "IBIT", "XRT", "IHI", "DRIV", "MSOS", "SOCL", "XLU", "ARKF", "SLX", "ARKK", "XTN", "XME", "KIE", "GLD", "GXC", "SCHH", "MAGS", "SOXX", "DRAM",
-        "GDX", "IPAY", "IWM", "XOP", "VNQ", "EATZ", "FXI", "DBA", "ICLN", "SILJ", "REZ", "LIT", "SLV", "XHB", "XHE", "PBJ", "USO", "DBC", "FCG", "XBI",
-        "ARKG", "CPER", "XES", "OIH", "PPH", "FNGS", "URA", "WGMI", "REMX"
+        "TAN", "QQQE", "JETS", "IBB", "SMH", "CIBR", "UTES", "IGV", "ITA", "PAVE", "AIQ", "FDN", "KBE",
+        "UNG", "KWEB", "KRE", "IBIT", "XRT", "IHI", "MSOS", "XLU", "XME", "GLD", "GXC", "SCHH", "MAGS", "SOXX", "DRAM",
+        "GDX", "IWM", "XOP", "VNQ", "FXI", "DBA", "ICLN", "SILJ", "SLV", "XHB", "USO", "DBC", "FCG", "XBI",
+        "OIH", "FNGS", "URA", "WGMI"
     ],
     "Sel Sectors": ["XLK", "XLI", "XLC", "XLF", "XLU", "XLY", "XLRE", "XLP", "XLB", "XLE", "XLV"],
-    "EW Sectors": ["RSPT", "RSPC", "RSPN", "RSPF", "RSP", "RSPD", "RSPU", "RSPR", "RSPH", "RSPM", "RSPS", "RSPG"],
-    "Countries": [
-        "EZA", "ARGT", "EWA", "THD", "EIDO", "EWC", "GREK", "EWP", "EWG", "EWL", "EUFN", "EWY", "IEUR", "EFA", "ACWI",
-        "IEV", "EWQ", "EWI", "EWJ", "EWW", "ECH", "EWD", "ASHR", "EWS", "KSA", "INDA", "EEM", "EWZ", "TUR", "EWH", "EWT", "MCHI"
-    ],
 }
 
+FROZEN_GROUPS = set()
+
 AI_THEMES = {
-    "Mag 7":        ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA"],
-    "Memory":       ["MU", "WDC", "SNDK", "STX", "000660.KS", "005930.KS"],
+    "Mag 7":         ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA"],
+    "Memory":        ["MU", "WDC", "SNDK", "STX"],
     "Optical Comms": ["COHR", "LITE", "AAOI", "VIAV", "TSEM", "AXTI", "GLW"],
+    "Neocloud":      ["CRWV", "NBIS", "APLD", "IREN", "WULF", "HUT", "CIFR"],
+    "Data Center":   ["VRT", "EQIX", "DLR", "IRM", "SMCI", "NVT", "MOD"],
+    "Power Grid":    ["VST", "CEG", "NRG", "GEV", "ETN", "PWR", "TLN"],
 }
 
 # ETF proxy for a theme — use the ETF's actual returns instead of equal-weighted avg
 THEME_ETF_PROXY = {
     "Memory": "DRAM",
+    "Optical Comms": "FOTO",
 }
 
 LEVERAGED_ETFS = {
@@ -177,7 +240,7 @@ Industries_COLORS = {
     "FNGS": "#9e9e9e", "BLOK": "#3f51b5", "LIT": "#ff9800", "WCLD": "#3f51b5", "XOP": "#795548", "FDN": "#4caf50",
     "TAN": "#795548", "IBB": "#e91e63", "PAVE": "#333", "PEJ": "#4caf50", "KCE": "#ff5722", "XHE": "#e91e63",
     "IBUY": "#4caf50", "MSOS": "#4caf50", "FCG": "#795548", "JETS": "#4caf50", "IPAY": "#ff5722", "SLX": "#ff9800",
-    "IGV": "#3f51b5", "CIBR": "#3f51b5", "EATZ": "#4caf50", "PPH": "#e91e63", "IHI": "#e91e63", "UTES": "#009688",
+    "IGV": "#3f51b5", "CIBR": "#3f51b5", "PPH": "#e91e63", "IHI": "#e91e63", "UTES": "#009688",
     "ICLN": "#795548", "XME": "#ff9800", "IYZ": "#9c27b0", "URA": "#795548", "ITA": "#333", "VNQ": "#673ab7",
     "SCHH": "#673ab7", "KIE": "#ff5722", "REZ": "#673ab7", "CPER": "#8b6914", "PBJ": "#8bc34a", "SLV": "#8b6914",
     "GLD": "#8b6914", "SILJ": "#ff9800", "GDX": "#ff9800", "FXI": "#00bcd4", "GXC": "#00bcd4", "USO": "#8b6914",
@@ -549,6 +612,186 @@ def _compute_iv_skew(calls, puts, spot, days_to_expiry):
         "put_iv": round(put_iv, 1),
         "call_iv": round(call_iv, 1),
     }
+
+
+def build_options_intel_opend(tickers, ticker_data=None):
+    """OpenD-sourced options intel. Same schema as build_options_intel() plus:
+      - dex (net dollar delta exposure)
+      - gex.gex_by_strike[]   — per-strike GEX bars for chart
+      - iv_skew.iv_curve[]    — per-strike IV (call & put) for smile chart
+
+    Greeks (delta/gamma) and IV come straight from the broker — no Black-Scholes
+    recomputation needed. Returns {} on any total failure so caller can fall
+    back to yfinance build_options_intel().
+    """
+    try:
+        from fetch_opend import fetch_options_intel_opend
+    except Exception as e:
+        print(f"  [opend-opts] import failed: {e}")
+        return {}
+
+    # Spot from already-fetched in-memory cache (no extra fetch)
+    def spot_lookup(t):
+        row = (ticker_data or {}).get(t) or {}
+        return row.get("last_close")
+
+    raw = fetch_options_intel_opend(tickers, spot_lookup=spot_lookup, verbose=True)
+    if not raw:
+        return {}
+
+    result = {}
+    for sym, payload in raw.items():
+        try:
+            spot = payload["spot"]
+            days = payload["days"]
+            contracts = payload["contracts"]
+            calls = [c for c in contracts if c["type"] == "CALL"]
+            puts  = [c for c in contracts if c["type"] == "PUT"]
+            if not calls or not puts:
+                continue
+
+            # ATM strike = call closest to spot among calls (calls and puts share strike grid)
+            strikes = sorted({c["strike"] for c in contracts})
+            atm = min(strikes, key=lambda k: abs(k - spot))
+            atm_cs = [c for c in calls if c["strike"] == atm]
+            atm_ps = [p for p in puts  if p["strike"] == atm]
+            atm_iv_vals = [c["iv"] for c in (atm_cs + atm_ps) if c["iv"] > 0]
+            atm_iv = round(sum(atm_iv_vals) / len(atm_iv_vals) * 100, 1) if atm_iv_vals else None
+
+            # PCR
+            call_oi  = sum(c["oi"] for c in calls)
+            put_oi   = sum(p["oi"] for p in puts)
+            call_vol = sum(c["volume"] for c in calls)
+            put_vol  = sum(p["volume"] for p in puts)
+            pcr = {
+                "oi":  round(put_oi / call_oi, 2) if call_oi > 0 else None,
+                "vol": round(put_vol / call_vol, 2) if call_vol > 0 else None,
+                "call_oi": int(call_oi), "put_oi": int(put_oi),
+                "call_vol": int(call_vol), "put_vol": int(put_vol),
+            }
+
+            # Max pain (OI weighting; only strikes ±10% of spot)
+            mp_lo, mp_hi = spot * 0.90, spot * 1.10
+            mp_strikes = [k for k in strikes if mp_lo <= k <= mp_hi]
+            max_pain = None
+            if mp_strikes:
+                call_w = {c["strike"]: c["oi"] for c in calls}
+                put_w  = {p["strike"]: p["oi"] for p in puts}
+                weight_total = sum(call_w.values()) + sum(put_w.values())
+                if weight_total <= 0:
+                    call_w = {c["strike"]: c["volume"] for c in calls}
+                    put_w  = {p["strike"]: p["volume"] for p in puts}
+                    src = "volume"
+                else:
+                    src = "OI"
+                min_pain, mp_k = float("inf"), mp_strikes[0]
+                for K in mp_strikes:
+                    total = 0
+                    for s, w in call_w.items():
+                        if K > s: total += w * (K - s) * 100
+                    for s, w in put_w.items():
+                        if K < s: total += w * (s - K) * 100
+                    if total < min_pain:
+                        min_pain = total; mp_k = K
+                max_pain = {
+                    "strike": mp_k,
+                    "dist_pct": round((mp_k - spot) / spot * 100, 2),
+                    "source": src,
+                }
+
+            # GEX per strike (dealers short customer positions; sign convention:
+            # calls long-gamma to dealer means positive GEX, puts negative)
+            # Using contract gamma from broker × OI × 100 × spot² scaled to $-millions / 1pt move.
+            gex_by_strike_dict = {}
+            dex_total = 0.0
+            for c in calls:
+                if c["oi"] <= 0 or c["gamma"] <= 0: continue
+                gex_by_strike_dict[c["strike"]] = gex_by_strike_dict.get(c["strike"], 0) + (
+                    c["gamma"] * c["oi"] * 100 * spot * spot / 1e9
+                )
+                dex_total += c["delta"] * c["oi"] * 100 * spot / 1e9
+            for p in puts:
+                if p["oi"] <= 0 or p["gamma"] <= 0: continue
+                gex_by_strike_dict[p["strike"]] = gex_by_strike_dict.get(p["strike"], 0) - (
+                    p["gamma"] * p["oi"] * 100 * spot * spot / 1e9
+                )
+                dex_total += p["delta"] * p["oi"] * 100 * spot / 1e9   # puts already have negative delta
+
+            gex_by_strike = sorted(gex_by_strike_dict.items())
+            gex = None
+            if gex_by_strike:
+                net_gex = round(sum(v for _, v in gex_by_strike), 2)
+                max_k = max(gex_by_strike_dict, key=lambda k: abs(gex_by_strike_dict[k]))
+                # Gamma flip: cumulative GEX zero-crossing scanning low→high
+                cum = 0; gamma_flip = None
+                for k, v in gex_by_strike:
+                    prev = cum; cum += v
+                    if prev * cum < 0:
+                        gamma_flip = k; break
+                gex = {
+                    "net_gex": net_gex,
+                    "max_gamma_strike": max_k,
+                    "gamma_flip": gamma_flip,
+                    "gamma_flip_dist_pct": round((gamma_flip - spot) / spot * 100, 2) if gamma_flip else None,
+                    "gex_by_strike": [{"k": round(k, 2), "g": round(v, 3)} for k, v in gex_by_strike],
+                }
+
+            # IV skew: 5% OTM put vs 5% OTM call
+            put_target = spot * 0.95
+            call_target = spot * 1.05
+            def closest(side_list, target):
+                if not side_list: return None
+                return min(side_list, key=lambda c: abs(c["strike"] - target))
+            p_pick = closest(puts, put_target)
+            c_pick = closest(calls, call_target)
+            iv_skew = None
+            iv_curve = []
+            # Build IV curve: per strike, take call IV and put IV side-by-side
+            calls_by_k = {c["strike"]: c for c in calls}
+            puts_by_k  = {p["strike"]: p for p in puts}
+            for k in strikes:
+                ck = calls_by_k.get(k); pk = puts_by_k.get(k)
+                iv_curve.append({
+                    "k": round(k, 2),
+                    "iv_call": round(ck["iv"] * 100, 2) if ck and ck["iv"] > 0 else None,
+                    "iv_put":  round(pk["iv"] * 100, 2) if pk and pk["iv"] > 0 else None,
+                })
+            if p_pick and c_pick and p_pick["iv"] > 0 and c_pick["iv"] > 0:
+                put_iv = p_pick["iv"] * 100
+                call_iv = c_pick["iv"] * 100
+                iv_skew = {
+                    "skew": round(put_iv - call_iv, 1),
+                    "put_iv": round(put_iv, 1),
+                    "call_iv": round(call_iv, 1),
+                    "iv_curve": iv_curve,
+                }
+
+            # DEX summary
+            dex = {
+                "net_dex": round(dex_total, 2),  # in $-billions per 1pt spot move (decomposed)
+            }
+
+            result[sym] = {
+                "spot": round(float(spot), 2),
+                "expiry_used": payload["expiry"],
+                "days_to_expiry": days,
+                "atm_iv": atm_iv,
+                "pcr": pcr,
+                "max_pain": max_pain,
+                "gex": gex,
+                "dex": dex,
+                "iv_skew": iv_skew,
+                "source": "opend",
+            }
+            print(f"  {sym}: IV={atm_iv}%, PCR(OI)={pcr['oi']}, "
+                  f"GEX={gex['net_gex'] if gex else 'n/a'}, "
+                  f"DEX={dex['net_dex']}, "
+                  f"Skew={iv_skew['skew'] if iv_skew else 'n/a'}")
+        except Exception as e:
+            print(f"  {sym}: opend aggregate failed: {e}")
+            continue
+
+    return result
 
 
 def build_options_intel(tickers=None):
@@ -1062,8 +1305,22 @@ def detect_consolidation(highs, lows, closes, lookback=50):
 
 def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
     try:
-        stock = yf.Ticker(ticker_symbol)
-        all_hist = stock.history(period="1y")
+        stock = None
+        all_hist = None
+        # Prefer the batch cache — avoids an individual HTTP hit per ticker
+        if ticker_symbol in _BATCH_CACHE:
+            all_hist = _BATCH_CACHE[ticker_symbol]
+        elif _CIRCUIT_OPEN:
+            # Skip live fetch — previous-snapshot fallback takes over upstream
+            return None
+        else:
+            try:
+                stock = yf.Ticker(ticker_symbol)
+                all_hist = stock.history(period="1y")
+                _note_yf_result(error=None)
+            except Exception as _e:
+                _note_yf_result(error=_e)
+                raise
         hist = all_hist.tail(21)
         daily = all_hist.tail(60)
         yearly = all_hist
@@ -1079,13 +1336,22 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
                      "o": round(float(r['Open']), 4), "h": round(float(r['High']), 4),
                      "l": round(float(r['Low']), 4),  "c": round(float(r['Close']), 4),
                      "v": int(r['Volume'])}
-                    for idx, r in all_hist.tail(60).iterrows()
+                    for idx, r in all_hist.tail(260).iterrows()
                 ]
                 ticker_name = ""
-                try:
-                    ticker_name = stock.info.get("shortName", "") or stock.info.get("longName", "")
-                except Exception:
-                    pass
+                # Skip .info lookup when we came from batch cache — it's a separate HTTP
+                # call and Yahoo rate-limits it heavily. Preserve any existing cached name.
+                if stock is not None:
+                    try:
+                        ticker_name = stock.info.get("shortName", "") or stock.info.get("longName", "")
+                    except Exception:
+                        pass
+                else:
+                    try:
+                        existing = json.load(open(os.path.join(ohlc_dir, f"{safe}.json"), encoding="utf-8"))
+                        ticker_name = existing.get("name", "") or ""
+                    except Exception:
+                        pass
                 ohlc_payload = {"ticker": ticker_symbol, "name": ticker_name, "ohlc": ohlc_rows}
                 with open(os.path.join(ohlc_dir, f"{safe}.json"), 'w') as _f:
                     json.dump(ohlc_payload, _f, separators=(',', ':'))
@@ -1161,7 +1427,14 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
         end_date = datetime.now()
         start_date = end_date - timedelta(days=120)
         try:
-            stock_history = stock.history(start=start_date, end=end_date)
+            if all_hist is not None and len(all_hist) > 0:
+                idx = all_hist.index
+                start_ts = pd.Timestamp(start_date, tz=idx.tz) if idx.tz is not None else pd.Timestamp(start_date)
+                stock_history = all_hist.loc[idx >= start_ts]
+            elif stock is not None:
+                stock_history = stock.history(start=start_date, end=end_date)
+            else:
+                stock_history = None
             spy_history = spy_hist.loc[spy_hist.index >= pd.Timestamp(start_date, tz=spy_hist.index.tz)] if spy_hist is not None and len(spy_hist) > 0 else yf.Ticker("SPY").history(start=start_date, end=end_date)
             if stock_history is not None and spy_history is not None:
                 rrs_data = calculate_rrs(stock_history, spy_history, atr_length=14, length_rolling=50, length_sma=20, atr_multiplier=1.0)
@@ -1251,11 +1524,63 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
 
 
 def get_all_etfs_for_holdings():
-    """Unique tickers across all groups (ETFs + stocks; holdings JSON only for funds)."""
+    """Unique tickers across all groups (ETFs + stocks; holdings JSON only for funds).
+    Frozen groups skipped — their holdings already fetched from prior runs."""
     etfs = set()
     for _group, tickers in STOCK_GROUPS.items():
+        if _group in FROZEN_GROUPS:
+            continue
         etfs.update(tickers)
     return sorted(etfs)
+
+
+def refresh_holdings_daily_from_cache(out_dir, ticker_data):
+    """Re-enrich every data/holdings/*.json `daily` field from already-fetched
+    ticker_data (OpenD-sourced). Runs after fetch_etf_holdings so that:
+      - When yfinance rate-limits funds_data and the holdings file isn't
+        rewritten, its `daily` values still reflect today's market action.
+      - When fetch_etf_holdings did rewrite but enrich_holdings_daily failed
+        (yf.download rate-limited), stale or missing daily values get filled.
+    Symbols absent from ticker_data are left untouched."""
+    if not ticker_data:
+        return
+    holdings_dir = os.path.join(out_dir, "holdings")
+    if not os.path.isdir(holdings_dir):
+        return
+    refreshed = 0
+    for fname in os.listdir(holdings_dir):
+        if not fname.endswith(".json"):
+            continue
+        path = os.path.join(holdings_dir, fname)
+        try:
+            with open(path, encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            continue
+        hs = data.get("holdings") or []
+        if not hs:
+            continue
+        changed = False
+        for h in hs:
+            sym = h.get("symbol")
+            if not sym:
+                continue
+            row = ticker_data.get(sym)
+            if row is None:
+                continue
+            new_daily = row.get("daily")
+            if new_daily is not None and h.get("daily") != new_daily:
+                h["daily"] = new_daily
+                changed = True
+        if changed:
+            try:
+                with open(path, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                refreshed += 1
+            except Exception as e:
+                print(f"  holdings refresh write error {fname}: {e}")
+    if refreshed:
+        print(f"Refreshed `daily` in {refreshed} holdings file(s) from in-memory ticker cache")
 
 
 def enrich_holdings_daily(holdings):
@@ -1541,12 +1866,375 @@ def build_usd_liquidity(fred_api_key):
 
     fred_links = {sid: f"https://fred.stlouisfed.org/series/{sid}" for sid in ALL_SERIES}
 
+    # as_of = max latest_date across all series we actually consumed. Used by
+    # the dashboard "data as of" label so the UI shows the underlying FRED
+    # release date, not the build timestamp.
+    _series_latest = [raw[sid][-1][0] for sid in ALL_SERIES if raw.get(sid)]
+    as_of = max(_series_latest) if _series_latest else None
+
     return {
         "score": score,
         "score_label": score_label,
+        "as_of": as_of,
         "components": comp_out,
         "raw": raw_out,
         "fred_links": fred_links,
+    }
+
+
+def fetch_gscpi(out_dir):
+    """NY Fed Global Supply Chain Pressure Index. Monthly XLSX, no auth.
+    Caches to data/_cache/gscpi.json; re-fetches only if cache > 7 days old."""
+    cache_dir = os.path.join(out_dir, "_cache")
+    os.makedirs(cache_dir, exist_ok=True)
+    cache_path = os.path.join(cache_dir, "gscpi.json")
+
+    if os.path.exists(cache_path):
+        try:
+            mtime = os.path.getmtime(cache_path)
+            if (time.time() - mtime) < 7 * 86400:
+                with open(cache_path) as f:
+                    return json.load(f)
+        except Exception:
+            pass
+
+    try:
+        url = "https://www.newyorkfed.org/medialibrary/research/interactives/gscpi/downloads/gscpi_data.xlsx"
+        import io
+        resp = requests.get(url, timeout=20, headers={"User-Agent": "Mozilla/5.0"})
+        resp.raise_for_status()
+        df = pd.read_excel(io.BytesIO(resp.content), sheet_name="GSCPI Monthly Data", header=5)
+        df = df.dropna(subset=[df.columns[0]])
+        rows = []
+        for _, r in df.iterrows():
+            try:
+                d = pd.to_datetime(r.iloc[0]).strftime("%Y-%m-%d")
+                v = float(r.iloc[1])
+                rows.append({"t": d, "v": v})
+            except Exception:
+                continue
+        if not rows:
+            return None
+        out = {"history": rows[-60:], "latest": rows[-1]}
+        with open(cache_path, "w") as f:
+            json.dump(out, f, separators=(",", ":"))
+        return out
+    except Exception as e:
+        print(f"[gscpi] fetch failed: {e}")
+        if os.path.exists(cache_path):
+            try:
+                with open(cache_path) as f:
+                    return json.load(f)
+            except Exception:
+                pass
+        return None
+
+
+def build_inflation_pillar(fred_api_key, out_dir):
+    """Real yields + breakeven inflation + core PCE + GSCPI. All free FRED + NY Fed."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    SERIES = ["T5YIE", "T10YIE", "DFII5", "DFII10", "T5YIFR", "PCEPILFE"]
+
+    raw = {}
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        futs = {ex.submit(fetch_fred_series, fred_api_key, sid, 260): sid for sid in SERIES}
+        for f in as_completed(futs):
+            raw[futs[f]] = f.result()
+
+    def metric(series_id):
+        d = raw.get(series_id) or []
+        if not d:
+            return None
+        latest_date, latest_val = d[-1]
+        # 1m delta: ~21 trading days back
+        prev = d[-22][1] if len(d) >= 22 else (d[0][1] if d else None)
+        change_1m = (latest_val - prev) if prev is not None else None
+        vals = [p[1] for p in d]
+        if len(vals) >= 5:
+            below = sum(1 for v in vals if v < latest_val)
+            pct_1y = round((below / len(vals)) * 100)
+        else:
+            pct_1y = None
+        return {
+            "value": latest_val,
+            "as_of": latest_date,
+            "change_1m": change_1m,
+            "percentile_1y": pct_1y,
+        }
+
+    # Core PCE: published as index level — convert to YoY %
+    core_pce_yoy = None
+    pce_obs = raw.get("PCEPILFE") or []
+    if len(pce_obs) >= 13:
+        latest_date, latest_val = pce_obs[-1]
+        # 12 months prior — series is monthly, so go back ~12 entries
+        ya_val = pce_obs[-13][1] if len(pce_obs) >= 13 else None
+        if ya_val:
+            yoy = ((latest_val / ya_val) - 1.0) * 100
+            # 3m trend: compare yoy vs 3-months-ago yoy
+            trend_3m = None
+            if len(pce_obs) >= 16:
+                ya3_val = pce_obs[-16][1]
+                ya3_minus12 = pce_obs[-28][1] if len(pce_obs) >= 28 else None
+                if ya3_val and ya3_minus12:
+                    yoy3m = ((ya3_val / ya3_minus12) - 1.0) * 100
+                    trend_3m = yoy - yoy3m
+            core_pce_yoy = {
+                "value": yoy,
+                "release_date": latest_date,
+                "trend_3m": trend_3m,
+            }
+
+    # GSCPI from NY Fed
+    gscpi_block = None
+    gscpi = fetch_gscpi(out_dir)
+    if gscpi and gscpi.get("latest"):
+        latest = gscpi["latest"]
+        hist_vals = [r["v"] for r in gscpi.get("history") or []]
+        z = None
+        if len(hist_vals) >= 12:
+            mu = sum(hist_vals) / len(hist_vals)
+            var = sum((v - mu) ** 2 for v in hist_vals) / len(hist_vals)
+            sd = math.sqrt(var) if var > 0 else 0
+            if sd > 0:
+                z = (latest["v"] - mu) / sd
+        gscpi_block = {
+            "value": latest["v"],
+            "release_date": latest["t"],
+            "z_score": z,
+        }
+
+    return {
+        "real_yields": {
+            "us_5y": metric("DFII5"),
+            "us_10y": metric("DFII10"),
+        },
+        "breakeven": {
+            "5y": metric("T5YIE"),
+            "10y": metric("T10YIE"),
+            "5y5y_forward": metric("T5YIFR"),
+        },
+        "core_pce_yoy": core_pce_yoy,
+        "supply_chain_gscpi": gscpi_block,
+        "fred_links": {
+            "DFII5":  "https://fred.stlouisfed.org/series/DFII5",
+            "DFII10": "https://fred.stlouisfed.org/series/DFII10",
+            "T5YIE":  "https://fred.stlouisfed.org/series/T5YIE",
+            "T10YIE": "https://fred.stlouisfed.org/series/T10YIE",
+            "T5YIFR": "https://fred.stlouisfed.org/series/T5YIFR",
+            "PCEPILFE": "https://fred.stlouisfed.org/series/PCEPILFE",
+        },
+        "ny_fed_link": "https://www.newyorkfed.org/research/policy/gscpi",
+    }
+
+
+def _rsi_series(closes, period=14):
+    """Wilder's RSI series. Returns list aligned with closes[period:]."""
+    if len(closes) < period + 1:
+        return []
+    deltas = [closes[i+1] - closes[i] for i in range(len(closes)-1)]
+    gains = [d if d > 0 else 0.0 for d in deltas]
+    losses = [-d if d < 0 else 0.0 for d in deltas]
+    avg_g = sum(gains[:period]) / period
+    avg_l = sum(losses[:period]) / period
+    out = []
+    rs = (avg_g / avg_l) if avg_l > 0 else float('inf')
+    out.append(100.0 - 100.0/(1.0+rs) if rs != float('inf') else 100.0)
+    for i in range(period, len(deltas)):
+        avg_g = (avg_g*(period-1) + gains[i]) / period
+        avg_l = (avg_l*(period-1) + losses[i]) / period
+        rs = (avg_g / avg_l) if avg_l > 0 else float('inf')
+        out.append(100.0 - 100.0/(1.0+rs) if rs != float('inf') else 100.0)
+    return out
+
+
+def _pct_rank(window, latest):
+    """Percentile rank (0-100) of `latest` within `window` (count strictly below)."""
+    if not window:
+        return None
+    below = sum(1 for v in window if v < latest)
+    return round(100.0 * below / len(window), 1)
+
+
+def _load_ohlc_closes(ohlc_dir, ticker):
+    """Load (dates_iso, closes) chronologically. Returns ([], []) if not found."""
+    safe = re.sub(r"[^a-zA-Z0-9]", "_", ticker)
+    path = os.path.join(ohlc_dir, f"{safe}.json")
+    if not os.path.exists(path):
+        return [], []
+    try:
+        with open(path, encoding="utf-8") as f:
+            bars = json.load(f).get("ohlc") or []
+    except Exception:
+        return [], []
+    dates, closes = [], []
+    for b in bars:
+        c = b.get("c")
+        t = b.get("t")
+        if c is None or t is None:
+            continue
+        try:
+            closes.append(float(c))
+            dates.append(t[:10])
+        except (TypeError, ValueError):
+            continue
+    return dates, closes
+
+
+def build_etf_flow(out_dir, ohlc_dir):
+    """Compose ETF fund-flow metrics for the Sector/Industry rotation bubble chart.
+
+    Reads the Bloomberg-derived weekly baseline at data/baseline/etf_flow_weekly.json
+    and a rolling daily NAV/units snapshot at data/baseline/etf_flow_daily.json.
+    Calls OpenD once to refresh today's trust_* block per baseline ticker, appends
+    to the daily file (60-day rolling, idempotent same-date), and returns metrics:
+      - wtd_return        % move from prior Friday close to latest close (cached OHLC)
+      - flow_5d           latest 5-day flow, USD millions (Bloomberg current_5d)
+      - flow_52w_pct      rank of flow_5d within trailing 52 weekly flows
+      - flow_change_vs_1m flow_5d minus mean of last 4 weekly flows
+      - stretch_score     0-100 composite "expensiveness": avg of RSI(14) 52w pct,
+                          4w cumulative-flow 52w pct, and RS-vs-SPY 52w pct.
+                          100 = stretched/crowded/expensive; 0 = washed out/cheap.
+      - stretch_components  per-component breakdown (rsi_pct, flow_z_pct, rs_pct)
+    """
+    base_path = os.path.join(out_dir, "baseline", "etf_flow_weekly.json")
+    daily_path = os.path.join(out_dir, "baseline", "etf_flow_daily.json")
+    if not os.path.exists(base_path):
+        print(f"  etf_flow: baseline missing at {base_path}")
+        return None
+    try:
+        with open(base_path, encoding="utf-8") as f:
+            baseline = json.load(f)
+    except Exception as e:
+        print(f"  etf_flow: baseline load failed: {e}")
+        return None
+
+    base_tickers = baseline.get("tickers") or {}
+    if not base_tickers:
+        return None
+
+    # Refresh daily AUM snapshot from OpenD (best-effort; baseline metrics still work without it).
+    daily = {}
+    if os.path.exists(daily_path):
+        try:
+            with open(daily_path, encoding="utf-8") as f:
+                daily = json.load(f).get("snapshots", {}) or {}
+        except Exception:
+            daily = {}
+
+    aum_today = {}
+    try:
+        from fetch_opend import fetch_etf_aum_snapshot
+        aum_today = fetch_etf_aum_snapshot(list(base_tickers.keys()))
+    except Exception as e:
+        print(f"  etf_flow: OpenD aum snapshot failed: {e}")
+
+    today_iso = datetime.now().date().isoformat()
+    for tk, snap in aum_today.items():
+        rows = daily.setdefault(tk, [])
+        rows[:] = [r for r in rows if r.get("date") != snap["date"]]
+        rows.append(snap)
+        rows.sort(key=lambda r: r.get("date") or "")
+        if len(rows) > 60:
+            del rows[:-60]
+
+    if aum_today:
+        try:
+            os.makedirs(os.path.dirname(daily_path), exist_ok=True)
+            with open(daily_path, "w", encoding="utf-8") as f:
+                json.dump({"as_of": today_iso, "snapshots": daily},
+                          f, separators=(",", ":"))
+        except Exception as e:
+            print(f"  etf_flow: daily snapshot write failed: {e}")
+
+    # Load SPY closes once (used by RS-vs-SPY component for every ticker).
+    spy_dates, spy_closes = _load_ohlc_closes(ohlc_dir, "SPY")
+    spy_by_date = dict(zip(spy_dates, spy_closes))
+
+    out_tickers = {}
+    for tk, info in base_tickers.items():
+        history = info.get("history") or []
+        flows = [h["flow"] for h in history if h.get("flow") is not None]
+        latest_5d = info.get("current_5d")
+
+        flow_52w_pct = None
+        if latest_5d is not None and len(flows) >= 13:
+            window = flows[-52:] if len(flows) >= 52 else flows
+            below = sum(1 for v in window if v < latest_5d)
+            flow_52w_pct = round(100.0 * below / len(window), 1)
+
+        flow_change_vs_1m = None
+        if latest_5d is not None and len(flows) >= 4:
+            ref = sum(flows[-4:]) / 4.0
+            flow_change_vs_1m = round(latest_5d - ref, 2)
+
+        wtd_return = None
+        tk_dates, tk_closes = _load_ohlc_closes(ohlc_dir, tk)
+        if len(tk_closes) >= 6:
+            # Walk back to the most recent Friday strictly before the latest bar.
+            target_close = None
+            for i in range(len(tk_dates)-2, -1, -1):
+                try:
+                    if datetime.fromisoformat(tk_dates[i]).weekday() == 4:
+                        target_close = tk_closes[i]
+                        break
+                except ValueError:
+                    continue
+            if target_close and tk_closes[-1]:
+                wtd_return = round(100.0 * (tk_closes[-1] / target_close - 1), 2)
+
+        # ── Stretch score: 0 = cheap/washed-out, 100 = expensive/crowded ───────
+        # Three orthogonal lenses, averaged over whichever are computable today.
+        rsi_pct = None
+        if len(tk_closes) >= 28:  # need 14 + 14 to start RSI then have headroom
+            rsi = _rsi_series(tk_closes, 14)
+            if rsi:
+                window = rsi[-252:] if len(rsi) >= 252 else rsi
+                rsi_pct = _pct_rank(window, rsi[-1])
+
+        flow_z_pct = None
+        if len(flows) >= 8:
+            cum4 = [sum(flows[i-3:i+1]) for i in range(3, len(flows))]
+            if cum4:
+                window = cum4[-52:] if len(cum4) >= 52 else cum4
+                flow_z_pct = _pct_rank(window, cum4[-1])
+
+        rs_pct = None
+        if tk != "SPY" and len(tk_closes) >= 60 and spy_by_date:
+            ratios = []
+            for d, c in zip(tk_dates, tk_closes):
+                sc = spy_by_date.get(d)
+                if sc and c:
+                    ratios.append(c / sc)
+            if len(ratios) >= 60:
+                window = ratios[-252:] if len(ratios) >= 252 else ratios
+                rs_pct = _pct_rank(window, ratios[-1])
+
+        components = [v for v in (rsi_pct, flow_z_pct, rs_pct) if v is not None]
+        stretch_score = round(sum(components) / len(components), 1) if components else None
+
+        out_tickers[tk] = {
+            "name": info.get("name"),
+            "wtd_return": wtd_return,
+            "flow_5d": latest_5d,
+            "flow_52w_pct": flow_52w_pct,
+            "flow_change_vs_1m": flow_change_vs_1m,
+            "stretch_score": stretch_score,
+            "stretch_components": {
+                "rsi_pct": rsi_pct,
+                "flow_z_pct": flow_z_pct,
+                "rs_pct": rs_pct,
+            },
+        }
+
+    return {
+        "as_of": today_iso,
+        "baseline_as_of": baseline.get("as_of"),
+        "source": "Bloomberg weekly baseline + OpenD daily NAV/units",
+        "units": "USD millions",
+        "daily_snapshot_count": sum(len(v) for v in daily.values()),
+        "tickers": out_tickers,
     }
 
 
@@ -1618,7 +2306,11 @@ def compute_fear_greed(all_ticker_data):
 
     # 1. VIX Volatility (15%) — high VIX = fear = low score
     try:
-        vix_hist = yf.Ticker("^VIX").history(period="1y")
+        cboe_df = _fetch_cboe_vix_history("^VIX")
+        if cboe_df is not None and not cboe_df.empty:
+            vix_hist = cboe_df.tail(252)
+        else:
+            vix_hist = yf.Ticker("^VIX").history(period="1y")
         vix_now = float(vix_hist["Close"].iloc[-1])
         vix_min = float(vix_hist["Close"].min())
         vix_max = float(vix_hist["Close"].max())
@@ -1681,6 +2373,69 @@ def compute_fear_greed(all_ticker_data):
             "components": components, "weights": weights}
 
 
+_CBOE_VIX_CACHE = {}
+
+def _fetch_cboe_vix_history(sym):
+    """CBOE direct sources — authoritative VIX/VIX9D/VIX3M/VIX6M/VVIX/VXN/RVX.
+
+    Pulls the daily-history CSV for the 252-bar series, then patches the latest
+    bar from CBOE's delayed-quote JSON. The CSV is rewritten only ~9:51 PM ET
+    each evening, so a build that runs at 6 PM ET would otherwise miss that
+    day's settled close. The JSON endpoint exposes the settled close as soon as
+    it prints (~4:15 PM ET) and is also the only path for the latest VVIX/VXN/
+    RVX value (CSVs cover them too, but their JSON updates land first).
+
+    Returns DataFrame indexed by date with Close column, or None on failure.
+    """
+    cboe_map = {
+        "^VIX":   "VIX",   "^VIX9D": "VIX9D", "^VIX3M": "VIX3M", "^VIX6M": "VIX6M",
+        "^VVIX":  "VVIX",  "^VXN":   "VXN",   "^RVX":   "RVX",
+    }
+    cboe_name = cboe_map.get(sym)
+    if not cboe_name:
+        return None
+    if cboe_name in _CBOE_VIX_CACHE:
+        return _CBOE_VIX_CACHE[cboe_name]
+    df = None
+    try:
+        url = f"https://cdn.cboe.com/api/global/us_indices/daily_prices/{cboe_name}_History.csv"
+        r = requests.get(url, timeout=10)
+        if r.status_code == 200 and len(r.text) > 1000:
+            from io import StringIO
+            df = pd.read_csv(StringIO(r.text))
+            df["DATE"] = pd.to_datetime(df["DATE"], format="%m/%d/%Y", errors="coerce")
+            df = df.dropna(subset=["DATE"]).set_index("DATE")
+            # VIX/VXN/RVX/VIX9D/VIX3M/VIX6M use OHLC columns ("CLOSE"); VVIX is single-column
+            # ("VVIX"). Pick whichever close-column actually exists.
+            close_col = next((c for c in ("CLOSE", "Close", cboe_name) if c in df.columns), None)
+            if close_col and close_col != "Close":
+                df = df.rename(columns={close_col: "Close"})
+            df = df[["Close"]] if "Close" in df.columns else None
+    except Exception as e:
+        print(f"  CBOE CSV fetch {cboe_name}: {e}")
+
+    # Patch latest close from delayed-quote JSON if newer than CSV last bar.
+    try:
+        jurl = f"https://cdn.cboe.com/api/global/delayed_quotes/quotes/_{cboe_name}.json"
+        jr = requests.get(jurl, timeout=10)
+        if jr.status_code == 200:
+            jd = jr.json().get("data") or {}
+            last_close = jd.get("close")
+            ltt = jd.get("last_trade_time") or ""
+            ltt_date = pd.to_datetime(ltt[:10], errors="coerce")
+            if last_close is not None and pd.notna(ltt_date) and float(last_close) > 0:
+                if df is None:
+                    df = pd.DataFrame({"Close": [float(last_close)]}, index=[ltt_date])
+                elif ltt_date > df.index[-1]:
+                    df.loc[ltt_date, "Close"] = float(last_close)
+                    print(f"  CBOE JSON {cboe_name}: appended {ltt_date.date()} close={last_close}")
+    except Exception as e:
+        print(f"  CBOE JSON fetch {cboe_name}: {e}")
+
+    _CBOE_VIX_CACHE[cboe_name] = df if df is not None and not df.empty else None
+    return _CBOE_VIX_CACHE[cboe_name]
+
+
 def fetch_vol_signals():
     """Fetch implied volatility indices across asset classes."""
     VOL_TICKERS = {
@@ -1703,7 +2458,11 @@ def fetch_vol_signals():
         result[category] = []
         for item in items:
             try:
-                hist = yf.Ticker(item["sym"]).history(period="1y")
+                cboe_df = _fetch_cboe_vix_history(item["sym"])
+                if cboe_df is not None and not cboe_df.empty:
+                    hist = cboe_df.tail(252)
+                else:
+                    hist = yf.Ticker(item["sym"]).history(period="1y")
                 if hist.empty:
                     raise ValueError("empty")
                 current = float(hist["Close"].iloc[-1])
@@ -1742,6 +2501,99 @@ def fetch_vol_signals():
                 })
             time.sleep(0.5)
     return result
+
+
+def build_vix_term_structure():
+    """VIX futures term-structure proxy via constant-maturity VIX indices.
+
+    VIX (30d) − VIX3M (93d) approximates VX1!−VX2! with ~0.95 correlation,
+    same sign convention: negative = contango/calm, positive = backwardation/fear.
+    More robust than scraping CBOE settlement CSV (rolling expirations).
+    """
+    SYMS = ["^VIX9D", "^VIX", "^VIX3M", "^VIX6M"]
+    points = {}
+    for sym in SYMS:
+        try:
+            cboe_df = _fetch_cboe_vix_history(sym)
+            if cboe_df is not None and not cboe_df.empty:
+                hist = cboe_df.tail(252)
+            else:
+                hist = yf.Ticker(sym).history(period="6mo")
+            if hist.empty:
+                continue
+            tail = hist.tail(90)
+            points[sym] = {
+                "current": round(float(hist["Close"].iloc[-1]), 2),
+                "history": [
+                    {"t": str(d.date()), "v": round(float(v), 2)}
+                    for d, v in zip(tail.index, tail["Close"])
+                    if not (v != v)
+                ],
+            }
+            time.sleep(0.4)
+        except Exception as e:
+            print(f"  vix_term {sym}: {e}")
+
+    vix = points.get("^VIX", {}).get("current")
+    vix3m = points.get("^VIX3M", {}).get("current")
+    if vix is None or vix3m is None:
+        return None
+
+    spread = round(vix - vix3m, 2)
+    ratio = round(vix / vix3m, 4) if vix3m else None
+
+    if spread <= -2.0:
+        regime, label_en, label_zh = "contango_deep", "Deep Contango", "深度Contango · 极度平静"
+    elif spread <= -0.5:
+        regime, label_en, label_zh = "contango", "Contango", "Contango · 正常"
+    elif spread < 0.5:
+        regime, label_en, label_zh = "flat", "Flat", "Flat · 警戒"
+    elif spread < 2.0:
+        regime, label_en, label_zh = "backwardation", "Backwardation", "Backwardation · 紧张"
+    else:
+        regime, label_en, label_zh = "backwardation_deep", "Deep Backwardation", "深度Backwardation · 恐慌"
+
+    # Walk back through VIX/VIX3M history to find last regime flip into backwardation
+    last_back = None
+    vix_hist = points.get("^VIX", {}).get("history") or []
+    v3m_hist = points.get("^VIX3M", {}).get("history") or []
+    if vix_hist and v3m_hist:
+        v3m_by_date = {h["t"]: h["v"] for h in v3m_hist}
+        for h in reversed(vix_hist[:-1]):
+            v3 = v3m_by_date.get(h["t"])
+            if v3 is None:
+                continue
+            if h["v"] - v3 >= 0.5:
+                last_back = h["t"]
+                break
+
+    spread_history = []
+    if vix_hist and v3m_hist:
+        v3m_by_date = {h["t"]: h["v"] for h in v3m_hist}
+        for h in vix_hist:
+            v3 = v3m_by_date.get(h["t"])
+            if v3 is not None:
+                spread_history.append({"t": h["t"], "v": round(h["v"] - v3, 2)})
+
+    return {
+        "vix": vix,
+        "vix9d": points.get("^VIX9D", {}).get("current"),
+        "vix3m": vix3m,
+        "vix6m": points.get("^VIX6M", {}).get("current"),
+        "spread_1m_3m": spread,
+        "ratio_1m_3m": ratio,
+        "regime": regime,
+        "regime_label_en": label_en,
+        "regime_label_zh": label_zh,
+        "last_backwardation": last_back,
+        "spread_history": spread_history,
+        "curve": [
+            {"label": "9D",  "value": points.get("^VIX9D", {}).get("current")},
+            {"label": "1M",  "value": vix},
+            {"label": "3M",  "value": vix3m},
+            {"label": "6M",  "value": points.get("^VIX6M", {}).get("current")},
+        ],
+    }
 
 
 # ── FRED Macro Monitor ─────────────────────────────────────────────────────────
@@ -2318,19 +3170,33 @@ def main():
     print("Fetching economic events...")
     events = get_upcoming_key_events()
 
-    print("Fetching SPY history (cached for full run)...")
-    try:
-        _spy_cache = yf.Ticker("SPY").history(period="400d")
-    except Exception as e:
-        print("SPY cache fetch failed:", e)
-        _spy_cache = None
-
+    # SPY baseline is loaded AFTER OpenD prefetch (further down), so it reads
+    # from the freshly-written data/ohlc/SPY.json instead of going through Yahoo.
+    # Yahoo's stale responses for SPY were poisoning the stale-data detector
+    # and triggering bad Finnhub rescues that overwrote OpenD's correct OHLC.
+    _spy_cache = None
     spy_ref_date = None
-    if _spy_cache is not None and len(_spy_cache) >= 1:
-        spy_ref_date = _spy_cache.index[-1].date()
-        print(f"SPY reference date: {spy_ref_date}")
 
-    # Load previous snapshot for fallback on rate-limited tickers
+    def _blank_row(ticker, prev_row=None):
+        """Stub row used when both primary OpenD + Yahoo fallback fail.
+        Preserves identity (ticker, name) but zeroes all price/change fields,
+        so the frontend renders a visibly-blank cell instead of yesterday's stale price."""
+        return {
+            "ticker": ticker,
+            "name": (prev_row or {}).get("name") or ticker,
+            "data_date": None,
+            "current_price": None,
+            "change": None,
+            "change_pct": None,
+            "wtd_pct": None,
+            "mtd_pct": None,
+            "ytd_pct": None,
+            "volume_avg": None,
+            "blank_reason": "no fresh data — stale fallback disabled",
+        }
+
+    # Load previous snapshot — used for vol_signals/options_intel/factor_regime
+    # block-level fallback only. Per-ticker rows do NOT fall back to stale data.
     prev_ticker_data = {}
     prev_snap = {}
     snapshot_path = os.path.join(out_dir, "snapshot.json")
@@ -2368,8 +3234,14 @@ def main():
                     print(f"  {item['name']}: no data")
 
     time.sleep(2)
-    print("Computing options intelligence...")
-    options_intel = build_options_intel(OPTIONS_INTEL_TICKERS)
+    print("Computing options intelligence (OpenD primary)...")
+    options_intel = build_options_intel_opend(OPTIONS_INTEL_TICKERS, prev_ticker_data)
+    if not options_intel or len(options_intel) < len(OPTIONS_INTEL_TICKERS) // 2:
+        # OpenD totally failed or covered less than half — try yfinance for the rest
+        print("  options_intel: OpenD partial/empty, falling back to yfinance...")
+        missing = [t for t in OPTIONS_INTEL_TICKERS if t not in (options_intel or {})]
+        yf_oi = build_options_intel(missing) if missing else {}
+        options_intel = {**(options_intel or {}), **yf_oi}
     if not options_intel:
         prev_oi = prev_snap.get("options_intel")
         if prev_oi:
@@ -2428,6 +3300,106 @@ def main():
 
     # ── Cooldown before main ticker loop ──
     time.sleep(5)
+
+    # ── Batch prefetch: collapse ~300 individual requests into ~6 bulk requests ──
+    all_syms = []
+    _seen = set()
+    # Frozen groups (e.g. Countries) reuse last snapshot — exclude their unique
+    # tickers from the prefetch to save Yahoo bandwidth.
+    _frozen_only = set()
+    for _g, _ts in STOCK_GROUPS.items():
+        if _g in FROZEN_GROUPS:
+            _frozen_only.update(_ts)
+    _shared_with_active = set()
+    for _g, _ts in STOCK_GROUPS.items():
+        if _g not in FROZEN_GROUPS:
+            _shared_with_active.update(_ts)
+    _frozen_only -= _shared_with_active
+    for _g, _ts in STOCK_GROUPS.items():
+        for _t in _ts:
+            if _t in _frozen_only:
+                continue
+            if _t not in _seen:
+                _seen.add(_t)
+                all_syms.append(_t)
+    # Also include theme + cross-asset tickers the post-loop pass fetches
+    try:
+        _extra = set(t for tickers in AI_THEMES.values() for t in tickers) | set(THEME_ETF_PROXY.values()) | {"HYG", "TLT", "VIXY", "USO", "UNG", "UUP", "LQD", "IEF", "SHY"}
+        for _t in sorted(_extra - _seen):
+            all_syms.append(_t)
+    except NameError:
+        pass
+    try:
+        from fetch_opend import populate_batch_cache
+        opend_cached = populate_batch_cache(_BATCH_CACHE, all_syms)
+    except Exception as e:
+        print(f"[opend] pre-pass failed: {e}")
+        opend_cached = set()
+    yahoo_syms = [s for s in all_syms if s not in opend_cached]
+    print(f"[opend] {len(opend_cached)} via OpenD; {len(yahoo_syms)} residual via Yahoo")
+    prefetch_histories(yahoo_syms, chunk_size=50, inter_chunk_sleep=6)
+
+    # SPY baseline: prefer OpenD's fresh data/ohlc/SPY.json (just written above).
+    # Yahoo fallback only if OpenD failed for SPY.
+    print("Loading SPY history baseline...")
+    spy_json_path = os.path.join(ohlc_dir, "SPY.json")
+    if os.path.exists(spy_json_path):
+        try:
+            _spy_d = json.load(open(spy_json_path, encoding="utf-8"))
+            _spy_bars = _spy_d.get("ohlc") or []
+            if len(_spy_bars) >= 50:
+                _spy_df = pd.DataFrame(_spy_bars)
+                _spy_df["Date"] = pd.to_datetime(_spy_df["t"]).dt.tz_localize("America/New_York")
+                _spy_df = (_spy_df.set_index("Date")
+                                  .rename(columns={"o": "Open", "h": "High", "l": "Low", "c": "Close", "v": "Volume"})
+                                  [["Open", "High", "Low", "Close", "Volume"]]
+                                  .sort_index())
+                _spy_cache = _spy_df
+                print(f"  [OK] SPY baseline from OpenD: {len(_spy_cache)} bars, last={_spy_cache.index[-1].date()}")
+        except Exception as e:
+            print(f"  [WARN] Failed to load SPY baseline from OpenD: {e}")
+    if _spy_cache is None or len(_spy_cache) < 50:
+        print("  [fallback] Loading SPY baseline from yfinance...")
+        try:
+            _spy_cache = yf.Ticker("SPY").history(period="400d")
+        except Exception as e:
+            print(f"  [WARN] yfinance SPY fallback failed: {e}")
+            _spy_cache = None
+    if _spy_cache is not None and len(_spy_cache) >= 1:
+        spy_ref_date = _spy_cache.index[-1].date()
+        print(f"SPY reference date: {spy_ref_date}")
+
+    # Write OHLC files for theme-proxy ETFs. They were fetched into _BATCH_CACHE
+    # above, but no group loop calls get_stock_data() on them, so without this
+    # explicit write their data/ohlc/<sym>.json never lands on disk — and
+    # rescue_finnhub's find_or_derive_row() then falls back to constituent
+    # averages, silently mislabeling the theme with etf=<proxy> while not
+    # actually using proxy prices.
+    for _proxy in set(THEME_ETF_PROXY.values()):
+        _hist = _BATCH_CACHE.get(_proxy)
+        if _hist is None or len(_hist) < 2:
+            continue
+        try:
+            _safe = re.sub(r'[^a-zA-Z0-9]', '_', _proxy)
+            _path = os.path.join(ohlc_dir, f"{_safe}.json")
+            _rows = [
+                {"t": idx.date().isoformat(),
+                 "o": round(float(r['Open']), 4), "h": round(float(r['High']), 4),
+                 "l": round(float(r['Low']), 4),  "c": round(float(r['Close']), 4),
+                 "v": int(r['Volume'])}
+                for idx, r in _hist.tail(260).iterrows()
+            ]
+            _name = ""
+            try:
+                _name = json.load(open(_path, encoding="utf-8")).get("name", "") or ""
+            except Exception:
+                pass
+            with open(_path, "w") as _f:
+                json.dump({"ticker": _proxy, "name": _name, "ohlc": _rows}, _f, separators=(",", ":"))
+            print(f"  [proxy] wrote {_proxy}.json ({len(_rows)} bars, last={_rows[-1]['t']})")
+        except Exception as _e:
+            print(f"  [proxy] write failed for {_proxy}: {_e}")
+
     print("Fetching stock data (no Liquid Stocks)...")
     groups_data = {}
     all_ticker_data = {}
@@ -2437,14 +3409,26 @@ def main():
     def _rate_sleep():
         nonlocal _fetch_count
         _fetch_count += 1
-        time.sleep(0.35)
-        # Longer pause every 40 tickers to avoid Yahoo rate-limit
-        if _fetch_count % 40 == 0:
+        time.sleep(0.6)
+        # Longer pause every 25 tickers to avoid Yahoo rate-limit
+        if _fetch_count % 25 == 0:
             print(f"    [rate-limit pause after {_fetch_count} fetches]")
-            time.sleep(3)
+            time.sleep(6)
 
     for group_name, tickers in STOCK_GROUPS.items():
         rows = []
+        if group_name in FROZEN_GROUPS:
+            # Frozen group — reuse last snapshot's rows verbatim, skip fetch.
+            kept = 0
+            for ticker in tickers:
+                prev = prev_ticker_data.get(ticker)
+                if prev:
+                    rows.append(prev)
+                    all_ticker_data[ticker] = prev
+                    kept += 1
+            print(f"  [{group_name}] FROZEN — reused {kept}/{len(tickers)} prior rows (no fetch)")
+            groups_data[group_name] = rows
+            continue
         for i, ticker in enumerate(tickers):
             if ticker in all_ticker_data:
                 # already fetched from a previous group — reuse cached data
@@ -2455,31 +3439,34 @@ def main():
             if row:
                 rows.append(row)
                 all_ticker_data[ticker] = row
-            elif ticker in prev_ticker_data:
-                # Rate-limited or failed — use previous data
-                rows.append(prev_ticker_data[ticker])
-                all_ticker_data[ticker] = prev_ticker_data[ticker]
-                fallback_tickers.append(ticker)
-                print(f"    -> using previous data for {ticker}")
             else:
+                # Reserve a blank slot so the retry pass can update it in place;
+                # never substitute yesterday's prices (user explicitly disabled stale fallback).
+                blank = _blank_row(ticker, prev_ticker_data.get(ticker))
+                rows.append(blank)
+                all_ticker_data[ticker] = blank
                 failed_tickers.append(ticker)
+                print(f"    -> blank placeholder for {ticker} (will retry)")
             _rate_sleep()
         groups_data[group_name] = rows
 
     if fallback_tickers:
         print(f"Used previous data for {len(fallback_tickers)} rate-limited tickers")
 
-    # Retry failed/fallback tickers once after a cooldown
-    retry_candidates = list(set(fallback_tickers + failed_tickers))
-    if retry_candidates:
-        print(f"\nRetrying {len(retry_candidates)} failed/fallback tickers after cooldown...")
-        time.sleep(5)
+    # Multi-pass retry with exponential cooldowns — bias for completeness over speed.
+    # Each pass re-attempts everything that's still missing or on fallback data.
+    retry_cooldowns = [30, 90, 180]
+    for attempt, cooldown in enumerate(retry_cooldowns, start=1):
+        retry_candidates = list(set(fallback_tickers + failed_tickers))
+        if not retry_candidates:
+            break
+        print(f"\n[Retry pass {attempt}/{len(retry_cooldowns)}] {len(retry_candidates)} tickers — cooling {cooldown}s then retrying at 1.0s/ticker...")
+        time.sleep(cooldown)
         retried_ok = 0
         for ticker in retry_candidates:
             row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache, ohlc_dir=ohlc_dir)
             if row:
                 all_ticker_data[ticker] = row
-                # Update in groups_data too
                 for gname, grow in groups_data.items():
                     for j, r in enumerate(grow):
                         if r.get("ticker") == ticker:
@@ -2489,22 +3476,26 @@ def main():
                 if ticker in failed_tickers:
                     failed_tickers.remove(ticker)
                 retried_ok += 1
-            _rate_sleep()
-        print(f"Retry recovered {retried_ok}/{len(retry_candidates)} tickers")
+            # Slower pace on retry — we already know Yahoo was pushing back
+            time.sleep(1.0)
+        print(f"[Retry pass {attempt}] recovered {retried_ok}/{len(retry_candidates)} tickers")
+        if retried_ok == 0:
+            # No progress this pass — try the next cooldown, but if that's the last one, stop early
+            if attempt < len(retry_cooldowns):
+                print(f"[Retry pass {attempt}] no progress — will try again after {retry_cooldowns[attempt]}s")
+            continue
 
     # Fetch any AI_THEMES tickers + Fear & Greed tickers + cross-asset tickers not already fetched
-    theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers) | {"HYG", "TLT", "VIXY", "USO", "UNG", "UUP", "LQD", "IEF", "SHY"}
+    theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers) | set(THEME_ETF_PROXY.values()) | {"HYG", "TLT", "VIXY", "USO", "UNG", "UUP", "LQD", "IEF", "SHY"}
     for ticker in sorted(theme_ticker_set - set(all_ticker_data.keys())):
         print(f"  [AI Themes] {ticker}")
         row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache, ohlc_dir=ohlc_dir)
         if row:
             all_ticker_data[ticker] = row
-        elif ticker in prev_ticker_data:
-            all_ticker_data[ticker] = prev_ticker_data[ticker]
-            fallback_tickers.append(ticker)
-            print(f"    -> using previous data for {ticker}")
         else:
+            all_ticker_data[ticker] = _blank_row(ticker, prev_ticker_data.get(ticker))
             failed_tickers.append(ticker)
+            print(f"    -> blank placeholder for {ticker}")
         _rate_sleep()
 
     # Detect stale tickers by comparing data_date against SPY's reference date
@@ -2518,19 +3509,28 @@ def main():
             print(f"\nDetected {len(stale_tickers)} stale tickers (date != {spy_ref_date}):")
             for t in stale_tickers:
                 print(f"  {t}: data_date={all_ticker_data[t].get('data_date')}")
-            print(f"Re-fetching {len(stale_tickers)} stale tickers after cooldown...")
-            time.sleep(5)
+            print(f"Re-fetching {len(stale_tickers)} stale tickers — 2 passes with cooldowns...")
             stale_recovered = 0
-            for ticker in stale_tickers:
-                row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache, ohlc_dir=ohlc_dir)
-                if row and row.get("data_date") == spy_ref_date.isoformat():
-                    all_ticker_data[ticker] = row
-                    for gname, grow in groups_data.items():
-                        for j, r in enumerate(grow):
-                            if r.get("ticker") == ticker:
-                                grow[j] = row
-                    stale_recovered += 1
-                _rate_sleep()
+            remaining_stale = list(stale_tickers)
+            for sattempt, scooldown in enumerate([30, 90], start=1):
+                if not remaining_stale:
+                    break
+                print(f"  [Stale pass {sattempt}] {len(remaining_stale)} tickers — cooling {scooldown}s...")
+                time.sleep(scooldown)
+                recovered_this = []
+                for ticker in remaining_stale:
+                    row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache, ohlc_dir=ohlc_dir)
+                    if row and row.get("data_date") == spy_ref_date.isoformat():
+                        all_ticker_data[ticker] = row
+                        for gname, grow in groups_data.items():
+                            for j, r in enumerate(grow):
+                                if r.get("ticker") == ticker:
+                                    grow[j] = row
+                        recovered_this.append(ticker)
+                        stale_recovered += 1
+                    time.sleep(1.0)
+                remaining_stale = [t for t in remaining_stale if t not in recovered_this]
+                print(f"  [Stale pass {sattempt}] recovered {len(recovered_this)} / still stale: {len(remaining_stale)}")
             print(f"Stale recovery: {stale_recovered}/{len(stale_tickers)} tickers updated")
             still_stale = [t for t in stale_tickers
                            if all_ticker_data[t].get("data_date") != spy_ref_date.isoformat()]
@@ -2846,13 +3846,11 @@ def main():
     # ── Expected Move (ATM straddle) ─────────────────────────────────────────────
     # All tickers use nearest Friday expiry (GS methodology).
     time.sleep(5)  # cooldown before expected move batch
-    # Index tickers also get a 0DTE expected move (em_pct_0d).
     em_groups = ['Indices', 'Sel Sectors', 'S&P Style ETFs']
     for gname in groups_data:
         if gname.startswith('The ') and gname.endswith(' 7'):
             em_groups.append(gname)
     print(f"Fetching options expected move for {len(em_groups)} groups...")
-    index_tickers = set(r.get('ticker') for r in groups_data.get('Indices', []) if r.get('ticker'))
     em_tickers = []
     seen = set()
     for g in em_groups:
@@ -2862,34 +3860,41 @@ def main():
                 em_tickers.append(t)
                 seen.add(t)
     em_data = {}
-    for sym in em_tickers:
-        # Friday expiry for all tickers
+
+    # OpenD primary pre-pass — covers all US ETFs/stocks in one connection
+    try:
+        from fetch_opend import fetch_expected_move_opend, is_opend_eligible
+        opend_em_tickers = [t for t in em_tickers if is_opend_eligible(t)]
+        if opend_em_tickers:
+            def _spot(t):
+                return all_ticker_data.get(t, {}).get("last_close")
+            print(f"  [opend-em] pre-pass for {len(opend_em_tickers)} tickers...")
+            opend_em = fetch_expected_move_opend(opend_em_tickers, spot_lookup=_spot, verbose=False)
+            for sym, res in opend_em.items():
+                if res.get("em_pct") is not None:
+                    em_data[sym] = {
+                        "em_pct":  res.get("em_pct"),
+                        "em_days": res.get("em_days"),
+                    }
+            print(f"  [opend-em] covered {len(em_data)}/{len(opend_em_tickers)} via OpenD")
+    except Exception as e:
+        print(f"  [opend-em] pre-pass failed, falling through to yfinance: {e}")
+
+    # yfinance fallback — only for tickers OpenD couldn't fill
+    yf_remaining = [t for t in em_tickers if t not in em_data or em_data[t].get("em_pct") is None]
+    if yf_remaining:
+        print(f"  yfinance fallback for {len(yf_remaining)} ticker(s)...")
+    for sym in yf_remaining:
         em_pct, em_days = get_expected_move(sym, weekly=True)
-        em_data[sym] = {'em_pct': em_pct, 'em_days': em_days}
+        em_data.setdefault(sym, {}).update({'em_pct': em_pct, 'em_days': em_days})
         if em_pct is not None:
-            print(f"  {sym}: ±{em_pct}% ({em_days}d) [fri]")
-        else:
-            print(f"  {sym}: no options data [fri]")
-        # Also fetch 0DTE for index tickers (skip if same expiry as Friday)
-        if sym in index_tickers:
-            em0_pct, em0_days = get_expected_move(sym, weekly=False)
-            if em0_pct is not None and em0_days != em_days:
-                em_data[sym]['em_pct_0d'] = em0_pct
-                em_data[sym]['em_days_0d'] = em0_days
-                print(f"    0d: ±{em0_pct}% ({em0_days}d)")
-            elif em0_pct is not None:
-                print(f"    0d: same expiry as fri ({em0_days}d) — skipping")
-            time.sleep(0.35)
+            print(f"  {sym}: ±{em_pct}% ({em_days}d) [fri/yf]")
         time.sleep(0.35)
-        if len(em_data) % 40 == 0:
-            time.sleep(3)
     for gname, rows in groups_data.items():
         for r in rows:
             ed = em_data.get(r.get('ticker'), {})
             r['em_pct']  = ed.get('em_pct')
             r['em_days'] = ed.get('em_days')
-            r['em_pct_0d'] = ed.get('em_pct_0d')
-            r['em_days_0d'] = ed.get('em_days_0d')
 
     # Backfill averaged EM into 7s summary rows
     for sr in groups_data.get("The 7s at a Glance", []):
@@ -2970,11 +3975,36 @@ def main():
     if fred_api_key:
         print("Fetching USD Liquidity data...")
         macro_data["usd_liquidity"] = build_usd_liquidity(fred_api_key)
+        print("Fetching Inflation Pillar data...")
+        try:
+            macro_data["inflation_pillar"] = build_inflation_pillar(fred_api_key, out_dir)
+        except Exception as e:
+            print(f"  inflation_pillar failed: {e}")
+
+    print("Building ETF flow metrics...")
+    etf_flow = None
+    try:
+        etf_flow = build_etf_flow(out_dir, ohlc_dir)
+        if etf_flow:
+            n = len(etf_flow.get("tickers") or {})
+            print(f"  etf_flow: {n} tickers, daily_snapshot_count={etf_flow.get('daily_snapshot_count')}")
+    except Exception as e:
+        print(f"  etf_flow failed: {e}")
+
     print("Fetching Fed Watch data...")
     macro_data["fed_watch"] = build_fed_watch(
         fred_api_key if fred_api_key else None,
         perplexity_api_key if perplexity_api_key else None,
     )
+
+    print("Fetching VIX term structure...")
+    try:
+        vt = build_vix_term_structure()
+        if vt:
+            macro_data["vix_term"] = vt
+            print(f"  vix_term: spread={vt['spread_1m_3m']} regime={vt['regime']}")
+    except Exception as e:
+        print(f"  vix_term failed: {e}")
 
     macro_fred = {}
     if fred_api_key:
@@ -3054,6 +4084,7 @@ def main():
         "options_intel": options_intel if options_intel else None,
         "industries_sector_charts": industries_sector_charts,
         "industries_sector_rs_charts": industries_sector_rs_charts,
+        "etf_flow": etf_flow,
     }
     meta = {
         "SECTOR_COLORS": SECTOR_COLORS,
@@ -3093,6 +4124,30 @@ def main():
         json.dump({"snapshots": rot_history}, f, separators=(",", ":"))
     print(f"Rotation snapshot saved ({today_str}, {len(rot_history)} entries total)")
 
+    # ── USD Liquidity score history snapshot ────────────────────────────────────
+    liq = macro_data.get("usd_liquidity") or {}
+    if liq.get("score") is not None:
+        liq_path = os.path.join(out_dir, "liquidity_history.json")
+        liq_history = []
+        if os.path.exists(liq_path):
+            try:
+                with open(liq_path) as f:
+                    liq_history = json.load(f).get("snapshots", [])
+            except Exception:
+                liq_history = []
+        liq_entry = {
+            "date": today_str,
+            "score": liq.get("score"),
+            "score_label": liq.get("score_label"),
+            "components": {c["id"]: c.get("percentile") for c in liq.get("components") or [] if c.get("id")},
+        }
+        liq_history = [h for h in liq_history if h.get("date") != today_str]
+        liq_history.append(liq_entry)
+        liq_history = liq_history[-90:]
+        with open(liq_path, "w") as f:
+            json.dump({"snapshots": liq_history}, f, separators=(",", ":"))
+        print(f"Liquidity snapshot saved ({today_str}, {len(liq_history)} entries total)")
+
     snapshot_path = os.path.join(out_dir, "snapshot.json")
     events_path = os.path.join(out_dir, "events.json")
     meta_path = os.path.join(out_dir, "meta.json")
@@ -3108,6 +4163,7 @@ def main():
     if failed_tickers:
         print(f"FAILED ({len(failed_tickers)}): {', '.join(failed_tickers)}")
     fetch_etf_holdings(get_all_etfs_for_holdings(), out_dir)
+    refresh_holdings_daily_from_cache(out_dir, all_ticker_data)
     print("Done.")
 
 
