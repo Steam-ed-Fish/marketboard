@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-14",
+  "last_updated": "2026-07-15",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -14,13 +14,13 @@
     "rate_cut_pct": 0.0,
     "rate_hike_pct": 0.0,
     "current_rate": "3.50%–3.75%",
-    "cpi": 3.3,
-    "cpi_month": "March 2026",
-    "unemployment": 4.3,
-    "unemployment_month": "March 2026",
-    "bls_cpi_updated": "2026-04-23",
+    "cpi": 3.5,
+    "cpi_month": "June 2026",
+    "unemployment": 4.2,
+    "unemployment_month": "June 2026",
+    "bls_cpi_updated": "2026-07-15",
     "cme_updated": "2026-06-24",
-    "bls_unemp_updated": "2026-04-23"
+    "bls_unemp_updated": "2026-07-15"
   },
   "members": [
     {
@@ -117,10 +117,17 @@
       "title": "Governor",
       "institution": "Federal Reserve Board",
       "is_voter": true,
-      "stance": "Neutral",
+      "stance": "Hawk",
       "photo_url": "data/fedwatch_photos/barr.jpg",
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
       "speeches": [
+        {
+          "date": "2026-07-14",
+          "event": "Barr, Will Artificial Intelligence Broadly Raise Living Standards or Drive Income and Wealth Inequality?",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260714a.htm",
+          "brief_summary": "Governor Barr examines whether AI will broadly raise living standards or exacerbate income and wealth inequality, emphasizing the need for supportive policies.",
+          "detailed_summary": "This speech addresses AI's economic impacts on financial inclusion and inequality rather than monetary policy. Barr discusses how AI could either broadly raise living standards through productivity gains or widen inequality by concentrating benefits among higher-skilled workers and AI company owners. He notes current U.S. income and wealth inequality metrics (top fifth earning 52% of income; bottom half holding <3% of wealth) and observes that 43% of graduate-degree workers use AI versus 10% with high school education. While acknowledging little economy-wide job displacement yet, Barr emphasizes the policy challenge lies in ensuring AI gains are broadly shared through education, training, competition, and tax policies—matters outside the Federal Reserve's purview."
+        },
         {
           "date": "2026-06-06",
           "event": "Barr, Deregulating in a Financial Boom: What Could Go Wrong?",
@@ -148,13 +155,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260414a.htm",
           "brief_summary": "Governor Barr discusses rural economic development challenges and opportunities, emphasizing diverse community needs, intrinsic constraints like population decline, and innovative local solutions.",
           "detailed_summary": "This speech addresses rural community economic development rather than monetary policy. Barr highlights structural challenges facing rural America including population aging, migration dependence, institutional losses, and housing affordability. He emphasizes that rural communities are diverse with distinct needs requiring flexible, localized solutions. The speech draws on Barr's travel experiences visiting rural regions to showcase examples of innovation, such as CDFIs preserving banking access and philanthropic partnerships addressing infrastructure gaps. While not setting monetary policy stance, the address underscores the Federal Reserve's commitment to understanding and supporting rural economic resilience."
-        },
-        {
-          "date": "2026-03-31",
-          "event": "The Federalist Society, Washington D.C. — 'The GENIUS Act in Practice: Key Questions for Stablecoin Regulation'",
-          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260331a.htm",
-          "brief_summary": "Barr analyzed the GENIUS Act's stablecoin regulation framework, focusing on reserve requirements and run risks.",
-          "detailed_summary": "Barr outlined how the GENIUS Act requires stablecoin issuers to hold high-quality liquid assets and comply with federal supervision standards, arguing that reserve asset quality is the critical variable in stress scenarios. While the speech focused on financial stability and regulatory policy rather than monetary policy stance, Barr implicitly tied stablecoin soundness to the broader financial system's ability to transmit monetary policy effectively. He warned that insufficient reserve standards could create systemic run risks similar to those seen in uninsured bank deposits."
         }
       ]
     },
@@ -163,30 +163,37 @@
       "title": "Vice Chair for Supervision",
       "institution": "Federal Reserve Board",
       "is_voter": true,
-      "stance": "Dove",
+      "stance": "Neutral",
       "photo_url": "data/fedwatch_photos/bowman.jpg",
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
         {
+          "date": "2026-07-14",
+          "event": "Bowman, Responsible Innovation and Financial Inclusion",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260714a.htm",
+          "brief_summary": "Vice Chair Bowman discusses responsible AI innovation in banking as a tool for financial inclusion, emphasizing clear regulatory expectations and supervisory flexibility over prescriptive requirements.",
+          "detailed_summary": "This speech addresses financial inclusion and responsible innovation rather than monetary policy. Bowman highlights how banks can expand access to financial services through responsible innovation, particularly AI adoption for credit expansion and serving underbanked populations. She emphasizes the Federal Reserve's role in providing regulatory clarity and flexibility while maintaining safety and soundness, noting that smaller banks need accessible guidance. Bowman references the Financial Stability Board's recent report on sound practices for AI adoption, advocating for calibrated oversight proportional to risk rather than one-size-fits-all requirements."
+        },
+        {
           "date": "2026-07-13",
           "event": "Bowman, Modernizing Financial Regulation",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260713a.htm",
-          "brief_summary": "Speech At a Bank Policy Institute London Conference, London, United Kingdom",
-          "detailed_summary": ""
+          "brief_summary": "Vice Chair Bowman outlines Financial Stability Board principles for modernizing financial regulation globally, emphasizing risk-based supervision, tailored requirements, and transparency over regulatory burden.",
+          "detailed_summary": "Bowman discusses FSB efforts to modernize regulatory frameworks by prioritizing material financial risks over excessive findings, tailoring supervision to institution risk profiles, and enhancing transparency in supervisory expectations. She cites Silicon Valley Bank's failure as evidence that supervisors lost focus on material risks despite numerous outstanding matters, demonstrating that 'more findings do not equal better supervision.' U.S. modernization includes capital framework reforms through the 2026 Basel III proposal, which adopts bottom-up risk-based calibration, simplifies requirements for large banks, recalibrates systemic importance surcharges, and commits to indexing G-SIB surcharges to economic growth. The approach balances prudential soundness with economic efficiency while supporting responsible innovation."
         },
         {
           "date": "2026-05-29",
           "event": "Bowman, A Framework for Practical Monetary Policy Decision Making",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260529a.htm",
-          "brief_summary": "Speech At the Reykjav&iacute;k Economic Conference 2026, Central Bank of Iceland, Reykjav&iacute;k, Iceland",
-          "detailed_summary": ""
+          "brief_summary": "Bowman outlines her practical monetary policy decision-making framework, emphasizing analysis of GDP, employment, and inflation data to determine appropriate federal funds rate adjustments.",
+          "detailed_summary": "Vice Chair Bowman describes her approach to assessing economic conditions and the FOMC's dual mandate of maximum employment and price stability. She examines real GDP growth and private domestic final purchases to gauge demand momentum, monitors unemployment rate and payroll employment to evaluate labor market slack and tightness, and tracks PCE inflation (especially core PCE) against the 2 percent target. Bowman notes the framework guides decisions to cut, raise, or hold rates constant, emphasizing the importance of forward-looking analysis, frequent business contacts, and caution regarding data reliability and volatility in real-time interpretation."
         },
         {
           "date": "2026-07-07",
           "event": "Bowman, Opening Remarks on Sound Practices for Artificial Intelligence",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260707a.htm",
-          "brief_summary": "Speech At the Financial Stability Board Virtual Outreach Event",
-          "detailed_summary": ""
+          "brief_summary": "Vice Chair Bowman discusses the Financial Stability Board's consultation report on sound practices for responsible AI adoption in financial institutions, emphasizing proportionality and risk-based governance.",
+          "detailed_summary": "This speech addresses regulatory guidance on artificial intelligence use in banking, not monetary policy. Bowman presents the FSB's framework for responsible AI adoption, noting the Federal Reserve has monitored bank AI usage for a decade with increasing deployment across institutions of all sizes. The report emphasizes proportionality—lighter supervisory touch for lower-risk AI uses and tailored governance based on materiality, institutional complexity, and size. Bowman welcomes feedback on whether guidance balances innovation promotion with adequate safeguards for higher-risk applications before finalization as a U.S. G-20 deliverable."
         },
         {
           "date": "2026-05-14",
@@ -194,13 +201,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260514a.htm",
           "brief_summary": "Vice Chair Bowman advocates tailoring regulatory and supervisory approaches to community banks, criticizing one-size-fits-all rules that burden smaller institutions disproportionately.",
           "detailed_summary": "Bowman's speech addresses regulatory burden on community banks, particularly CECL accounting requirements and Regulation O compliance that impose costs without commensurate safety benefits. She argues supervisory approaches should focus on material financial risks rather than procedural violations, citing examples where minor technical infractions receive excessive enforcement scrutiny. The Federal Reserve has published supervisory operating principles to refocus supervision on genuine threats to bank soundness, clarifying standards for Matters Requiring Attention and supporting community banks' ability to adapt to market changes while serving their communities effectively."
-        },
-        {
-          "date": "2026-05-08",
-          "event": "Bowman, When Regulation Reshapes Markets: The Migration of Corporate Lending",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260508a.htm",
-          "brief_summary": "Bowman addresses regulatory-driven migration of corporate lending from banks to nonbanks, proposing Basel III capital framework changes to reduce punitive treatment of traditional bank lending and restore competitive balance.",
-          "detailed_summary": "Vice Chair Bowman discusses how post-2008 financial crisis regulations, while necessary for safety, created unintended consequences that discouraged banks from corporate lending. Bank share of corporate lending fell from 48% (2015) to 29% (2025), with private credit growing to $1.4 trillion. She identifies perverse capital incentives favoring bank lending to private credit funds over direct corporate lending. The Fed's three-part response includes proposed Basel III changes reducing risk weights on investment-grade corporate loans from 100% to 65%, enabling banks to compete more effectively with nonbanks while maintaining strong capital standards and financial stability safeguards."
         }
       ]
     },
@@ -217,8 +217,8 @@
           "date": "2026-06-24",
           "event": "Cook, Welcome Remarks",
           "url": "https://www.federalreserve.gov/newsevents/speech/cook20260624a.htm",
-          "brief_summary": "Speech At the State of Small Business Symposium hosted by the Federal Reserve Bank of Cleveland (via pre-recorded video)",
-          "detailed_summary": ""
+          "brief_summary": "Governor Cook welcomes attendees to a small business symposium, highlighting the Federal Reserve's Small Business Credit Survey and small businesses' adoption of AI technology.",
+          "detailed_summary": "This speech is not primarily about monetary policy implementation or rate decisions. Cook delivers welcome remarks at the Federal Reserve Bank of Cleveland's State of Small Business Symposium, emphasizing small businesses' critical economic role—accounting for 61 percent of net job creation since 1995. She highlights the Small Business Credit Survey's expansion over a decade and presents a notable finding: nearly half of small employer firms use AI, with 71 percent reporting increased productivity. Cook frames small businesses as innovative and adaptable, noting that frontier technology breakthroughs often originate from startups, and encourages researchers and policymakers to utilize SBCS data to understand small firms' financing needs and credit access challenges."
         },
         {
           "date": "2026-05-27",
@@ -462,29 +462,29 @@
           "date": "2026-07-13",
           "event": "Waller, Monetary Policy at a Crossroads",
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260713a.htm",
-          "brief_summary": "Speech At the New York Association for Business Economics, New York, New York",
-          "detailed_summary": ""
+          "brief_summary": "Waller expresses concern about rising core inflation trending upward from 3.0% to 3.4% and signals readiness to tighten policy if upward trajectory continues, while acknowledging solid economic activity and stable labor market.",
+          "detailed_summary": "Governor Waller assessed the economy as resilient with solid household and business spending, employment near maximum levels, and AI investment momentum offsetting tariff and energy-price headwinds. However, he voiced concern about core PCE inflation rising from 3.0% in December 2025 to 3.4% in May 2026, noting this exceeds temporary tariff effects and signals potential need for tighter monetary policy. Waller cited June labor market softness but dismissed it as temporary noise, finding the 111,000 monthly job creation pace healthy relative to slowed labor supply growth. He stated monetary policy is at a crossroads: if inflation's upward trend persists, current policy settings may prove insufficient to return inflation to the 2% target, and he committed to avoiding both repeated policy mistakes and overtightening."
         },
         {
           "date": "2026-07-06",
           "event": "Waller, Two Thoughts on the Transmission of Monetary Policy",
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260706a.htm",
-          "brief_summary": "Speech At &quot;Challenges for Monetary Policy Transmission in a Changing World,&quot; a conference sponsored by the Bank of Italy for the research network initiated by the European System of Central Banks, Rome, Italy",
-          "detailed_summary": ""
+          "brief_summary": "Monetary policy transmission depends critically on initial economic conditions rather than historical averages, and forward guidance effectiveness requires flexibility to avoid constraining future policy options.",
+          "detailed_summary": "Governor Waller emphasizes that understanding current initial conditions—not past averages—is essential for effective monetary policy. He illustrates this with the 2022 inflation episode, where an unprecedented job vacancy-to-unemployed ratio of 2:1 meant rapid tightening reduced vacancies rather than employment, producing modest unemployment increases contrary to historical predictions. Large economic shocks trigger nonlinear behavioral responses altering transmission mechanisms. On forward guidance, Waller argues it can accelerate policy effects (e.g., the 200 bp two-year yield rise in late 2021 compressed transmission lags), but overly rigid guidance—citing the FOMC's 2020 lower-bound forward guidance—can constrain policymaking and delay necessary adjustments. He recommends flexible forward guidance or none when multiple divergent scenarios exist."
         },
         {
           "date": "2026-06-22",
           "event": "Waller, Welcoming Remarks on the International Role of the U.S. Dollar",
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260622a.htm",
-          "brief_summary": "Speech At the Fifth Conference on the International Roles of the Dollar, Board of Governors of the Federal Reserve System, Washington, D.C.",
-          "detailed_summary": ""
+          "brief_summary": "Waller welcomes conference discussing how financial innovations like stablecoins and blockchain are reshaping the international role of the U.S. dollar in global payments and intermediation.",
+          "detailed_summary": "This speech is not about monetary policy but rather a welcoming address to the Fifth Conference on the International Roles of the U.S. Dollar. Waller outlines research themes examining how technological innovations—particularly stablecoins and distributed ledger technologies—are transforming payment systems, foreign exchange markets, and cross-border capital flows. The conference explores whether stablecoins reinforce dollar dominance by extending access to dollar-denominated instruments globally or introduce new tensions through altered financial intermediation and safe asset demand, while noting that competition from private sector innovation generally benefits consumers and society."
         },
         {
           "date": "2026-05-22",
           "event": "Waller, Policy Risks Have Changed",
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260522a.htm",
-          "brief_summary": "Speech At The Centre for Central Banking Guest Lecture, Frankfurt, Germany",
-          "detailed_summary": ""
+          "brief_summary": "Fed should pause rate cuts and remove easing bias due to Middle East energy shock pushing inflation higher, though rate hikes unlikely near-term given stable but not booming labor market.",
+          "detailed_summary": "Governor Waller addresses how the Middle East conflict's supply disruptions and rising energy prices have shifted monetary policy priorities from labor market concerns to inflation risks. While recent data show labor market stabilization (4.3% unemployment, hiring improvement), headline inflation is rising and moving in the wrong direction. Waller supports holding rates steady, removing the easing bias from policy statements, and rules out near-term rate cuts unless inflation improves or labor market deteriorates significantly. He cautions that rate hikes remain possible if inflation expectations become unanchored, though near-term increases could damage the still-recovering economy."
         },
         {
           "date": "2026-05-08",
