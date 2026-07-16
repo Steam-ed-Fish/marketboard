@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-15",
+  "last_updated": "2026-07-16",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -214,6 +214,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/cook.htm",
       "speeches": [
         {
+          "date": "2026-07-15",
+          "event": "Cook, Economic Outlook",
+          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260715a.htm",
+          "brief_summary": "Governor Cook emphasizes persistent inflation above the 2% target remains the primary concern, outweighing employment risks, warranting continued focus on price stability.",
+          "detailed_summary": "Cook highlights that 12-month inflation stands at 3.7%, remaining 1.7 percentage points above the Federal Reserve's 2% target despite recent softer CPI and PPI reports. While the labor market remains stable with unemployment at 4.2% and moderate payroll growth, she notes inflation risks have shifted to outweigh employment risks due to resilient GDP growth (2.0% in 2025, 2.2% forecast for 2026), booming productivity, and unexpected price pressures from Middle East conflicts and AI infrastructure spending. Core goods prices are rising at a striking 5% annual pace, well above pre-pandemic trends, indicating inflation persistence extends beyond energy prices alone."
+        },
+        {
           "date": "2026-06-24",
           "event": "Cook, Welcome Remarks",
           "url": "https://www.federalreserve.gov/newsevents/speech/cook20260624a.htm",
@@ -240,13 +247,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/cook20260326a.htm",
           "brief_summary": "Cook described the Fed's financial stability monitoring and stressed that AI investment could amplify both growth and financial vulnerability.",
           "detailed_summary": "Cook discussed how the Fed's financial stability committee tracks asset valuations, leverage, and funding vulnerabilities through scenario analysis and stress testing. She highlighted that AI investments, while potentially boosting productivity and raising the neutral rate, could also create new systemic risks if AI-related asset valuations become disconnected from fundamentals. No explicit rate stance was expressed; the speech focused on macroprudential frameworks and the importance of monitoring rapidly evolving risk sources."
-        },
-        {
-          "date": "2026-02-24",
-          "event": "42nd Annual NABE Economic Policy Conference, Washington D.C. — 'Opening Remarks for the AI and Productivity across the Economy Panel'",
-          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260224a.htm",
-          "brief_summary": "Cook argued AI's potential to raise the neutral rate and displace labor creates new monetary policy tradeoffs that standard tools may not resolve.",
-          "detailed_summary": "Cook noted that significant AI capital investment may have already raised the neutral rate of interest in the near term, implying the current federal funds rate is less restrictive than it appears on a nominal basis. She also warned that AI-driven labor displacement could generate simultaneous increases in unemployment and goods price pressure, creating a dual-mandate dilemma that conventional interest rate policy cannot cleanly address. These views support her relatively hawkish orientation — the neutral rate may be higher than consensus estimates, meaning current policy is closer to easy than it seems."
         }
       ]
     },
