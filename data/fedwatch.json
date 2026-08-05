@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-05",
+  "last_updated": "2026-08-06",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-08-05",
+    "cme_updated": "2026-08-06",
     "bls_unemp_updated": "2026-07-15",
     "rate_prob_source": "CME FedWatch (investing.com)"
   },
@@ -215,6 +215,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/cook.htm",
       "speeches": [
         {
+          "date": "2026-08-05",
+          "event": "Cook, Outlook for the U.S. and Alaskan Economies",
+          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260805a.htm",
+          "brief_summary": "Speech At the 2026 Economic Luncheon of the Anchorage Economic Development Corporation, Anchorage, Alaska",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-07-15",
           "event": "Cook, Economic Outlook",
           "url": "https://www.federalreserve.gov/newsevents/speech/cook20260715a.htm",
@@ -241,13 +248,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/cook20260508a.htm",
           "brief_summary": "Governor Cook discusses tokenization's opportunities and financial-stability risks, emphasizing careful innovation monitoring across digital asset markets.",
           "detailed_summary": "This speech addresses tokenization in financial markets rather than monetary policy rate decisions. Cook explores tokenization's potential benefits—faster cross-border payments, improved settlement times, enhanced automation—particularly for emerging economies like those in West Africa. She frames analysis across two dimensions: infrastructure (distributed ledger technology, smart contracts) and assets themselves. While noting tokenized U.S. financial assets doubled to ~$25 billion, with growth in government bonds, credit funds, and money market funds, Cook emphasizes her dual responsibility to support innovation while carefully monitoring financial-stability implications through her roles at the Federal Reserve and Financial Stability Board."
-        },
-        {
-          "date": "2026-03-26",
-          "event": "Yale Program on Financial Stability, School of Management, Yale University, New Haven, CT — 'Reflections on Financial Stability'",
-          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260326a.htm",
-          "brief_summary": "Cook described the Fed's financial stability monitoring and stressed that AI investment could amplify both growth and financial vulnerability.",
-          "detailed_summary": "Cook discussed how the Fed's financial stability committee tracks asset valuations, leverage, and funding vulnerabilities through scenario analysis and stress testing. She highlighted that AI investments, while potentially boosting productivity and raising the neutral rate, could also create new systemic risks if AI-related asset valuations become disconnected from fundamentals. No explicit rate stance was expressed; the speech focused on macroprudential frameworks and the importance of monitoring rapidly evolving risk sources."
         }
       ]
     },
