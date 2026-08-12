@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-08-12T22:09:06.731828Z",
+  "built_at": "2026-08-12T22:40:14.715718Z",
   "groups": {
     "Indices": [
       {
@@ -386,8 +386,8 @@
         },
         "consolidation": null,
         "sector": "Broad Market",
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 0.9,
+        "em_days": 2,
         "rs_composite": 72.0
       },
       {
@@ -423,14 +423,14 @@
               "dist_pct": -7.2
             },
             {
+              "price": 68.16,
+              "score": 30,
+              "dist_pct": -12.7
+            },
+            {
               "price": 65.8,
               "score": 77,
               "dist_pct": -15.7
-            },
-            {
-              "price": 63.67,
-              "score": 30,
-              "dist_pct": -18.4
             }
           ],
           "resistance": []
@@ -453,8 +453,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.37,
+        "em_days": 9,
         "rs_composite": 59.0
       },
       {
@@ -531,8 +531,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.1,
+        "em_days": 9,
         "rs_composite": 70.0
       },
       {
@@ -620,8 +620,8 @@
         },
         "consolidation": null,
         "sector": "Broad Market",
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.9,
+        "em_days": 2,
         "rs_composite": 95.0
       },
       {
@@ -713,8 +713,8 @@
         },
         "consolidation": null,
         "sector": "Commodities",
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.37,
+        "em_days": 2,
         "rs_composite": 39.0
       },
       {
@@ -760,7 +760,7 @@
             },
             {
               "price": 34.83,
-              "score": 12,
+              "score": 10,
               "dist_pct": -41.0
             }
           ],
@@ -801,8 +801,8 @@
         },
         "consolidation": null,
         "sector": "Commodities",
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.69,
+        "em_days": 2,
         "rs_composite": 42.0
       }
     ],
@@ -838,7 +838,7 @@
         "20d": -1.76,
         "wtd": -1.89,
         "ytd": 3.58,
-        "vol_ratio": 0.76,
+        "vol_ratio": 0.77,
         "vol_chart": "data/charts/vol_Glance_The_Mag_7.png",
         "atr_pct": 3.4,
         "dist_sma50_atr": 0.86,
@@ -854,7 +854,7 @@
           "above_200": 5,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 1.97,
         "em_days": null,
         "rs_composite": 24.0
       },
@@ -882,7 +882,7 @@
           "above_200": 4,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 2.51,
         "em_days": null,
         "rs_composite": 25.0
       },
@@ -894,7 +894,7 @@
         "20d": 18.68,
         "wtd": 0.6,
         "ytd": -0.77,
-        "vol_ratio": 0.8,
+        "vol_ratio": 0.81,
         "vol_chart": "data/charts/vol_Glance_The_Software_7.png",
         "atr_pct": 4.5,
         "dist_sma50_atr": 3.94,
@@ -910,7 +910,7 @@
           "above_200": 3,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 2.94,
         "em_days": null,
         "rs_composite": 25.0
       },
@@ -922,7 +922,7 @@
         "20d": -2.86,
         "wtd": -1.51,
         "ytd": -2.11,
-        "vol_ratio": 0.73,
+        "vol_ratio": 0.74,
         "vol_chart": "data/charts/vol_Glance_The_New_Staples_7.png",
         "atr_pct": 3.5,
         "dist_sma50_atr": 0.15,
@@ -938,7 +938,7 @@
           "above_200": 3,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 2.04,
         "em_days": null,
         "rs_composite": 25.0
       },
@@ -950,7 +950,7 @@
         "20d": 2.54,
         "wtd": -0.22,
         "ytd": 11.19,
-        "vol_ratio": 0.77,
+        "vol_ratio": 0.78,
         "vol_chart": "data/charts/vol_Glance_The_Old_Staples_7.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": 0.4,
@@ -966,7 +966,7 @@
           "above_200": 4,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 1.52,
         "em_days": null,
         "rs_composite": 26.0
       },
@@ -978,7 +978,7 @@
         "20d": 1.48,
         "wtd": -0.09,
         "ytd": -3.38,
-        "vol_ratio": 0.68,
+        "vol_ratio": 0.69,
         "vol_chart": "data/charts/vol_Glance_The_Toll_Road_7.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": 2.17,
@@ -994,7 +994,7 @@
           "above_200": 3,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 1.79,
         "em_days": null,
         "rs_composite": 26.0
       },
@@ -1006,7 +1006,7 @@
         "20d": 8.3,
         "wtd": 5.65,
         "ytd": 28.94,
-        "vol_ratio": 0.76,
+        "vol_ratio": 0.8,
         "vol_chart": "data/charts/vol_Glance_The_Energy_7.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 2.33,
@@ -1022,7 +1022,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 2.26,
         "em_days": null,
         "rs_composite": 27.0
       },
@@ -1050,7 +1050,7 @@
           "above_200": 4,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 2.13,
         "em_days": null,
         "rs_composite": 27.0
       },
@@ -1078,7 +1078,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 2.47,
         "em_days": null,
         "rs_composite": 28.0
       },
@@ -1090,7 +1090,7 @@
         "20d": -1.58,
         "wtd": -1.48,
         "ytd": 71.96,
-        "vol_ratio": 0.87,
+        "vol_ratio": 0.88,
         "vol_chart": "data/charts/vol_Glance_The_Semi_7.png",
         "atr_pct": 5.6,
         "dist_sma50_atr": -0.4,
@@ -1106,7 +1106,7 @@
           "above_200": 6,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 3.23,
         "em_days": null,
         "rs_composite": 28.0
       },
@@ -1118,7 +1118,7 @@
         "20d": 0.73,
         "wtd": 3.96,
         "ytd": 67.03,
-        "vol_ratio": 0.81,
+        "vol_ratio": 0.82,
         "vol_chart": "data/charts/vol_Glance_The_Fab_7.png",
         "atr_pct": 7.2,
         "dist_sma50_atr": -0.67,
@@ -1134,7 +1134,7 @@
           "above_200": 6,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 4.78,
         "em_days": null,
         "rs_composite": 29.0
       },
@@ -1162,7 +1162,7 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 4.09,
         "em_days": null,
         "rs_composite": 29.0
       },
@@ -1174,7 +1174,7 @@
         "20d": 0.09,
         "wtd": -2.65,
         "ytd": -5.71,
-        "vol_ratio": 0.8,
+        "vol_ratio": 0.81,
         "vol_chart": "data/charts/vol_Glance_The_Housing_7.png",
         "atr_pct": 3.0,
         "dist_sma50_atr": -0.02,
@@ -1190,7 +1190,7 @@
           "above_200": 1,
           "total": 7
         },
-        "em_pct": null,
+        "em_pct": 2.53,
         "em_days": null,
         "rs_composite": 29.0
       },
@@ -1202,7 +1202,7 @@
         "20d": 20.55,
         "wtd": 1.76,
         "ytd": 10.53,
-        "vol_ratio": 1.01,
+        "vol_ratio": 1.03,
         "vol_chart": "data/charts/vol_Glance_The_Old_Metals_7.png",
         "atr_pct": 3.5,
         "dist_sma50_atr": 3.66,
@@ -1230,7 +1230,7 @@
         "20d": 8.84,
         "wtd": 0.58,
         "ytd": 8.18,
-        "vol_ratio": 0.76,
+        "vol_ratio": 0.77,
         "vol_chart": "data/charts/vol_Glance_The_New_Metals_7.png",
         "atr_pct": 4.2,
         "dist_sma50_atr": 0.78,
@@ -1246,7 +1246,7 @@
           "above_200": 3,
           "total": 7
         },
-        "em_pct": 3.37,
+        "em_pct": 3.03,
         "em_days": null,
         "rs_composite": 30.0
       },
@@ -1342,7 +1342,7 @@
         "20d": -0.6,
         "wtd": 0.45,
         "ytd": 24.2,
-        "vol_ratio": 0.88,
+        "vol_ratio": 0.89,
         "vol_chart": "data/charts/vol_Glance_The_Freight_7.png",
         "atr_pct": 2.5,
         "dist_sma50_atr": 0.34,
@@ -1370,7 +1370,7 @@
         "20d": 2.61,
         "wtd": -2.66,
         "ytd": 8.69,
-        "vol_ratio": 0.73,
+        "vol_ratio": 0.75,
         "vol_chart": "data/charts/vol_Glance_The_Insurance_7.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": 0.87,
@@ -1469,9 +1469,9 @@
           ],
           "resistance": [
             {
-              "price": 266.89,
-              "score": 20,
-              "dist_pct": 41.3
+              "price": 265.61,
+              "score": 19,
+              "dist_pct": 40.6
             },
             {
               "price": 281.44,
@@ -1508,8 +1508,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.58,
+        "em_days": 2,
         "rs_composite": 50.0
       },
       {
@@ -1547,14 +1547,14 @@
               "dist_pct": -6.9
             },
             {
-              "price": 154.19,
-              "score": 60,
+              "price": 154.27,
+              "score": 64,
               "dist_pct": -17.0
             },
             {
-              "price": 149.78,
-              "score": 37,
-              "dist_pct": -19.4
+              "price": 149.94,
+              "score": 42,
+              "dist_pct": -19.3
             }
           ],
           "resistance": [
@@ -1588,8 +1588,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.09,
+        "em_days": 2,
         "rs_composite": 57.0
       },
       {
@@ -1622,37 +1622,37 @@
         "sr": {
           "support": [
             {
-              "price": 109.09,
-              "score": 21,
-              "dist_pct": -1.1
+              "price": 109.62,
+              "score": 27,
+              "dist_pct": -0.6
             },
             {
               "price": 105.63,
-              "score": 8,
+              "score": 7,
               "dist_pct": -4.2
             }
           ],
           "resistance": [
             {
-              "price": 113.19,
-              "score": 51,
-              "dist_pct": 2.6
+              "price": 113.66,
+              "score": 54,
+              "dist_pct": 3.1
             },
             {
-              "price": 116.74,
-              "score": 146,
-              "dist_pct": 5.9
+              "price": 117.06,
+              "score": 140,
+              "dist_pct": 6.2
             },
             {
-              "price": 119.42,
-              "score": 26,
-              "dist_pct": 8.3
+              "price": 119.57,
+              "score": 22,
+              "dist_pct": 8.4
             }
           ],
           "near": {
             "type": "support",
-            "price": 109.09,
-            "dist_pct": -1.1
+            "price": 109.62,
+            "dist_pct": -0.6
           }
         },
         "above_sma20": true,
@@ -1673,8 +1673,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 0.97,
+        "em_days": 2,
         "rs_composite": 15.0
       },
       {
@@ -1720,7 +1720,7 @@
             },
             {
               "price": 52.27,
-              "score": 87,
+              "score": 86,
               "dist_pct": -9.8
             }
           ],
@@ -1755,8 +1755,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.08,
+        "em_days": 2,
         "rs_composite": 57.0
       },
       {
@@ -1812,7 +1812,7 @@
             },
             {
               "price": 85.06,
-              "score": 34,
+              "score": 32,
               "dist_pct": 94.0
             }
           ],
@@ -1841,8 +1841,8 @@
         },
         "consolidation": null,
         "sector": "Broad Market",
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.04,
+        "em_days": 2,
         "rs_composite": 4.0
       },
       {
@@ -1928,8 +1928,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.42,
+        "em_days": 2,
         "rs_composite": 7.0
       },
       {
@@ -1965,7 +1965,7 @@
           "support": [
             {
               "price": 42.91,
-              "score": 33,
+              "score": 32,
               "dist_pct": -3.6
             },
             {
@@ -2010,8 +2010,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.98,
+        "em_days": 9,
         "rs_composite": 41.0
       },
       {
@@ -2052,13 +2052,13 @@
             },
             {
               "price": 81.23,
-              "score": 46,
+              "score": 45,
               "dist_pct": -4.5
             },
             {
-              "price": 79.01,
-              "score": 54,
-              "dist_pct": -7.1
+              "price": 78.95,
+              "score": 47,
+              "dist_pct": -7.2
             }
           ],
           "resistance": [
@@ -2102,8 +2102,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.62,
+        "em_days": 2,
         "rs_composite": 34.0
       },
       {
@@ -2194,8 +2194,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 9.13,
+        "em_days": 2,
         "rs_composite": 8.0
       },
       {
@@ -2253,7 +2253,7 @@
             },
             {
               "price": 89.17,
-              "score": 42,
+              "score": 40,
               "dist_pct": 46.1
             },
             {
@@ -2281,8 +2281,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.46,
+        "em_days": 2,
         "rs_composite": 39.0
       },
       {
@@ -2361,8 +2361,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.79,
+        "em_days": 2,
         "rs_composite": 71.0
       }
     ],
@@ -2441,8 +2441,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 5.77,
+        "em_days": 9,
         "rs_composite": 68.0
       },
       {
@@ -2519,8 +2519,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.1,
+        "em_days": 9,
         "rs_composite": 70.0
       },
       {
@@ -2551,19 +2551,19 @@
         "sr": {
           "support": [
             {
-              "price": 171.25,
-              "score": 27,
-              "dist_pct": -3.4
+              "price": 147.36,
+              "score": 28,
+              "dist_pct": -16.9
             },
             {
-              "price": 145.42,
-              "score": 41,
-              "dist_pct": -18.0
+              "price": 143.71,
+              "score": 58,
+              "dist_pct": -18.9
             },
             {
-              "price": 142.06,
-              "score": 72,
-              "dist_pct": -19.9
+              "price": 140.35,
+              "score": 71,
+              "dist_pct": -20.8
             }
           ],
           "resistance": [
@@ -2701,14 +2701,14 @@
               "dist_pct": -7.2
             },
             {
+              "price": 68.16,
+              "score": 30,
+              "dist_pct": -12.7
+            },
+            {
               "price": 65.8,
               "score": 77,
               "dist_pct": -15.7
-            },
-            {
-              "price": 63.67,
-              "score": 30,
-              "dist_pct": -18.4
             }
           ],
           "resistance": []
@@ -2731,8 +2731,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.37,
+        "em_days": 9,
         "rs_composite": 59.0
       },
       {
@@ -2774,7 +2774,7 @@
             },
             {
               "price": 94.41,
-              "score": 39,
+              "score": 38,
               "dist_pct": -20.1
             }
           ],
@@ -2897,9 +2897,9 @@
         "sr": {
           "support": [
             {
-              "price": 753.84,
-              "score": 55,
-              "dist_pct": -2.9
+              "price": 751.8,
+              "score": 58,
+              "dist_pct": -3.1
             },
             {
               "price": 697.05,
@@ -2912,7 +2912,18 @@
               "dist_pct": -12.4
             }
           ],
-          "resistance": []
+          "resistance": [
+            {
+              "price": 780.64,
+              "score": 7,
+              "dist_pct": 0.6
+            }
+          ],
+          "near": {
+            "type": "resistance",
+            "price": 780.64,
+            "dist_pct": 0.6
+          }
         },
         "above_sma20": true,
         "above_sma50": true,
@@ -2932,8 +2943,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 0.73,
+        "em_days": 2,
         "rs_composite": 58.0
       },
       {
@@ -3010,8 +3021,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.26,
+        "em_days": 9,
         "rs_composite": 62.0
       }
     ],
@@ -3142,9 +3153,9 @@
               "dist_pct": -24.7
             },
             {
-              "price": 73.37,
-              "score": 35,
-              "dist_pct": -26.9
+              "price": 73.3,
+              "score": 41,
+              "dist_pct": -27.0
             },
             {
               "price": 66.06,
@@ -3624,7 +3635,7 @@
         "wtd": -3.91,
         "ytd": -22.71,
         "stage": 4,
-        "vol_ratio": 1.99,
+        "vol_ratio": 2.0,
         "vol_chart": "data/charts/vol_KWEB.png",
         "atr_pct": 2.1,
         "dist_sma50_atr": 1.61,
@@ -3729,9 +3740,9 @@
         "sr": {
           "support": [
             {
-              "price": 90.56,
-              "score": 23,
-              "dist_pct": -0.6
+              "price": 90.65,
+              "score": 26,
+              "dist_pct": -0.5
             },
             {
               "price": 87.42,
@@ -3763,8 +3774,8 @@
           ],
           "near": {
             "type": "support",
-            "price": 90.56,
-            "dist_pct": -0.6
+            "price": 90.65,
+            "dist_pct": -0.5
           }
         },
         "above_sma20": true,
@@ -4004,8 +4015,8 @@
         "sr": {
           "support": [
             {
-              "price": 279.04,
-              "score": 46,
+              "price": 279.2,
+              "score": 45,
               "dist_pct": -4.2
             },
             {
@@ -4096,7 +4107,7 @@
             },
             {
               "price": 80.82,
-              "score": 39,
+              "score": 38,
               "dist_pct": -9.0
             }
           ],
@@ -4273,7 +4284,7 @@
             },
             {
               "price": 103.29,
-              "score": 50,
+              "score": 49,
               "dist_pct": -4.7
             },
             {
@@ -4447,7 +4458,7 @@
             },
             {
               "price": 61.57,
-              "score": 58,
+              "score": 56,
               "dist_pct": 9.8
             },
             {
@@ -4607,7 +4618,7 @@
             },
             {
               "price": 57.79,
-              "score": 44,
+              "score": 43,
               "dist_pct": -18.6
             }
           ],
@@ -4821,7 +4832,7 @@
         "wtd": 7.32,
         "ytd": 38.48,
         "stage": 2,
-        "vol_ratio": 0.85,
+        "vol_ratio": 0.86,
         "vol_chart": "data/charts/vol_XOP.png",
         "atr_pct": 2.7,
         "dist_sma50_atr": 2.99,
@@ -5092,7 +5103,7 @@
         "wtd": 6.43,
         "ytd": 39.61,
         "stage": 2,
-        "vol_ratio": 0.62,
+        "vol_ratio": 0.63,
         "vol_chart": "data/charts/vol_OIH.png",
         "atr_pct": 2.7,
         "dist_sma50_atr": 1.97,
@@ -5122,7 +5133,7 @@
             },
             {
               "price": 254.48,
-              "score": 20,
+              "score": 19,
               "dist_pct": -38.4
             }
           ],
@@ -5206,7 +5217,7 @@
             },
             {
               "price": 40.38,
-              "score": 20,
+              "score": 19,
               "dist_pct": -10.7
             },
             {
@@ -5299,8 +5310,8 @@
               "dist_pct": -8.9
             },
             {
-              "price": 21.0,
-              "score": 83,
+              "price": 21.01,
+              "score": 80,
               "dist_pct": -11.7
             }
           ],
@@ -5379,7 +5390,7 @@
             },
             {
               "price": 90.64,
-              "score": 92,
+              "score": 91,
               "dist_pct": -6.9
             },
             {
@@ -5438,7 +5449,7 @@
         "wtd": 4.72,
         "ytd": -15.42,
         "stage": 4,
-        "vol_ratio": 1.02,
+        "vol_ratio": 1.03,
         "vol_chart": "data/charts/vol_UNG.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": -2.34,
@@ -5606,8 +5617,8 @@
         },
         "consolidation": null,
         "sector": "Commodities",
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.37,
+        "em_days": 2,
         "rs_composite": 39.0
       },
       {
@@ -5648,8 +5659,8 @@
               "dist_pct": -4.0
             },
             {
-              "price": 25.84,
-              "score": 84,
+              "price": 25.83,
+              "score": 78,
               "dist_pct": -7.2
             }
           ],
@@ -5737,7 +5748,7 @@
             },
             {
               "price": 34.83,
-              "score": 12,
+              "score": 10,
               "dist_pct": -41.0
             }
           ],
@@ -5778,8 +5789,8 @@
         },
         "consolidation": null,
         "sector": "Commodities",
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.69,
+        "em_days": 2,
         "rs_composite": 42.0
       },
       {
@@ -6278,7 +6289,7 @@
           "resistance": [
             {
               "price": 80.25,
-              "score": 85,
+              "score": 84,
               "dist_pct": 3.4
             },
             {
@@ -6360,7 +6371,7 @@
             },
             {
               "price": 99.48,
-              "score": 48,
+              "score": 46,
               "dist_pct": -19.2
             }
           ],
@@ -6537,7 +6548,7 @@
             },
             {
               "price": 85.06,
-              "score": 34,
+              "score": 32,
               "dist_pct": 94.0
             }
           ],
@@ -6566,8 +6577,8 @@
         },
         "consolidation": null,
         "sector": "Broad Market",
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.04,
+        "em_days": 2,
         "rs_composite": 4.0
       },
       {
@@ -6744,8 +6755,8 @@
         },
         "consolidation": null,
         "sector": "Broad Market",
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.9,
+        "em_days": 2,
         "rs_composite": 95.0
       },
       {
@@ -6905,8 +6916,8 @@
         },
         "consolidation": null,
         "sector": "Broad Market",
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 0.9,
+        "em_days": 2,
         "rs_composite": 72.0
       },
       {
@@ -6918,7 +6929,7 @@
         "wtd": -1.48,
         "ytd": 18.75,
         "stage": 2,
-        "vol_ratio": 0.56,
+        "vol_ratio": 0.58,
         "vol_chart": "data/charts/vol_FNGS.png",
         "atr_pct": 1.8,
         "dist_sma50_atr": 3.32,
@@ -7003,7 +7014,7 @@
         "wtd": -3.54,
         "ytd": 11.53,
         "stage": 2,
-        "vol_ratio": 0.72,
+        "vol_ratio": 0.74,
         "vol_chart": "data/charts/vol_AAPL.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": -0.83,
@@ -7078,8 +7089,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.53,
+        "em_days": 2,
         "rs_composite": 57.0
       },
       {
@@ -7091,7 +7102,7 @@
         "wtd": -1.51,
         "ytd": 4.12,
         "stage": 2,
-        "vol_ratio": 0.72,
+        "vol_ratio": 0.73,
         "vol_chart": "data/charts/vol_MSFT.png",
         "atr_pct": 3.0,
         "dist_sma50_atr": 6.66,
@@ -7133,13 +7144,13 @@
             },
             {
               "price": 514.4,
-              "score": 37,
+              "score": 35,
               "dist_pct": 4.5
             },
             {
-              "price": 531.87,
-              "score": 10,
-              "dist_pct": 8.0
+              "price": 533.99,
+              "score": 9,
+              "dist_pct": 8.4
             }
           ],
           "near": {
@@ -7166,8 +7177,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.67,
+        "em_days": 2,
         "rs_composite": 79.0
       },
       {
@@ -7249,8 +7260,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.93,
+        "em_days": 2,
         "rs_composite": 67.0
       },
       {
@@ -7286,13 +7297,13 @@
               "dist_pct": -6.8
             },
             {
-              "price": 242.74,
-              "score": 29,
-              "dist_pct": -9.2
+              "price": 234.6,
+              "score": 38,
+              "dist_pct": -12.2
             },
             {
               "price": 228.29,
-              "score": 51,
+              "score": 50,
               "dist_pct": -14.6
             }
           ],
@@ -7337,8 +7348,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.88,
+        "em_days": 2,
         "rs_composite": 76.0
       },
       {
@@ -7420,8 +7431,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.31,
+        "em_days": 2,
         "rs_composite": 4.0
       },
       {
@@ -7433,7 +7444,7 @@
         "wtd": 0.06,
         "ytd": 18.66,
         "stage": 2,
-        "vol_ratio": 0.86,
+        "vol_ratio": 0.87,
         "vol_chart": "data/charts/vol_NVDA.png",
         "atr_pct": 3.4,
         "dist_sma50_atr": 2.56,
@@ -7452,18 +7463,18 @@
         "sr": {
           "support": [
             {
-              "price": 184.54,
+              "price": 184.66,
               "score": 50,
               "dist_pct": -17.6
             },
             {
-              "price": 179.52,
-              "score": 56,
+              "price": 179.61,
+              "score": 54,
               "dist_pct": -19.9
             },
             {
               "price": 175.52,
-              "score": 35,
+              "score": 34,
               "dist_pct": -21.7
             }
           ],
@@ -7508,8 +7519,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.16,
+        "em_days": 2,
         "rs_composite": 64.0
       },
       {
@@ -7586,8 +7597,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.29,
+        "em_days": 2,
         "rs_composite": 1.0
       }
     ],
@@ -7601,7 +7612,7 @@
         "wtd": -1.51,
         "ytd": 4.12,
         "stage": 2,
-        "vol_ratio": 0.72,
+        "vol_ratio": 0.73,
         "vol_chart": "data/charts/vol_MSFT.png",
         "atr_pct": 3.0,
         "dist_sma50_atr": 6.66,
@@ -7643,13 +7654,13 @@
             },
             {
               "price": 514.4,
-              "score": 37,
+              "score": 35,
               "dist_pct": 4.5
             },
             {
-              "price": 531.87,
-              "score": 10,
-              "dist_pct": 8.0
+              "price": 533.99,
+              "score": 9,
+              "dist_pct": 8.4
             }
           ],
           "near": {
@@ -7676,8 +7687,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.67,
+        "em_days": 2,
         "rs_composite": 79.0
       },
       {
@@ -7713,13 +7724,13 @@
               "dist_pct": -6.8
             },
             {
-              "price": 242.74,
-              "score": 29,
-              "dist_pct": -9.2
+              "price": 234.6,
+              "score": 38,
+              "dist_pct": -12.2
             },
             {
               "price": 228.29,
-              "score": 51,
+              "score": 50,
               "dist_pct": -14.6
             }
           ],
@@ -7764,8 +7775,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.88,
+        "em_days": 2,
         "rs_composite": 76.0
       },
       {
@@ -7847,8 +7858,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.93,
+        "em_days": 2,
         "rs_composite": 67.0
       },
       {
@@ -7935,8 +7946,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 4.03,
+        "em_days": 2,
         "rs_composite": 6.0
       },
       {
@@ -8023,8 +8034,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.08,
+        "em_days": 2,
         "rs_composite": 33.0
       },
       {
@@ -8106,8 +8117,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.31,
+        "em_days": 2,
         "rs_composite": 4.0
       },
       {
@@ -8179,8 +8190,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.64,
+        "em_days": 2,
         "rs_composite": 96.0
       }
     ],
@@ -8194,7 +8205,7 @@
         "wtd": -2.44,
         "ytd": -22.37,
         "stage": 3,
-        "vol_ratio": 0.76,
+        "vol_ratio": 0.77,
         "vol_chart": "data/charts/vol_ADBE.png",
         "atr_pct": 4.3,
         "dist_sma50_atr": 2.88,
@@ -8241,7 +8252,7 @@
             },
             {
               "price": 362.0,
-              "score": 22,
+              "score": 21,
               "dist_pct": 39.9
             }
           ]
@@ -8264,8 +8275,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.55,
+        "em_days": 2,
         "rs_composite": 36.0
       },
       {
@@ -8331,8 +8342,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.22,
+        "em_days": 2,
         "rs_composite": 99.0
       },
       {
@@ -8364,7 +8375,7 @@
           "support": [
             {
               "price": 156.51,
-              "score": 33,
+              "score": 32,
               "dist_pct": -8.5
             },
             {
@@ -8414,8 +8425,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.06,
+        "em_days": 2,
         "rs_composite": 85.0
       },
       {
@@ -8497,8 +8508,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.88,
+        "em_days": 2,
         "rs_composite": 2.0
       },
       {
@@ -8510,7 +8521,7 @@
         "wtd": 0.3,
         "ytd": -23.78,
         "stage": 3,
-        "vol_ratio": 0.98,
+        "vol_ratio": 1.02,
         "vol_chart": "data/charts/vol_CRM.png",
         "atr_pct": 4.0,
         "dist_sma50_atr": 3.0,
@@ -8580,8 +8591,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.52,
+        "em_days": 2,
         "rs_composite": 45.0
       },
       {
@@ -8663,8 +8674,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.15,
+        "em_days": 2,
         "rs_composite": 48.0
       },
       {
@@ -8723,7 +8734,7 @@
             },
             {
               "price": 240.31,
-              "score": 16,
+              "score": 15,
               "dist_pct": 37.1
             }
           ]
@@ -8746,8 +8757,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.19,
+        "em_days": 2,
         "rs_composite": 88.0
       }
     ],
@@ -8761,7 +8772,7 @@
         "wtd": -3.54,
         "ytd": 11.53,
         "stage": 2,
-        "vol_ratio": 0.72,
+        "vol_ratio": 0.74,
         "vol_chart": "data/charts/vol_AAPL.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": -0.83,
@@ -8836,8 +8847,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.53,
+        "em_days": 2,
         "rs_composite": 57.0
       },
       {
@@ -8873,13 +8884,13 @@
               "dist_pct": -6.8
             },
             {
-              "price": 242.74,
-              "score": 29,
-              "dist_pct": -9.2
+              "price": 234.6,
+              "score": 38,
+              "dist_pct": -12.2
             },
             {
               "price": 228.29,
-              "score": 51,
+              "score": 50,
               "dist_pct": -14.6
             }
           ],
@@ -8924,8 +8935,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.88,
+        "em_days": 2,
         "rs_composite": 76.0
       },
       {
@@ -9007,8 +9018,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.31,
+        "em_days": 2,
         "rs_composite": 4.0
       },
       {
@@ -9095,8 +9106,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.89,
+        "em_days": 2,
         "rs_composite": 0.0
       },
       {
@@ -9178,8 +9189,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.93,
+        "em_days": 2,
         "rs_composite": 67.0
       },
       {
@@ -9266,8 +9277,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.51,
+        "em_days": 2,
         "rs_composite": 34.0
       },
       {
@@ -9279,7 +9290,7 @@
         "wtd": 0.45,
         "ytd": -9.05,
         "stage": 3,
-        "vol_ratio": 0.9,
+        "vol_ratio": 0.91,
         "vol_chart": "data/charts/vol_UBER.png",
         "atr_pct": 3.6,
         "dist_sma50_atr": 1.26,
@@ -9354,8 +9365,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.22,
+        "em_days": 2,
         "rs_composite": 20.0
       }
     ],
@@ -9405,13 +9416,13 @@
               "dist_pct": 2.5
             },
             {
-              "price": 152.51,
-              "score": 54,
+              "price": 152.46,
+              "score": 53,
               "dist_pct": 5.8
             },
             {
-              "price": 156.42,
-              "score": 40,
+              "price": 156.51,
+              "score": 35,
               "dist_pct": 8.6
             }
           ],
@@ -9439,8 +9450,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.24,
+        "em_days": 2,
         "rs_composite": 13.0
       },
       {
@@ -9471,19 +9482,19 @@
         "sr": {
           "support": [
             {
-              "price": 80.69,
-              "score": 38,
-              "dist_pct": -6.9
-            },
-            {
               "price": 78.42,
               "score": 46,
               "dist_pct": -9.6
             },
             {
-              "price": 69.74,
-              "score": 44,
-              "dist_pct": -19.6
+              "price": 71.13,
+              "score": 38,
+              "dist_pct": -18.0
+            },
+            {
+              "price": 69.3,
+              "score": 38,
+              "dist_pct": -20.1
             }
           ],
           "resistance": [
@@ -9522,8 +9533,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.08,
+        "em_days": 2,
         "rs_composite": 61.0
       },
       {
@@ -9561,13 +9572,13 @@
           ],
           "resistance": [
             {
-              "price": 139.43,
-              "score": 46,
-              "dist_pct": 0.5
+              "price": 139.62,
+              "score": 48,
+              "dist_pct": 0.7
             },
             {
               "price": 144.28,
-              "score": 63,
+              "score": 62,
               "dist_pct": 4.0
             },
             {
@@ -9578,8 +9589,8 @@
           ],
           "near": {
             "type": "resistance",
-            "price": 139.43,
-            "dist_pct": 0.5
+            "price": 139.62,
+            "dist_pct": 0.7
           }
         },
         "above_sma20": true,
@@ -9600,8 +9611,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.37,
+        "em_days": 2,
         "rs_composite": 8.0
       },
       {
@@ -9642,8 +9653,8 @@
               "dist_pct": -10.3
             },
             {
-              "price": 162.74,
-              "score": 59,
+              "price": 162.7,
+              "score": 57,
               "dist_pct": -12.6
             }
           ],
@@ -9683,8 +9694,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.69,
+        "em_days": 2,
         "rs_composite": 41.0
       },
       {
@@ -9771,8 +9782,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.6,
+        "em_days": 2,
         "rs_composite": 40.0
       },
       {
@@ -9784,7 +9795,7 @@
         "wtd": -0.69,
         "ytd": 15.9,
         "stage": 2,
-        "vol_ratio": 0.71,
+        "vol_ratio": 0.74,
         "vol_chart": "data/charts/vol_MDLZ.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": 0.67,
@@ -9859,8 +9870,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.05,
+        "em_days": 2,
         "rs_composite": 37.0
       },
       {
@@ -9947,8 +9958,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.59,
+        "em_days": 2,
         "rs_composite": 14.0
       }
     ],
@@ -9982,7 +9993,7 @@
           "support": [
             {
               "price": 350.68,
-              "score": 59,
+              "score": 58,
               "dist_pct": -2.4
             },
             {
@@ -10032,8 +10043,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.24,
+        "em_days": 2,
         "rs_composite": 52.0
       },
       {
@@ -10081,25 +10092,25 @@
           ],
           "resistance": [
             {
-              "price": 563.62,
+              "price": 564.75,
               "score": 54,
-              "dist_pct": 0.7
+              "dist_pct": 0.9
             },
             {
-              "price": 580.57,
-              "score": 47,
-              "dist_pct": 3.7
+              "price": 583.61,
+              "score": 40,
+              "dist_pct": 4.3
             },
             {
-              "price": 589.62,
-              "score": 24,
-              "dist_pct": 5.3
+              "price": 600.66,
+              "score": 7,
+              "dist_pct": 7.3
             }
           ],
           "near": {
             "type": "resistance",
-            "price": 563.62,
-            "dist_pct": 0.7
+            "price": 564.75,
+            "dist_pct": 0.9
           }
         },
         "above_sma20": true,
@@ -10120,8 +10131,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.29,
+        "em_days": 2,
         "rs_composite": 46.0
       },
       {
@@ -10133,7 +10144,7 @@
         "wtd": 0.22,
         "ytd": 1.82,
         "stage": 3,
-        "vol_ratio": 0.33,
+        "vol_ratio": 0.34,
         "vol_chart": "data/charts/vol_PYPL.png",
         "atr_pct": 2.5,
         "dist_sma50_atr": 7.85,
@@ -10208,8 +10219,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.71,
+        "em_days": 2,
         "rs_composite": 92.0
       },
       {
@@ -10263,7 +10274,7 @@
             },
             {
               "price": 274.13,
-              "score": 46,
+              "score": 45,
               "dist_pct": 4.6
             },
             {
@@ -10296,8 +10307,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.19,
+        "em_days": 2,
         "rs_composite": 11.0
       },
       {
@@ -10384,8 +10395,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.72,
+        "em_days": 2,
         "rs_composite": 18.0
       },
       {
@@ -10472,8 +10483,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.19,
+        "em_days": 2,
         "rs_composite": 10.0
       },
       {
@@ -10505,7 +10516,7 @@
           "support": [
             {
               "price": 556.96,
-              "score": 78,
+              "score": 76,
               "dist_pct": -1.1
             },
             {
@@ -10560,8 +10571,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.21,
+        "em_days": 9,
         "rs_composite": 35.0
       }
     ],
@@ -10575,7 +10586,7 @@
         "wtd": 4.38,
         "ytd": 30.25,
         "stage": 2,
-        "vol_ratio": 0.89,
+        "vol_ratio": 0.91,
         "vol_chart": "data/charts/vol_XOM.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": 3.52,
@@ -10650,8 +10661,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.65,
+        "em_days": 2,
         "rs_composite": 74.0
       },
       {
@@ -10663,7 +10674,7 @@
         "wtd": 5.38,
         "ytd": 26.11,
         "stage": 2,
-        "vol_ratio": 0.75,
+        "vol_ratio": 0.94,
         "vol_chart": "data/charts/vol_CVX.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": 3.12,
@@ -10688,12 +10699,12 @@
             },
             {
               "price": 155.54,
-              "score": 63,
+              "score": 62,
               "dist_pct": -20.9
             },
             {
               "price": 152.42,
-              "score": 50,
+              "score": 49,
               "dist_pct": -22.5
             }
           ],
@@ -10738,8 +10749,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.51,
+        "em_days": 2,
         "rs_composite": 61.0
       },
       {
@@ -10751,7 +10762,7 @@
         "wtd": 8.24,
         "ytd": 31.64,
         "stage": 2,
-        "vol_ratio": 0.93,
+        "vol_ratio": 0.94,
         "vol_chart": "data/charts/vol_COP.png",
         "atr_pct": 2.7,
         "dist_sma50_atr": 4.23,
@@ -10826,8 +10837,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.63,
+        "em_days": 2,
         "rs_composite": 78.0
       },
       {
@@ -10904,8 +10915,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.96,
+        "em_days": 2,
         "rs_composite": 69.0
       },
       {
@@ -10917,7 +10928,7 @@
         "wtd": 6.81,
         "ytd": 31.84,
         "stage": 2,
-        "vol_ratio": 0.51,
+        "vol_ratio": 0.52,
         "vol_chart": "data/charts/vol_FANG.png",
         "atr_pct": 3.2,
         "dist_sma50_atr": 1.56,
@@ -10936,9 +10947,9 @@
         "sr": {
           "support": [
             {
-              "price": 149.74,
-              "score": 32,
-              "dist_pct": -25.4
+              "price": 149.62,
+              "score": 34,
+              "dist_pct": -25.5
             },
             {
               "price": 143.45,
@@ -10992,8 +11003,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 4.06,
+        "em_days": 9,
         "rs_composite": 77.0
       },
       {
@@ -11080,8 +11091,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.96,
+        "em_days": 2,
         "rs_composite": 49.0
       },
       {
@@ -11168,8 +11179,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.04,
+        "em_days": 2,
         "rs_composite": 68.0
       }
     ],
@@ -11253,8 +11264,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.75,
+        "em_days": 2,
         "rs_composite": 76.0
       },
       {
@@ -11296,7 +11307,7 @@
             },
             {
               "price": 156.65,
-              "score": 32,
+              "score": 31,
               "dist_pct": -29.7
             }
           ],
@@ -11331,8 +11342,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.35,
+        "em_days": 2,
         "rs_composite": 89.0
       },
       {
@@ -11414,8 +11425,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.71,
+        "em_days": 9,
         "rs_composite": 18.0
       },
       {
@@ -11492,8 +11503,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.45,
+        "em_days": 2,
         "rs_composite": 71.0
       },
       {
@@ -11525,7 +11536,7 @@
           "support": [
             {
               "price": 223.79,
-              "score": 38,
+              "score": 37,
               "dist_pct": -3.2
             },
             {
@@ -11575,8 +11586,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.94,
+        "em_days": 2,
         "rs_composite": 22.0
       },
       {
@@ -11618,7 +11629,7 @@
             },
             {
               "price": 270.46,
-              "score": 23,
+              "score": 22,
               "dist_pct": -7.0
             }
           ],
@@ -11663,8 +11674,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.75,
+        "em_days": 2,
         "rs_composite": 13.0
       },
       {
@@ -11700,14 +11711,14 @@
               "dist_pct": -12.3
             },
             {
-              "price": 277.81,
+              "price": 278.18,
               "score": 34,
-              "dist_pct": -15.0
+              "dist_pct": -14.9
             },
             {
-              "price": 270.69,
-              "score": 40,
-              "dist_pct": -17.2
+              "price": 271.87,
+              "score": 32,
+              "dist_pct": -16.8
             }
           ],
           "resistance": [
@@ -11746,8 +11757,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.98,
+        "em_days": 9,
         "rs_composite": 38.0
       }
     ],
@@ -11831,8 +11842,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.68,
+        "em_days": 2,
         "rs_composite": 88.0
       },
       {
@@ -11914,8 +11925,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.82,
+        "em_days": 2,
         "rs_composite": 52.0
       },
       {
@@ -11947,7 +11958,7 @@
           "support": [
             {
               "price": 221.3,
-              "score": 52,
+              "score": 50,
               "dist_pct": -6.0
             },
             {
@@ -12002,8 +12013,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.2,
+        "em_days": 2,
         "rs_composite": 43.0
       },
       {
@@ -12075,8 +12086,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.38,
+        "em_days": 9,
         "rs_composite": 84.0
       },
       {
@@ -12153,8 +12164,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.72,
+        "em_days": 2,
         "rs_composite": 77.0
       },
       {
@@ -12231,8 +12242,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.88,
+        "em_days": 2,
         "rs_composite": 83.0
       },
       {
@@ -12309,8 +12320,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.62,
+        "em_days": 9,
         "rs_composite": 40.0
       }
     ],
@@ -12324,7 +12335,7 @@
         "wtd": 0.06,
         "ytd": 18.66,
         "stage": 2,
-        "vol_ratio": 0.86,
+        "vol_ratio": 0.87,
         "vol_chart": "data/charts/vol_NVDA.png",
         "atr_pct": 3.4,
         "dist_sma50_atr": 2.56,
@@ -12343,18 +12354,18 @@
         "sr": {
           "support": [
             {
-              "price": 184.54,
+              "price": 184.66,
               "score": 50,
               "dist_pct": -17.6
             },
             {
-              "price": 179.52,
-              "score": 56,
+              "price": 179.61,
+              "score": 54,
               "dist_pct": -19.9
             },
             {
               "price": 175.52,
-              "score": 35,
+              "score": 34,
               "dist_pct": -21.7
             }
           ],
@@ -12399,8 +12410,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.16,
+        "em_days": 2,
         "rs_composite": 64.0
       },
       {
@@ -12412,7 +12423,7 @@
         "wtd": -2.74,
         "ytd": 19.69,
         "stage": 2,
-        "vol_ratio": 0.86,
+        "vol_ratio": 0.87,
         "vol_chart": "data/charts/vol_AVGO.png",
         "atr_pct": 3.8,
         "dist_sma50_atr": 1.52,
@@ -12482,8 +12493,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.66,
+        "em_days": 2,
         "rs_composite": 73.0
       },
       {
@@ -12565,8 +12576,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.46,
+        "em_days": 2,
         "rs_composite": 98.0
       },
       {
@@ -12598,7 +12609,7 @@
           "support": [
             {
               "price": 158.49,
-              "score": 27,
+              "score": 25,
               "dist_pct": -2.8
             },
             {
@@ -12653,8 +12664,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.69,
+        "em_days": 2,
         "rs_composite": 17.0
       },
       {
@@ -12736,8 +12747,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 4.41,
+        "em_days": 2,
         "rs_composite": 100.0
       },
       {
@@ -12769,7 +12780,7 @@
           "support": [
             {
               "price": 193.33,
-              "score": 30,
+              "score": 29,
               "dist_pct": -30.1
             },
             {
@@ -12819,8 +12830,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.44,
+        "em_days": 2,
         "rs_composite": 64.0
       },
       {
@@ -12832,7 +12843,7 @@
         "wtd": -0.75,
         "ytd": 142.85,
         "stage": 2,
-        "vol_ratio": 1.01,
+        "vol_ratio": 1.07,
         "vol_chart": "data/charts/vol_MRVL.png",
         "atr_pct": 8.4,
         "dist_sma50_atr": -1.19,
@@ -12856,14 +12867,14 @@
               "dist_pct": -59.0
             },
             {
+              "price": 87.67,
+              "score": 21,
+              "dist_pct": -59.6
+            },
+            {
               "price": 84.49,
               "score": 23,
               "dist_pct": -61.1
-            },
-            {
-              "price": 81.54,
-              "score": 21,
-              "dist_pct": -62.4
             }
           ],
           "resistance": [
@@ -12907,8 +12918,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 4.79,
+        "em_days": 2,
         "rs_composite": 99.0
       }
     ],
@@ -12997,8 +13008,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.01,
+        "em_days": 2,
         "rs_composite": 96.0
       },
       {
@@ -13010,7 +13021,7 @@
         "wtd": 1.67,
         "ytd": 103.87,
         "stage": 2,
-        "vol_ratio": 0.94,
+        "vol_ratio": 1.01,
         "vol_chart": "data/charts/vol_AMAT.png",
         "atr_pct": 6.6,
         "dist_sma50_atr": -0.26,
@@ -13085,8 +13096,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 7.33,
+        "em_days": 2,
         "rs_composite": 97.0
       },
       {
@@ -13168,8 +13179,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 5.02,
+        "em_days": 2,
         "rs_composite": 97.0
       },
       {
@@ -13259,8 +13270,8 @@
           "high": 228.79,
           "low": 169.81
         },
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 6.49,
+        "em_days": 2,
         "rs_composite": 0.0
       },
       {
@@ -13302,7 +13313,7 @@
             },
             {
               "price": 241.76,
-              "score": 18,
+              "score": 17,
               "dist_pct": -43.7
             }
           ],
@@ -13337,8 +13348,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.23,
+        "em_days": 2,
         "rs_composite": 90.0
       },
       {
@@ -13420,8 +13431,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 4.38,
+        "em_days": 2,
         "rs_composite": 100.0
       },
       {
@@ -13508,8 +13519,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 5.02,
+        "em_days": 2,
         "rs_composite": 98.0
       }
     ],
@@ -13583,8 +13594,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.88,
+        "em_days": 2,
         "rs_composite": 96.0
       },
       {
@@ -13666,8 +13677,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 4.02,
+        "em_days": 2,
         "rs_composite": 81.0
       },
       {
@@ -13739,8 +13750,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 5.32,
+        "em_days": 9,
         "rs_composite": 92.0
       },
       {
@@ -13781,9 +13792,9 @@
               "dist_pct": -36.6
             },
             {
-              "price": 421.87,
-              "score": 18,
-              "dist_pct": -37.8
+              "price": 387.36,
+              "score": 17,
+              "dist_pct": -42.9
             }
           ],
           "resistance": [
@@ -13827,8 +13838,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 5.07,
+        "em_days": 9,
         "rs_composite": 87.0
       },
       {
@@ -13864,9 +13875,9 @@
               "dist_pct": -13.9
             },
             {
-              "price": 629.6,
-              "score": 37,
-              "dist_pct": -24.5
+              "price": 630.6,
+              "score": 29,
+              "dist_pct": -24.3
             },
             {
               "price": 613.89,
@@ -13915,8 +13926,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 5.02,
+        "em_days": 9,
         "rs_composite": 47.0
       },
       {
@@ -14003,8 +14014,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.2,
+        "em_days": 2,
         "rs_composite": 82.0
       },
       {
@@ -14070,8 +14081,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.09,
+        "em_days": 2,
         "rs_composite": 78.0
       }
     ],
@@ -14085,7 +14096,7 @@
         "wtd": -3.48,
         "ytd": 0.07,
         "stage": 1,
-        "vol_ratio": 0.82,
+        "vol_ratio": 0.88,
         "vol_chart": "data/charts/vol_DHI.png",
         "atr_pct": 3.4,
         "dist_sma50_atr": -1.01,
@@ -14121,8 +14132,8 @@
           ],
           "resistance": [
             {
-              "price": 147.88,
-              "score": 43,
+              "price": 147.86,
+              "score": 41,
               "dist_pct": 1.4
             },
             {
@@ -14138,7 +14149,7 @@
           ],
           "near": {
             "type": "resistance",
-            "price": 147.88,
+            "price": 147.86,
             "dist_pct": 1.4
           }
         },
@@ -14160,8 +14171,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.99,
+        "em_days": 2,
         "rs_composite": 14.0
       },
       {
@@ -14243,8 +14254,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.0,
+        "em_days": 2,
         "rs_composite": 3.0
       },
       {
@@ -14281,13 +14292,13 @@
             },
             {
               "price": 270.12,
-              "score": 18,
+              "score": 17,
               "dist_pct": -3.7
             },
             {
-              "price": 262.05,
+              "price": 260.92,
               "score": 8,
-              "dist_pct": -6.5
+              "dist_pct": -6.9
             }
           ],
           "resistance": [
@@ -14331,8 +14342,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.39,
+        "em_days": 9,
         "rs_composite": 12.0
       },
       {
@@ -14376,7 +14387,7 @@
           "resistance": [
             {
               "price": 574.96,
-              "score": 37,
+              "score": 35,
               "dist_pct": 5.7
             },
             {
@@ -14414,8 +14425,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.59,
+        "em_days": 9,
         "rs_composite": 5.0
       },
       {
@@ -14452,7 +14463,7 @@
             },
             {
               "price": 339.42,
-              "score": 40,
+              "score": 39,
               "dist_pct": -5.8
             },
             {
@@ -14492,8 +14503,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 3.12,
+        "em_days": 9,
         "rs_composite": 49.0
       },
       {
@@ -14547,7 +14558,7 @@
             },
             {
               "price": 371.88,
-              "score": 23,
+              "score": 22,
               "dist_pct": 8.3
             },
             {
@@ -14580,8 +14591,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.66,
+        "em_days": 2,
         "rs_composite": 17.0
       },
       {
@@ -14668,8 +14679,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 1.97,
+        "em_days": 2,
         "rs_composite": 6.0
       }
     ],
@@ -14771,7 +14782,7 @@
         "wtd": 2.69,
         "ytd": 28.5,
         "stage": 1,
-        "vol_ratio": 0.92,
+        "vol_ratio": 0.93,
         "vol_chart": "data/charts/vol_GOLD.png",
         "atr_pct": 3.7,
         "dist_sma50_atr": 2.14,
@@ -14859,7 +14870,7 @@
         "wtd": 3.56,
         "ytd": 8.64,
         "stage": 1,
-        "vol_ratio": 1.12,
+        "vol_ratio": 1.17,
         "vol_chart": "data/charts/vol_AEM.png",
         "atr_pct": 3.6,
         "dist_sma50_atr": 4.9,
@@ -14942,7 +14953,7 @@
         "wtd": 0.51,
         "ytd": 14.43,
         "stage": 2,
-        "vol_ratio": 0.88,
+        "vol_ratio": 0.93,
         "vol_chart": "data/charts/vol_WPM.png",
         "atr_pct": 3.6,
         "dist_sma50_atr": 4.42,
@@ -15030,7 +15041,7 @@
         "wtd": -1.14,
         "ytd": 13.12,
         "stage": 2,
-        "vol_ratio": 1.43,
+        "vol_ratio": 1.47,
         "vol_chart": "data/charts/vol_FNV.png",
         "atr_pct": 3.3,
         "dist_sma50_atr": 2.75,
@@ -15434,8 +15445,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": 3.71,
-        "em_days": 2,
+        "em_pct": null,
+        "em_days": null,
         "rs_composite": 86.0
       },
       {
@@ -15447,7 +15458,7 @@
         "wtd": 1.68,
         "ytd": 0.48,
         "stage": 1,
-        "vol_ratio": 0.69,
+        "vol_ratio": 0.7,
         "vol_chart": "data/charts/vol_CCJ.png",
         "atr_pct": 3.9,
         "dist_sma50_atr": 0.36,
@@ -15794,7 +15805,7 @@
         "wtd": 2.26,
         "ytd": 2.63,
         "stage": 1,
-        "vol_ratio": 1.13,
+        "vol_ratio": 1.18,
         "vol_chart": "data/charts/vol_PAAS.png",
         "atr_pct": 3.8,
         "dist_sma50_atr": 3.33,
@@ -15903,14 +15914,14 @@
               "dist_pct": -15.4
             },
             {
-              "price": 301.51,
-              "score": 70,
+              "price": 301.57,
+              "score": 67,
               "dist_pct": -17.4
             },
             {
-              "price": 293.0,
-              "score": 38,
-              "dist_pct": -19.8
+              "price": 293.15,
+              "score": 42,
+              "dist_pct": -19.7
             }
           ],
           "resistance": []
@@ -16219,7 +16230,7 @@
             },
             {
               "price": 81.77,
-              "score": 54,
+              "score": 53,
               "dist_pct": -8.1
             }
           ],
@@ -16292,7 +16303,7 @@
           "support": [
             {
               "price": 1114.4,
-              "score": 34,
+              "score": 32,
               "dist_pct": -4.0
             },
             {
@@ -16694,7 +16705,7 @@
         "wtd": 0.62,
         "ytd": 25.81,
         "stage": 2,
-        "vol_ratio": 0.56,
+        "vol_ratio": 0.57,
         "vol_chart": "data/charts/vol_JNJ.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": 1.94,
@@ -16812,7 +16823,7 @@
             },
             {
               "price": 24.37,
-              "score": 35,
+              "score": 34,
               "dist_pct": -7.4
             }
           ],
@@ -16870,7 +16881,7 @@
         "wtd": 3.38,
         "ytd": 24.87,
         "stage": 2,
-        "vol_ratio": 1.17,
+        "vol_ratio": 1.2,
         "vol_chart": "data/charts/vol_MRK.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": 2.6,
@@ -17151,7 +17162,7 @@
             },
             {
               "price": 482.57,
-              "score": 35,
+              "score": 33,
               "dist_pct": -20.0
             },
             {
@@ -17246,7 +17257,7 @@
             },
             {
               "price": 128.94,
-              "score": 36,
+              "score": 35,
               "dist_pct": 16.3
             },
             {
@@ -17324,7 +17335,7 @@
           "resistance": [
             {
               "price": 91.58,
-              "score": 32,
+              "score": 30,
               "dist_pct": 0.9
             },
             {
@@ -17583,7 +17594,7 @@
           "resistance": [
             {
               "price": 207.97,
-              "score": 28,
+              "score": 27,
               "dist_pct": 1.1
             },
             {
@@ -17636,7 +17647,7 @@
         "wtd": 0.2,
         "ytd": 26.66,
         "stage": 2,
-        "vol_ratio": 0.55,
+        "vol_ratio": 0.56,
         "vol_chart": "data/charts/vol_UNP.png",
         "atr_pct": 2.1,
         "dist_sma50_atr": 2.11,
@@ -17743,8 +17754,8 @@
               "dist_pct": -8.1
             },
             {
-              "price": 35.94,
-              "score": 52,
+              "price": 35.93,
+              "score": 51,
               "dist_pct": -28.2
             },
             {
@@ -17822,12 +17833,12 @@
             },
             {
               "price": 233.7,
-              "score": 22,
+              "score": 21,
               "dist_pct": -28.5
             },
             {
               "price": 224.65,
-              "score": 26,
+              "score": 25,
               "dist_pct": -31.3
             }
           ],
@@ -17968,7 +17979,7 @@
         "wtd": -1.76,
         "ytd": 33.52,
         "stage": 2,
-        "vol_ratio": 1.16,
+        "vol_ratio": 1.17,
         "vol_chart": "data/charts/vol_ODFL.png",
         "atr_pct": 3.5,
         "dist_sma50_atr": -1.67,
@@ -18081,7 +18092,7 @@
             },
             {
               "price": 142.63,
-              "score": 30,
+              "score": 29,
               "dist_pct": -48.3
             }
           ],
@@ -18169,7 +18180,7 @@
             },
             {
               "price": 278.22,
-              "score": 41,
+              "score": 39,
               "dist_pct": -17.1
             }
           ],
@@ -18395,7 +18406,7 @@
         "wtd": -1.66,
         "ytd": 2.35,
         "stage": 3,
-        "vol_ratio": 0.44,
+        "vol_ratio": 0.45,
         "vol_chart": "data/charts/vol_AON.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": 0.71,
@@ -18431,8 +18442,8 @@
           ],
           "resistance": [
             {
-              "price": 360.76,
-              "score": 45,
+              "price": 360.85,
+              "score": 44,
               "dist_pct": 2.4
             },
             {
@@ -18654,7 +18665,7 @@
         "wtd": -3.11,
         "ytd": 9.52,
         "stage": 2,
-        "vol_ratio": 0.63,
+        "vol_ratio": 0.69,
         "vol_chart": "data/charts/vol_AFL.png",
         "atr_pct": 1.8,
         "dist_sma50_atr": -0.08,
@@ -18737,7 +18748,7 @@
         "wtd": -3.68,
         "ytd": 29.79,
         "stage": 2,
-        "vol_ratio": 1.12,
+        "vol_ratio": 1.22,
         "vol_chart": "data/charts/vol_TRV.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": 3.58,
@@ -18761,14 +18772,14 @@
               "dist_pct": -17.9
             },
             {
-              "price": 295.92,
-              "score": 44,
-              "dist_pct": -20.1
+              "price": 293.71,
+              "score": 49,
+              "dist_pct": -20.7
             },
             {
-              "price": 290.69,
-              "score": 51,
-              "dist_pct": -21.5
+              "price": 277.61,
+              "score": 41,
+              "dist_pct": -25.0
             }
           ],
           "resistance": [
@@ -18847,7 +18858,7 @@
             },
             {
               "price": 71.8,
-              "score": 18,
+              "score": 17,
               "dist_pct": -16.3
             }
           ],
@@ -18941,13 +18952,13 @@
           ],
           "resistance": [
             {
-              "price": 92.92,
-              "score": 63,
-              "dist_pct": 0.4
+              "price": 92.99,
+              "score": 64,
+              "dist_pct": 0.5
             },
             {
               "price": 95.24,
-              "score": 83,
+              "score": 81,
               "dist_pct": 2.9
             },
             {
@@ -18958,8 +18969,8 @@
           ],
           "near": {
             "type": "resistance",
-            "price": 92.92,
-            "dist_pct": 0.4
+            "price": 92.99,
+            "dist_pct": 0.5
           }
         },
         "above_sma20": false,
@@ -19013,7 +19024,7 @@
           "support": [
             {
               "price": 120.27,
-              "score": 38,
+              "score": 37,
               "dist_pct": -2.6
             },
             {
@@ -19277,7 +19288,7 @@
             },
             {
               "price": 114.36,
-              "score": 32,
+              "score": 31,
               "dist_pct": -8.3
             }
           ],
@@ -19335,7 +19346,7 @@
         "wtd": 2.43,
         "ytd": -4.22,
         "stage": 1,
-        "vol_ratio": 1.14,
+        "vol_ratio": 1.15,
         "vol_chart": "data/charts/vol_SRE.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": -2.46,
@@ -19354,13 +19365,13 @@
         "sr": {
           "support": [
             {
-              "price": 83.33,
-              "score": 24,
-              "dist_pct": -3.0
+              "price": 83.57,
+              "score": 21,
+              "dist_pct": -2.7
             },
             {
               "price": 80.83,
-              "score": 25,
+              "score": 23,
               "dist_pct": -5.9
             },
             {
@@ -19900,7 +19911,7 @@
       "5d": -0.94,
       "20d": -1.76,
       "ytd": 3.58,
-      "vol_ratio": 0.76,
+      "vol_ratio": 0.77,
       "atr_pct": 3.4,
       "dist_sma50_atr": 0.86,
       "rs": null,
@@ -20026,7 +20037,7 @@
       "5d": 5.16,
       "20d": 6.44,
       "ytd": 44.02,
-      "vol_ratio": 1.11,
+      "vol_ratio": 1.16,
       "atr_pct": 5.1,
       "dist_sma50_atr": 0.58,
       "rs": null,
@@ -25444,34 +25455,2206 @@
       {
         "name": "MOVE",
         "desc": "Treasury Bonds",
-        "current": null,
-        "ma20": null,
-        "vs_ma": null,
-        "hi52": null,
-        "lo52": null,
-        "pct52": null
+        "current": 72.09,
+        "ma20": 69.75,
+        "vs_ma": 3.3,
+        "hi52": 115.02,
+        "lo52": 55.77,
+        "pct52": 27.5,
+        "history": [
+          {
+            "t": "2026-03-11",
+            "v": 78.59
+          },
+          {
+            "t": "2026-03-12",
+            "v": 95.3
+          },
+          {
+            "t": "2026-03-13",
+            "v": 91.17
+          },
+          {
+            "t": "2026-03-16",
+            "v": 85.25
+          },
+          {
+            "t": "2026-03-17",
+            "v": 79.23
+          },
+          {
+            "t": "2026-03-18",
+            "v": 81.25
+          },
+          {
+            "t": "2026-03-19",
+            "v": 84.88
+          },
+          {
+            "t": "2026-03-20",
+            "v": 108.84
+          },
+          {
+            "t": "2026-03-23",
+            "v": 98.15
+          },
+          {
+            "t": "2026-03-24",
+            "v": 103.01
+          },
+          {
+            "t": "2026-03-25",
+            "v": 97.59
+          },
+          {
+            "t": "2026-03-26",
+            "v": 115.02
+          },
+          {
+            "t": "2026-03-27",
+            "v": 111.95
+          },
+          {
+            "t": "2026-03-30",
+            "v": 108.33
+          },
+          {
+            "t": "2026-03-31",
+            "v": 96.05
+          },
+          {
+            "t": "2026-04-01",
+            "v": 90.19
+          },
+          {
+            "t": "2026-04-02",
+            "v": 84.41
+          },
+          {
+            "t": "2026-04-06",
+            "v": 81.68
+          },
+          {
+            "t": "2026-04-07",
+            "v": 83.15
+          },
+          {
+            "t": "2026-04-08",
+            "v": 78.74
+          },
+          {
+            "t": "2026-04-09",
+            "v": 74.01
+          },
+          {
+            "t": "2026-04-10",
+            "v": 72.15
+          },
+          {
+            "t": "2026-04-13",
+            "v": 74.42
+          },
+          {
+            "t": "2026-04-14",
+            "v": 74.35
+          },
+          {
+            "t": "2026-04-15",
+            "v": 67.94
+          },
+          {
+            "t": "2026-04-16",
+            "v": 65.89
+          },
+          {
+            "t": "2026-04-17",
+            "v": 65.7
+          },
+          {
+            "t": "2026-04-20",
+            "v": 67.9
+          },
+          {
+            "t": "2026-04-21",
+            "v": 70.78
+          },
+          {
+            "t": "2026-04-22",
+            "v": 69.88
+          },
+          {
+            "t": "2026-04-23",
+            "v": 67.7
+          },
+          {
+            "t": "2026-04-24",
+            "v": 66.97
+          },
+          {
+            "t": "2026-04-27",
+            "v": 68.42
+          },
+          {
+            "t": "2026-04-28",
+            "v": 68.68
+          },
+          {
+            "t": "2026-04-29",
+            "v": 74.33
+          },
+          {
+            "t": "2026-04-30",
+            "v": 72.07
+          },
+          {
+            "t": "2026-05-01",
+            "v": 70.41
+          },
+          {
+            "t": "2026-05-04",
+            "v": 77.86
+          },
+          {
+            "t": "2026-05-05",
+            "v": 76.78
+          },
+          {
+            "t": "2026-05-06",
+            "v": 70.63
+          },
+          {
+            "t": "2026-05-07",
+            "v": 72.24
+          },
+          {
+            "t": "2026-05-08",
+            "v": 67.25
+          },
+          {
+            "t": "2026-05-11",
+            "v": 70.74
+          },
+          {
+            "t": "2026-05-12",
+            "v": 71.68
+          },
+          {
+            "t": "2026-05-13",
+            "v": 70.24
+          },
+          {
+            "t": "2026-05-14",
+            "v": 69.63
+          },
+          {
+            "t": "2026-05-15",
+            "v": 79.87
+          },
+          {
+            "t": "2026-05-18",
+            "v": 86.07
+          },
+          {
+            "t": "2026-05-19",
+            "v": 85.32
+          },
+          {
+            "t": "2026-05-20",
+            "v": 81.53
+          },
+          {
+            "t": "2026-05-21",
+            "v": 79.72
+          },
+          {
+            "t": "2026-05-22",
+            "v": 78.43
+          },
+          {
+            "t": "2026-05-26",
+            "v": 74.95
+          },
+          {
+            "t": "2026-05-27",
+            "v": 70.9
+          },
+          {
+            "t": "2026-05-28",
+            "v": 69.74
+          },
+          {
+            "t": "2026-05-29",
+            "v": 70.22
+          },
+          {
+            "t": "2026-06-01",
+            "v": 73.33
+          },
+          {
+            "t": "2026-06-02",
+            "v": 73.43
+          },
+          {
+            "t": "2026-06-03",
+            "v": 73.58
+          },
+          {
+            "t": "2026-06-04",
+            "v": 71.16
+          },
+          {
+            "t": "2026-06-05",
+            "v": 75.2
+          },
+          {
+            "t": "2026-06-08",
+            "v": 76.98
+          },
+          {
+            "t": "2026-06-09",
+            "v": 77.03
+          },
+          {
+            "t": "2026-06-10",
+            "v": 73.95
+          },
+          {
+            "t": "2026-06-11",
+            "v": 69.45
+          },
+          {
+            "t": "2026-06-12",
+            "v": 69.36
+          },
+          {
+            "t": "2026-06-15",
+            "v": 69.38
+          },
+          {
+            "t": "2026-06-16",
+            "v": 67.28
+          },
+          {
+            "t": "2026-06-17",
+            "v": 70.66
+          },
+          {
+            "t": "2026-06-18",
+            "v": 65.39
+          },
+          {
+            "t": "2026-06-22",
+            "v": 70.02
+          },
+          {
+            "t": "2026-06-23",
+            "v": 68.78
+          },
+          {
+            "t": "2026-06-24",
+            "v": 69.06
+          },
+          {
+            "t": "2026-06-25",
+            "v": 67.1
+          },
+          {
+            "t": "2026-06-26",
+            "v": 66.79
+          },
+          {
+            "t": "2026-06-29",
+            "v": 68.14
+          },
+          {
+            "t": "2026-06-30",
+            "v": 71.96
+          },
+          {
+            "t": "2026-07-01",
+            "v": 68.56
+          },
+          {
+            "t": "2026-07-02",
+            "v": 65.4
+          },
+          {
+            "t": "2026-07-06",
+            "v": 65.76
+          },
+          {
+            "t": "2026-07-07",
+            "v": 70.25
+          },
+          {
+            "t": "2026-07-08",
+            "v": 72.41
+          },
+          {
+            "t": "2026-07-09",
+            "v": 68.89
+          },
+          {
+            "t": "2026-07-10",
+            "v": 69.55
+          },
+          {
+            "t": "2026-07-13",
+            "v": 77.77
+          },
+          {
+            "t": "2026-07-14",
+            "v": 75.03
+          },
+          {
+            "t": "2026-07-15",
+            "v": 68.48
+          },
+          {
+            "t": "2026-07-16",
+            "v": 68.16
+          },
+          {
+            "t": "2026-07-17",
+            "v": 70.88
+          },
+          {
+            "t": "2026-08-12",
+            "v": 72.09
+          }
+        ],
+        "ma_history": [
+          {
+            "t": "2026-03-11",
+            "v": 70.49
+          },
+          {
+            "t": "2026-03-12",
+            "v": 72.19
+          },
+          {
+            "t": "2026-03-13",
+            "v": 73.32
+          },
+          {
+            "t": "2026-03-16",
+            "v": 74.08
+          },
+          {
+            "t": "2026-03-17",
+            "v": 74.6
+          },
+          {
+            "t": "2026-03-18",
+            "v": 75.45
+          },
+          {
+            "t": "2026-03-19",
+            "v": 76.29
+          },
+          {
+            "t": "2026-03-20",
+            "v": 78.52
+          },
+          {
+            "t": "2026-03-23",
+            "v": 80.03
+          },
+          {
+            "t": "2026-03-24",
+            "v": 81.91
+          },
+          {
+            "t": "2026-03-25",
+            "v": 83.67
+          },
+          {
+            "t": "2026-03-26",
+            "v": 86.23
+          },
+          {
+            "t": "2026-03-27",
+            "v": 88.15
+          },
+          {
+            "t": "2026-03-30",
+            "v": 89.91
+          },
+          {
+            "t": "2026-03-31",
+            "v": 90.82
+          },
+          {
+            "t": "2026-04-01",
+            "v": 91.83
+          },
+          {
+            "t": "2026-04-02",
+            "v": 92.33
+          },
+          {
+            "t": "2026-04-06",
+            "v": 92.35
+          },
+          {
+            "t": "2026-04-07",
+            "v": 92.52
+          },
+          {
+            "t": "2026-04-08",
+            "v": 92.64
+          },
+          {
+            "t": "2026-04-09",
+            "v": 92.41
+          },
+          {
+            "t": "2026-04-10",
+            "v": 91.25
+          },
+          {
+            "t": "2026-04-13",
+            "v": 90.42
+          },
+          {
+            "t": "2026-04-14",
+            "v": 89.87
+          },
+          {
+            "t": "2026-04-15",
+            "v": 89.31
+          },
+          {
+            "t": "2026-04-16",
+            "v": 88.54
+          },
+          {
+            "t": "2026-04-17",
+            "v": 87.58
+          },
+          {
+            "t": "2026-04-20",
+            "v": 85.53
+          },
+          {
+            "t": "2026-04-21",
+            "v": 84.16
+          },
+          {
+            "t": "2026-04-22",
+            "v": 82.51
+          },
+          {
+            "t": "2026-04-23",
+            "v": 81.01
+          },
+          {
+            "t": "2026-04-24",
+            "v": 78.61
+          },
+          {
+            "t": "2026-04-27",
+            "v": 76.43
+          },
+          {
+            "t": "2026-04-28",
+            "v": 74.45
+          },
+          {
+            "t": "2026-04-29",
+            "v": 73.36
+          },
+          {
+            "t": "2026-04-30",
+            "v": 72.46
+          },
+          {
+            "t": "2026-05-01",
+            "v": 71.76
+          },
+          {
+            "t": "2026-05-04",
+            "v": 71.57
+          },
+          {
+            "t": "2026-05-05",
+            "v": 71.25
+          },
+          {
+            "t": "2026-05-06",
+            "v": 70.84
+          },
+          {
+            "t": "2026-05-07",
+            "v": 70.75
+          },
+          {
+            "t": "2026-05-08",
+            "v": 70.51
+          },
+          {
+            "t": "2026-05-11",
+            "v": 70.33
+          },
+          {
+            "t": "2026-05-12",
+            "v": 70.19
+          },
+          {
+            "t": "2026-05-13",
+            "v": 70.31
+          },
+          {
+            "t": "2026-05-14",
+            "v": 70.49
+          },
+          {
+            "t": "2026-05-15",
+            "v": 71.2
+          },
+          {
+            "t": "2026-05-18",
+            "v": 72.11
+          },
+          {
+            "t": "2026-05-19",
+            "v": 72.84
+          },
+          {
+            "t": "2026-05-20",
+            "v": 73.42
+          },
+          {
+            "t": "2026-05-21",
+            "v": 74.02
+          },
+          {
+            "t": "2026-05-22",
+            "v": 74.59
+          },
+          {
+            "t": "2026-05-26",
+            "v": 74.92
+          },
+          {
+            "t": "2026-05-27",
+            "v": 75.03
+          },
+          {
+            "t": "2026-05-28",
+            "v": 74.8
+          },
+          {
+            "t": "2026-05-29",
+            "v": 74.71
+          },
+          {
+            "t": "2026-06-01",
+            "v": 74.86
+          },
+          {
+            "t": "2026-06-02",
+            "v": 74.63
+          },
+          {
+            "t": "2026-06-03",
+            "v": 74.47
+          },
+          {
+            "t": "2026-06-04",
+            "v": 74.5
+          },
+          {
+            "t": "2026-06-05",
+            "v": 74.65
+          },
+          {
+            "t": "2026-06-08",
+            "v": 75.14
+          },
+          {
+            "t": "2026-06-09",
+            "v": 75.45
+          },
+          {
+            "t": "2026-06-10",
+            "v": 75.56
+          },
+          {
+            "t": "2026-06-11",
+            "v": 75.52
+          },
+          {
+            "t": "2026-06-12",
+            "v": 75.51
+          },
+          {
+            "t": "2026-06-15",
+            "v": 74.99
+          },
+          {
+            "t": "2026-06-16",
+            "v": 74.05
+          },
+          {
+            "t": "2026-06-17",
+            "v": 73.31
+          },
+          {
+            "t": "2026-06-18",
+            "v": 72.51
+          },
+          {
+            "t": "2026-06-22",
+            "v": 72.02
+          },
+          {
+            "t": "2026-06-23",
+            "v": 71.54
+          },
+          {
+            "t": "2026-06-24",
+            "v": 71.24
+          },
+          {
+            "t": "2026-06-25",
+            "v": 71.05
+          },
+          {
+            "t": "2026-06-26",
+            "v": 70.91
+          },
+          {
+            "t": "2026-06-29",
+            "v": 70.8
+          },
+          {
+            "t": "2026-06-30",
+            "v": 70.73
+          },
+          {
+            "t": "2026-07-01",
+            "v": 70.49
+          },
+          {
+            "t": "2026-07-02",
+            "v": 70.08
+          },
+          {
+            "t": "2026-07-06",
+            "v": 69.81
+          },
+          {
+            "t": "2026-07-07",
+            "v": 69.56
+          },
+          {
+            "t": "2026-07-08",
+            "v": 69.34
+          },
+          {
+            "t": "2026-07-09",
+            "v": 68.93
+          },
+          {
+            "t": "2026-07-10",
+            "v": 68.71
+          },
+          {
+            "t": "2026-07-13",
+            "v": 69.13
+          },
+          {
+            "t": "2026-07-14",
+            "v": 69.41
+          },
+          {
+            "t": "2026-07-15",
+            "v": 69.36
+          },
+          {
+            "t": "2026-07-16",
+            "v": 69.41
+          },
+          {
+            "t": "2026-07-17",
+            "v": 69.42
+          },
+          {
+            "t": "2026-08-12",
+            "v": 69.75
+          }
+        ]
       }
     ],
     "Commodities": [
       {
         "name": "OVX",
         "desc": "Crude Oil",
-        "current": null,
-        "ma20": null,
-        "vs_ma": null,
-        "hi52": null,
-        "lo52": null,
-        "pct52": null
+        "current": 52.34,
+        "ma20": 59.73,
+        "vs_ma": -12.4,
+        "hi52": 120.91,
+        "lo52": 28.4,
+        "pct52": 25.9,
+        "history": [
+          {
+            "t": "2026-04-06",
+            "v": 96.14
+          },
+          {
+            "t": "2026-04-07",
+            "v": 98.79
+          },
+          {
+            "t": "2026-04-08",
+            "v": 83.91
+          },
+          {
+            "t": "2026-04-09",
+            "v": 81.74
+          },
+          {
+            "t": "2026-04-10",
+            "v": 78.01
+          },
+          {
+            "t": "2026-04-13",
+            "v": 80.55
+          },
+          {
+            "t": "2026-04-14",
+            "v": 75.35
+          },
+          {
+            "t": "2026-04-15",
+            "v": 72.23
+          },
+          {
+            "t": "2026-04-16",
+            "v": 73.04
+          },
+          {
+            "t": "2026-04-17",
+            "v": 69.01
+          },
+          {
+            "t": "2026-04-20",
+            "v": 73.79
+          },
+          {
+            "t": "2026-04-21",
+            "v": 85.57
+          },
+          {
+            "t": "2026-04-22",
+            "v": 76.77
+          },
+          {
+            "t": "2026-04-23",
+            "v": 78.67
+          },
+          {
+            "t": "2026-04-24",
+            "v": 75.83
+          },
+          {
+            "t": "2026-04-27",
+            "v": 73.11
+          },
+          {
+            "t": "2026-04-28",
+            "v": 70.5
+          },
+          {
+            "t": "2026-04-29",
+            "v": 75.96
+          },
+          {
+            "t": "2026-04-30",
+            "v": 75.08
+          },
+          {
+            "t": "2026-05-01",
+            "v": 75.4
+          },
+          {
+            "t": "2026-05-04",
+            "v": 78.63
+          },
+          {
+            "t": "2026-05-05",
+            "v": 74.73
+          },
+          {
+            "t": "2026-05-06",
+            "v": 72.34
+          },
+          {
+            "t": "2026-05-07",
+            "v": 72.25
+          },
+          {
+            "t": "2026-05-08",
+            "v": 72.15
+          },
+          {
+            "t": "2026-05-11",
+            "v": 75.66
+          },
+          {
+            "t": "2026-05-12",
+            "v": 75.69
+          },
+          {
+            "t": "2026-05-13",
+            "v": 70.94
+          },
+          {
+            "t": "2026-05-14",
+            "v": 68.92
+          },
+          {
+            "t": "2026-05-15",
+            "v": 72.35
+          },
+          {
+            "t": "2026-05-18",
+            "v": 72.07
+          },
+          {
+            "t": "2026-05-19",
+            "v": 72.89
+          },
+          {
+            "t": "2026-05-20",
+            "v": 72.77
+          },
+          {
+            "t": "2026-05-21",
+            "v": 73.54
+          },
+          {
+            "t": "2026-05-22",
+            "v": 75.97
+          },
+          {
+            "t": "2026-05-26",
+            "v": 65.06
+          },
+          {
+            "t": "2026-05-27",
+            "v": 59.97
+          },
+          {
+            "t": "2026-05-28",
+            "v": 58.3
+          },
+          {
+            "t": "2026-05-29",
+            "v": 57.84
+          },
+          {
+            "t": "2026-06-01",
+            "v": 61.24
+          },
+          {
+            "t": "2026-06-02",
+            "v": 59.53
+          },
+          {
+            "t": "2026-06-03",
+            "v": 60.52
+          },
+          {
+            "t": "2026-06-04",
+            "v": 59.79
+          },
+          {
+            "t": "2026-06-05",
+            "v": 57.75
+          },
+          {
+            "t": "2026-06-08",
+            "v": 58.36
+          },
+          {
+            "t": "2026-06-09",
+            "v": 57.63
+          },
+          {
+            "t": "2026-06-10",
+            "v": 60.28
+          },
+          {
+            "t": "2026-06-11",
+            "v": 56.3
+          },
+          {
+            "t": "2026-06-12",
+            "v": 54.1
+          },
+          {
+            "t": "2026-06-15",
+            "v": 47.75
+          },
+          {
+            "t": "2026-06-16",
+            "v": 53.1
+          },
+          {
+            "t": "2026-06-17",
+            "v": 53.65
+          },
+          {
+            "t": "2026-06-18",
+            "v": 51.54
+          },
+          {
+            "t": "2026-06-22",
+            "v": 50.7
+          },
+          {
+            "t": "2026-06-23",
+            "v": 46.6
+          },
+          {
+            "t": "2026-06-24",
+            "v": 47.61
+          },
+          {
+            "t": "2026-06-25",
+            "v": 46.96
+          },
+          {
+            "t": "2026-06-26",
+            "v": 46.46
+          },
+          {
+            "t": "2026-06-29",
+            "v": 45.07
+          },
+          {
+            "t": "2026-06-30",
+            "v": 43.17
+          },
+          {
+            "t": "2026-07-01",
+            "v": 40.76
+          },
+          {
+            "t": "2026-07-02",
+            "v": 41.62
+          },
+          {
+            "t": "2026-07-06",
+            "v": 40.33
+          },
+          {
+            "t": "2026-07-07",
+            "v": 47.59
+          },
+          {
+            "t": "2026-07-08",
+            "v": 50.45
+          },
+          {
+            "t": "2026-07-09",
+            "v": 45.99
+          },
+          {
+            "t": "2026-07-10",
+            "v": 44.67
+          },
+          {
+            "t": "2026-07-13",
+            "v": 60.25
+          },
+          {
+            "t": "2026-07-14",
+            "v": 59.89
+          },
+          {
+            "t": "2026-07-15",
+            "v": 58.96
+          },
+          {
+            "t": "2026-07-16",
+            "v": 55.91
+          },
+          {
+            "t": "2026-07-17",
+            "v": 60.02
+          },
+          {
+            "t": "2026-07-20",
+            "v": 62.07
+          },
+          {
+            "t": "2026-07-21",
+            "v": 63.78
+          },
+          {
+            "t": "2026-07-22",
+            "v": 65.31
+          },
+          {
+            "t": "2026-07-23",
+            "v": 68.97
+          },
+          {
+            "t": "2026-07-24",
+            "v": 68.0
+          },
+          {
+            "t": "2026-07-27",
+            "v": 60.62
+          },
+          {
+            "t": "2026-07-28",
+            "v": 57.15
+          },
+          {
+            "t": "2026-07-29",
+            "v": 67.59
+          },
+          {
+            "t": "2026-07-30",
+            "v": 63.44
+          },
+          {
+            "t": "2026-07-31",
+            "v": 63.04
+          },
+          {
+            "t": "2026-08-03",
+            "v": 57.2
+          },
+          {
+            "t": "2026-08-04",
+            "v": 53.45
+          },
+          {
+            "t": "2026-08-05",
+            "v": 51.48
+          },
+          {
+            "t": "2026-08-06",
+            "v": 57.34
+          },
+          {
+            "t": "2026-08-07",
+            "v": 55.8
+          },
+          {
+            "t": "2026-08-10",
+            "v": 56.06
+          },
+          {
+            "t": "2026-08-11",
+            "v": 54.99
+          },
+          {
+            "t": "2026-08-12",
+            "v": 52.34
+          }
+        ],
+        "ma_history": [
+          {
+            "t": "2026-04-06",
+            "v": 98.66
+          },
+          {
+            "t": "2026-04-07",
+            "v": 98.57
+          },
+          {
+            "t": "2026-04-08",
+            "v": 97.36
+          },
+          {
+            "t": "2026-04-09",
+            "v": 95.4
+          },
+          {
+            "t": "2026-04-10",
+            "v": 93.29
+          },
+          {
+            "t": "2026-04-13",
+            "v": 91.37
+          },
+          {
+            "t": "2026-04-14",
+            "v": 90.03
+          },
+          {
+            "t": "2026-04-15",
+            "v": 88.85
+          },
+          {
+            "t": "2026-04-16",
+            "v": 87.64
+          },
+          {
+            "t": "2026-04-17",
+            "v": 86.45
+          },
+          {
+            "t": "2026-04-20",
+            "v": 85.55
+          },
+          {
+            "t": "2026-04-21",
+            "v": 85.34
+          },
+          {
+            "t": "2026-04-22",
+            "v": 84.71
+          },
+          {
+            "t": "2026-04-23",
+            "v": 84.14
+          },
+          {
+            "t": "2026-04-24",
+            "v": 83.31
+          },
+          {
+            "t": "2026-04-27",
+            "v": 82.13
+          },
+          {
+            "t": "2026-04-28",
+            "v": 80.87
+          },
+          {
+            "t": "2026-04-29",
+            "v": 80.2
+          },
+          {
+            "t": "2026-04-30",
+            "v": 79.36
+          },
+          {
+            "t": "2026-05-01",
+            "v": 78.47
+          },
+          {
+            "t": "2026-05-04",
+            "v": 77.6
+          },
+          {
+            "t": "2026-05-05",
+            "v": 76.39
+          },
+          {
+            "t": "2026-05-06",
+            "v": 75.82
+          },
+          {
+            "t": "2026-05-07",
+            "v": 75.34
+          },
+          {
+            "t": "2026-05-08",
+            "v": 75.05
+          },
+          {
+            "t": "2026-05-11",
+            "v": 74.8
+          },
+          {
+            "t": "2026-05-12",
+            "v": 74.82
+          },
+          {
+            "t": "2026-05-13",
+            "v": 74.76
+          },
+          {
+            "t": "2026-05-14",
+            "v": 74.55
+          },
+          {
+            "t": "2026-05-15",
+            "v": 74.72
+          },
+          {
+            "t": "2026-05-18",
+            "v": 74.63
+          },
+          {
+            "t": "2026-05-19",
+            "v": 74.0
+          },
+          {
+            "t": "2026-05-20",
+            "v": 73.8
+          },
+          {
+            "t": "2026-05-21",
+            "v": 73.54
+          },
+          {
+            "t": "2026-05-22",
+            "v": 73.55
+          },
+          {
+            "t": "2026-05-26",
+            "v": 73.15
+          },
+          {
+            "t": "2026-05-27",
+            "v": 72.62
+          },
+          {
+            "t": "2026-05-28",
+            "v": 71.74
+          },
+          {
+            "t": "2026-05-29",
+            "v": 70.87
+          },
+          {
+            "t": "2026-06-01",
+            "v": 70.17
+          },
+          {
+            "t": "2026-06-02",
+            "v": 69.21
+          },
+          {
+            "t": "2026-06-03",
+            "v": 68.5
+          },
+          {
+            "t": "2026-06-04",
+            "v": 67.87
+          },
+          {
+            "t": "2026-06-05",
+            "v": 67.15
+          },
+          {
+            "t": "2026-06-08",
+            "v": 66.46
+          },
+          {
+            "t": "2026-06-09",
+            "v": 65.56
+          },
+          {
+            "t": "2026-06-10",
+            "v": 64.79
+          },
+          {
+            "t": "2026-06-11",
+            "v": 64.05
+          },
+          {
+            "t": "2026-06-12",
+            "v": 63.31
+          },
+          {
+            "t": "2026-06-15",
+            "v": 62.08
+          },
+          {
+            "t": "2026-06-16",
+            "v": 61.13
+          },
+          {
+            "t": "2026-06-17",
+            "v": 60.17
+          },
+          {
+            "t": "2026-06-18",
+            "v": 59.11
+          },
+          {
+            "t": "2026-06-22",
+            "v": 57.97
+          },
+          {
+            "t": "2026-06-23",
+            "v": 56.5
+          },
+          {
+            "t": "2026-06-24",
+            "v": 55.63
+          },
+          {
+            "t": "2026-06-25",
+            "v": 54.98
+          },
+          {
+            "t": "2026-06-26",
+            "v": 54.39
+          },
+          {
+            "t": "2026-06-29",
+            "v": 53.75
+          },
+          {
+            "t": "2026-06-30",
+            "v": 52.84
+          },
+          {
+            "t": "2026-07-01",
+            "v": 51.9
+          },
+          {
+            "t": "2026-07-02",
+            "v": 50.96
+          },
+          {
+            "t": "2026-07-06",
+            "v": 49.99
+          },
+          {
+            "t": "2026-07-07",
+            "v": 49.48
+          },
+          {
+            "t": "2026-07-08",
+            "v": 49.08
+          },
+          {
+            "t": "2026-07-09",
+            "v": 48.5
+          },
+          {
+            "t": "2026-07-10",
+            "v": 47.72
+          },
+          {
+            "t": "2026-07-13",
+            "v": 47.92
+          },
+          {
+            "t": "2026-07-14",
+            "v": 48.21
+          },
+          {
+            "t": "2026-07-15",
+            "v": 48.77
+          },
+          {
+            "t": "2026-07-16",
+            "v": 48.91
+          },
+          {
+            "t": "2026-07-17",
+            "v": 49.23
+          },
+          {
+            "t": "2026-07-20",
+            "v": 49.75
+          },
+          {
+            "t": "2026-07-21",
+            "v": 50.41
+          },
+          {
+            "t": "2026-07-22",
+            "v": 51.34
+          },
+          {
+            "t": "2026-07-23",
+            "v": 52.41
+          },
+          {
+            "t": "2026-07-24",
+            "v": 53.46
+          },
+          {
+            "t": "2026-07-27",
+            "v": 54.17
+          },
+          {
+            "t": "2026-07-28",
+            "v": 54.78
+          },
+          {
+            "t": "2026-07-29",
+            "v": 56.0
+          },
+          {
+            "t": "2026-07-30",
+            "v": 57.13
+          },
+          {
+            "t": "2026-07-31",
+            "v": 58.2
+          },
+          {
+            "t": "2026-08-03",
+            "v": 59.04
+          },
+          {
+            "t": "2026-08-04",
+            "v": 59.34
+          },
+          {
+            "t": "2026-08-05",
+            "v": 59.39
+          },
+          {
+            "t": "2026-08-06",
+            "v": 59.96
+          },
+          {
+            "t": "2026-08-07",
+            "v": 60.51
+          },
+          {
+            "t": "2026-08-10",
+            "v": 60.3
+          },
+          {
+            "t": "2026-08-11",
+            "v": 60.06
+          },
+          {
+            "t": "2026-08-12",
+            "v": 59.73
+          }
+        ]
       },
       {
         "name": "GVZ",
         "desc": "Gold",
-        "current": null,
-        "ma20": null,
-        "vs_ma": null,
-        "hi52": null,
-        "lo52": null,
-        "pct52": null
+        "current": 25.58,
+        "ma20": 24.95,
+        "vs_ma": 2.5,
+        "hi52": 46.02,
+        "lo52": 14.82,
+        "pct52": 34.5,
+        "history": [
+          {
+            "t": "2026-04-06",
+            "v": 37.04
+          },
+          {
+            "t": "2026-04-07",
+            "v": 37.43
+          },
+          {
+            "t": "2026-04-08",
+            "v": 34.21
+          },
+          {
+            "t": "2026-04-09",
+            "v": 31.66
+          },
+          {
+            "t": "2026-04-10",
+            "v": 30.46
+          },
+          {
+            "t": "2026-04-13",
+            "v": 30.0
+          },
+          {
+            "t": "2026-04-14",
+            "v": 31.04
+          },
+          {
+            "t": "2026-04-15",
+            "v": 29.97
+          },
+          {
+            "t": "2026-04-16",
+            "v": 28.65
+          },
+          {
+            "t": "2026-04-17",
+            "v": 28.95
+          },
+          {
+            "t": "2026-04-20",
+            "v": 28.46
+          },
+          {
+            "t": "2026-04-21",
+            "v": 29.31
+          },
+          {
+            "t": "2026-04-22",
+            "v": 27.09
+          },
+          {
+            "t": "2026-04-23",
+            "v": 27.87
+          },
+          {
+            "t": "2026-04-24",
+            "v": 25.88
+          },
+          {
+            "t": "2026-04-27",
+            "v": 25.37
+          },
+          {
+            "t": "2026-04-28",
+            "v": 26.19
+          },
+          {
+            "t": "2026-04-29",
+            "v": 27.77
+          },
+          {
+            "t": "2026-04-30",
+            "v": 26.64
+          },
+          {
+            "t": "2026-05-01",
+            "v": 26.43
+          },
+          {
+            "t": "2026-05-04",
+            "v": 27.92
+          },
+          {
+            "t": "2026-05-05",
+            "v": 26.61
+          },
+          {
+            "t": "2026-05-06",
+            "v": 26.34
+          },
+          {
+            "t": "2026-05-07",
+            "v": 27.03
+          },
+          {
+            "t": "2026-05-08",
+            "v": 26.48
+          },
+          {
+            "t": "2026-05-11",
+            "v": 27.48
+          },
+          {
+            "t": "2026-05-12",
+            "v": 27.16
+          },
+          {
+            "t": "2026-05-13",
+            "v": 26.56
+          },
+          {
+            "t": "2026-05-14",
+            "v": 25.79
+          },
+          {
+            "t": "2026-05-15",
+            "v": 26.34
+          },
+          {
+            "t": "2026-05-18",
+            "v": 26.2
+          },
+          {
+            "t": "2026-05-19",
+            "v": 26.63
+          },
+          {
+            "t": "2026-05-20",
+            "v": 25.17
+          },
+          {
+            "t": "2026-05-21",
+            "v": 24.59
+          },
+          {
+            "t": "2026-05-22",
+            "v": 23.86
+          },
+          {
+            "t": "2026-05-26",
+            "v": 24.27
+          },
+          {
+            "t": "2026-05-27",
+            "v": 24.47
+          },
+          {
+            "t": "2026-05-28",
+            "v": 24.83
+          },
+          {
+            "t": "2026-05-29",
+            "v": 24.91
+          },
+          {
+            "t": "2026-06-01",
+            "v": 25.64
+          },
+          {
+            "t": "2026-06-02",
+            "v": 24.44
+          },
+          {
+            "t": "2026-06-03",
+            "v": 24.49
+          },
+          {
+            "t": "2026-06-04",
+            "v": 23.87
+          },
+          {
+            "t": "2026-06-05",
+            "v": 28.89
+          },
+          {
+            "t": "2026-06-08",
+            "v": 27.17
+          },
+          {
+            "t": "2026-06-09",
+            "v": 28.04
+          },
+          {
+            "t": "2026-06-10",
+            "v": 32.18
+          },
+          {
+            "t": "2026-06-11",
+            "v": 28.33
+          },
+          {
+            "t": "2026-06-12",
+            "v": 26.85
+          },
+          {
+            "t": "2026-06-15",
+            "v": 26.47
+          },
+          {
+            "t": "2026-06-16",
+            "v": 25.18
+          },
+          {
+            "t": "2026-06-17",
+            "v": 28.45
+          },
+          {
+            "t": "2026-06-18",
+            "v": 27.9
+          },
+          {
+            "t": "2026-06-22",
+            "v": 26.15
+          },
+          {
+            "t": "2026-06-23",
+            "v": 27.41
+          },
+          {
+            "t": "2026-06-24",
+            "v": 31.6
+          },
+          {
+            "t": "2026-06-25",
+            "v": 29.58
+          },
+          {
+            "t": "2026-06-26",
+            "v": 27.18
+          },
+          {
+            "t": "2026-06-29",
+            "v": 27.7
+          },
+          {
+            "t": "2026-06-30",
+            "v": 27.2
+          },
+          {
+            "t": "2026-07-01",
+            "v": 27.12
+          },
+          {
+            "t": "2026-07-02",
+            "v": 26.0
+          },
+          {
+            "t": "2026-07-06",
+            "v": 25.33
+          },
+          {
+            "t": "2026-07-07",
+            "v": 26.21
+          },
+          {
+            "t": "2026-07-08",
+            "v": 27.6
+          },
+          {
+            "t": "2026-07-09",
+            "v": 25.33
+          },
+          {
+            "t": "2026-07-10",
+            "v": 23.95
+          },
+          {
+            "t": "2026-07-13",
+            "v": 26.93
+          },
+          {
+            "t": "2026-07-14",
+            "v": 25.02
+          },
+          {
+            "t": "2026-07-15",
+            "v": 24.88
+          },
+          {
+            "t": "2026-07-16",
+            "v": 26.65
+          },
+          {
+            "t": "2026-07-17",
+            "v": 25.6
+          },
+          {
+            "t": "2026-07-20",
+            "v": 25.37
+          },
+          {
+            "t": "2026-07-21",
+            "v": 23.94
+          },
+          {
+            "t": "2026-07-22",
+            "v": 24.02
+          },
+          {
+            "t": "2026-07-23",
+            "v": 25.14
+          },
+          {
+            "t": "2026-07-24",
+            "v": 24.33
+          },
+          {
+            "t": "2026-07-27",
+            "v": 24.13
+          },
+          {
+            "t": "2026-07-28",
+            "v": 24.62
+          },
+          {
+            "t": "2026-07-29",
+            "v": 24.64
+          },
+          {
+            "t": "2026-07-30",
+            "v": 24.48
+          },
+          {
+            "t": "2026-07-31",
+            "v": 23.31
+          },
+          {
+            "t": "2026-08-03",
+            "v": 23.65
+          },
+          {
+            "t": "2026-08-04",
+            "v": 23.5
+          },
+          {
+            "t": "2026-08-05",
+            "v": 25.59
+          },
+          {
+            "t": "2026-08-06",
+            "v": 24.86
+          },
+          {
+            "t": "2026-08-07",
+            "v": 25.64
+          },
+          {
+            "t": "2026-08-10",
+            "v": 27.9
+          },
+          {
+            "t": "2026-08-11",
+            "v": 25.99
+          },
+          {
+            "t": "2026-08-12",
+            "v": 25.58
+          }
+        ],
+        "ma_history": [
+          {
+            "t": "2026-04-06",
+            "v": 36.05
+          },
+          {
+            "t": "2026-04-07",
+            "v": 36.25
+          },
+          {
+            "t": "2026-04-08",
+            "v": 36.35
+          },
+          {
+            "t": "2026-04-09",
+            "v": 36.4
+          },
+          {
+            "t": "2026-04-10",
+            "v": 36.37
+          },
+          {
+            "t": "2026-04-13",
+            "v": 36.26
+          },
+          {
+            "t": "2026-04-14",
+            "v": 36.28
+          },
+          {
+            "t": "2026-04-15",
+            "v": 36.38
+          },
+          {
+            "t": "2026-04-16",
+            "v": 36.34
+          },
+          {
+            "t": "2026-04-17",
+            "v": 36.24
+          },
+          {
+            "t": "2026-04-20",
+            "v": 35.9
+          },
+          {
+            "t": "2026-04-21",
+            "v": 35.19
+          },
+          {
+            "t": "2026-04-22",
+            "v": 34.45
+          },
+          {
+            "t": "2026-04-23",
+            "v": 33.91
+          },
+          {
+            "t": "2026-04-24",
+            "v": 32.95
+          },
+          {
+            "t": "2026-04-27",
+            "v": 31.95
+          },
+          {
+            "t": "2026-04-28",
+            "v": 31.12
+          },
+          {
+            "t": "2026-04-29",
+            "v": 30.57
+          },
+          {
+            "t": "2026-04-30",
+            "v": 30.09
+          },
+          {
+            "t": "2026-05-01",
+            "v": 29.52
+          },
+          {
+            "t": "2026-05-04",
+            "v": 29.06
+          },
+          {
+            "t": "2026-05-05",
+            "v": 28.52
+          },
+          {
+            "t": "2026-05-06",
+            "v": 28.13
+          },
+          {
+            "t": "2026-05-07",
+            "v": 27.9
+          },
+          {
+            "t": "2026-05-08",
+            "v": 27.7
+          },
+          {
+            "t": "2026-05-11",
+            "v": 27.57
+          },
+          {
+            "t": "2026-05-12",
+            "v": 27.38
+          },
+          {
+            "t": "2026-05-13",
+            "v": 27.21
+          },
+          {
+            "t": "2026-05-14",
+            "v": 27.07
+          },
+          {
+            "t": "2026-05-15",
+            "v": 26.94
+          },
+          {
+            "t": "2026-05-18",
+            "v": 26.82
+          },
+          {
+            "t": "2026-05-19",
+            "v": 26.69
+          },
+          {
+            "t": "2026-05-20",
+            "v": 26.59
+          },
+          {
+            "t": "2026-05-21",
+            "v": 26.43
+          },
+          {
+            "t": "2026-05-22",
+            "v": 26.33
+          },
+          {
+            "t": "2026-05-26",
+            "v": 26.27
+          },
+          {
+            "t": "2026-05-27",
+            "v": 26.19
+          },
+          {
+            "t": "2026-05-28",
+            "v": 26.04
+          },
+          {
+            "t": "2026-05-29",
+            "v": 25.95
+          },
+          {
+            "t": "2026-06-01",
+            "v": 25.91
+          },
+          {
+            "t": "2026-06-02",
+            "v": 25.74
+          },
+          {
+            "t": "2026-06-03",
+            "v": 25.63
+          },
+          {
+            "t": "2026-06-04",
+            "v": 25.51
+          },
+          {
+            "t": "2026-06-05",
+            "v": 25.6
+          },
+          {
+            "t": "2026-06-08",
+            "v": 25.64
+          },
+          {
+            "t": "2026-06-09",
+            "v": 25.67
+          },
+          {
+            "t": "2026-06-10",
+            "v": 25.92
+          },
+          {
+            "t": "2026-06-11",
+            "v": 26.01
+          },
+          {
+            "t": "2026-06-12",
+            "v": 26.06
+          },
+          {
+            "t": "2026-06-15",
+            "v": 26.07
+          },
+          {
+            "t": "2026-06-16",
+            "v": 26.01
+          },
+          {
+            "t": "2026-06-17",
+            "v": 26.11
+          },
+          {
+            "t": "2026-06-18",
+            "v": 26.24
+          },
+          {
+            "t": "2026-06-22",
+            "v": 26.32
+          },
+          {
+            "t": "2026-06-23",
+            "v": 26.5
+          },
+          {
+            "t": "2026-06-24",
+            "v": 26.86
+          },
+          {
+            "t": "2026-06-25",
+            "v": 27.12
+          },
+          {
+            "t": "2026-06-26",
+            "v": 27.24
+          },
+          {
+            "t": "2026-06-29",
+            "v": 27.38
+          },
+          {
+            "t": "2026-06-30",
+            "v": 27.45
+          },
+          {
+            "t": "2026-07-01",
+            "v": 27.59
+          },
+          {
+            "t": "2026-07-02",
+            "v": 27.66
+          },
+          {
+            "t": "2026-07-06",
+            "v": 27.74
+          },
+          {
+            "t": "2026-07-07",
+            "v": 27.6
+          },
+          {
+            "t": "2026-07-08",
+            "v": 27.62
+          },
+          {
+            "t": "2026-07-09",
+            "v": 27.49
+          },
+          {
+            "t": "2026-07-10",
+            "v": 27.08
+          },
+          {
+            "t": "2026-07-13",
+            "v": 27.01
+          },
+          {
+            "t": "2026-07-14",
+            "v": 26.92
+          },
+          {
+            "t": "2026-07-15",
+            "v": 26.84
+          },
+          {
+            "t": "2026-07-16",
+            "v": 26.91
+          },
+          {
+            "t": "2026-07-17",
+            "v": 26.77
+          },
+          {
+            "t": "2026-07-20",
+            "v": 26.64
+          },
+          {
+            "t": "2026-07-21",
+            "v": 26.53
+          },
+          {
+            "t": "2026-07-22",
+            "v": 26.36
+          },
+          {
+            "t": "2026-07-23",
+            "v": 26.04
+          },
+          {
+            "t": "2026-07-24",
+            "v": 25.78
+          },
+          {
+            "t": "2026-07-27",
+            "v": 25.62
+          },
+          {
+            "t": "2026-07-28",
+            "v": 25.47
+          },
+          {
+            "t": "2026-07-29",
+            "v": 25.34
+          },
+          {
+            "t": "2026-07-30",
+            "v": 25.21
+          },
+          {
+            "t": "2026-07-31",
+            "v": 25.07
+          },
+          {
+            "t": "2026-08-03",
+            "v": 24.99
+          },
+          {
+            "t": "2026-08-04",
+            "v": 24.85
+          },
+          {
+            "t": "2026-08-05",
+            "v": 24.75
+          },
+          {
+            "t": "2026-08-06",
+            "v": 24.73
+          },
+          {
+            "t": "2026-08-07",
+            "v": 24.81
+          },
+          {
+            "t": "2026-08-10",
+            "v": 24.86
+          },
+          {
+            "t": "2026-08-11",
+            "v": 24.91
+          },
+          {
+            "t": "2026-08-12",
+            "v": 24.95
+          }
+        ]
       }
     ]
   },
@@ -25754,13 +27937,13 @@
       "daily": 1.29,
       "5d": 4.72,
       "20d": -3.32,
-      "vol_ratio": 1.02
+      "vol_ratio": 1.03
     },
     "VIXY": {
       "daily": -2.75,
       "5d": -5.06,
       "20d": -6.43,
-      "vol_ratio": 0.89
+      "vol_ratio": 0.91
     }
   },
   "correlation": {
@@ -25882,32 +28065,32 @@
     "VLUE": {
       "name": "Value",
       "regime": "BULL",
-      "zscore": 0.64,
+      "zscore": 0.55,
       "days_in_regime": 258
     },
     "MTUM": {
       "name": "Momentum",
       "regime": "BULL",
-      "zscore": 0.38,
-      "days_in_regime": 67
+      "zscore": 0.49,
+      "days_in_regime": 73
     },
     "QUAL": {
       "name": "Quality",
       "regime": "BEAR",
-      "zscore": -0.07,
-      "days_in_regime": 51
+      "zscore": -0.27,
+      "days_in_regime": 68
     },
     "SIZE": {
       "name": "Size",
       "regime": "BULL",
-      "zscore": 0.5,
-      "days_in_regime": 259
+      "zscore": 0.45,
+      "days_in_regime": 246
     },
     "IWF": {
       "name": "Growth",
       "regime": "BEAR",
-      "zscore": -1.67,
-      "days_in_regime": 258
+      "zscore": -1.68,
+      "days_in_regime": 259
     }
   },
   "options_intel": {
@@ -26150,21 +28333,51 @@
         "put_iv": 24.8,
         "call_iv": 24.3
       }
+    },
+    "SLV": {
+      "spot": 59.06,
+      "expiry_used": "2026-08-17",
+      "days_to_expiry": 5,
+      "atm_iv": 37.7,
+      "pcr": {
+        "oi": 0.3,
+        "vol": 0.31,
+        "call_oi": 11482,
+        "put_oi": 3412,
+        "call_vol": 7371,
+        "put_vol": 2310
+      },
+      "max_pain": {
+        "strike": 55.0,
+        "dist_pct": -6.87,
+        "source": "OI"
+      },
+      "gex": {
+        "net_gex": 0.4,
+        "max_gamma_strike": 60.0,
+        "gamma_flip": 51.5,
+        "gamma_flip_dist_pct": -12.8
+      },
+      "iv_skew": {
+        "skew": -2.7,
+        "put_iv": 38.8,
+        "call_iv": 41.4
+      }
     }
   },
   "industries_sector_charts": {
     "Health Care": "data/charts/vol_IndSec_Health_Care.png",
-    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
-    "Utilities": "data/charts/vol_IndSec_Utilities.png",
     "Materials": "data/charts/vol_IndSec_Materials.png",
-    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
-    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
-    "Financials": "data/charts/vol_IndSec_Financials.png",
-    "Energy": "data/charts/vol_IndSec_Energy.png",
-    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
+    "Commodities": "data/charts/vol_IndSec_Commodities.png",
     "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
+    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
+    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
+    "Energy": "data/charts/vol_IndSec_Energy.png",
     "Industrials": "data/charts/vol_IndSec_Industrials.png",
-    "Commodities": "data/charts/vol_IndSec_Commodities.png"
+    "Utilities": "data/charts/vol_IndSec_Utilities.png",
+    "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
+    "Financials": "data/charts/vol_IndSec_Financials.png",
+    "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png"
   },
   "industries_sector_rs_charts": {},
   "etf_flow": {
