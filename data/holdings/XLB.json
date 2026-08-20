@@ -28,11 +28,13 @@
     },
     {
       "symbol": "APD",
-      "weight": 0.0468811
+      "weight": 0.0468811,
+      "daily": -0.0
     },
     {
       "symbol": "CTVA",
-      "weight": 0.0464671
+      "weight": 0.0464671,
+      "daily": 0.85
     },
     {
       "symbol": "NUE",
@@ -46,7 +48,8 @@
     },
     {
       "symbol": "CRH",
-      "weight": 0.0417725
+      "weight": 0.0417725,
+      "daily": 1.6
     }
   ]
 }
