@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-21",
+  "last_updated": "2026-08-22",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -10,16 +10,16 @@
   "market": {
     "next_fomc_date": "2026-09-16",
     "next_fomc_label": "Sep 16, 2026",
-    "rate_hold_pct": 71.0,
+    "rate_hold_pct": 65.4,
     "rate_cut_pct": 0.0,
-    "rate_hike_pct": 29.0,
+    "rate_hike_pct": 34.6,
     "current_rate": "3.50%–3.75%",
     "cpi": 3.5,
     "cpi_month": "June 2026",
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-08-21",
+    "cme_updated": "2026-08-22",
     "bls_unemp_updated": "2026-07-15",
     "rate_prob_source": "CME FedWatch (investing.com)"
   },
