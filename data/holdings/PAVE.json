@@ -2,52 +2,54 @@
   "symbol": "PAVE",
   "holdings": [
     {
-      "symbol": "PWR",
-      "weight": 0.0393999,
-      "daily": 0.83
+      "symbol": "DE",
+      "weight": 0.033855,
+      "daily": 0.85
     },
     {
-      "symbol": "CSX",
-      "weight": 0.0389948,
-      "daily": -0.43
+      "symbol": "FAST",
+      "weight": 0.0336401,
+      "daily": 0.75
     },
     {
-      "symbol": "HWM",
-      "weight": 0.035882197,
-      "daily": -0.63
-    },
-    {
-      "symbol": "UNP",
-      "weight": 0.0349471,
-      "daily": -0.95
-    },
-    {
-      "symbol": "ETN",
-      "weight": 0.0344222,
-      "daily": -0.81
-    },
-    {
-      "symbol": "TT",
-      "weight": 0.032286502,
-      "daily": -1.96
-    },
-    {
-      "symbol": "NSC",
-      "weight": 0.0321308
+      "symbol": "EMR",
+      "weight": 0.0331775,
+      "daily": -2.56
     },
     {
       "symbol": "NUE",
-      "weight": 0.0320708,
-      "daily": -0.17
+      "weight": 0.0325912,
+      "daily": -0.53
     },
     {
-      "symbol": "DE",
-      "weight": 0.0314175,
-      "daily": -1.87
+      "symbol": "PH",
+      "weight": 0.031283602,
+      "daily": -2.25
     },
     {
-      "symbol": "ROK",
-      "weight": 0.0312624
+      "symbol": "UNP",
+      "weight": 0.0311079,
+      "daily": 0.24
+    },
+    {
+      "symbol": "NSC",
+      "weight": 0.0309618,
+      "daily": -0.07
+    },
+    {
+      "symbol": "ETN",
+      "weight": 0.030527301,
+      "daily": -7.57
+    },
+    {
+      "symbol": "CRH",
+      "weight": 0.0303365,
+      "daily": 2.41
+    },
+    {
+      "symbol": "CSX",
+      "weight": 0.030113101,
+      "daily": -0.08
     }
   ]
 }

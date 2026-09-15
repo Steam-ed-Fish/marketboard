@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-28",
+  "last_updated": "2026-09-15",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -10,16 +10,16 @@
   "market": {
     "next_fomc_date": "2026-09-16",
     "next_fomc_label": "Sep 16, 2026",
-    "rate_hold_pct": 65.6,
+    "rate_hold_pct": 39.6,
     "rate_cut_pct": 0.0,
-    "rate_hike_pct": 34.4,
+    "rate_hike_pct": 60.4,
     "current_rate": "3.50%–3.75%",
     "cpi": 3.5,
     "cpi_month": "June 2026",
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-08-28",
+    "cme_updated": "2026-09-15",
     "bls_unemp_updated": "2026-07-15",
     "rate_prob_source": "CME FedWatch (investing.com)"
   },
@@ -33,6 +33,13 @@
       "photo_url": "data/fedwatch_photos/warsh.jpg",
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/warsh.htm",
       "speeches": [
+        {
+          "date": "2026-08-28",
+          "event": "Warsh, In Our Time",
+          "url": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
+          "brief_summary": "Chairman Warsh advocates limiting forward guidance in normal times, emphasizing that monetary policy innovation should prioritize getting decisions right over pre-committing to future paths.",
+          "detailed_summary": "Warsh discusses the Fed's evolving approach to monetary policy in light of AI-driven productivity potential and changing economic conditions. He argues that forward guidance, while essential during the 2008 crisis, has become counterproductive in normal times by creating ambiguity and constraining policy flexibility. He emphasizes transparency must serve the paramount goal of sound monetary policy, not vice versa. Warsh establishes five task forces to study long-term implications of AI on productivity, employment, and market structure, though noting their recommendations will not affect current policy decisions."
+        },
         {
           "date": "2026-05-22",
           "event": "Sworn in as Chair, Federal Reserve Board",
@@ -123,6 +130,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
       "speeches": [
         {
+          "date": "2026-09-01",
+          "event": "Barr, Unlocking Opportunities for Workers and Entrepreneurs with a Criminal Record",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260901a.htm",
+          "brief_summary": "Governor Barr addresses financial inclusion and entrepreneurship barriers for individuals with criminal records, highlighting labor market challenges and systemic financial vulnerabilities while discussing policy solutions.",
+          "detailed_summary": "This speech focuses on financial inclusion and criminal justice reform rather than monetary policy implementation. Barr discusses employment barriers, occupational licensing restrictions, and financial system exclusion faced by formerly incarcerated individuals, citing SHED survey data showing 60% of convicted individuals report adequate financial well-being versus 75% of those without records. He emphasizes these barriers reduce labor supply and perpetuate disparities, particularly for communities of color. While addressing the economy separately, Barr notes inflation remains above target after stalling in 2025 and signals the September FOMC meeting will reassess policy stance depending on inflation moderation trends."
+        },
+        {
           "date": "2026-07-14",
           "event": "Barr, Will Artificial Intelligence Broadly Raise Living Standards or Drive Income and Wealth Inequality?",
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260714a.htm",
@@ -149,13 +163,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260514a.htm",
           "brief_summary": "Governor Barr argues that reducing the Fed's balance sheet size is the wrong objective, as adequate reserves are essential for banking system resilience, payment system efficiency, and financial stability.",
           "detailed_summary": "Barr contends that the Fed's balance sheet size is a misconceived measure of its footprint in financial markets, which encompasses monetary policy implementation, bank supervision, payment system operations, and fiscal agency functions. He emphasizes that the current ample-reserves regime efficiently controls the federal funds rate through administered rates rather than reserve quantity adjustments, and that the $3 trillion in reserves supports banking system safety, liquidity management, and financial stability. Barr argues many balance sheet reduction proposals would paradoxically increase Fed market intervention frequency and raise financial stability risks, while creating reserves is costless to taxpayers since the Fed remits excess earnings."
-        },
-        {
-          "date": "2026-04-14",
-          "event": "Barr, Rural Communities: Worth the Investment",
-          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260414a.htm",
-          "brief_summary": "Governor Barr discusses rural economic development challenges and opportunities, emphasizing diverse community needs, intrinsic constraints like population decline, and innovative local solutions.",
-          "detailed_summary": "This speech addresses rural community economic development rather than monetary policy. Barr highlights structural challenges facing rural America including population aging, migration dependence, institutional losses, and housing affordability. He emphasizes that rural communities are diverse with distinct needs requiring flexible, localized solutions. The speech draws on Barr's travel experiences visiting rural regions to showcase examples of innovation, such as CDFIs preserving banking access and philanthropic partnerships addressing infrastructure gaps. While not setting monetary policy stance, the address underscores the Federal Reserve's commitment to understanding and supporting rural economic resilience."
         }
       ]
     },
@@ -467,6 +474,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/waller.htm",
       "speeches": [
         {
+          "date": "2026-09-03",
+          "event": "Waller, The Economic Outlook and Some Comments on My Policy Communication",
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260903a.htm",
+          "brief_summary": "Waller sees disinflation signs despite inflation remaining above 2% target; would support holding rates if August data confirms improvement, otherwise may raise rates September 15-16.",
+          "detailed_summary": "Governor Waller presented a cautious optimistic outlook on September 3, 2026. While PCE inflation remains elevated at 3.7% annually and core PCE at 3.3%, recent three-month core inflation has declined to 3.05% from 4.76% in February, signaling disinflation progress. The economy shows solid fundamentals with 2%+ expected GDP growth, strong consumer spending, robust business investment in AI infrastructure, and unemployment at 4.1%. Waller indicated the current federal funds rate may be appropriate if August data confirms disinflationary trends continue, but emphasized considerable uncertainty around military conflicts, trade policy, and AI's economic effects could warrant a rate increase at the September 15-16 FOMC meeting if incoming data disappoints."
+        },
+        {
           "date": "2026-07-13",
           "event": "Waller, Monetary Policy at a Crossroads",
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260713a.htm",
@@ -493,13 +507,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260522a.htm",
           "brief_summary": "Fed should pause rate cuts and remove easing bias due to Middle East energy shock pushing inflation higher, though rate hikes unlikely near-term given stable but not booming labor market.",
           "detailed_summary": "Governor Waller addresses how the Middle East conflict's supply disruptions and rising energy prices have shifted monetary policy priorities from labor market concerns to inflation risks. While recent data show labor market stabilization (4.3% unemployment, hiring improvement), headline inflation is rising and moving in the wrong direction. Waller supports holding rates steady, removing the easing bias from policy statements, and rules out near-term rate cuts unless inflation improves or labor market deteriorates significantly. He cautions that rate hikes remain possible if inflation expectations become unanchored, though near-term increases could damage the still-recovering economy."
-        },
-        {
-          "date": "2026-05-08",
-          "event": "Waller, Update On Federal Reserve Bank Operations",
-          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260508a.htm",
-          "brief_summary": "Governor Waller discusses centralizing Federal Reserve back-office operations while preserving regional independence and monetary policy decision-making across the 12 Reserve Banks.",
-          "detailed_summary": "This speech addresses Federal Reserve Bank operations rather than monetary policy stance. Waller proposes standardizing and centralizing non-monetary functions like IT, human resources, and financial management across the 12 Reserve Banks while maintaining district-level control over monetary policy voting, research, supervision, and community development. He emphasizes this operational restructuring preserves the Federal Reserve's federated design and independence by distinguishing between functions unique to districts (which should remain locally controlled) and generic back-office services (which benefit from System-wide standardization). Waller stresses the need for a cultural shift toward \"System first, Bank second\" governance and collective decision-making to achieve operational efficiency and cost savings."
         }
       ]
     },
