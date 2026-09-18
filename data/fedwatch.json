@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-18",
+  "last_updated": "2026-09-19",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -176,6 +176,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
         {
+          "date": "2026-09-18",
+          "event": "Bowman, Initial Findings from Independent Review of Silicon Valley Bank",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260918b.htm",
+          "brief_summary": "Speech At the Luncheon of the Lord Mayor City of London at Mansion House, London, United Kingdom",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-07-14",
           "event": "Bowman, Responsible Innovation and Financial Inclusion",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260714a.htm",
@@ -202,13 +209,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260707a.htm",
           "brief_summary": "Vice Chair Bowman discusses the Financial Stability Board's consultation report on sound practices for responsible AI adoption in financial institutions, emphasizing proportionality and risk-based governance.",
           "detailed_summary": "This speech addresses regulatory guidance on artificial intelligence use in banking, not monetary policy. Bowman presents the FSB's framework for responsible AI adoption, noting the Federal Reserve has monitored bank AI usage for a decade with increasing deployment across institutions of all sizes. The report emphasizes proportionality—lighter supervisory touch for lower-risk AI uses and tailored governance based on materiality, institutional complexity, and size. Bowman welcomes feedback on whether guidance balances innovation promotion with adequate safeguards for higher-risk applications before finalization as a U.S. G-20 deliverable."
-        },
-        {
-          "date": "2026-05-14",
-          "event": "Bowman, Opening Remarks",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260514a.htm",
-          "brief_summary": "Vice Chair Bowman advocates tailoring regulatory and supervisory approaches to community banks, criticizing one-size-fits-all rules that burden smaller institutions disproportionately.",
-          "detailed_summary": "Bowman's speech addresses regulatory burden on community banks, particularly CECL accounting requirements and Regulation O compliance that impose costs without commensurate safety benefits. She argues supervisory approaches should focus on material financial risks rather than procedural violations, citing examples where minor technical infractions receive excessive enforcement scrutiny. The Federal Reserve has published supervisory operating principles to refocus supervision on genuine threats to bank soundness, clarifying standards for Matters Requiring Attention and supporting community banks' ability to adapt to market changes while serving their communities effectively."
         }
       ]
     },
