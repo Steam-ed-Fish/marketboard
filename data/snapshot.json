@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-09-21T22:52:29.487294Z",
+  "built_at": "2026-09-22T04:43:59.193620Z",
   "groups": {
     "Indices": [
       {
@@ -601,7 +601,7 @@
         "wtd": 4.93,
         "ytd": 78.31,
         "stage": 2,
-        "vol_ratio": 1.1,
+        "vol_ratio": 1.11,
         "vol_chart": "data/charts/vol_SOXX.png",
         "atr_pct": 3.2,
         "dist_sma50_atr": 2.01,
@@ -890,7 +890,7 @@
         "is_rrg_row": true,
         "em_pct": null,
         "em_days": null,
-        "rs_composite": 30.0
+        "rs_composite": 31.0
       },
       {
         "ticker": "The Mag 7",
@@ -916,7 +916,7 @@
           "above_200": 6,
           "total": 7
         },
-        "em_pct": 3.11,
+        "em_pct": 3.07,
         "em_days": null,
         "rs_composite": 31.0
       },
@@ -944,9 +944,9 @@
           "above_200": 5,
           "total": 7
         },
-        "em_pct": 3.95,
+        "em_pct": 3.79,
         "em_days": null,
-        "rs_composite": 31.0
+        "rs_composite": 32.0
       },
       {
         "ticker": "The Software 7",
@@ -972,7 +972,7 @@
           "above_200": 4,
           "total": 7
         },
-        "em_pct": 4.23,
+        "em_pct": 4.22,
         "em_days": null,
         "rs_composite": 32.0
       },
@@ -984,7 +984,7 @@
         "20d": 3.73,
         "wtd": 2.82,
         "ytd": 3.11,
-        "vol_ratio": 1.3,
+        "vol_ratio": 1.31,
         "vol_chart": "data/charts/vol_Glance_The_New_Staples_7.png",
         "atr_pct": 2.9,
         "dist_sma50_atr": 1.2,
@@ -1000,7 +1000,7 @@
           "above_200": 5,
           "total": 7
         },
-        "em_pct": 3.26,
+        "em_pct": 3.2,
         "em_days": null,
         "rs_composite": 32.0
       },
@@ -1030,7 +1030,7 @@
         },
         "em_pct": 2.01,
         "em_days": null,
-        "rs_composite": 32.0
+        "rs_composite": 33.0
       },
       {
         "ticker": "The Toll Road 7",
@@ -1084,9 +1084,9 @@
           "above_200": 7,
           "total": 7
         },
-        "em_pct": 3.82,
+        "em_pct": 3.64,
         "em_days": null,
-        "rs_composite": 33.0
+        "rs_composite": 34.0
       },
       {
         "ticker": "The Defense 7",
@@ -1096,7 +1096,7 @@
         "20d": -6.52,
         "wtd": 0.46,
         "ytd": -6.74,
-        "vol_ratio": 0.95,
+        "vol_ratio": 0.96,
         "vol_chart": "data/charts/vol_Glance_The_Defense_7.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": -2.65,
@@ -1112,7 +1112,7 @@
           "above_200": 1,
           "total": 7
         },
-        "em_pct": 3.5,
+        "em_pct": 3.44,
         "em_days": null,
         "rs_composite": 34.0
       },
@@ -1142,7 +1142,7 @@
         },
         "em_pct": 3.6,
         "em_days": null,
-        "rs_composite": 34.0
+        "rs_composite": 35.0
       },
       {
         "ticker": "The Semi 7",
@@ -1152,7 +1152,7 @@
         "20d": 14.5,
         "wtd": 6.01,
         "ytd": 94.6,
-        "vol_ratio": 1.38,
+        "vol_ratio": 1.39,
         "vol_chart": "data/charts/vol_Glance_The_Semi_7.png",
         "atr_pct": 4.2,
         "dist_sma50_atr": 2.5,
@@ -1198,7 +1198,7 @@
         },
         "em_pct": 4.54,
         "em_days": null,
-        "rs_composite": 35.0
+        "rs_composite": 36.0
       },
       {
         "ticker": "The Buildout 7",
@@ -1282,7 +1282,7 @@
         },
         "em_pct": 7.3,
         "em_days": null,
-        "rs_composite": 36.0
+        "rs_composite": 37.0
       },
       {
         "ticker": "The New Metals 7",
@@ -1338,7 +1338,7 @@
         },
         "em_pct": 2.41,
         "em_days": null,
-        "rs_composite": 37.0
+        "rs_composite": 38.0
       },
       {
         "ticker": "The Health 7",
@@ -1394,7 +1394,7 @@
         },
         "em_pct": 3.47,
         "em_days": null,
-        "rs_composite": 38.0
+        "rs_composite": 39.0
       },
       {
         "ticker": "The Freight 7",
@@ -1478,7 +1478,7 @@
         },
         "em_pct": 3.39,
         "em_days": null,
-        "rs_composite": 39.0
+        "rs_composite": 40.0
       }
     ],
     "Sel Sectors": [
@@ -1566,18 +1566,88 @@
       },
       {
         "ticker": "XLI",
-        "name": "XLI",
-        "current_price": null,
-        "change": null,
-        "change_pct": null,
-        "wtd_pct": null,
-        "mtd_pct": null,
-        "ytd_pct": null,
-        "volume_avg": null,
-        "blank_reason": "no fresh data — stale fallback disabled",
+        "daily": 0.4,
+        "intra": -0.22,
+        "5d": 0.3,
+        "20d": -5.44,
+        "wtd": 0.4,
+        "ytd": 8.45,
+        "stage": 1,
+        "vol_ratio": 1.17,
+        "vol_chart": "data/charts/vol_XLI.png",
+        "atr_pct": 1.4,
+        "dist_sma50_atr": -3.25,
+        "rs": 10.0,
+        "rs_chart": "data/charts/XLI.png",
+        "long": [
+          "DUSL"
+        ],
+        "short": [],
+        "abc": "C",
+        "gaps": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "sr": {
+          "support": [
+            {
+              "price": 156.56,
+              "score": 18,
+              "dist_pct": -7.9
+            },
+            {
+              "price": 153.88,
+              "score": 40,
+              "dist_pct": -9.5
+            },
+            {
+              "price": 150.12,
+              "score": 34,
+              "dist_pct": -11.7
+            }
+          ],
+          "resistance": [
+            {
+              "price": 175.78,
+              "score": 31,
+              "dist_pct": 3.4
+            },
+            {
+              "price": 180.37,
+              "score": 36,
+              "dist_pct": 6.1
+            },
+            {
+              "price": 185.59,
+              "score": 24,
+              "dist_pct": 9.2
+            }
+          ]
+        },
+        "above_sma20": false,
+        "above_sma50": false,
+        "above_sma200": false,
+        "trendlines": {
+          "support": {
+            "t1": "2026-07-08",
+            "p1": 178.6,
+            "t2": "2026-09-21",
+            "p2": 168.93
+          },
+          "resistance": {
+            "t1": "2026-05-27",
+            "p1": 173.96,
+            "t2": "2026-09-21",
+            "p2": 192.43
+          }
+        },
+        "consolidation": null,
         "em_pct": null,
         "em_days": null,
-        "rs_composite": 40.0
+        "rs_composite": 26.0
       },
       {
         "ticker": "XLC",
@@ -2013,7 +2083,7 @@
         "consolidation": null,
         "em_pct": 1.63,
         "em_days": 3,
-        "rs_composite": 42.0
+        "rs_composite": 41.0
       },
       {
         "ticker": "XLB",
@@ -2119,7 +2189,7 @@
         "volume_avg": null,
         "blank_reason": "no fresh data — stale fallback disabled",
         "em_pct": 2.53,
-        "em_days": 4,
+        "em_days": 3,
         "rs_composite": 41.0
       },
       {
@@ -2966,7 +3036,7 @@
         "wtd": 4.02,
         "ytd": 59.67,
         "stage": 2,
-        "vol_ratio": 1.52,
+        "vol_ratio": 1.53,
         "vol_chart": "data/charts/vol_SMH.png",
         "atr_pct": 2.9,
         "dist_sma50_atr": 1.94,
@@ -3290,7 +3360,7 @@
         "wtd": 2.91,
         "ytd": 21.14,
         "stage": 2,
-        "vol_ratio": 0.98,
+        "vol_ratio": 0.99,
         "vol_chart": "data/charts/vol_WGMI.png",
         "atr_pct": 5.9,
         "dist_sma50_atr": 0.88,
@@ -3807,7 +3877,7 @@
         "wtd": 2.8,
         "ytd": 2.55,
         "stage": 3,
-        "vol_ratio": 1.21,
+        "vol_ratio": 1.22,
         "vol_chart": "data/charts/vol_JETS.png",
         "atr_pct": 2.3,
         "dist_sma50_atr": -1.61,
@@ -4402,19 +4472,96 @@
       },
       {
         "ticker": "XBI",
-        "name": "XBI",
-        "current_price": null,
-        "change": null,
-        "change_pct": null,
-        "wtd_pct": null,
-        "mtd_pct": null,
-        "ytd_pct": null,
-        "volume_avg": null,
-        "blank_reason": "no fresh data — stale fallback disabled",
+        "daily": 0.96,
+        "intra": -0.16,
+        "5d": 0.4,
+        "20d": -4.53,
+        "wtd": 0.96,
+        "ytd": 23.88,
+        "stage": null,
+        "vol_ratio": 0.96,
+        "vol_chart": "data/charts/vol_XBI.png",
+        "atr_pct": 2.5,
+        "dist_sma50_atr": 0.17,
+        "rs": null,
+        "rs_chart": null,
+        "long": [
+          "LABU"
+        ],
+        "short": [
+          "LABD"
+        ],
+        "abc": "B",
+        "gaps": [
+          null,
+          null,
+          "up",
+          null,
+          null
+        ],
+        "sr": {
+          "support": [
+            {
+              "price": 156.37,
+              "score": 25,
+              "dist_pct": -1.2
+            },
+            {
+              "price": 136.78,
+              "score": 19,
+              "dist_pct": -13.6
+            },
+            {
+              "price": 132.95,
+              "score": 22,
+              "dist_pct": -16.0
+            }
+          ],
+          "resistance": [
+            {
+              "price": 160.15,
+              "score": 17,
+              "dist_pct": 1.2
+            },
+            {
+              "price": 166.88,
+              "score": 4,
+              "dist_pct": 5.5
+            },
+            {
+              "price": 169.89,
+              "score": 6,
+              "dist_pct": 7.4
+            }
+          ],
+          "near": {
+            "type": "resistance",
+            "price": 160.15,
+            "dist_pct": 1.2
+          }
+        },
+        "above_sma20": false,
+        "above_sma50": true,
+        "above_sma200": null,
+        "trendlines": {
+          "support": {
+            "t1": "2026-05-19",
+            "p1": 125.07,
+            "t2": "2026-09-21",
+            "p2": 156.24
+          },
+          "resistance": {
+            "t1": "2026-07-30",
+            "p1": 151.84,
+            "t2": "2026-09-21",
+            "p2": 183.63
+          }
+        },
+        "consolidation": null,
         "sector": "Health Care",
         "em_pct": null,
         "em_days": null,
-        "rs_composite": 41.0
+        "rs_composite": 44.0
       },
       {
         "ticker": "KBE",
@@ -5300,7 +5447,7 @@
         "sector": "Real Estate",
         "em_pct": null,
         "em_days": null,
-        "rs_composite": 43.0
+        "rs_composite": 42.0
       },
       {
         "ticker": "UNG",
@@ -5311,7 +5458,7 @@
         "wtd": -1.44,
         "ytd": -14.93,
         "stage": 4,
-        "vol_ratio": 1.4,
+        "vol_ratio": 1.41,
         "vol_chart": "data/charts/vol_UNG.png",
         "atr_pct": 2.6,
         "dist_sma50_atr": 0.11,
@@ -6474,7 +6621,7 @@
         "wtd": 4.93,
         "ytd": 78.31,
         "stage": 2,
-        "vol_ratio": 1.1,
+        "vol_ratio": 1.11,
         "vol_chart": "data/charts/vol_SOXX.png",
         "atr_pct": 3.2,
         "dist_sma50_atr": 2.01,
@@ -6819,7 +6966,7 @@
         "wtd": 0.85,
         "ytd": 25.08,
         "stage": 2,
-        "vol_ratio": 0.8,
+        "vol_ratio": 0.81,
         "vol_chart": "data/charts/vol_AAPL.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": 2.66,
@@ -7060,8 +7207,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.83,
+        "em_days": 3,
         "rs_composite": 79.0
       },
       {
@@ -7156,7 +7303,7 @@
         "wtd": 11.34,
         "ytd": 13.97,
         "stage": 2,
-        "vol_ratio": 2.6,
+        "vol_ratio": 2.61,
         "vol_chart": "data/charts/vol_META.png",
         "atr_pct": 3.5,
         "dist_sma50_atr": 6.22,
@@ -7244,7 +7391,7 @@
         "wtd": 2.3,
         "ytd": 20.4,
         "stage": 2,
-        "vol_ratio": 0.81,
+        "vol_ratio": 0.82,
         "vol_chart": "data/charts/vol_NVDA.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 2.11,
@@ -7658,8 +7805,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.83,
+        "em_days": 3,
         "rs_composite": 79.0
       },
       {
@@ -7847,7 +7994,7 @@
         "wtd": 11.34,
         "ytd": 13.97,
         "stage": 2,
-        "vol_ratio": 2.6,
+        "vol_ratio": 2.61,
         "vol_chart": "data/charts/vol_META.png",
         "atr_pct": 3.5,
         "dist_sma50_atr": 6.22,
@@ -8004,7 +8151,7 @@
         "wtd": 0.24,
         "ytd": -25.14,
         "stage": 3,
-        "vol_ratio": 0.94,
+        "vol_ratio": 0.95,
         "vol_chart": "data/charts/vol_ADBE.png",
         "atr_pct": 4.0,
         "dist_sma50_atr": -0.69,
@@ -8338,8 +8485,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 4.19,
+        "em_days": 3,
         "rs_composite": 2.0
       },
       {
@@ -8434,7 +8581,7 @@
         "wtd": 1.63,
         "ytd": -6.63,
         "stage": 2,
-        "vol_ratio": 0.69,
+        "vol_ratio": 0.7,
         "vol_chart": "data/charts/vol_NOW.png",
         "atr_pct": 4.5,
         "dist_sma50_atr": 2.59,
@@ -8607,7 +8754,7 @@
         "wtd": 0.85,
         "ytd": 25.08,
         "stage": 2,
-        "vol_ratio": 0.8,
+        "vol_ratio": 0.81,
         "vol_chart": "data/charts/vol_AAPL.png",
         "atr_pct": 2.2,
         "dist_sma50_atr": 2.66,
@@ -8768,7 +8915,7 @@
         "wtd": 11.34,
         "ytd": 13.97,
         "stage": 2,
-        "vol_ratio": 2.6,
+        "vol_ratio": 2.61,
         "vol_chart": "data/charts/vol_META.png",
         "atr_pct": 3.5,
         "dist_sma50_atr": 6.22,
@@ -9019,8 +9166,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.83,
+        "em_days": 3,
         "rs_composite": 79.0
       },
       {
@@ -9109,7 +9256,7 @@
         "consolidation": null,
         "em_pct": 3.62,
         "em_days": 3,
-        "rs_composite": 27.0
+        "rs_composite": 28.0
       },
       {
         "ticker": "UBER",
@@ -10377,7 +10524,7 @@
         "consolidation": null,
         "em_pct": 5.63,
         "em_days": 24,
-        "rs_composite": 26.0
+        "rs_composite": 27.0
       }
     ],
     "The Energy 7": [
@@ -10553,8 +10700,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.56,
+        "em_days": 3,
         "rs_composite": 68.0
       },
       {
@@ -11344,7 +11491,7 @@
         "consolidation": null,
         "em_pct": 1.91,
         "em_days": 3,
-        "rs_composite": 44.0
+        "rs_composite": 43.0
       },
       {
         "ticker": "BA",
@@ -11355,7 +11502,7 @@
         "wtd": 1.49,
         "ytd": -11.69,
         "stage": 4,
-        "vol_ratio": 1.07,
+        "vol_ratio": 1.08,
         "vol_chart": "data/charts/vol_BA.png",
         "atr_pct": 2.7,
         "dist_sma50_atr": -2.5,
@@ -11430,8 +11577,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": 2.84,
-        "em_days": 3,
+        "em_pct": null,
+        "em_days": null,
         "rs_composite": 18.0
       },
       {
@@ -11508,8 +11655,8 @@
           }
         },
         "consolidation": null,
-        "em_pct": null,
-        "em_days": null,
+        "em_pct": 2.5,
+        "em_days": 3,
         "rs_composite": 3.0
       },
       {
@@ -12113,7 +12260,7 @@
         "consolidation": null,
         "em_pct": 2.8,
         "em_days": 3,
-        "rs_composite": 28.0
+        "rs_composite": 29.0
       },
       {
         "ticker": "TT",
@@ -12214,7 +12361,7 @@
         "wtd": 2.3,
         "ytd": 20.4,
         "stage": 2,
-        "vol_ratio": 0.81,
+        "vol_ratio": 0.82,
         "vol_chart": "data/charts/vol_NVDA.png",
         "atr_pct": 2.8,
         "dist_sma50_atr": 2.11,
@@ -12380,7 +12527,7 @@
         "wtd": 9.95,
         "ytd": 175.44,
         "stage": 2,
-        "vol_ratio": 2.33,
+        "vol_ratio": 2.34,
         "vol_chart": "data/charts/vol_AMD.png",
         "atr_pct": 4.3,
         "dist_sma50_atr": 5.6,
@@ -12535,7 +12682,7 @@
         "wtd": 12.14,
         "ytd": 209.24,
         "stage": 2,
-        "vol_ratio": 1.95,
+        "vol_ratio": 1.96,
         "vol_chart": "data/charts/vol_INTC.png",
         "atr_pct": 5.4,
         "dist_sma50_atr": 4.69,
@@ -12701,7 +12848,7 @@
         "wtd": 5.38,
         "ytd": 187.93,
         "stage": 2,
-        "vol_ratio": 0.96,
+        "vol_ratio": 0.97,
         "vol_chart": "data/charts/vol_MRVL.png",
         "atr_pct": 5.6,
         "dist_sma50_atr": 3.36,
@@ -13128,7 +13275,7 @@
         "wtd": 2.41,
         "ytd": 39.28,
         "stage": 2,
-        "vol_ratio": 1.01,
+        "vol_ratio": 1.02,
         "vol_chart": "data/charts/vol_TSM.png",
         "atr_pct": 2.4,
         "dist_sma50_atr": 2.71,
@@ -13798,7 +13945,7 @@
         "consolidation": null,
         "em_pct": 7.23,
         "em_days": 24,
-        "rs_composite": 29.0
+        "rs_composite": 30.0
       },
       {
         "ticker": "GEV",
@@ -15630,7 +15777,7 @@
         "wtd": -2.48,
         "ytd": -4.49,
         "stage": 4,
-        "vol_ratio": 0.63,
+        "vol_ratio": 0.64,
         "vol_chart": "data/charts/vol_PAAS.png",
         "atr_pct": 4.3,
         "dist_sma50_atr": 0.26,
@@ -15715,7 +15862,7 @@
         "wtd": 0.68,
         "ytd": 8.16,
         "stage": 2,
-        "vol_ratio": 0.92,
+        "vol_ratio": 0.93,
         "vol_chart": "data/charts/vol_JPM.png",
         "atr_pct": 1.9,
         "dist_sma50_atr": -0.22,
@@ -19722,7 +19869,7 @@
       "5d": 6.68,
       "20d": 8.15,
       "ytd": 45.14,
-      "vol_ratio": 1.31,
+      "vol_ratio": 1.32,
       "atr_pct": 3.1,
       "dist_sma50_atr": 2.24,
       "rs": null,
@@ -19921,15 +20068,15 @@
         "CIFR"
       ],
       "etf": null,
-      "daily": 2.99,
-      "intra": 0.79,
-      "wtd": 2.99,
-      "5d": 11.99,
-      "20d": 11.32,
-      "ytd": 45.25,
-      "vol_ratio": 1.15,
+      "daily": 3.06,
+      "intra": 0.88,
+      "wtd": 3.06,
+      "5d": 11.85,
+      "20d": 11.28,
+      "ytd": 49.3,
+      "vol_ratio": 1.21,
       "atr_pct": 7.3,
-      "dist_sma50_atr": 0.89,
+      "dist_sma50_atr": 0.99,
       "rs": null,
       "vol_chart": "data/charts/vol_Theme_Neocloud.png",
       "constituent_daily": {
@@ -19937,7 +20084,7 @@
         "NBIS": 4.14,
         "APLD": 0.25,
         "IREN": 1.18,
-        "WULF": 2.59,
+        "WULF": null,
         "HUT": 4.74,
         "CIFR": 3.05
       }
@@ -22049,7 +22196,7 @@
       "target_lower": 3.75,
       "target_upper": 4.0,
       "next_fomc_date": "2026-10-28",
-      "next_fomc_days": 37,
+      "next_fomc_days": 36,
       "speeches": [],
       "hawk_dove_score": null,
       "market_implied_cuts": null
@@ -22429,6 +22576,1461 @@
           "value": 20.16
         }
       ]
+    },
+    "vix_spreads": {
+      "spreads": [
+        {
+          "key": "vxn_vix",
+          "label_en": "Nasdaq−S&P",
+          "label_zh": "纳指−标普",
+          "metric": "tech risk premium",
+          "a": "^VXN",
+          "b": "^VIX",
+          "value": 5.52,
+          "vs_20d": -0.0,
+          "read": "tech vs broad elevated",
+          "history": [
+            {
+              "t": "2026-05-19",
+              "v": 6.03
+            },
+            {
+              "t": "2026-05-20",
+              "v": 6.27
+            },
+            {
+              "t": "2026-05-21",
+              "v": 5.98
+            },
+            {
+              "t": "2026-05-22",
+              "v": 6.12
+            },
+            {
+              "t": "2026-05-26",
+              "v": 6.89
+            },
+            {
+              "t": "2026-05-27",
+              "v": 7.1
+            },
+            {
+              "t": "2026-05-28",
+              "v": 7.18
+            },
+            {
+              "t": "2026-05-29",
+              "v": 7.26
+            },
+            {
+              "t": "2026-06-01",
+              "v": 7.13
+            },
+            {
+              "t": "2026-06-02",
+              "v": 7.5
+            },
+            {
+              "t": "2026-06-03",
+              "v": 7.78
+            },
+            {
+              "t": "2026-06-04",
+              "v": 7.82
+            },
+            {
+              "t": "2026-06-05",
+              "v": 8.96
+            },
+            {
+              "t": "2026-06-08",
+              "v": 8.2
+            },
+            {
+              "t": "2026-06-09",
+              "v": 9.91
+            },
+            {
+              "t": "2026-06-10",
+              "v": 10.46
+            },
+            {
+              "t": "2026-06-11",
+              "v": 11.0
+            },
+            {
+              "t": "2026-06-12",
+              "v": 9.59
+            },
+            {
+              "t": "2026-06-15",
+              "v": 9.72
+            },
+            {
+              "t": "2026-06-16",
+              "v": 10.54
+            },
+            {
+              "t": "2026-06-17",
+              "v": 10.12
+            },
+            {
+              "t": "2026-06-18",
+              "v": 9.91
+            },
+            {
+              "t": "2026-06-22",
+              "v": 10.39
+            },
+            {
+              "t": "2026-06-23",
+              "v": 12.88
+            },
+            {
+              "t": "2026-06-24",
+              "v": 11.55
+            },
+            {
+              "t": "2026-06-25",
+              "v": 12.02
+            },
+            {
+              "t": "2026-06-26",
+              "v": 12.41
+            },
+            {
+              "t": "2026-06-29",
+              "v": 11.72
+            },
+            {
+              "t": "2026-06-30",
+              "v": 10.66
+            },
+            {
+              "t": "2026-07-01",
+              "v": 11.1
+            },
+            {
+              "t": "2026-07-02",
+              "v": 11.83
+            },
+            {
+              "t": "2026-07-06",
+              "v": 11.24
+            },
+            {
+              "t": "2026-07-07",
+              "v": 11.79
+            },
+            {
+              "t": "2026-07-08",
+              "v": 10.96
+            },
+            {
+              "t": "2026-07-09",
+              "v": 11.07
+            },
+            {
+              "t": "2026-07-10",
+              "v": 9.86
+            },
+            {
+              "t": "2026-07-13",
+              "v": 10.14
+            },
+            {
+              "t": "2026-07-14",
+              "v": 9.78
+            },
+            {
+              "t": "2026-07-15",
+              "v": 9.98
+            },
+            {
+              "t": "2026-07-16",
+              "v": 10.61
+            },
+            {
+              "t": "2026-07-17",
+              "v": 10.26
+            },
+            {
+              "t": "2026-07-20",
+              "v": 9.88
+            },
+            {
+              "t": "2026-07-21",
+              "v": 9.61
+            },
+            {
+              "t": "2026-07-22",
+              "v": 10.1
+            },
+            {
+              "t": "2026-07-23",
+              "v": 9.36
+            },
+            {
+              "t": "2026-07-24",
+              "v": 9.81
+            },
+            {
+              "t": "2026-07-27",
+              "v": 9.98
+            },
+            {
+              "t": "2026-07-28",
+              "v": 10.4
+            },
+            {
+              "t": "2026-07-29",
+              "v": 10.18
+            },
+            {
+              "t": "2026-07-30",
+              "v": 10.46
+            },
+            {
+              "t": "2026-07-31",
+              "v": 10.01
+            },
+            {
+              "t": "2026-08-03",
+              "v": 8.91
+            },
+            {
+              "t": "2026-08-04",
+              "v": 8.98
+            },
+            {
+              "t": "2026-08-05",
+              "v": 8.34
+            },
+            {
+              "t": "2026-08-06",
+              "v": 8.8
+            },
+            {
+              "t": "2026-08-07",
+              "v": 7.92
+            },
+            {
+              "t": "2026-08-10",
+              "v": 7.58
+            },
+            {
+              "t": "2026-08-11",
+              "v": 7.1
+            },
+            {
+              "t": "2026-08-12",
+              "v": 6.42
+            },
+            {
+              "t": "2026-08-13",
+              "v": 6.6
+            },
+            {
+              "t": "2026-08-14",
+              "v": 6.47
+            },
+            {
+              "t": "2026-08-17",
+              "v": 6.32
+            },
+            {
+              "t": "2026-08-18",
+              "v": 6.72
+            },
+            {
+              "t": "2026-08-19",
+              "v": 7.15
+            },
+            {
+              "t": "2026-08-20",
+              "v": 7.25
+            },
+            {
+              "t": "2026-08-21",
+              "v": 6.85
+            },
+            {
+              "t": "2026-08-24",
+              "v": 6.84
+            },
+            {
+              "t": "2026-08-25",
+              "v": 6.34
+            },
+            {
+              "t": "2026-08-26",
+              "v": 6.21
+            },
+            {
+              "t": "2026-08-27",
+              "v": 5.73
+            },
+            {
+              "t": "2026-08-28",
+              "v": 5.49
+            },
+            {
+              "t": "2026-08-31",
+              "v": 5.26
+            },
+            {
+              "t": "2026-09-01",
+              "v": 5.62
+            },
+            {
+              "t": "2026-09-02",
+              "v": 5.87
+            },
+            {
+              "t": "2026-09-03",
+              "v": 5.84
+            },
+            {
+              "t": "2026-09-04",
+              "v": 5.51
+            },
+            {
+              "t": "2026-09-08",
+              "v": 5.99
+            },
+            {
+              "t": "2026-09-09",
+              "v": 5.86
+            },
+            {
+              "t": "2026-09-10",
+              "v": 5.49
+            },
+            {
+              "t": "2026-09-11",
+              "v": 5.18
+            },
+            {
+              "t": "2026-09-14",
+              "v": 4.95
+            },
+            {
+              "t": "2026-09-15",
+              "v": 5.06
+            },
+            {
+              "t": "2026-09-16",
+              "v": 4.73
+            },
+            {
+              "t": "2026-09-17",
+              "v": 4.52
+            },
+            {
+              "t": "2026-09-18",
+              "v": 4.48
+            },
+            {
+              "t": "2026-09-21",
+              "v": 5.52
+            }
+          ]
+        },
+        {
+          "key": "rvx_vix",
+          "label_en": "Russell2k−S&P",
+          "label_zh": "罗素2000−标普",
+          "metric": "small-cap risk premium",
+          "a": "^RVX",
+          "b": "^VIX",
+          "value": 4.05,
+          "vs_20d": 0.06,
+          "read": "small-cap breadth stress",
+          "history": [
+            {
+              "t": "2026-05-19",
+              "v": 6.78
+            },
+            {
+              "t": "2026-05-20",
+              "v": 6.95
+            },
+            {
+              "t": "2026-05-21",
+              "v": 7.38
+            },
+            {
+              "t": "2026-05-22",
+              "v": 7.5
+            },
+            {
+              "t": "2026-05-26",
+              "v": 7.12
+            },
+            {
+              "t": "2026-05-27",
+              "v": 7.09
+            },
+            {
+              "t": "2026-05-28",
+              "v": 7.01
+            },
+            {
+              "t": "2026-05-29",
+              "v": 6.71
+            },
+            {
+              "t": "2026-06-01",
+              "v": 6.87
+            },
+            {
+              "t": "2026-06-02",
+              "v": 6.99
+            },
+            {
+              "t": "2026-06-03",
+              "v": 7.21
+            },
+            {
+              "t": "2026-06-04",
+              "v": 7.28
+            },
+            {
+              "t": "2026-06-05",
+              "v": 4.81
+            },
+            {
+              "t": "2026-06-08",
+              "v": 5.98
+            },
+            {
+              "t": "2026-06-09",
+              "v": 6.34
+            },
+            {
+              "t": "2026-06-10",
+              "v": 6.1
+            },
+            {
+              "t": "2026-06-11",
+              "v": 6.52
+            },
+            {
+              "t": "2026-06-12",
+              "v": 6.59
+            },
+            {
+              "t": "2026-06-15",
+              "v": 6.98
+            },
+            {
+              "t": "2026-06-16",
+              "v": 6.63
+            },
+            {
+              "t": "2026-06-17",
+              "v": 6.41
+            },
+            {
+              "t": "2026-06-18",
+              "v": 6.46
+            },
+            {
+              "t": "2026-06-22",
+              "v": 6.33
+            },
+            {
+              "t": "2026-06-23",
+              "v": 5.57
+            },
+            {
+              "t": "2026-06-24",
+              "v": 6.02
+            },
+            {
+              "t": "2026-06-25",
+              "v": 5.75
+            },
+            {
+              "t": "2026-06-26",
+              "v": 5.55
+            },
+            {
+              "t": "2026-06-29",
+              "v": 5.59
+            },
+            {
+              "t": "2026-06-30",
+              "v": 5.27
+            },
+            {
+              "t": "2026-07-01",
+              "v": 5.12
+            },
+            {
+              "t": "2026-07-02",
+              "v": 5.46
+            },
+            {
+              "t": "2026-07-06",
+              "v": 5.41
+            },
+            {
+              "t": "2026-07-07",
+              "v": 5.53
+            },
+            {
+              "t": "2026-07-08",
+              "v": 5.21
+            },
+            {
+              "t": "2026-07-09",
+              "v": 5.0
+            },
+            {
+              "t": "2026-07-10",
+              "v": 4.95
+            },
+            {
+              "t": "2026-07-13",
+              "v": 4.97
+            },
+            {
+              "t": "2026-07-14",
+              "v": 4.17
+            },
+            {
+              "t": "2026-07-15",
+              "v": 4.19
+            },
+            {
+              "t": "2026-07-16",
+              "v": 3.91
+            },
+            {
+              "t": "2026-07-17",
+              "v": 2.91
+            },
+            {
+              "t": "2026-07-20",
+              "v": 3.38
+            },
+            {
+              "t": "2026-07-21",
+              "v": 3.62
+            },
+            {
+              "t": "2026-07-22",
+              "v": 4.48
+            },
+            {
+              "t": "2026-07-23",
+              "v": 3.86
+            },
+            {
+              "t": "2026-07-24",
+              "v": 3.75
+            },
+            {
+              "t": "2026-07-27",
+              "v": 3.86
+            },
+            {
+              "t": "2026-07-28",
+              "v": 4.11
+            },
+            {
+              "t": "2026-07-29",
+              "v": 3.29
+            },
+            {
+              "t": "2026-07-30",
+              "v": 4.1
+            },
+            {
+              "t": "2026-07-31",
+              "v": 4.28
+            },
+            {
+              "t": "2026-08-03",
+              "v": 4.23
+            },
+            {
+              "t": "2026-08-04",
+              "v": 3.87
+            },
+            {
+              "t": "2026-08-05",
+              "v": 3.57
+            },
+            {
+              "t": "2026-08-06",
+              "v": 4.0
+            },
+            {
+              "t": "2026-08-07",
+              "v": 3.52
+            },
+            {
+              "t": "2026-08-10",
+              "v": 3.75
+            },
+            {
+              "t": "2026-08-11",
+              "v": 3.79
+            },
+            {
+              "t": "2026-08-12",
+              "v": 3.45
+            },
+            {
+              "t": "2026-08-13",
+              "v": 3.0
+            },
+            {
+              "t": "2026-08-14",
+              "v": 3.46
+            },
+            {
+              "t": "2026-08-17",
+              "v": 3.25
+            },
+            {
+              "t": "2026-08-18",
+              "v": 3.46
+            },
+            {
+              "t": "2026-08-19",
+              "v": 3.35
+            },
+            {
+              "t": "2026-08-20",
+              "v": 4.03
+            },
+            {
+              "t": "2026-08-21",
+              "v": 3.92
+            },
+            {
+              "t": "2026-08-24",
+              "v": 3.81
+            },
+            {
+              "t": "2026-08-25",
+              "v": 3.77
+            },
+            {
+              "t": "2026-08-26",
+              "v": 3.77
+            },
+            {
+              "t": "2026-08-27",
+              "v": 3.87
+            },
+            {
+              "t": "2026-08-28",
+              "v": 3.75
+            },
+            {
+              "t": "2026-08-31",
+              "v": 3.88
+            },
+            {
+              "t": "2026-09-01",
+              "v": 4.31
+            },
+            {
+              "t": "2026-09-02",
+              "v": 4.25
+            },
+            {
+              "t": "2026-09-03",
+              "v": 4.19
+            },
+            {
+              "t": "2026-09-04",
+              "v": 3.77
+            },
+            {
+              "t": "2026-09-08",
+              "v": 3.76
+            },
+            {
+              "t": "2026-09-09",
+              "v": 4.19
+            },
+            {
+              "t": "2026-09-10",
+              "v": 4.6
+            },
+            {
+              "t": "2026-09-11",
+              "v": 4.14
+            },
+            {
+              "t": "2026-09-14",
+              "v": 3.85
+            },
+            {
+              "t": "2026-09-15",
+              "v": 4.35
+            },
+            {
+              "t": "2026-09-16",
+              "v": 3.78
+            },
+            {
+              "t": "2026-09-17",
+              "v": 3.77
+            },
+            {
+              "t": "2026-09-18",
+              "v": 3.94
+            },
+            {
+              "t": "2026-09-21",
+              "v": 4.05
+            }
+          ]
+        },
+        {
+          "key": "vixeq_vix",
+          "label_en": "Constituent−Index",
+          "label_zh": "成分股−指数",
+          "metric": "implied dispersion",
+          "a": "^VIXEQ",
+          "b": "^VIX",
+          "value": 23.85,
+          "vs_20d": 3.02,
+          "read": "extreme dispersion / stock-pickers' tape",
+          "history": [
+            {
+              "t": "2026-05-19",
+              "v": 24.61
+            },
+            {
+              "t": "2026-05-20",
+              "v": 25.46
+            },
+            {
+              "t": "2026-05-21",
+              "v": 24.24
+            },
+            {
+              "t": "2026-05-22",
+              "v": 23.9
+            },
+            {
+              "t": "2026-05-26",
+              "v": 26.68
+            },
+            {
+              "t": "2026-05-27",
+              "v": 27.36
+            },
+            {
+              "t": "2026-05-28",
+              "v": 27.32
+            },
+            {
+              "t": "2026-05-29",
+              "v": 29.4
+            },
+            {
+              "t": "2026-06-01",
+              "v": 30.83
+            },
+            {
+              "t": "2026-06-02",
+              "v": 30.97
+            },
+            {
+              "t": "2026-06-03",
+              "v": 30.49
+            },
+            {
+              "t": "2026-06-04",
+              "v": 28.33
+            },
+            {
+              "t": "2026-06-05",
+              "v": 23.54
+            },
+            {
+              "t": "2026-06-08",
+              "v": 26.3
+            },
+            {
+              "t": "2026-06-09",
+              "v": 25.63
+            },
+            {
+              "t": "2026-06-10",
+              "v": 23.18
+            },
+            {
+              "t": "2026-06-11",
+              "v": 25.81
+            },
+            {
+              "t": "2026-06-12",
+              "v": 26.63
+            },
+            {
+              "t": "2026-06-15",
+              "v": 27.95
+            },
+            {
+              "t": "2026-06-16",
+              "v": 26.54
+            },
+            {
+              "t": "2026-06-17",
+              "v": 25.88
+            },
+            {
+              "t": "2026-06-18",
+              "v": 28.64
+            },
+            {
+              "t": "2026-06-22",
+              "v": 29.61
+            },
+            {
+              "t": "2026-06-23",
+              "v": 26.89
+            },
+            {
+              "t": "2026-06-24",
+              "v": 27.91
+            },
+            {
+              "t": "2026-06-25",
+              "v": 28.01
+            },
+            {
+              "t": "2026-06-26",
+              "v": 27.95
+            },
+            {
+              "t": "2026-06-29",
+              "v": 29.84
+            },
+            {
+              "t": "2026-06-30",
+              "v": 30.94
+            },
+            {
+              "t": "2026-07-01",
+              "v": 30.68
+            },
+            {
+              "t": "2026-07-02",
+              "v": 31.44
+            },
+            {
+              "t": "2026-07-06",
+              "v": 33.31
+            },
+            {
+              "t": "2026-07-07",
+              "v": 32.53
+            },
+            {
+              "t": "2026-07-08",
+              "v": 33.11
+            },
+            {
+              "t": "2026-07-09",
+              "v": 34.14
+            },
+            {
+              "t": "2026-07-10",
+              "v": 33.94
+            },
+            {
+              "t": "2026-07-13",
+              "v": 32.72
+            },
+            {
+              "t": "2026-07-14",
+              "v": 33.62
+            },
+            {
+              "t": "2026-07-15",
+              "v": 33.66
+            },
+            {
+              "t": "2026-07-16",
+              "v": 32.66
+            },
+            {
+              "t": "2026-07-17",
+              "v": 31.69
+            },
+            {
+              "t": "2026-07-20",
+              "v": 32.02
+            },
+            {
+              "t": "2026-07-21",
+              "v": 33.38
+            },
+            {
+              "t": "2026-07-22",
+              "v": 33.54
+            },
+            {
+              "t": "2026-07-23",
+              "v": 30.82
+            },
+            {
+              "t": "2026-07-24",
+              "v": 29.24
+            },
+            {
+              "t": "2026-07-27",
+              "v": 29.73
+            },
+            {
+              "t": "2026-07-28",
+              "v": 29.59
+            },
+            {
+              "t": "2026-07-29",
+              "v": 27.22
+            },
+            {
+              "t": "2026-07-30",
+              "v": 29.18
+            },
+            {
+              "t": "2026-07-31",
+              "v": 28.43
+            },
+            {
+              "t": "2026-08-03",
+              "v": 29.16
+            },
+            {
+              "t": "2026-08-04",
+              "v": 29.23
+            },
+            {
+              "t": "2026-08-05",
+              "v": 27.67
+            },
+            {
+              "t": "2026-08-06",
+              "v": 26.46
+            },
+            {
+              "t": "2026-08-07",
+              "v": 24.74
+            },
+            {
+              "t": "2026-08-10",
+              "v": 24.28
+            },
+            {
+              "t": "2026-08-11",
+              "v": 23.23
+            },
+            {
+              "t": "2026-08-12",
+              "v": 23.14
+            },
+            {
+              "t": "2026-08-13",
+              "v": 23.09
+            },
+            {
+              "t": "2026-08-14",
+              "v": 22.12
+            },
+            {
+              "t": "2026-08-17",
+              "v": 22.46
+            },
+            {
+              "t": "2026-08-18",
+              "v": 21.95
+            },
+            {
+              "t": "2026-08-19",
+              "v": 23.02
+            },
+            {
+              "t": "2026-08-20",
+              "v": 22.4
+            },
+            {
+              "t": "2026-08-21",
+              "v": 22.84
+            },
+            {
+              "t": "2026-08-24",
+              "v": 22.29
+            },
+            {
+              "t": "2026-08-25",
+              "v": 22.5
+            },
+            {
+              "t": "2026-08-26",
+              "v": 22.79
+            },
+            {
+              "t": "2026-08-27",
+              "v": 22.01
+            },
+            {
+              "t": "2026-08-28",
+              "v": 20.83
+            },
+            {
+              "t": "2026-08-31",
+              "v": 20.88
+            },
+            {
+              "t": "2026-09-01",
+              "v": 19.88
+            },
+            {
+              "t": "2026-09-02",
+              "v": 20.59
+            },
+            {
+              "t": "2026-09-03",
+              "v": 20.87
+            },
+            {
+              "t": "2026-09-04",
+              "v": 21.27
+            },
+            {
+              "t": "2026-09-08",
+              "v": 22.17
+            },
+            {
+              "t": "2026-09-09",
+              "v": 20.34
+            },
+            {
+              "t": "2026-09-10",
+              "v": 18.53
+            },
+            {
+              "t": "2026-09-11",
+              "v": 18.62
+            },
+            {
+              "t": "2026-09-14",
+              "v": 18.91
+            },
+            {
+              "t": "2026-09-15",
+              "v": 19.05
+            },
+            {
+              "t": "2026-09-16",
+              "v": 18.76
+            },
+            {
+              "t": "2026-09-17",
+              "v": 20.91
+            },
+            {
+              "t": "2026-09-18",
+              "v": 21.57
+            },
+            {
+              "t": "2026-09-21",
+              "v": 23.85
+            }
+          ]
+        },
+        {
+          "key": "vvix",
+          "label_en": "Vol-of-Vol",
+          "label_zh": "波动率之波动",
+          "metric": "regime uncertainty",
+          "a": "^VVIX",
+          "b": null,
+          "value": 85.77,
+          "vs_20d": -3.9,
+          "read": "vol regime normal",
+          "history": [
+            {
+              "t": "2026-05-13",
+              "v": 98.36
+            },
+            {
+              "t": "2026-05-14",
+              "v": 94.26
+            },
+            {
+              "t": "2026-05-15",
+              "v": 92.94
+            },
+            {
+              "t": "2026-05-18",
+              "v": 91.18
+            },
+            {
+              "t": "2026-05-19",
+              "v": 94.61
+            },
+            {
+              "t": "2026-05-20",
+              "v": 96.45
+            },
+            {
+              "t": "2026-05-21",
+              "v": 91.88
+            },
+            {
+              "t": "2026-05-22",
+              "v": 91.16
+            },
+            {
+              "t": "2026-05-26",
+              "v": 89.55
+            },
+            {
+              "t": "2026-05-27",
+              "v": 87.53
+            },
+            {
+              "t": "2026-05-28",
+              "v": 86.03
+            },
+            {
+              "t": "2026-05-29",
+              "v": 86.06
+            },
+            {
+              "t": "2026-06-01",
+              "v": 91.6
+            },
+            {
+              "t": "2026-06-02",
+              "v": 90.53
+            },
+            {
+              "t": "2026-06-03",
+              "v": 89.8
+            },
+            {
+              "t": "2026-06-04",
+              "v": 85.75
+            },
+            {
+              "t": "2026-06-05",
+              "v": 102.04
+            },
+            {
+              "t": "2026-06-08",
+              "v": 92.4
+            },
+            {
+              "t": "2026-06-09",
+              "v": 95.81
+            },
+            {
+              "t": "2026-06-10",
+              "v": 108.16
+            },
+            {
+              "t": "2026-06-11",
+              "v": 100.63
+            },
+            {
+              "t": "2026-06-12",
+              "v": 93.82
+            },
+            {
+              "t": "2026-06-15",
+              "v": 87.58
+            },
+            {
+              "t": "2026-06-16",
+              "v": 87.69
+            },
+            {
+              "t": "2026-06-17",
+              "v": 94.53
+            },
+            {
+              "t": "2026-06-18",
+              "v": 88.43
+            },
+            {
+              "t": "2026-06-22",
+              "v": 91.72
+            },
+            {
+              "t": "2026-06-23",
+              "v": 99.5
+            },
+            {
+              "t": "2026-06-24",
+              "v": 95.58
+            },
+            {
+              "t": "2026-06-25",
+              "v": 91.19
+            },
+            {
+              "t": "2026-06-26",
+              "v": 89.02
+            },
+            {
+              "t": "2026-06-29",
+              "v": 88.71
+            },
+            {
+              "t": "2026-06-30",
+              "v": 86.87
+            },
+            {
+              "t": "2026-07-01",
+              "v": 89.04
+            },
+            {
+              "t": "2026-07-02",
+              "v": 88.8
+            },
+            {
+              "t": "2026-07-06",
+              "v": 87.09
+            },
+            {
+              "t": "2026-07-07",
+              "v": 87.9
+            },
+            {
+              "t": "2026-07-08",
+              "v": 91.38
+            },
+            {
+              "t": "2026-07-09",
+              "v": 88.78
+            },
+            {
+              "t": "2026-07-10",
+              "v": 87.28
+            },
+            {
+              "t": "2026-07-13",
+              "v": 95.28
+            },
+            {
+              "t": "2026-07-14",
+              "v": 93.53
+            },
+            {
+              "t": "2026-07-15",
+              "v": 91.85
+            },
+            {
+              "t": "2026-07-16",
+              "v": 97.31
+            },
+            {
+              "t": "2026-07-17",
+              "v": 104.87
+            },
+            {
+              "t": "2026-07-20",
+              "v": 102.82
+            },
+            {
+              "t": "2026-07-21",
+              "v": 96.34
+            },
+            {
+              "t": "2026-07-22",
+              "v": 95.55
+            },
+            {
+              "t": "2026-07-23",
+              "v": 102.17
+            },
+            {
+              "t": "2026-07-24",
+              "v": 100.73
+            },
+            {
+              "t": "2026-07-27",
+              "v": 100.91
+            },
+            {
+              "t": "2026-07-28",
+              "v": 98.51
+            },
+            {
+              "t": "2026-07-29",
+              "v": 109.47
+            },
+            {
+              "t": "2026-07-30",
+              "v": 94.66
+            },
+            {
+              "t": "2026-07-31",
+              "v": 91.64
+            },
+            {
+              "t": "2026-08-03",
+              "v": 90.81
+            },
+            {
+              "t": "2026-08-04",
+              "v": 92.57
+            },
+            {
+              "t": "2026-08-05",
+              "v": 90.43
+            },
+            {
+              "t": "2026-08-06",
+              "v": 88.72
+            },
+            {
+              "t": "2026-08-07",
+              "v": 90.42
+            },
+            {
+              "t": "2026-08-10",
+              "v": 92.51
+            },
+            {
+              "t": "2026-08-11",
+              "v": 90.9
+            },
+            {
+              "t": "2026-08-12",
+              "v": 88.5
+            },
+            {
+              "t": "2026-08-13",
+              "v": 89.42
+            },
+            {
+              "t": "2026-08-14",
+              "v": 87.48
+            },
+            {
+              "t": "2026-08-17",
+              "v": 93.92
+            },
+            {
+              "t": "2026-08-18",
+              "v": 92.87
+            },
+            {
+              "t": "2026-08-19",
+              "v": 86.53
+            },
+            {
+              "t": "2026-08-20",
+              "v": 89.86
+            },
+            {
+              "t": "2026-08-21",
+              "v": 86.27
+            },
+            {
+              "t": "2026-08-24",
+              "v": 88.64
+            },
+            {
+              "t": "2026-08-25",
+              "v": 85.67
+            },
+            {
+              "t": "2026-08-26",
+              "v": 85.24
+            },
+            {
+              "t": "2026-08-27",
+              "v": 82.9
+            },
+            {
+              "t": "2026-08-28",
+              "v": 86.63
+            },
+            {
+              "t": "2026-08-31",
+              "v": 86.29
+            },
+            {
+              "t": "2026-09-01",
+              "v": 91.25
+            },
+            {
+              "t": "2026-09-02",
+              "v": 86.25
+            },
+            {
+              "t": "2026-09-03",
+              "v": 83.8
+            },
+            {
+              "t": "2026-09-04",
+              "v": 84.42
+            },
+            {
+              "t": "2026-09-08",
+              "v": 88.69
+            },
+            {
+              "t": "2026-09-09",
+              "v": 94.5
+            },
+            {
+              "t": "2026-09-10",
+              "v": 102.66
+            },
+            {
+              "t": "2026-09-11",
+              "v": 91.28
+            },
+            {
+              "t": "2026-09-14",
+              "v": 94.89
+            },
+            {
+              "t": "2026-09-15",
+              "v": 94.91
+            },
+            {
+              "t": "2026-09-16",
+              "v": 95.41
+            },
+            {
+              "t": "2026-09-17",
+              "v": 87.72
+            },
+            {
+              "t": "2026-09-18",
+              "v": 87.38
+            },
+            {
+              "t": "2026-09-21",
+              "v": 85.77
+            }
+          ]
+        }
+      ],
+      "as_of_points": {
+        "^VIX": 14.87,
+        "^VXN": 20.39,
+        "^RVX": 18.92,
+        "^VIXEQ": 38.72,
+        "^VVIX": 85.77
+      }
     }
   },
   "vol_signals": {
@@ -26302,7 +27904,7 @@
         "category": "Interest Rates",
         "last_date": "2026-09-18",
         "release_date": "2026-09-21",
-        "next_release": "2026-09-21",
+        "next_release": "2026-09-22",
         "forecast": null,
         "next_forecast": null
       },
@@ -26317,7 +27919,7 @@
         "category": "Interest Rates",
         "last_date": "2026-09-21",
         "release_date": "2026-09-21",
-        "next_release": "2026-09-21",
+        "next_release": "2026-09-22",
         "forecast": null,
         "next_forecast": null
       }
@@ -26418,7 +28020,7 @@
       "daily": -1.44,
       "5d": -0.68,
       "20d": 2.7,
-      "vol_ratio": 1.4
+      "vol_ratio": 1.41
     },
     "VIXY": {
       "daily": -0.88,
@@ -26579,7 +28181,7 @@
       "spot": 773.5,
       "expiry_used": "2026-09-25",
       "days_to_expiry": 3,
-      "atm_iv": 11.2,
+      "atm_iv": 11.6,
       "pcr": {
         "oi": 2.04,
         "vol": 0.82,
@@ -26594,7 +28196,7 @@
         "source": "OI"
       },
       "gex": {
-        "net_gex": 179.03,
+        "net_gex": 178.21,
         "max_gamma_strike": 772.0,
         "gamma_flip": 772.0,
         "gamma_flip_dist_pct": -0.19,
@@ -26665,7 +28267,7 @@
           },
           {
             "k": 724.0,
-            "g": -0.067
+            "g": -0.068
           },
           {
             "k": 725.0,
@@ -26677,7 +28279,7 @@
           },
           {
             "k": 727.0,
-            "g": -1.384
+            "g": -1.385
           },
           {
             "k": 728.0,
@@ -26689,7 +28291,7 @@
           },
           {
             "k": 730.0,
-            "g": -12.948
+            "g": -12.959
           },
           {
             "k": 731.0,
@@ -26709,11 +28311,11 @@
           },
           {
             "k": 735.0,
-            "g": -0.692
+            "g": -0.691
           },
           {
             "k": 736.0,
-            "g": -0.293
+            "g": -0.294
           },
           {
             "k": 737.0,
@@ -26729,7 +28331,7 @@
           },
           {
             "k": 740.0,
-            "g": -4.407
+            "g": -4.41
           },
           {
             "k": 741.0,
@@ -26737,7 +28339,7 @@
           },
           {
             "k": 742.0,
-            "g": -0.089
+            "g": -0.087
           },
           {
             "k": 743.0,
@@ -26745,15 +28347,15 @@
           },
           {
             "k": 744.0,
-            "g": -0.3
+            "g": -0.298
           },
           {
             "k": 745.0,
-            "g": -39.749
+            "g": -39.79
           },
           {
             "k": 746.0,
-            "g": -1.186
+            "g": -1.187
           },
           {
             "k": 747.0,
@@ -26765,11 +28367,11 @@
           },
           {
             "k": 749.0,
-            "g": -0.563
+            "g": -0.562
           },
           {
             "k": 750.0,
-            "g": -7.892
+            "g": -7.899
           },
           {
             "k": 751.0,
@@ -26785,35 +28387,35 @@
           },
           {
             "k": 754.0,
-            "g": -0.161
+            "g": -0.159
           },
           {
             "k": 755.0,
-            "g": -10.826
+            "g": -10.83
           },
           {
             "k": 756.0,
-            "g": -0.318
+            "g": -0.316
           },
           {
             "k": 757.0,
-            "g": 0.134
+            "g": 0.138
           },
           {
             "k": 758.0,
-            "g": -0.964
+            "g": -0.956
           },
           {
             "k": 759.0,
-            "g": -0.883
+            "g": -0.876
           },
           {
             "k": 760.0,
-            "g": -14.171
+            "g": -14.179
           },
           {
             "k": 761.0,
-            "g": -0.544
+            "g": -0.535
           },
           {
             "k": 762.0,
@@ -26821,7 +28423,7 @@
           },
           {
             "k": 763.0,
-            "g": 4.064
+            "g": 4.07
           },
           {
             "k": 764.0,
@@ -26829,111 +28431,111 @@
           },
           {
             "k": 765.0,
-            "g": 8.12
+            "g": 8.108
           },
           {
             "k": 766.0,
-            "g": 1.508
+            "g": 1.498
           },
           {
             "k": 767.0,
-            "g": 3.089
+            "g": 3.071
           },
           {
             "k": 768.0,
-            "g": 2.47
+            "g": 2.451
           },
           {
             "k": 769.0,
-            "g": 0.194
+            "g": 0.176
           },
           {
             "k": 770.0,
-            "g": 18.589
+            "g": 18.528
           },
           {
             "k": 771.0,
-            "g": 3.262
+            "g": 3.244
           },
           {
             "k": 772.0,
-            "g": 65.376
+            "g": 65.191
           },
           {
             "k": 773.0,
-            "g": 4.11
+            "g": 4.088
           },
           {
             "k": 774.0,
-            "g": 23.49
+            "g": 23.419
           },
           {
             "k": 775.0,
-            "g": 20.025
+            "g": 19.96
           },
           {
             "k": 776.0,
-            "g": 5.198
+            "g": 5.18
           },
           {
             "k": 777.0,
-            "g": 4.967
+            "g": 4.951
           },
           {
             "k": 778.0,
-            "g": 4.118
+            "g": 4.106
           },
           {
             "k": 779.0,
-            "g": 3.35
+            "g": 3.341
           },
           {
             "k": 780.0,
-            "g": 22.152
+            "g": 22.096
           },
           {
             "k": 781.0,
-            "g": 3.359
+            "g": 3.351
           },
           {
             "k": 782.0,
-            "g": 9.712
+            "g": 9.689
           },
           {
             "k": 783.0,
-            "g": 1.719
+            "g": 1.715
           },
           {
             "k": 784.0,
-            "g": 1.253
+            "g": 1.251
           },
           {
             "k": 785.0,
-            "g": 31.122
+            "g": 31.058
           },
           {
             "k": 786.0,
-            "g": 9.732
+            "g": 9.712
           },
           {
             "k": 787.0,
-            "g": 2.821
+            "g": 2.816
           },
           {
             "k": 788.0,
-            "g": 0.998
+            "g": 0.997
           },
           {
             "k": 789.0,
-            "g": 0.305
+            "g": 0.304
           },
           {
             "k": 790.0,
-            "g": 19.083
+            "g": 19.051
           },
           {
             "k": 791.0,
-            "g": 0.718
+            "g": 0.716
           },
           {
             "k": 792.0,
@@ -26941,19 +28543,19 @@
           },
           {
             "k": 793.0,
-            "g": 0.574
+            "g": 0.573
           },
           {
             "k": 794.0,
-            "g": 2.065
+            "g": 2.062
           },
           {
             "k": 795.0,
-            "g": 1.213
+            "g": 1.212
           },
           {
             "k": 796.0,
-            "g": 0.742
+            "g": 0.741
           },
           {
             "k": 797.0,
@@ -26969,7 +28571,7 @@
           },
           {
             "k": 800.0,
-            "g": 1.145
+            "g": 1.143
           },
           {
             "k": 801.0,
@@ -26981,7 +28583,7 @@
           },
           {
             "k": 803.0,
-            "g": 0.09
+            "g": 0.089
           },
           {
             "k": 804.0,
@@ -27009,7 +28611,7 @@
           },
           {
             "k": 810.0,
-            "g": 0.065
+            "g": 0.064
           },
           {
             "k": 811.0,
@@ -27069,7 +28671,7 @@
           },
           {
             "k": 825.0,
-            "g": 0.062
+            "g": 0.061
           },
           {
             "k": 830.0,
@@ -27081,7 +28683,7 @@
           },
           {
             "k": 840.0,
-            "g": 0.004
+            "g": 0.003
           },
           {
             "k": 845.0,
@@ -27122,662 +28724,662 @@
         ]
       },
       "dex": {
-        "net_dex": 5.37
+        "net_dex": 5.35
       },
       "iv_skew": {
-        "skew": 4.5,
-        "put_iv": 23.4,
-        "call_iv": 18.9,
+        "skew": 4.6,
+        "put_iv": 24.2,
+        "call_iv": 19.6,
         "iv_curve": [
           {
             "k": 660.0,
-            "iv_call": 68.83,
-            "iv_put": 51.26
+            "iv_call": 71.84,
+            "iv_put": 52.97
           },
           {
             "k": 665.0,
-            "iv_call": 62.76,
-            "iv_put": 49.01
+            "iv_call": 65.75,
+            "iv_put": 50.65
           },
           {
             "k": 670.0,
-            "iv_call": 63.87,
-            "iv_put": 49.01
+            "iv_call": 66.64,
+            "iv_put": 50.65
           },
           {
             "k": 675.0,
-            "iv_call": 60.74,
-            "iv_put": 46.7
+            "iv_call": 63.4,
+            "iv_put": 48.25
           },
           {
             "k": 680.0,
-            "iv_call": 57.98,
-            "iv_put": 44.39
+            "iv_call": 60.52,
+            "iv_put": 45.87
           },
           {
             "k": 685.0,
-            "iv_call": 53.67,
-            "iv_put": 43.52
+            "iv_call": 56.13,
+            "iv_put": 44.97
           },
           {
             "k": 690.0,
-            "iv_call": 54.14,
-            "iv_put": 41.16
+            "iv_call": 56.44,
+            "iv_put": 42.53
           },
           {
             "k": 695.0,
-            "iv_call": 53.6,
-            "iv_put": 38.81
+            "iv_call": 55.78,
+            "iv_put": 40.1
           },
           {
             "k": 700.0,
-            "iv_call": 52.52,
-            "iv_put": 37.46
+            "iv_call": 54.61,
+            "iv_put": 38.71
           },
           {
             "k": 705.0,
-            "iv_call": 48.48,
-            "iv_put": 35.06
+            "iv_call": 50.44,
+            "iv_put": 36.23
           },
           {
             "k": 710.0,
-            "iv_call": 45.87,
-            "iv_put": 33.43
+            "iv_call": 47.71,
+            "iv_put": 34.54
           },
           {
             "k": 715.0,
-            "iv_call": 42.4,
-            "iv_put": 31.61
+            "iv_call": 44.12,
+            "iv_put": 32.66
           },
           {
             "k": 720.0,
-            "iv_call": 39.71,
-            "iv_put": 29.66
+            "iv_call": 41.32,
+            "iv_put": 30.64
           },
           {
             "k": 721.0,
-            "iv_call": 42.05,
-            "iv_put": 29.15
+            "iv_call": 43.68,
+            "iv_put": 30.12
           },
           {
             "k": 722.0,
-            "iv_call": 38.44,
-            "iv_put": 28.65
+            "iv_call": 40.0,
+            "iv_put": 29.6
           },
           {
             "k": 723.0,
-            "iv_call": 38.09,
-            "iv_put": 28.15
+            "iv_call": 39.63,
+            "iv_put": 29.08
           },
           {
             "k": 724.0,
-            "iv_call": 38.65,
-            "iv_put": 27.64
+            "iv_call": 40.18,
+            "iv_put": 28.56
           },
           {
             "k": 725.0,
-            "iv_call": 36.81,
-            "iv_put": 27.58
+            "iv_call": 38.3,
+            "iv_put": 28.5
           },
           {
             "k": 726.0,
-            "iv_call": 36.03,
-            "iv_put": 27.07
+            "iv_call": 37.5,
+            "iv_put": 27.97
           },
           {
             "k": 727.0,
-            "iv_call": 35.59,
-            "iv_put": 26.56
+            "iv_call": 37.04,
+            "iv_put": 27.44
           },
           {
             "k": 728.0,
-            "iv_call": 35.21,
-            "iv_put": 26.05
+            "iv_call": 36.63,
+            "iv_put": 26.91
           },
           {
             "k": 729.0,
-            "iv_call": 34.17,
-            "iv_put": 25.92
+            "iv_call": 35.57,
+            "iv_put": 26.78
           },
           {
             "k": 730.0,
-            "iv_call": 33.53,
-            "iv_put": 25.4
+            "iv_call": 34.9,
+            "iv_put": 26.25
           },
           {
             "k": 731.0,
-            "iv_call": 33.2,
-            "iv_put": 24.88
+            "iv_call": 34.55,
+            "iv_put": 25.71
           },
           {
             "k": 732.0,
-            "iv_call": 33.04,
-            "iv_put": 24.71
+            "iv_call": 34.37,
+            "iv_put": 25.52
           },
           {
             "k": 733.0,
-            "iv_call": 23.46,
-            "iv_put": 24.18
+            "iv_call": 24.95,
+            "iv_put": 24.98
           },
           {
             "k": 734.0,
-            "iv_call": 31.37,
-            "iv_put": 23.97
+            "iv_call": 32.65,
+            "iv_put": 24.76
           },
           {
             "k": 735.0,
-            "iv_call": 32.47,
-            "iv_put": 23.43
+            "iv_call": 33.75,
+            "iv_put": 24.21
           },
           {
             "k": 736.0,
-            "iv_call": 32.48,
-            "iv_put": 23.18
+            "iv_call": 33.75,
+            "iv_put": 23.95
           },
           {
             "k": 737.0,
-            "iv_call": 22.45,
-            "iv_put": 22.64
+            "iv_call": 23.73,
+            "iv_put": 23.39
           },
           {
             "k": 738.0,
-            "iv_call": 29.13,
-            "iv_put": 22.36
+            "iv_call": 30.32,
+            "iv_put": 23.1
           },
           {
             "k": 739.0,
-            "iv_call": 28.58,
-            "iv_put": 21.82
+            "iv_call": 29.73,
+            "iv_put": 22.54
           },
           {
             "k": 740.0,
-            "iv_call": 27.8,
-            "iv_put": 21.51
+            "iv_call": 28.93,
+            "iv_put": 22.22
           },
           {
             "k": 741.0,
-            "iv_call": 27.39,
-            "iv_put": 21.18
+            "iv_call": 28.5,
+            "iv_put": 21.88
           },
           {
             "k": 742.0,
-            "iv_call": 26.76,
-            "iv_put": 20.62
+            "iv_call": 27.85,
+            "iv_put": 21.3
           },
           {
             "k": 743.0,
-            "iv_call": 28.07,
-            "iv_put": 20.27
+            "iv_call": 29.17,
+            "iv_put": 20.94
           },
           {
             "k": 744.0,
-            "iv_call": 25.6,
-            "iv_put": 19.9
+            "iv_call": 26.63,
+            "iv_put": 20.55
           },
           {
             "k": 745.0,
-            "iv_call": 26.19,
-            "iv_put": 19.51
+            "iv_call": 27.22,
+            "iv_put": 20.16
           },
           {
             "k": 746.0,
-            "iv_call": 26.16,
-            "iv_put": 19.11
+            "iv_call": 27.18,
+            "iv_put": 19.74
           },
           {
             "k": 747.0,
-            "iv_call": 25.52,
-            "iv_put": 18.69
+            "iv_call": 26.51,
+            "iv_put": 19.31
           },
           {
             "k": 748.0,
-            "iv_call": 19.88,
-            "iv_put": 18.42
+            "iv_call": 20.78,
+            "iv_put": 19.02
           },
           {
             "k": 749.0,
-            "iv_call": 22.48,
-            "iv_put": 17.96
+            "iv_call": 23.39,
+            "iv_put": 18.55
           },
           {
             "k": 750.0,
-            "iv_call": 21.36,
-            "iv_put": 17.64
+            "iv_call": 22.23,
+            "iv_put": 18.21
           },
           {
             "k": 751.0,
-            "iv_call": 21.61,
-            "iv_put": 17.28
+            "iv_call": 22.48,
+            "iv_put": 17.84
           },
           {
             "k": 752.0,
-            "iv_call": 21.22,
-            "iv_put": 16.9
+            "iv_call": 22.07,
+            "iv_put": 17.45
           },
           {
             "k": 753.0,
-            "iv_call": 19.67,
-            "iv_put": 16.6
+            "iv_call": 20.47,
+            "iv_put": 17.14
           },
           {
             "k": 754.0,
-            "iv_call": 20.12,
-            "iv_put": 16.16
+            "iv_call": 20.92,
+            "iv_put": 16.69
           },
           {
             "k": 755.0,
-            "iv_call": 16.28,
-            "iv_put": 15.81
+            "iv_call": 17.0,
+            "iv_put": 16.32
           },
           {
             "k": 756.0,
-            "iv_call": 18.93,
-            "iv_put": 15.5
+            "iv_call": 19.68,
+            "iv_put": 16.01
           },
           {
             "k": 757.0,
-            "iv_call": 16.99,
-            "iv_put": 15.16
+            "iv_call": 17.68,
+            "iv_put": 15.65
           },
           {
             "k": 758.0,
-            "iv_call": 15.12,
-            "iv_put": 14.85
+            "iv_call": 15.76,
+            "iv_put": 15.34
           },
           {
             "k": 759.0,
-            "iv_call": 14.85,
-            "iv_put": 14.46
+            "iv_call": 15.47,
+            "iv_put": 14.93
           },
           {
             "k": 760.0,
-            "iv_call": 14.96,
-            "iv_put": 14.14
+            "iv_call": 15.57,
+            "iv_put": 14.59
           },
           {
             "k": 761.0,
-            "iv_call": 13.88,
-            "iv_put": 13.79
+            "iv_call": 14.46,
+            "iv_put": 14.24
           },
           {
             "k": 762.0,
-            "iv_call": 13.79,
-            "iv_put": 13.51
+            "iv_call": 14.35,
+            "iv_put": 13.94
           },
           {
             "k": 763.0,
-            "iv_call": 13.68,
-            "iv_put": 13.21
+            "iv_call": 14.22,
+            "iv_put": 13.64
           },
           {
             "k": 764.0,
-            "iv_call": 13.36,
-            "iv_put": 12.9
+            "iv_call": 13.89,
+            "iv_put": 13.32
           },
           {
             "k": 765.0,
-            "iv_call": 13.11,
-            "iv_put": 12.62
+            "iv_call": 13.62,
+            "iv_put": 13.02
           },
           {
             "k": 766.0,
-            "iv_call": 12.51,
-            "iv_put": 12.36
+            "iv_call": 12.99,
+            "iv_put": 12.75
           },
           {
             "k": 767.0,
-            "iv_call": 12.55,
-            "iv_put": 12.1
+            "iv_call": 13.03,
+            "iv_put": 12.48
           },
           {
             "k": 768.0,
-            "iv_call": 12.06,
-            "iv_put": 11.86
+            "iv_call": 12.52,
+            "iv_put": 12.23
           },
           {
             "k": 769.0,
-            "iv_call": 12.02,
-            "iv_put": 11.64
+            "iv_call": 12.47,
+            "iv_put": 12.01
           },
           {
             "k": 770.0,
-            "iv_call": 11.85,
-            "iv_put": 11.45
+            "iv_call": 12.29,
+            "iv_put": 11.81
           },
           {
             "k": 771.0,
-            "iv_call": 11.55,
-            "iv_put": 11.28
+            "iv_call": 11.98,
+            "iv_put": 11.63
           },
           {
             "k": 772.0,
-            "iv_call": 11.54,
-            "iv_put": 11.16
+            "iv_call": 11.96,
+            "iv_put": 11.5
           },
           {
             "k": 773.0,
-            "iv_call": 11.36,
-            "iv_put": 11.03
+            "iv_call": 11.77,
+            "iv_put": 11.37
           },
           {
             "k": 774.0,
-            "iv_call": 11.23,
-            "iv_put": 10.94
+            "iv_call": 11.64,
+            "iv_put": 11.28
           },
           {
             "k": 775.0,
-            "iv_call": 11.14,
-            "iv_put": 10.86
+            "iv_call": 11.54,
+            "iv_put": 11.19
           },
           {
             "k": 776.0,
-            "iv_call": 11.06,
-            "iv_put": 10.94
+            "iv_call": 11.46,
+            "iv_put": 11.27
           },
           {
             "k": 777.0,
-            "iv_call": 11.04,
-            "iv_put": 10.73
-          },
-          {
-            "k": 778.0,
-            "iv_call": 11.01,
-            "iv_put": 10.99
-          },
-          {
-            "k": 779.0,
-            "iv_call": 11.03,
-            "iv_put": 10.95
-          },
-          {
-            "k": 780.0,
-            "iv_call": 11.05,
-            "iv_put": 10.86
-          },
-          {
-            "k": 781.0,
-            "iv_call": 11.11,
+            "iv_call": 11.44,
             "iv_put": 11.05
           },
           {
+            "k": 778.0,
+            "iv_call": 11.4,
+            "iv_put": 11.31
+          },
+          {
+            "k": 779.0,
+            "iv_call": 11.42,
+            "iv_put": 11.27
+          },
+          {
+            "k": 780.0,
+            "iv_call": 11.44,
+            "iv_put": 11.17
+          },
+          {
+            "k": 781.0,
+            "iv_call": 11.5,
+            "iv_put": 11.37
+          },
+          {
             "k": 782.0,
-            "iv_call": 11.18,
-            "iv_put": 10.95
+            "iv_call": 11.57,
+            "iv_put": 11.26
           },
           {
             "k": 783.0,
-            "iv_call": 11.24,
-            "iv_put": 11.11
+            "iv_call": 11.64,
+            "iv_put": 11.42
           },
           {
             "k": 784.0,
-            "iv_call": 11.35,
-            "iv_put": 11.43
+            "iv_call": 11.75,
+            "iv_put": 11.74
           },
           {
             "k": 785.0,
-            "iv_call": 11.5,
-            "iv_put": 11.73
+            "iv_call": 11.9,
+            "iv_put": 12.05
           },
           {
             "k": 786.0,
-            "iv_call": 11.65,
-            "iv_put": 11.49
+            "iv_call": 12.06,
+            "iv_put": 11.79
           },
           {
             "k": 787.0,
-            "iv_call": 11.82,
+            "iv_call": 12.23,
             "iv_put": null
           },
           {
             "k": 788.0,
-            "iv_call": 11.95,
+            "iv_call": 12.36,
             "iv_put": null
           },
           {
             "k": 789.0,
-            "iv_call": 12.18,
+            "iv_call": 12.6,
             "iv_put": null
           },
           {
             "k": 790.0,
-            "iv_call": 12.35,
-            "iv_put": 12.01
+            "iv_call": 12.77,
+            "iv_put": 12.29
           },
           {
             "k": 791.0,
-            "iv_call": 12.56,
+            "iv_call": 12.99,
             "iv_put": null
           },
           {
             "k": 792.0,
-            "iv_call": 12.85,
+            "iv_call": 13.29,
             "iv_put": null
           },
           {
             "k": 793.0,
-            "iv_call": 13.1,
+            "iv_call": 13.55,
             "iv_put": null
           },
           {
             "k": 794.0,
-            "iv_call": 13.3,
+            "iv_call": 13.76,
             "iv_put": null
           },
           {
             "k": 795.0,
-            "iv_call": 13.64,
-            "iv_put": 14.25
+            "iv_call": 14.11,
+            "iv_put": 14.58
           },
           {
             "k": 796.0,
-            "iv_call": 13.96,
+            "iv_call": 14.43,
             "iv_put": null
           },
           {
             "k": 797.0,
-            "iv_call": 14.0,
+            "iv_call": 14.48,
             "iv_put": null
           },
           {
             "k": 798.0,
-            "iv_call": 14.5,
+            "iv_call": 14.99,
             "iv_put": null
           },
           {
             "k": 799.0,
-            "iv_call": 14.72,
+            "iv_call": 15.22,
             "iv_put": null
           },
           {
             "k": 800.0,
-            "iv_call": 14.9,
+            "iv_call": 15.41,
             "iv_put": null
           },
           {
             "k": 801.0,
-            "iv_call": 15.37,
+            "iv_call": 15.9,
             "iv_put": null
           },
           {
             "k": 802.0,
-            "iv_call": 15.85,
+            "iv_call": 16.39,
             "iv_put": null
           },
           {
             "k": 803.0,
-            "iv_call": 15.95,
+            "iv_call": 16.5,
             "iv_put": null
           },
           {
             "k": 804.0,
-            "iv_call": 16.41,
+            "iv_call": 16.97,
             "iv_put": null
           },
           {
             "k": 805.0,
-            "iv_call": 16.87,
+            "iv_call": 17.45,
             "iv_put": null
           },
           {
             "k": 806.0,
-            "iv_call": 16.89,
+            "iv_call": 17.46,
             "iv_put": null
           },
           {
             "k": 807.0,
-            "iv_call": 17.33,
+            "iv_call": 17.92,
             "iv_put": null
           },
           {
             "k": 808.0,
-            "iv_call": 17.77,
+            "iv_call": 18.38,
             "iv_put": null
           },
           {
             "k": 809.0,
-            "iv_call": 18.21,
+            "iv_call": 18.84,
             "iv_put": null
           },
           {
             "k": 810.0,
-            "iv_call": 18.1,
+            "iv_call": 18.71,
             "iv_put": null
           },
           {
             "k": 811.0,
-            "iv_call": 18.52,
+            "iv_call": 19.15,
             "iv_put": null
           },
           {
             "k": 812.0,
-            "iv_call": 18.95,
+            "iv_call": 19.59,
             "iv_put": null
           },
           {
             "k": 813.0,
-            "iv_call": 19.37,
+            "iv_call": 20.03,
             "iv_put": null
           },
           {
             "k": 814.0,
-            "iv_call": 19.8,
+            "iv_call": 20.47,
             "iv_put": null
           },
           {
             "k": 815.0,
-            "iv_call": 20.22,
+            "iv_call": 20.9,
             "iv_put": null
           },
           {
             "k": 816.0,
-            "iv_call": 19.88,
+            "iv_call": 20.55,
             "iv_put": null
           },
           {
             "k": 817.0,
-            "iv_call": 20.28,
+            "iv_call": 20.97,
             "iv_put": null
           },
           {
             "k": 818.0,
-            "iv_call": 20.69,
+            "iv_call": 21.39,
             "iv_put": null
           },
           {
             "k": 819.0,
-            "iv_call": 21.09,
+            "iv_call": 21.8,
             "iv_put": null
           },
           {
             "k": 820.0,
-            "iv_call": 21.49,
+            "iv_call": 22.22,
             "iv_put": null
           },
           {
             "k": 821.0,
-            "iv_call": 21.89,
+            "iv_call": 22.63,
             "iv_put": null
           },
           {
             "k": 822.0,
-            "iv_call": 22.29,
+            "iv_call": 23.05,
             "iv_put": null
           },
           {
             "k": 823.0,
-            "iv_call": 22.69,
+            "iv_call": 23.46,
             "iv_put": null
           },
           {
             "k": 824.0,
-            "iv_call": 23.08,
+            "iv_call": 23.87,
             "iv_put": null
           },
           {
             "k": 825.0,
-            "iv_call": 22.3,
+            "iv_call": 23.05,
             "iv_put": null
           },
           {
             "k": 830.0,
-            "iv_call": 24.18,
+            "iv_call": 25.0,
             "iv_put": null
           },
           {
             "k": 835.0,
-            "iv_call": 26.03,
+            "iv_call": 26.91,
             "iv_put": null
           },
           {
             "k": 840.0,
-            "iv_call": 27.86,
+            "iv_call": 28.8,
             "iv_put": null
           },
           {
             "k": 845.0,
-            "iv_call": 28.61,
-            "iv_put": 37.02
+            "iv_call": 29.58,
+            "iv_put": 37.93
           },
           {
             "k": 850.0,
-            "iv_call": 30.34,
-            "iv_put": 42.31
+            "iv_call": 31.37,
+            "iv_put": 43.43
           },
           {
             "k": 855.0,
-            "iv_call": 23.65,
-            "iv_put": 45.54
+            "iv_call": 24.45,
+            "iv_put": 46.76
           },
           {
             "k": 860.0,
-            "iv_call": 24.95,
-            "iv_put": 47.79
+            "iv_call": 25.79,
+            "iv_put": 49.08
           },
           {
             "k": 865.0,
-            "iv_call": 26.24,
-            "iv_put": 49.52
+            "iv_call": 27.13,
+            "iv_put": 50.85
           },
           {
             "k": 870.0,
-            "iv_call": 27.52,
-            "iv_put": 50.45
+            "iv_call": 28.45,
+            "iv_put": 51.78
           },
           {
             "k": 875.0,
-            "iv_call": 28.8,
-            "iv_put": 53.87
+            "iv_call": 29.77,
+            "iv_put": 55.32
           },
           {
             "k": 880.0,
-            "iv_call": 30.05,
-            "iv_put": 55.4
+            "iv_call": 31.07,
+            "iv_put": 56.88
           },
           {
             "k": 885.0,
-            "iv_call": 31.3,
-            "iv_put": 58.68
+            "iv_call": 32.36,
+            "iv_put": 60.28
           }
         ]
       },
@@ -27787,7 +29389,7 @@
       "spot": 741.47,
       "expiry_used": "2026-09-25",
       "days_to_expiry": 3,
-      "atm_iv": 17.1,
+      "atm_iv": 17.6,
       "pcr": {
         "oi": 2.56,
         "vol": 0.97,
@@ -27802,7 +29404,7 @@
         "source": "OI"
       },
       "gex": {
-        "net_gex": 65.86,
+        "net_gex": 65.83,
         "max_gamma_strike": 730.0,
         "gamma_flip": 730.0,
         "gamma_flip_dist_pct": -1.55,
@@ -27929,7 +29531,7 @@
           },
           {
             "k": 690.0,
-            "g": -6.777
+            "g": -6.781
           },
           {
             "k": 691.0,
@@ -27941,7 +29543,7 @@
           },
           {
             "k": 693.0,
-            "g": -0.308
+            "g": -0.309
           },
           {
             "k": 694.0,
@@ -27969,7 +29571,7 @@
           },
           {
             "k": 700.0,
-            "g": -2.731
+            "g": -2.729
           },
           {
             "k": 701.0,
@@ -27981,103 +29583,103 @@
           },
           {
             "k": 703.0,
-            "g": -0.174
+            "g": -0.173
           },
           {
             "k": 704.0,
-            "g": -0.472
+            "g": -0.47
           },
           {
             "k": 705.0,
-            "g": -6.056
+            "g": -6.053
           },
           {
             "k": 706.0,
-            "g": -0.209
+            "g": -0.207
           },
           {
             "k": 707.0,
-            "g": -0.285
+            "g": -0.283
           },
           {
             "k": 708.0,
-            "g": -0.282
+            "g": -0.281
           },
           {
             "k": 709.0,
-            "g": -0.245
+            "g": -0.243
           },
           {
             "k": 710.0,
-            "g": -1.098
+            "g": -1.09
           },
           {
             "k": 711.0,
-            "g": 0.161
+            "g": 0.166
           },
           {
             "k": 712.0,
-            "g": -0.019
+            "g": -0.015
           },
           {
             "k": 713.0,
-            "g": -0.376
+            "g": -0.375
           },
           {
             "k": 714.0,
-            "g": -0.345
+            "g": -0.344
           },
           {
             "k": 715.0,
-            "g": -1.383
+            "g": -1.374
           },
           {
             "k": 716.0,
-            "g": -0.729
+            "g": -0.726
           },
           {
             "k": 717.0,
-            "g": -0.558
+            "g": -0.555
           },
           {
             "k": 718.0,
-            "g": -4.91
+            "g": -4.908
           },
           {
             "k": 719.0,
-            "g": 0.985
+            "g": 0.992
           },
           {
             "k": 720.0,
-            "g": 1.734
+            "g": 1.748
           },
           {
             "k": 721.0,
-            "g": 0.595
+            "g": 0.599
           },
           {
             "k": 722.0,
-            "g": 0.853
+            "g": 0.856
           },
           {
             "k": 723.0,
-            "g": 1.029
+            "g": 1.032
           },
           {
             "k": 724.0,
-            "g": 0.998
+            "g": 1.0
           },
           {
             "k": 725.0,
-            "g": 2.846
+            "g": 2.851
           },
           {
             "k": 726.0,
-            "g": 2.004
+            "g": 2.005
           },
           {
             "k": 727.0,
-            "g": 1.452
+            "g": 1.453
           },
           {
             "k": 728.0,
@@ -28085,103 +29687,103 @@
           },
           {
             "k": 729.0,
-            "g": 6.483
+            "g": 6.482
           },
           {
             "k": 730.0,
-            "g": 11.089
+            "g": 11.084
           },
           {
             "k": 731.0,
-            "g": 2.201
+            "g": 2.199
           },
           {
             "k": 732.0,
-            "g": 2.664
+            "g": 2.661
           },
           {
             "k": 733.0,
-            "g": 1.507
+            "g": 1.505
           },
           {
             "k": 734.0,
-            "g": 2.419
+            "g": 2.416
           },
           {
             "k": 735.0,
-            "g": 5.028
+            "g": 5.02
           },
           {
             "k": 736.0,
-            "g": 2.455
+            "g": 2.451
           },
           {
             "k": 737.0,
-            "g": 1.913
+            "g": 1.91
           },
           {
             "k": 738.0,
-            "g": 3.18
+            "g": 3.175
           },
           {
             "k": 739.0,
-            "g": 3.319
+            "g": 3.313
           },
           {
             "k": 740.0,
-            "g": 6.858
+            "g": 6.845
           },
           {
             "k": 741.0,
-            "g": 1.287
+            "g": 1.285
           },
           {
             "k": 742.0,
-            "g": 0.841
+            "g": 0.839
           },
           {
             "k": 743.0,
-            "g": 1.09
+            "g": 1.088
           },
           {
             "k": 744.0,
-            "g": 1.299
+            "g": 1.296
           },
           {
             "k": 745.0,
-            "g": 4.359
+            "g": 4.351
           },
           {
             "k": 746.0,
-            "g": 1.385
+            "g": 1.382
           },
           {
             "k": 747.0,
-            "g": 0.655
+            "g": 0.654
           },
           {
             "k": 748.0,
-            "g": 7.215
+            "g": 7.202
           },
           {
             "k": 749.0,
-            "g": 1.081
+            "g": 1.079
           },
           {
             "k": 750.0,
-            "g": 7.004
+            "g": 6.991
           },
           {
             "k": 751.0,
-            "g": 1.055
+            "g": 1.053
           },
           {
             "k": 752.0,
-            "g": 0.329
+            "g": 0.328
           },
           {
             "k": 753.0,
-            "g": 0.58
+            "g": 0.579
           },
           {
             "k": 754.0,
@@ -28189,27 +29791,27 @@
           },
           {
             "k": 755.0,
-            "g": 1.509
+            "g": 1.507
           },
           {
             "k": 756.0,
-            "g": 0.702
+            "g": 0.701
           },
           {
             "k": 757.0,
-            "g": 0.39
+            "g": 0.389
           },
           {
             "k": 758.0,
-            "g": 0.358
+            "g": 0.357
           },
           {
             "k": 759.0,
-            "g": 0.288
+            "g": 0.287
           },
           {
             "k": 760.0,
-            "g": 0.865
+            "g": 0.864
           },
           {
             "k": 765.0,
@@ -28286,606 +29888,606 @@
         ]
       },
       "dex": {
-        "net_dex": 5.33
+        "net_dex": 5.32
       },
       "iv_skew": {
-        "skew": 5.9,
-        "put_iv": 27.1,
-        "call_iv": 21.2,
+        "skew": 6.1,
+        "put_iv": 28.0,
+        "call_iv": 21.9,
         "iv_curve": [
           {
             "k": 635.0,
-            "iv_call": 63.83,
-            "iv_put": 54.44
+            "iv_call": 66.89,
+            "iv_put": 56.26
           },
           {
             "k": 640.0,
-            "iv_call": 60.86,
-            "iv_put": 51.93
+            "iv_call": 63.8,
+            "iv_put": 53.67
           },
           {
             "k": 645.0,
-            "iv_call": 60.66,
-            "iv_put": 50.11
+            "iv_call": 63.4,
+            "iv_put": 51.78
           },
           {
             "k": 650.0,
-            "iv_call": 55.93,
-            "iv_put": 47.59
+            "iv_call": 58.59,
+            "iv_put": 49.18
           },
           {
             "k": 655.0,
-            "iv_call": 56.57,
-            "iv_put": 46.17
+            "iv_call": 59.03,
+            "iv_put": 47.71
           },
           {
             "k": 660.0,
-            "iv_call": 50.03,
-            "iv_put": 44.08
+            "iv_call": 52.46,
+            "iv_put": 45.55
           },
           {
             "k": 665.0,
-            "iv_call": 48.28,
-            "iv_put": 41.52
+            "iv_call": 50.54,
+            "iv_put": 42.9
           },
           {
             "k": 667.0,
-            "iv_call": 47.09,
-            "iv_put": 40.49
+            "iv_call": 49.31,
+            "iv_put": 41.84
           },
           {
             "k": 668.0,
-            "iv_call": 48.76,
-            "iv_put": 39.98
+            "iv_call": 50.9,
+            "iv_put": 41.31
           },
           {
             "k": 669.0,
-            "iv_call": 47.55,
-            "iv_put": 39.47
+            "iv_call": 49.68,
+            "iv_put": 40.78
           },
           {
             "k": 670.0,
-            "iv_call": 46.95,
-            "iv_put": 39.35
+            "iv_call": 49.05,
+            "iv_put": 40.66
           },
           {
             "k": 671.0,
-            "iv_call": 46.78,
-            "iv_put": 38.83
+            "iv_call": 48.85,
+            "iv_put": 40.13
           },
           {
             "k": 672.0,
-            "iv_call": 44.47,
-            "iv_put": 38.32
+            "iv_call": 46.56,
+            "iv_put": 39.59
           },
           {
             "k": 673.0,
-            "iv_call": 43.54,
-            "iv_put": 38.16
+            "iv_call": 45.61,
+            "iv_put": 39.43
           },
           {
             "k": 674.0,
-            "iv_call": 43.61,
-            "iv_put": 37.64
+            "iv_call": 45.63,
+            "iv_put": 38.89
           },
           {
             "k": 675.0,
-            "iv_call": 43.01,
-            "iv_put": 37.76
+            "iv_call": 45.01,
+            "iv_put": 39.02
           },
           {
             "k": 676.0,
-            "iv_call": 44.78,
-            "iv_put": 36.92
+            "iv_call": 46.73,
+            "iv_put": 38.15
           },
           {
             "k": 677.0,
-            "iv_call": 44.53,
-            "iv_put": 36.4
+            "iv_call": 46.45,
+            "iv_put": 37.61
           },
           {
             "k": 678.0,
-            "iv_call": 42.78,
-            "iv_put": 35.88
+            "iv_call": 44.69,
+            "iv_put": 37.07
           },
           {
             "k": 679.0,
-            "iv_call": 43.16,
-            "iv_put": 35.66
+            "iv_call": 45.03,
+            "iv_put": 36.84
           },
           {
             "k": 680.0,
-            "iv_call": 40.33,
-            "iv_put": 35.68
+            "iv_call": 42.2,
+            "iv_put": 36.87
           },
           {
             "k": 681.0,
-            "iv_call": 39.87,
-            "iv_put": 34.88
+            "iv_call": 41.72,
+            "iv_put": 36.04
           },
           {
             "k": 682.0,
-            "iv_call": 40.71,
-            "iv_put": 34.35
+            "iv_call": 42.51,
+            "iv_put": 35.49
           },
           {
             "k": 683.0,
-            "iv_call": 38.95,
-            "iv_put": 34.33
+            "iv_call": 40.74,
+            "iv_put": 35.48
           },
           {
             "k": 684.0,
-            "iv_call": 39.83,
-            "iv_put": 33.8
+            "iv_call": 41.58,
+            "iv_put": 34.92
           },
           {
             "k": 685.0,
-            "iv_call": 38.26,
-            "iv_put": 33.49
+            "iv_call": 39.99,
+            "iv_put": 34.61
           },
           {
             "k": 686.0,
-            "iv_call": 38.71,
-            "iv_put": 33.18
+            "iv_call": 40.41,
+            "iv_put": 34.28
           },
           {
             "k": 687.0,
-            "iv_call": 39.23,
-            "iv_put": 33.06
+            "iv_call": 40.91,
+            "iv_put": 34.16
           },
           {
             "k": 688.0,
-            "iv_call": 37.89,
-            "iv_put": 32.51
+            "iv_call": 39.54,
+            "iv_put": 33.59
           },
           {
             "k": 689.0,
-            "iv_call": 37.27,
-            "iv_put": 32.15
+            "iv_call": 38.89,
+            "iv_put": 33.22
           },
           {
             "k": 690.0,
-            "iv_call": 39.18,
-            "iv_put": 32.32
+            "iv_call": 40.79,
+            "iv_put": 33.4
           },
           {
             "k": 691.0,
-            "iv_call": 35.28,
-            "iv_put": 31.41
+            "iv_call": 36.86,
+            "iv_put": 32.46
           },
           {
             "k": 692.0,
-            "iv_call": 37.3,
-            "iv_put": 31.03
+            "iv_call": 38.85,
+            "iv_put": 32.06
           },
           {
             "k": 693.0,
-            "iv_call": 36.98,
-            "iv_put": 30.8
+            "iv_call": 38.51,
+            "iv_put": 31.82
           },
           {
             "k": 694.0,
-            "iv_call": 36.56,
-            "iv_put": 30.39
+            "iv_call": 38.07,
+            "iv_put": 31.4
           },
           {
             "k": 695.0,
-            "iv_call": 36.2,
-            "iv_put": 30.4
+            "iv_call": 37.69,
+            "iv_put": 31.41
           },
           {
             "k": 696.0,
-            "iv_call": 33.16,
-            "iv_put": 29.69
+            "iv_call": 34.61,
+            "iv_put": 30.67
           },
           {
             "k": 697.0,
-            "iv_call": 33.73,
-            "iv_put": 29.25
+            "iv_call": 35.15,
+            "iv_put": 30.22
           },
           {
             "k": 698.0,
-            "iv_call": 33.7,
-            "iv_put": 29.18
+            "iv_call": 35.1,
+            "iv_put": 30.15
           },
           {
             "k": 699.0,
-            "iv_call": 35.88,
-            "iv_put": 28.6
+            "iv_call": 37.3,
+            "iv_put": 29.55
           },
           {
             "k": 700.0,
-            "iv_call": 32.45,
-            "iv_put": 28.36
+            "iv_call": 33.81,
+            "iv_put": 29.3
           },
           {
             "k": 701.0,
-            "iv_call": 34.08,
-            "iv_put": 28.1
+            "iv_call": 35.43,
+            "iv_put": 29.03
           },
           {
             "k": 702.0,
-            "iv_call": 35.41,
-            "iv_put": 27.71
+            "iv_call": 36.77,
+            "iv_put": 28.63
           },
           {
             "k": 703.0,
-            "iv_call": 33.31,
-            "iv_put": 27.31
+            "iv_call": 34.63,
+            "iv_put": 28.21
           },
           {
             "k": 704.0,
-            "iv_call": 26.45,
-            "iv_put": 27.08
+            "iv_call": 27.7,
+            "iv_put": 27.98
           },
           {
             "k": 705.0,
-            "iv_call": 27.99,
-            "iv_put": 26.65
+            "iv_call": 29.21,
+            "iv_put": 27.53
           },
           {
             "k": 706.0,
-            "iv_call": 27.93,
-            "iv_put": 26.37
+            "iv_call": 29.12,
+            "iv_put": 27.24
           },
           {
             "k": 707.0,
-            "iv_call": 27.54,
-            "iv_put": 26.06
+            "iv_call": 28.71,
+            "iv_put": 26.93
           },
           {
             "k": 708.0,
-            "iv_call": 28.24,
-            "iv_put": 25.74
+            "iv_call": 29.4,
+            "iv_put": 26.59
           },
           {
             "k": 709.0,
-            "iv_call": 26.72,
-            "iv_put": 25.39
+            "iv_call": 27.84,
+            "iv_put": 26.23
           },
           {
             "k": 710.0,
-            "iv_call": 26.4,
-            "iv_put": 25.01
+            "iv_call": 27.5,
+            "iv_put": 25.84
           },
           {
             "k": 711.0,
-            "iv_call": 27.02,
-            "iv_put": 24.75
+            "iv_call": 28.12,
+            "iv_put": 25.57
           },
           {
             "k": 712.0,
-            "iv_call": 25.69,
-            "iv_put": 24.45
+            "iv_call": 26.75,
+            "iv_put": 25.26
           },
           {
             "k": 713.0,
-            "iv_call": 25.3,
-            "iv_put": 24.13
+            "iv_call": 26.33,
+            "iv_put": 24.92
           },
           {
             "k": 714.0,
-            "iv_call": 24.94,
-            "iv_put": 23.83
+            "iv_call": 25.95,
+            "iv_put": 24.61
           },
           {
             "k": 715.0,
-            "iv_call": 24.55,
-            "iv_put": 23.5
+            "iv_call": 25.54,
+            "iv_put": 24.27
           },
           {
             "k": 716.0,
-            "iv_call": 24.27,
-            "iv_put": 23.19
+            "iv_call": 25.24,
+            "iv_put": 23.95
           },
           {
             "k": 717.0,
-            "iv_call": 24.52,
-            "iv_put": 22.93
+            "iv_call": 25.48,
+            "iv_put": 23.69
           },
           {
             "k": 718.0,
-            "iv_call": 23.52,
-            "iv_put": 22.6
+            "iv_call": 24.45,
+            "iv_put": 23.34
           },
           {
             "k": 719.0,
-            "iv_call": 23.18,
-            "iv_put": 22.31
+            "iv_call": 24.09,
+            "iv_put": 23.05
           },
           {
             "k": 720.0,
-            "iv_call": 22.59,
-            "iv_put": 21.98
+            "iv_call": 23.48,
+            "iv_put": 22.71
           },
           {
             "k": 721.0,
-            "iv_call": 22.55,
-            "iv_put": 21.73
+            "iv_call": 23.42,
+            "iv_put": 22.45
           },
           {
             "k": 722.0,
-            "iv_call": 22.17,
-            "iv_put": 21.43
+            "iv_call": 23.03,
+            "iv_put": 22.14
           },
           {
             "k": 723.0,
-            "iv_call": 21.76,
-            "iv_put": 21.12
+            "iv_call": 22.6,
+            "iv_put": 21.82
           },
           {
             "k": 724.0,
-            "iv_call": 21.61,
-            "iv_put": 20.84
+            "iv_call": 22.44,
+            "iv_put": 21.52
           },
           {
             "k": 725.0,
-            "iv_call": 20.93,
-            "iv_put": 20.59
+            "iv_call": 21.73,
+            "iv_put": 21.26
           },
           {
             "k": 726.0,
-            "iv_call": 21.01,
-            "iv_put": 20.28
+            "iv_call": 21.8,
+            "iv_put": 20.95
           },
           {
             "k": 727.0,
-            "iv_call": 20.32,
-            "iv_put": 20.04
+            "iv_call": 21.09,
+            "iv_put": 20.69
           },
           {
             "k": 728.0,
-            "iv_call": 20.41,
-            "iv_put": 19.76
+            "iv_call": 21.18,
+            "iv_put": 20.4
           },
           {
             "k": 729.0,
-            "iv_call": 20.14,
-            "iv_put": 19.5
+            "iv_call": 20.89,
+            "iv_put": 20.13
           },
           {
             "k": 730.0,
-            "iv_call": 19.55,
-            "iv_put": 19.24
+            "iv_call": 20.27,
+            "iv_put": 19.87
           },
           {
             "k": 731.0,
-            "iv_call": 19.54,
-            "iv_put": 18.99
+            "iv_call": 20.25,
+            "iv_put": 19.6
           },
           {
             "k": 732.0,
-            "iv_call": 19.3,
-            "iv_put": 18.77
+            "iv_call": 20.0,
+            "iv_put": 19.38
           },
           {
             "k": 733.0,
-            "iv_call": 19.03,
-            "iv_put": 18.52
+            "iv_call": 19.72,
+            "iv_put": 19.12
           },
           {
             "k": 734.0,
-            "iv_call": 18.68,
-            "iv_put": 18.28
+            "iv_call": 19.35,
+            "iv_put": 18.87
           },
           {
             "k": 735.0,
-            "iv_call": 18.33,
-            "iv_put": 18.11
+            "iv_call": 18.99,
+            "iv_put": 18.7
           },
           {
             "k": 736.0,
-            "iv_call": 18.05,
-            "iv_put": 17.88
+            "iv_call": 18.71,
+            "iv_put": 18.45
           },
           {
             "k": 737.0,
-            "iv_call": 17.84,
-            "iv_put": 17.63
+            "iv_call": 18.48,
+            "iv_put": 18.2
           },
           {
             "k": 738.0,
-            "iv_call": 17.7,
-            "iv_put": 17.46
+            "iv_call": 18.33,
+            "iv_put": 18.02
           },
           {
             "k": 739.0,
-            "iv_call": 17.43,
-            "iv_put": 17.29
+            "iv_call": 18.05,
+            "iv_put": 17.84
           },
           {
             "k": 740.0,
-            "iv_call": 17.23,
-            "iv_put": 17.1
+            "iv_call": 17.85,
+            "iv_put": 17.64
           },
           {
             "k": 741.0,
-            "iv_call": 17.13,
-            "iv_put": 16.97
+            "iv_call": 17.74,
+            "iv_put": 17.51
           },
           {
             "k": 742.0,
-            "iv_call": 16.91,
-            "iv_put": 16.83
+            "iv_call": 17.5,
+            "iv_put": 17.36
           },
           {
             "k": 743.0,
-            "iv_call": 16.8,
-            "iv_put": 16.72
+            "iv_call": 17.39,
+            "iv_put": 17.25
           },
           {
             "k": 744.0,
-            "iv_call": 16.67,
-            "iv_put": 16.61
+            "iv_call": 17.25,
+            "iv_put": 17.14
           },
           {
             "k": 745.0,
-            "iv_call": 16.55,
-            "iv_put": 16.56
+            "iv_call": 17.13,
+            "iv_put": 17.08
           },
           {
             "k": 746.0,
-            "iv_call": 16.46,
-            "iv_put": 16.45
+            "iv_call": 17.04,
+            "iv_put": 16.96
           },
           {
             "k": 747.0,
-            "iv_call": 16.37,
-            "iv_put": 16.35
+            "iv_call": 16.94,
+            "iv_put": 16.85
           },
           {
             "k": 748.0,
-            "iv_call": 16.31,
-            "iv_put": 16.28
+            "iv_call": 16.88,
+            "iv_put": 16.78
           },
           {
             "k": 749.0,
-            "iv_call": 16.26,
-            "iv_put": 16.47
+            "iv_call": 16.83,
+            "iv_put": 16.98
           },
           {
             "k": 750.0,
-            "iv_call": 16.22,
-            "iv_put": 16.45
+            "iv_call": 16.79,
+            "iv_put": 16.95
           },
           {
             "k": 751.0,
-            "iv_call": 16.24,
-            "iv_put": 16.47
+            "iv_call": 16.8,
+            "iv_put": 16.97
           },
           {
             "k": 752.0,
-            "iv_call": 16.25,
-            "iv_put": 16.52
+            "iv_call": 16.81,
+            "iv_put": 17.02
           },
           {
             "k": 753.0,
-            "iv_call": 16.27,
-            "iv_put": 16.57
+            "iv_call": 16.83,
+            "iv_put": 17.06
           },
           {
             "k": 754.0,
-            "iv_call": 16.29,
-            "iv_put": 16.66
+            "iv_call": 16.85,
+            "iv_put": 17.16
           },
           {
             "k": 755.0,
-            "iv_call": 16.35,
-            "iv_put": 16.81
+            "iv_call": 16.91,
+            "iv_put": 17.3
           },
           {
             "k": 756.0,
-            "iv_call": 16.4,
-            "iv_put": 16.93
+            "iv_call": 16.96,
+            "iv_put": 17.42
           },
           {
             "k": 757.0,
-            "iv_call": 16.52,
-            "iv_put": 17.1
+            "iv_call": 17.09,
+            "iv_put": 17.59
           },
           {
             "k": 758.0,
-            "iv_call": 16.56,
-            "iv_put": 17.11
+            "iv_call": 17.13,
+            "iv_put": 17.59
           },
           {
             "k": 759.0,
-            "iv_call": 16.69,
-            "iv_put": 17.33
+            "iv_call": 17.27,
+            "iv_put": 17.81
           },
           {
             "k": 760.0,
-            "iv_call": 16.8,
-            "iv_put": 16.77
+            "iv_call": 17.38,
+            "iv_put": 17.23
           },
           {
             "k": 765.0,
-            "iv_call": 17.52,
-            "iv_put": 19.16
+            "iv_call": 18.12,
+            "iv_put": 19.68
           },
           {
             "k": 770.0,
-            "iv_call": 18.39,
-            "iv_put": 21.28
+            "iv_call": 19.02,
+            "iv_put": 21.84
           },
           {
             "k": 775.0,
-            "iv_call": 19.73,
-            "iv_put": 23.97
+            "iv_call": 20.4,
+            "iv_put": 24.61
           },
           {
             "k": 780.0,
-            "iv_call": 21.17,
+            "iv_call": 21.89,
             "iv_put": null
           },
           {
             "k": 785.0,
-            "iv_call": 23.22,
+            "iv_call": 24.01,
             "iv_put": null
           },
           {
             "k": 790.0,
-            "iv_call": 24.52,
+            "iv_call": 25.36,
             "iv_put": null
           },
           {
             "k": 795.0,
-            "iv_call": 26.27,
+            "iv_call": 27.16,
             "iv_put": null
           },
           {
             "k": 800.0,
-            "iv_call": 28.36,
+            "iv_call": 29.32,
             "iv_put": null
           },
           {
             "k": 805.0,
-            "iv_call": 30.42,
+            "iv_call": 31.45,
             "iv_put": null
           },
           {
             "k": 810.0,
-            "iv_call": 31.93,
+            "iv_call": 33.01,
             "iv_put": null
           },
           {
             "k": 815.0,
-            "iv_call": 33.29,
+            "iv_call": 34.41,
             "iv_put": null
           },
           {
             "k": 820.0,
-            "iv_call": 35.21,
+            "iv_call": 36.4,
             "iv_put": null
           },
           {
             "k": 825.0,
-            "iv_call": 37.12,
+            "iv_call": 38.37,
             "iv_put": null
           },
           {
             "k": 830.0,
-            "iv_call": 39.0,
+            "iv_call": 40.31,
             "iv_put": null
           },
           {
             "k": 835.0,
-            "iv_call": 40.01,
+            "iv_call": 41.36,
             "iv_put": null
           },
           {
             "k": 840.0,
-            "iv_call": 41.82,
+            "iv_call": 43.23,
             "iv_put": null
           },
           {
             "k": 845.0,
-            "iv_call": 43.61,
+            "iv_call": 45.08,
             "iv_put": null
           },
           {
             "k": 850.0,
-            "iv_call": 45.38,
+            "iv_call": 46.91,
             "iv_put": null
           }
         ]
@@ -28896,7 +30498,7 @@
       "spot": 285.58,
       "expiry_used": "2026-09-25",
       "days_to_expiry": 3,
-      "atm_iv": 16.3,
+      "atm_iv": 16.8,
       "pcr": {
         "oi": 1.14,
         "vol": 0.44,
@@ -28911,7 +30513,7 @@
         "source": "OI"
       },
       "gex": {
-        "net_gex": -16.31,
+        "net_gex": -16.39,
         "max_gamma_strike": 280.0,
         "gamma_flip": null,
         "gamma_flip_dist_pct": null,
@@ -29002,7 +30604,7 @@
           },
           {
             "k": 270.0,
-            "g": -0.958
+            "g": -0.959
           },
           {
             "k": 271.0,
@@ -29010,7 +30612,7 @@
           },
           {
             "k": 272.0,
-            "g": -0.61
+            "g": -0.611
           },
           {
             "k": 273.0,
@@ -29018,15 +30620,15 @@
           },
           {
             "k": 274.0,
-            "g": -0.134
+            "g": -0.133
           },
           {
             "k": 275.0,
-            "g": -1.016
+            "g": -1.017
           },
           {
             "k": 276.0,
-            "g": -1.24
+            "g": -1.241
           },
           {
             "k": 277.0,
@@ -29034,7 +30636,7 @@
           },
           {
             "k": 278.0,
-            "g": -1.307
+            "g": -1.308
           },
           {
             "k": 279.0,
@@ -29042,7 +30644,7 @@
           },
           {
             "k": 280.0,
-            "g": -8.681
+            "g": -8.692
           },
           {
             "k": 281.0,
@@ -29050,35 +30652,35 @@
           },
           {
             "k": 282.0,
-            "g": -3.054
+            "g": -3.059
           },
           {
             "k": 283.0,
-            "g": -1.022
+            "g": -1.024
           },
           {
             "k": 284.0,
-            "g": -4.752
+            "g": -4.76
           },
           {
             "k": 285.0,
-            "g": -7.529
+            "g": -7.543
           },
           {
             "k": 286.0,
-            "g": -0.609
+            "g": -0.612
           },
           {
             "k": 287.0,
-            "g": 1.136
+            "g": 1.129
           },
           {
             "k": 287.5,
-            "g": 0.109
+            "g": 0.108
           },
           {
             "k": 288.0,
-            "g": 1.006
+            "g": 1.003
           },
           {
             "k": 289.0,
@@ -29086,15 +30688,15 @@
           },
           {
             "k": 290.0,
-            "g": 1.658
+            "g": 1.657
           },
           {
             "k": 291.0,
-            "g": 0.417
+            "g": 0.416
           },
           {
             "k": 292.0,
-            "g": 3.608
+            "g": 3.604
           },
           {
             "k": 292.5,
@@ -29102,7 +30704,7 @@
           },
           {
             "k": 293.0,
-            "g": 5.196
+            "g": 5.189
           },
           {
             "k": 294.0,
@@ -29110,7 +30712,7 @@
           },
           {
             "k": 295.0,
-            "g": 1.606
+            "g": 1.605
           },
           {
             "k": 296.0,
@@ -29134,7 +30736,7 @@
           },
           {
             "k": 300.0,
-            "g": 0.673
+            "g": 0.672
           },
           {
             "k": 301.0,
@@ -29266,439 +30868,439 @@
         "net_dex": -0.37
       },
       "iv_skew": {
-        "skew": 4.5,
-        "put_iv": 26.1,
-        "call_iv": 21.6,
+        "skew": 4.6,
+        "put_iv": 27.0,
+        "call_iv": 22.3,
         "iv_curve": [
           {
             "k": 245.0,
-            "iv_call": 62.59,
-            "iv_put": 54.67
+            "iv_call": 65.68,
+            "iv_put": 56.51
           },
           {
             "k": 250.0,
-            "iv_call": 56.31,
-            "iv_put": 48.14
+            "iv_call": 59.03,
+            "iv_put": 49.75
           },
           {
             "k": 251.0,
-            "iv_call": 54.78,
-            "iv_put": 46.84
+            "iv_call": 57.44,
+            "iv_put": 48.4
           },
           {
             "k": 252.0,
-            "iv_call": 53.26,
-            "iv_put": 45.54
+            "iv_call": 55.85,
+            "iv_put": 47.06
           },
           {
             "k": 253.0,
-            "iv_call": 54.36,
-            "iv_put": 44.24
+            "iv_call": 56.82,
+            "iv_put": 45.72
           },
           {
             "k": 254.0,
-            "iv_call": 48.97,
-            "iv_put": 44.3
+            "iv_call": 51.5,
+            "iv_put": 45.78
           },
           {
             "k": 255.0,
-            "iv_call": 49.26,
-            "iv_put": 42.97
+            "iv_call": 51.64,
+            "iv_put": 44.41
           },
           {
             "k": 256.0,
-            "iv_call": 46.61,
-            "iv_put": 42.71
+            "iv_call": 48.98,
+            "iv_put": 44.14
           },
           {
             "k": 257.0,
-            "iv_call": 46.73,
-            "iv_put": 41.36
+            "iv_call": 48.97,
+            "iv_put": 42.74
           },
           {
             "k": 258.0,
-            "iv_call": 45.2,
-            "iv_put": 40.01
+            "iv_call": 47.38,
+            "iv_put": 41.35
           },
           {
             "k": 259.0,
-            "iv_call": 44.13,
-            "iv_put": 38.66
+            "iv_call": 46.23,
+            "iv_put": 39.96
           },
           {
             "k": 260.0,
-            "iv_call": 43.03,
-            "iv_put": 37.32
+            "iv_call": 45.05,
+            "iv_put": 38.56
           },
           {
             "k": 261.0,
-            "iv_call": 41.49,
-            "iv_put": 35.97
+            "iv_call": 43.45,
+            "iv_put": 37.17
           },
           {
             "k": 262.0,
-            "iv_call": 39.95,
-            "iv_put": 35.4
+            "iv_call": 41.84,
+            "iv_put": 36.59
           },
           {
             "k": 263.0,
-            "iv_call": 38.79,
-            "iv_put": 34.7
+            "iv_call": 40.61,
+            "iv_put": 35.86
           },
           {
             "k": 264.0,
-            "iv_call": 37.6,
-            "iv_put": 33.31
+            "iv_call": 39.35,
+            "iv_put": 34.42
           },
           {
             "k": 265.0,
-            "iv_call": 36.04,
-            "iv_put": 32.49
+            "iv_call": 37.72,
+            "iv_put": 33.57
           },
           {
             "k": 266.0,
-            "iv_call": 32.2,
-            "iv_put": 31.07
+            "iv_call": 33.9,
+            "iv_put": 32.11
           },
           {
             "k": 267.0,
-            "iv_call": 33.53,
-            "iv_put": 30.14
+            "iv_call": 35.08,
+            "iv_put": 31.15
           },
           {
             "k": 268.0,
-            "iv_call": 31.95,
-            "iv_put": 29.14
+            "iv_call": 33.43,
+            "iv_put": 30.11
           },
           {
             "k": 269.0,
-            "iv_call": 30.64,
-            "iv_put": 28.08
+            "iv_call": 32.05,
+            "iv_put": 29.01
           },
           {
             "k": 270.0,
-            "iv_call": 29.54,
-            "iv_put": 27.29
+            "iv_call": 30.88,
+            "iv_put": 28.2
           },
           {
             "k": 271.0,
-            "iv_call": 28.15,
-            "iv_put": 26.09
+            "iv_call": 29.42,
+            "iv_put": 26.95
           },
           {
             "k": 272.0,
-            "iv_call": 28.99,
-            "iv_put": 25.11
+            "iv_call": 30.2,
+            "iv_put": 25.94
           },
           {
             "k": 273.0,
-            "iv_call": 27.08,
-            "iv_put": 24.26
+            "iv_call": 28.22,
+            "iv_put": 25.06
           },
           {
             "k": 274.0,
-            "iv_call": 26.37,
-            "iv_put": 23.27
+            "iv_call": 27.46,
+            "iv_put": 24.05
           },
           {
             "k": 275.0,
-            "iv_call": 25.09,
-            "iv_put": 22.34
+            "iv_call": 26.11,
+            "iv_put": 23.08
           },
           {
             "k": 276.0,
-            "iv_call": 23.36,
-            "iv_put": 21.56
+            "iv_call": 24.31,
+            "iv_put": 22.27
           },
           {
             "k": 277.0,
-            "iv_call": 22.25,
-            "iv_put": 20.7
+            "iv_call": 23.15,
+            "iv_put": 21.38
           },
           {
             "k": 278.0,
-            "iv_call": 21.28,
-            "iv_put": 19.95
+            "iv_call": 22.12,
+            "iv_put": 20.61
           },
           {
             "k": 279.0,
-            "iv_call": 20.51,
-            "iv_put": 19.21
+            "iv_call": 21.31,
+            "iv_put": 19.84
           },
           {
             "k": 280.0,
-            "iv_call": 19.82,
-            "iv_put": 18.63
+            "iv_call": 20.57,
+            "iv_put": 19.24
           },
           {
             "k": 281.0,
-            "iv_call": 18.72,
-            "iv_put": 18.0
+            "iv_call": 19.43,
+            "iv_put": 18.59
           },
           {
             "k": 282.0,
-            "iv_call": 18.0,
-            "iv_put": 17.49
+            "iv_call": 18.67,
+            "iv_put": 18.05
           },
           {
             "k": 283.0,
-            "iv_call": 17.5,
-            "iv_put": 17.04
+            "iv_call": 18.15,
+            "iv_put": 17.6
           },
           {
             "k": 284.0,
-            "iv_call": 17.12,
-            "iv_put": 16.75
+            "iv_call": 17.75,
+            "iv_put": 17.29
           },
           {
             "k": 285.0,
-            "iv_call": 16.67,
-            "iv_put": 16.31
+            "iv_call": 17.27,
+            "iv_put": 16.83
           },
           {
             "k": 286.0,
-            "iv_call": 16.46,
-            "iv_put": 16.1
+            "iv_call": 17.05,
+            "iv_put": 16.61
           },
           {
             "k": 287.0,
-            "iv_call": 16.28,
-            "iv_put": 15.9
+            "iv_call": 16.86,
+            "iv_put": 16.39
           },
           {
             "k": 287.5,
-            "iv_call": 16.18,
-            "iv_put": 15.87
+            "iv_call": 16.75,
+            "iv_put": 16.36
           },
           {
             "k": 288.0,
-            "iv_call": 16.18,
-            "iv_put": 15.7
+            "iv_call": 16.75,
+            "iv_put": 16.18
           },
           {
             "k": 289.0,
-            "iv_call": 16.18,
-            "iv_put": 15.87
+            "iv_call": 16.74,
+            "iv_put": 16.35
           },
           {
             "k": 290.0,
-            "iv_call": 16.23,
-            "iv_put": 16.01
+            "iv_call": 16.79,
+            "iv_put": 16.48
           },
           {
             "k": 291.0,
-            "iv_call": 16.44,
-            "iv_put": 17.08
+            "iv_call": 17.01,
+            "iv_put": 17.58
           },
           {
             "k": 292.0,
-            "iv_call": 16.74,
-            "iv_put": 17.44
+            "iv_call": 17.32,
+            "iv_put": 17.94
           },
           {
             "k": 292.5,
-            "iv_call": 16.92,
-            "iv_put": 18.13
+            "iv_call": 17.5,
+            "iv_put": 18.65
           },
           {
             "k": 293.0,
-            "iv_call": 17.19,
-            "iv_put": 18.15
+            "iv_call": 17.78,
+            "iv_put": 18.66
           },
           {
             "k": 294.0,
-            "iv_call": 17.67,
-            "iv_put": 19.1
+            "iv_call": 18.28,
+            "iv_put": 19.63
           },
           {
             "k": 295.0,
-            "iv_call": 18.2,
-            "iv_put": 19.94
+            "iv_call": 18.83,
+            "iv_put": 20.49
           },
           {
             "k": 296.0,
-            "iv_call": 18.77,
-            "iv_put": 20.68
+            "iv_call": 19.41,
+            "iv_put": 21.24
           },
           {
             "k": 297.0,
-            "iv_call": 19.52,
-            "iv_put": 21.58
+            "iv_call": 20.19,
+            "iv_put": 22.16
           },
           {
             "k": 297.5,
-            "iv_call": 19.68,
-            "iv_put": 22.34
+            "iv_call": 20.36,
+            "iv_put": 22.93
           },
           {
             "k": 298.0,
-            "iv_call": 20.37,
-            "iv_put": 23.78
+            "iv_call": 21.07,
+            "iv_put": 24.43
           },
           {
             "k": 299.0,
-            "iv_call": 21.07,
-            "iv_put": 23.7
+            "iv_call": 21.79,
+            "iv_put": 24.32
           },
           {
             "k": 300.0,
-            "iv_call": 21.59,
-            "iv_put": 24.76
+            "iv_call": 22.32,
+            "iv_put": 25.4
           },
           {
             "k": 301.0,
-            "iv_call": 22.37,
-            "iv_put": 26.16
+            "iv_call": 23.14,
+            "iv_put": 26.84
           },
           {
             "k": 302.0,
-            "iv_call": 23.05,
-            "iv_put": 29.47
+            "iv_call": 23.83,
+            "iv_put": 30.28
           },
           {
             "k": 302.5,
-            "iv_call": 23.64,
-            "iv_put": 27.76
+            "iv_call": 24.45,
+            "iv_put": 28.48
           },
           {
             "k": 303.0,
-            "iv_call": 24.24,
-            "iv_put": 28.9
+            "iv_call": 25.07,
+            "iv_put": 29.66
           },
           {
             "k": 304.0,
-            "iv_call": 24.74,
-            "iv_put": 30.67
+            "iv_call": 25.58,
+            "iv_put": 31.49
           },
           {
             "k": 305.0,
-            "iv_call": 25.03,
-            "iv_put": 31.59
+            "iv_call": 25.88,
+            "iv_put": 32.42
           },
           {
             "k": 306.0,
-            "iv_call": 26.14,
-            "iv_put": 32.91
+            "iv_call": 27.03,
+            "iv_put": 33.78
           },
           {
             "k": 307.0,
-            "iv_call": 27.24,
-            "iv_put": 35.85
+            "iv_call": 28.17,
+            "iv_put": 36.83
           },
           {
             "k": 307.5,
-            "iv_call": 27.79,
-            "iv_put": 34.34
+            "iv_call": 28.73,
+            "iv_put": 35.24
           },
           {
             "k": 308.0,
-            "iv_call": 28.33,
-            "iv_put": 35.53
+            "iv_call": 29.29,
+            "iv_put": 36.47
           },
           {
             "k": 309.0,
-            "iv_call": 29.41,
-            "iv_put": 36.26
+            "iv_call": 30.41,
+            "iv_put": 37.22
           },
           {
             "k": 310.0,
-            "iv_call": 29.21,
-            "iv_put": 37.53
+            "iv_call": 30.2,
+            "iv_put": 38.52
           },
           {
             "k": 311.0,
-            "iv_call": 30.24,
-            "iv_put": 39.38
+            "iv_call": 31.27,
+            "iv_put": 40.43
           },
           {
             "k": 312.0,
-            "iv_call": 31.26,
-            "iv_put": 40.03
+            "iv_call": 32.33,
+            "iv_put": 41.09
           },
           {
             "k": 312.5,
-            "iv_call": 31.77,
-            "iv_put": 41.27
+            "iv_call": 32.85,
+            "iv_put": 42.37
           },
           {
             "k": 313.0,
-            "iv_call": 22.83,
-            "iv_put": 43.36
+            "iv_call": 23.6,
+            "iv_put": 44.55
           },
           {
             "k": 314.0,
-            "iv_call": 35.83,
-            "iv_put": 43.14
+            "iv_call": 37.05,
+            "iv_put": 44.3
           },
           {
             "k": 315.0,
-            "iv_call": 34.3,
-            "iv_put": 45.9
+            "iv_call": 35.46,
+            "iv_put": 47.17
           },
           {
             "k": 316.0,
-            "iv_call": 35.3,
-            "iv_put": 46.69
+            "iv_call": 36.5,
+            "iv_put": 47.97
           },
           {
             "k": 317.0,
-            "iv_call": 36.29,
-            "iv_put": 46.82
+            "iv_call": 37.52,
+            "iv_put": 48.08
           },
           {
             "k": 318.0,
-            "iv_call": 37.28,
-            "iv_put": 48.03
+            "iv_call": 38.54,
+            "iv_put": 49.33
           },
           {
             "k": 319.0,
-            "iv_call": 38.26,
-            "iv_put": 49.24
+            "iv_call": 39.56,
+            "iv_put": 50.57
           },
           {
             "k": 320.0,
-            "iv_call": 39.24,
-            "iv_put": 50.43
+            "iv_call": 40.57,
+            "iv_put": 51.8
           },
           {
             "k": 321.0,
-            "iv_call": 28.74,
-            "iv_put": 51.62
+            "iv_call": 29.72,
+            "iv_put": 53.02
           },
           {
             "k": 322.0,
-            "iv_call": 29.47,
-            "iv_put": 52.8
+            "iv_call": 30.46,
+            "iv_put": 54.24
           },
           {
             "k": 323.0,
-            "iv_call": 42.13,
-            "iv_put": 53.98
+            "iv_call": 43.56,
+            "iv_put": 55.45
           },
           {
             "k": 324.0,
-            "iv_call": 30.9,
-            "iv_put": 55.15
+            "iv_call": 31.95,
+            "iv_put": 56.65
           },
           {
             "k": 325.0,
-            "iv_call": 31.62,
-            "iv_put": 56.31
+            "iv_call": 32.69,
+            "iv_put": 57.84
           },
           {
             "k": 326.0,
-            "iv_call": 32.33,
-            "iv_put": 57.47
+            "iv_call": 33.42,
+            "iv_put": 59.03
           },
           {
             "k": 327.0,
-            "iv_call": 33.04,
-            "iv_put": 58.62
+            "iv_call": 34.16,
+            "iv_put": 60.21
           },
           {
             "k": 328.0,
-            "iv_call": 33.74,
-            "iv_put": 59.76
+            "iv_call": 34.88,
+            "iv_put": 61.39
           }
         ]
       },
@@ -29708,7 +31310,7 @@
       "spot": 519.78,
       "expiry_used": "2026-09-25",
       "days_to_expiry": 3,
-      "atm_iv": 12.3,
+      "atm_iv": 12.7,
       "pcr": {
         "oi": 0.56,
         "vol": 0.29,
@@ -29723,7 +31325,7 @@
         "source": "OI"
       },
       "gex": {
-        "net_gex": 11.85,
+        "net_gex": 11.81,
         "max_gamma_strike": 516.0,
         "gamma_flip": 516.0,
         "gamma_flip_dist_pct": -0.73,
@@ -29790,7 +31392,7 @@
           },
           {
             "k": 500.0,
-            "g": -0.54
+            "g": -0.541
           },
           {
             "k": 501.0,
@@ -29802,11 +31404,11 @@
           },
           {
             "k": 503.0,
-            "g": -0.175
+            "g": -0.176
           },
           {
             "k": 504.0,
-            "g": -0.02
+            "g": -0.021
           },
           {
             "k": 505.0,
@@ -29818,7 +31420,7 @@
           },
           {
             "k": 507.0,
-            "g": -0.329
+            "g": -0.33
           },
           {
             "k": 508.0,
@@ -29830,7 +31432,7 @@
           },
           {
             "k": 510.0,
-            "g": -0.411
+            "g": -0.412
           },
           {
             "k": 511.0,
@@ -29838,7 +31440,7 @@
           },
           {
             "k": 512.0,
-            "g": -0.16
+            "g": -0.161
           },
           {
             "k": 513.0,
@@ -29846,43 +31448,43 @@
           },
           {
             "k": 514.0,
-            "g": -0.312
+            "g": -0.313
           },
           {
             "k": 515.0,
-            "g": -0.433
+            "g": -0.435
           },
           {
             "k": 516.0,
-            "g": 3.595
+            "g": 3.588
           },
           {
             "k": 517.0,
-            "g": -0.057
+            "g": -0.058
           },
           {
             "k": 518.0,
-            "g": 0.249
+            "g": 0.248
           },
           {
             "k": 519.0,
-            "g": -0.107
+            "g": -0.108
           },
           {
             "k": 520.0,
-            "g": 1.066
+            "g": 1.06
           },
           {
             "k": 521.0,
-            "g": 1.144
+            "g": 1.141
           },
           {
             "k": 522.0,
-            "g": 0.319
+            "g": 0.317
           },
           {
             "k": 523.0,
-            "g": 0.433
+            "g": 0.431
           },
           {
             "k": 524.0,
@@ -29890,7 +31492,7 @@
           },
           {
             "k": 525.0,
-            "g": 2.104
+            "g": 2.099
           },
           {
             "k": 526.0,
@@ -29898,15 +31500,15 @@
           },
           {
             "k": 527.0,
-            "g": 3.032
+            "g": 3.027
           },
           {
             "k": 528.0,
-            "g": 0.008
+            "g": 0.01
           },
           {
             "k": 529.0,
-            "g": 2.253
+            "g": 2.252
           },
           {
             "k": 530.0,
@@ -29934,7 +31536,7 @@
           },
           {
             "k": 535.0,
-            "g": 0.242
+            "g": 0.241
           },
           {
             "k": 536.0,
@@ -30134,508 +31736,508 @@
         "net_dex": 0.19
       },
       "iv_skew": {
-        "skew": 5.2,
-        "put_iv": 22.7,
-        "call_iv": 17.6,
+        "skew": 5.3,
+        "put_iv": 23.5,
+        "call_iv": 18.2,
         "iv_curve": [
           {
             "k": 445.0,
-            "iv_call": 74.59,
-            "iv_put": 53.53
+            "iv_call": 77.55,
+            "iv_put": 55.32
           },
           {
             "k": 450.0,
-            "iv_call": 70.81,
-            "iv_put": 47.93
+            "iv_call": 73.6,
+            "iv_put": 49.53
           },
           {
             "k": 455.0,
-            "iv_call": 66.11,
-            "iv_put": 48.48
+            "iv_call": 68.73,
+            "iv_put": 50.09
           },
           {
             "k": 460.0,
-            "iv_call": 61.43,
-            "iv_put": 40.32
+            "iv_call": 63.88,
+            "iv_put": 41.66
           },
           {
             "k": 465.0,
-            "iv_call": 56.77,
-            "iv_put": 37.05
+            "iv_call": 59.04,
+            "iv_put": 38.28
           },
           {
             "k": 470.0,
-            "iv_call": 52.8,
-            "iv_put": 37.73
+            "iv_call": 54.9,
+            "iv_put": 38.98
           },
           {
             "k": 475.0,
-            "iv_call": 48.1,
-            "iv_put": 35.3
+            "iv_call": 50.03,
+            "iv_put": 36.48
           },
           {
             "k": 480.0,
-            "iv_call": 43.4,
-            "iv_put": 31.15
+            "iv_call": 45.15,
+            "iv_put": 32.19
           },
           {
             "k": 485.0,
-            "iv_call": 39.21,
-            "iv_put": 28.39
+            "iv_call": 40.79,
+            "iv_put": 29.34
           },
           {
             "k": 490.0,
-            "iv_call": 34.89,
-            "iv_put": 25.63
+            "iv_call": 36.29,
+            "iv_put": 26.48
           },
           {
             "k": 495.0,
-            "iv_call": 30.41,
-            "iv_put": 22.7
+            "iv_call": 31.63,
+            "iv_put": 23.46
           },
           {
             "k": 496.0,
-            "iv_call": 29.41,
-            "iv_put": 22.3
+            "iv_call": 30.6,
+            "iv_put": 23.04
           },
           {
             "k": 497.0,
-            "iv_call": 28.79,
-            "iv_put": 21.84
+            "iv_call": 29.95,
+            "iv_put": 22.57
           },
           {
             "k": 498.0,
-            "iv_call": 27.78,
-            "iv_put": 21.18
+            "iv_call": 28.9,
+            "iv_put": 21.88
           },
           {
             "k": 499.0,
-            "iv_call": 26.77,
-            "iv_put": 20.66
+            "iv_call": 27.84,
+            "iv_put": 21.34
           },
           {
             "k": 500.0,
-            "iv_call": 25.75,
-            "iv_put": 20.09
+            "iv_call": 26.78,
+            "iv_put": 20.76
           },
           {
             "k": 501.0,
-            "iv_call": 25.05,
-            "iv_put": 19.5
+            "iv_call": 26.06,
+            "iv_put": 20.14
           },
           {
             "k": 502.0,
-            "iv_call": 24.33,
-            "iv_put": 19.1
+            "iv_call": 25.3,
+            "iv_put": 19.73
           },
           {
             "k": 503.0,
-            "iv_call": 23.27,
-            "iv_put": 18.64
+            "iv_call": 24.21,
+            "iv_put": 19.25
           },
           {
             "k": 504.0,
-            "iv_call": 22.79,
-            "iv_put": 18.01
+            "iv_call": 23.69,
+            "iv_put": 18.61
           },
           {
             "k": 505.0,
-            "iv_call": 21.7,
-            "iv_put": 17.44
+            "iv_call": 22.56,
+            "iv_put": 18.02
           },
           {
             "k": 506.0,
-            "iv_call": 21.12,
-            "iv_put": 16.9
+            "iv_call": 21.96,
+            "iv_put": 17.45
           },
           {
             "k": 507.0,
-            "iv_call": 20.0,
-            "iv_put": 16.29
+            "iv_call": 20.79,
+            "iv_put": 16.83
           },
           {
             "k": 508.0,
-            "iv_call": 19.33,
-            "iv_put": 15.89
+            "iv_call": 20.09,
+            "iv_put": 16.41
           },
           {
             "k": 509.0,
-            "iv_call": 18.6,
-            "iv_put": 15.56
+            "iv_call": 19.33,
+            "iv_put": 16.07
           },
           {
             "k": 510.0,
-            "iv_call": 17.82,
-            "iv_put": 15.01
+            "iv_call": 18.51,
+            "iv_put": 15.5
           },
           {
             "k": 511.0,
-            "iv_call": 17.16,
-            "iv_put": 14.64
+            "iv_call": 17.82,
+            "iv_put": 15.12
           },
           {
             "k": 512.0,
-            "iv_call": 16.42,
-            "iv_put": 14.26
+            "iv_call": 17.05,
+            "iv_put": 14.72
           },
           {
             "k": 513.0,
-            "iv_call": 15.92,
-            "iv_put": 14.03
+            "iv_call": 16.53,
+            "iv_put": 14.48
           },
           {
             "k": 514.0,
-            "iv_call": 15.3,
-            "iv_put": 13.49
+            "iv_call": 15.88,
+            "iv_put": 13.92
           },
           {
             "k": 515.0,
-            "iv_call": 14.84,
-            "iv_put": 13.14
+            "iv_call": 15.4,
+            "iv_put": 13.56
           },
           {
             "k": 516.0,
-            "iv_call": 14.48,
-            "iv_put": 12.87
+            "iv_call": 15.02,
+            "iv_put": 13.29
           },
           {
             "k": 517.0,
-            "iv_call": 14.07,
-            "iv_put": 12.57
+            "iv_call": 14.59,
+            "iv_put": 12.97
           },
           {
             "k": 518.0,
-            "iv_call": 13.57,
-            "iv_put": 12.27
+            "iv_call": 14.07,
+            "iv_put": 12.65
           },
           {
             "k": 519.0,
-            "iv_call": 13.22,
-            "iv_put": 11.83
+            "iv_call": 13.7,
+            "iv_put": 12.2
           },
           {
             "k": 520.0,
-            "iv_call": 12.88,
-            "iv_put": 11.68
+            "iv_call": 13.34,
+            "iv_put": 12.04
           },
           {
             "k": 521.0,
-            "iv_call": 12.66,
-            "iv_put": 11.41
+            "iv_call": 13.11,
+            "iv_put": 11.76
           },
           {
             "k": 522.0,
-            "iv_call": 12.57,
-            "iv_put": 11.43
+            "iv_call": 13.02,
+            "iv_put": 11.78
           },
           {
             "k": 523.0,
-            "iv_call": 12.47,
-            "iv_put": 11.47
+            "iv_call": 12.91,
+            "iv_put": 11.81
           },
           {
             "k": 524.0,
-            "iv_call": 12.58,
-            "iv_put": 11.33
+            "iv_call": 13.03,
+            "iv_put": 11.66
           },
           {
             "k": 525.0,
-            "iv_call": 12.45,
-            "iv_put": 11.29
+            "iv_call": 12.89,
+            "iv_put": 11.61
           },
           {
             "k": 526.0,
-            "iv_call": 12.74,
-            "iv_put": 11.46
+            "iv_call": 13.19,
+            "iv_put": 11.78
           },
           {
             "k": 527.0,
-            "iv_call": 12.74,
-            "iv_put": 11.3
+            "iv_call": 13.18,
+            "iv_put": 11.61
           },
           {
             "k": 528.0,
-            "iv_call": 13.06,
-            "iv_put": 11.22
+            "iv_call": 13.51,
+            "iv_put": 11.51
           },
           {
             "k": 529.0,
-            "iv_call": 13.18,
-            "iv_put": 11.44
+            "iv_call": 13.64,
+            "iv_put": 11.72
           },
           {
             "k": 530.0,
-            "iv_call": 13.43,
-            "iv_put": 11.1
+            "iv_call": 13.89,
+            "iv_put": 11.36
           },
           {
             "k": 531.0,
-            "iv_call": 13.32,
+            "iv_call": 13.78,
             "iv_put": null
           },
           {
             "k": 532.0,
-            "iv_call": 13.41,
+            "iv_call": 13.87,
             "iv_put": null
           },
           {
             "k": 532.5,
-            "iv_call": 13.36,
+            "iv_call": 13.82,
             "iv_put": null
           },
           {
             "k": 533.0,
-            "iv_call": 13.46,
+            "iv_call": 13.92,
             "iv_put": null
           },
           {
             "k": 534.0,
-            "iv_call": 13.51,
+            "iv_call": 13.98,
             "iv_put": null
           },
           {
             "k": 535.0,
-            "iv_call": 13.47,
+            "iv_call": 13.94,
             "iv_put": null
           },
           {
             "k": 536.0,
-            "iv_call": 13.8,
+            "iv_call": 14.27,
             "iv_put": null
           },
           {
             "k": 537.0,
-            "iv_call": 13.73,
+            "iv_call": 14.21,
             "iv_put": null
           },
           {
             "k": 537.5,
-            "iv_call": 13.55,
+            "iv_call": 14.01,
             "iv_put": null
           },
           {
             "k": 538.0,
-            "iv_call": 13.81,
+            "iv_call": 14.29,
             "iv_put": null
           },
           {
             "k": 539.0,
-            "iv_call": 14.34,
+            "iv_call": 14.83,
             "iv_put": null
           },
           {
             "k": 540.0,
-            "iv_call": 15.0,
+            "iv_call": 15.51,
             "iv_put": null
           },
           {
             "k": 541.0,
-            "iv_call": 15.64,
+            "iv_call": 16.18,
             "iv_put": null
           },
           {
             "k": 542.0,
-            "iv_call": 15.79,
+            "iv_call": 16.33,
             "iv_put": null
           },
           {
             "k": 542.5,
-            "iv_call": 16.02,
+            "iv_call": 16.56,
             "iv_put": null
           },
           {
             "k": 543.0,
-            "iv_call": 16.25,
+            "iv_call": 16.8,
             "iv_put": null
           },
           {
             "k": 544.0,
-            "iv_call": 16.68,
+            "iv_call": 17.25,
             "iv_put": null
           },
           {
             "k": 545.0,
-            "iv_call": 16.86,
+            "iv_call": 17.44,
             "iv_put": null
           },
           {
             "k": 546.0,
-            "iv_call": 17.55,
+            "iv_call": 18.15,
             "iv_put": null
           },
           {
             "k": 547.0,
-            "iv_call": 17.98,
+            "iv_call": 18.59,
             "iv_put": null
           },
           {
             "k": 547.5,
-            "iv_call": 19.73,
+            "iv_call": 20.4,
             "iv_put": null
           },
           {
             "k": 548.0,
-            "iv_call": 18.38,
+            "iv_call": 19.0,
             "iv_put": null
           },
           {
             "k": 549.0,
-            "iv_call": 18.78,
+            "iv_call": 19.42,
             "iv_put": null
           },
           {
             "k": 550.0,
-            "iv_call": 22.27,
+            "iv_call": 23.03,
             "iv_put": null
           },
           {
             "k": 551.0,
-            "iv_call": 19.55,
+            "iv_call": 20.21,
             "iv_put": null
           },
           {
             "k": 552.0,
-            "iv_call": 19.93,
+            "iv_call": 20.6,
             "iv_put": null
           },
           {
             "k": 552.5,
-            "iv_call": 20.1,
+            "iv_call": 20.79,
             "iv_put": null
           },
           {
             "k": 553.0,
-            "iv_call": 20.31,
+            "iv_call": 21.0,
             "iv_put": null
           },
           {
             "k": 554.0,
-            "iv_call": 20.68,
+            "iv_call": 21.38,
             "iv_put": null
           },
           {
             "k": 555.0,
-            "iv_call": 24.27,
+            "iv_call": 25.09,
             "iv_put": null
           },
           {
             "k": 556.0,
-            "iv_call": 21.37,
+            "iv_call": 22.1,
             "iv_put": null
           },
           {
             "k": 557.0,
-            "iv_call": 21.7,
+            "iv_call": 22.44,
             "iv_put": null
           },
           {
             "k": 557.5,
-            "iv_call": 21.86,
+            "iv_call": 22.6,
             "iv_put": null
           },
           {
             "k": 558.0,
-            "iv_call": 22.07,
+            "iv_call": 22.82,
             "iv_put": null
           },
           {
             "k": 559.0,
-            "iv_call": 22.41,
+            "iv_call": 23.17,
             "iv_put": null
           },
           {
             "k": 560.0,
-            "iv_call": 22.73,
+            "iv_call": 23.5,
             "iv_put": null
           },
           {
             "k": 561.0,
-            "iv_call": 23.02,
+            "iv_call": 23.8,
             "iv_put": null
           },
           {
             "k": 562.0,
-            "iv_call": 23.37,
+            "iv_call": 24.16,
             "iv_put": null
           },
           {
             "k": 563.0,
-            "iv_call": 23.69,
+            "iv_call": 24.49,
             "iv_put": null
           },
           {
             "k": 564.0,
-            "iv_call": 24.0,
+            "iv_call": 24.81,
             "iv_put": null
           },
           {
             "k": 565.0,
-            "iv_call": 24.27,
+            "iv_call": 25.1,
             "iv_put": null
           },
           {
             "k": 566.0,
-            "iv_call": 24.64,
+            "iv_call": 25.48,
             "iv_put": null
           },
           {
             "k": 567.0,
-            "iv_call": 24.87,
+            "iv_call": 25.72,
             "iv_put": null
           },
           {
             "k": 568.0,
-            "iv_call": 25.21,
+            "iv_call": 26.06,
             "iv_put": null
           },
           {
             "k": 569.0,
-            "iv_call": 25.53,
+            "iv_call": 26.39,
             "iv_put": null
           },
           {
             "k": 570.0,
-            "iv_call": 25.83,
+            "iv_call": 26.71,
             "iv_put": null
           },
           {
             "k": 571.0,
-            "iv_call": 26.12,
+            "iv_call": 27.0,
             "iv_put": null
           },
           {
             "k": 572.0,
-            "iv_call": 26.38,
-            "iv_put": null
-          },
-          {
-            "k": 573.0,
-            "iv_call": 26.62,
-            "iv_put": null
-          },
-          {
-            "k": 574.0,
-            "iv_call": 26.83,
-            "iv_put": null
-          },
-          {
-            "k": 575.0,
             "iv_call": 27.27,
             "iv_put": null
           },
           {
+            "k": 573.0,
+            "iv_call": 27.52,
+            "iv_put": null
+          },
+          {
+            "k": 574.0,
+            "iv_call": 27.73,
+            "iv_put": null
+          },
+          {
+            "k": 575.0,
+            "iv_call": 28.19,
+            "iv_put": null
+          },
+          {
             "k": 580.0,
-            "iv_call": 28.43,
+            "iv_call": 29.39,
             "iv_put": null
           },
           {
             "k": 585.0,
-            "iv_call": 30.0,
+            "iv_call": 31.01,
             "iv_put": null
           },
           {
             "k": 590.0,
-            "iv_call": 31.3,
+            "iv_call": 32.35,
             "iv_put": null
           }
         ]
@@ -30646,7 +32248,7 @@
       "spot": 212.68,
       "expiry_used": "2026-09-25",
       "days_to_expiry": 3,
-      "atm_iv": 16.1,
+      "atm_iv": 16.6,
       "pcr": {
         "oi": 1.28,
         "vol": 2.88,
@@ -30661,7 +32263,7 @@
         "source": "OI"
       },
       "gex": {
-        "net_gex": 0.21,
+        "net_gex": 0.2,
         "max_gamma_strike": 212.5,
         "gamma_flip": 212.5,
         "gamma_flip_dist_pct": -0.08,
@@ -30684,7 +32286,7 @@
           },
           {
             "k": 212.5,
-            "g": 0.64
+            "g": 0.639
           },
           {
             "k": 215.0,
@@ -30720,138 +32322,138 @@
         "net_dex": -0.01
       },
       "iv_skew": {
-        "skew": 12.4,
-        "put_iv": 25.5,
-        "call_iv": 13.1,
+        "skew": 12.8,
+        "put_iv": 26.3,
+        "call_iv": 13.5,
         "iv_curve": [
           {
             "k": 185.0,
-            "iv_call": 67.59,
-            "iv_put": 40.97
+            "iv_call": 70.29,
+            "iv_put": 42.34
           },
           {
             "k": 190.0,
-            "iv_call": 67.45,
-            "iv_put": 37.09
+            "iv_call": 69.93,
+            "iv_put": 38.33
           },
           {
             "k": 194.0,
-            "iv_call": 47.25,
-            "iv_put": 33.74
+            "iv_call": 49.18,
+            "iv_put": 34.87
           },
           {
             "k": 195.0,
-            "iv_call": 41.13,
-            "iv_put": 32.87
+            "iv_call": 42.98,
+            "iv_put": 33.97
           },
           {
             "k": 196.0,
-            "iv_call": 50.14,
-            "iv_put": 40.78
+            "iv_call": 52.02,
+            "iv_put": 42.14
           },
           {
             "k": 197.0,
-            "iv_call": 51.2,
-            "iv_put": 31.04
+            "iv_call": 53.08,
+            "iv_put": 32.07
           },
           {
             "k": 198.0,
-            "iv_call": 46.89,
-            "iv_put": 30.09
+            "iv_call": 48.63,
+            "iv_put": 31.09
           },
           {
             "k": 199.0,
-            "iv_call": 45.89,
-            "iv_put": 29.11
+            "iv_call": 47.58,
+            "iv_put": 30.08
           },
           {
             "k": 200.0,
-            "iv_call": 44.65,
-            "iv_put": 28.11
+            "iv_call": 46.29,
+            "iv_put": 29.04
           },
           {
             "k": 202.5,
-            "iv_call": 27.94,
-            "iv_put": 25.45
+            "iv_call": 29.13,
+            "iv_put": 26.29
           },
           {
             "k": 205.0,
-            "iv_call": 22.1,
-            "iv_put": 18.85
+            "iv_call": 23.05,
+            "iv_put": 19.47
           },
           {
             "k": 207.5,
-            "iv_call": 23.18,
-            "iv_put": 26.95
+            "iv_call": 24.05,
+            "iv_put": 27.83
           },
           {
             "k": 210.0,
-            "iv_call": 21.2,
-            "iv_put": 24.62
+            "iv_call": 21.96,
+            "iv_put": 25.42
           },
           {
             "k": 212.5,
-            "iv_call": 19.13,
-            "iv_put": 12.98
+            "iv_call": 19.81,
+            "iv_put": 13.39
           },
           {
             "k": 215.0,
-            "iv_call": 10.39,
-            "iv_put": 14.63
+            "iv_call": 10.76,
+            "iv_put": 15.07
           },
           {
             "k": 217.5,
-            "iv_call": 15.79,
+            "iv_call": 16.33,
             "iv_put": null
           },
           {
             "k": 220.0,
-            "iv_call": 16.41,
+            "iv_call": 16.98,
             "iv_put": null
           },
           {
             "k": 222.5,
-            "iv_call": 13.09,
+            "iv_call": 13.54,
             "iv_put": null
           },
           {
             "k": 225.0,
-            "iv_call": 14.93,
+            "iv_call": 15.44,
             "iv_put": null
           },
           {
             "k": 227.5,
-            "iv_call": 17.64,
+            "iv_call": 18.23,
             "iv_put": null
           },
           {
             "k": 230.0,
-            "iv_call": 20.29,
+            "iv_call": 20.98,
             "iv_put": null
           },
           {
             "k": 232.5,
-            "iv_call": 22.89,
+            "iv_call": 23.67,
             "iv_put": null
           },
           {
             "k": 235.0,
-            "iv_call": 25.45,
+            "iv_call": 26.31,
             "iv_put": null
           },
           {
             "k": 237.5,
-            "iv_call": 27.96,
+            "iv_call": 28.91,
             "iv_put": null
           },
           {
             "k": 240.0,
-            "iv_call": 30.44,
-            "iv_put": 68.03
+            "iv_call": 31.47,
+            "iv_put": 70.1
           },
           {
             "k": 242.5,
-            "iv_call": 32.88,
+            "iv_call": 33.99,
             "iv_put": null
           }
         ]
@@ -30862,7 +32464,7 @@
       "spot": 73.25,
       "expiry_used": "2026-10-16",
       "days_to_expiry": 24,
-      "atm_iv": 18.7,
+      "atm_iv": 18.8,
       "pcr": {
         "oi": 0.2,
         "vol": 0.01,
@@ -30937,107 +32539,107 @@
       },
       "iv_skew": {
         "skew": 7.6,
-        "put_iv": 20.7,
+        "put_iv": 20.8,
         "call_iv": 13.2,
         "iv_curve": [
           {
             "k": 65.0,
-            "iv_call": 42.59,
-            "iv_put": 28.44
+            "iv_call": 42.84,
+            "iv_put": 28.58
           },
           {
             "k": 66.0,
-            "iv_call": 38.74,
-            "iv_put": 27.03
+            "iv_call": 38.97,
+            "iv_put": 27.16
           },
           {
             "k": 67.0,
-            "iv_call": 33.71,
-            "iv_put": 25.57
+            "iv_call": 33.92,
+            "iv_put": 25.69
           },
           {
             "k": 68.0,
-            "iv_call": 32.02,
-            "iv_put": 24.04
+            "iv_call": 32.22,
+            "iv_put": 24.15
           },
           {
             "k": 69.0,
-            "iv_call": 30.82,
-            "iv_put": 22.43
+            "iv_call": 31.0,
+            "iv_put": 22.54
           },
           {
             "k": 70.0,
-            "iv_call": 28.18,
-            "iv_put": 20.74
+            "iv_call": 28.35,
+            "iv_put": 20.84
           },
           {
             "k": 71.0,
-            "iv_call": 25.12,
-            "iv_put": 17.19
+            "iv_call": 25.27,
+            "iv_put": 17.27
           },
           {
             "k": 72.0,
-            "iv_call": 24.35,
-            "iv_put": 15.2
+            "iv_call": 24.49,
+            "iv_put": 15.27
           },
           {
             "k": 73.0,
-            "iv_call": 22.26,
-            "iv_put": 15.09
+            "iv_call": 22.39,
+            "iv_put": 15.15
           },
           {
             "k": 74.0,
-            "iv_call": 14.42,
-            "iv_put": 12.44
+            "iv_call": 14.5,
+            "iv_put": 12.49
           },
           {
             "k": 75.0,
-            "iv_call": 13.2,
-            "iv_put": 12.18
+            "iv_call": 13.27,
+            "iv_put": 12.23
           },
           {
             "k": 76.0,
-            "iv_call": 13.87,
-            "iv_put": 17.81
+            "iv_call": 13.95,
+            "iv_put": 17.88
           },
           {
             "k": 77.0,
-            "iv_call": 13.16,
-            "iv_put": 19.39
+            "iv_call": 13.24,
+            "iv_put": 19.47
           },
           {
             "k": 78.0,
-            "iv_call": 13.99,
+            "iv_call": 14.07,
             "iv_put": null
           },
           {
             "k": 79.0,
-            "iv_call": 14.76,
+            "iv_call": 14.84,
             "iv_put": 0.01
           },
           {
             "k": 80.0,
-            "iv_call": 15.48,
+            "iv_call": 15.56,
             "iv_put": null
           },
           {
             "k": 81.0,
-            "iv_call": 16.16,
+            "iv_call": 16.24,
             "iv_put": null
           },
           {
             "k": 82.0,
-            "iv_call": 16.8,
+            "iv_call": 16.89,
             "iv_put": null
           },
           {
             "k": 83.0,
-            "iv_call": 17.41,
+            "iv_call": 17.51,
             "iv_put": null
           },
           {
             "k": 84.0,
-            "iv_call": 17.98,
+            "iv_call": 18.08,
             "iv_put": null
           }
         ]
@@ -31048,7 +32650,7 @@
       "spot": 139.24,
       "expiry_used": "2026-10-16",
       "days_to_expiry": 24,
-      "atm_iv": 17.4,
+      "atm_iv": 17.5,
       "pcr": {
         "oi": 0.7,
         "vol": 0.14,
@@ -31163,142 +32765,142 @@
       },
       "iv_skew": {
         "skew": 6.0,
-        "put_iv": 20.6,
-        "call_iv": 14.6,
+        "put_iv": 20.7,
+        "call_iv": 14.7,
         "iv_curve": [
           {
             "k": 134.0,
-            "iv_call": 23.87,
-            "iv_put": 20.61
+            "iv_call": 24.02,
+            "iv_put": 20.7
           },
           {
             "k": 135.0,
-            "iv_call": 22.34,
-            "iv_put": 17.5
+            "iv_call": 22.47,
+            "iv_put": 17.58
           },
           {
             "k": 136.0,
-            "iv_call": 20.26,
-            "iv_put": 17.78
+            "iv_call": 20.38,
+            "iv_put": 17.86
           },
           {
             "k": 137.0,
-            "iv_call": 19.17,
-            "iv_put": 16.65
+            "iv_call": 19.28,
+            "iv_put": 16.72
           },
           {
             "k": 138.0,
-            "iv_call": 18.33,
-            "iv_put": 16.66
+            "iv_call": 18.44,
+            "iv_put": 16.73
           },
           {
             "k": 139.0,
-            "iv_call": 17.16,
-            "iv_put": 17.6
+            "iv_call": 17.26,
+            "iv_put": 17.68
           },
           {
             "k": 140.0,
-            "iv_call": 13.68,
-            "iv_put": 15.82
+            "iv_call": 13.76,
+            "iv_put": 15.89
           },
           {
             "k": 141.0,
-            "iv_call": 15.26,
-            "iv_put": 16.18
+            "iv_call": 15.34,
+            "iv_put": 16.25
           },
           {
             "k": 142.0,
-            "iv_call": 13.05,
-            "iv_put": 14.34
+            "iv_call": 13.12,
+            "iv_put": 14.39
           },
           {
             "k": 143.0,
-            "iv_call": 11.64,
-            "iv_put": 14.09
+            "iv_call": 11.71,
+            "iv_put": 14.14
           },
           {
             "k": 144.0,
-            "iv_call": 13.28,
-            "iv_put": 12.97
+            "iv_call": 13.36,
+            "iv_put": 13.02
           },
           {
             "k": 145.0,
-            "iv_call": 13.66,
+            "iv_call": 13.74,
             "iv_put": null
           },
           {
             "k": 146.0,
-            "iv_call": 14.64,
+            "iv_call": 14.72,
             "iv_put": null
           },
           {
             "k": 147.0,
-            "iv_call": 15.95,
+            "iv_call": 16.04,
             "iv_put": null
           },
           {
             "k": 148.0,
-            "iv_call": 16.37,
+            "iv_call": 16.46,
             "iv_put": null
           },
           {
             "k": 149.0,
-            "iv_call": 16.77,
+            "iv_call": 16.86,
             "iv_put": null
           },
           {
             "k": 150.0,
-            "iv_call": 14.02,
+            "iv_call": 14.1,
             "iv_put": null
           },
           {
             "k": 151.0,
-            "iv_call": 17.54,
+            "iv_call": 17.64,
             "iv_put": null
           },
           {
             "k": 152.0,
-            "iv_call": 17.91,
+            "iv_call": 18.0,
             "iv_put": null
           },
           {
             "k": 153.0,
-            "iv_call": 18.27,
+            "iv_call": 18.36,
             "iv_put": null
           },
           {
             "k": 154.0,
-            "iv_call": 18.61,
+            "iv_call": 18.71,
             "iv_put": null
           },
           {
             "k": 155.0,
-            "iv_call": 18.95,
+            "iv_call": 19.05,
             "iv_put": null
           },
           {
             "k": 156.0,
-            "iv_call": 19.28,
+            "iv_call": 19.38,
             "iv_put": null
           },
           {
             "k": 157.0,
-            "iv_call": 19.6,
+            "iv_call": 19.7,
             "iv_put": null
           },
           {
             "k": 158.0,
-            "iv_call": 19.92,
+            "iv_call": 20.02,
             "iv_put": null
           },
           {
             "k": 159.0,
-            "iv_call": 20.22,
+            "iv_call": 20.33,
             "iv_put": null
           },
           {
             "k": 160.0,
-            "iv_call": 20.52,
+            "iv_call": 20.63,
             "iv_put": null
           }
         ]
@@ -31309,7 +32911,7 @@
       "spot": 398.38,
       "expiry_used": "2026-09-25",
       "days_to_expiry": 3,
-      "atm_iv": 21.4,
+      "atm_iv": 22.1,
       "pcr": {
         "oi": 0.91,
         "vol": 0.85,
@@ -31324,7 +32926,7 @@
         "source": "OI"
       },
       "gex": {
-        "net_gex": -1.71,
+        "net_gex": -1.73,
         "max_gamma_strike": 390.0,
         "gamma_flip": null,
         "gamma_flip_dist_pct": null,
@@ -31495,7 +33097,7 @@
           },
           {
             "k": 385.0,
-            "g": -0.725
+            "g": -0.726
           },
           {
             "k": 386.0,
@@ -31507,7 +33109,7 @@
           },
           {
             "k": 388.0,
-            "g": -0.102
+            "g": -0.103
           },
           {
             "k": 389.0,
@@ -31515,7 +33117,7 @@
           },
           {
             "k": 390.0,
-            "g": -3.921
+            "g": -3.926
           },
           {
             "k": 391.0,
@@ -31523,11 +33125,11 @@
           },
           {
             "k": 392.0,
-            "g": -0.108
+            "g": -0.109
           },
           {
             "k": 393.0,
-            "g": -0.033
+            "g": -0.034
           },
           {
             "k": 394.0,
@@ -31535,11 +33137,11 @@
           },
           {
             "k": 395.0,
-            "g": -0.228
+            "g": -0.23
           },
           {
             "k": 396.0,
-            "g": -0.299
+            "g": -0.3
           },
           {
             "k": 397.0,
@@ -31547,7 +33149,7 @@
           },
           {
             "k": 398.0,
-            "g": -0.431
+            "g": -0.432
           },
           {
             "k": 399.0,
@@ -31555,7 +33157,7 @@
           },
           {
             "k": 400.0,
-            "g": 0.518
+            "g": 0.514
           },
           {
             "k": 401.0,
@@ -31563,15 +33165,15 @@
           },
           {
             "k": 402.0,
-            "g": 0.166
+            "g": 0.165
           },
           {
             "k": 403.0,
-            "g": 0.102
+            "g": 0.101
           },
           {
             "k": 404.0,
-            "g": 0.046
+            "g": 0.045
           },
           {
             "k": 405.0,
@@ -31587,7 +33189,7 @@
           },
           {
             "k": 408.0,
-            "g": 0.258
+            "g": 0.257
           },
           {
             "k": 409.0,
@@ -31611,19 +33213,19 @@
           },
           {
             "k": 414.0,
-            "g": 0.963
+            "g": 0.962
           },
           {
             "k": 415.0,
-            "g": 0.448
+            "g": 0.449
           },
           {
             "k": 416.0,
-            "g": 0.04
+            "g": 0.041
           },
           {
             "k": 417.0,
-            "g": 0.04
+            "g": 0.041
           },
           {
             "k": 418.0,
@@ -31719,488 +33321,488 @@
         "net_dex": -0.0
       },
       "iv_skew": {
-        "skew": 0.3,
-        "put_iv": 27.1,
-        "call_iv": 26.9,
+        "skew": 0.2,
+        "put_iv": 28.0,
+        "call_iv": 27.8,
         "iv_curve": [
           {
             "k": 340.0,
-            "iv_call": 87.14,
-            "iv_put": 52.22
+            "iv_call": 90.32,
+            "iv_put": 53.96
           },
           {
             "k": 345.0,
-            "iv_call": 78.9,
-            "iv_put": 51.08
+            "iv_call": 81.81,
+            "iv_put": 52.78
           },
           {
             "k": 346.0,
-            "iv_call": 83.64,
-            "iv_put": 53.22
+            "iv_call": 86.65,
+            "iv_put": 54.98
           },
           {
             "k": 347.0,
-            "iv_call": 77.69,
-            "iv_put": 52.23
+            "iv_call": 80.54,
+            "iv_put": 53.97
           },
           {
             "k": 348.0,
-            "iv_call": 80.84,
-            "iv_put": 51.26
+            "iv_call": 83.75,
+            "iv_put": 52.96
           },
           {
             "k": 349.0,
-            "iv_call": 79.44,
-            "iv_put": 50.28
+            "iv_call": 82.31,
+            "iv_put": 51.95
           },
           {
             "k": 350.0,
-            "iv_call": 80.83,
-            "iv_put": 49.3
+            "iv_call": 83.72,
+            "iv_put": 50.94
           },
           {
             "k": 351.0,
-            "iv_call": 76.07,
-            "iv_put": 47.5
+            "iv_call": 78.82,
+            "iv_put": 49.08
           },
           {
             "k": 352.0,
-            "iv_call": 65.81,
-            "iv_put": 48.75
+            "iv_call": 68.31,
+            "iv_put": 50.37
           },
           {
             "k": 353.0,
-            "iv_call": 70.28,
-            "iv_put": 47.1
+            "iv_call": 72.86,
+            "iv_put": 48.66
           },
           {
             "k": 354.0,
-            "iv_call": 62.43,
-            "iv_put": 47.91
+            "iv_call": 64.83,
+            "iv_put": 49.5
           },
           {
             "k": 355.0,
-            "iv_call": 56.39,
-            "iv_put": 45.13
+            "iv_call": 58.69,
+            "iv_put": 46.63
           },
           {
             "k": 356.0,
-            "iv_call": 63.65,
-            "iv_put": 44.14
+            "iv_call": 66.03,
+            "iv_put": 45.61
           },
           {
             "k": 357.0,
-            "iv_call": 67.73,
-            "iv_put": 44.34
+            "iv_call": 70.19,
+            "iv_put": 45.81
           },
           {
             "k": 358.0,
-            "iv_call": 53.85,
-            "iv_put": 42.78
+            "iv_call": 56.02,
+            "iv_put": 44.2
           },
           {
             "k": 359.0,
-            "iv_call": 66.49,
-            "iv_put": 42.33
+            "iv_call": 68.89,
+            "iv_put": 43.74
           },
           {
             "k": 360.0,
-            "iv_call": 59.03,
-            "iv_put": 38.89
+            "iv_call": 61.23,
+            "iv_put": 40.18
           },
           {
             "k": 361.0,
-            "iv_call": 51.16,
-            "iv_put": 40.33
+            "iv_call": 53.2,
+            "iv_put": 41.67
           },
           {
             "k": 362.0,
-            "iv_call": 56.98,
-            "iv_put": 38.26
+            "iv_call": 59.1,
+            "iv_put": 39.53
           },
           {
             "k": 363.0,
-            "iv_call": 63.09,
-            "iv_put": 37.28
+            "iv_call": 65.36,
+            "iv_put": 38.51
           },
           {
             "k": 364.0,
-            "iv_call": 57.5,
-            "iv_put": 37.32
+            "iv_call": 59.6,
+            "iv_put": 38.56
           },
           {
             "k": 365.0,
-            "iv_call": 56.11,
-            "iv_put": 35.84
+            "iv_call": 58.16,
+            "iv_put": 37.03
           },
           {
             "k": 366.0,
-            "iv_call": 46.6,
-            "iv_put": 34.34
+            "iv_call": 48.44,
+            "iv_put": 35.48
           },
           {
             "k": 367.0,
-            "iv_call": 54.26,
-            "iv_put": 33.36
+            "iv_call": 56.24,
+            "iv_put": 34.46
           },
           {
             "k": 368.0,
-            "iv_call": 53.29,
-            "iv_put": 33.73
+            "iv_call": 55.23,
+            "iv_put": 34.85
           },
           {
             "k": 369.0,
-            "iv_call": 56.27,
-            "iv_put": 33.11
+            "iv_call": 58.28,
+            "iv_put": 34.2
           },
           {
             "k": 370.0,
-            "iv_call": 44.66,
-            "iv_put": 32.08
+            "iv_call": 46.37,
+            "iv_put": 33.15
           },
           {
             "k": 371.0,
-            "iv_call": 48.17,
-            "iv_put": 31.74
+            "iv_call": 49.94,
+            "iv_put": 32.79
           },
           {
             "k": 372.0,
-            "iv_call": 46.75,
-            "iv_put": 31.0
+            "iv_call": 48.47,
+            "iv_put": 32.03
           },
           {
             "k": 373.0,
-            "iv_call": 44.92,
-            "iv_put": 29.95
+            "iv_call": 46.57,
+            "iv_put": 30.94
           },
           {
             "k": 374.0,
-            "iv_call": 42.22,
-            "iv_put": 29.17
+            "iv_call": 43.8,
+            "iv_put": 30.14
           },
           {
             "k": 375.0,
-            "iv_call": 40.39,
-            "iv_put": 29.32
+            "iv_call": 41.91,
+            "iv_put": 30.29
           },
           {
             "k": 376.0,
-            "iv_call": 46.64,
-            "iv_put": 28.0
+            "iv_call": 48.31,
+            "iv_put": 28.93
           },
           {
             "k": 377.0,
-            "iv_call": 39.23,
-            "iv_put": 27.32
+            "iv_call": 40.68,
+            "iv_put": 28.23
           },
           {
             "k": 378.0,
-            "iv_call": 39.26,
-            "iv_put": 27.14
+            "iv_call": 40.7,
+            "iv_put": 28.04
           },
           {
             "k": 379.0,
-            "iv_call": 33.57,
-            "iv_put": 26.16
+            "iv_call": 34.85,
+            "iv_put": 27.03
           },
           {
             "k": 380.0,
-            "iv_call": 32.6,
-            "iv_put": 25.92
+            "iv_call": 33.84,
+            "iv_put": 26.77
           },
           {
             "k": 381.0,
-            "iv_call": 31.98,
-            "iv_put": 25.26
+            "iv_call": 33.19,
+            "iv_put": 26.1
           },
           {
             "k": 382.0,
-            "iv_call": 30.92,
-            "iv_put": 24.89
+            "iv_call": 32.09,
+            "iv_put": 25.71
           },
           {
             "k": 383.0,
-            "iv_call": 30.16,
-            "iv_put": 23.96
+            "iv_call": 31.29,
+            "iv_put": 24.75
           },
           {
             "k": 384.0,
-            "iv_call": 29.33,
-            "iv_put": 23.77
+            "iv_call": 30.42,
+            "iv_put": 24.55
           },
           {
             "k": 385.0,
-            "iv_call": 27.19,
-            "iv_put": 23.47
+            "iv_call": 28.21,
+            "iv_put": 24.24
           },
           {
             "k": 386.0,
-            "iv_call": 26.88,
-            "iv_put": 23.08
+            "iv_call": 27.88,
+            "iv_put": 23.83
           },
           {
             "k": 387.0,
-            "iv_call": 25.87,
-            "iv_put": 22.79
+            "iv_call": 26.83,
+            "iv_put": 23.54
           },
           {
             "k": 388.0,
-            "iv_call": 25.3,
-            "iv_put": 22.38
+            "iv_call": 26.23,
+            "iv_put": 23.12
           },
           {
             "k": 389.0,
-            "iv_call": 24.83,
-            "iv_put": 21.86
+            "iv_call": 25.74,
+            "iv_put": 22.58
           },
           {
             "k": 390.0,
-            "iv_call": 24.42,
-            "iv_put": 21.85
+            "iv_call": 25.31,
+            "iv_put": 22.57
           },
           {
             "k": 391.0,
-            "iv_call": 23.84,
-            "iv_put": 21.5
+            "iv_call": 24.7,
+            "iv_put": 22.2
           },
           {
             "k": 392.0,
-            "iv_call": 23.47,
-            "iv_put": 21.31
+            "iv_call": 24.32,
+            "iv_put": 22.0
           },
           {
             "k": 393.0,
-            "iv_call": 23.09,
-            "iv_put": 21.17
-          },
-          {
-            "k": 394.0,
-            "iv_call": 23.18,
-            "iv_put": 20.96
-          },
-          {
-            "k": 395.0,
-            "iv_call": 22.68,
-            "iv_put": 21.09
-          },
-          {
-            "k": 396.0,
-            "iv_call": 22.29,
-            "iv_put": 20.9
-          },
-          {
-            "k": 397.0,
-            "iv_call": 22.11,
-            "iv_put": 20.88
-          },
-          {
-            "k": 398.0,
-            "iv_call": 21.83,
-            "iv_put": 20.98
-          },
-          {
-            "k": 399.0,
-            "iv_call": 21.74,
-            "iv_put": 20.88
-          },
-          {
-            "k": 400.0,
-            "iv_call": 21.74,
-            "iv_put": 20.96
-          },
-          {
-            "k": 401.0,
-            "iv_call": 21.85,
-            "iv_put": 21.23
-          },
-          {
-            "k": 402.0,
-            "iv_call": 21.96,
-            "iv_put": 21.24
-          },
-          {
-            "k": 403.0,
-            "iv_call": 22.11,
-            "iv_put": 21.14
-          },
-          {
-            "k": 404.0,
-            "iv_call": 22.37,
-            "iv_put": 21.29
-          },
-          {
-            "k": 405.0,
-            "iv_call": 22.51,
-            "iv_put": 21.98
-          },
-          {
-            "k": 406.0,
-            "iv_call": 22.65,
-            "iv_put": 21.39
-          },
-          {
-            "k": 407.0,
-            "iv_call": 22.95,
+            "iv_call": 23.91,
             "iv_put": 21.86
           },
           {
+            "k": 394.0,
+            "iv_call": 24.0,
+            "iv_put": 21.64
+          },
+          {
+            "k": 395.0,
+            "iv_call": 23.49,
+            "iv_put": 21.77
+          },
+          {
+            "k": 396.0,
+            "iv_call": 23.07,
+            "iv_put": 21.58
+          },
+          {
+            "k": 397.0,
+            "iv_call": 22.89,
+            "iv_put": 21.55
+          },
+          {
+            "k": 398.0,
+            "iv_call": 22.59,
+            "iv_put": 21.65
+          },
+          {
+            "k": 399.0,
+            "iv_call": 22.5,
+            "iv_put": 21.55
+          },
+          {
+            "k": 400.0,
+            "iv_call": 22.5,
+            "iv_put": 21.62
+          },
+          {
+            "k": 401.0,
+            "iv_call": 22.61,
+            "iv_put": 21.91
+          },
+          {
+            "k": 402.0,
+            "iv_call": 22.72,
+            "iv_put": 21.91
+          },
+          {
+            "k": 403.0,
+            "iv_call": 22.87,
+            "iv_put": 21.8
+          },
+          {
+            "k": 404.0,
+            "iv_call": 23.14,
+            "iv_put": 21.95
+          },
+          {
+            "k": 405.0,
+            "iv_call": 23.28,
+            "iv_put": 22.65
+          },
+          {
+            "k": 406.0,
+            "iv_call": 23.42,
+            "iv_put": 22.05
+          },
+          {
+            "k": 407.0,
+            "iv_call": 23.74,
+            "iv_put": 22.52
+          },
+          {
             "k": 408.0,
-            "iv_call": 23.15,
-            "iv_put": 21.85
+            "iv_call": 23.94,
+            "iv_put": 22.5
           },
           {
             "k": 409.0,
-            "iv_call": 23.34,
-            "iv_put": 22.46
+            "iv_call": 24.14,
+            "iv_put": 23.12
           },
           {
             "k": 410.0,
-            "iv_call": 23.74,
-            "iv_put": 22.59
+            "iv_call": 24.55,
+            "iv_put": 23.25
           },
           {
             "k": 411.0,
-            "iv_call": 24.1,
-            "iv_put": 22.84
+            "iv_call": 24.92,
+            "iv_put": 23.5
           },
           {
             "k": 412.0,
-            "iv_call": 24.67,
-            "iv_put": 23.3
+            "iv_call": 25.5,
+            "iv_put": 23.97
           },
           {
             "k": 413.0,
-            "iv_call": 24.63,
-            "iv_put": 23.61
+            "iv_call": 25.47,
+            "iv_put": 24.28
           },
           {
             "k": 414.0,
-            "iv_call": 25.16,
-            "iv_put": 23.72
+            "iv_call": 26.02,
+            "iv_put": 24.38
           },
           {
             "k": 415.0,
-            "iv_call": 25.59,
-            "iv_put": 23.52
+            "iv_call": 26.46,
+            "iv_put": 24.15
           },
           {
             "k": 416.0,
-            "iv_call": 26.01,
-            "iv_put": 22.66
+            "iv_call": 26.89,
+            "iv_put": 23.24
           },
           {
             "k": 417.0,
-            "iv_call": 26.43,
-            "iv_put": 23.68
+            "iv_call": 27.33,
+            "iv_put": 24.29
           },
           {
             "k": 418.0,
-            "iv_call": 26.88,
-            "iv_put": 24.69
+            "iv_call": 27.79,
+            "iv_put": 25.33
           },
           {
             "k": 419.0,
-            "iv_call": 27.67,
+            "iv_call": 28.61,
             "iv_put": null
           },
           {
             "k": 420.0,
-            "iv_call": 27.96,
+            "iv_call": 28.91,
             "iv_put": null
           },
           {
             "k": 421.0,
-            "iv_call": 28.3,
+            "iv_call": 29.26,
             "iv_put": null
           },
           {
             "k": 422.0,
-            "iv_call": 28.93,
+            "iv_call": 29.9,
             "iv_put": null
           },
           {
             "k": 423.0,
-            "iv_call": 29.5,
+            "iv_call": 30.5,
             "iv_put": null
           },
           {
             "k": 424.0,
-            "iv_call": 29.57,
+            "iv_call": 30.57,
             "iv_put": null
           },
           {
             "k": 425.0,
-            "iv_call": 30.26,
+            "iv_call": 31.28,
             "iv_put": null
           },
           {
             "k": 426.0,
-            "iv_call": 30.65,
+            "iv_call": 31.68,
             "iv_put": null
           },
           {
             "k": 427.0,
-            "iv_call": 31.55,
+            "iv_call": 32.62,
             "iv_put": null
           },
           {
             "k": 428.0,
-            "iv_call": 32.16,
+            "iv_call": 33.24,
             "iv_put": null
           },
           {
             "k": 429.0,
-            "iv_call": 32.4,
+            "iv_call": 33.49,
             "iv_put": null
           },
           {
             "k": 430.0,
-            "iv_call": 33.27,
+            "iv_call": 34.39,
             "iv_put": null
           },
           {
             "k": 431.0,
-            "iv_call": 33.38,
+            "iv_call": 34.51,
             "iv_put": null
           },
           {
             "k": 432.0,
-            "iv_call": 33.81,
+            "iv_call": 34.95,
             "iv_put": null
           },
           {
             "k": 433.0,
-            "iv_call": 34.64,
+            "iv_call": 35.81,
             "iv_put": null
           },
           {
             "k": 434.0,
-            "iv_call": 35.01,
+            "iv_call": 36.19,
             "iv_put": null
           },
           {
             "k": 435.0,
-            "iv_call": 35.82,
+            "iv_call": 37.03,
             "iv_put": null
           },
           {
             "k": 440.0,
-            "iv_call": 40.35,
+            "iv_call": 41.71,
             "iv_put": null
           },
           {
             "k": 445.0,
-            "iv_call": 43.17,
+            "iv_call": 44.62,
             "iv_put": null
           },
           {
             "k": 450.0,
-            "iv_call": 44.61,
+            "iv_call": 46.11,
             "iv_put": null
           },
           {
             "k": 455.0,
-            "iv_call": 51.36,
+            "iv_call": 53.09,
             "iv_put": null
           }
         ]
@@ -32211,7 +33813,7 @@
       "spot": 59.63,
       "expiry_used": "2026-09-25",
       "days_to_expiry": 3,
-      "atm_iv": 36.1,
+      "atm_iv": 37.3,
       "pcr": {
         "oi": 0.82,
         "vol": 0.84,
@@ -32281,7 +33883,7 @@
           },
           {
             "k": 57.0,
-            "g": -0.089
+            "g": -0.09
           },
           {
             "k": 57.5,
@@ -32345,7 +33947,7 @@
           },
           {
             "k": 65.0,
-            "g": 0.024
+            "g": 0.025
           },
           {
             "k": 65.5,
@@ -32382,188 +33984,188 @@
       },
       "iv_skew": {
         "skew": 0.1,
-        "put_iv": 39.1,
-        "call_iv": 39.0,
+        "put_iv": 40.4,
+        "call_iv": 40.3,
         "iv_curve": [
           {
             "k": 51.0,
-            "iv_call": 68.4,
-            "iv_put": 63.06
+            "iv_call": 71.37,
+            "iv_put": 65.17
           },
           {
             "k": 51.5,
-            "iv_call": 64.56,
-            "iv_put": 65.26
+            "iv_call": 67.39,
+            "iv_put": 67.44
           },
           {
             "k": 52.0,
-            "iv_call": 60.75,
-            "iv_put": 56.08
+            "iv_call": 63.42,
+            "iv_put": 57.95
           },
           {
             "k": 52.5,
-            "iv_call": 56.95,
-            "iv_put": 55.48
+            "iv_call": 59.48,
+            "iv_put": 57.33
           },
           {
             "k": 53.0,
-            "iv_call": 53.17,
-            "iv_put": 51.87
+            "iv_call": 55.55,
+            "iv_put": 53.6
           },
           {
             "k": 53.5,
-            "iv_call": 61.95,
-            "iv_put": 52.05
+            "iv_call": 64.27,
+            "iv_put": 53.78
           },
           {
             "k": 54.0,
-            "iv_call": 52.74,
-            "iv_put": 50.98
+            "iv_call": 54.82,
+            "iv_put": 52.68
           },
           {
             "k": 54.5,
-            "iv_call": 53.17,
-            "iv_put": 46.99
+            "iv_call": 55.18,
+            "iv_put": 48.56
           },
           {
             "k": 55.0,
-            "iv_call": 48.77,
-            "iv_put": 45.03
+            "iv_call": 50.62,
+            "iv_put": 46.53
           },
           {
             "k": 55.5,
-            "iv_call": 44.34,
-            "iv_put": 42.56
+            "iv_call": 46.04,
+            "iv_put": 43.97
           },
           {
             "k": 56.0,
-            "iv_call": 42.96,
-            "iv_put": 40.97
+            "iv_call": 44.56,
+            "iv_put": 42.33
           },
           {
             "k": 56.5,
-            "iv_call": 40.73,
-            "iv_put": 39.12
+            "iv_call": 42.23,
+            "iv_put": 40.41
           },
           {
             "k": 57.0,
-            "iv_call": 39.8,
-            "iv_put": 38.14
+            "iv_call": 41.23,
+            "iv_put": 39.4
           },
           {
             "k": 57.5,
-            "iv_call": 38.96,
-            "iv_put": 36.98
+            "iv_call": 40.35,
+            "iv_put": 38.21
           },
           {
             "k": 58.0,
-            "iv_call": 38.18,
-            "iv_put": 36.26
+            "iv_call": 39.52,
+            "iv_put": 37.46
           },
           {
             "k": 58.5,
-            "iv_call": 36.71,
-            "iv_put": 35.73
+            "iv_call": 37.99,
+            "iv_put": 36.91
           },
           {
             "k": 59.0,
-            "iv_call": 36.61,
-            "iv_put": 35.72
+            "iv_call": 37.88,
+            "iv_put": 36.9
           },
           {
             "k": 59.5,
-            "iv_call": 36.4,
-            "iv_put": 35.76
+            "iv_call": 37.66,
+            "iv_put": 36.93
           },
           {
             "k": 60.0,
-            "iv_call": 36.85,
-            "iv_put": 35.59
+            "iv_call": 38.12,
+            "iv_put": 36.75
           },
           {
             "k": 60.5,
-            "iv_call": 36.79,
-            "iv_put": 36.1
+            "iv_call": 38.05,
+            "iv_put": 37.26
           },
           {
             "k": 61.0,
-            "iv_call": 37.19,
-            "iv_put": 36.18
-          },
-          {
-            "k": 61.5,
-            "iv_call": 37.7,
+            "iv_call": 38.46,
             "iv_put": 37.34
           },
           {
+            "k": 61.5,
+            "iv_call": 38.98,
+            "iv_put": 38.53
+          },
+          {
             "k": 62.0,
-            "iv_call": 38.38,
-            "iv_put": 37.61
+            "iv_call": 39.69,
+            "iv_put": 38.8
           },
           {
             "k": 62.5,
-            "iv_call": 39.02,
-            "iv_put": 40.0
+            "iv_call": 40.35,
+            "iv_put": 41.25
           },
           {
             "k": 63.0,
-            "iv_call": 40.5,
-            "iv_put": 39.73
+            "iv_call": 41.87,
+            "iv_put": 40.94
           },
           {
             "k": 63.5,
-            "iv_call": 41.53,
-            "iv_put": 41.08
+            "iv_call": 42.93,
+            "iv_put": 42.32
           },
           {
             "k": 64.0,
-            "iv_call": 42.84,
-            "iv_put": 36.14
+            "iv_call": 44.29,
+            "iv_put": 37.14
           },
           {
             "k": 64.5,
-            "iv_call": 44.96,
-            "iv_put": 39.41
+            "iv_call": 46.48,
+            "iv_put": 40.5
           },
           {
             "k": 65.0,
-            "iv_call": 47.59,
-            "iv_put": 42.6
+            "iv_call": 49.2,
+            "iv_put": 43.79
           },
           {
             "k": 65.5,
-            "iv_call": 50.01,
-            "iv_put": 45.74
+            "iv_call": 51.7,
+            "iv_put": 47.02
           },
           {
             "k": 66.0,
-            "iv_call": 51.04,
-            "iv_put": 48.83
+            "iv_call": 52.76,
+            "iv_put": 50.2
           },
           {
             "k": 66.5,
-            "iv_call": 54.16,
-            "iv_put": 51.86
+            "iv_call": 55.98,
+            "iv_put": 53.32
           },
           {
             "k": 67.0,
-            "iv_call": 57.22,
-            "iv_put": 54.85
+            "iv_call": 59.15,
+            "iv_put": 56.4
           },
           {
             "k": 67.5,
-            "iv_call": 60.24,
-            "iv_put": 57.8
+            "iv_call": 62.27,
+            "iv_put": 59.42
           },
           {
             "k": 68.0,
-            "iv_call": 61.73,
-            "iv_put": 60.7
+            "iv_call": 63.81,
+            "iv_put": 62.41
           },
           {
             "k": 68.5,
-            "iv_call": 64.61,
-            "iv_put": 63.56
+            "iv_call": 66.78,
+            "iv_put": 65.36
           }
         ]
       },
@@ -32571,18 +34173,18 @@
     }
   },
   "industries_sector_charts": {
-    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
     "Consumer Discretionary": "data/charts/vol_IndSec_Consumer_Discretionary.png",
-    "Commodities": "data/charts/vol_IndSec_Commodities.png",
+    "Materials": "data/charts/vol_IndSec_Materials.png",
+    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
     "Information Technology": "data/charts/vol_IndSec_Information_Technology.png",
     "Industrials": "data/charts/vol_IndSec_Industrials.png",
-    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
     "Energy": "data/charts/vol_IndSec_Energy.png",
-    "Real Estate": "data/charts/vol_IndSec_Real_Estate.png",
-    "Financials": "data/charts/vol_IndSec_Financials.png",
-    "Materials": "data/charts/vol_IndSec_Materials.png",
+    "Commodities": "data/charts/vol_IndSec_Commodities.png",
     "Utilities": "data/charts/vol_IndSec_Utilities.png",
-    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png"
+    "Broad Market": "data/charts/vol_IndSec_Broad_Market.png",
+    "Health Care": "data/charts/vol_IndSec_Health_Care.png",
+    "Emerging Markets": "data/charts/vol_IndSec_Emerging_Markets.png",
+    "Financials": "data/charts/vol_IndSec_Financials.png"
   },
   "industries_sector_rs_charts": {},
   "etf_flow": {
@@ -32626,10 +34228,10 @@
         "name": "Energy",
         "wtd_return": -2.88,
         "flow_5d": -879.09,
-        "flow_1d": -729.918,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 1.9,
-        "flow_change_vs_1m": -708.11,
+        "flow_change_vs_1m": -1159.82,
         "stretch_score": 30.0,
         "stretch_components": {
           "rsi_pct": 14.8,
@@ -32656,10 +34258,10 @@
         "name": "Health Care",
         "wtd_return": 0.37,
         "flow_5d": -377.87,
-        "flow_1d": -109.453,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 17.3,
-        "flow_change_vs_1m": -506.63,
+        "flow_change_vs_1m": 37.26,
         "stretch_score": 27.1,
         "stretch_components": {
           "rsi_pct": 33.7,
@@ -32669,15 +34271,15 @@
       },
       "XLI": {
         "name": "Industrials",
-        "wtd_return": 0.14,
+        "wtd_return": 0.4,
         "flow_5d": -211.77,
         "flow_1d": -76.388,
         "flow_source": "opend_live",
         "flow_52w_pct": 23.1,
         "flow_change_vs_1m": 79.28,
-        "stretch_score": 9.2,
+        "stretch_score": 10.0,
         "stretch_components": {
-          "rsi_pct": 6.5,
+          "rsi_pct": 8.9,
           "flow_z_pct": 21.2,
           "rs_pct": 0.0
         }
@@ -32716,10 +34318,10 @@
         "name": "Technology",
         "wtd_return": 2.77,
         "flow_5d": 75.84,
-        "flow_1d": 85.32,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 55.8,
-        "flow_change_vs_1m": 262.25,
+        "flow_change_vs_1m": 66.76,
         "stretch_score": 77.9,
         "stretch_components": {
           "rsi_pct": 68.9,
@@ -32746,10 +34348,10 @@
         "name": "Utilities",
         "wtd_return": -1.07,
         "flow_5d": -182.26,
-        "flow_1d": -254.82,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 13.5,
-        "flow_change_vs_1m": -16.74,
+        "flow_change_vs_1m": -28.51,
         "stretch_score": 9.2,
         "stretch_components": {
           "rsi_pct": 14.2,
@@ -32791,10 +34393,10 @@
         "name": "Gold Miners",
         "wtd_return": -1.1,
         "flow_5d": -310.53,
-        "flow_1d": -152.768,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 7.7,
-        "flow_change_vs_1m": -572.55,
+        "flow_change_vs_1m": -305.21,
         "stretch_score": 47.5,
         "stretch_components": {
           "rsi_pct": 41.1,
@@ -32926,10 +34528,10 @@
         "name": "Semiconductors",
         "wtd_return": 4.02,
         "flow_5d": 3680.07,
-        "flow_1d": 3867.75,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 100.0,
-        "flow_change_vs_1m": 5784.56,
+        "flow_change_vs_1m": 5364.24,
         "stretch_score": 49.0,
         "stretch_components": {
           "rsi_pct": 61.8,
@@ -32941,10 +34543,10 @@
         "name": "Oil & Gas E&P",
         "wtd_return": -3.07,
         "flow_5d": 68.44,
-        "flow_1d": -47.653,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 69.2,
-        "flow_change_vs_1m": 33.87,
+        "flow_change_vs_1m": 78.54,
         "stretch_score": 55.8,
         "stretch_components": {
           "rsi_pct": 20.7,
@@ -32989,7 +34591,7 @@
         "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 17.3,
-        "flow_change_vs_1m": 0.12,
+        "flow_change_vs_1m": 2.29,
         "stretch_score": 11.5,
         "stretch_components": {
           "rsi_pct": null,
@@ -33001,10 +34603,10 @@
         "name": "Software",
         "wtd_return": 2.66,
         "flow_5d": 357.35,
-        "flow_1d": -5.218,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 76.9,
-        "flow_change_vs_1m": 549.36,
+        "flow_change_vs_1m": 544.97,
         "stretch_score": 75.6,
         "stretch_components": {
           "rsi_pct": 72.8,
@@ -33015,11 +34617,11 @@
       "TAN": {
         "name": "Solar",
         "wtd_return": 2.3,
-        "flow_5d": -36.27,
-        "flow_1d": -21.831,
+        "flow_5d": -36.35,
+        "flow_1d": -21.917,
         "flow_source": "opend_live",
         "flow_52w_pct": 3.8,
-        "flow_change_vs_1m": -28.08,
+        "flow_change_vs_1m": -28.16,
         "stretch_score": 38.0,
         "stretch_components": {
           "rsi_pct": 26.4,
@@ -33046,10 +34648,10 @@
         "name": "SPY",
         "wtd_return": 1.55,
         "flow_5d": -22965.1,
-        "flow_1d": -6347.137,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 0.0,
-        "flow_change_vs_1m": -34365.64,
+        "flow_change_vs_1m": -30629.17,
         "stretch_score": 64.8,
         "stretch_components": {
           "rsi_pct": 62.2,
@@ -33061,10 +34663,10 @@
         "name": "QQQ",
         "wtd_return": 2.77,
         "flow_5d": -2778.69,
-        "flow_1d": -2489.003,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 11.5,
-        "flow_change_vs_1m": -4670.95,
+        "flow_change_vs_1m": -4205.04,
         "stretch_score": 88.0,
         "stretch_components": {
           "rsi_pct": 79.3,
@@ -33091,10 +34693,10 @@
         "name": "IWM",
         "wtd_return": 0.52,
         "flow_5d": 192.94,
-        "flow_1d": -2315.415,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 53.8,
-        "flow_change_vs_1m": -297.01,
+        "flow_change_vs_1m": 566.86,
         "stretch_score": 27.6,
         "stretch_components": {
           "rsi_pct": 6.9,
@@ -33136,10 +34738,10 @@
         "name": "DIA",
         "wtd_return": 0.76,
         "flow_5d": 778.52,
-        "flow_1d": 567.468,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 76.9,
-        "flow_change_vs_1m": 1739.03,
+        "flow_change_vs_1m": 1420.84,
         "stretch_score": 24.3,
         "stretch_components": {
           "rsi_pct": 11.8,
@@ -33151,10 +34753,10 @@
         "name": "GLD",
         "wtd_return": -0.7,
         "flow_5d": 1351.3,
-        "flow_1d": 722.106,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 84.6,
-        "flow_change_vs_1m": 50.33,
+        "flow_change_vs_1m": -2133.64,
         "stretch_score": 23.2,
         "stretch_components": {
           "rsi_pct": 37.0,
@@ -33169,7 +34771,7 @@
         "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 28.8,
-        "flow_change_vs_1m": -96.05,
+        "flow_change_vs_1m": -49.27,
         "stretch_score": 51.1,
         "stretch_components": {
           "rsi_pct": 53.7,
@@ -33181,10 +34783,10 @@
         "name": "SOXX",
         "wtd_return": 4.93,
         "flow_5d": 683.95,
-        "flow_1d": 479.763,
+        "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": 92.3,
-        "flow_change_vs_1m": -529.54,
+        "flow_change_vs_1m": 28.67,
         "stretch_score": 67.6,
         "stretch_components": {
           "rsi_pct": 62.6,
@@ -33199,7 +34801,7 @@
         "flow_1d": 0.0,
         "flow_source": "opend_live",
         "flow_52w_pct": null,
-        "flow_change_vs_1m": -175.99,
+        "flow_change_vs_1m": -139.27,
         "stretch_score": 70.8,
         "stretch_components": {
           "rsi_pct": 60.6,

@@ -10,18 +10,18 @@
   "market": {
     "next_fomc_date": "2026-10-28",
     "next_fomc_label": "Oct 28, 2026",
-    "rate_hold_pct": 39.6,
+    "rate_hold_pct": 0.0,
     "rate_cut_pct": 0.0,
-    "rate_hike_pct": 60.4,
+    "rate_hike_pct": 100.0,
     "current_rate": "3.50%–3.75%",
     "cpi": 3.5,
     "cpi_month": "June 2026",
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-09-15",
+    "cme_updated": "2026-09-22",
     "bls_unemp_updated": "2026-07-15",
-    "rate_prob_source": "unavailable"
+    "rate_prob_source": "CME FedWatch (investing.com)"
   },
   "members": [
     {
@@ -179,8 +179,8 @@
           "date": "2026-09-18",
           "event": "Bowman, Initial Findings from Independent Review of Silicon Valley Bank",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260918b.htm",
-          "brief_summary": "Speech At the Luncheon of the Lord Mayor City of London at Mansion House, London, United Kingdom",
-          "detailed_summary": ""
+          "brief_summary": "This speech presents initial findings from an independent review of Silicon Valley Bank's failure, focusing on supervisory shortcomings rather than monetary policy.",
+          "detailed_summary": "Vice Chair for Supervision Bowman announced preliminary findings from the Starling Advisory Group's independent review of SVB's collapse. The review identified that supervisors knew of SVB's vulnerabilities by March 2022 but failed to act decisively due to a culture of risk aversion and unclear decision rights. Contrary to prior claims, social media did not trigger the bank run, and regulatory tailoring did not cause the supervisory delays. The Federal Reserve has responded with new supervisory operating principles and monthly escalation reports to address cultural shortcomings and empower examiners."
         },
         {
           "date": "2026-07-14",
