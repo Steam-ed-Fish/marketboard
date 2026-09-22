@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-22",
+  "last_updated": "2026-09-23",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-09-22",
+    "cme_updated": "2026-09-23",
     "bls_unemp_updated": "2026-07-15",
     "rate_prob_source": "CME FedWatch (investing.com)"
   },
@@ -300,6 +300,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/jefferson.htm",
       "speeches": [
         {
+          "date": "2026-09-22",
+          "event": "Jefferson, Discount Window Modernization and Treasury Market Functioning",
+          "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260922a.htm",
+          "brief_summary": "Speech At the 2026 U.S. Treasury Market Conference, Federal Reserve Bank of New York, New York, New York",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-07-16",
           "event": "Jefferson, Navigating Economic Shocks: A Monetary Policymaker’s Perspective",
           "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260716a.htm",
@@ -326,13 +333,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260326a.htm",
           "brief_summary": "Jefferson analyzed the Iran conflict's energy price impact on inflation and consumer spending, and supported the March decision to hold rates.",
           "detailed_summary": "Jefferson explained that a sustained energy price shock from the Iran conflict would add upside inflation pressure in the short run while weighing on consumer spending — particularly for lower-income households facing gasoline prices approximately $1 per gallon above pre-conflict levels. He supported the FOMC's March decision to hold rates steady, noting that 175 basis points of cuts have placed the federal funds rate broadly in the neutral range, providing a flexible starting point to address either mandate deterioration."
-        },
-        {
-          "date": "2026-02-06",
-          "event": "Brookings Institution, Washington D.C. — 'Economic Outlook and Supply-Side (Dis)Inflation Dynamics'",
-          "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260206a.htm",
-          "brief_summary": "Jefferson expressed cautious optimism and supported the January hold, arguing AI-driven productivity gains could help bring inflation to 2%.",
-          "detailed_summary": "Jefferson stated he supported the FOMC's January 2026 decision to hold rates steady, noting that cumulative 175bp of cuts have brought the federal funds rate broadly to neutral. He highlighted that disinflation has stalled primarily due to tariff pass-through on goods, but expressed cautious optimism that the process would resume once tariff effects run their course — and that AI-related productivity improvements could provide an additional disinflationary tailwind. He maintained a balanced dual-mandate view with risks on both sides."
         }
       ]
     },
