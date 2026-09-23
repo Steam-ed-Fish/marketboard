@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-23",
+  "last_updated": "2026-09-24",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-09-23",
+    "cme_updated": "2026-09-24",
     "bls_unemp_updated": "2026-07-15",
     "rate_prob_source": "CME FedWatch (investing.com)"
   },
@@ -130,6 +130,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
       "speeches": [
         {
+          "date": "2026-09-23",
+          "event": "Barr, A Long-Term View on the Costs of Shelter",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260923a.htm",
+          "brief_summary": "Speech At “Housing Affordability 2026:  A Community Development Summit,” hosted by the Federal Reserve Bank of Chicago, Chicago, Illinois",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-09-01",
           "event": "Barr, Unlocking Opportunities for Workers and Entrepreneurs with a Criminal Record",
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260901a.htm",
@@ -156,13 +163,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260520a.htm",
           "brief_summary": "Governor Barr discusses evolving financial health measurement beyond banking access, emphasizing data-driven metrics and AI tools to improve consumer outcomes.",
           "detailed_summary": "This speech addresses consumer financial health measurement rather than monetary policy. Barr notes that while 96% of American adults have bank accounts, only 31% report feeling financially healthy, indicating access alone is insufficient. He discusses the Federal Reserve's contributions to financial health measurement through surveys like the SCF and SHED, highlighting the '$400 test' showing 37% of households lack emergency savings. Barr emphasizes how technological advances in AI and behavioral science enable banks to develop products and services targeting tangible positive financial outcomes for consumers, moving measurement beyond self-reported perceptions to actionable, real-time metrics."
-        },
-        {
-          "date": "2026-05-14",
-          "event": "Barr, Efficient and Effective Central Banking: Beyond the Balance Sheet",
-          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260514a.htm",
-          "brief_summary": "Governor Barr argues that reducing the Fed's balance sheet size is the wrong objective, as adequate reserves are essential for banking system resilience, payment system efficiency, and financial stability.",
-          "detailed_summary": "Barr contends that the Fed's balance sheet size is a misconceived measure of its footprint in financial markets, which encompasses monetary policy implementation, bank supervision, payment system operations, and fiscal agency functions. He emphasizes that the current ample-reserves regime efficiently controls the federal funds rate through administered rates rather than reserve quantity adjustments, and that the $3 trillion in reserves supports banking system safety, liquidity management, and financial stability. Barr argues many balance sheet reduction proposals would paradoxically increase Fed market intervention frequency and raise financial stability risks, while creating reserves is costless to taxpayers since the Fed remits excess earnings."
         }
       ]
     },
