@@ -2039,6 +2039,10 @@
             h += '<div class="qint-partial">⚠ ' + data.unmapped.length + ' name(s) not in GICS map (excluded from GICS view): ' +
                  escapeHtml(data.unmapped.join(', ')) + ' — update GICS_SECTOR_MAP in build_qqq_internals.py.</div>';
         }
+        if (data.no_ohlc && data.no_ohlc.length) {
+            h += '<div class="qint-partial">⚠ ' + data.no_ohlc.length + ' name(s) without OHLC daily (shown as —, excluded from contributions): ' +
+                 escapeHtml(data.no_ohlc.join(', ')) + '</div>';
+        }
         var q = data.qqq || {};
         var asof = data.as_of ? ' · holdings eff ' + data.as_of : '';
         var cov = (data.coverage != null) ? ' · ' + data.coverage.toFixed(1) + '% of net assets covered' : '';

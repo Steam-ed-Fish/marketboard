@@ -164,6 +164,71 @@ def load_top10_fallback(out_dir):
             if h.get("symbol") and isinstance(h.get("weight"), (int, float))]
 
 
+def backfill_ohlc(out_dir, tickers):
+    """Fetch 3 newest daily bars via futu-cli for members with no OHLC cache and
+    write data/ohlc/<ticker>.json so load_ohlc (this build AND heatmap/breadth)
+    picks them up. QQQ members aren't in build_data's STOCK_GROUPS universe, so
+    new NDX adds (IPOs, ADRs like ARM/MELI/PDD) never get prefetched — this
+    closes that gap locally without rewiring the main pipeline. Returns the set
+    of tickers still missing after the attempt (genuinely unavailable)."""
+    import re as _re
+    from fetch_futucli import _fetch_klines, to_futucli_code
+
+    missing = []
+    for t in tickers:
+        bars = load_ohlc(out_dir, t)
+        if not bars or len(bars) < 2:
+            missing.append(t)
+    if not missing:
+        return set()
+
+    # Only attempt when a gateway token exists — else this degrades every run
+    # into a slow guaranteed-fail batch (30s timeout each).
+    try:
+        import futu_gateway
+        if not futu_gateway.get_token():
+            print("[qqq-int] no futu gateway token — skipping OHLC backfill")
+            return set(missing)
+    except Exception as e:
+        print(f"[qqq-int] gateway check failed ({e}) — skipping OHLC backfill")
+        return set(missing)
+
+    print(f"[qqq-int] backfilling OHLC for {len(missing)} member(s): {', '.join(missing)}")
+    codes = {to_futucli_code(t): t for t in missing}
+    try:
+        res = _fetch_klines(list(codes), item_count=3, exright_type=0, verbose=False)
+    except Exception as e:
+        print(f"[qqq-int] backfill fetch failed: {e}")
+        return set(missing)
+
+    still_missing = set()
+    for code, t in codes.items():
+        entry = res.get(code)
+        bars = (entry or {}).get("bars") or []
+        usable = [b for b in bars if b.get("close")]
+        if len(usable) < 2:
+            still_missing.add(t)
+            continue
+        ohlc = [{
+            "t": f"{b['date']//10000:04d}-{b['date']//100%100:02d}-{b['date']%100:02d}",
+            "o": round(b["open"], 4), "h": round(b["high"], 4),
+            "l": round(b["low"], 4), "c": round(b["close"], 4),
+            "v": b.get("volume", 0),
+        } for b in usable if b.get("date")]
+        if len(ohlc) < 2:
+            still_missing.add(t)
+            continue
+        safe = _re.sub(r"[^A-Za-z0-9._-]", "_", t)
+        p = os.path.join(out_dir, "ohlc", f"{safe}.json")
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        with open(p, "w", encoding="utf-8") as f:
+            json.dump({"ticker": t, "name": t, "ohlc": ohlc}, f,
+                      allow_nan=False, ensure_ascii=False)
+    if still_missing:
+        print(f"[qqq-int] still no OHLC after backfill: {', '.join(sorted(still_missing))}")
+    return still_missing
+
+
 def member_daily(out_dir, ticker):
     """Split-adjusted last-vs-prev close (%) from the futu-cli OHLC cache. The
     cache is unadjusted (exright_type=0), so a raw last/prev across a split
@@ -212,6 +277,11 @@ def main():
     if not holdings:
         print("[qqq-int] no holdings source available — writing nothing")
         return 1
+
+    # Backfill OHLC for members the main pipeline never prefetched (new NDX adds,
+    # ADRs). Writes data/ohlc/*.json so heatmap/breadth also benefit. Track what
+    # stays missing — surfaced in the UI like the GICS-unmapped banner.
+    no_ohlc = sorted(backfill_ohlc(out_dir, [m["t"] for m in holdings]))
 
     # Enrich daily moves; keep only names we can also sector-map for the GICS view
     for m in holdings:
@@ -304,6 +374,7 @@ def main():
         "baskets": baskets_out,
         "all_members": all_members,
         "unmapped": unmapped,
+        "no_ohlc": no_ohlc,
     }
     payload = sanitize_for_json(payload)
 
@@ -313,6 +384,10 @@ def main():
 
     print(f"[qqq-int] wrote {out_path}: as_of={as_of or '?'} partial={partial} "
           f"names={len(holdings)} weight-covered={covered:.2f}%")
+    if no_ohlc:
+        w_no = sum(m["w"] for m in holdings if m["t"] in no_ohlc)
+        print(f"[qqq-int] WARNING — {len(no_ohlc)} member(s) without OHLC daily "
+              f"({w_no:.2f}% of QQQ), excluded from contribution math: {', '.join(no_ohlc)}")
     for b in baskets_out:
         print(f"  [basket] {b['name']:16s} w={b['weight']:6.2f}%  daily={b['daily']}  "
               f"contrib={b['daily_contrib']}")
