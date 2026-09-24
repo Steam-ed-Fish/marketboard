@@ -125,6 +125,11 @@
         .event-item:last-child { border-bottom: none; }
         .event-item .event-datetime { font-weight: bold; color: #38bdf8; }
         .event-item .event-name { color: #a8c8e0; }
+        .event-item .event-stars { color: #f59e0b; letter-spacing: -1px; margin-left: 4px; }
+        .event-item .event-actual { color: #34d399; font-weight: 700; margin-left: 4px; }
+        .event-item .event-est { color: #6b7a8d; font-size: 0.92em; }
+        .event-item.released { opacity: 0.62; }
+        .event-item.released .event-name { color: #5d7da0; }
         /* Daily Briefing card */
         .briefing-card { border: 1px solid rgba(56,189,248,0.25); border-radius: 6px; margin: 8px; overflow: hidden; background: linear-gradient(180deg, #071828 0%, #050e1a 100%); }
         .briefing-header { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background: linear-gradient(90deg, #0a2545 0%, #071828 100%); border-bottom: 1px solid rgba(56,189,248,0.15); cursor: pointer; }
@@ -713,7 +718,21 @@
             return;
         }
         html += calEvents.map(function(e) {
-            return '<div class="event-item"><span class="event-datetime">' + (e.date || '') + ' ' + (e.time || '') + '</span><span class="event-name"> · ' + (e.event || '') + '</span></div>';
+            // Rich futu-cli entries have star/forecast/previous/actual/released;
+            // plain entries (or older cached events.json) degrade to date·event.
+            var stars = e.star ? '<span class="event-stars">' + '★'.repeat(e.star) + '</span>' : '';
+            var relCls = e.released ? ' released' : '';
+            var data = '';
+            if (e.actual != null && e.actual !== '') {
+                data = '<span class="event-actual">' + escapeHtml(String(e.actual)) + '</span>'
+                     + '<span class="event-est"> vs fc ' + escapeHtml(String(e.forecast || '-')) + ' · prev ' + escapeHtml(String(e.previous || '-')) + '</span>';
+            } else if (e.forecast != null || e.previous != null) {
+                data = '<span class="event-est">fc ' + escapeHtml(String(e.forecast || '-')) + ' · prev ' + escapeHtml(String(e.previous || '-')) + '</span>';
+            }
+            return '<div class="event-item' + relCls + '"><span class="event-datetime">'
+                 + escapeHtml((e.date || '') + ' ' + (e.time || '')) + '</span>'
+                 + stars + '<span class="event-name"> · ' + escapeHtml(e.event || '') + '</span>'
+                 + (data ? ' ' + data : '') + '</div>';
         }).join('');
         el.innerHTML = html;
     }

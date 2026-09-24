@@ -17,7 +17,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from io import BytesIO
 from scipy.stats import rankdata
 from scipy.signal import find_peaks
@@ -165,7 +165,10 @@ AI_THEMES = {
     "Power Grid":    ["VST", "CEG", "NRG", "GEV", "ETN", "PWR", "TLN"],
 }
 
-# ETF proxy for a theme — use the ETF's actual returns instead of equal-weighted avg
+# ETF proxy for a theme — use the ETF's actual returns instead of equal-weighted avg.
+# FOTO (Tuttle Pure Play Photonics) is a thin ~42-bar new ETF; it fetches fine via the
+# gateway now that fetch_futucli's phase-2 history fallback retries thin tickers at a
+# smaller item_count (the gateway returns 0 bars when item_count ≫ available history).
 THEME_ETF_PROXY = {
     "Memory": "DRAM",
     "Optical Comms": "FOTO",
@@ -263,31 +266,59 @@ def get_leveraged_etfs(ticker):
 
 
 def get_upcoming_key_events(days_ahead=7):
-    if investpy is None:
-        return []
-    today = datetime.today()
-    end_date = today + timedelta(days=days_ahead)
-    from_date = today.strftime('%d/%m/%Y')
-    to_date = end_date.strftime('%d/%m/%Y')
+    """Upcoming US macro events via futu-cli's economic calendar (same gateway as
+    all other futu data — replaces the flaky investpy scraper + keyword filter;
+    futu's star rating IS the importance signal). Returns dicts shaped for the
+    dashboard events-modal: {date, time, event, star, forecast, previous, actual,
+    released}. The legacy 'event'/'date'/'time' keys are kept so old renderers
+    still work. English titles (ClientLang.en), 3+ star only. [] on any failure —
+    the modal then just shows the briefing without an events section."""
     try:
-        calendar = investpy.news.economic_calendar(
-            time_zone=None, time_filter='time_only', countries=['united states'],
-            importances=['high'], categories=None, from_date=from_date, to_date=to_date
-        )
-        if calendar.empty:
-            return []
-        pattern = '|'.join(KEY_EVENTS)
-        filtered = calendar[
-            (calendar['event'].str.contains(pattern, case=False, na=False)) &
-            (calendar['importance'].str.lower() == 'high')
-        ]
-        if filtered.empty:
-            return []
-        filtered = filtered.sort_values(['date', 'time'])
-        return filtered[['date', 'time', 'event']].to_dict('records')
+        import asyncio as _asyncio
+        from futu_cli.services.calendar import get_economic_calendar as _futu_eco_cal, ClientLang as _ClientLang
+        from futu_cli.markets import Market as _Market
     except Exception as e:
-        print("Economic calendar error:", e)
+        print(f"Economic calendar: futu-cli import failed ({e})")
         return []
+
+    today = datetime.today().date()
+    end_date = today + timedelta(days=days_ahead)
+
+    async def _fetch():
+        return await _futu_eco_cal(
+            _Market.US, today.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'),
+            star=3, lang=_ClientLang.en)
+
+    try:
+        events = _asyncio.run(_fetch())
+    except Exception as e:
+        print(f"Economic calendar: futu-cli fetch failed: {e}")
+        return []
+
+    now_ts = datetime.now(timezone.utc).timestamp()
+    try:
+        from zoneinfo import ZoneInfo
+        et = ZoneInfo("America/New_York")  # DST-correct ET (a hardcoded -4/-5 drifts an hour twice a year)
+    except Exception:
+        et = timezone(timedelta(hours=-4))
+    out = []
+    for e in events:
+        ts = int(e.timestamp) if e.timestamp else 0
+        t_et = datetime.fromtimestamp(ts, tz=timezone.utc).astimezone(et) if ts else None
+        out.append({
+            "date": e.date,
+            "time": t_et.strftime('%H:%M ET') if t_et else '',
+            "event": e.title or '',
+            "star": e.star,
+            "forecast": e.forecast or None,
+            "previous": e.previous or None,
+            "actual": (e.actual or None),
+            "released": bool(ts and ts <= now_ts),
+        })
+    out.sort(key=lambda x: (x["date"], x["time"]))
+    print(f"Economic calendar: {len(out)} US 3+star events via futu-cli "
+          f"({sum(1 for x in out if x['released'])} already released)")
+    return out
 
 
 def calculate_atr(hist_data, period=14):
@@ -352,10 +383,21 @@ def get_expected_move(ticker_sym, weekly=False):
         if call_row.empty or put_row.empty:
             return None, None
         def mid(row):
-            b, a = row['bid'].values[0], row['ask'].values[0]
-            return (b + a) / 2 if (b > 0 or a > 0) else row['lastPrice'].values[0]
-        straddle = mid(call_row) + mid(put_row)
-        return round(straddle / price * 100, 2), days
+            # Require a TWO-SIDED quote and reject grossly wide spreads (ask > 3x bid).
+            # Mirrors the OpenD straddle guard — one-sided quotes and the stale
+            # lastPrice fallback inflate illiquid-ETF EMs (e.g. XLY ±8.5% for 1 day).
+            b, a = float(row['bid'].values[0] or 0), float(row['ask'].values[0] or 0)
+            if b <= 0 or a <= 0 or a > b * 3:
+                return None
+            return (b + a) / 2
+        cm, pm = mid(call_row), mid(put_row)
+        if cm is None or pm is None:
+            return None, None
+        em_pct = round((cm + pm) / price * 100, 2)
+        # Plausibility backstop: 1-day-equivalent EM (√-time) above 25% = bad quote.
+        if em_pct / (days ** 0.5) > 25:
+            return None, None
+        return em_pct, days
     except Exception:
         return None, None
 
@@ -614,7 +656,7 @@ def _compute_iv_skew(calls, puts, spot, days_to_expiry):
     }
 
 
-def build_options_intel_opend(tickers, ticker_data=None):
+def build_options_intel_opend(tickers):
     """OpenD-sourced options intel. Same schema as build_options_intel() plus:
       - dex (net dollar delta exposure)
       - gex.gex_by_strike[]   — per-strike GEX bars for chart
@@ -624,18 +666,20 @@ def build_options_intel_opend(tickers, ticker_data=None):
     recomputation needed. Returns {} on any total failure so caller can fall
     back to yfinance build_options_intel().
     """
+    # Options greeks are sourced from OpenD via scripts/opend_bridge.py (run under
+    # system Python 3.14 in refresh_data.bat before this script) — futu-cli's option
+    # endpoints don't expose per-contract greeks/OI. The bridge writes
+    # data/opend_options.json = {"as_of": iso, "data": {ticker: {spot, expiry, days,
+    # contracts:[...]}}}. If the bridge file is missing/empty, return {} and the
+    # caller falls back to yfinance build_options_intel().
+    bridge_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                               "data", "opend_options.json")
     try:
-        from fetch_opend import fetch_options_intel_opend
+        with open(bridge_path, encoding="utf-8") as f:
+            raw = json.load(f).get("data") or {}
     except Exception as e:
-        print(f"  [opend-opts] import failed: {e}")
+        print(f"  [opend-opts] bridge file unreadable ({e}) — falling back to yfinance")
         return {}
-
-    # Spot from already-fetched in-memory cache (no extra fetch)
-    def spot_lookup(t):
-        row = (ticker_data or {}).get(t) or {}
-        return row.get("last_close")
-
-    raw = fetch_options_intel_opend(tickers, spot_lookup=spot_lookup, verbose=True)
     if not raw:
         return {}
 
@@ -1366,11 +1410,21 @@ def get_stock_data(ticker_symbol, charts_dir, spy_hist=None, ohlc_dir=None):
         today = daily.index[-1].date()
         days_since_monday = today.weekday()
         wtd_change = None
-        # WTD: always from last Friday's close
-        # WTD: always from last Friday's close (skip today if today is Friday)
+        # WTD: change from the prior week's final close to the latest close.
+        # The prior week's "final close" is ideally last Friday's bar. But when
+        # that Friday was a holiday/half-session and no bar exists for it (e.g.
+        # Jul 3 the day before July 4th), the old walk-back skipped it and landed
+        # on the Friday *before that* — making WTD a 2-week change by mistake.
+        # Fix: walk back to the most recent bar that is strictly before this
+        # week's Monday. That bar is the prior week's last available close
+        # (Friday, or Thursday if Friday was a holiday). If the latest bar is
+        # itself a Monday or earlier-weekday, the "prior week" boundary is the
+        # Monday of the week before, so we walk to the most recent bar before
+        # *that* Monday instead.
+        this_monday = today - timedelta(days=today.weekday())  # Mon of latest bar's week
         for i in range(2, len(daily)+1):
             day = daily.index[-i].date()
-            if day.weekday() == 4:  # 4 = Friday
+            if day < this_monday:
                 wtd_change = (daily['Close'].iloc[-1] / daily['Close'].iloc[-i] - 1) * 100
                 break
 
@@ -2082,6 +2136,32 @@ def _load_ohlc_closes(ohlc_dir, ticker):
     return dates, closes
 
 
+def _daily_creation_flows(rows):
+    """Net creation/redemption flow per day from OpenD NAV×units snapshots — the
+    real 'money in/out' of an ETF (primary market).
+
+    rows: [{date, nav, units, aum}] (any order). For each consecutive pair,
+    daily_flow = (units_t - units_{t-1}) * nav_t, in USD millions. Units only change
+    via share creation (money in) / redemption (money out), so this isolates net new
+    money from price drift. Skips days with missing/zero data or an implausible flow
+    (>100% of AUM in a day = a stale/glitched units print, not a real flow).
+
+    Returns [(date, flow_usd_millions), ...] in date order.
+    """
+    ordered = sorted(rows or [], key=lambda r: r.get("date") or "")
+    out = []
+    prev = None
+    for r in ordered:
+        nav, units, aum = r.get("nav"), r.get("units"), r.get("aum")
+        if prev is not None and nav and units and prev.get("units"):
+            flow = (units - prev["units"]) * nav / 1e6
+            aum_m = ((aum or units * nav) or 0) / 1e6
+            if aum_m and abs(flow) <= aum_m:
+                out.append((r.get("date"), round(flow, 3)))
+        prev = r
+    return out
+
+
 def build_etf_flow(out_dir, ohlc_dir):
     """Compose ETF fund-flow metrics for the Sector/Industry rotation bubble chart.
 
@@ -2090,9 +2170,14 @@ def build_etf_flow(out_dir, ohlc_dir):
     Calls OpenD once to refresh today's trust_* block per baseline ticker, appends
     to the daily file (60-day rolling, idempotent same-date), and returns metrics:
       - wtd_return        % move from prior Friday close to latest close (cached OHLC)
-      - flow_5d           latest 5-day flow, USD millions (Bloomberg current_5d)
-      - flow_52w_pct      rank of flow_5d within trailing 52 weekly flows
-      - flow_change_vs_1m flow_5d minus mean of last 4 weekly flows
+      - flow_5d           LIVE 5-day net creation/redemption, USD millions, from OpenD
+                          daily Δ(units)×NAV (money in/out). Falls back to the stale
+                          Bloomberg current_5d only if <5 daily snapshots exist.
+      - flow_1d           latest single-day net creation/redemption (USD millions)
+      - flow_source       "opend_live" or "baseline"
+      - flow_52w_pct      rank of flow_5d within the baseline's trailing 52 weekly
+                          flows (long reference distribution, same ~1-week horizon)
+      - flow_change_vs_1m flow_5d minus the 5-day flow ~1 month ago (live), else baseline
       - stretch_score     0-100 composite "expensiveness": avg of RSI(14) 52w pct,
                           4w cumulative-flow 52w pct, and RS-vs-SPY 52w pct.
                           100 = stretched/crowded/expensive; 0 = washed out/cheap.
@@ -2123,12 +2208,18 @@ def build_etf_flow(out_dir, ohlc_dir):
         except Exception:
             daily = {}
 
+    # ETF AUM (trust_netAssetValue × trust_outstanding_units) is sourced from OpenD
+    # via scripts/opend_bridge.py (run under system Python 3.14 in refresh_data.bat
+    # before this script) — futu-cli's price/kline endpoints don't expose the trust_*
+    # block. The bridge writes data/opend_aum.json = {"as_of": iso, "data": {ticker:
+    # {date, nav, units, aum}}}. Missing/empty → aum_today={} → baseline-only flow.
     aum_today = {}
+    aum_bridge = os.path.join(out_dir, "opend_aum.json")
     try:
-        from fetch_opend import fetch_etf_aum_snapshot
-        aum_today = fetch_etf_aum_snapshot(list(base_tickers.keys()))
+        with open(aum_bridge, encoding="utf-8") as f:
+            aum_today = json.load(f).get("data") or {}
     except Exception as e:
-        print(f"  etf_flow: OpenD aum snapshot failed: {e}")
+        print(f"  etf_flow: OpenD aum bridge unreadable ({e}) — baseline-only")
 
     today_iso = datetime.now().date().isoformat()
     for tk, snap in aum_today.items():
@@ -2156,7 +2247,25 @@ def build_etf_flow(out_dir, ohlc_dir):
     for tk, info in base_tickers.items():
         history = info.get("history") or []
         flows = [h["flow"] for h in history if h.get("flow") is not None]
-        latest_5d = info.get("current_5d")
+
+        # LIVE flow from OpenD daily NAV×units (net creation/redemption = money
+        # in/out). Overrides the stale Bloomberg baseline point value; the baseline
+        # weekly series is kept only as the long 52w reference distribution for the
+        # percentile (same ~1-week horizon as a 5-day flow). Falls back to the
+        # baseline value for any ticker without enough daily snapshots yet.
+        dflows = _daily_creation_flows(daily.get(tk))
+        daily_vals = [f for _, f in dflows]
+        roll5 = [round(sum(daily_vals[i - 4:i + 1]), 2) for i in range(4, len(daily_vals))]
+        live_5d = round(sum(daily_vals[-5:]), 2) if len(daily_vals) >= 5 else None
+
+        if live_5d is not None:
+            latest_5d = live_5d
+            flow_1d = daily_vals[-1]
+            flow_source = "opend_live"
+        else:
+            latest_5d = info.get("current_5d")   # stale-baseline fallback
+            flow_1d = None
+            flow_source = "baseline"
 
         flow_52w_pct = None
         if latest_5d is not None and len(flows) >= 13:
@@ -2165,22 +2274,33 @@ def build_etf_flow(out_dir, ohlc_dir):
             flow_52w_pct = round(100.0 * below / len(window), 1)
 
         flow_change_vs_1m = None
-        if latest_5d is not None and len(flows) >= 4:
-            ref = sum(flows[-4:]) / 4.0
-            flow_change_vs_1m = round(latest_5d - ref, 2)
+        if live_5d is not None and len(roll5) >= 21:
+            flow_change_vs_1m = round(live_5d - roll5[-21], 2)   # vs ~1 month ago (live)
+        elif latest_5d is not None and len(flows) >= 4:
+            flow_change_vs_1m = round(latest_5d - sum(flows[-4:]) / 4.0, 2)
 
         wtd_return = None
         tk_dates, tk_closes = _load_ohlc_closes(ohlc_dir, tk)
         if len(tk_closes) >= 6:
-            # Walk back to the most recent Friday strictly before the latest bar.
+            # WTD: change from the prior week's last close to the latest close.
+            # Walk back to the most recent bar strictly before this week's Monday
+            # (handles Friday holidays — e.g. Jul 3 before July 4th — where the
+            # old Friday-walk would skip to the prior Friday and span 2 weeks).
             target_close = None
-            for i in range(len(tk_dates)-2, -1, -1):
-                try:
-                    if datetime.fromisoformat(tk_dates[i]).weekday() == 4:
+            try:
+                latest_dt = datetime.fromisoformat(tk_dates[-1])
+                this_monday = latest_dt.date() - timedelta(days=latest_dt.weekday())
+            except (ValueError, TypeError):
+                this_monday = None
+            if this_monday:
+                for i in range(len(tk_dates)-2, -1, -1):
+                    try:
+                        d = datetime.fromisoformat(tk_dates[i]).date()
+                    except ValueError:
+                        continue
+                    if d < this_monday:
                         target_close = tk_closes[i]
                         break
-                except ValueError:
-                    continue
             if target_close and tk_closes[-1]:
                 wtd_return = round(100.0 * (tk_closes[-1] / target_close - 1), 2)
 
@@ -2218,6 +2338,8 @@ def build_etf_flow(out_dir, ohlc_dir):
             "name": info.get("name"),
             "wtd_return": wtd_return,
             "flow_5d": latest_5d,
+            "flow_1d": flow_1d,
+            "flow_source": flow_source,
             "flow_52w_pct": flow_52w_pct,
             "flow_change_vs_1m": flow_change_vs_1m,
             "stretch_score": stretch_score,
@@ -2231,7 +2353,7 @@ def build_etf_flow(out_dir, ohlc_dir):
     return {
         "as_of": today_iso,
         "baseline_as_of": baseline.get("as_of"),
-        "source": "Bloomberg weekly baseline + OpenD daily NAV/units",
+        "source": "OpenD daily NAV/units (live net creation-redemption); Bloomberg baseline = 52w reference only",
         "units": "USD millions",
         "daily_snapshot_count": sum(len(v) for v in daily.values()),
         "tickers": out_tickers,
@@ -2389,7 +2511,7 @@ def _fetch_cboe_vix_history(sym):
     """
     cboe_map = {
         "^VIX":   "VIX",   "^VIX9D": "VIX9D", "^VIX3M": "VIX3M", "^VIX6M": "VIX6M",
-        "^VVIX":  "VVIX",  "^VXN":   "VXN",   "^RVX":   "RVX",
+        "^VVIX":  "VVIX",  "^VXN":   "VXN",   "^RVX":   "RVX",   "^VIXEQ": "VIXEQ",
     }
     cboe_name = cboe_map.get(sym)
     if not cboe_name:
@@ -2436,14 +2558,36 @@ def _fetch_cboe_vix_history(sym):
     return _CBOE_VIX_CACHE[cboe_name]
 
 
+def _futu_index_history(code, n=252):
+    """Daily Close history for a futu-cli index code (e.g. '.VIXEQ.US' — indices
+    carry a LEADING dot in futu-cli proto codes, unlike equities 'SPY.US').
+
+    Uses the same gateway path as the primary OHLC fetch (fetch_futucli, same
+    venv). Returns a DataFrame indexed by date with a Close column, or None.
+    """
+    try:
+        import fetch_futucli
+        res = fetch_futucli._fetch_klines([code], item_count=n, exright_type=0)
+        bars = (res.get(code) or {}).get("bars") or []
+        rows = [(pd.to_datetime(str(b["date"]), format="%Y%m%d"), float(b["close"]))
+                for b in bars if b.get("date") and b.get("close") is not None]
+        if not rows:
+            return None
+        return pd.DataFrame({"Close": [v for _, v in rows]}, index=[d for d, _ in rows])
+    except Exception as e:
+        print(f"  futu index history {code}: {e}")
+        return None
+
+
 def fetch_vol_signals():
     """Fetch implied volatility indices across asset classes."""
     VOL_TICKERS = {
         "Equities": [
-            {"sym": "^VIX",  "name": "VIX",  "desc": "S&P 500"},
-            {"sym": "^VXN",  "name": "VXN",  "desc": "Nasdaq 100"},
-            {"sym": "^RVX",  "name": "RVX",  "desc": "Russell 2000"},
-            {"sym": "^VVIX", "name": "VVIX", "desc": "VIX of VIX"},
+            {"sym": "^VIX",   "name": "VIX",   "desc": "S&P 500"},
+            {"sym": "^VIXEQ", "name": "VIXEQ", "desc": "SPX Constituents", "futu": ".VIXEQ.US"},
+            {"sym": "^VXN",   "name": "VXN",   "desc": "Nasdaq 100"},
+            {"sym": "^RVX",   "name": "RVX",   "desc": "Russell 2000"},
+            {"sym": "^VVIX",  "name": "VVIX",  "desc": "VIX of VIX"},
         ],
         "Rates": [
             {"sym": "^MOVE", "name": "MOVE", "desc": "Treasury Bonds"},
@@ -2458,12 +2602,18 @@ def fetch_vol_signals():
         result[category] = []
         for item in items:
             try:
-                cboe_df = _fetch_cboe_vix_history(item["sym"])
-                if cboe_df is not None and not cboe_df.empty:
-                    hist = cboe_df.tail(252)
-                else:
-                    hist = yf.Ticker(item["sym"]).history(period="1y")
-                if hist.empty:
+                hist = None
+                # futu-cli primary for items that carry a futu index code (e.g. VIXEQ,
+                # which isn't on Yahoo). CBOE/yfinance stay as fallback below.
+                if item.get("futu"):
+                    hist = _futu_index_history(item["futu"])
+                if hist is None or hist.empty:
+                    cboe_df = _fetch_cboe_vix_history(item["sym"])
+                    if cboe_df is not None and not cboe_df.empty:
+                        hist = cboe_df.tail(252)
+                    else:
+                        hist = yf.Ticker(item["sym"]).history(period="1y")
+                if hist is None or hist.empty:
                     raise ValueError("empty")
                 current = float(hist["Close"].iloc[-1])
                 ma20 = float(hist["Close"].tail(20).mean())
@@ -2594,6 +2744,98 @@ def build_vix_term_structure():
             {"label": "6M",  "value": points.get("^VIX6M", {}).get("current")},
         ],
     }
+
+
+def build_vix_spreads():
+    """Cross-index vol spreads — where risk is concentrating across the market.
+
+    Unlike the term structure (same index across tenors), this is DIFFERENT indices
+    at the same (30d) horizon — their spreads reveal dispersion / rotation:
+      - VXN−VIX   Nasdaq-100 vol − S&P 500 vol    = tech risk premium
+      - RVX−VIX   Russell-2000 vol − S&P 500 vol = small-cap risk premium / breadth stress
+      - VIXEQ−VIX constituent vol − index vol    = implied dispersion / correlation
+        (wide = stock-pickers' tape; narrow = macro-driven correlated tape)
+      - VVIX      vol-of-vol (level, not spread) = how jumpy fear itself is
+    All inputs are already fetched by fetch_vol_signals (90d history each); this just
+    pulls them back via _fetch_cboe_vix_history and computes the spreads. No new API.
+    """
+    # (key, a_sym, b_sym, sign_a_minus_b, label_en, label_zh, read_fn)
+    # read_fn maps (spread, vs20d) -> one-line regime read; called once per spread.
+    SPREADS = [
+        ("vxn_vix", "^VXN", "^VIX", True,
+         "Nasdaq−S&P", "纳指−标普", "tech risk premium",
+         lambda s, v: ("tech stress building" if s > 4 and v > 0 else
+                       "tech vs broad elevated" if s > 2.5 else
+                       "tech risk in line with broad" if s > 0.5 else
+                       "tech calmer than broad")),
+        ("rvx_vix", "^RVX", "^VIX", True,
+         "Russell2k−S&P", "罗素2000−标普", "small-cap risk premium",
+         lambda s, v: ("small-cap breadth stress" if s > 4 and v > 0 else
+                       "small-cap risk elevated" if s > 2 else
+                       "small-cap vs broad normal" if s > 0 else
+                       "small-cap calmer than large-cap")),
+        ("vixeq_vix", "^VIXEQ", "^VIX", True,
+         "Constituent−Index", "成分股−指数", "implied dispersion",
+         lambda s, v: ("extreme dispersion / stock-pickers' tape" if s > 18 else
+                       "high dispersion / low correlation" if s > 12 else
+                       "moderate dispersion" if s > 6 else
+                       "low dispersion / macro-driven tape")),
+        ("vvix", "^VVIX", None, False,
+         "Vol-of-Vol", "波动率之波动", "regime uncertainty",
+         lambda s, v: ("fear-of-fear elevated / regime shift" if s > 100 else
+                       "vol regime elevated" if s > 95 else
+                       "vol regime normal" if s > 85 else
+                       "vol regime suppressed")),
+    ]
+
+    out = {"spreads": [], "as_of_points": {}}
+    for key, a_sym, b_sym, sub, lbl_en, lbl_zh, metric, read_fn in SPREADS:
+        a_df = _fetch_cboe_vix_history(a_sym)
+        if a_df is None or a_df.empty:
+            continue
+        a = a_df.tail(90)
+        a_now = float(a["Close"].iloc[-1])
+        a_hist = [(str(d.date()), float(v)) for d, v in zip(a.index, a["Close"])
+                  if not (v != v)]
+
+        if b_sym is None:
+            # VVIX: level, not a spread. vs-20d is its own move.
+            now_val = a_now
+            ma20 = float(a["Close"].tail(20).mean())
+            vs20 = round((a_now - ma20) / max(ma20, 0.01) * 100, 1)
+            hist = [{"t": t, "v": round(vv, 2)} for t, vv in a_hist]
+            read = read_fn(a_now, vs20)
+        else:
+            b_df = _fetch_cboe_vix_history(b_sym)
+            if b_df is None or b_df.empty:
+                continue
+            b = b_df.tail(90)
+            b_now = float(b["Close"].iloc[-1])
+            b_by_date = {str(d.date()): float(v) for d, v in zip(b.index, b["Close"])
+                         if not (v != v)}
+            now_val = round(a_now - b_now if sub else b_now - a_now, 2)
+            spread_hist = []
+            for t, av in a_hist:
+                bv = b_by_date.get(t)
+                if bv is not None:
+                    spread_hist.append({"t": t, "v": round((av - bv) if sub else (bv - av), 2)})
+            # vs-20d of the spread itself
+            recent = [p["v"] for p in spread_hist[-20:]]
+            vs20 = round(now_val - (sum(recent) / len(recent)) if recent else 0, 2)
+            hist = spread_hist
+            read = read_fn(now_val, vs20)
+            out["as_of_points"][b_sym] = b_now
+        out["as_of_points"][a_sym] = a_now
+
+        out["spreads"].append({
+            "key": key, "label_en": lbl_en, "label_zh": lbl_zh, "metric": metric,
+            "a": a_sym, "b": b_sym,
+            "value": now_val, "vs_20d": vs20, "read": read,
+            "history": hist,
+        })
+    if not out["spreads"]:
+        return None
+    return out
 
 
 # ── FRED Macro Monitor ─────────────────────────────────────────────────────────
@@ -3235,7 +3477,7 @@ def main():
 
     time.sleep(2)
     print("Computing options intelligence (OpenD primary)...")
-    options_intel = build_options_intel_opend(OPTIONS_INTEL_TICKERS, prev_ticker_data)
+    options_intel = build_options_intel_opend(OPTIONS_INTEL_TICKERS)
     if not options_intel or len(options_intel) < len(OPTIONS_INTEL_TICKERS) // 2:
         # OpenD totally failed or covered less than half — try yfinance for the rest
         print("  options_intel: OpenD partial/empty, falling back to yfinance...")
@@ -3255,15 +3497,22 @@ def main():
     print("Computing factor regime...")
     factor_regime = {}
     try:
-        spy_2y = yf.Ticker("SPY").history(period="2y")
-        time.sleep(0.5)
+        # Fetch SPY + factor ETFs via the futu-cli gateway (was yfinance 2y, which
+        # rate-limited). Gateway gives ~370 daily bars (~1.5y) — enough for the
+        # >=200-day factor computation below.
+        from fetch_futucli import populate_batch_cache as _factor_pbc
+        _fcache = {}
+        _factor_pbc(_fcache, ["SPY"] + list(FACTOR_ETFS.keys()), verbose=False)
+        spy_2y = _fcache.get("SPY")
+        if spy_2y is None or len(spy_2y) < 200:
+            raise RuntimeError("SPY history unavailable via gateway ({} bars)".format(
+                0 if spy_2y is None else len(spy_2y)))
         spy_2y_returns = spy_2y['Close'].pct_change().dropna()
         for fticker, fname in FACTOR_ETFS.items():
             try:
-                fhist = yf.Ticker(fticker).history(period="2y")
-                time.sleep(0.5)
-                if len(fhist) < 200:
-                    print(f"  {fticker}: insufficient data ({len(fhist)} bars)")
+                fhist = _fcache.get(fticker)
+                if fhist is None or len(fhist) < 200:
+                    print(f"  {fticker}: insufficient data ({0 if fhist is None else len(fhist)} bars)")
                     continue
                 freturns = fhist['Close'].pct_change().dropna()
                 common = freturns.index.intersection(spy_2y_returns.index)
@@ -3289,7 +3538,7 @@ def main():
             except Exception as e:
                 print(f"  Factor {fticker} error: {e}")
     except Exception as e:
-        print(f"  SPY 2y fetch error: {e}")
+        print(f"  Factor regime (gateway) error: {e}")
     if not factor_regime:
         prev_fr = prev_snap.get("factor_regime")
         if prev_fr:
@@ -3330,7 +3579,7 @@ def main():
     except NameError:
         pass
     try:
-        from fetch_opend import populate_batch_cache
+        from fetch_futucli import populate_batch_cache
         opend_cached = populate_batch_cache(_BATCH_CACHE, all_syms)
     except Exception as e:
         print(f"[opend] pre-pass failed: {e}")
@@ -3339,25 +3588,42 @@ def main():
     print(f"[opend] {len(opend_cached)} via OpenD; {len(yahoo_syms)} residual via Yahoo")
     prefetch_histories(yahoo_syms, chunk_size=50, inter_chunk_sleep=6)
 
-    # SPY baseline: prefer OpenD's fresh data/ohlc/SPY.json (just written above).
-    # Yahoo fallback only if OpenD failed for SPY.
+    # SPY baseline: prefer the in-memory _BATCH_CACHE["SPY"] just populated by
+    # the OpenD pre-pass — it already holds today's bar. Reading data/ohlc/SPY.json
+    # off disk here is a race: that file is only written later by get_stock_data()
+    # in the group loop, so at this point it still holds the previous run's bars
+    # (last date lags by days). That stale last-date became spy_ref_date, which
+    # made the staleness detector flag every OpenD-fresh ticker as stale and sent
+    # the build into a yfinance retry loop that rate-limited to 0/239 recovered.
     print("Loading SPY history baseline...")
-    spy_json_path = os.path.join(ohlc_dir, "SPY.json")
-    if os.path.exists(spy_json_path):
+    _spy_mem = _BATCH_CACHE.get("SPY")
+    if _spy_mem is not None and len(_spy_mem) >= 50:
         try:
-            _spy_d = json.load(open(spy_json_path, encoding="utf-8"))
-            _spy_bars = _spy_d.get("ohlc") or []
-            if len(_spy_bars) >= 50:
-                _spy_df = pd.DataFrame(_spy_bars)
-                _spy_df["Date"] = pd.to_datetime(_spy_df["t"]).dt.tz_localize("America/New_York")
-                _spy_df = (_spy_df.set_index("Date")
-                                  .rename(columns={"o": "Open", "h": "High", "l": "Low", "c": "Close", "v": "Volume"})
-                                  [["Open", "High", "Low", "Close", "Volume"]]
-                                  .sort_index())
-                _spy_cache = _spy_df
-                print(f"  [OK] SPY baseline from OpenD: {len(_spy_cache)} bars, last={_spy_cache.index[-1].date()}")
+            if _spy_mem.index.tz is None:
+                _spy_cache = _spy_mem.tz_localize("America/New_York")
+            else:
+                _spy_cache = _spy_mem
+            _spy_cache = _spy_cache.sort_index()
+            print(f"  [OK] SPY baseline from OpenD (in-memory): {len(_spy_cache)} bars, last={_spy_cache.index[-1].date()}")
         except Exception as e:
-            print(f"  [WARN] Failed to load SPY baseline from OpenD: {e}")
+            print(f"  [WARN] Failed to localize in-memory SPY baseline: {e}")
+    if _spy_cache is None or len(_spy_cache) < 50:
+        spy_json_path = os.path.join(ohlc_dir, "SPY.json")
+        if os.path.exists(spy_json_path):
+            try:
+                _spy_d = json.load(open(spy_json_path, encoding="utf-8"))
+                _spy_bars = _spy_d.get("ohlc") or []
+                if len(_spy_bars) >= 50:
+                    _spy_df = pd.DataFrame(_spy_bars)
+                    _spy_df["Date"] = pd.to_datetime(_spy_df["t"]).dt.tz_localize("America/New_York")
+                    _spy_df = (_spy_df.set_index("Date")
+                                      .rename(columns={"o": "Open", "h": "High", "l": "Low", "c": "Close", "v": "Volume"})
+                                      [["Open", "High", "Low", "Close", "Volume"]]
+                                      .sort_index())
+                    _spy_cache = _spy_df
+                    print(f"  [OK] SPY baseline from OpenD (disk): {len(_spy_cache)} bars, last={_spy_cache.index[-1].date()}")
+            except Exception as e:
+                print(f"  [WARN] Failed to load SPY baseline from OpenD disk: {e}")
     if _spy_cache is None or len(_spy_cache) < 50:
         print("  [fallback] Loading SPY baseline from yfinance...")
         try:
@@ -3485,8 +3751,20 @@ def main():
                 print(f"[Retry pass {attempt}] no progress — will try again after {retry_cooldowns[attempt]}s")
             continue
 
+    # Mega Cap theme: companies > $1T market cap, from the OpenD bridge
+    # (opend_spx_weights.json -> data.mega_caps, list of {ticker, name, mktcap}).
+    # Read here so the mega-cap tickers join the fetch set below and get full metrics.
+    mega_caps = []
+    try:
+        with open(os.path.join(out_dir, "opend_spx_weights.json"), encoding="utf-8") as _mf:
+            mega_caps = (json.load(_mf).get("data") or {}).get("mega_caps") or []
+        print(f"  [Mega Cap] {len(mega_caps)} companies > $1T from bridge")
+    except Exception as e:
+        print(f"  [Mega Cap] bridge weights unreadable ({e}) — theme skipped")
+    mega_cap_tickers = [m["ticker"] for m in mega_caps if m.get("ticker")]
+
     # Fetch any AI_THEMES tickers + Fear & Greed tickers + cross-asset tickers not already fetched
-    theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers) | set(THEME_ETF_PROXY.values()) | {"HYG", "TLT", "VIXY", "USO", "UNG", "UUP", "LQD", "IEF", "SHY"}
+    theme_ticker_set = set(t for tickers in AI_THEMES.values() for t in tickers) | set(THEME_ETF_PROXY.values()) | {"HYG", "TLT", "VIXY", "USO", "UNG", "UUP", "LQD", "IEF", "SHY"} | set(mega_cap_tickers)
     for ticker in sorted(theme_ticker_set - set(all_ticker_data.keys())):
         print(f"  [AI Themes] {ticker}")
         row = get_stock_data(ticker, charts_dir, spy_hist=_spy_cache, ohlc_dir=ohlc_dir)
@@ -3576,6 +3854,38 @@ def main():
             "rs": _val("rs"),
             "vol_chart": vol_chart_path,
             "constituent_daily": {t: all_ticker_data[t].get("daily") for t in tickers if t in all_ticker_data},
+        })
+
+    # Mega Cap theme (companies > $1T, from the OpenD bridge) — prepend so it leads
+    # the Themes section. Equal-weighted aggregate like the AI themes; carries a
+    # `mega_caps` detail block (per-company cap + daily) for the holdings tooltip.
+    if mega_caps:
+        mc_tickers = [m["ticker"] for m in mega_caps]
+        mc_rows = [all_ticker_data[t] for t in mc_tickers if t in all_ticker_data]
+
+        def _mc_avg(key, ndec=2, rows=mc_rows):
+            vals = [r.get(key) for r in rows if r.get(key) is not None]
+            return round(sum(vals) / len(vals), ndec) if vals else None
+
+        themes_data.insert(0, {
+            "name": "Mega Cap",
+            "tickers": mc_tickers,
+            "etf": None,
+            "daily": _mc_avg("daily"),
+            "intra": _mc_avg("intra"),
+            "wtd": _mc_avg("wtd"),
+            "5d": _mc_avg("5d"),
+            "20d": _mc_avg("20d"),
+            "ytd": _mc_avg("ytd"),
+            "vol_ratio": _mc_avg("vol_ratio"),
+            "atr_pct": _mc_avg("atr_pct", 1),
+            "dist_sma50_atr": _mc_avg("dist_sma50_atr"),
+            "rs": _mc_avg("rs"),
+            "vol_chart": None,
+            "constituent_daily": {t: all_ticker_data[t].get("daily") for t in mc_tickers if t in all_ticker_data},
+            "mega_caps": [{"ticker": m["ticker"], "name": m["name"], "mktcap": m["mktcap"],
+                           "daily": (all_ticker_data.get(m["ticker"]) or {}).get("daily")}
+                          for m in mega_caps],
         })
 
     # Build "The 7s at a Glance" – one row per "The X 7" group with aggregate metrics (equal-weighted)
@@ -3861,24 +4171,20 @@ def main():
                 seen.add(t)
     em_data = {}
 
-    # OpenD primary pre-pass — covers all US ETFs/stocks in one connection
+    # OpenD expected move — computed by opend_bridge.py (which runs under protobuf-3
+    # and has OpenD option bid/ask) and written to data/opend_em.json. build_data runs
+    # in the protobuf-4 venv and can't call OpenD directly, so we just read the bridge
+    # output here (same pattern as opend_options.json / opend_aum.json). yfinance fills gaps.
     try:
-        from fetch_opend import fetch_expected_move_opend, is_opend_eligible
-        opend_em_tickers = [t for t in em_tickers if is_opend_eligible(t)]
-        if opend_em_tickers:
-            def _spot(t):
-                return all_ticker_data.get(t, {}).get("last_close")
-            print(f"  [opend-em] pre-pass for {len(opend_em_tickers)} tickers...")
-            opend_em = fetch_expected_move_opend(opend_em_tickers, spot_lookup=_spot, verbose=False)
-            for sym, res in opend_em.items():
-                if res.get("em_pct") is not None:
-                    em_data[sym] = {
-                        "em_pct":  res.get("em_pct"),
-                        "em_days": res.get("em_days"),
-                    }
-            print(f"  [opend-em] covered {len(em_data)}/{len(opend_em_tickers)} via OpenD")
+        _repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        with open(os.path.join(_repo, "data", "opend_em.json"), encoding="utf-8") as f:
+            _opend_em = json.load(f).get("data") or {}
+        for sym, res in _opend_em.items():
+            if res.get("em_pct") is not None:
+                em_data[sym] = {"em_pct": res.get("em_pct"), "em_days": res.get("em_days")}
+        print(f"  [opend-em] loaded {len(em_data)} EM values from opend_em.json (bridge)")
     except Exception as e:
-        print(f"  [opend-em] pre-pass failed, falling through to yfinance: {e}")
+        print(f"  [opend-em] opend_em.json unreadable ({e}) — yfinance fallback")
 
     # yfinance fallback — only for tickers OpenD couldn't fill
     yf_remaining = [t for t in em_tickers if t not in em_data or em_data[t].get("em_pct") is None]
@@ -4005,6 +4311,15 @@ def main():
             print(f"  vix_term: spread={vt['spread_1m_3m']} regime={vt['regime']}")
     except Exception as e:
         print(f"  vix_term failed: {e}")
+
+    print("Fetching cross-index vol spreads...")
+    try:
+        vs = build_vix_spreads()
+        if vs:
+            macro_data["vix_spreads"] = vs
+            print(f"  vix_spreads: {len(vs['spreads'])} spreads computed")
+    except Exception as e:
+        print(f"  vix_spreads failed: {e}")
 
     macro_fred = {}
     if fred_api_key:
@@ -4152,6 +4467,12 @@ def main():
     events_path = os.path.join(out_dir, "events.json")
     meta_path = os.path.join(out_dir, "meta.json")
 
+    # Write-time self-check: if the bridge reported mega-caps, the Mega Cap theme
+    # MUST be in the snapshot. (2026-09-23/24 mystery: scheduled builds loaded
+    # mega_caps=12 yet wrote a snapshot without the theme, while manual runs worked.)
+    if mega_caps and not any(t.get("name") == "Mega Cap" for t in (snapshot.get("themes") or [])):
+        print("[ERROR] mega_caps={} loaded but Mega Cap theme MISSING from snapshot — ABORTING write".format(len(mega_caps)))
+        raise RuntimeError("Mega Cap theme lost between build and write — investigate themes_data handling")
     with open(snapshot_path, "w", encoding="utf-8") as f:
         json.dump(sanitize_for_json(snapshot), f, ensure_ascii=False, indent=2)
     with open(events_path, "w", encoding="utf-8") as f:
