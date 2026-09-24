@@ -279,25 +279,31 @@ def build_context(snapshot, news_context=None, fedwatch=None, tavily_news=None, 
 
     # Economic calendar (futu-cli) — released prints w/ actuals + upcoming w/
     # forecast. This is the ONLY calendar source for the briefing; cite releases
-    # from here, not from memory. Sorted: released (most recent first), then
-    # upcoming (soonest first). Star 3 = high-impact (CPI/PPI/NFP/Fed/claims).
+    # from here, not from memory. Released shown most-recent-FIRST (the user's
+    # question "what was the last PPI/CPI" is the highest-frequency use case).
+    # Star 3 = high-impact (CPI/PPI/NFP/Fed/claims).
     econ = econ_calendar or []
-    released = [e for e in econ if e.get("released") and e.get("star", 0) >= 3]
-    upcoming = [e for e in econ if not e.get("released") and e.get("star", 0) >= 3]
+    released = sorted([e for e in econ if e.get("released") and e.get("star", 0) >= 3],
+                       key=lambda e: e.get("date", ""), reverse=True)
+    upcoming = sorted([e for e in econ if not e.get("released") and e.get("star", 0) >= 3],
+                       key=lambda e: e.get("date", ""))
     if released or upcoming:
         lines.append("ECONOMIC CALENDAR (verified — futu-sourced; cite releases from here only, never invent a date/print):")
-        for e in released[-12:]:  # last ~12 high-impact released prints
+        for e in released[:12]:  # 12 most-recent high-impact released prints
             line = "  RELEASED {}: {} — actual {} (fc {}, prev {})".format(
                 e.get("date", ""), (e.get("event") or "")[:70],
                 e.get("actual") or "-", e.get("forecast") or "-", e.get("previous") or "-")
             lines.append(line)
-        for e in upcoming[:10]:   # next ~10 high-impact upcoming
+        for e in upcoming[:10]:   # next 10 high-impact upcoming
             line = "  UPCOMING {}: {} — fc {} (prev {})".format(
                 e.get("date", ""), (e.get("event") or "")[:70],
                 e.get("forecast") or "-", e.get("previous") or "-")
             lines.append(line)
         lines.append("  RULE: Released events already happened (use the ACTUAL value). Upcoming are forward-looking "
                      "(use the FORECAST, or state uncertainty if blank). A release with no actual value listed did NOT print.")
+        lines.append("  USAGE HINT: if a released print (Fed rate, CPI/PPI, PMI, jobs, retail) landed in the last ~3 "
+                     "sessions and the tape's character fits it, NAME the print with its actual vs forecast in BOTTOM "
+                     "LINE or DRIVERS — that's the sourced catalyst. Don't force-fit a release that didn't move markets.")
         lines.append("")
 
     # Prediction-market rate-path odds (Polymarket "Fed Path"). The CME FedWatch feed is
@@ -743,6 +749,11 @@ SYSTEM_PROMPT = (
     "(e.g. 'Risk-on, small caps led, energy faded.'). "
     "Then 2-3 sentences synthesizing the entire day into one takeaway — "
     "weave together price action, positioning, flows, and catalysts into one coherent conclusion. "
+    "CATALYST PRIORITY: if the ECONOMIC CALENDAR block shows a high-impact release that LANDED in the last ~3 sessions "
+    "(Fed rate decision, CPI/PPI, NFP/payrolls, PMI, retail sales, jobless claims) AND today's tape character fits it, "
+    "NAME that release with its actual value vs forecast as the sourced catalyst (e.g. 'Aug PPI printed 0.4% vs 0.4% fc; "
+    "Sept Fed hike to 4.0% drove the rate-sensitivity'). Do not force-fit a release the market ignored; do not cite a "
+    "release that isn't in the block. "
     "This is your verdict on what today meant, not a summary of the sections below.\n\n"
     "INDICES — VIX level and direction. Rank SPY/QQQ/IWM/DIA/^SOX by today's return best to worst with exact %s. "
     "State small vs large cap outcome using the STYLE line (e.g. 'Small > large by 0.95pp'). "
