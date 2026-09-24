@@ -265,32 +265,56 @@ def get_leveraged_etfs(ticker):
     return [], []
 
 
-def get_upcoming_key_events(days_ahead=7):
-    """Upcoming US macro events via futu-cli's economic calendar (same gateway as
-    all other futu data — replaces the flaky investpy scraper + keyword filter;
-    futu's star rating IS the importance signal). Returns dicts shaped for the
+def get_upcoming_key_events(days_ahead=7, days_back=14):
+    """US macro events via futu-cli's economic calendar (same data family as all
+    futu data — replaces the flaky investpy scraper + keyword filter; futu's star
+    rating IS the importance signal).
+
+    Window: [today - days_back, today + days_ahead] so RELEASED prints (actual
+    values backfilled by futu) appear alongside upcoming ones — the dashboard can
+    then answer "what was the last PPI/CPI print" by scrolling back.
+
+    Paginates with seqMark (server returns 20 events/page despite pageSize=100;
+    ~240 events in a 30-day 2+star window). Returns dicts shaped for the
     dashboard events-modal: {date, time, event, star, forecast, previous, actual,
-    released}. The legacy 'event'/'date'/'time' keys are kept so old renderers
-    still work. English titles (ClientLang.en), 3+ star only. [] on any failure —
-    the modal then just shows the briefing without an events section."""
+    released}. Legacy 'event'/'date'/'time' keys kept so old renderers still work.
+    [] on any failure — the modal then just shows the briefing without an events
+    section."""
     try:
         import asyncio as _asyncio
-        from futu_cli.services.calendar import get_economic_calendar as _futu_eco_cal, ClientLang as _ClientLang
-        from futu_cli.markets import Market as _Market
+        from futu_cli.http import news_get as _news_get
+        from futu_cli.markets import App as _App, Market as _Market, ClientLang as _ClientLang
+        from futu_cli.services.calendar import (
+            _nation_tab_params as _ntp, _parse_calendar_data as _parse,
+            TAB_ECONOMIC_DATA as _TAB_ECO,
+        )
     except Exception as e:
         print(f"Economic calendar: futu-cli import failed ({e})")
         return []
 
     today = datetime.today().date()
-    end_date = today + timedelta(days=days_ahead)
+    start = today - timedelta(days=days_back)
+    end = today + timedelta(days=days_ahead)
 
-    async def _fetch():
-        return await _futu_eco_cal(
-            _Market.US, today.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'),
-            star=3, lang=_ClientLang.en)
+    async def _fetch_all():
+        # The friendly get_economic_calendar() works but ignores pagination (the
+        # server returns 20/page via hasMore+seqMark). This is the same call with
+        # the loop added: star=3 → server sends star[]=[3,4,5] and returns 2-and-up
+        # MARKED as 3 (so a star<3 filter would wrongly drop CPI/PPI — don't filter
+        # here), clientLang=en gives machine-translated English titles.
+        params = _ntp(_TAB_ECO, _Market.US, start.strftime('%Y-%m-%d'), end.strftime('%Y-%m-%d'),
+                      star=3, lang=_ClientLang.en)
+        events = []
+        for _page in range(15):  # hard cap: 15 pages = 300 events, well past need
+            data = await _news_get("/api/financial-calendar/list", params, app=_App.niuniu)
+            events.extend(_parse(data))
+            if not data.get("hasMore") or not data.get("seqMark"):
+                break
+            params = {**params, "seqMark": data["seqMark"]}
+        return events
 
     try:
-        events = _asyncio.run(_fetch())
+        events = _asyncio.run(_fetch_all())
     except Exception as e:
         print(f"Economic calendar: futu-cli fetch failed: {e}")
         return []
@@ -301,6 +325,7 @@ def get_upcoming_key_events(days_ahead=7):
         et = ZoneInfo("America/New_York")  # DST-correct ET (a hardcoded -4/-5 drifts an hour twice a year)
     except Exception:
         et = timezone(timedelta(hours=-4))
+
     out = []
     for e in events:
         ts = int(e.timestamp) if e.timestamp else 0
@@ -312,12 +337,13 @@ def get_upcoming_key_events(days_ahead=7):
             "star": e.star,
             "forecast": e.forecast or None,
             "previous": e.previous or None,
-            "actual": (e.actual or None),
+            "actual": e.actual or None,
             "released": bool(ts and ts <= now_ts),
         })
     out.sort(key=lambda x: (x["date"], x["time"]))
-    print(f"Economic calendar: {len(out)} US 3+star events via futu-cli "
-          f"({sum(1 for x in out if x['released'])} already released)")
+    print(f"Economic calendar: {len(out)} US events via futu-cli "
+          f"({sum(1 for x in out if x['released'])} released w/ actuals, "
+          f"{len(out) - sum(1 for x in out if x['released'])} upcoming), window {start}→{end}")
     return out
 
 
