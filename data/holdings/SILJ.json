@@ -3,47 +3,53 @@
   "holdings": [
     {
       "symbol": "HL",
-      "weight": 0.105864294
+      "weight": 0.105864294,
+      "daily": 1.39
     },
     {
       "symbol": "CDE",
-      "weight": 0.104846604
+      "weight": 0.104846604,
+      "daily": 1.48
     },
     {
       "symbol": "AG.TO",
-      "weight": 0.1030585
+      "weight": 0.1030585,
+      "daily": 1.51
     },
     {
       "symbol": "WPM.TO",
       "weight": 0.055931702,
-      "daily": 4.5
+      "daily": -0.69
     },
     {
       "symbol": "SSRM.TO",
       "weight": 0.047786,
-      "daily": 4.95
+      "daily": -0.2
     },
     {
       "symbol": "BOL.ST",
-      "weight": 0.0408199
+      "weight": 0.0408199,
+      "daily": -2.01
     },
     {
       "symbol": "EXK",
       "weight": 0.037593402,
-      "daily": 3.75
+      "daily": 2.51
     },
     {
       "symbol": "AYA.TO",
       "weight": 0.036445,
-      "daily": 6.06
+      "daily": 1.95
     },
     {
       "symbol": "PPTA.TO",
-      "weight": 0.0319589
+      "weight": 0.0319589,
+      "daily": 0.36
     },
     {
       "symbol": "HYMC",
-      "weight": 0.0317052
+      "weight": 0.0317052,
+      "daily": 2.82
     }
   ]
 }
