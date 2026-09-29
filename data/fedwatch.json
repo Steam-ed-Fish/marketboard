@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-29",
+  "last_updated": "2026-09-30",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-09-29",
+    "cme_updated": "2026-09-30",
     "bls_unemp_updated": "2026-07-15",
     "rate_prob_source": "CME FedWatch (investing.com)"
   },
@@ -130,6 +130,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
       "speeches": [
         {
+          "date": "2026-09-29",
+          "event": "Barr, Economic Conditions and Monetary Policy",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260929a.htm",
+          "brief_summary": "Speech At the Detroit Economic Club, Detroit, Michigan",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-09-23",
           "event": "Barr, A Long-Term View on the Costs of Shelter",
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260923a.htm",
@@ -156,13 +163,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260606a.htm",
           "brief_summary": "Governor Barr warns that recent Federal Reserve deregulation—including capital requirement cuts of 6% for large banks and weakened supervision—risks financial stability despite current economic strength.",
           "detailed_summary": "This supervision and regulation speech is not about monetary policy rate decisions. Governor Barr expresses concern that the Fed and other banking regulators are simultaneously reducing capital requirements for large banks (particularly the 8 GSIBs holding 60% of banking sector assets), weakening stress tests, eroding leverage ratios, lowering GSIB surcharges, and degrading supervisory oversight through rating system changes and reduced matters-requiring-attention issuances. He argues these deregulatory steps, while appearing beneficial short-term, create long-term financial stability vulnerabilities reminiscent of pre-crisis patterns, and that reducing capital standards by $60 billion leaves the system underinsured against systemic risk."
-        },
-        {
-          "date": "2026-05-20",
-          "event": "Barr, Measuring Financial Health",
-          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260520a.htm",
-          "brief_summary": "Governor Barr discusses evolving financial health measurement beyond banking access, emphasizing data-driven metrics and AI tools to improve consumer outcomes.",
-          "detailed_summary": "This speech addresses consumer financial health measurement rather than monetary policy. Barr notes that while 96% of American adults have bank accounts, only 31% report feeling financially healthy, indicating access alone is insufficient. He discusses the Federal Reserve's contributions to financial health measurement through surveys like the SCF and SHED, highlighting the '$400 test' showing 37% of households lack emergency savings. Barr emphasizes how technological advances in AI and behavioral science enable banks to develop products and services targeting tangible positive financial outcomes for consumers, moving measurement beyond self-reported perceptions to actionable, real-time metrics."
         }
       ]
     },
@@ -175,6 +175,13 @@
       "photo_url": "data/fedwatch_photos/bowman.jpg",
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
+        {
+          "date": "2026-09-29",
+          "event": "Bowman, Opening Remarks",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260929a.htm",
+          "brief_summary": "Speech At the Community Bank Cyber Workshop, Denver, Colorado (via pre-recorded video)",
+          "detailed_summary": ""
+        },
         {
           "date": "2026-09-18",
           "event": "Bowman, Initial Findings from Independent Review of Silicon Valley Bank",
@@ -202,13 +209,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260529a.htm",
           "brief_summary": "Bowman outlines her practical monetary policy decision-making framework, emphasizing analysis of GDP, employment, and inflation data to determine appropriate federal funds rate adjustments.",
           "detailed_summary": "Vice Chair Bowman describes her approach to assessing economic conditions and the FOMC's dual mandate of maximum employment and price stability. She examines real GDP growth and private domestic final purchases to gauge demand momentum, monitors unemployment rate and payroll employment to evaluate labor market slack and tightness, and tracks PCE inflation (especially core PCE) against the 2 percent target. Bowman notes the framework guides decisions to cut, raise, or hold rates constant, emphasizing the importance of forward-looking analysis, frequent business contacts, and caution regarding data reliability and volatility in real-time interpretation."
-        },
-        {
-          "date": "2026-07-07",
-          "event": "Bowman, Opening Remarks on Sound Practices for Artificial Intelligence",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260707a.htm",
-          "brief_summary": "Vice Chair Bowman discusses the Financial Stability Board's consultation report on sound practices for responsible AI adoption in financial institutions, emphasizing proportionality and risk-based governance.",
-          "detailed_summary": "This speech addresses regulatory guidance on artificial intelligence use in banking, not monetary policy. Bowman presents the FSB's framework for responsible AI adoption, noting the Federal Reserve has monitored bank AI usage for a decade with increasing deployment across institutions of all sizes. The report emphasizes proportionality—lighter supervisory touch for lower-risk AI uses and tailored governance based on materiality, institutional complexity, and size. Bowman welcomes feedback on whether guidance balances innovation promotion with adequate safeguards for higher-risk applications before finalization as a U.S. G-20 deliverable."
         }
       ]
     },
@@ -474,6 +474,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/waller.htm",
       "speeches": [
         {
+          "date": "2026-09-29",
+          "event": "Waller, Payments in the Age of AI Agents",
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260928a.htm",
+          "brief_summary": "Speech At Sibos 2026, Miami, Florida",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-09-03",
           "event": "Waller, The Economic Outlook and Some Comments on My Policy Communication",
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260903a.htm",
@@ -500,13 +507,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260622a.htm",
           "brief_summary": "Waller welcomes conference discussing how financial innovations like stablecoins and blockchain are reshaping the international role of the U.S. dollar in global payments and intermediation.",
           "detailed_summary": "This speech is not about monetary policy but rather a welcoming address to the Fifth Conference on the International Roles of the U.S. Dollar. Waller outlines research themes examining how technological innovations—particularly stablecoins and distributed ledger technologies—are transforming payment systems, foreign exchange markets, and cross-border capital flows. The conference explores whether stablecoins reinforce dollar dominance by extending access to dollar-denominated instruments globally or introduce new tensions through altered financial intermediation and safe asset demand, while noting that competition from private sector innovation generally benefits consumers and society."
-        },
-        {
-          "date": "2026-05-22",
-          "event": "Waller, Policy Risks Have Changed",
-          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260522a.htm",
-          "brief_summary": "Fed should pause rate cuts and remove easing bias due to Middle East energy shock pushing inflation higher, though rate hikes unlikely near-term given stable but not booming labor market.",
-          "detailed_summary": "Governor Waller addresses how the Middle East conflict's supply disruptions and rising energy prices have shifted monetary policy priorities from labor market concerns to inflation risks. While recent data show labor market stabilization (4.3% unemployment, hiring improvement), headline inflation is rising and moving in the wrong direction. Waller supports holding rates steady, removing the easing bias from policy statements, and rules out near-term rate cuts unless inflation improves or labor market deteriorates significantly. He cautions that rate hikes remain possible if inflation expectations become unanchored, though near-term increases could damage the still-recovering economy."
         }
       ]
     },
