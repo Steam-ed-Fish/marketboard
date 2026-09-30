@@ -1,93 +1,13 @@
 [
   {
     "type": "briefing",
-    "date": "29/09/2026",
-    "time": "22:39",
+    "date": "30/09/2026",
+    "time": "22:38",
     "event": "Daily Intelligence Briefing",
     "title": "Daily Market Briefing",
-    "text": "BOTTOM LINE — Gold up, chips up, broad tape heavy.\nSept Consumer Confidence sank to 81.9 vs 89.2 fc and JOLTs openings fell to 7.079M vs 7.225M fc, so cyclicals (XLE -0.90%, XLB -0.75%) and small caps bled while investors crowded gold (+1.32%) and semis (SOXX +1.19%). Net: a defensive-hedge tape inside a narrowing tech leadership, not risk-on.\n\nINDICES — VIX 16.0 vs 20d MA 15.7; calm but for sale.\nSOXX +1.19%, QQQ +0.19%, SPY -0.18%, DIA -0.22%, IWM -0.36%. Large > small by 0.52pp. Biggest cross-asset move: WTI (USO) -4.44%, with nat gas -4.08%; gold +1.32% was the offsetting bid. SPY and QQQ both remain above their 200-DMA on a 20d basis (SPY -0.37%, QQQ +2.95%), so no CTA sell trigger fired today.\n\nVOLUME & BREADTH — SPY vol settled near 1.0x (index avg 0.99x) and QQQ light; IJR 1.7x and IJH 1.5x show small-cap distribution rather than accumulation. SPY -13,002mm 5d flow (2nd percentile) says institutions are net sellers into the close. Breadth is the tell: 196/299 adv/dec, only 24% of S&P names above the 50-DMA, 43% above the 200-DMA, up/down volume 0.64, and 11 new 60d highs vs 75 lows — participation diverges hard from the index-level calm; this is a narrow tape.\n\nSECTORS & ROTATION — XLU Utilities +1.17%, XLC Comms +0.26%, XLI Industrials +0.21%, XLY Discretionary +0.14%, XLK Technology -0.02%, XLRE Real Estate -0.02%, XLV Healthcare -0.31%, XLF Financials -0.33%, XLP Staples -0.52%, XLB Materials -0.75%, XLE Energy -0.90%.\nTop industries: DRAM +2.66%, UTES +1.70%; bottom: USO -4.44%, UNG -4.08%. Flows: XLY +711mm (100th pct) and XLK +147mm (60th) in; XLF -2,305mm (0th) and XLV -1,089mm (2nd) out — confirming the rotation out of financials/healthcare into discretionary and tech. Money-in: semis/memory, utilities, gold miners. Money-out: energy, financials, healthcare. Label: AI hardware leading.\n\nPOSITIONING — SPY PCR 1.05 = protection bid; QQQ PCR 0.75 = complacency; skews +7.0%/+6.4% show put premium. SPY spot (~769 implied) is above GEX flip 665 but far under max pain 765 — pin risk into month-end. VIXEQ 39.7 vs VIX 16.0 = wide dispersion gap, a stock-picker's tape; MOVE/OVX/GVZ all printed 0.0, so no bond-vol read available.\n\nCROSS-ASSET — WTI -4.44% is hitting energy equities (XLE -0.90%, OIH -2.44%) while failing to lift consumer cyclicals, a demand-scare signal, not a cost-relief rally. Gold +1.32% alongside a firmer dollar (UUP +0.17%) and TLT -0.50% is the unusual pairing — a stagflation-hedge bid. Next FOMC Oct 28; Polymarket now 56% no-change vs 44% for a 25bp hike, a -23pp swing in hike odds over five days.\n\nSIGNALS & WATCH — Fear & Greed 52.3, Neutral.\nMovers: AMAT +5.19%, MRVL +4.51%, ORCL +3.91% (no catalyst in feed — ORCL follows a -3.4% drop 5 days ago). Vol spikes: AIG +3.42% at 2.5x (accumulation), XLU +1.17% at 2.1x. Watch: XLE -0.90% (oil -4.44% transmission), XLF -0.33% (0th-pctile outflows), GLD +1.32% (22.6% IV, gamma flip 330).\n━━━━━━ 晨会素材 SPEECH BRIEFING ━━━━━━\n\n① 波动率\n  • VIX: 16.04  (vs20MA +2.0%)\n  • VXN: 22.07  (vs20MA +3.8%)\n  • VIXEQ: 39.71  (vs20MA +6.8%)\n  • VVIX: 89.71  (vs20MA -0.3%)\n  • SKEW: 144.58  (1d -1.1%)\n\n② 指数相对强弱\n  • 最强: SOXX +1.19%\n  • 最弱: IWM -0.36%\n  • 大盘vs平权: SPY -0.18% vs RSP -0.11% → 平权领先0.07pp\n  • 成交量 SPY: 0.84x\n  • 成交量 QQQ: 0.80x\n\n③ Mega Cap (>$1T)\n\n④ 利率水位\n  • US2Y: 4.88%  US10Y: 5.24%  US30Y: 5.57%\n  • 10y-2y利差: +0.36\n  • 定性: 30y站上5.2% (关键高位)\n\n⑤ 科技与动量\n  • 半导体: SOXX +1.19%, SMH +1.15%\n  • 存储: DRAM +2.66%, MU +1.05%\n  • 光通信: LITE +5.66%, AAOI +3.98%, FOTO +2.71%\n  • 软件/AI: IGV -0.20%, AIQ +0.53%, CIBR +0.30%\n\n⑥ 板块主题群\n  • 领涨: XLU(公用) +1.17%, XLC(通讯) +0.26%, XLI(工业) +0.21%\n  • 领跌: XLP(必需消费) -0.52%, XLB(材料) -0.75%, XLE(能源) -0.90%\n\n⑦ 个股催化\n  (见上方简报 SIGNALS & WATCH 区的movers)\n\n⑧ 资金面 (5日净流入/流出 = 机构净买卖)\n  • 净流入: DIA +1971M, SOXX +1797M, GLD +1112M\n  • 净流出: SPY -13002M, IWM -3320M, QQQ -3206M\n\n⑨ 金银/比特币\n  • 金(GLD) +1.32%  银(SLV) +0.96%\n  • BTC: $83,540  (1d +0.04%)\n  • IBIT: $47.33  (1d +0.25%)",
-    "generated_at": "2026-09-29T22:39:06Z",
-    "duration_s": 5.9
-  },
-  {
-    "date": "2026-09-16",
-    "time": "08:30 ET",
-    "event": "US Import Price Index Monthly Rate for August",
-    "star": 3,
-    "forecast": "0.4",
-    "previous": "-0.40",
-    "actual": "0.7",
-    "released": true
-  },
-  {
-    "date": "2026-09-16",
-    "time": "08:30 ET",
-    "event": "U.S. retail sales monthly rate for August",
-    "star": 3,
-    "forecast": "0.8",
-    "previous": "-0.60",
-    "actual": "1.2",
-    "released": true
-  },
-  {
-    "date": "2026-09-16",
-    "time": "10:00 ET",
-    "event": "U.S. September NAHB Housing Market Index",
-    "star": 3,
-    "forecast": "34",
-    "previous": "35",
-    "actual": "32",
-    "released": true
-  },
-  {
-    "date": "2026-09-16",
-    "time": "10:00 ET",
-    "event": "U.S. commercial inventories monthly rate in July",
-    "star": 3,
-    "forecast": "0.3",
-    "previous": "0.00",
-    "actual": "0.8",
-    "released": true
-  },
-  {
-    "date": "2026-09-16",
-    "time": "10:30 ET",
-    "event": "US EIA crude oil inventories for the week ending September 11 (10,000 barrels)",
-    "star": 3,
-    "forecast": "-162",
-    "previous": "-39.1",
-    "actual": "-64",
-    "released": true
-  },
-  {
-    "date": "2026-09-16",
-    "time": "10:30 ET",
-    "event": "U.S. EIA Cushing, Oklahoma crude oil inventories for the week ending September 11 (10,000 barrels)",
-    "star": 3,
-    "forecast": null,
-    "previous": "-68.4",
-    "actual": "-34.2",
-    "released": true
-  },
-  {
-    "date": "2026-09-16",
-    "time": "10:30 ET",
-    "event": "U.S. EIA Strategic Petroleum Reserve Inventories for the Week to September 11 (10,000 barrels)",
-    "star": 3,
-    "forecast": null,
-    "previous": "-124.4",
-    "actual": "-40.3",
-    "released": true
-  },
-  {
-    "date": "2026-09-16",
-    "time": "16:30 ET",
-    "event": "US API crude oil inventories for the week ending September 11 (10,000 barrels)",
-    "star": 3,
-    "forecast": "-175",
-    "previous": "-32.7",
-    "actual": "714.4",
-    "released": true
+    "text": "BOTTOM LINE — Tech-only tape, breadth collapsed.\nCore PCE cooled to 0.2% m/m (fc 0.3%) and 3.0% y/y (fc 3.3%), yet SPY fell 0.21% while only QQQ and SOXX closed green — a dovish inflation print bought megacap tech and nothing else. ADP 9k vs 7k fc and Chicago PMI 58.8 vs 51.2 fc confirmed hot growth, keeping Polymarket hike odds at 34% for Oct 28.\n\nINDICES — VIX 16.3, above its 15.8 20-day MA.\nQQQ +0.25% > SOXX +0.21% > SPY -0.21% > IWM -0.40% > DIA -0.84%. Large beat small by 0.65pp. Oil was the notable cross-asset move, USO +1.61%, with TLT -0.58% the second. SPY's 21% above-50DMA reading is the real story, not the index level.\n\nVOLUME & BREADTH — SPY vol_ratio 1.4x with price -0.21%: distribution into strength. QQQ ran roughly average volume — the +0.25% came on no conviction, a low-conviction rally. IJR 1.6x and IJH 1.4x on down days is heavier small-cap selling, while SOXX 0.6x shows nobody wants chip exposure here despite the +0.21%. Breadth diverges hard: 120 advancers vs 381 decliners, 21% above the 50-DMA, 0.56 up/down volume, 12 new highs vs 118 new lows.\n\nSECTORS & ROTATION — XLK Technology +0.64%, XLE Energy -0.06%, XLY Discretionary -0.28%, XLC Comms -0.45%, XLU Utilities -0.68%, XLB Materials -0.81%, XLRE Real Estate -1.04%, XLF Financials -1.13%, XLI Industrials -1.27%, XLV Healthcare -1.35%, XLP Staples -1.53%. Top industries: USO +1.61%, TAN +1.24%; bottom: WGMI -2.60%, MSOS -11.20%. Flows confirm the concentration: XLK +147 (60p) and XLY +711 (100p) took inflows, while XLF bled -2305 (0p) and XLV -1089 (2p). Money is going into tech/discretionary and out of financials and healthcare — narrow mega-cap tape.\n\nPOSITIONING — SPY PCR 1.05 is elevated protection demand; QQQ 0.75 sits mid-range. Both skews positive (SPY +7.0%, QQQ +6.4%) — put premium bid. VIXEQ 39.8 vs VIX 16.3 is a wide gap: high single-stock dispersion, a rotation tape, not a macro-correlated one. SPY GEX flip 665 vs spot well above — no amplification risk yet.\n\nCROSS-ASSET — Oil +1.61% on EIA crude build of 92.2 vs -26.4 fc is a head-scratcher; dollar +0.07% and TLT -0.58% show duration still leaking. Next FOMC Oct 28: Polymarket says 66% hold, 34% hike, with hike odds -29pp in five days — the market is fading the hawkish tail even as growth prints run hot. 2-3 sentences.\n\nSIGNALS & WATCH — Fear & Greed 50.6, Neutral. NOC -4.19% (GF Value calls it undervalued), MP +4.09% on its mine-to-magnet push, CEG -3.99%, FNV -3.96% on 5.1x volume — that's distribution, not accumulation. MSOS -11.20% on 4.3x volume is the ugliest print on the board. Watch QQQE -0.17% on 2.4x volume (equal-weight divergence from QQQ), XLU -0.68% on 2.2x (defensive unwind), and EMR -1.36% on 2.0x in the Industrial 7.\n━━━━━━ 晨会素材 SPEECH BRIEFING ━━━━━━\n\n① 波动率\n  • VIX: 16.34  (vs20MA +3.6%)\n  • VXN: 22.46  (vs20MA +5.5%)\n  • VIXEQ: 39.83  (vs20MA +6.6%)\n  • VVIX: 89.48  (vs20MA -0.5%)\n  • SKEW: 141.92  (1d -1.8%)\n\n② 指数相对强弱\n  • 最强: QQQ +0.25%\n  • 最弱: DIA -0.84%\n  • 大盘vs平权: SPY -0.21% vs RSP -0.71% → 大盘领先0.50pp\n  • 成交量 SPY: 1.40x\n  • 成交量 QQQ: 0.89x\n\n③ Mega Cap (>$1T)\n\n④ 利率水位\n  • US2Y: 4.89%  US10Y: 5.29%  US30Y: 5.63%\n  • 10y-2y利差: +0.40\n  • 定性: 30y站上5.2% (关键高位)\n\n⑤ 科技与动量\n  • 半导体: SOXX +0.21%, SMH +0.35%\n  • 存储: DRAM -1.52%, MU +0.00%\n  • 光通信: LITE -0.23%, AAOI -1.40%, FOTO -0.82%\n  • 软件/AI: IGV +1.20%, AIQ +0.17%, CIBR +1.10%\n\n⑥ 板块主题群\n  • 领涨: XLK(科技) +0.64%, XLE(能源) -0.06%, XLY(可选消费) -0.28%\n  • 领跌: XLI(工业) -1.27%, XLV(医疗) -1.35%, XLP(必需消费) -1.53%\n\n⑦ 个股催化\n  (见上方简报 SIGNALS & WATCH 区的movers)\n\n⑧ 资金面 (5日净流入/流出 = 机构净买卖)\n  • 净流入: DIA +1971M, SOXX +1797M, GLD +1112M\n  • 净流出: SPY -13002M, IWM -3320M, QQQ -3206M\n\n⑨ 金银/比特币\n  • 金(GLD) -0.54%  银(SLV) -1.75%\n  • BTC: $83,783  (1d +0.24%)\n  • IBIT: $47.34  (1d +0.02%)",
+    "generated_at": "2026-09-30T22:38:45Z",
+    "duration_s": 5.3
   },
   {
     "date": "2026-09-17",
@@ -406,8 +326,8 @@
     "star": 3,
     "forecast": "7",
     "previous": "3.8",
-    "actual": null,
-    "released": false
+    "actual": "9",
+    "released": true
   },
   {
     "date": "2026-09-30",
@@ -416,8 +336,8 @@
     "star": 3,
     "forecast": "0.80",
     "previous": "0.20",
-    "actual": null,
-    "released": false
+    "actual": "0.9",
+    "released": true
   },
   {
     "date": "2026-09-30",
@@ -426,8 +346,8 @@
     "star": 3,
     "forecast": "0.30",
     "previous": "0.20",
-    "actual": null,
-    "released": false
+    "actual": "0.2",
+    "released": true
   },
   {
     "date": "2026-09-30",
@@ -436,8 +356,8 @@
     "star": 3,
     "forecast": "3.3",
     "previous": "3.30",
-    "actual": null,
-    "released": false
+    "actual": "3",
+    "released": true
   },
   {
     "date": "2026-09-30",
@@ -446,8 +366,8 @@
     "star": 3,
     "forecast": "1.5",
     "previous": "1.50",
-    "actual": null,
-    "released": false
+    "actual": "2.2",
+    "released": true
   },
   {
     "date": "2026-09-30",
@@ -456,18 +376,18 @@
     "star": 3,
     "forecast": "3.6",
     "previous": "3.60",
-    "actual": null,
-    "released": false
+    "actual": "3.3",
+    "released": true
   },
   {
     "date": "2026-09-30",
     "time": "08:30 ET",
     "event": "Final U.S. real personal consumption expenditure quarter-to-quarter rate in the second quarter",
     "star": 3,
-    "forecast": null,
+    "forecast": "3.4",
     "previous": "3.4",
-    "actual": null,
-    "released": false
+    "actual": "3.8",
+    "released": true
   },
   {
     "date": "2026-09-30",
@@ -476,18 +396,18 @@
     "star": 3,
     "forecast": "51.2",
     "previous": "47.1",
-    "actual": null,
-    "released": false
+    "actual": "58.8",
+    "released": true
   },
   {
     "date": "2026-09-30",
     "time": "10:30 ET",
     "event": "US EIA crude oil inventories for the week ending September 25 (10,000 barrels)",
     "star": 3,
-    "forecast": "-114",
+    "forecast": "-26.4",
     "previous": "296.9",
-    "actual": null,
-    "released": false
+    "actual": "92.2",
+    "released": true
   },
   {
     "date": "2026-09-30",
@@ -496,8 +416,8 @@
     "star": 3,
     "forecast": null,
     "previous": "226.6",
-    "actual": null,
-    "released": false
+    "actual": "55.3",
+    "released": true
   },
   {
     "date": "2026-09-30",
@@ -506,8 +426,8 @@
     "star": 3,
     "forecast": null,
     "previous": "-40.5",
-    "actual": null,
-    "released": false
+    "actual": "-78.5",
+    "released": true
   },
   {
     "date": "2026-09-30",
@@ -554,7 +474,7 @@
     "time": "10:00 ET",
     "event": "US September ISM Manufacturing PMI",
     "star": 3,
-    "forecast": "54.9",
+    "forecast": "55",
     "previous": "54.6",
     "actual": null,
     "released": false
@@ -685,7 +605,7 @@
     "event": "US EIA crude oil inventories for the week ending October 2 (10,000 barrels)",
     "star": 3,
     "forecast": null,
-    "previous": null,
+    "previous": "92.2",
     "actual": null,
     "released": false
   },
@@ -695,7 +615,7 @@
     "event": "U.S. EIA Cushing, Oklahoma crude oil inventories for the week ending October 2 (10,000 barrels)",
     "star": 3,
     "forecast": null,
-    "previous": null,
+    "previous": "55.3",
     "actual": null,
     "released": false
   },
@@ -705,7 +625,7 @@
     "event": "U.S. EIA Strategic Petroleum Reserve Inventories for the Week to October 2 (10,000 barrels)",
     "star": 3,
     "forecast": null,
-    "previous": "-40.5",
+    "previous": "-78.5",
     "actual": null,
     "released": false
   },
@@ -716,6 +636,66 @@
     "star": 3,
     "forecast": null,
     "previous": "3.58",
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-10-07",
+    "time": "16:30 ET",
+    "event": "US API crude oil inventories for the week ending October 2 (10,000 barrels)",
+    "star": 3,
+    "forecast": null,
+    "previous": "101.9",
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-10-08",
+    "time": "08:30 ET",
+    "event": "Number of people filing for unemployment benefits in the United States for the week ending October 3 (ten thousand people)",
+    "star": 3,
+    "forecast": null,
+    "previous": null,
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-10-08",
+    "time": "10:00 ET",
+    "event": "US wholesale sales monthly rate in August",
+    "star": 3,
+    "forecast": null,
+    "previous": "0.80",
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-10-08",
+    "time": "10:30 ET",
+    "event": "U.S. EIA natural gas inventories for the week ending October 2 (100 million cubic feet)",
+    "star": 3,
+    "forecast": null,
+    "previous": null,
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-10-08",
+    "time": "13:00 ET",
+    "event": "U.S. 10-year Treasury bond auction to October 7-winning interest rate",
+    "star": 3,
+    "forecast": null,
+    "previous": "4.83",
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-10-08",
+    "time": "13:00 ET",
+    "event": "U.S. 10-year Treasury bond auction to October 7-bid multiple",
+    "star": 3,
+    "forecast": null,
+    "previous": "2.71",
     "actual": null,
     "released": false
   }
