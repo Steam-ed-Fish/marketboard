@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-06",
+  "last_updated": "2026-10-07",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -176,6 +176,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
         {
+          "date": "2026-10-06",
+          "event": "Bowman, Modernizing the Regulatory and Supervisory Landscape",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261006a.htm",
+          "brief_summary": "Speech At the 2026 Community Banking Research Conference, sponsored by  the Federal Reserve System, the Conference of State Bank Supervisors, and the Federal Deposit Insurance Corporation, St. Louis, Missouri",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-10-01",
           "event": "Bowman, Modernizing Financial Regulation: Initial Observations from eSLR",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261001a.htm",
@@ -202,13 +209,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260714a.htm",
           "brief_summary": "Vice Chair Bowman discusses responsible AI innovation in banking as a tool for financial inclusion, emphasizing clear regulatory expectations and supervisory flexibility over prescriptive requirements.",
           "detailed_summary": "This speech addresses financial inclusion and responsible innovation rather than monetary policy. Bowman highlights how banks can expand access to financial services through responsible innovation, particularly AI adoption for credit expansion and serving underbanked populations. She emphasizes the Federal Reserve's role in providing regulatory clarity and flexibility while maintaining safety and soundness, noting that smaller banks need accessible guidance. Bowman references the Financial Stability Board's recent report on sound practices for AI adoption, advocating for calibrated oversight proportional to risk rather than one-size-fits-all requirements."
-        },
-        {
-          "date": "2026-07-13",
-          "event": "Bowman, Modernizing Financial Regulation",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260713a.htm",
-          "brief_summary": "Vice Chair Bowman outlines Financial Stability Board principles for modernizing financial regulation globally, emphasizing risk-based supervision, tailored requirements, and transparency over regulatory burden.",
-          "detailed_summary": "Bowman discusses FSB efforts to modernize regulatory frameworks by prioritizing material financial risks over excessive findings, tailoring supervision to institution risk profiles, and enhancing transparency in supervisory expectations. She cites Silicon Valley Bank's failure as evidence that supervisors lost focus on material risks despite numerous outstanding matters, demonstrating that 'more findings do not equal better supervision.' U.S. modernization includes capital framework reforms through the 2026 Basel III proposal, which adopts bottom-up risk-based calibration, simplifies requirements for large banks, recalibrates systemic importance surcharges, and commits to indexing G-SIB surcharges to economic growth. The approach balances prudential soundness with economic efficiency while supporting responsible innovation."
         }
       ]
     },
