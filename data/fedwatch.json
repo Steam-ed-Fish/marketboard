@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-16",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -176,6 +176,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
         {
+          "date": "2026-10-15",
+          "event": "Bowman, Supervisory Modernization After Silicon Valley Bank",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261014a.htm",
+          "brief_summary": "Speech At the Bangkok Economic Festival, Reinventing Bretton Woods Committee, Bangkok, Thailand",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-10-06",
           "event": "Bowman, Modernizing the Regulatory and Supervisory Landscape",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261006a.htm",
@@ -202,13 +209,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260918b.htm",
           "brief_summary": "This speech presents initial findings from an independent review of Silicon Valley Bank's failure, focusing on supervisory shortcomings rather than monetary policy.",
           "detailed_summary": "Vice Chair for Supervision Bowman announced preliminary findings from the Starling Advisory Group's independent review of SVB's collapse. The review identified that supervisors knew of SVB's vulnerabilities by March 2022 but failed to act decisively due to a culture of risk aversion and unclear decision rights. Contrary to prior claims, social media did not trigger the bank run, and regulatory tailoring did not cause the supervisory delays. The Federal Reserve has responded with new supervisory operating principles and monthly escalation reports to address cultural shortcomings and empower examiners."
-        },
-        {
-          "date": "2026-07-14",
-          "event": "Bowman, Responsible Innovation and Financial Inclusion",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260714a.htm",
-          "brief_summary": "Vice Chair Bowman discusses responsible AI innovation in banking as a tool for financial inclusion, emphasizing clear regulatory expectations and supervisory flexibility over prescriptive requirements.",
-          "detailed_summary": "This speech addresses financial inclusion and responsible innovation rather than monetary policy. Bowman highlights how banks can expand access to financial services through responsible innovation, particularly AI adoption for credit expansion and serving underbanked populations. She emphasizes the Federal Reserve's role in providing regulatory clarity and flexibility while maintaining safety and soundness, noting that smaller banks need accessible guidance. Bowman references the Financial Stability Board's recent report on sound practices for AI adoption, advocating for calibrated oversight proportional to risk rather than one-size-fits-all requirements."
         }
       ]
     },
