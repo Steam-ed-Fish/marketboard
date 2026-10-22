@@ -1,63 +1,13 @@
 [
   {
     "type": "briefing",
-    "date": "21/10/2026",
-    "time": "23:14",
+    "date": "22/10/2026",
+    "time": "23:16",
     "event": "Daily Intelligence Briefing",
     "title": "Daily Market Briefing",
-    "text": "BOTTOM LINE — Semis led a narrow mega-cap bounce.\nSOXX +2.07% did the day's work while the equal-weight S&P managed just +0.36%, so the bounce was concentration, not conviction. Weak housing data (Sept housing starts 122.1 vs 130.5 fc, existing home contract sales -7.3% vs -0.5% fc) went unpunished, and the tape is repricing a hawkish Fed with a 100% CME hike odds into Oct 28.\n\nINDICES — VIX 16.7, modestly above its 16.1 20-day MA.\nSOXX +2.07%, QQQ +1.05%, DIA +0.64%, SPY +0.53%, IWM +0.25%. Large > small by 0.80pp. Nat gas -5.05% was the standout cross-asset move; oil -0.50% with EIA crude drawing -3.06M bbl vs -0.82M fc. No 200-DMA break to flag on SPY/QQQ.\n\nVOLUME & BREADTH — SPY 0.9x, QQQ 0.9x: below-average volume into an up day = low-conviction rally.\nGainers with attention: SOXX 1.1x, XLC 1.5x (down -1.11%, so distribution), XLK 1.2x. Ignored: IWM 0.6x, IJR 0.6x, SLV 0.6x. Breadth: 58% advancers, 55% >50DMA, 54% >200DMA, up/down vol 1.18, 40 new highs vs 13 lows — participation confirms mildly but 54% >200DMA is thin for an index at highs.\n\nSECTORS & ROTATION — XLK Technology +1.67%, XLI Industrials +0.91%, XLF Financials +0.57%, XLU Utilities +0.29%, XLE Energy +0.28%, XLB Materials +0.18%, XLY Discretionary +0.03%, XLV Healthcare -0.49%, XLP Staples -0.73%, XLRE Real Estate -0.76%, XLC Comms -1.11%.\nTop industries CIBR +2.72% and DRAM +3.02%; bottom KWEB -2.51% and UNG -5.05%. Flows contradict the price ranking: XLV took +$646mm (94th pctile) and XLE +$434mm (77p) while XLY bled -$422mm (6p) and XLK -$326mm (12p) — leaders being sold = short-covering in semis, not conviction. Money is moving into healthcare and energy, out of discretionary and tech. Rotation state: narrow mega-cap tape.\n\nPOSITIONING — SPY PCR 1.23 and QQQ 1.05 = real protection demand; skew positive on both (SPY +5.1%, QQQ +7.5%).\nIWM PCR 1.99 is the extreme, with gamma flip 277 vs spot near maxpain 274 — dealer hedging amplifies small-cap moves. VIXEQ 40.7 vs VIX 16.7 is a 24-point dispersion gap: a stock-picker's rotation tape, not macro-correlated.\n\nCROSS-ASSET — Natural gas -5.05% against oil -0.50% and gold +0.34% is the odd divergence; a 5.35pp energy-complex split while crude drew -3.06M bbl says gas oversupply, not demand. Next FOMC Oct 28: CME pricing 100% hike; Polymarket has 78% for a 25bp hike after December and 97% for no cuts in 2026.\n\nSIGNALS & WATCH — Fear & Greed 59.8, Neutral.\nNFLX -5.31% on ad-revenue guidance cut with 2.8x volume (distribution); NET +5.32% on 10M developers; PLTR +4.74%. Worst sector 20d: XLK -3.48%; best XLE +9.28%. Watch: KWEB -2.51% at 2.6x volume, IWM +0.25% with PCR 1.99 near its 277 gamma flip, and UNG -5.05% breaking 20d -8.28%.\n━━━━━━ 晨会素材 SPEECH BRIEFING ━━━━━━\n\n① 波动率\n  • VIX: 16.68  (vs20MA +3.4%)\n  • VXN: 24.42  (vs20MA +8.8%)\n  • VIXEQ: 40.72  (vs20MA +2.8%)\n  • VVIX: 94.55  (vs20MA +4.0%)\n  • SKEW: 150.36  (1d -6.3%)\n\n② 指数相对强弱\n  • 最强: SOXX +2.07%\n  • 最弱: IJR +0.09%\n  • 大盘vs平权: SPY +0.53% vs RSP +0.36% → 大盘领先0.17pp\n  • 成交量 SPY: 0.77x\n  • 成交量 QQQ: 0.92x\n\n③ Mega Cap (>$1T)\n  • 涨: TSLA +3.41%, NVDA +2.54%, MU +1.96%, AAPL +1.32%, AVGO +1.03%, META +0.47%, MSFT +0.20%\n  • 跌: AMZN -0.10%, LLY -1.01%, GOOGL -1.62%\n  • 整体: 7/13收涨\n\n④ 利率水位\n  • US2Y: 4.81%  US10Y: 5.12%  US30Y: 5.41%\n  • 10y-2y利差: +0.31\n  • 定性: 30y站上5.2% (关键高位)\n\n⑤ 科技与动量\n  • 半导体: SOXX +2.07%, SMH +1.89%\n  • 存储: DRAM +3.02%, MU +1.96%\n  • 光通信: LITE +3.43%, AAOI +0.76%, FOTO +2.80%\n  • 软件/AI: IGV +1.77%, AIQ +1.30%, CIBR +2.72%\n\n⑥ 板块主题群\n  • 领涨: XLK(科技) +1.67%, XLI(工业) +0.91%, XLF(金融) +0.57%\n  • 领跌: XLP(必需消费) -0.73%, XLRE(地产) -0.76%, XLC(通讯) -1.11%\n\n⑦ 个股催化\n  (见上方简报 SIGNALS & WATCH 区的movers)\n\n⑧ 资金面 (5日净流入/流出 = 机构净买卖)\n  • 净流入: SPY +7655M, QQQ +4876M, XLV +646M\n  • 净流出: IWM -1111M, DRAM -928M, RSP -430M\n\n⑨ 金银/比特币\n  • 金(GLD) +0.34%  银(SLV) +0.27%\n  • BTC: $84,301  (1d -0.11%)\n  • IBIT: $47.84  (1d +2.42%)",
-    "generated_at": "2026-10-21T23:14:22Z",
-    "duration_s": 5.9
-  },
-  {
-    "date": "2026-10-08",
-    "time": "08:30 ET",
-    "event": "Number of people filing for unemployment benefits in the United States for the week ending October 3 (ten thousand people)",
-    "star": 3,
-    "forecast": "20",
-    "previous": "19.7",
-    "actual": "19.7",
-    "released": true
-  },
-  {
-    "date": "2026-10-08",
-    "time": "10:00 ET",
-    "event": "US wholesale sales monthly rate in August",
-    "star": 3,
-    "forecast": null,
-    "previous": "0.80",
-    "actual": "1.8",
-    "released": true
-  },
-  {
-    "date": "2026-10-08",
-    "time": "10:30 ET",
-    "event": "U.S. EIA natural gas inventories for the week ending October 2 (100 million cubic feet)",
-    "star": 3,
-    "forecast": "790",
-    "previous": "640",
-    "actual": "850",
-    "released": true
-  },
-  {
-    "date": "2026-10-08",
-    "time": "13:00 ET",
-    "event": "U.S. 10-year Treasury bond auction to October 7-winning interest rate",
-    "star": 3,
-    "forecast": null,
-    "previous": "4.83",
-    "actual": "5.3",
-    "released": true
-  },
-  {
-    "date": "2026-10-08",
-    "time": "13:00 ET",
-    "event": "U.S. 10-year Treasury bond auction to October 7-bid multiple",
-    "star": 3,
-    "forecast": null,
-    "previous": "2.71",
-    "actual": "2.77",
-    "released": true
+    "text": "BOTTOM LINE — AI unwind, defensives bid, semis gutted.\nOct existing-home sales printed -7.3% vs -0.5% fc and the Oct NAHB fell to 29 vs 32, reinforcing a growth scare while initial claims came in tight at 19.4 vs 20; the tape resolved that into a semis-led de-risking with money rotating into staples and utilities. QQQ -2.86% and SOXX -6.79% versus XLP +3.31% is a high-to-low rotation, not a broad liquidation.\n\nINDICES — VIX 19.0, up from a 16.3 20-day MA; VIXY +6.31%.\nRSP +0.73%, IWM +0.07%, DIA +0.04%, SPY -1.18%, QQQ -2.86%, SOXX -6.79% (IJR +0.63%, IJH -0.80%).\nSmall > large by 1.81pp.\nMost notable cross-asset move: TLT +1.87% as the 10-year yield broke below 5%; gold -2.63% and silver -5.59% broke down despite the equity risk-off.\nSPY and QQQ both sit below their 20-day trend (20d -0.42% and -4.94%); flag the 200-DMA — a close below is a CTA sell trigger.\n\nVOLUME & BREADTH — GLD 2.3x, SOXX 1.9x and QQQ 1.9x are the elevated-volume names; DIA 0.8x and IWM 1.0x are being ignored.\nQQQ vol 1.9x with price -2.86% is distribution; SPY at 1.9x down 1.18% is distribution too.\nBreadth diverges from the tape: 66% advancers, 60% above the 50-DMA, 56% above the 200-DMA, up/down volume 1.01, 90 new 60-day highs vs 35 lows — participation is broadening under the index, which is a mega-cap/AI de-rating, not a broad selloff.\n\nSECTORS & ROTATION — XLP Staples +3.31%, XLU Utilities +2.07%, XLV Healthcare +1.32%, XLF Financials +1.09%, XLRE Real Estate +1.09%, XLB Materials +0.72%, XLY Discretionary -0.45%, XLE Energy -0.87%, XLI Industrials -0.94%, XLC Comms -1.42%, XLK Technology -3.29%.\nTop industries XHB +3.77% and XRT +2.92%; bottom SOXX -6.79% and WGMI -8.09%.\nFlows: XLV +$1,033mm (100th pct) and XLE +$561mm (86th) lead inflows; XLY -$613mm (4th pct) and XLP -$337mm (17th) bleed — staples' price strength is not flow-confirmed, so it's defensive short-covering rather than conviction.\nRotation state: AI hardware fading / high-to-low rotation.\n\nPOSITIONING — SPY PCR 2.45 and QQQ 1.38 = heavy protection demand; skew +7.6%/+7.1% = put premium = fear.\nVIX 19.0 vs 16.3 MA20 and VVIX 107.9 vs 91.8 MA20 = elevated fear; no MOVE/OZX print (0.0).\nDispersion is extreme: VIXEQ 42.4 vs VIX 19.0 — a stock-pickers'/rotation tape, not correlated macro.\n\nCROSS-ASSET — Semis -6.79% dragged Nasdaq vol (VXN 28.7 vs 22.8 MA20) while TLT +1.87% caught the flight-to-quality bid and gold's -2.63% break is the unusual divergence — real yields, not fear, are driving the safe-haven bid.\nNext FOMC Oct 28, 2026: CME FedWatch shows hold 0.0%, cut 0.0%, hike 100.0%. Polymarket prices 72% for another 2026 hike and 71% for a December 25bp hike.\n\nSIGNALS & WATCH — Fear & Greed 56.5 (Neutral) against VIX 19.0.\nMovers: LRCX -11.76% (Tickeron, wafer-fab demand), SPOT +11.10% (subscriber growth/AI optimism), GEV -10.64%.\nVol spikes: SPOT 3.2x on price up = accumulation; LRCX 2.6x on price down = distribution.\nWatch: GLD -2.63% at 2.3x volume + PCR 0.70 — flow +in $800mm (79th) but price breaking, a cross-asset conflict; SLV -5.59% (20d -14.37%) momentum break; IWM +0.07% vs RSP +0.73% — small-cap leadership is broadening, watch if it holds.\n━━━━━━ 晨会素材 SPEECH BRIEFING ━━━━━━\n\n① 波动率\n  • VIX: 19.03  (vs20MA +16.7%)\n  • VXN: 28.72  (vs20MA +25.9%)\n  • VIXEQ: 42.36  (vs20MA +6.5%)\n  • VVIX: 107.94  (vs20MA +17.6%)\n  • SKEW: 152.39  (1d +1.4%)\n\n② 指数相对强弱\n  • 最强: RSP +0.73%\n  • 最弱: SOXX -6.79%\n  • 大盘vs平权: SPY -1.18% vs RSP +0.73% → 平权领先1.91pp\n  • 成交量 SPY: 1.35x\n  • 成交量 QQQ: 1.85x\n\n③ Mega Cap (>$1T)\n  • 涨: LLY +2.83%, AAPL +1.23%\n  • 跌: MSFT -2.23%, TSLA -3.08%, GOOGL -3.15%, AVGO -4.31%, NVDA -4.40%, AMZN -4.57%, META -6.98%\n  • 整体: 2/11收涨\n\n④ 利率水位\n  • US2Y: 4.65%  US10Y: 4.96%  US30Y: 5.28%\n  • 10y-2y利差: +0.31\n  • 定性: 30y站上5.2% (关键高位)\n\n⑤ 科技与动量\n  • 半导体: SOXX -6.79%, SMH -5.99%\n  • 存储: DRAM -7.08%, MU -6.26%\n  • 光通信: LITE -11.54%, AAOI -11.96%, FOTO -9.57%\n  • 软件/AI: IGV -0.09%, AIQ -3.02%, CIBR -0.31%\n\n⑥ 板块主题群\n  • 领涨: XLP(必需消费) +3.31%, XLU(公用) +2.07%, XLV(医疗) +1.32%\n  • 领跌: XLI(工业) -0.94%, XLC(通讯) -1.42%, XLK(科技) -3.29%\n\n⑦ 个股催化\n  (见上方简报 SIGNALS & WATCH 区的movers)\n\n⑧ 资金面 (5日净流入/流出 = 机构净买卖)\n  • 净流入: SPY +4885M, XLV +1033M, SOXX +1022M\n  • 净流出: QQQ -3685M, IWM -928M, DRAM -770M\n\n⑨ 金银/比特币\n  • 金(GLD) -2.63%  银(SLV) -5.59%\n  • BTC: $81,248  (1d +0.00%)\n  • IBIT: $46.06  (1d -3.72%)",
+    "generated_at": "2026-10-22T23:16:07Z",
+    "duration_s": 7.8
   },
   {
     "date": "2026-10-09",
@@ -406,8 +356,8 @@
     "star": 3,
     "forecast": "20",
     "previous": "19.9",
-    "actual": null,
-    "released": false
+    "actual": "19.4",
+    "released": true
   },
   {
     "date": "2026-10-22",
@@ -416,18 +366,18 @@
     "star": 3,
     "forecast": "-0.1",
     "previous": "-0.10",
-    "actual": null,
-    "released": false
+    "actual": "0",
+    "released": true
   },
   {
     "date": "2026-10-22",
     "time": "10:30 ET",
     "event": "U.S. EIA natural gas inventories for the week ending October 16 (100 million cubic feet)",
     "star": 3,
-    "forecast": null,
+    "forecast": "790",
     "previous": "670",
-    "actual": null,
-    "released": false
+    "actual": "770",
+    "released": true
   },
   {
     "date": "2026-10-23",
@@ -504,7 +454,7 @@
     "time": "08:30 ET",
     "event": "Monthly rate of U.S. durable goods orders in September",
     "star": 3,
-    "forecast": null,
+    "forecast": "1.40",
     "previous": "-0.10",
     "actual": null,
     "released": false
@@ -544,7 +494,7 @@
     "time": "10:00 ET",
     "event": "Total new home sales in the United States in September annualized (10,000 households)",
     "star": 3,
-    "forecast": null,
+    "forecast": "65.2",
     "previous": "68.4",
     "actual": null,
     "released": false
@@ -554,7 +504,7 @@
     "time": "10:00 ET",
     "event": "U.S. October Consultative Conference Consumer Confidence Index",
     "star": 3,
-    "forecast": null,
+    "forecast": "80.3",
     "previous": "81.9",
     "actual": null,
     "released": false
@@ -564,7 +514,7 @@
     "time": "10:30 ET",
     "event": "US EIA crude oil inventories for the week ending October 23 (10,000 barrels)",
     "star": 3,
-    "forecast": null,
+    "forecast": "-34",
     "previous": "-306",
     "actual": null,
     "released": false
@@ -604,7 +554,7 @@
     "time": "08:30 ET",
     "event": "Initial annualized quarterly rate of real GDP in the United States in the third quarter",
     "star": 3,
-    "forecast": null,
+    "forecast": "3.00",
     "previous": "2.20",
     "actual": null,
     "released": false
@@ -615,7 +565,7 @@
     "event": "Number of people claiming unemployment benefits in the week to October 24 in the United States (ten thousand people)",
     "star": 3,
     "forecast": null,
-    "previous": null,
+    "previous": "19.4",
     "actual": null,
     "released": false
   },
@@ -624,7 +574,7 @@
     "time": "08:30 ET",
     "event": "Initial quarterly rate of real personal consumption expenditure in the United States in the third quarter",
     "star": 3,
-    "forecast": null,
+    "forecast": "3.50",
     "previous": "3.80",
     "actual": null,
     "released": false
@@ -634,7 +584,7 @@
     "time": "08:30 ET",
     "event": "U.S. monthly rate of personal expenditure in September",
     "star": 3,
-    "forecast": null,
+    "forecast": "0.50",
     "previous": "0.90",
     "actual": null,
     "released": false
@@ -644,7 +594,7 @@
     "time": "08:30 ET",
     "event": "Initial annualized quarterly rate of core PCE price index in the United States in the third quarter",
     "star": 3,
-    "forecast": null,
+    "forecast": "2.40",
     "previous": "3.30",
     "actual": null,
     "released": false
@@ -654,7 +604,7 @@
     "time": "08:30 ET",
     "event": "U.S. core PCE price index monthly rate in September",
     "star": 3,
-    "forecast": null,
+    "forecast": "0.30",
     "previous": "0.20",
     "actual": null,
     "released": false
@@ -664,7 +614,7 @@
     "time": "08:30 ET",
     "event": "U.S. core PCE price index annual rate in September",
     "star": 3,
-    "forecast": null,
+    "forecast": "3.10",
     "previous": "3.00",
     "actual": null,
     "released": false
@@ -675,7 +625,7 @@
     "event": "U.S. EIA natural gas inventories for the week ending October 23 (100 million cubic feet)",
     "star": 3,
     "forecast": null,
-    "previous": null,
+    "previous": "770",
     "actual": null,
     "released": false
   },
@@ -686,6 +636,26 @@
     "star": 3,
     "forecast": "4.00",
     "previous": "4.00",
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-10-30",
+    "time": "08:30 ET",
+    "event": "U.S. third quarter labor cost index quarterly rate",
+    "star": 3,
+    "forecast": "0.80",
+    "previous": "0.90",
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-10-30",
+    "time": "09:45 ET",
+    "event": "US October Chicago PMI",
+    "star": 3,
+    "forecast": null,
+    "previous": "58.8",
     "actual": null,
     "released": false
   }
