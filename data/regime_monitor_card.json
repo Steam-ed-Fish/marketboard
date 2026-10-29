@@ -1,0 +1,305 @@
+{
+  "config": {
+    "wide_screen_mode": true,
+    "enable_forward": true
+  },
+  "header": {
+    "title": {
+      "tag": "plain_text",
+      "content": "📊 行情监测指标 · 2026-10-28"
+    },
+    "subtitle": {
+      "tag": "plain_text",
+      "content": "分位数窗口=最近200个观测 · ≥75 标红"
+    },
+    "template": "blue"
+  },
+  "elements": [
+    {
+      "tag": "div",
+      "text": {
+        "tag": "lark_md",
+        "content": "**🔥 多指标共振（≥3项分位≥75）**\nSOXS(4项)、SGOV(3项)、TLT(3项)"
+      }
+    },
+    {
+      "tag": "hr"
+    },
+    {
+      "tag": "table",
+      "page_size": 10,
+      "row_height": "low",
+      "header_style": {
+        "background_style": "grey",
+        "bold": true,
+        "text_align": "center"
+      },
+      "columns": [
+        {
+          "name": "ticker",
+          "display_name": "Ticker",
+          "data_type": "text",
+          "width": "auto",
+          "horizontal_align": "center"
+        },
+        {
+          "name": "ret_20d",
+          "display_name": "20日",
+          "data_type": "text",
+          "width": "auto",
+          "horizontal_align": "center"
+        },
+        {
+          "name": "ret_20d_pct",
+          "display_name": "20d分位",
+          "data_type": "number",
+          "width": "auto",
+          "horizontal_align": "center"
+        },
+        {
+          "name": "ret_60d_pct",
+          "display_name": "60d分位",
+          "data_type": "number",
+          "width": "auto",
+          "horizontal_align": "center"
+        },
+        {
+          "name": "vol_20d_pct",
+          "display_name": "波动分位",
+          "data_type": "number",
+          "width": "auto",
+          "horizontal_align": "center"
+        },
+        {
+          "name": "turnover_20d_pct",
+          "display_name": "成交分位",
+          "data_type": "number",
+          "width": "auto",
+          "horizontal_align": "center"
+        },
+        {
+          "name": "aum_inflow_20d",
+          "display_name": "AUM流入",
+          "data_type": "text",
+          "width": "auto",
+          "horizontal_align": "center"
+        },
+        {
+          "name": "aum_inflow_20d_pct",
+          "display_name": "AUM分位",
+          "data_type": "number",
+          "width": "auto",
+          "horizontal_align": "center"
+        }
+      ],
+      "rows": [
+        {
+          "ticker": "SOXS 🔥4",
+          "ret_20d": "+27.78%",
+          "ret_20d_pct": 91.5,
+          "ret_60d_pct": 87.0,
+          "vol_20d_pct": 54.0,
+          "turnover_20d_pct": 79.0,
+          "aum_inflow_20d": "+66.70%",
+          "aum_inflow_20d_pct": 86.6
+        },
+        {
+          "ticker": "SGOV 🔥3",
+          "ret_20d": "+0.30%",
+          "ret_20d_pct": 81.0,
+          "ret_60d_pct": 44.0,
+          "vol_20d_pct": 80.0,
+          "turnover_20d_pct": 85.5,
+          "aum_inflow_20d": "+24.40%",
+          "aum_inflow_20d_pct": 27.4
+        },
+        {
+          "ticker": "TLT 🔥3",
+          "ret_20d": "+4.77%",
+          "ret_20d_pct": 100.0,
+          "ret_60d_pct": 78.5,
+          "vol_20d_pct": 69.5,
+          "turnover_20d_pct": 71.0,
+          "aum_inflow_20d": "+18.50%",
+          "aum_inflow_20d_pct": 77.7
+        },
+        {
+          "ticker": "IEF",
+          "ret_20d": "+2.20%",
+          "ret_20d_pct": 99.5,
+          "ret_60d_pct": 33.5,
+          "vol_20d_pct": 66.0,
+          "turnover_20d_pct": 90.5,
+          "aum_inflow_20d": "-10.50%",
+          "aum_inflow_20d_pct": 6.7
+        },
+        {
+          "ticker": "ETHA",
+          "ret_20d": "-12.84%",
+          "ret_20d_pct": 22.5,
+          "ret_60d_pct": 80.0,
+          "vol_20d_pct": 12.0,
+          "turnover_20d_pct": 41.5,
+          "aum_inflow_20d": "+75.30%",
+          "aum_inflow_20d_pct": 64.3
+        },
+        {
+          "ticker": "IBIT",
+          "ret_20d": "-3.44%",
+          "ret_20d_pct": 28.0,
+          "ret_60d_pct": 87.0,
+          "vol_20d_pct": 6.0,
+          "turnover_20d_pct": 22.5,
+          "aum_inflow_20d": "+43.40%",
+          "aum_inflow_20d_pct": 65.9
+        },
+        {
+          "ticker": "2800.HK",
+          "ret_20d": "-6.09%",
+          "ret_20d_pct": 10.5,
+          "ret_60d_pct": 1.0,
+          "vol_20d_pct": 62.5,
+          "turnover_20d_pct": 16.0,
+          "aum_inflow_20d": "—",
+          "aum_inflow_20d_pct": null
+        },
+        {
+          "ticker": "3033.HK",
+          "ret_20d": "-10.56%",
+          "ret_20d_pct": 7.5,
+          "ret_60d_pct": 0.0,
+          "vol_20d_pct": 70.0,
+          "turnover_20d_pct": 7.0,
+          "aum_inflow_20d": "—",
+          "aum_inflow_20d_pct": null
+        },
+        {
+          "ticker": "EWJ",
+          "ret_20d": "-1.31%",
+          "ret_20d_pct": 20.0,
+          "ret_60d_pct": 19.5,
+          "vol_20d_pct": 2.0,
+          "turnover_20d_pct": 15.5,
+          "aum_inflow_20d": "+11.10%",
+          "aum_inflow_20d_pct": 52.0
+        },
+        {
+          "ticker": "GLD",
+          "ret_20d": "-2.77%",
+          "ret_20d_pct": 46.5,
+          "ret_60d_pct": 47.5,
+          "vol_20d_pct": 0.5,
+          "turnover_20d_pct": 23.5,
+          "aum_inflow_20d": "-4.90%",
+          "aum_inflow_20d_pct": 18.4
+        },
+        {
+          "ticker": "KWEB",
+          "ret_20d": "-5.09%",
+          "ret_20d_pct": 48.0,
+          "ret_60d_pct": 6.5,
+          "vol_20d_pct": 26.0,
+          "turnover_20d_pct": 14.5,
+          "aum_inflow_20d": "-31.00%",
+          "aum_inflow_20d_pct": 8.9
+        },
+        {
+          "ticker": "QQQ",
+          "ret_20d": "-2.26%",
+          "ret_20d_pct": 25.0,
+          "ret_60d_pct": 50.5,
+          "vol_20d_pct": 62.5,
+          "turnover_20d_pct": 24.5,
+          "aum_inflow_20d": "+1.70%",
+          "aum_inflow_20d_pct": 10.1
+        },
+        {
+          "ticker": "SLV",
+          "ret_20d": "-11.39%",
+          "ret_20d_pct": 28.5,
+          "ret_60d_pct": 49.0,
+          "vol_20d_pct": 9.5,
+          "turnover_20d_pct": 10.5,
+          "aum_inflow_20d": "-20.80%",
+          "aum_inflow_20d_pct": 6.1
+        },
+        {
+          "ticker": "SMH",
+          "ret_20d": "-8.06%",
+          "ret_20d_pct": 9.0,
+          "ret_60d_pct": 23.0,
+          "vol_20d_pct": 57.5,
+          "turnover_20d_pct": 65.5,
+          "aum_inflow_20d": "+2.10%",
+          "aum_inflow_20d_pct": 14.0
+        },
+        {
+          "ticker": "SOXL",
+          "ret_20d": "-31.24%",
+          "ret_20d_pct": 10.0,
+          "ret_60d_pct": 25.0,
+          "vol_20d_pct": 63.5,
+          "turnover_20d_pct": 73.5,
+          "aum_inflow_20d": "-7.50%",
+          "aum_inflow_20d_pct": 19.6
+        },
+        {
+          "ticker": "SOXX",
+          "ret_20d": "-9.94%",
+          "ret_20d_pct": 9.5,
+          "ret_60d_pct": 20.0,
+          "vol_20d_pct": 59.0,
+          "turnover_20d_pct": 70.5,
+          "aum_inflow_20d": "+16.60%",
+          "aum_inflow_20d_pct": 39.7
+        },
+        {
+          "ticker": "SPY",
+          "ret_20d": "+0.71%",
+          "ret_20d_pct": 51.5,
+          "ret_60d_pct": 26.0,
+          "vol_20d_pct": 19.5,
+          "turnover_20d_pct": 6.5,
+          "aum_inflow_20d": "-0.10%",
+          "aum_inflow_20d_pct": 22.5
+        },
+        {
+          "ticker": "TQQQ",
+          "ret_20d": "-8.29%",
+          "ret_20d_pct": 24.0,
+          "ret_60d_pct": 52.0,
+          "vol_20d_pct": 62.5,
+          "turnover_20d_pct": 22.5,
+          "aum_inflow_20d": "-0.40%",
+          "aum_inflow_20d_pct": 22.3
+        }
+      ]
+    },
+    {
+      "tag": "hr"
+    },
+    {
+      "tag": "note",
+      "elements": [
+        {
+          "tag": "plain_text",
+          "content": "黄色=分位≥75 | AUM为总资产变动(含价格效应) | BTC/ETH无数据源"
+        }
+      ]
+    },
+    {
+      "tag": "action",
+      "actions": [
+        {
+          "tag": "button",
+          "text": {
+            "tag": "plain_text",
+            "content": "打开看板"
+          },
+          "type": "primary",
+          "url": "https://dashboard.flyflyfly.win/"
+        }
+      ]
+    }
+  ]
+}
