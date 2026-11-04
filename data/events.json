@@ -1,58 +1,18 @@
 [
   {
     "type": "briefing",
-    "date": "03/11/2026",
-    "time": "22:58",
+    "date": "04/11/2026",
+    "time": "22:25",
     "event": "Daily Intelligence Briefing",
     "title": "Daily Market Briefing",
-    "text": "BOTTOM LINE — Semis bounced, but it's an oversold snap, not a turn. ISM Manufacturing printed 55.5 vs 54.6 fc and September factory orders 1.8% vs 1.2% fc, yet SPY managed only +0.30% and DIA fell 0.44% — real money sold SPY (-$6.65bn, 15th pctile) into strength while buying SOXX (+$1.30bn, 98p) and IJR (+$575mm, 100p). Rate path is the trapdoor: CME FedWatch prices a December 9 hike at 100%.\n\nINDICES — VIX 20.8, above its 17.6 20-day MA. SOXX +2.50%, QQQ +0.62%, SPY +0.30%, IWM +0.23%, DIA -0.44%. Large > small by 0.39pp. Bonds were the quiet tell: TLT -0.76%, SLV -1.60%.\n\nVOLUME & BREADTH — Accumulation only in mid-caps and semis (IJH 1.5x, SOXX 1.3x, RSP 1.2x); SPY 0.8x and IWM 0.7x means the headline tape is being ignored. SPY: price up on falling volume = low-conviction. QQQ vol_ratio not in the dataset, so treat the QQQ move as unconfirmed. Breadth diverges: 38% advancers, %>50DMA 65, up/down volume 0.94, 23 highs vs 11 lows — 189 up against 313 down. Narrow rally: False, but the price/flow split says otherwise.\n\nSECTORS & ROTATION — XLK Technology +1.31%, XLI Industrials +0.95%, XLRE Real Estate +0.07%, XLC Comms +0.00%, XLB Materials +0.00%, XLV Healthcare -0.31%, XLU Utilities -0.57%, XLF Financials -0.64%, XLY Discretionary -0.70%, XLE Energy -0.85%, XLP Staples -2.07%. MSOS +6.90% and TAN +3.02% topped industries; GDX -1.96% and XRT -1.92% lagged. Flows went to XLF +$1.29bn (98p), XLV +$640mm (94p) and XLI +$529mm (85p) while XLP bled -$502mm (10p) — flows contradict the price ranking, with financials bought and sold hardest on tape. Money-in: financials, healthcare, industrials. Money-out: staples, utilities. Label: narrow mega-cap tape.\n\nPOSITIONING — SPY PCR 0.64 says complacency, while QQQ 1.18 says protection is being bought where the damage is. Skew is positive across the board (SPY +11.5%, QQQ +9.1%), so puts carry real premium. VIXEQ 42.8 vs VIX 20.8 is a 22-point gap — extreme single-stock dispersion, an implied-correlation collapse: rotation tape, not macro tape. GEX flip unavailable.\n\nCROSS-ASSET — Gold -0.66% and silver -1.60% with real yields up (TLT -0.76%) — metals pricing the hike odds, not risk appetite. Crude +0.83% on API -5.27mm barrels vs +1.99mm fc, with EIA inventory tomorrow at 1.99mm fc. Next FOMC December 9: FedWatch hold 0.0%, cut 0.0%, hike 100.0%; Polymarket has 74% YES on a 2026 hike and 22% YES on no change, down 4pp in five days.\n\nSIGNALS & WATCH — Fear & Greed 53.3, neutral. Movers: ETN +7.00%, GEV +6.49%, ORCL +5.85% on the $20bn common stock and senior note pricing. Vol spikes: ORCL 2.5x with price up = accumulation; TAN 3.5x at +3.02% = accumulation, PLTR 2.2x at -1.65% = distribution. Momentum: XLK worst 20-day at -12.62% against XLRE +6.25% best. Watch TAN (3.5x volume, +3.02%), ORCL (2.5x, dilution priced as strength) and SOXX (-21.11% over 20 days, +2.50% today — bounce or dead-cat).\n━━━━━━ 晨会素材 SPEECH BRIEFING ━━━━━━\n\n① 波动率\n  • VIX: 20.83  (vs20MA +18.5%)\n  • VXN: 30.53  (vs20MA +22.0%)\n  • VIXEQ: 42.8  (vs20MA +4.1%)\n  • VVIX: 107.4  (vs20MA +9.6%)\n  • SKEW: 150.01  (1d -1.8%)\n\n② 指数相对强弱\n  • 最强: SOXX +2.50%\n  • 最弱: DIA -0.44%\n  • 大盘vs平权: SPY +0.30% vs RSP -0.33% → 大盘领先0.63pp\n  • 成交量 SPY: 0.82x\n  • 成交量 QQQ: 0.89x\n\n③ Mega Cap (>$1T)\n  • 涨: AVGO +3.07%, MSFT +2.74%, META +2.36%, NVDA +2.29%, AMZN +2.06%, GOOGL +0.37%\n  • 跌: LLY -0.11%, TSLA -1.32%, AAPL -1.90%\n  • 整体: 6/12收涨\n\n④ 利率水位\n  • US2Y: 4.64%  US10Y: 4.97%  US30Y: 5.33%\n  • 10y-2y利差: +0.32\n  • 定性: 30y站上5.2% (关键高位)\n\n⑤ 科技与动量\n  • 半导体: SOXX +2.50%, SMH +2.01%\n  • 存储: DRAM +2.85%, MU +2.58%\n  • 光通信: LITE -0.62%, AAOI +2.35%, FOTO +4.43%\n  • 软件/AI: IGV +0.75%, AIQ +0.68%, CIBR +0.49%\n\n⑥ 板块主题群\n  • 领涨: XLK(科技) +1.31%, XLI(工业) +0.95%, XLRE(地产) +0.07%\n  • 领跌: XLY(可选消费) -0.70%, XLE(能源) -0.85%, XLP(必需消费) -2.07%\n\n⑦ 个股催化\n  (见上方简报 SIGNALS & WATCH 区的movers)\n\n⑧ 资金面 (5日净流入/流出 = 机构净买卖)\n  • 净流入: SOXX +1296M, XLF +1292M, XLV +640M\n  • 净流出: SPY -6652M, QQQ -2866M, XLP -502M\n\n⑨ 金银/比特币\n  • 金(GLD) -0.66%  银(SLV) -1.60%\n  • BTC: $77,776  (1d +1.43%)\n  • IBIT: $44.05  (1d +1.61%)",
-    "generated_at": "2026-11-03T22:58:57Z",
-    "duration_s": 7.4
-  },
-  {
-    "date": "2026-10-21",
-    "time": "10:30 ET",
-    "event": "US EIA crude oil inventories for the week ending October 16 (10,000 barrels)",
-    "star": 3,
-    "forecast": "-82",
-    "previous": "-855.7",
-    "actual": "-306",
-    "released": true
-  },
-  {
-    "date": "2026-10-21",
-    "time": "10:30 ET",
-    "event": "U.S. EIA Cushing, Oklahoma crude oil inventories for the week ending October 16 (10,000 barrels)",
-    "star": 3,
-    "forecast": null,
-    "previous": "186.2",
-    "actual": "98.7",
-    "released": true
-  },
-  {
-    "date": "2026-10-21",
-    "time": "10:30 ET",
-    "event": "U.S. EIA Strategic Petroleum Reserve Stocks for the Week Ending October 16 (in 10,000 barrels)",
-    "star": 3,
-    "forecast": null,
-    "previous": "0",
-    "actual": "-30",
-    "released": true
-  },
-  {
-    "date": "2026-10-21",
-    "time": "16:30 ET",
-    "event": "U.S. API Crude Oil Stocks for the Week Ending October 16 (in 10,000 barrels)",
-    "star": 3,
-    "forecast": "-110.7",
-    "previous": "-1112.3",
-    "actual": "-493.1",
-    "released": true
+    "text": "BOTTOM LINE — Oil crash, cyclicals ripped.\nADP printed 8.6 vs 6.9 fc and ISM Services 54.5 vs 54.8 fc: growth holding, but the tape was a rotation, not a Fed trade. Crude's -8% collapse (EIA draw -86.5 vs +198.7 fc) pulled money into every non-energy cyclical — XLY +4.26%, XLF +3.51% — while SOXX -3.14% and XLE -4.74% bled. DIA +3.10% on 2.0x volume says real buying, not a squeeze.\n\nINDICES — VIX 16.6, below its 17.6 20-day MA.\nDIA +3.10%, SPY +1.65%, IWM +1.51%, QQQ +0.97%, SOXX -3.14%. Large > small by only 0.14pp — a mega-cap Dow day, not a breadth day. Most notable cross-asset move: USO -8.07%, with SLV +5.17% the mirror image. SPY remains below its 20-day trend (-1.34% 20d); watch 770 GEX flip.\n\nVOLUME & BREADTH — DIA 2.0x and RSP 1.8x on the gaining side is accumulation.\nSPY and QQQ vol_ratio are not flagged elevated; the attention sat in XLY 2.4x and XLE 2.1x — discretionary accumulation, energy distribution. Breadth confirms: 72% of S&P above the 50-DMA, 65% above the 200-DMA, adv/dec 363/139, up/down volume 1.65, new 60d highs 139 vs 37 lows. Participation is broad, not a narrow mega-cap tape.\n\nSECTORS & ROTATION — XLY Discretionary +4.26%, XLF Financials +3.51%, XLC Comms +3.47%, XLP Staples +3.36%, XLRE Real Estate +3.32%, XLV Healthcare +3.06%, XLB Materials +2.49%, XLU Utilities +0.44%, XLK Technology -0.01%, XLI Industrials -1.09%, XLE Energy -4.74%.\nTop industries GDX +9.01% and SILJ +8.97%; bottom XOP -6.39% and WGMI -8.59%. Flows: XLF +916 (92p) and XLV +723 (94p) lead inflows; XLP -366 (15p) and XLY -154 (29p) bleed — financials/healthcare inflows confirm the price ranking, XLY's outflow contradicts its +4.26% (short-covering risk). Money out of energy and AI hardware into financials, healthcare and precious metals. Label: high-to-low rotation.\n\nPOSITIONING — SPY PCR 1.53 is heavy protection demand against a +1.65% tape; QQQ skew +8.1% shows post-SOXX put buying.\nSPY sits below its 770 gamma flip with spot pressure into that level — dealer hedging amplifies moves. VIXEQ 41.2 vs VIX 16.6 is a huge gap: extreme single-stock dispersion, a stock-pickers' tape, not macro-correlated.\n\nCROSS-ASSET — Crude -8% on a surprise EIA draw transmitted straight into XLE -4.74% and XOP -6.39%, while silver +5.17% and gold +3.68% caught the dollar's -0.38% slip. TLT +0.80% and HYG +0.70% confirm the risk-on bid. Next FOMC Dec 9: CME FedWatch shows hike 100.0%; Polymarket 78% YES for +25bp, +7pp in 5 days — a hawkish drift into the meeting.\n\nSIGNALS & WATCH — Fear & Greed 58.5, Neutral.\nMovers: VST -13.83% on completing the Cogentrix ~5,500 MW acquisition (3.2x vol — distribution into the deal), VRT -12.89%, WPM +11.99%, GOLD +5.90% ahead of Wheaton's Nov 5 Q3 report. Momentum extremes: XLY +9.85% 20d best, XLK -12.36% worst. Watch VST (3.2x vol, -13.83%, Power 7 unwind), SOXX (5d -13.70%, 100th-pctile inflows vs -3.14% price — divergence), SLV (PCR 0.26, flip 46, max pain 45.5).\n━━━━━━ 晨会素材 SPEECH BRIEFING ━━━━━━\n\n① 波动率\n  • VIX: 16.61  (vs20MA -5.9%)\n  • VXN: 25.08  (vs20MA -0.6%)\n  • VIXEQ: 41.21  (vs20MA +0.0%)\n  • VVIX: 90.41  (vs20MA -8.1%)\n  • SKEW: 150.9  (1d +0.6%)\n\n② 指数相对强弱\n  • 最强: DIA +3.10%\n  • 最弱: SOXX -3.14%\n  • 大盘vs平权: SPY +1.65% vs RSP +1.86% → 平权领先0.21pp\n  • 成交量 SPY: 1.58x\n  • 成交量 QQQ: 1.52x\n\n③ Mega Cap (>$1T)\n  • 涨: MSFT +6.68%, AMZN +6.12%, AAPL +5.31%, WMT +3.45%, GOOGL +3.18%, META +1.44%, LLY +0.61%\n  • 跌: AVGO -2.00%, NVDA -3.17%, TSLA -3.34%\n  • 整体: 7/13收涨\n\n④ 利率水位\n  • US2Y: 4.60%  US10Y: 4.89%  US30Y: 5.28%\n  • 10y-2y利差: +0.30\n  • 定性: 30y站上5.2% (关键高位)\n\n⑤ 科技与动量\n  • 半导体: SOXX -3.14%, SMH -2.75%\n  • 存储: DRAM -5.31%, MU -7.00%\n  • 光通信: LITE -7.85%, AAOI -7.35%, FOTO -6.68%\n  • 软件/AI: IGV +0.88%, AIQ +0.55%, CIBR +0.14%\n\n⑥ 板块主题群\n  • 领涨: XLY(可选消费) +4.26%, XLF(金融) +3.51%, XLC(通讯) +3.47%\n  • 领跌: XLK(科技) -0.01%, XLI(工业) -1.09%, XLE(能源) -4.74%\n\n⑦ 个股催化\n  (见上方简报 SIGNALS & WATCH 区的movers)\n\n⑧ 资金面 (5日净流入/流出 = 机构净买卖)\n  • 净流入: SOXX +2271M, QQQ +1377M, XLF +916M\n  • 净流出: SPY -1540M, DIA -547M, IGV -423M\n\n⑨ 金银/比特币\n  • 金(GLD) +3.68%  银(SLV) +5.17%\n  • BTC: $80,506  (1d +4.09%)\n  • IBIT: $45.33  (1d +2.91%)",
+    "generated_at": "2026-11-04T22:25:26Z",
+    "duration_s": 7.5
   },
   {
     "date": "2026-10-22",
     "time": "08:30 ET",
-    "event": "Number of people claiming unemployment benefits in the week to October 17 in the United States (ten thousand people)",
+    "event": "U.S. Initial Jobless Claims for the Week",
     "star": 3,
     "forecast": "20",
     "previous": "19.9",
@@ -62,7 +22,7 @@
   {
     "date": "2026-10-22",
     "time": "10:00 ET",
-    "event": "Monthly rate of leading indicators for September in the United States",
+    "event": "The Conference Board Leading Index m/m",
     "star": 3,
     "forecast": "-0.1",
     "previous": "-0.10",
@@ -72,7 +32,7 @@
   {
     "date": "2026-10-22",
     "time": "10:30 ET",
-    "event": "U.S. EIA natural gas inventories for the week ending October 16 (100 million cubic feet)",
+    "event": "U.S. EIA Natural Gas Inventories for the Week",
     "star": 3,
     "forecast": "790",
     "previous": "670",
@@ -82,7 +42,7 @@
   {
     "date": "2026-10-23",
     "time": "09:45 ET",
-    "event": "US October S & P's global manufacturing PMI initial value",
+    "event": "U.S. S&P Global Manufacturing PMI Preliminary Value",
     "star": 3,
     "forecast": "55.5",
     "previous": "55.9",
@@ -92,7 +52,7 @@
   {
     "date": "2026-10-23",
     "time": "09:45 ET",
-    "event": "US October S & P's Global Services PMI Initial Value",
+    "event": "U.S. S&P Global Services PMI Preliminary Value",
     "star": 3,
     "forecast": "58",
     "previous": "58.8",
@@ -102,7 +62,7 @@
   {
     "date": "2026-10-23",
     "time": "10:00 ET",
-    "event": "U.S. University of Michigan Consumer Confidence Index final value in October",
+    "event": "Final reading of the University of Michigan Consumer Sentiment Index for the United States",
     "star": 3,
     "forecast": "46.3",
     "previous": "46.3",
@@ -112,7 +72,7 @@
   {
     "date": "2026-10-23",
     "time": "10:00 ET",
-    "event": "U.S. October one-year inflation rate forecast final value",
+    "event": "Final Value of the U.S. One-Year Inflation Expectations",
     "star": 3,
     "forecast": null,
     "previous": "4.70",
@@ -122,7 +82,7 @@
   {
     "date": "2026-10-24",
     "time": "13:00 ET",
-    "event": "Total number of oil drilling wells in the United States for the week ending October 23",
+    "event": "Total U.S. oil rigs for the week",
     "star": 3,
     "forecast": null,
     "previous": "459",
@@ -132,7 +92,7 @@
   {
     "date": "2026-10-26",
     "time": "10:30 ET",
-    "event": "Dallas Fed Business Activity Index for October",
+    "event": "Dallas Fed Business Activity Index",
     "star": 3,
     "forecast": null,
     "previous": "9.8",
@@ -142,7 +102,7 @@
   {
     "date": "2026-10-27",
     "time": "08:15 ET",
-    "event": "Weekly change in ADP employment in the United States for the week ending October 10 (10,000 people)",
+    "event": "U.S. ADP Employment Change for the Week",
     "star": 3,
     "forecast": null,
     "previous": "1.85",
@@ -152,7 +112,7 @@
   {
     "date": "2026-10-27",
     "time": "08:30 ET",
-    "event": "Monthly rate of U.S. durable goods orders in September",
+    "event": "US Durable Goods Orders MoM",
     "star": 3,
     "forecast": "1.7",
     "previous": "-0.10",
@@ -162,7 +122,7 @@
   {
     "date": "2026-10-27",
     "time": "09:00 ET",
-    "event": "U.S. August FHFA House Price Index Monthly Rate",
+    "event": "U.S. FHFA Home Price Index Monthly Rate",
     "star": 3,
     "forecast": null,
     "previous": "0.30",
@@ -172,7 +132,7 @@
   {
     "date": "2026-10-27",
     "time": "09:00 ET",
-    "event": "U.S. S&P/CS 20 major cities in August unseasonally adjusted annual rate of house price index",
+    "event": "U.S. S&P/CS 20-City Composite Home Price Index, Not Seasonally Adjusted, Year-over-Year",
     "star": 3,
     "forecast": "2.6",
     "previous": "2.47",
@@ -182,7 +142,7 @@
   {
     "date": "2026-10-27",
     "time": "10:00 ET",
-    "event": "U.S. October Richmond Fed Manufacturing Index",
+    "event": "U.S. Richmond Fed Manufacturing Index",
     "star": 3,
     "forecast": null,
     "previous": "-2",
@@ -192,7 +152,7 @@
   {
     "date": "2026-10-27",
     "time": "10:00 ET",
-    "event": "Total new home sales in the United States in September annualized (10,000 households)",
+    "event": "U.S. New Home Sales, Annualized Total",
     "star": 3,
     "forecast": "65",
     "previous": "68.4",
@@ -202,7 +162,7 @@
   {
     "date": "2026-10-27",
     "time": "10:00 ET",
-    "event": "U.S. October Consultative Conference Consumer Confidence Index",
+    "event": "The Conference Board Consumer Confidence Index",
     "star": 3,
     "forecast": "81",
     "previous": "81.9",
@@ -212,7 +172,7 @@
   {
     "date": "2026-10-28",
     "time": "10:30 ET",
-    "event": "US EIA crude oil inventories for the week ending October 23 (10,000 barrels)",
+    "event": "U.S. EIA Crude Oil Stocks for the Week",
     "star": 3,
     "forecast": "1.5",
     "previous": "-306",
@@ -222,7 +182,7 @@
   {
     "date": "2026-10-28",
     "time": "10:30 ET",
-    "event": "U.S. EIA Cushing, Oklahoma crude oil inventories for the week ending October 23 (10,000 barrels)",
+    "event": "U.S. EIA Crude Oil Stocks at Cushing, Oklahoma for the Week",
     "star": 3,
     "forecast": null,
     "previous": "98.7",
@@ -232,7 +192,7 @@
   {
     "date": "2026-10-28",
     "time": "10:30 ET",
-    "event": "U.S. EIA Strategic Petroleum Reserve Stocks as of the week ending October 23 (in 10,000 barrels)",
+    "event": "U.S. EIA Strategic Petroleum Reserve Stocks for the Week",
     "star": 3,
     "forecast": null,
     "previous": "-30",
@@ -242,7 +202,7 @@
   {
     "date": "2026-10-28",
     "time": "16:30 ET",
-    "event": "U.S. API Crude Oil Inventories for the Week Ending October 23 (in 10,000 barrels)",
+    "event": "U.S. API Crude Oil Stocks for the Week",
     "star": 3,
     "forecast": "52.2",
     "previous": "-493.1",
@@ -252,7 +212,7 @@
   {
     "date": "2026-10-29",
     "time": "08:30 ET",
-    "event": "Initial annualized quarterly rate of real GDP in the United States in the third quarter",
+    "event": "U.S. Real GDP Annualized Quarterly Rate Preliminary Value",
     "star": 3,
     "forecast": "3.2",
     "previous": "2.20",
@@ -262,7 +222,7 @@
   {
     "date": "2026-10-29",
     "time": "08:30 ET",
-    "event": "Number of people claiming unemployment benefits in the week to October 24 in the United States (ten thousand people)",
+    "event": "U.S. Initial Jobless Claims for the Week",
     "star": 3,
     "forecast": "19.9",
     "previous": "19.4",
@@ -272,7 +232,7 @@
   {
     "date": "2026-10-29",
     "time": "08:30 ET",
-    "event": "Initial quarterly rate of real personal consumption expenditure in the United States in the third quarter",
+    "event": "U.S. Real Personal Consumption Expenditures QoQ Preliminary Value",
     "star": 3,
     "forecast": "3.4",
     "previous": "3.80",
@@ -282,7 +242,7 @@
   {
     "date": "2026-10-29",
     "time": "08:30 ET",
-    "event": "U.S. monthly rate of personal expenditure in September",
+    "event": "US Personal Spending MoM",
     "star": 3,
     "forecast": "0.6",
     "previous": "0.90",
@@ -292,7 +252,7 @@
   {
     "date": "2026-10-29",
     "time": "08:30 ET",
-    "event": "Initial annualized quarterly rate of core PCE price index in the United States in the third quarter",
+    "event": "U.S. Core PCE Price Index Annualized Quarterly Rate Initial Value",
     "star": 3,
     "forecast": "2.40",
     "previous": "3.30",
@@ -302,7 +262,7 @@
   {
     "date": "2026-10-29",
     "time": "08:30 ET",
-    "event": "U.S. core PCE price index monthly rate in September",
+    "event": "U.S. Core PCE Price Index Month-over-Month",
     "star": 3,
     "forecast": "0.30",
     "previous": "0.20",
@@ -312,7 +272,7 @@
   {
     "date": "2026-10-29",
     "time": "08:30 ET",
-    "event": "U.S. core PCE price index annual rate in September",
+    "event": "U.S. Core PCE Price Index YoY",
     "star": 3,
     "forecast": "3.10",
     "previous": "3.00",
@@ -322,7 +282,7 @@
   {
     "date": "2026-10-29",
     "time": "10:30 ET",
-    "event": "U.S. EIA natural gas inventories for the week ending October 23 (100 million cubic feet)",
+    "event": "U.S. EIA Natural Gas Inventories for the Week",
     "star": 3,
     "forecast": "690",
     "previous": "770",
@@ -332,7 +292,7 @@
   {
     "date": "2026-10-29",
     "time": "14:00 ET",
-    "event": "US Federal Reserve interest rate decision from October 28 (cap)",
+    "event": "U.S. Federal Reserve Interest Rate Decision (Upper Limit)",
     "star": 3,
     "forecast": "4.00",
     "previous": "4.00",
@@ -342,7 +302,7 @@
   {
     "date": "2026-10-30",
     "time": "08:30 ET",
-    "event": "U.S. third quarter labor cost index quarterly rate",
+    "event": "U.S. Labor Cost Index Quarterly Rate",
     "star": 3,
     "forecast": "0.80",
     "previous": "0.90",
@@ -352,7 +312,7 @@
   {
     "date": "2026-10-30",
     "time": "09:45 ET",
-    "event": "US October Chicago PMI",
+    "event": "Chicago PMI, United States",
     "star": 3,
     "forecast": "56.1",
     "previous": "58.8",
@@ -362,7 +322,7 @@
   {
     "date": "2026-10-31",
     "time": "13:00 ET",
-    "event": "Total number of oil drilling wells in the United States for the week ending October 30",
+    "event": "Total U.S. oil rigs for the week",
     "star": 3,
     "forecast": null,
     "previous": "460",
@@ -372,7 +332,7 @@
   {
     "date": "2026-11-02",
     "time": "09:45 ET",
-    "event": "US October S & P's global manufacturing PMI final value",
+    "event": "Final value of the U.S. S&P Global Manufacturing PMI",
     "star": 3,
     "forecast": "56",
     "previous": "56",
@@ -382,7 +342,7 @@
   {
     "date": "2026-11-02",
     "time": "10:00 ET",
-    "event": "U.S. October ISM Manufacturing PMI",
+    "event": "U.S. ISM Manufacturing PMI",
     "star": 3,
     "forecast": "54.6",
     "previous": "54.5",
@@ -392,7 +352,7 @@
   {
     "date": "2026-11-02",
     "time": "10:00 ET",
-    "event": "U.S. construction spending monthly rate in September",
+    "event": "US Construction Spending MoM",
     "star": 3,
     "forecast": "0.4",
     "previous": "0.90",
@@ -402,7 +362,7 @@
   {
     "date": "2026-11-03",
     "time": "10:00 ET",
-    "event": "Monthly rate of U.S. factory orders in September",
+    "event": "US Factory Orders MoM",
     "star": 3,
     "forecast": "1.20",
     "previous": "0.10",
@@ -412,7 +372,7 @@
   {
     "date": "2026-11-03",
     "time": "10:00 ET",
-    "event": "U.S. September JOLTs job openings (ten thousand people)",
+    "event": "US JOLTs Job Openings",
     "star": 3,
     "forecast": "710",
     "previous": "707.9",
@@ -422,77 +382,77 @@
   {
     "date": "2026-11-04",
     "time": "08:15 ET",
-    "event": "U.S. ADP jobs in October (ten thousand people)",
+    "event": "U.S. ADP Employment Numbers",
     "star": 3,
     "forecast": "6.9",
     "previous": "9",
-    "actual": null,
-    "released": false
+    "actual": "8.6",
+    "released": true
   },
   {
     "date": "2026-11-04",
     "time": "08:30 ET",
-    "event": "U.S. September trade account (100 million US dollars)",
+    "event": "U.S. Trade Balance",
     "star": 3,
-    "forecast": "-1079",
+    "forecast": "-1080",
     "previous": "-1056",
-    "actual": null,
-    "released": false
+    "actual": "-1050",
+    "released": true
   },
   {
     "date": "2026-11-04",
     "time": "09:45 ET",
-    "event": "US October S & P's global services PMI final value",
+    "event": "Final U.S. S&P Global Services PMI",
     "star": 3,
-    "forecast": null,
+    "forecast": "57.9",
     "previous": "57.9",
-    "actual": null,
-    "released": false
+    "actual": "56.1",
+    "released": true
   },
   {
     "date": "2026-11-04",
     "time": "10:00 ET",
-    "event": "U.S. October ISM Non-Manufacturing PMI",
+    "event": "U.S. ISM Non-Manufacturing PMI",
     "star": 3,
     "forecast": "54.8",
     "previous": "54.9",
-    "actual": null,
-    "released": false
+    "actual": "54.5",
+    "released": true
   },
   {
     "date": "2026-11-04",
     "time": "10:30 ET",
-    "event": "US EIA crude oil inventories for the week ending October 30 (10,000 barrels)",
+    "event": "U.S. EIA Crude Oil Stocks for the Week",
     "star": 3,
     "forecast": "198.7",
     "previous": "-189.2",
-    "actual": null,
-    "released": false
+    "actual": "-86.5",
+    "released": true
   },
   {
     "date": "2026-11-04",
     "time": "10:30 ET",
-    "event": "U.S. EIA Cushing, Oklahoma crude oil inventories for the week ending October 30 (10,000 barrels)",
+    "event": "U.S. EIA Crude Oil Stocks at Cushing, Oklahoma for the Week",
     "star": 3,
     "forecast": null,
     "previous": "-62.4",
-    "actual": null,
-    "released": false
+    "actual": "28",
+    "released": true
   },
   {
     "date": "2026-11-04",
     "time": "10:30 ET",
-    "event": "U.S. EIA Strategic Oil Reserve Inventories for the Week to October 30 (10,000 barrels)",
+    "event": "U.S. EIA Strategic Petroleum Reserve Stocks for the Week",
     "star": 3,
     "forecast": null,
     "previous": "-10",
-    "actual": null,
-    "released": false
+    "actual": "-39.9",
+    "released": true
   },
   {
     "date": "2026-11-04",
     "time": "16:30 ET",
-    "event": "U.S. API Crude Oil Stocks (in 10,000 barrels) for the week ending October 30",
+    "event": "U.S. API Crude Oil Stocks for the Week",
     "star": 3,
     "forecast": "198.7",
     "previous": "-203.1",
@@ -502,7 +462,7 @@
   {
     "date": "2026-11-05",
     "time": "05:30 ET",
-    "event": "Number of layoffs by challenger companies in the United States in October (10,000 people)",
+    "event": "Number of layoffs at U.S. challenger banks",
     "star": 3,
     "forecast": null,
     "previous": "4.3281",
@@ -512,7 +472,7 @@
   {
     "date": "2026-11-05",
     "time": "08:30 ET",
-    "event": "Number of people filing for unemployment benefits in the United States for the week ending October 31 (ten thousand people)",
+    "event": "U.S. Initial Jobless Claims for the Week",
     "star": 3,
     "forecast": "19.6",
     "previous": "19.4",
@@ -522,7 +482,7 @@
   {
     "date": "2026-11-05",
     "time": "10:00 ET",
-    "event": "U.S. October Global Supply Chain Pressure Index",
+    "event": "U.S. Global Supply Chain Pressure Index",
     "star": 3,
     "forecast": null,
     "previous": "1.28",
@@ -532,7 +492,7 @@
   {
     "date": "2026-11-05",
     "time": "10:30 ET",
-    "event": "U.S. EIA natural gas inventories for the week ending October 30 (100 million cubic feet)",
+    "event": "U.S. EIA Natural Gas Inventories for the Week",
     "star": 3,
     "forecast": null,
     "previous": "800",
@@ -542,7 +502,7 @@
   {
     "date": "2026-11-06",
     "time": "08:30 ET",
-    "event": "U.S. non-agricultural employment after October adjustment (ten thousand people)",
+    "event": "U.S. Seasonally Adjusted Nonfarm Payrolls",
     "star": 3,
     "forecast": "6.5",
     "previous": "2.9",
@@ -552,7 +512,7 @@
   {
     "date": "2026-11-06",
     "time": "08:30 ET",
-    "event": "Average monthly hourly wage rate in the United States in October",
+    "event": "U.S. Average Hourly Earnings Month-over-Month",
     "star": 3,
     "forecast": "0.30",
     "previous": "0.10",
@@ -562,7 +522,7 @@
   {
     "date": "2026-11-06",
     "time": "08:30 ET",
-    "event": "Average annual hourly wage in the United States in October",
+    "event": "U.S. Average Hourly Earnings Year-on-Year Rate",
     "star": 3,
     "forecast": "2.90",
     "previous": "3.00",
@@ -572,7 +532,7 @@
   {
     "date": "2026-11-06",
     "time": "08:30 ET",
-    "event": "U.S. unemployment rate in October",
+    "event": "U.S. unemployment rate",
     "star": 3,
     "forecast": "4.20",
     "previous": "4.20",
@@ -582,7 +542,7 @@
   {
     "date": "2026-11-06",
     "time": "10:00 ET",
-    "event": "Initial value of the University of Michigan Consumer Confidence Index in November",
+    "event": "The University of Michigan's preliminary reading on consumer confidence in the United States",
     "star": 3,
     "forecast": "48",
     "previous": "48",
@@ -592,7 +552,7 @@
   {
     "date": "2026-11-06",
     "time": "10:00 ET",
-    "event": "Initial U.S. one-year inflation expectations for November",
+    "event": "U.S. One-Year Inflation Expectation Preliminary Value",
     "star": 3,
     "forecast": null,
     "previous": "4.70",
@@ -602,7 +562,7 @@
   {
     "date": "2026-11-07",
     "time": "13:00 ET",
-    "event": "Total number of oil drilling wells in the United States for the week ending November 6",
+    "event": "Total U.S. oil rigs for the week",
     "star": 3,
     "forecast": null,
     "previous": "462",
@@ -612,7 +572,7 @@
   {
     "date": "2026-11-09",
     "time": "10:00 ET",
-    "event": "US wholesale sales monthly rate in September",
+    "event": "US Wholesale Sales Month-over-Month",
     "star": 3,
     "forecast": null,
     "previous": "1.80",
@@ -622,7 +582,7 @@
   {
     "date": "2026-11-10",
     "time": "06:00 ET",
-    "event": "U.S. October NFIB Small Business Confidence Index",
+    "event": "U.S. NFIB Small Business Confidence Index",
     "star": 3,
     "forecast": null,
     "previous": "97.9",
@@ -632,7 +592,7 @@
   {
     "date": "2026-11-10",
     "time": "08:15 ET",
-    "event": "Weekly change in ADP employment in the United States for the week ending October 24 (10,000 people)",
+    "event": "U.S. ADP Employment Change for the Week",
     "star": 3,
     "forecast": null,
     "previous": "1.675",
@@ -642,7 +602,7 @@
   {
     "date": "2026-11-10",
     "time": "08:30 ET",
-    "event": "U.S. adjusted monthly CPI rate in October",
+    "event": "US Seasonally Adjusted CPI Month-on-Month",
     "star": 3,
     "forecast": "0.3",
     "previous": "0.60",
@@ -652,7 +612,7 @@
   {
     "date": "2026-11-10",
     "time": "08:30 ET",
-    "event": "U.S. adjusted core CPI monthly rate in October",
+    "event": "US Seasonally Adjusted Core CPI Month-over-Month Rate",
     "star": 3,
     "forecast": "0.2",
     "previous": "0.30",
@@ -662,7 +622,7 @@
   {
     "date": "2026-11-10",
     "time": "11:00 ET",
-    "event": "U.S. 1-Year Inflation Expectations from the New York Fed, October",
+    "event": "One-Year Inflation Expectations of the Federal Reserve Bank of New York",
     "star": 3,
     "forecast": null,
     "previous": "3.90",
@@ -672,7 +632,7 @@
   {
     "date": "2026-11-11",
     "time": "13:00 ET",
-    "event": "U.S. 10-Year Treasury Auction as of November 10 – Winning Rate",
+    "event": "U.S. 10-Year Treasury Auction - Winning Rate",
     "star": 3,
     "forecast": null,
     "previous": "5.30",
@@ -682,10 +642,30 @@
   {
     "date": "2026-11-11",
     "time": "13:00 ET",
-    "event": "U.S. 10-year Treasury auction as of November 10 – bid-to-cover ratio",
+    "event": "U.S. 10-Year Treasury Auction – Bid-to-Notice Ratio",
     "star": 3,
     "forecast": null,
     "previous": "2.77",
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-11-12",
+    "time": "08:30 ET",
+    "event": "U.S. Initial Jobless Claims for the Week",
+    "star": 3,
+    "forecast": null,
+    "previous": null,
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-11-12",
+    "time": "10:00 ET",
+    "event": "U.S. Existing Home Sales, Annualized Total",
+    "star": 3,
+    "forecast": "398",
+    "previous": "399",
     "actual": null,
     "released": false
   }
