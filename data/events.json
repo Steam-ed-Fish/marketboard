@@ -1,53 +1,13 @@
 [
   {
     "type": "briefing",
-    "date": "05/11/2026",
-    "time": "22:30",
-    "event": "Daily Intelligence Briefing",
-    "title": "Daily Market Briefing",
-    "text": "BOTTOM LINE — AI-chip unwind, worst day since 2025.\nOctober ISM Non-Manufacturing printed 54.5 vs 54.8 fc, reinforcing the \"tighter-for-longer\" bind that a 100% CME-implied December hike now defines; XLK -8.00% and SOXX in a 6.1x-volume breakdown drove the tape, with only gold and long bonds bid.\n\nINDICES — VIX 28.2, up from a 20-day 18.3; VIXY +29.71%.\nQQQ -6.49%, SPY -4.41%, IWM -4.59%, DIA -3.53%, SOXX -70.72%.\nSmall > large by 0.60pp — but RSP -2.89% beat SPY, so the damage was mega-cap/semis, not breadth.\nQQQ is below its 200-day MA — a CTA sell trigger. Long bonds (TLT +0.21%) and gold (GLD +0.81%) were the only green cross-asset moves.\n\nVOLUME & BREADTH — SPY vol_ratio 3.0x with price -4.41% = distribution; QQQ traded alongside XLK's 3.3x in heavy liquidation.\nSOXX 6.1x, DIA 3.3x gained attention; IJR 1.7x, GLD/SLV 1.4x were ignored even as they moved.\n90 advancers vs 412 decliners, up/down volume 0.13, 63% above 50-DMA, 58% above 200-DMA, 45 new 60d highs vs 84 lows.\nParticipation diverges hard from any index read — this is a correlated macro de-risk, not a rotation.\n\nSECTORS & ROTATION — XLC Comms -0.59%, XLU Utilities -0.71%, XLP Staples -0.75%, XLRE Real Estate -1.82%, XLV Healthcare -2.50%, XLF Financials -2.87%, XLB Materials -2.91%, XLE Energy -2.98%, XLY Discretionary -3.83%, XLI Industrials -4.12%, XLK Technology -8.00%.\nTop industries USO +1.93%, KWEB +1.81%; bottom DRAM -17.96%, ITA -68.00%.\nFlows contradict the tape: XLF +$943mm (92p), XLV +$809mm (96p), XLK +$592mm (94p) all took 5-day inflows into the wreckage, XLU -$352mm (6p) bled.\nMoney is buying the dip in financials/healthcare, exiting defensives — a knife-catch, not conviction. Rotation-state: AI hardware fading / high-to-low rotation.\n\nPOSITIONING — SPY PCR 1.46 (protection demand) and IWM 1.70 vs QQQ 0.96 — hedging is index-wide, not tech-specific.\nSPY skew +15.1%, QQQ ATM_IV 42.6%; QQQ maxpain 690 sits well above spot — dealer hedging amplifies moves with no usable gamma flip.\nVIXEQ 49.7 vs VIX 28.2, a 21.5-point gap and both near 52w highs: extreme single-stock dispersion inside a correlated macro tape; VVIX 135.0 confirms.\n\nCROSS-ASSET — Semis led the selloff while USO +1.93% and GLD +0.81% rose — the AI-capex trade unwinding, not a growth scare.\nNext FOMC Dec 9: CME FedWatch 100% hike, Polymarket 64% YES for +25bp (-7pp in 5 days), 34% no change — a tightening regime while the index breaks.\n\nSIGNALS & WATCH — Fear & Greed 41.1, neutral.\nMovers: SOXX -70.72% on bearish options positioning, MU -17.46% sliding, AMD -17.26% as midterm results hit chip stocks.\nWorst 20d: XLK -17.90%; best: XLV +9.96%.\nWatching AIQ -6.21% at 4.0x volume (distribution), QCOM -9.49% at 3.5x in the Semi 7, and PWR -12.30% at 3.5x — AI-infrastructure stress worth a second look.\n━━━━━━ 晨会素材 SPEECH BRIEFING ━━━━━━\n\n① 波动率\n  • VIX: 28.18  (vs20MA +54.1%)\n  • VXN: 38.26  (vs20MA +46.9%)\n  • VIXEQ: 49.68  (vs20MA +19.1%)\n  • VVIX: 134.99  (vs20MA +34.0%)\n  • SKEW: 149.37  (1d -1.0%)\n\n② 指数相对强弱\n  • 最强: RSP -2.89%\n  • 最弱: SOXX -70.72%\n  • 大盘vs平权: SPY -4.41% vs RSP -2.89% → 平权领先1.52pp\n  • 成交量 SPY: 3.00x\n  • 成交量 QQQ: 2.99x\n\n③ Mega Cap (>$1T)\n  • 跌: WMT -1.12%, AAPL -1.53%, AMZN -2.19%, GOOGL -2.20%, MSFT -3.58%, LLY -3.76%, META -3.96%, NVDA -9.26%, AVGO -10.43%, TSLA -10.77%\n  • 整体: 0/12收涨\n\n④ 利率水位\n  • US2Y: 4.48%  US10Y: 4.83%  US30Y: 5.25%\n  • 10y-2y利差: +0.36\n  • 定性: 30y站上5.2% (关键高位)\n\n⑤ 科技与动量\n  • 半导体: SOXX -70.72%, SMH -11.21%\n  • 存储: DRAM -17.96%, MU -17.46%\n  • 光通信: LITE -18.68%, AAOI -20.89%, FOTO -14.39%\n  • 软件/AI: IGV -4.39%, AIQ -6.21%, CIBR -6.52%\n\n⑥ 板块主题群\n  • 领涨: XLC(通讯) -0.59%, XLU(公用) -0.71%, XLP(必需消费) -0.75%\n  • 领跌: XLY(可选消费) -3.83%, XLI(工业) -4.12%, XLK(科技) -8.00%\n\n⑦ 个股催化\n  (见上方简报 SIGNALS & WATCH 区的movers)\n\n⑧ 资金面 (5日净流入/流出 = 机构净买卖)\n  • 净流入: QQQ +6068M, SPY +6001M, RSP +1064M\n  • 净流出: GLD -500M, DIA -495M, IGV -377M\n\n⑨ 金银/比特币\n  • 金(GLD) +0.81%  银(SLV) -0.49%\n  • BTC: $75,892  (1d -5.64%)\n  • IBIT: $43.03  (1d -5.07%)",
-    "generated_at": "2026-11-05T22:30:17Z",
-    "duration_s": 7.2
-  },
-  {
-    "date": "2026-10-23",
-    "time": "09:45 ET",
-    "event": "U.S. S&P Global Manufacturing PMI Preliminary Value",
-    "star": 3,
-    "forecast": "55.5",
-    "previous": "55.9",
-    "actual": "56",
-    "released": true
-  },
-  {
-    "date": "2026-10-23",
-    "time": "09:45 ET",
-    "event": "U.S. S&P Global Services PMI Preliminary Value",
-    "star": 3,
-    "forecast": "58",
-    "previous": "58.8",
-    "actual": "57.9",
-    "released": true
-  },
-  {
-    "date": "2026-10-23",
-    "time": "10:00 ET",
-    "event": "Final reading of the University of Michigan Consumer Sentiment Index for the United States",
-    "star": 3,
-    "forecast": "46.3",
-    "previous": "46.3",
-    "actual": "48",
-    "released": true
-  },
-  {
-    "date": "2026-10-23",
-    "time": "10:00 ET",
-    "event": "Final Value of the U.S. One-Year Inflation Expectations",
-    "star": 3,
-    "forecast": null,
-    "previous": "4.70",
-    "actual": "4.7",
-    "released": true
+    "date": "06/11/2026",
+    "time": "22:31",
+    "event": "Weekly Market Review",
+    "title": "Weekly Market Review",
+    "text": "BOTTOM LINE — Tech cracked; hard assets and defensives absorbed the week's risk.\n\nThe Dow's 0.95% decline badly understates the damage: QQQ fell 4.98% while gold gained 4.71%, a divergence of nearly 10 points. The week began with a tech-led rout and ended Friday with dip buyers lifting QQQ 1.40% off the low. On Friday, November 6, a hot jobs print (nonfarm payrolls 16.5 vs. 6.5 forecast) initially reinforced the inflation trade but the tape finished buying growth back. The rotation, not the direction, is the story.\n\nINDICES — QQQ -4.98% worst of the major indices; SPY -2.70%; IWM -2.03%; DIA -0.95% held best. Small beat large by 0.81pp (IJR -1.89%), and QQQ is now below its 200-day MA. VIX closed at 25.6, nearly a full point above its 20-day average of 18.8, with QQQ ATM IV at 32.2%. The standout cross-asset move was SLV +5.09% and GLD +4.71%, while DIA was the only major index to avoid a >2% weekly loss.\n\nSECTORS & ROTATION — XLC Communication Services +4.89%; XLRE Real Estate +1.92%; XLY Consumer Discretionary +1.91%; XLF Financials +1.15%; XLP Consumer Staples +0.74%; XLV Health Care -0.04%; XLU Utilities -0.69%; XLB Materials -1.50%; XLI Industrials -2.83%; XLK Technology -8.23%; XLE Energy -12.00%. The top two industries were GDX +13.63% and TAN +13.38%, while the bottom two were XOP -14.72% and DRAM -18.16%. The money flow shows a clear rotation: $977mm into XLV (98th percentile) and $816mm into XLF (90th percentile) versus $710mm out of XLC. Energy collapsed on both the price and industry level, with XLE -12.00% leading the decline and XOP -14.72% behind it. Rotation-state label: defensive risk-off, with real assets and health care absorbing the outflows, though XLK's $491mm inflow suggests the selling wasn't wholesale.\n\nDRIVERS — The dominant driver was the unwind of technology exposure: XLK fell 8.23% and SOXX -71.04% led the decline, while the long-duration real-asset complex (SLV +5.09%, GDX +13.63%) acted as a haven. Friday's jobs report beat expectations (nonfarm 16.5 vs. 6.5; unemployment 4.1% vs. 4.2% forecast) alongside Michigan consumer sentiment at 51 vs. 48, which initially pushed risk off but the tape recovered into the close with a 1.40% move in QQQ. Volatility elevated sharply, with VIX at 25.6 vs. 18.8 on a 20-day basis, and SPY ATM IV at 21.2%, signaling real demand for hedges. The dollar firmed (UUP +0.73%) while gold and silver rose anyway, a notable divergence that could reflect positioning rather than fresh fundamentals. Breadth was weak, with 179 advancers to 322 decliners, though the tape is not in a state of absolute panic.\n\nWHAT'S NEXT — Watch whether XLK and SOXX bounce digs deeper or turns into a base; QQQ's 32.2% implied vol suggests the market expects large moves either way. The tech tape's 20-day decline is already in place, so positioning toward the next leg could be an opportunity if the bounce holds. Keep an eye on breadth improving, since 55% above the 200-day MA leaves room for more sustained participation. The energy weakness in XLE and XOP may be worth watching for a contrarian setup if it becomes exhausted.\n━━━━━━ 晨会素材 SPEECH BRIEFING ━━━━━━\n\n① 波动率\n  • VIX: 25.64  (vs20MA +36.2%)\n  • VXN: 34.02  (vs20MA +27.3%)\n  • VIXEQ: 47.42  (vs20MA +12.6%)\n  • VVIX: 121.94  (vs20MA +18.9%)\n  • SKEW: 153.55  (1d +2.8%)\n\n② 指数相对强弱\n  • 最强: SOXX +3.51%\n  • 最弱: DIA -0.40%\n  • 大盘vs平权: SPY +0.31% vs RSP -0.38% → 大盘领先0.69pp\n  • 成交量 SPY: 1.30x\n  • 成交量 QQQ: 1.51x\n\n③ Mega Cap (>$1T)\n  • 涨: TSLA +4.23%, NVDA +2.78%, META +0.84%, GOOGL +0.78%, AVGO +0.74%\n  • 跌: AMZN -0.35%, AAPL -0.52%, LLY -0.79%, MSFT -0.99%\n  • 整体: 5/11收涨\n\n④ 利率水位\n  • US2Y: 4.53%  US10Y: 4.86%  US30Y: 5.27%\n  • 10y-2y利差: +0.34\n  • 定性: 30y站上5.2% (关键高位)\n\n⑤ 科技与动量\n  • 半导体: SOXX +3.51%, SMH +3.62%\n  • 存储: DRAM +6.16%, MU +5.12%\n  • 光通信: LITE +5.67%, AAOI +6.91%, FOTO +10.98%\n  • 软件/AI: IGV -0.13%, AIQ +1.32%, CIBR +0.03%\n\n⑥ 板块主题群\n  • 领涨: XLK(科技) +1.45%, XLC(通讯) +0.43%, XLI(工业) +0.12%\n  • 领跌: XLRE(地产) -0.68%, XLB(材料) -0.73%, XLP(必需消费) -1.28%\n\n⑦ 个股催化\n  (见上方简报 SIGNALS & WATCH 区的movers)\n\n⑧ 资金面 (5日净流入/流出 = 机构净买卖)\n  • 净流入: SPY +9390M, QQQ +2085M, SMH +1153M\n  • 净流出: XLC -710M, DIA -605M, IGV -492M\n\n⑨ 金银/比特币\n  • 金(GLD) -0.79%  银(SLV) -0.13%\n  • BTC: $75,936  (1d -0.05%)\n  • IBIT: $42.88  (1d -0.35%)",
+    "generated_at": "2026-11-06T22:31:20Z",
+    "duration_s": 7.6
   },
   {
     "date": "2026-10-24",
@@ -476,8 +436,8 @@
     "star": 3,
     "forecast": "6.5",
     "previous": "2.9",
-    "actual": null,
-    "released": false
+    "actual": "16.5",
+    "released": true
   },
   {
     "date": "2026-11-06",
@@ -486,8 +446,8 @@
     "star": 3,
     "forecast": "0.30",
     "previous": "0.10",
-    "actual": null,
-    "released": false
+    "actual": "0.4",
+    "released": true
   },
   {
     "date": "2026-11-06",
@@ -496,8 +456,8 @@
     "star": 3,
     "forecast": "2.90",
     "previous": "3.00",
-    "actual": null,
-    "released": false
+    "actual": "3.1",
+    "released": true
   },
   {
     "date": "2026-11-06",
@@ -506,8 +466,8 @@
     "star": 3,
     "forecast": "4.20",
     "previous": "4.20",
-    "actual": null,
-    "released": false
+    "actual": "4.1",
+    "released": true
   },
   {
     "date": "2026-11-06",
@@ -516,18 +476,18 @@
     "star": 3,
     "forecast": "48",
     "previous": "48",
-    "actual": null,
-    "released": false
+    "actual": "51",
+    "released": true
   },
   {
     "date": "2026-11-06",
     "time": "10:00 ET",
     "event": "U.S. One-Year Inflation Expectation Preliminary Value",
     "star": 3,
-    "forecast": null,
+    "forecast": "4.7",
     "previous": "4.70",
-    "actual": null,
-    "released": false
+    "actual": "4.3",
+    "released": true
   },
   {
     "date": "2026-11-07",
@@ -536,8 +496,8 @@
     "star": 3,
     "forecast": null,
     "previous": "462",
-    "actual": null,
-    "released": false
+    "actual": "463",
+    "released": true
   },
   {
     "date": "2026-11-09",
@@ -586,6 +546,26 @@
     "star": 3,
     "forecast": "0.20",
     "previous": "0.30",
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-11-10",
+    "time": "08:30 ET",
+    "event": "U.S. Unadjusted Core CPI Year-on-Year Rate",
+    "star": 3,
+    "forecast": null,
+    "previous": "2.6",
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-11-10",
+    "time": "08:30 ET",
+    "event": "U.S. Unadjusted CPI Year-on-Year Rate",
+    "star": 3,
+    "forecast": null,
+    "previous": "3.7",
     "actual": null,
     "released": false
   },
@@ -644,7 +624,7 @@
     "time": "10:00 ET",
     "event": "U.S. Existing Home Sales, Annualized Total",
     "star": 3,
-    "forecast": "387",
+    "forecast": "398",
     "previous": "399",
     "actual": null,
     "released": false
@@ -706,6 +686,16 @@
     "star": 3,
     "forecast": null,
     "previous": "-39.9",
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-11-14",
+    "time": "13:00 ET",
+    "event": "Total U.S. oil rigs for the week",
+    "star": 3,
+    "forecast": null,
+    "previous": "463",
     "actual": null,
     "released": false
   }
