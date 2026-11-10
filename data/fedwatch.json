@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-10",
+  "last_updated": "2026-11-11",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-11-10",
+    "cme_updated": "2026-11-11",
     "bls_unemp_updated": "2026-07-15",
     "rate_prob_source": "CME FedWatch (investing.com)"
   },
@@ -176,6 +176,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
         {
+          "date": "2026-11-10",
+          "event": "Bowman, The U.S. Economy and Considerations for Monetary Policy",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261110a.htm",
+          "brief_summary": "Speech At the C. Peter McColough Series on International Economics Council on Foreign Relations, Washington, D.C.",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-10-15",
           "event": "Bowman, Supervisory Modernization After Silicon Valley Bank",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261014a.htm",
@@ -202,13 +209,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260929a.htm",
           "brief_summary": "This speech is not about monetary policy; it addresses cybersecurity risks and AI adoption challenges faced by community banks at the Community Bank Cyber Workshop.",
           "detailed_summary": "Vice Chair for Supervision Michelle Bowman delivered opening remarks at the 2026 Community Bank Cyber Workshop, focusing on cybersecurity threats, AI integration, and regulatory expectations. She highlighted recent cyber events affecting community banks and detailed how AI both enhances defense capabilities and introduces risks like sophisticated social engineering. Bowman referenced a summer 2026 Financial Stability Board report on Sound Practices for Responsible Adoption of AI, noting its targeted case studies for smaller institutions and requesting community bank feedback. She emphasized that cyber resilience requires proactive board risk management, strategic investments, tailored IT examinations, and continuous collaboration."
-        },
-        {
-          "date": "2026-09-18",
-          "event": "Bowman, Initial Findings from Independent Review of Silicon Valley Bank",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260918b.htm",
-          "brief_summary": "This speech presents initial findings from an independent review of Silicon Valley Bank's failure, focusing on supervisory shortcomings rather than monetary policy.",
-          "detailed_summary": "Vice Chair for Supervision Bowman announced preliminary findings from the Starling Advisory Group's independent review of SVB's collapse. The review identified that supervisors knew of SVB's vulnerabilities by March 2022 but failed to act decisively due to a culture of risk aversion and unclear decision rights. Contrary to prior claims, social media did not trigger the bank run, and regulatory tailoring did not cause the supervisory delays. The Federal Reserve has responded with new supervisory operating principles and monthly escalation reports to address cultural shortcomings and empower examiners."
         }
       ]
     },
@@ -474,6 +474,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/waller.htm",
       "speeches": [
         {
+          "date": "2026-11-10",
+          "event": "Waller, The Economic Outlook and Some Thoughts on Labor Market Dynamism",
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20261110a.htm",
+          "brief_summary": "Speech At the Bank of England Watchers Conference  King’s Business School and Money, Macro and Finance Society, London, United Kingdom",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-10-08",
           "event": "Waller, The Signaling Value of the Summary of Economic Projections",
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20261008a.htm",
@@ -500,13 +507,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20260903a.htm",
           "brief_summary": "Waller sees disinflation signs despite inflation remaining above 2% target; would support holding rates if August data confirms improvement, otherwise may raise rates September 15-16.",
           "detailed_summary": "Governor Waller presented a cautious optimistic outlook on September 3, 2026. While PCE inflation remains elevated at 3.7% annually and core PCE at 3.3%, recent three-month core inflation has declined to 3.05% from 4.76% in February, signaling disinflation progress. The economy shows solid fundamentals with 2%+ expected GDP growth, strong consumer spending, robust business investment in AI infrastructure, and unemployment at 4.1%. Waller indicated the current federal funds rate may be appropriate if August data confirms disinflationary trends continue, but emphasized considerable uncertainty around military conflicts, trade policy, and AI's economic effects could warrant a rate increase at the September 15-16 FOMC meeting if incoming data disappoints."
-        },
-        {
-          "date": "2026-07-13",
-          "event": "Waller, Monetary Policy at a Crossroads",
-          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260713a.htm",
-          "brief_summary": "Waller expresses concern about rising core inflation trending upward from 3.0% to 3.4% and signals readiness to tighten policy if upward trajectory continues, while acknowledging solid economic activity and stable labor market.",
-          "detailed_summary": "Governor Waller assessed the economy as resilient with solid household and business spending, employment near maximum levels, and AI investment momentum offsetting tariff and energy-price headwinds. However, he voiced concern about core PCE inflation rising from 3.0% in December 2025 to 3.4% in May 2026, noting this exceeds temporary tariff effects and signals potential need for tighter monetary policy. Waller cited June labor market softness but dismissed it as temporary noise, finding the 111,000 monthly job creation pace healthy relative to slowed labor supply growth. He stated monetary policy is at a crossroads: if inflation's upward trend persists, current policy settings may prove insufficient to return inflation to the 2% target, and he committed to avoiding both repeated policy mistakes and overtightening."
         }
       ]
     },
