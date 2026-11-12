@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-12",
+  "last_updated": "2026-11-13",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -10,18 +10,18 @@
   "market": {
     "next_fomc_date": "2026-12-09",
     "next_fomc_label": "Dec 9, 2026",
-    "rate_hold_pct": 100.0,
+    "rate_hold_pct": 0.0,
     "rate_cut_pct": 0.0,
-    "rate_hike_pct": 0.0,
+    "rate_hike_pct": 100.0,
     "current_rate": "3.50%–3.75%",
     "cpi": 3.5,
     "cpi_month": "June 2026",
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-11-12",
+    "cme_updated": "2026-11-13",
     "bls_unemp_updated": "2026-07-15",
-    "rate_prob_source": "ZQ futures (approx)"
+    "rate_prob_source": "CME FedWatch (investing.com)"
   },
   "members": [
     {
@@ -130,6 +130,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
       "speeches": [
         {
+          "date": "2026-11-12",
+          "event": "Barr, American Inequality and the Future of AI",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20261112a.htm",
+          "brief_summary": "Speech At Yale University, New Haven, Connecticut",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-09-29",
           "event": "Barr, Economic Conditions and Monetary Policy",
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260929a.htm",
@@ -156,13 +163,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260714a.htm",
           "brief_summary": "Governor Barr examines whether AI will broadly raise living standards or exacerbate income and wealth inequality, emphasizing the need for supportive policies.",
           "detailed_summary": "This speech addresses AI's economic impacts on financial inclusion and inequality rather than monetary policy. Barr discusses how AI could either broadly raise living standards through productivity gains or widen inequality by concentrating benefits among higher-skilled workers and AI company owners. He notes current U.S. income and wealth inequality metrics (top fifth earning 52% of income; bottom half holding <3% of wealth) and observes that 43% of graduate-degree workers use AI versus 10% with high school education. While acknowledging little economy-wide job displacement yet, Barr emphasizes the policy challenge lies in ensuring AI gains are broadly shared through education, training, competition, and tax policies—matters outside the Federal Reserve's purview."
-        },
-        {
-          "date": "2026-06-06",
-          "event": "Barr, Deregulating in a Financial Boom: What Could Go Wrong?",
-          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260606a.htm",
-          "brief_summary": "Governor Barr warns that recent Federal Reserve deregulation—including capital requirement cuts of 6% for large banks and weakened supervision—risks financial stability despite current economic strength.",
-          "detailed_summary": "This supervision and regulation speech is not about monetary policy rate decisions. Governor Barr expresses concern that the Fed and other banking regulators are simultaneously reducing capital requirements for large banks (particularly the 8 GSIBs holding 60% of banking sector assets), weakening stress tests, eroding leverage ratios, lowering GSIB surcharges, and degrading supervisory oversight through rating system changes and reduced matters-requiring-attention issuances. He argues these deregulatory steps, while appearing beneficial short-term, create long-term financial stability vulnerabilities reminiscent of pre-crisis patterns, and that reducing capital standards by $60 billion leaves the system underinsured against systemic risk."
         }
       ]
     },
