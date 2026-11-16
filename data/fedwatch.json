@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-14",
+  "last_updated": "2026-11-17",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-11-14",
+    "cme_updated": "2026-11-17",
     "bls_unemp_updated": "2026-07-15",
     "rate_prob_source": "CME FedWatch (investing.com)"
   },
@@ -33,6 +33,13 @@
       "photo_url": "data/fedwatch_photos/warsh.jpg",
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/warsh.htm",
       "speeches": [
+        {
+          "date": "2026-11-16",
+          "event": "Warsh, Opening Remarks",
+          "url": "https://www.federalreserve.gov/newsevents/speech/warsh20261116a.htm",
+          "brief_summary": "Speech At the Productivity and Jobs Task Force Conference, hosted by the Federal Reserve Board and the Federal Reserve Bank of San Francisco, San Francisco, California",
+          "detailed_summary": ""
+        },
         {
           "date": "2026-08-28",
           "event": "Warsh, In Our Time",
@@ -130,6 +137,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
       "speeches": [
         {
+          "date": "2026-11-16",
+          "event": "Barr, Some Potential Financial Stability Implications of Artificial Intelligence",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20261116a.htm",
+          "brief_summary": "Speech At the Seventh Annual Association for Computing Machinery International Conference on Artificial Intelligence in Finance, Milan, Italy",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-11-12",
           "event": "Barr, American Inequality and the Future of AI",
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20261112a.htm",
@@ -156,13 +170,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260901a.htm",
           "brief_summary": "Governor Barr addresses financial inclusion and entrepreneurship barriers for individuals with criminal records, highlighting labor market challenges and systemic financial vulnerabilities while discussing policy solutions.",
           "detailed_summary": "This speech focuses on financial inclusion and criminal justice reform rather than monetary policy implementation. Barr discusses employment barriers, occupational licensing restrictions, and financial system exclusion faced by formerly incarcerated individuals, citing SHED survey data showing 60% of convicted individuals report adequate financial well-being versus 75% of those without records. He emphasizes these barriers reduce labor supply and perpetuate disparities, particularly for communities of color. While addressing the economy separately, Barr notes inflation remains above target after stalling in 2025 and signals the September FOMC meeting will reassess policy stance depending on inflation moderation trends."
-        },
-        {
-          "date": "2026-07-14",
-          "event": "Barr, Will Artificial Intelligence Broadly Raise Living Standards or Drive Income and Wealth Inequality?",
-          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260714a.htm",
-          "brief_summary": "Governor Barr examines whether AI will broadly raise living standards or exacerbate income and wealth inequality, emphasizing the need for supportive policies.",
-          "detailed_summary": "This speech addresses AI's economic impacts on financial inclusion and inequality rather than monetary policy. Barr discusses how AI could either broadly raise living standards through productivity gains or widen inequality by concentrating benefits among higher-skilled workers and AI company owners. He notes current U.S. income and wealth inequality metrics (top fifth earning 52% of income; bottom half holding <3% of wealth) and observes that 43% of graduate-degree workers use AI versus 10% with high school education. While acknowledging little economy-wide job displacement yet, Barr emphasizes the policy challenge lies in ensuring AI gains are broadly shared through education, training, competition, and tax policies—matters outside the Federal Reserve's purview."
         }
       ]
     },
@@ -300,6 +307,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/jefferson.htm",
       "speeches": [
         {
+          "date": "2026-11-14",
+          "event": "Jefferson, New Technology, Old Questions: Productivity Puzzles  and the Macroeconomy",
+          "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20261113a.htm",
+          "brief_summary": "Speech At the University of California, San Diego Economic Roundtable, San Diego, California",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-10-01",
           "event": "Jefferson, The U.S. Economy and Monetary Policy",
           "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm",
@@ -326,13 +340,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260527a.htm",
           "brief_summary": "Fed maintains 3.5-3.75% federal funds rate; expects inflation decline later in 2026 as tariffs and energy shocks wane, though upside risks remain.",
           "detailed_summary": "Vice Chair Jefferson outlined global headwinds including elevated energy prices from Middle East conflict, AI advancement, and trade disruptions affecting U.S. inflation and growth. The FOMC kept rates steady at 3.5-3.75% in late April, with inflation recently elevated due to tariffs and energy costs but expected to moderate. Jefferson emphasized commitment to the 2% inflation target despite downside labor market risks and upside inflation risks, stating the current policy stance enables data-dependent responses at upcoming meetings without prejudging future decisions."
-        },
-        {
-          "date": "2026-04-07",
-          "event": "College of Business Administration, University of Detroit Mercy, Detroit, MI — 'Economic Outlook and the Labor Market'",
-          "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260407a.htm",
-          "brief_summary": "Jefferson described the labor market as fragile and supported holding rates steady as energy price shocks add near-term inflation uncertainty.",
-          "detailed_summary": "Jefferson noted core PCE at 3.0% and unemployment at 4.3% in March 2026, describing the labor market as 'roughly in balance but susceptible to adverse shocks.' He supported keeping the federal funds rate steady within the neutral range — following 175 basis points of cuts over the prior 18 months — while energy prices from the Middle East conflict add upside inflation pressure in the near term. He emphasized the current policy stance is 'well positioned to respond to a range of outcomes,' consistent with his balanced, meeting-by-meeting approach."
         }
       ]
     },
