@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-18",
+  "last_updated": "2026-11-19",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-11-18",
+    "cme_updated": "2026-11-19",
     "bls_unemp_updated": "2026-07-15",
     "rate_prob_source": "CME FedWatch (investing.com)"
   },
@@ -137,6 +137,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm",
       "speeches": [
         {
+          "date": "2026-11-18",
+          "event": "Barr, Investing in America’s Underserved Communities",
+          "url": "https://www.federalreserve.gov/newsevents/speech/barr20261118a.htm",
+          "brief_summary": "Speech At Making Missing Markets: Catalyzing Capital and Igniting Innovation, Federal Reserve Bank of New York, New York, New York",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-11-16",
           "event": "Barr, Some Potential Financial Stability Implications of Artificial Intelligence",
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20261116a.htm",
@@ -163,13 +170,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/barr20260923a.htm",
           "brief_summary": "Governor Barr supported the FOMC's recent rate hike, citing persistent above-target inflation and strong growth, while noting further policy adjustments will likely be needed to restore price stability.",
           "detailed_summary": "Governor Barr supported the FOMC's decision last week to raise the policy rate, noting that inflation remains above the 2 percent target and is not clearly trending downward timely. He cited recent economic shocks including tariffs, Middle East conflict, and AI investment demand as contributing to upward price pressures, while noting growth is strong and labor market risks have receded. In his base case, Barr expects further policy adjustments will likely be necessary to ensure inflation returns to target, emphasizing that price stability is crucial for supporting sustainable growth and maximum employment. The speech also addressed housing affordability challenges, though monetary policy discussion centered on the inflation outlook."
-        },
-        {
-          "date": "2026-09-01",
-          "event": "Barr, Unlocking Opportunities for Workers and Entrepreneurs with a Criminal Record",
-          "url": "https://www.federalreserve.gov/newsevents/speech/barr20260901a.htm",
-          "brief_summary": "Governor Barr addresses financial inclusion and entrepreneurship barriers for individuals with criminal records, highlighting labor market challenges and systemic financial vulnerabilities while discussing policy solutions.",
-          "detailed_summary": "This speech focuses on financial inclusion and criminal justice reform rather than monetary policy implementation. Barr discusses employment barriers, occupational licensing restrictions, and financial system exclusion faced by formerly incarcerated individuals, citing SHED survey data showing 60% of convicted individuals report adequate financial well-being versus 75% of those without records. He emphasizes these barriers reduce labor supply and perpetuate disparities, particularly for communities of color. While addressing the economy separately, Barr notes inflation remains above target after stalling in 2025 and signals the September FOMC meeting will reassess policy stance depending on inflation moderation trends."
         }
       ]
     },

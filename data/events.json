@@ -1,93 +1,13 @@
 [
   {
     "type": "briefing",
-    "date": "17/11/2026",
-    "time": "22:52",
+    "date": "18/11/2026",
+    "time": "22:22",
     "event": "Daily Intelligence Briefing",
     "title": "Daily Market Briefing",
-    "text": "BOTTOM LINE — Risk-off, broad distribution, semis cracked.\nHigher-for-longer confirmed: import prices +1.1% vs 0.7% fc and a December hike fully priced drove duration-sensitive selling, while a 75/426 advance/decline and 0.18 up/down volume says this was liquidation, not rotation. Nvidia earnings risk plus CRM -9.45% and NOW -6.51% ahead of AI verification killed software and mega-cap appetite.\n\nINDICES — VIX 25.5, up (VIXY +7.41%); QQQ is below its 200-DMA, a CTA sell trigger.\nSOXX +0.17%, QQQ -0.73%, SPY -1.01%, IJH -1.31%, IJR -1.37%, IWM -1.43%, RSP -1.45%, DIA -1.62%. Large > small by 0.64pp — the wrong way; today's leadership was mega-cap, not breadth. Notable cross-asset: VIXY +7.41% and TLT +0.21% — bonds bid on growth fear, not on cuts.\n\nVOLUME & BREADTH — SPY 1.5x and QQQ roughly 1x with price down: distribution in SPY, low-conviction bleed in QQQ. Semis drew attention (SOXX 1.5x) while silver and gold were ignored (SLV 0.9x, GLD 0.8x). Financials 1.6x down and XLF -1.91% is the cleanest distribution signal of the day. Breadth diverges hard: only 15% of S&P names up, 58% above 50-DMA, 4 new highs vs 35 lows — participation disconfirms any stabilization.\n\nSECTORS & ROTATION — XLE Energy -0.52%, XLI Industrials -0.55%, XLY Discretionary -0.89%, XLK Technology -0.91%, XLB Materials -1.22%, XLP Staples -1.23%, XLV Healthcare -1.41%, XLC Comms -1.46%, XLRE Real Estate -1.49%, XLU Utilities -1.59%, XLF Financials -1.91%.\nGDX +0.79% led, TAN -5.17% and IGV -3.29% lagged. Flows: XLK +$1,231mm (100th pctile) and XLI +$574mm (86p) in; XLE -$246mm (27p) and XLF -$209mm (44p) out — tech inflows into a -0.91% tape contradict price, so that's dip-buying, not confirmation. Money is leaving financials and energy; it's hiding in tech and industrials. Rotation state: AI hardware fading / high-to-low rotation.\n\nPOSITIONING — QQQ PCR 1.20 (protection demand) vs SPY 0.70 and IWM 0.53 (complacent); QQQ ATM IV 36.9% vs SPY 23.4%. Skew positive everywhere (SPY +13.8%) — puts are being bought. VIX 25.5 vs 20-day 20.0 and VIXEQ 48.6 vs VIX 25.5 = very wide single-stock dispersion, a stock-picker's tape, not correlated macro.\n\nCROSS-ASSET — Silver +0.59% while gold -0.13% and SLV down -18.19% over 20d: industrial demand holding, monetary hedge unwinding. Oil +0.15% with XLE -0.52% and TAN -5.17% shows energy pricing isn't transmitting to equities — cost pressure, not earnings. Next FOMC Dec 9: Polymarket 25bp hike 94% YES (+6pp in 5d), 50bp+ just 4%.\n\nSIGNALS & WATCH — Fear & Greed 55, Neutral. CRM -9.45%, INTU -7.17%, NOW -6.51% on software de-rating; FDN 5.0x at -1.96% and AIQ 2.1x at -1.72% = distribution. Worst 20d: XLK -11.96%; best: XLP +4.23%. Watch IGV -3.29% at 1.8x volume, FDN 5.0x on a down day, and IWM PCR 0.53 — too calm into a 200-DMA-adjacent tape.\n━━━━━━ 晨会素材 SPEECH BRIEFING ━━━━━━\n\n① 波动率\n  • VIX: 25.46  (vs20MA +27.2%)\n  • VXN: 34.44  (vs20MA +19.1%)\n  • VIXEQ: 48.56  (vs20MA +11.6%)\n  • VVIX: 121.28  (vs20MA +15.6%)\n  • SKEW: 145.11  (1d -0.8%)\n\n② 指数相对强弱\n  • 最强: SOXX +0.17%\n  • 最弱: DIA -1.62%\n  • 大盘vs平权: SPY -1.01% vs RSP -1.45% → 大盘领先0.44pp\n  • 成交量 SPY: 1.47x\n  • 成交量 QQQ: 1.11x\n\n③ Mega Cap (>$1T)\n  • 涨: AVGO +2.46%, TSLA +0.10%, AMZN +0.05%\n  • 跌: AAPL -0.25%, NVDA -0.44%, WMT -0.69%, LLY -1.13%, META -1.20%, GOOGL -1.24%, MSFT -2.27%\n  • 整体: 3/12收涨\n\n④ 利率水位\n  • US2Y: 4.82%  US10Y: 5.11%  US30Y: 5.46%\n  • 10y-2y利差: +0.29\n  • 定性: 30y站上5.2% (关键高位)\n\n⑤ 科技与动量\n  • 半导体: SOXX +0.17%, SMH -0.39%\n  • 存储: DRAM -0.87%, MU -0.92%\n  • 光通信: LITE +2.56%, AAOI +0.13%, FOTO +2.00%\n  • 软件/AI: IGV -3.29%, AIQ -1.72%, CIBR -1.61%\n\n⑥ 板块主题群\n  • 领涨: XLE(能源) -0.52%, XLI(工业) -0.55%, XLY(可选消费) -0.89%\n  • 领跌: XLRE(地产) -1.49%, XLU(公用) -1.59%, XLF(金融) -1.91%\n\n⑦ 个股催化\n  (见上方简报 SIGNALS & WATCH 区的movers)\n\n⑧ 资金面 (5日净流入/流出 = 机构净买卖)\n  • 净流入: QQQ +13592M, XLK +1231M, DIA +1202M\n  • 净流出: SOXX -1507M, SMH -989M, IWM -828M\n\n⑨ 金银/比特币\n  • 金(GLD) -0.13%  银(SLV) +0.59%\n  • BTC: $64,695  (1d -0.19%)\n  • IBIT: $36.14  (1d -1.77%)",
-    "generated_at": "2026-11-17T22:52:03Z",
-    "duration_s": 6.2
-  },
-  {
-    "date": "2026-11-04",
-    "time": "08:15 ET",
-    "event": "U.S. ADP Employment Numbers",
-    "star": 3,
-    "forecast": "6.9",
-    "previous": "9",
-    "actual": "8.6",
-    "released": true
-  },
-  {
-    "date": "2026-11-04",
-    "time": "08:30 ET",
-    "event": "U.S. Trade Balance",
-    "star": 3,
-    "forecast": "-1080",
-    "previous": "-1056",
-    "actual": "-1050",
-    "released": true
-  },
-  {
-    "date": "2026-11-04",
-    "time": "09:45 ET",
-    "event": "Final U.S. S&P Global Services PMI",
-    "star": 3,
-    "forecast": "57.9",
-    "previous": "57.9",
-    "actual": "56.1",
-    "released": true
-  },
-  {
-    "date": "2026-11-04",
-    "time": "10:00 ET",
-    "event": "U.S. ISM Non-Manufacturing PMI",
-    "star": 3,
-    "forecast": "54.8",
-    "previous": "54.9",
-    "actual": "54.5",
-    "released": true
-  },
-  {
-    "date": "2026-11-04",
-    "time": "10:30 ET",
-    "event": "U.S. EIA Crude Oil Stocks for the Week",
-    "star": 3,
-    "forecast": "198.7",
-    "previous": "-189.2",
-    "actual": "-86.5",
-    "released": true
-  },
-  {
-    "date": "2026-11-04",
-    "time": "10:30 ET",
-    "event": "U.S. EIA Crude Oil Stocks at Cushing, Oklahoma for the Week",
-    "star": 3,
-    "forecast": null,
-    "previous": "-62.4",
-    "actual": "28",
-    "released": true
-  },
-  {
-    "date": "2026-11-04",
-    "time": "10:30 ET",
-    "event": "U.S. EIA Strategic Petroleum Reserve Stocks for the Week",
-    "star": 3,
-    "forecast": null,
-    "previous": "-10",
-    "actual": "-39.9",
-    "released": true
-  },
-  {
-    "date": "2026-11-04",
-    "time": "16:30 ET",
-    "event": "U.S. API Crude Oil Stocks for the Week",
-    "star": 3,
-    "forecast": "198.7",
-    "previous": "-203.1",
-    "actual": "-526.7",
-    "released": true
+    "text": "BOTTOM LINE — Dow-led washout, semis relative bid.\n\nThe session read defensive-but-narrow: DIA -1.10% sank the tape while IWM +0.40% and QQQ +0.39% held green into Tuesday's jobless claims (fc 19.7) and Philly Fed (fc 20). Yesterday's housing cluster missed hard — permits 129.5 vs 137.7 fc, pending home sales -4.7% vs -2% fc — and oil -2.94% plus gold -3.20% confirmed a growth-scare unwind, not a rate scare. With SPY and QQQ both under their 200-DMAs, rallies are countertrend until breadth repairs.\n\nINDICES — VIX 24.6, +4.2 over its 20-DMA; beta was sold, not bought.\n\nRanked: IJR +0.66%, IWM +0.40%, QQQ +0.39%, SOXX +0.28%, SPY -0.31%, DIA -1.10%. Small > large by 0.27pp. The cross-asset tell: TLT +0.84% — bonds bid alongside small caps, which is duration relief, not risk appetite.\n\nVOLUME & BREADTH — Attention went to the hedges, not the leaders.\n\nSPY vol_ratio 0.9x and QQQ 0.9x — both below average, so today's decline is low-conviction drift, not distribution. Real accumulation shows in SLV 1.5x and GLD 1.4x (down tape, up volume = defensive positioning); XLV 1.7x and XLE 1.5x on the sell side are distribution. Breadth diverges: adv/dec 237/264, up/down volume 0.70, only 56% above the 50-DMA and 55% above the 200-DMA, new 60d lows 39 vs 9 highs — participation is deteriorating, not confirming.\n\nSECTORS & ROTATION — Discretionary bid, energy and health care bled.\n\nXLY Discretionary +1.79%, XLK Technology +0.34%, XLC Comms +0.30%, XLU Utilities +0.30%, XLRE Real Estate +0.07%, XLI Industrials -0.05%, XLP Staples -0.31%, XLB Materials -0.75%, XLF Financials -1.14%, XLV Healthcare -2.20%, XLE Energy -3.27%. Top industries: UNG +5.68% and CIBR +4.72%; bottom: GDX -5.97% and SILJ -5.10%. Flows contradict price: XLP +716mm (98th pctile) and XLK +623mm (94th) are where the money went while XLU -212mm (12th) and XLC -150mm (21st) bled. Money is rotating into staples and semis hardware, out of utilities and comms — defensive risk-off, with XLV -2.20% and XLE -3.27% the weakest groups.\n\nPOSITIONING — Cheap protection, rich single-stock vol.\n\nSPY PCR_vol 0.64 and QQQ 0.67 sit under 0.7 — complacency, while skew is positive at +10.0% and +9.6% so put premium isn't free. VIX 24.6 is well above its 20-DMA of 20.4 and VVIX 118.4 vs 106.1 says vol-of-vol is stressed. The dispersion read is the story: VIXEQ 45.2 against VIX 24.6 — a ~21-point gap means implied correlation is low; this is a stock-picker's tape, not a macro-driven one.\n\nCROSS-ASSET — Precious metals cracking while bonds bid.\n\nSLV -4.55% and GLD -3.20% with UUP +0.27% is dollar pressure hitting metals, not a safe-haven unwind — GDX -5.97% and SILJ -5.10% confirm the miner beta flush. Oil -2.94% after crude stocks printed 338 vs -50 fc is demand skepticism, while TLT +0.84% buys the growth-scare hedge. Next FOMC Dec 9: Polymarket prices 92% YES for a 25bp hike (5d +3pp), 7% for 50+; CME FedWatch shows 100% hike.\n\nSIGNALS & WATCH — Fear & Greed 56.2, Neutral.\n\nUNH -10.21% on 3.5x volume (no catalyst in headline — data-derived: mass distribution into the print) and PANW +9.90% on 2.6x are your two-sided tape; FCX -6.96% on 2.2x tracks copper at a seven-month low. Momentum is broken across factors — QUAL z=-2.09, MTUM z=-1.39, all five BEAR. Watch tomorrow: CIBR +4.72% on 2.2x (rotation confirmation, or one-day pop), GDX -5.97% on 2.2x (miner capitulation setup), and IJR +0.66% — small-cap leadership against a DIA washout is the divergence that either holds or fails.\n━━━━━━ 晨会素材 SPEECH BRIEFING ━━━━━━\n\n① 波动率\n  • VIX: 24.56  (vs20MA +20.4%)\n  • VXN: 33.12  (vs20MA +12.8%)\n  • VIXEQ: 45.16  (vs20MA +3.3%)\n  • VVIX: 118.37  (vs20MA +11.5%)\n  • SKEW: 142.84  (1d -1.6%)\n\n② 指数相对强弱\n  • 最强: IJR +0.66%\n  • 最弱: DIA -1.10%\n  • 大盘vs平权: SPY -0.31% vs RSP -0.15% → 平权领先0.16pp\n  • 成交量 SPY: 1.01x\n  • 成交量 QQQ: 0.87x\n\n③ Mega Cap (>$1T)\n  • 涨: AMZN +3.82%, AVGO +3.64%, TSLA +0.95%, GOOGL +0.80%, MSFT +0.40%, AAPL +0.15%\n  • 跌: WMT -0.13%, META -0.40%, LLY -2.32%, NVDA -2.89%\n  • 整体: 6/12收涨\n\n④ 利率水位\n  • US2Y: 4.82%  US10Y: 5.07%  US30Y: 5.42%\n  • 10y-2y利差: +0.25\n  • 定性: 30y站上5.2% (关键高位)\n\n⑤ 科技与动量\n  • 半导体: SOXX +0.28%, SMH -0.12%\n  • 存储: DRAM +0.57%, MU -1.00%\n  • 光通信: LITE -1.59%, AAOI -9.80%, FOTO +0.47%\n  • 软件/AI: IGV +1.25%, AIQ -0.04%, CIBR +4.72%\n\n⑥ 板块主题群\n  • 领涨: XLY(可选消费) +1.79%, XLK(科技) +0.34%, XLC(通讯) +0.30%\n  • 领跌: XLF(金融) -1.14%, XLV(医疗) -2.20%, XLE(能源) -3.27%\n\n⑦ 个股催化\n  (见上方简报 SIGNALS & WATCH 区的movers)\n\n⑧ 资金面 (5日净流入/流出 = 机构净买卖)\n  • 净流入: QQQ +11143M, SPY +7068M, SMH +1746M\n  • 净流出: DRAM -797M, IJH -349M, GDX -274M\n\n⑨ 金银/比特币\n  • 金(GLD) -3.20%  银(SLV) -4.55%\n  • BTC: $62,409  (1d -3.81%)\n  • IBIT: $35.36  (1d -2.16%)",
+    "generated_at": "2026-11-18T22:22:54Z",
+    "duration_s": 11.9
   },
   {
     "date": "2026-11-05",
@@ -456,8 +376,8 @@
     "star": 3,
     "forecast": "124.5",
     "previous": "122.1",
-    "actual": null,
-    "released": false
+    "actual": "130.9",
+    "released": true
   },
   {
     "date": "2026-11-18",
@@ -466,8 +386,8 @@
     "star": 3,
     "forecast": "137.7",
     "previous": "139.8",
-    "actual": null,
-    "released": false
+    "actual": "129.5",
+    "released": true
   },
   {
     "date": "2026-11-18",
@@ -476,8 +396,8 @@
     "star": 3,
     "forecast": "-2",
     "previous": "-7.30",
-    "actual": null,
-    "released": false
+    "actual": "-4.7",
+    "released": true
   },
   {
     "date": "2026-11-18",
@@ -486,8 +406,8 @@
     "star": 3,
     "forecast": "-50",
     "previous": "465.7",
-    "actual": null,
-    "released": false
+    "actual": "338",
+    "released": true
   },
   {
     "date": "2026-11-18",
@@ -496,8 +416,8 @@
     "star": 3,
     "forecast": null,
     "previous": "10.6",
-    "actual": null,
-    "released": false
+    "actual": "-120.9",
+    "released": true
   },
   {
     "date": "2026-11-18",
@@ -506,8 +426,8 @@
     "star": 3,
     "forecast": null,
     "previous": "-264.9",
-    "actual": null,
-    "released": false
+    "actual": "-317.4",
+    "released": true
   },
   {
     "date": "2026-11-18",
@@ -734,8 +654,8 @@
     "time": "10:30 ET",
     "event": "U.S. EIA Crude Oil Stocks for the Week",
     "star": 3,
-    "forecast": null,
-    "previous": null,
+    "forecast": "5.8",
+    "previous": "338",
     "actual": null,
     "released": false
   },
@@ -745,7 +665,7 @@
     "event": "U.S. EIA Crude Oil Stocks at Cushing, Oklahoma for the Week",
     "star": 3,
     "forecast": null,
-    "previous": null,
+    "previous": "-120.9",
     "actual": null,
     "released": false
   },
@@ -755,7 +675,37 @@
     "event": "U.S. EIA Strategic Petroleum Reserve Stocks for the Week",
     "star": 3,
     "forecast": null,
-    "previous": "-39.9",
+    "previous": "-317.4",
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-11-25",
+    "time": "16:30 ET",
+    "event": "U.S. API Crude Oil Stocks for the Week",
+    "star": 3,
+    "forecast": null,
+    "previous": "527.8",
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-11-26",
+    "time": "12:00 ET",
+    "event": "U.S. EIA Natural Gas Inventories for the Week",
+    "star": 3,
+    "forecast": null,
+    "previous": null,
+    "actual": null,
+    "released": false
+  },
+  {
+    "date": "2026-11-26",
+    "time": "13:00 ET",
+    "event": "Total U.S. oil rigs for the week",
+    "star": 3,
+    "forecast": null,
+    "previous": null,
     "actual": null,
     "released": false
   }
