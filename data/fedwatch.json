@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-19",
+  "last_updated": "2026-11-20",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -19,7 +19,7 @@
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-11-19",
+    "cme_updated": "2026-11-20",
     "bls_unemp_updated": "2026-07-15",
     "rate_prob_source": "CME FedWatch (investing.com)"
   },
@@ -307,6 +307,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/jefferson.htm",
       "speeches": [
         {
+          "date": "2026-11-19",
+          "event": "Jefferson, Monetary Policy amid Frequent and Complex Shocks",
+          "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20261119a.htm",
+          "brief_summary": "Speech At the International Monetary Fund and Central Bank of Brazil Conference “A Quarter Century of Inflation Targeting in Latin America:  Progress, Challenges, and the Road Ahead,” Bras&iacute;lia, Brazil",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-11-14",
           "event": "Jefferson, New Technology, Old Questions: Productivity Puzzles  and the Macroeconomy",
           "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20261113a.htm",
@@ -333,13 +340,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260716a.htm",
           "brief_summary": "Vice Chair Jefferson discusses how the Federal Reserve analyzes and responds to unpredictable economic shocks using demand-supply frameworks and output-gap analysis to balance dual mandate objectives.",
           "detailed_summary": "Jefferson examines monetary policy responses to economic shocks classified as demand-side or supply-side, emphasizing the output gap as a key analytical tool. When shocks align inflation and employment pressures (both positive or negative output gaps), policy responses are straightforward—raising rates for overheating or lowering rates for slack. However, stagflationary shocks create tradeoffs requiring judgment about inflation-expectation anchoring and labor-market risks. He notes monetary policy works with lags, making shock duration assessment critical for real-time decision-making under uncertainty."
-        },
-        {
-          "date": "2026-05-28",
-          "event": "Jefferson, Global Economic Developments and the U.S. Economy",
-          "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20260527a.htm",
-          "brief_summary": "Fed maintains 3.5-3.75% federal funds rate; expects inflation decline later in 2026 as tariffs and energy shocks wane, though upside risks remain.",
-          "detailed_summary": "Vice Chair Jefferson outlined global headwinds including elevated energy prices from Middle East conflict, AI advancement, and trade disruptions affecting U.S. inflation and growth. The FOMC kept rates steady at 3.5-3.75% in late April, with inflation recently elevated due to tariffs and energy costs but expected to moderate. Jefferson emphasized commitment to the 2% inflation target despite downside labor market risks and upside inflation risks, stating the current policy stance enables data-dependent responses at upcoming meetings without prejudging future decisions."
         }
       ]
     },
