@@ -1,73 +1,13 @@
 [
   {
     "type": "briefing",
-    "date": "19/11/2026",
-    "time": "22:51",
-    "event": "Daily Intelligence Briefing",
-    "title": "Daily Market Briefing",
-    "text": "BOTTOM LINE — Broad risk-off, small caps and chips hit hardest.\nPhilly Fed printed 6.3 vs 20 fc and LEI -0.3% vs 0% fc, confirming the growth scare; SPY and QQQ both closed below their 200-day MAs, and SPY drew +$9.4bn of inflows into the drawdown while SOXX bled -$4.5bn. Dec 9 hike odds at 100% (CME) mean no policy cushion, so this is a de-risking tape, not a dip-buy.\n\nINDICES — VIX 24.6, +12.2% via VIXY. Ranked: RSP -1.76%, SPY -1.96%, IJH -2.02%, DIA -2.18%, IWM -2.18%, QQQ -2.19%, SOXX -2.75%. Large < small by 0.22pp (large -1.96% vs small -2.18%) — no size refuge. SPY and QQQ below their 200-day MAs: CTA sell trigger active. Bonds bid quietly (IEF +0.17%, TLT +0.16%) while gold -1.76% and silver -2.60%.\n\nVOLUME & BREADTH — SPY vol_ratio 1.5x on -1.96% = distribution; QQQ 1.6x (XLK) on -1.90% = distribution; IJS 15.9x on -2.26% is capitulation-style selling. XLK/XLF/XLV all 1.6x gaining nothing — heavy two-way churn, not accumulation. Breadth is broken: 38 advancers vs 463 decliners, only 49% above the 50-DMA and 48% above the 200-DMA, up/down volume 0.13, new 60d highs/lows 1/67. Participation diverges hard from index levels — this is broad liquidation, not a narrow mega-cap tape.\n\nSECTORS & ROTATION — XLE Energy -0.65%, XLU Utilities -1.24%, XLP Staples -1.45%, XLF Financials -1.49%, XLRE Real Estate -1.70%, XLK Technology -1.90%, XLI Industrials -2.00%, XLV Healthcare -2.05%, XLB Materials -2.06%, XLC Comms -2.67%, XLY Discretionary -2.79%. Top industries USO +1.45% vs bottom SILJ -5.66% and MSOS -5.59%. Flows: XLK +$970mm (100p) and XLP +$242mm (83p) in; XLU -$894mm (0p) and XLE -$674mm (8p) out. Leaders bleeding price but taking inflows (XLK) = dip-buying, not conviction rotation. Strongest: energy relative, staples; weakest: discretionary, comms. Label: defensive risk-off.\n\nPOSITIONING — SPY PCR 0.73 (complacent), QQQ 0.95, IWM 1.52 (heavy protection); skew +13.7% SPY/+14.2% IWM = put premium bid. VIX 24.6 vs 20.4 MA20 = elevated fear; VIXEQ 46.9 vs VIX 24.6 — a 22-point gap = high single-stock dispersion, rotation tape not macro-correlated. MOVE prints 0.0 (unavailable), no bond-vol read.\n\nCROSS-ASSET — Energy is the lone green (USO +1.45%) while crude 20d is -15.03%: a bounce, not a trend; silver -2.60% with gold -1.76% and GLD -$5.55% 5d shows the metals unwind (SLV 20d -19.66%) as dollar holds (UUP +0.03%, 20d +2.53%). Next FOMC Dec 9, 2026: CME FedWatch prices hold 0.0%/cut 0.0%/hike 100%; Polymarket 92% for +25bp and 5% for +50bp (-3pp 5d).\n\nSIGNALS & WATCH — Fear & Greed 50.3, Neutral. Movers: AMD -7.72%, PANW +6.42%, UNH -5.55% (3.5x vol), IJS -2.26% (15.9x vol). PANW's 2.8x volume with +6.42% is the lone accumulation print; UNH at 3.5x on -5.55% is distribution. Worst momentum: SOXX 20d -71.00%, SLV -19.66%; best XLU +0.33%. Watch: SOXX -2.75% (20d collapse, SOXX -$4.49bn outflow at 0p), IWM PCR 1.52 (max pain 270, put protection extreme), XLE -0.65% (only sector holding, flows -674mm — fragile leadership).\n━━━━━━ 晨会素材 SPEECH BRIEFING ━━━━━━\n\n① 波动率\n  • VIX: 24.56  (vs20MA +20.4%)\n  • VXN: 36.48  (vs20MA +22.6%)\n  • VIXEQ: 46.87  (vs20MA +6.6%)\n  • VVIX: 118.37  (vs20MA +11.5%)\n  • SKEW: 140.86  (1d -1.4%)\n\n② 指数相对强弱\n  • 最强: RSP -1.76%\n  • 最弱: SOXX -2.75%\n  • 大盘vs平权: SPY -1.96% vs RSP -1.76% → 平权领先0.20pp\n  • 成交量 SPY: 1.50x\n  • 成交量 QQQ: 1.39x\n\n③ Mega Cap (>$1T)\n  • 跌: AAPL -0.92%, MSFT -1.97%, AVGO -2.09%, LLY -2.29%, TSLA -2.43%, META -3.27%, NVDA -3.30%, GOOGL -3.46%, AMZN -3.87%\n  • 整体: 0/11收涨\n\n④ 利率水位\n  • US2Y: 4.77%  US10Y: 5.05%  US30Y: 5.41%\n  • 10y-2y利差: +0.28\n  • 定性: 30y站上5.2% (关键高位)\n\n⑤ 科技与动量\n  • 半导体: SOXX -2.75%, SMH -2.62%\n  • 存储: DRAM -1.84%, MU -2.10%\n  • 光通信: LITE -2.89%, AAOI -3.26%, FOTO -2.27%\n  • 软件/AI: IGV -0.87%, AIQ -2.53%, CIBR +0.31%\n\n⑥ 板块主题群\n  • 领涨: XLE(能源) -0.65%, XLU(公用) -1.24%, XLP(必需消费) -1.45%\n  • 领跌: XLB(材料) -2.06%, XLC(通讯) -2.67%, XLY(可选消费) -2.79%\n\n⑦ 个股催化\n  (见上方简报 SIGNALS & WATCH 区的movers)\n\n⑧ 资金面 (5日净流入/流出 = 机构净买卖)\n  • 净流入: SPY +9419M, QQQ +6464M, XLK +970M\n  • 净流出: SOXX -4490M, XLU -894M, XLE -674M\n\n⑨ 金银/比特币\n  • 金(GLD) -1.76%  银(SLV) -2.60%\n  • BTC: $62,169  (1d -1.30%)\n  • IBIT: $35.08  (1d -0.79%)",
-    "generated_at": "2026-11-19T22:51:55Z",
-    "duration_s": 6.4
-  },
-  {
-    "date": "2026-11-06",
-    "time": "08:30 ET",
-    "event": "U.S. Seasonally Adjusted Nonfarm Payrolls",
-    "star": 3,
-    "forecast": "6.5",
-    "previous": "2.9",
-    "actual": "16.5",
-    "released": true
-  },
-  {
-    "date": "2026-11-06",
-    "time": "08:30 ET",
-    "event": "U.S. Average Hourly Earnings Month-over-Month",
-    "star": 3,
-    "forecast": "0.30",
-    "previous": "0.10",
-    "actual": "0.4",
-    "released": true
-  },
-  {
-    "date": "2026-11-06",
-    "time": "08:30 ET",
-    "event": "U.S. Average Hourly Earnings Year-on-Year Rate",
-    "star": 3,
-    "forecast": "2.90",
-    "previous": "3.00",
-    "actual": "3.1",
-    "released": true
-  },
-  {
-    "date": "2026-11-06",
-    "time": "08:30 ET",
-    "event": "U.S. unemployment rate",
-    "star": 3,
-    "forecast": "4.20",
-    "previous": "4.20",
-    "actual": "4.1",
-    "released": true
-  },
-  {
-    "date": "2026-11-06",
-    "time": "10:00 ET",
-    "event": "The University of Michigan's preliminary reading on consumer confidence in the United States",
-    "star": 3,
-    "forecast": "48",
-    "previous": "48",
-    "actual": "51",
-    "released": true
-  },
-  {
-    "date": "2026-11-06",
-    "time": "10:00 ET",
-    "event": "U.S. One-Year Inflation Expectation Preliminary Value",
-    "star": 3,
-    "forecast": "4.7",
-    "previous": "4.70",
-    "actual": "4.3",
-    "released": true
+    "date": "20/11/2026",
+    "time": "22:24",
+    "event": "Weekly Market Review",
+    "title": "Weekly Market Review",
+    "text": "BOTTOM LINE — Broad risk-off; AI hardware cracked, defensives and gas bid.\nSemis led the unwind from Monday through Friday (SOXX -17.35% WTD), dragging the entire growth complex with it while staples and utilities held up. The tape fell apart into the close: every major index dropped 2-8% this week with the heaviest damage back-loaded into Friday's session. This was a de-risking of the AI thesis, not a rotation story.\n\nINDICES — QQQ -10.51%, SPY -8.56%, DIA -8.04%, IWM -7.54% WTD. Small beat large by 1.90pp this week, but the magnitude was just as severe relative to a normal week. VIX at 28.4 versus a 20.9 20-day MA is a clear volatility spike — VIXY +13.42% Friday alone. Gold was the ugliest cross-asset move of the week (GLD -9.17% WTD), with silver collapsing alongside it (SLV -16.22%); USO gave back 17.64% over 20 days. Both SPY and QQQ closed below their 200-day moving averages.\n\nSECTORS & ROTATION — Best to worst, WTD: XLP Consumer Staples -2.05%, XLU Utilities -3.07%, XLRE Real Estate -4.30%, XLV Health Care -6.15%, XLY Consumer Discretionary -6.27%, XLE Energy -6.85%, XLF Financials -7.00%, XLI Industrials -7.35%, XLB Materials -7.45%, XLC Communication Services -7.97%, XLK Technology -12.49%.\nIndustries top: UNG +4.04%, DBA -1.51%, KIE -2.42%, XLU -3.07%. Industries bottom: TAN -18.44%, SILJ -19.13%, DRAM -21.32%, WGMI -23.81%.\nMoney went out of energy (XLE -502mm) and financials (XLF -305mm) while staples quietly absorbed +53mm into XLB and XLK pulled in +580mm — a flight toward liquid index tech instead of sector bets. The week's state: AI hardware fading / high-to-low rotation.\n\nDRIVERS — Semis and memory were the epicenter: SOXX -17.35% WTD, DRAM -21.32%, with NVDA -14.01%, MU -13.89%, and AMD -13.25% leading Friday's selloff. The Yahoo headline names Anthropic's IPO failing to revive the AI trade as the proximate narrative — but the move was already in motion by Thursday's 1,100-point Dow decline ahead of any single print. Internals confirm a broad unwind: breadth 122 up / 377 down, only 43 stocks above their 50-day, up/down volume ratio 0.20, and 138 new 60-day lows versus 2 highs. Defensives absorbed the exit — XLP finished green Friday (+0.67%) while everything cyclical bled. Consumer sentiment printed 51.5 (in line), and one-year inflation expectations cooled to 3.7 versus 4.30 prior — both consistent with a disinflationary pulse even as the tape panicked.\n\nWHAT'S NEXT — VIXEQ at 57.9 (52-week top) and VVIX 127.1 signal extreme single-name dispersion; QQQ ATM implied vol at 53.1% and PCR 1.67 means options market is already leaning into further downside. SPY max-pain sits at 729 vs. spot near 7,175 (on the S&P cash print) — a gap to watch into Friday's monthly expiry. The Inflation Expectations print at 3.7 and Philadelphia Fed at 6.3 versus forecast 20 are conflicting inputs going into next week's S&P Global PMIs and Core PCE on 2026-11-25. FOMC is not until Dec 9 (Polymarket pricing 90% odds of a 25bp hike), so this week's move had no Fed catalyst behind it — which makes the rotation itself the signal, not a rate narrative.\n━━━━━━ 晨会素材 SPEECH BRIEFING ━━━━━━\n\n① 波动率\n  • VIX: 28.44  (vs20MA +36.2%)\n  • VXN: 36.48  (vs20MA +22.6%)\n  • VIXEQ: 57.91  (vs20MA +29.4%)\n  • VVIX: 127.1  (vs20MA +18.7%)\n  • SKEW: 138.84  (1d -1.4%)\n\n② 指数相对强弱\n  • 最强: DIA -1.98%\n  • 最弱: SOXX -10.55%\n  • 大盘vs平权: SPY -3.64% vs RSP -1.98% → 平权领先1.66pp\n  • 成交量 SPY: 2.89x\n  • 成交量 QQQ: 2.62x\n\n③ Mega Cap (>$1T)\n  • 涨: WMT +1.52%\n  • 跌: LLY -0.30%, AAPL -1.90%, GOOGL -2.70%, MSFT -2.77%, AMZN -4.10%, META -5.93%, TSLA -7.64%, AVGO -12.19%, NVDA -14.01%\n  • 整体: 1/12收涨\n\n④ 利率水位\n  • US2Y: 4.65%  US10Y: 4.95%  US30Y: 5.33%\n  • 10y-2y利差: +0.30\n  • 定性: 30y站上5.2% (关键高位)\n\n⑤ 科技与动量\n  • 半导体: SOXX -10.55%, SMH -10.60%\n  • 存储: DRAM -13.19%, MU -13.89%\n  • 光通信: LITE -13.94%, AAOI -16.55%, FOTO -11.44%\n  • 软件/AI: IGV -4.62%, AIQ -6.25%, CIBR -5.12%\n\n⑥ 板块主题群\n  • 领涨: XLP(必需消费) +0.67%, XLV(医疗) -0.12%, XLE(能源) -0.62%\n  • 领跌: XLY(可选消费) -2.95%, XLI(工业) -3.09%, XLK(科技) -7.27%\n\n⑦ 个股催化\n  (见上方简报 SIGNALS & WATCH 区的movers)\n\n⑧ 资金面 (5日净流入/流出 = 机构净买卖)\n  • 净流入: SPY +8681M, QQQ +6069M, SMH +675M\n  • 净流出: SOXX -4552M, DRAM -718M, XLE -502M\n\n⑨ 金银/比特币\n  • 金(GLD) -3.67%  银(SLV) -6.74%\n  • BTC: $59,067  (1d -4.60%)\n  • IBIT: $33.02  (1d -5.87%)",
+    "generated_at": "2026-11-20T22:24:24Z",
+    "duration_s": 6.3
   },
   {
     "date": "2026-11-07",
@@ -446,8 +386,8 @@
     "star": 3,
     "forecast": "51.5",
     "previous": "51",
-    "actual": null,
-    "released": false
+    "actual": "51.5",
+    "released": true
   },
   {
     "date": "2026-11-20",
@@ -456,8 +396,8 @@
     "star": 3,
     "forecast": "4.20",
     "previous": "4.30",
-    "actual": null,
-    "released": false
+    "actual": "3.7",
+    "released": true
   },
   {
     "date": "2026-11-21",
@@ -466,8 +406,8 @@
     "star": 3,
     "forecast": null,
     "previous": "463",
-    "actual": null,
-    "released": false
+    "actual": "469",
+    "released": true
   },
   {
     "date": "2026-11-23",
@@ -534,7 +474,7 @@
     "time": "10:00 ET",
     "event": "The Conference Board Consumer Confidence Index",
     "star": 3,
-    "forecast": "92.1",
+    "forecast": "92",
     "previous": "91.7",
     "actual": null,
     "released": false
@@ -594,7 +534,7 @@
     "time": "08:30 ET",
     "event": "US Durable Goods Orders MoM",
     "star": 3,
-    "forecast": "0.60",
+    "forecast": "0",
     "previous": "1.90",
     "actual": null,
     "released": false
@@ -604,7 +544,7 @@
     "time": "10:00 ET",
     "event": "U.S. New Home Sales, Annualized Total",
     "star": 3,
-    "forecast": "65.3",
+    "forecast": "67",
     "previous": "67.6",
     "actual": null,
     "released": false
@@ -665,7 +605,7 @@
     "event": "Total U.S. oil rigs for the week",
     "star": 3,
     "forecast": null,
-    "previous": null,
+    "previous": "469",
     "actual": null,
     "released": false
   }

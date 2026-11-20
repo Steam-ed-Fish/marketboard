@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-20",
+  "last_updated": "2026-11-21",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -10,18 +10,18 @@
   "market": {
     "next_fomc_date": "2026-12-09",
     "next_fomc_label": "Dec 9, 2026",
-    "rate_hold_pct": 0.0,
+    "rate_hold_pct": 100.0,
     "rate_cut_pct": 0.0,
-    "rate_hike_pct": 100.0,
+    "rate_hike_pct": 0.0,
     "current_rate": "3.50%–3.75%",
     "cpi": 3.5,
     "cpi_month": "June 2026",
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-11-20",
+    "cme_updated": "2026-11-21",
     "bls_unemp_updated": "2026-07-15",
-    "rate_prob_source": "CME FedWatch (investing.com)"
+    "rate_prob_source": "ZQ futures (approx)"
   },
   "members": [
     {
@@ -229,6 +229,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/cook.htm",
       "speeches": [
         {
+          "date": "2026-11-20",
+          "event": "Cook, The U.S. Economy in Global Context",
+          "url": "https://www.federalreserve.gov/newsevents/speech/cook20261120a.htm",
+          "brief_summary": "Speech At the XXIX Annual Conference of the Central Bank of Chile, Santiago, Chile",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-09-30",
           "event": "Cook, The Dual Mandate in Rural America",
           "url": "https://www.federalreserve.gov/newsevents/speech/cook20260930a.htm",
@@ -255,13 +262,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/cook20260715a.htm",
           "brief_summary": "Governor Cook emphasizes persistent inflation above the 2% target remains the primary concern, outweighing employment risks, warranting continued focus on price stability.",
           "detailed_summary": "Cook highlights that 12-month inflation stands at 3.7%, remaining 1.7 percentage points above the Federal Reserve's 2% target despite recent softer CPI and PPI reports. While the labor market remains stable with unemployment at 4.2% and moderate payroll growth, she notes inflation risks have shifted to outweigh employment risks due to resilient GDP growth (2.0% in 2025, 2.2% forecast for 2026), booming productivity, and unexpected price pressures from Middle East conflicts and AI infrastructure spending. Core goods prices are rising at a striking 5% annual pace, well above pre-pandemic trends, indicating inflation persistence extends beyond energy prices alone."
-        },
-        {
-          "date": "2026-06-24",
-          "event": "Cook, Welcome Remarks",
-          "url": "https://www.federalreserve.gov/newsevents/speech/cook20260624a.htm",
-          "brief_summary": "Governor Cook welcomes attendees to a small business symposium, highlighting the Federal Reserve's Small Business Credit Survey and small businesses' adoption of AI technology.",
-          "detailed_summary": "This speech is not primarily about monetary policy implementation or rate decisions. Cook delivers welcome remarks at the Federal Reserve Bank of Cleveland's State of Small Business Symposium, emphasizing small businesses' critical economic role—accounting for 61 percent of net job creation since 1995. She highlights the Small Business Credit Survey's expansion over a decade and presents a notable finding: nearly half of small employer firms use AI, with 71 percent reporting increased productivity. Cook frames small businesses as innovative and adaptable, noting that frontier technology breakthroughs often originate from startups, and encourages researchers and policymakers to utilize SBCS data to understand small firms' financing needs and credit access challenges."
         }
       ]
     },
@@ -481,6 +481,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/waller.htm",
       "speeches": [
         {
+          "date": "2026-11-20",
+          "event": "Waller, Opening Remarks",
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20261120a.htm",
+          "brief_summary": "Speech At the 2026 College Fed Challenge Finals, Board of Governors of the Federal Reserve System, Washington, D.C.",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-11-17",
           "event": "Waller, Considerations at the Intersection of Payments and Tokenized Markets",
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20261117a.htm",
@@ -507,13 +514,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/waller20261001a.htm",
           "brief_summary": "Waller discussed the Federal Reserve's FRED economic database and its adaptation to artificial intelligence, not monetary policy.",
           "detailed_summary": "Governor Waller addressed the FRED conference on the intersection of the Federal Reserve's economic data platform and artificial intelligence. He highlighted FRED's growth from a 1961 mailing digest to a website hosting over 850,000 data series with 18 million users in 2025. Waller noted that AI now drives 150 percent annual traffic growth and about half of FRED visits, creating challenges like hallucination, misattribution, and correlation confusion. To adapt, the St. Louis Fed launched the FRED MCP Connector to help AI agents accurately retrieve and interpret data, and is linking FRED with the FRASER and ALFRED archives."
-        },
-        {
-          "date": "2026-09-29",
-          "event": "Waller, Payments in the Age of AI Agents",
-          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260928a.htm",
-          "brief_summary": "Governor Waller discusses how AI agents could transform global payments by enhancing cross-border payment efficiency, cybersecurity, and enabling autonomous agentic commerce.",
-          "detailed_summary": "Waller highlights AI's potential to improve cross-border payments through LLM-based sanctions screening, cyber threat detection, and payment routing optimization. He outlines two agentic commerce models: agent-assisted, where consumers retain control, and agent-delegated, where agents autonomously transact within set guardrails. He notes that B2B commerce may be especially suited for AI agents due to recurring, rule-based purchases, though higher transaction values require robust controls. He emphasizes that agents must operate across diverse payment rails including ACH, wire, instant payments, and cards."
         }
       ]
     },
