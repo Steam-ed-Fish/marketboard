@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25",
+  "last_updated": "2026-11-26",
   "sources": {
     "cme": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
     "bls_unemployment": "https://www.bls.gov/news.release/empsit.nr0.htm",
@@ -10,16 +10,16 @@
   "market": {
     "next_fomc_date": "2026-12-09",
     "next_fomc_label": "Dec 9, 2026",
-    "rate_hold_pct": 100.0,
+    "rate_hold_pct": 0.0,
     "rate_cut_pct": 0.0,
-    "rate_hike_pct": 0.0,
+    "rate_hike_pct": 100.0,
     "current_rate": "3.50%–3.75%",
     "cpi": 3.5,
     "cpi_month": "June 2026",
     "unemployment": 4.2,
     "unemployment_month": "June 2026",
     "bls_cpi_updated": "2026-07-15",
-    "cme_updated": "2026-11-25",
+    "cme_updated": "2026-11-26",
     "bls_unemp_updated": "2026-07-15",
     "rate_prob_source": "ZQ futures (approx)"
   },
@@ -183,6 +183,13 @@
       "bio_url": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm",
       "speeches": [
         {
+          "date": "2026-11-25",
+          "event": "Bowman, Modernizing Banking Supervision: A Shared Agenda for the Americas",
+          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261125a.htm",
+          "brief_summary": "Speech At the ASBA–BCBS–FSI High-Level Meeting for the Americas on Banking Supervision, Bras&iacute;lia, Brazil (via pre-recorded video)",
+          "detailed_summary": ""
+        },
+        {
           "date": "2026-11-10",
           "event": "Bowman, The U.S. Economy and Considerations for Monetary Policy",
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261110a.htm",
@@ -209,13 +216,6 @@
           "url": "https://www.federalreserve.gov/newsevents/speech/bowman20261001a.htm",
           "brief_summary": "This speech addresses financial regulation, detailing the Federal Reserve's recalibration of the enhanced supplementary leverage ratio to improve Treasury market liquidity.",
           "detailed_summary": "Bowman discusses the Federal Reserve's recent modernization of the enhanced supplementary leverage ratio (eSLR), finalized in November 2025. The prior framework inappropriately constrained large bank dealers, curtailing Treasury market liquidity and prompting temporary relief during the 2020 pandemic. The recalibration tailored the eSLR buffer to each GSIB's systemic footprint, and early 2026 supervisory data indicates dealers increased Treasury positions from $600 billion to over $700 billion, significantly improving market functioning and resilience."
-        },
-        {
-          "date": "2026-09-29",
-          "event": "Bowman, Opening Remarks",
-          "url": "https://www.federalreserve.gov/newsevents/speech/bowman20260929a.htm",
-          "brief_summary": "This speech is not about monetary policy; it addresses cybersecurity risks and AI adoption challenges faced by community banks at the Community Bank Cyber Workshop.",
-          "detailed_summary": "Vice Chair for Supervision Michelle Bowman delivered opening remarks at the 2026 Community Bank Cyber Workshop, focusing on cybersecurity threats, AI integration, and regulatory expectations. She highlighted recent cyber events affecting community banks and detailed how AI both enhances defense capabilities and introduces risks like sophisticated social engineering. Bowman referenced a summer 2026 Financial Stability Board report on Sound Practices for Responsible Adoption of AI, noting its targeted case studies for smaller institutions and requesting community bank feedback. She emphasized that cyber resilience requires proactive board risk management, strategic investments, tailored IT examinations, and continuous collaboration."
         }
       ]
     },
